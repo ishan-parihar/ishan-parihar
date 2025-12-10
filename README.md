@@ -94,36 +94,28 @@ I organize my public work into research domains that intersect technology and hu
 
 ---
 
----
-
 ## 📈 Stats & Analytics
 
-<div align="center">
-  
-  <!-- Total Stats (Full Width) -->
-  <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img src="https://github-readme-stats.vercel.app/api?username=ishan-parihar&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97&icon_color=2ea44f&text_color=999&count_private=true" alt="Ishan's GitHub Stats" />
-  </a>
-  
-  <br/><br/>
-
-  <!-- Top Languages & Streak (Side-by-Side Flow) -->
-  <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ishan-parihar&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97&icon_color=2ea44f&text_color=999" height="165" alt="Top Languages" />
-  </a>
-  <img width="5" /> <!-- Spacer -->
-  <a href="https://github.com/streak-stats/github-readme-streak-stats">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=ishan-parihar&theme=tokyonight&hide_border=true&background=0D1117&ring=2ea44f&fire=79ff97&currStreakNum=79ff97&sideLabels=999&dates=999" height="165" alt="GitHub Streak" />
-  </a>
-
-  <br/><br/>
-
-  <!-- Activity Graph (Full Width) -->
-  <a href="https://github.com/Ashutosh00710/github-readme-activity-graph">
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=ishan-parihar&theme=tokyonight&bg_color=0D1117&color=79ff97&line=2ea44f&point=79ff97&area=true&hide_border=true" alt="Activity Graph" />
-  </a>
-
-</div>
+<table width="100%">
+  <tr>
+    <td width="50%" valign="top">
+      <img src="https://github-readme-stats.vercel.app/api?username=ishan-parihar&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97&icon_color=2ea44f&text_color=999&count_private=true&cache_seconds=1800" alt="Ishan's GitHub Stats" />
+    </td>
+    <td width="50%" valign="top">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ishan-parihar&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97&icon_color=2ea44f&text_color=999&langs_count=8&cache_seconds=1800" alt="Top Languages" />
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=ishan-parihar&theme=tokyonight&hide_border=true&background=0D1117&ring=2ea44f&fire=79ff97&currStreakNum=79ff97&sideLabels=999&dates=999" alt="GitHub Streak" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top">
+      <img src="https://github-readme-activity-graph.vercel.app/graph?username=ishan-parihar&theme=tokyonight&bg_color=0D1117&color=79ff97&line=2ea44f&point=79ff97&area=true&hide_border=true" alt="Activity Graph" width="100%" />
+    </td>
+  </tr>
+</table>
 
 ---
 
