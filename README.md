@@ -94,13 +94,32 @@ I organize my public work into research domains that intersect technology and hu
 
 ---
 
-## 📈 Stats
+## 📈 Stats & Analytics
 
+<!-- GitHub Stats Card -->
 <div align="center">
-  <!-- Added count_private=true to fix empty stats issue -->
-  <img src="https://github-readme-stats.vercel.app/api?username=ishan-parihar&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97&icon_color=2ea44f&count_private=true&include_all_commits=true" alt="Ishan's GitHub Stats" />
-  <br/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ishan-parihar&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97" alt="Top Languages" />
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img src="https://github-readme-stats.vercel.app/api?username=ishan-parihar&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97&icon_color=2ea44f&count_private=true&include_all_commits=true" alt="Ishan's GitHub Stats" />
+  </a>
+</div>
+
+<br/>
+
+<!-- Language & Streak Graphs (Side by Side) -->
+<div align="center">
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ishan-parihar&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97" alt="Top Languages" height="165" />
+  </a>
+  <a href="https://github.com/streak-stats/github-readme-streak-stats">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=ishan-parihar&theme=tokyonight&hide_border=true&background=0D1117&ring=2ea44f&fire=79ff97&currStreakNum=79ff97" alt="GitHub Streak" height="165" />
+  </a>
+</div>
+
+<br/>
+
+<!-- Activity Graph (The "Chart" you were likely looking for) -->
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ishan-parihar&theme=tokyonight&bg_color=0D1117&color=79ff97&line=2ea44f&point=79ff97&area=true&hide_border=true" alt="Activity Graph" width="100%" />
 </div>
 
 ---
@@ -109,8 +128,11 @@ I organize my public work into research domains that intersect technology and hu
   <p><i>"The goal of automation is not just efficiency, but the liberation of human creativity."</i></p>
   
   <p>
-    <a href="https://github.com/ishan-parihar?tab=repositories">View Public Repositories</a>
+    <a href="https://github.com/ishan-parihar?tab=repositories">
+      <img src="https://img.shields.io/badge/View_Public_Repositories-Click_Here-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="View Repos" />
+    </a>
   </p>
-  <br/>
+  
+  <!-- Footer Wave Animation -->
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0D1117&height=100&section=footer" width="100%"/>
 </div>
