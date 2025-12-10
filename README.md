@@ -1,9 +1,3 @@
-<!-- 
-INSTRUCTIONS:
-1. Replace 'ishanparihar' in the URLs if your GitHub username is different.
-2. Replace 'your-email@example.com' and social links with your actual details.
--->
-
 <div align="center">
   
   <h1 align="center">Hi there, I'm Ishan Parihar 👋</h1>
@@ -11,19 +5,19 @@ INSTRUCTIONS:
   <h3 align="center">Full Stack Developer | AI Engineer | Linux Systems Architect</h3>
 
   <p align="center">
-    <i>Building at the intersection of <b>Artificial Intelligence</b>, <b>System Automation</b>, and <b>Human Psychology</b>.</i>
+    <i>Building at the intersection of <b>Quantitative Finance</b>, <b>Integral Theory</b>, and <b>System Automation</b>.</i>
   </p>
 
   <!-- Social Links -->
   <p align="center">
-    <a href="mailto:your-email@example.com">
-      <img src="https://img.shields.io/badge/Email-Contact_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    <a href="mailto:support@ishanparihar.com">
+      <img src="https://img.shields.io/badge/Email-support@ishanparihar.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
     </a>
-    <a href="https://linkedin.com/in/your-profile">
+    <a href="https://www.linkedin.com/in/ishan-parihar-111ba3109/">
       <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
     </a>
-    <a href="https://your-portfolio.com">
-      <img src="https://img.shields.io/badge/Portfolio-Visit_Site-2ea44f?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
+    <a href="https://ishanparihar.com">
+      <img src="https://img.shields.io/badge/Website-ishanparihar.com-2ea44f?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
     </a>
   </p>
 </div>
@@ -32,12 +26,13 @@ INSTRUCTIONS:
 
 ## 👨‍💻 About Me
 
-I am a **Systems Architect** and **AI Engineer** based in India. My work combines high-performance engineering with psychological principles to create systems that feel intuitive and "human."
+I am a **Systems Architect** and **AI Engineer** based in India. My work is a synthesis of rigorous engineering and deep human insight. I bridge the gap between **Quantitative Finance**, **AI Automation**, and **Human Consciousness**.
 
-- 🐧 **Linux Power User**: Daily driving **Arch**, **Kali**, and **Fedora**. Optimizing workflows with **Hyprland**.
-- 🧠 **Psychology Student**: Applying cognitive science to **AI agent behavior** and **UX design**.
-- 🛠️ **DevOps & Automation**: Expert in **n8n**, Docker, and self-hosted infrastructure.
-- 🔭 **Currently working on**: Multi-agent systems (**OSINT-OS**) and Psycho-cinematic automation (**CineSync**).
+- 🐧 **Linux Power User**: Daily driving **Arch (KDE)**. I optimize workflows using custom automation scripts and deep system configuration.
+- 📉 **Quant & Finance**: Developing **Algorithmic Trading** systems using ONNX models, specializing in market data analysis.
+- 🏛️ **Design & Architecture**: Former **B.Arch student** with professional skills in **AutoCAD, Revit, and V-Ray**. I apply architectural thinking to software system design.
+- 🧘 **Integral Theory & Psychology**: Exploring the intersection of **Spiral Dynamics**, **The Law of One**, and **Collective Shadow Work** to build technology that heals rather than extracts.
+- 🎥 **Content Creator**: Documenting my journey in tech, self-actualization, and system design to build a personal brand.
 
 ---
 
@@ -56,32 +51,30 @@ I am a **Systems Architect** and **AI Engineer** based in India. My work combine
 
 <div align="center">
 
-<!-- Languages -->
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-<img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
+### **Full Stack & Cloud**
 <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" />
+<img src="https://img.shields.io/badge/SvelteKit-FF3E00?style=flat-square&logo=svelte&logoColor=white" />
+<img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" />
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" />
-<img src="https://img.shields.io/badge/Svelte-FF3E00?style=flat-square&logo=svelte&logoColor=white" />
 
 <br/>
 
-<!-- AI & Data -->
+### **AI & Quant**
 <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=chainlink&logoColor=white" />
+<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
 <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" />
-<img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" />
-<img src="https://img.shields.io/badge/ONNX-005CED?style=flat-square&logo=onnx&logoColor=white" />
+<img src="https://img.shields.io/badge/n8n-FF6584?style=flat-square&logo=n8n&logoColor=white" />
 <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" />
 
 <br/>
 
-<!-- DevOps & OS -->
-<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
-<img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" />
+### **System & Architecture**
 <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white" />
-<img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" />
-<img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white" />
-<img src="https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white" />
+<img src="https://img.shields.io/badge/KDE_Plasma-1D99F3?style=flat-square&logo=kde&logoColor=white" />
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
+<img src="https://img.shields.io/badge/AutoCAD-E44D26?style=flat-square&logo=autodesk&logoColor=white" />
+<img src="https://img.shields.io/badge/Revit-2496ED?style=flat-square&logo=autodesk&logoColor=white" />
 
 </div>
 
@@ -91,8 +84,8 @@ I am a **Systems Architect** and **AI Engineer** based in India. My work combine
 
 - 🚀 **Deployed OSINT-OS v2.0**: Enhanced the multi-agent orchestration layer.
 - 🎬 **Updated CineSync**: Implemented a new "Psychology Engine" for video pacing.
-- 🐧 **Ricing**: Finished a new Hyprland configuration for ultrawide monitors.
-- 🤖 **Researching**: Exploring agentic frameworks for autonomous red-teaming.
+- 🐧 **Ricing**: Daily driving Arch + KDE Plasma optimized for high-performance dev work.
+- 📚 **Studying**: Deep diving into **Spiral Dynamics** and **Collective Shadow Work** to inform AI safety design.
 
 ---
 
