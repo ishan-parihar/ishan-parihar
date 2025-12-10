@@ -1,26 +1,31 @@
 <!-- 
-INSTRUCTIONS:
-1. Copy this code into your profile README.md
-2. The stats images should now load correctly with user 'ishan-parihar'
+  GITHUB PROFILE README
+  User: ishan-parihar
+  Theme: Tokyonight (aligned with Arch/KDE aesthetics)
 -->
 
 <div align="center">
   
   <h1 align="center">Hi there, I'm Ishan Parihar 👋</h1>
   
-  <h3 align="center">Full Stack Developer | Quant Analyst | Systems Architect</h3>
+  <h3 align="center">
+    Systems Architect | Quantitative Analyst | Psychology Researcher
+  </h3>
 
   <p align="center">
     <i>"Re-engineering the source code of reality through systemic design and holonic architecture."</i>
   </p>
 
+  <!-- CONTACT BADGES (Fixed Syntax) -->
   <p align="center">
     <a href="mailto:support@ishanparihar.com">
-      <img src="https://img.shields.io/badge/Email-support@ishanparihar.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+      <img src="https://img.shields.io/badge/Email-support%40ishanparihar.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
     </a>
+    &nbsp;
     <a href="https://www.linkedin.com/in/ishan-parihar-111ba3109/">
       <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
     </a>
+    &nbsp;
     <a href="https://ishanparihar.com">
       <img src="https://img.shields.io/badge/Website-ishanparihar.com-2ea44f?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
     </a>
@@ -31,26 +36,28 @@ INSTRUCTIONS:
 
 ## 👨‍💻 About Me
 
-I am a **Systems Architect** and **B.Arch Dropout** turned engineer, bridging the gap between silicon and soul. My work focuses on **Integral Theory**, **Quantitative Finance**, and **Collective Shadow Work**, using technology as a tool for systemic healing and self-actualization.
+I am a **Systems Architect** and **Quantitative Analyst** bridging the gap between silicon and soul. As a **B.Arch Dropout** turned engineer and current **B.A. Psychology (Honours)** student, I apply systemic design principles to both software architecture and human consciousness.
 
-- 🐧 **Linux & Infrastructure**: Power user daily driving **Arch Linux + KDE Plasma**. Expert in **Docker**, **n8n** automation, and deep system configuration.
-- 📉 **Quant Finance**: Developing algorithmic trading strategies using **ONNX**, **PyTorch**, and **TensorFlow** for market analysis.
-- 🧠 **Psychology & Spirituality**: integrating **Spiral Dynamics**, **The Law of One**, and **Sociology** to decipher culture wars.
-- 🛠️ **Full Stack**: Building next-gen web apps with **SvelteKit**, **Next.js**, and **Supabase**.
-- 📐 **Design Roots**: Leveraging a background in **AutoCAD**, **Revit**, and **V-Ray** to bring architectural precision to software design.
+My work focuses on **Integral Theory**, **Algorithmic Trading**, and **Collective Shadow Work**, using technology as a tool for systemic healing and self-actualization.
+
+- 🐧 **Linux & Infrastructure**: Daily driving **Arch Linux + KDE Plasma** on a 45" multi-window workflow. Expert in **Docker**, **n8n** automation, and deep system hardening.
+- 📉 **Quant Finance**: Engineering high-frequency trading strategies using **ONNX**, **PyTorch**, and **TensorFlow** with a focus on bias detection and risk sizing.
+- 🧠 **Psychology & Spirituality**: Integrating **Spiral Dynamics**, **The Law of One**, and **Sociology** to decipher culture wars and build "Psycho-Cinematic" applications.
+- 🛠️ **Full Stack**: Building next-gen web apps with **SvelteKit**, **Next.js**, **Supabase**, and **LangGraph** multi-agent systems.
+- 📐 **Design Roots**: Leveraging a background in **AutoCAD**, **Revit**, and **V-Ray** to bring architectural precision to digital workspaces.
 
 ---
 
-## 🔬 Research & Focus Areas
+## 🔬 Research & Key Projects
 
-Instead of traditional project listings, I organize my work into key research domains:
+I organize my public work into research domains that intersect technology and human behavior:
 
-| Domain | Focus & Technologies |
+| Domain | Focus & Repositories |
 | :--- | :--- |
-| **🤖 AI & Agents** | **Multi-Agent Systems** powered by **LangGraph** & **LangChain**. Developing autonomous agents for **OSINT** investigations and opinion analysis. |
-| **🎬 Psycho-Cinematics** | Automating video generation and lip-syncing using **psychological principles** and emotion-based shot selection. |
-| **📊 Algo Trading** | Building **Neural Network** based trading models (ONNX/ML) for high-frequency market data analysis. |
-| **🌍 Systemic Design** | Applying **Integral Theory** to software architecture, creating systems that account for human consciousness and cultural evolution. |
+| **🎬 Psycho-Cinematics** | **[CineSync](https://github.com/ishan-parihar/CineSync)**: Automating video generation and lip-syncing using psychological principles and emotion-based shot selection. |
+| **🤖 AI & Agents** | **Multi-Agent Systems** powered by **LangGraph** & **LangChain** for OSINT investigations and opinion analysis. |
+| **📊 Algo Trading** | **[AlphaForge](https://github.com/ishan-parihar/AlphaForge)** & **[TimeGPT](https://github.com/ishan-parihar/TimeGPT)**: Neural Network trading models (ONNX/ML) with bias detection and confidence scoring. |
+| **🏗️ AI-CAD** | **[AI-CAD](https://github.com/ishan-parihar/AI-CAD)**: Real-time collaborative design platform integrating AI into architectural workflows. |
 
 ---
 
@@ -81,7 +88,7 @@ Instead of traditional project listings, I organize my work into key research do
 <img src="https://img.shields.io/badge/KDE_Plasma-1D99F3?style=flat-square&logo=kde&logoColor=white" />
 <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
 <img src="https://img.shields.io/badge/AutoCAD-E44D26?style=flat-square&logo=autodesk&logoColor=white" />
-<img src="https://img.shields.io/badge/Revit-2496ED?style=flat-square&logo=autodesk&logoColor=white" />
+<img src="https://img.shields.io/badge/Kali_Linux-557C94?style=flat-square&logo=kali-linux&logoColor=white" />
 
 </div>
 
@@ -90,9 +97,10 @@ Instead of traditional project listings, I organize my work into key research do
 ## 📈 Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ishan-parihar&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=fff&icon_color=79ff97" alt="Ishan's GitHub Stats" />
+  <!-- Added count_private=true to fix empty stats issue -->
+  <img src="https://github-readme-stats.vercel.app/api?username=ishan-parihar&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97&icon_color=2ea44f&count_private=true&include_all_commits=true" alt="Ishan's GitHub Stats" />
   <br/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ishan-parihar&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=fff" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ishan-parihar&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97" alt="Top Languages" />
 </div>
 
 ---
@@ -103,4 +111,6 @@ Instead of traditional project listings, I organize my work into key research do
   <p>
     <a href="https://github.com/ishan-parihar?tab=repositories">View Public Repositories</a>
   </p>
+  <br/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0D1117&height=100&section=footer" width="100%"/>
 </div>
