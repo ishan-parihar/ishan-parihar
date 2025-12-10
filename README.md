@@ -127,6 +127,16 @@ I organize my public work into research domains that intersect technology and hu
       <img src="https://img.shields.io/badge/View_Public_Repositories-Click_Here-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="View Repos" />
     </a>
   </p>
-  
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0D1117&height=100&section=footer" width="100%"/>
 </div>
+
+<!-- Footer Wave: Uses a custom gradient to match your Tokyo Night green accents -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0D1117,2ea44f,79ff97&height=150&section=footer" width="100%" style="display: block;"/>
+
+<p align="center">
+  <a href="https://linkedin.com/in/your-linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+  <a href="mailto:your-email@example.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=ishan-parihar&style=for-the-badge&color=2ea44f&label=Profile+Views" alt="Profile Views" />
+</p>
