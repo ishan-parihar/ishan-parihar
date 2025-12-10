@@ -1,14 +1,19 @@
+<!-- 
+INSTRUCTIONS:
+1. Copy this code into your profile README.md
+2. The stats images should now load correctly with user 'ishan-parihar'
+-->
+
 <div align="center">
   
   <h1 align="center">Hi there, I'm Ishan Parihar 👋</h1>
   
-  <h3 align="center">Full Stack Developer | AI Engineer | Linux Systems Architect</h3>
+  <h3 align="center">Full Stack Developer | Quant Analyst | Systems Architect</h3>
 
   <p align="center">
-    <i>Building at the intersection of <b>Quantitative Finance</b>, <b>Integral Theory</b>, and <b>System Automation</b>.</i>
+    <i>"Re-engineering the source code of reality through systemic design and holonic architecture."</i>
   </p>
 
-  <!-- Social Links -->
   <p align="center">
     <a href="mailto:support@ishanparihar.com">
       <img src="https://img.shields.io/badge/Email-support@ishanparihar.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
@@ -26,50 +31,52 @@
 
 ## 👨‍💻 About Me
 
-I am a **Systems Architect** and **AI Engineer** based in India. My work is a synthesis of rigorous engineering and deep human insight. I bridge the gap between **Quantitative Finance**, **AI Automation**, and **Human Consciousness**.
+I am a **Systems Architect** and **B.Arch Dropout** turned engineer, bridging the gap between silicon and soul. My work focuses on **Integral Theory**, **Quantitative Finance**, and **Collective Shadow Work**, using technology as a tool for systemic healing and self-actualization.
 
-- 🐧 **Linux Power User**: Daily driving **Arch (KDE)**. I optimize workflows using custom automation scripts and deep system configuration.
-- 📉 **Quant & Finance**: Developing **Algorithmic Trading** systems using ONNX models, specializing in market data analysis.
-- 🏛️ **Design & Architecture**: Former **B.Arch student** with professional skills in **AutoCAD, Revit, and V-Ray**. I apply architectural thinking to software system design.
-- 🧘 **Integral Theory & Psychology**: Exploring the intersection of **Spiral Dynamics**, **The Law of One**, and **Collective Shadow Work** to build technology that heals rather than extracts.
-- 🎥 **Content Creator**: Documenting my journey in tech, self-actualization, and system design to build a personal brand.
-
----
-
-## 🌟 Featured Projects
-
-| Project | Description | Tech Stack | Status |
-| :--- | :--- | :--- | :--- |
-| **[🎬 CineSync](https://github.com/ishanparihar/CineSync)** | **Psycho-cinematic Automation Platform**<br>Intelligent lip-sync video generation using emotion analysis and film grammar rules. | ![Next JS](https://img.shields.io/badge/Next-black?style=flat-square&logo=next.js&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) | ![Production Ready](https://img.shields.io/badge/Status-Production-success) |
-| **[🕵️‍♂️ OSINT-OS](https://github.com/ishanparihar/OSINT-OS)** | **Intelligence Agency-Grade Platform**<br>Investigation suite with 23+ specialized AI agents and zero-trust security. | ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) | ![v2.0](https://img.shields.io/badge/Version-2.0-blue) |
-| **[🐠 BettaFish](https://github.com/ishanparihar/BettaFish)** | **Multi-Agent Public Opinion Analysis**<br>Sentiment analysis system where 5 AI agents "debate" in a forum to analyze social data. | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white) | ![Active](https://img.shields.io/badge/Status-Active-orange) |
-| **[⚡ AlphaForge](https://github.com/ishanparihar/AlphaForge)** | **Algorithmic Trading Strategy Engine**<br>Hybrid trading platform using ONNX-optimized models and neural networks. | ![ONNX](https://img.shields.io/badge/ONNX-005CED?style=flat-square&logo=onnx&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) | ![Beta](https://img.shields.io/badge/Status-Beta-yellow) |
+- 🐧 **Linux & Infrastructure**: Power user daily driving **Arch Linux + KDE Plasma**. Expert in **Docker**, **n8n** automation, and deep system configuration.
+- 📉 **Quant Finance**: Developing algorithmic trading strategies using **ONNX**, **PyTorch**, and **TensorFlow** for market analysis.
+- 🧠 **Psychology & Spirituality**: integrating **Spiral Dynamics**, **The Law of One**, and **Sociology** to decipher culture wars.
+- 🛠️ **Full Stack**: Building next-gen web apps with **SvelteKit**, **Next.js**, and **Supabase**.
+- 📐 **Design Roots**: Leveraging a background in **AutoCAD**, **Revit**, and **V-Ray** to bring architectural precision to software design.
 
 ---
 
-## 🛠️ Tech Stack & Arsenal
+## 🔬 Research & Focus Areas
+
+Instead of traditional project listings, I organize my work into key research domains:
+
+| Domain | Focus & Technologies |
+| :--- | :--- |
+| **🤖 AI & Agents** | **Multi-Agent Systems** powered by **LangGraph** & **LangChain**. Developing autonomous agents for **OSINT** investigations and opinion analysis. |
+| **🎬 Psycho-Cinematics** | Automating video generation and lip-syncing using **psychological principles** and emotion-based shot selection. |
+| **📊 Algo Trading** | Building **Neural Network** based trading models (ONNX/ML) for high-frequency market data analysis. |
+| **🌍 Systemic Design** | Applying **Integral Theory** to software architecture, creating systems that account for human consciousness and cultural evolution. |
+
+---
+
+## 🛠️ The Arsenal
 
 <div align="center">
 
-### **Full Stack & Cloud**
-<img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" />
-<img src="https://img.shields.io/badge/SvelteKit-FF3E00?style=flat-square&logo=svelte&logoColor=white" />
-<img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" />
+### **Core Stack**
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" />
+<img src="https://img.shields.io/badge/SvelteKit-FF3E00?style=flat-square&logo=svelte&logoColor=white" />
+<img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" />
+<img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" />
 
 <br/>
 
-### **AI & Quant**
-<img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=chainlink&logoColor=white" />
+### **AI & Data**
 <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
 <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" />
+<img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=chainlink&logoColor=white" />
 <img src="https://img.shields.io/badge/n8n-FF6584?style=flat-square&logo=n8n&logoColor=white" />
-<img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" />
+<img src="https://img.shields.io/badge/ONNX-005CED?style=flat-square&logo=onnx&logoColor=white" />
 
 <br/>
 
-### **System & Architecture**
+### **System & Design**
 <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white" />
 <img src="https://img.shields.io/badge/KDE_Plasma-1D99F3?style=flat-square&logo=kde&logoColor=white" />
 <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
@@ -80,25 +87,20 @@ I am a **Systems Architect** and **AI Engineer** based in India. My work is a sy
 
 ---
 
-## ⚡ Recent Activity
-
-- 🚀 **Deployed OSINT-OS v2.0**: Enhanced the multi-agent orchestration layer.
-- 🎬 **Updated CineSync**: Implemented a new "Psychology Engine" for video pacing.
-- 🐧 **Ricing**: Daily driving Arch + KDE Plasma optimized for high-performance dev work.
-- 📚 **Studying**: Deep diving into **Spiral Dynamics** and **Collective Shadow Work** to inform AI safety design.
-
----
-
 ## 📈 Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ishanparihar&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=fff&icon_color=79ff97" alt="Ishan's GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=ishan-parihar&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=fff&icon_color=79ff97" alt="Ishan's GitHub Stats" />
   <br/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ishanparihar&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=fff" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ishan-parihar&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=fff" alt="Top Languages" />
 </div>
 
 ---
 
 <div align="center">
   <p><i>"The goal of automation is not just efficiency, but the liberation of human creativity."</i></p>
+  
+  <p>
+    <a href="https://github.com/ishan-parihar?tab=repositories">View Public Repositories</a>
+  </p>
 </div>
