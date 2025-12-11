@@ -2,21 +2,24 @@
   GITHUB PROFILE README
   User: ishan-parihar
   Theme: Tokyonight (aligned with Arch/KDE aesthetics)
+  Refactored: Fixed Stats, Visible Footer, Dynamic Header
 -->
 
 <div align="center">
   
-  <h1 align="center">Hi there, I'm Ishan Parihar 👋</h1>
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="30px"/>
+  <h1 align="center">Hi there, I'm Ishan Parihar</h1>
   
-  <h3 align="center">
-    Systems Architect | Quantitative Analyst | Psychology Researcher
-  </h3>
+  <!-- DYNAMIC TYPING HEADER -->
+  <a href="https://github.com/ishan-parihar">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&pause=1000&color=79FF97&center=true&vCenter=true&width=600&lines=Systems+Architect+%7C+Quantitative+Analyst;Psychology+Researcher+%7C+Holonic+Design;Re-engineering+Reality...&height=40" alt="Typing SVG" />
+  </a>
 
   <p align="center">
     <i>"Re-engineering the source code of reality through systemic design and holonic architecture."</i>
   </p>
 
-  <!-- CONTACT BADGES (Fixed Syntax) -->
+  <!-- CONTACT BADGES -->
   <p align="center">
     <a href="mailto:support@ishanparihar.com">
       <img src="https://img.shields.io/badge/Email-support%40ishanparihar.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
@@ -42,15 +45,13 @@ My work focuses on **Integral Theory**, **Algorithmic Trading**, and **Collectiv
 
 - 🐧 **Linux & Infrastructure**: Daily driving **Arch Linux + KDE Plasma** on a 45" multi-window workflow. Expert in **Docker**, **n8n** automation, and deep system hardening.
 - 📉 **Quant Finance**: Engineering high-frequency trading strategies using **ONNX**, **PyTorch**, and **TensorFlow** with a focus on bias detection and risk sizing.
-- 🧠 **Psychology & Spirituality**: Integrating **Spiral Dynamics**, **The Law of One**, and **Sociology** to decipher culture wars and build "Psycho-Cinematic" applications.
+- 🧠 **Psychology & Spirituality**: Integrating **Spiral Dynamics** and **The Law of One** to build "Psycho-Cinematic" applications.
 - 🛠️ **Full Stack**: Building next-gen web apps with **SvelteKit**, **Next.js**, **Supabase**, and **LangGraph** multi-agent systems.
 - 📐 **Design Roots**: Leveraging a background in **AutoCAD**, **Revit**, and **V-Ray** to bring architectural precision to digital workspaces.
 
 ---
 
 ## 🔬 Research & Key Projects
-
-I organize my public work into research domains that intersect technology and human behavior:
 
 | Domain | Focus & Repositories |
 | :--- | :--- |
@@ -65,30 +66,9 @@ I organize my public work into research domains that intersect technology and hu
 
 <div align="center">
 
-### **Core Stack**
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-<img src="https://img.shields.io/badge/SvelteKit-FF3E00?style=flat-square&logo=svelte&logoColor=white" />
-<img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" />
-<img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" />
-
-<br/>
-
-### **AI & Data**
-<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
-<img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" />
-<img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=chainlink&logoColor=white" />
-<img src="https://img.shields.io/badge/n8n-FF6584?style=flat-square&logo=n8n&logoColor=white" />
-<img src="https://img.shields.io/badge/ONNX-005CED?style=flat-square&logo=onnx&logoColor=white" />
-
-<br/>
-
-### **System & Design**
-<img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white" />
-<img src="https://img.shields.io/badge/KDE_Plasma-1D99F3?style=flat-square&logo=kde&logoColor=white" />
-<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
-<img src="https://img.shields.io/badge/AutoCAD-E44D26?style=flat-square&logo=autodesk&logoColor=white" />
-<img src="https://img.shields.io/badge/Kali_Linux-557C94?style=flat-square&logo=kali-linux&logoColor=white" />
+| Core Stack | AI & Data | System & Design |
+| :---: | :---: | :---: |
+| <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" /><br><img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" /><br><img src="https://img.shields.io/badge/SvelteKit-FF3E00?style=flat-square&logo=svelte&logoColor=white" /><br><img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" /><br><img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" /> | <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" /><br><img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" /><br><img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=chainlink&logoColor=white" /><br><img src="https://img.shields.io/badge/n8n-FF6584?style=flat-square&logo=n8n&logoColor=white" /><br><img src="https://img.shields.io/badge/ONNX-005CED?style=flat-square&logo=onnx&logoColor=white" /> | <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white" /><br><img src="https://img.shields.io/badge/KDE_Plasma-1D99F3?style=flat-square&logo=kde&logoColor=white" /><br><img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" /><br><img src="https://img.shields.io/badge/AutoCAD-E44D26?style=flat-square&logo=autodesk&logoColor=white" /><br><img src="https://img.shields.io/badge/Kali_Linux-557C94?style=flat-square&logo=kali-linux&logoColor=white" /> |
 
 </div>
 
@@ -96,26 +76,19 @@ I organize my public work into research domains that intersect technology and hu
 
 ## 📈 Stats & Analytics
 
-<table width="100%">
-  <tr>
-    <td width="50%" valign="top">
-      <img src="https://github-readme-stats.vercel.app/api?username=ishan-parihar&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97&icon_color=2ea44f&text_color=999&count_private=true&cache_seconds=1800" alt="Ishan's GitHub Stats" />
-    </td>
-    <td width="50%" valign="top">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ishan-parihar&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97&icon_color=2ea44f&text_color=999&langs_count=8&cache_seconds=1800" alt="Top Languages" />
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top">
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=ishan-parihar&theme=tokyonight&hide_border=true&background=0D1117&ring=2ea44f&fire=79ff97&currStreakNum=79ff97&sideLabels=999&dates=999" alt="GitHub Streak" width="100%" />
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top">
-      <img src="https://github-readme-activity-graph.vercel.app/graph?username=ishan-parihar&theme=tokyonight&bg_color=0D1117&color=79ff97&line=2ea44f&point=79ff97&area=true&hide_border=true" alt="Activity Graph" width="100%" />
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <!-- Fixed: Removed count_private=true to ensure cards load on public instance -->
+  <a href="https://github.com/ishan-parihar">
+    <img src="https://github-readme-stats.vercel.app/api?username=ishan-parihar&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97&icon_color=2ea44f&text_color=999&cache_seconds=1800" height="150" alt="stats graph" />
+  </a>
+  <a href="https://github.com/ishan-parihar">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ishan-parihar&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97&icon_color=2ea44f&text_color=999&langs_count=8&cache_seconds=1800" height="150" alt="top languages" />
+  </a>
+  <br/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ishan-parihar&theme=tokyonight&hide_border=true&background=0D1117&ring=2ea44f&fire=79ff97&currStreakNum=79ff97&sideLabels=999&dates=999" alt="GitHub Streak" width="98%" />
+  <br/>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ishan-parihar&theme=tokyonight&bg_color=0D1117&color=79ff97&line=2ea44f&point=79ff97&area=true&hide_border=true" alt="Activity Graph" width="98%" />
+</div>
 
 ---
 
@@ -127,8 +100,11 @@ I organize my public work into research domains that intersect technology and hu
       <img src="https://img.shields.io/badge/View_Public_Repositories-Click_Here-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="View Repos" />
     </a>
   </p>
+  
+  <p>
+    <img src="https://komarev.com/ghpvc/?username=ishan-parihar&style=flat-square&color=2ea44f&label=Profile+Views" alt="Profile Views" />
+  </p>
 </div>
 
-<!-- Footer Wave: Uses a custom gradient to match your Tokyo Night green accents -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0D1117,2ea44f,79ff97&height=150&section=footer" width="100%" style="display: block;"/>/komarev.com/ghpvc/?username=ishan-parihar&style=for-the-badge&color=2ea44f&label=Profile+Views" alt="Profile Views" />
-</p>
+<!-- FIXED FOOTER: Added gradient customColorList to make wave visible against background -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0D1117,2ea44f,79ff97&height=150&section=footer" width="100%" style="display: block;"/>
