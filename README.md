@@ -76,22 +76,29 @@ My work focuses on **Integral Theory**, **Algorithmic Trading**, and **Collectiv
 
 ## 📈 Stats & Analytics
 
+## 📈 Stats & Analytics
+
 <div align="center">
-
-[![Ishan's GitHub Stats](https://github-readme-stats.vercel.app/api?username=ishan-parihar&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97&icon_color=2ea44f&text_color=999&t=1)](https://github.com/ishan-parihar)
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ishan-parihar&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97&icon_color=2ea44f&text_color=999&langs_count=8&t=1)](https://github.com/ishan-parihar)
-
-<br/>
-
-<!-- STREAK STATS: Using stable Demolab instance -->
-[![GitHub Streak](https://streak-stats.demolab.com/?user=ishan-parihar&theme=tokyonight&hide_border=true&background=0D1117&ring=2ea44f&fire=79ff97&currStreakNum=79ff97&sideLabels=999&dates=999)](https://github.com/ishan-parihar)
-
-<br/>
-
-<!-- ACTIVITY GRAPH -->
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=ishan-parihar&theme=tokyonight&bg_color=0D1117&color=79ff97&line=2ea44f&point=79ff97&area=true&hide_border=true)](https://github.com/ishan-parihar)
-
+  <table width="100%" style="border: none;">
+    <tr>
+      <td width="50%" align="center" style="border: none;">
+        <img src="https://github-readme-stats.vercel.app/api?username=ishan-parihar&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97&icon_color=2ea44f&text_color=999" alt="Ishan's GitHub Stats" />
+      </td>
+      <td width="50%" align="center" style="border: none;">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ishan-parihar&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=79ff97&icon_color=2ea44f&text_color=999&langs_count=8" alt="Top Languages" />
+      </td>
+    </tr>
+  </table>
+  
+  <br/>
+  
+  <!-- Fixed: Switched from broken Heroku link to working Vercel instance -->
+  <img src="https://github-readme-streak-stats-eight.vercel.app/?user=ishan-parihar&theme=tokyonight&hide_border=true&background=0D1117&ring=2ea44f&fire=79ff97&currStreakNum=79ff97&sideLabels=999&dates=999" alt="GitHub Streak" width="95%" />
+  
+  <br/>
+  <br/>
+  
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ishan-parihar&theme=tokyonight&bg_color=0D1117&color=79ff97&line=2ea44f&point=79ff97&area=true&hide_border=true" alt="Activity Graph" width="95%" />
 </div>
-
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0D1117,2ea44f,79ff97&height=150&section=footer" width="100%" style="display: block;"/>
