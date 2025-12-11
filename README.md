@@ -7,7 +7,7 @@
 
 <div align="center">
   
-  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="30px"/>
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="40%"/>
   <h1 align="center">Hi there, I'm Ishan Parihar</h1>
   
   <!-- DYNAMIC TYPING HEADER -->
