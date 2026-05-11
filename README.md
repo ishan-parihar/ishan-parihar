@@ -61,15 +61,17 @@ The hardest problem in agentic systems isn't making the LLM smart — it's keepi
 
 `hermes-rs` implements a custom **state-machine parser** that detects tool calls incrementally. It can recover intent from truncated output, execute tools before the response finishes streaming, and maintain loop integrity even with unstable network connections. The "validated autonomous" mode enforces a strict Plan → Implement → Validate → Push cycle — the agent *cannot* push unless `cargo test` passes.
 
-### 📡 [igs-mcp](https://www.npmjs.com/package/igs-mcp-server) (npm) → Rust Port
-**Intelligence Gathering System — 223+ sources across 45 countries.**
+### 📡 [igs-rust-mcp](https://github.com/ishan-parihar/igs-rust-mcp)
+**Intelligence Gathering System — Rust flagship.** ~7MB static binary, ~5MB RSS.
 
-Started as a TypeScript MCP server published to npm. The Rust port (`igs-rust-mcp`) is the real flagship — it dramatically reduces memory footprint and eliminates Node.js runtime dependency, enabling deployment on resource-constrained infrastructure. Same 223+ curated sources, 14 intelligence pools, local NLP enrichment — but now a ~8MB static binary instead of a 100MB+ Node process.
+223+ curated sources across 45 countries, 14 intelligence pools, local NLP enrichment — all in a ~7MB stripped binary with ~5MB idle RSS. TOON (Token-Oriented Object Notation) reduces token consumption by 40–60% for AI agent consumption.
+
+Started as a TypeScript proof-of-concept [published to npm](https://www.npmjs.com/package/igs-mcp-server) — the Rust port is the real flagship: dramatically lower memory/runtime, deployable anywhere including resource-constrained infrastructure. The evolution from Node → Rust tells the engineering story: same intelligence pipeline, radically smaller footprint.
 
 - 9 custom parsers (RSS, Atom, HTML, OFAC, WHO, Semantic Scholar, PDF, Google News proxy)
 - Pool-based source organization (Global Breaking, Geopolitics, Tech/Cyber, India National, etc.)
 - Hybrid pipeline: news feeds + academic archives (arXiv, Semantic Scholar) + Reddit
-- ~90% cache hit ratio, ~2s cold start
+- TOON format for token-efficient AI agent output (~40-60% reduction)
 
 ### 🎬 [openscript](https://github.com/ishan-parihar/openscript)
 **AI-directed video editing pipeline — raw footage to polished reel.** 43 MCP tools. Rust + Python + TS.
@@ -166,7 +168,8 @@ These projects are private — source isn't public. I'm building them as a produ
 
 | Package | Platform | Install | Note |
 |---------|----------|---------|------|
-| **igs-mcp-server** | [npm](https://www.npmjs.com/package/igs-mcp-server) | `npm install igs-mcp-server` | TypeScript version — Rust port in development |
+| **igs-rust-mcp** ⬆️ | [GitHub](https://github.com/ishan-parihar/igs-rust-mcp) | Rust ~7MB binary | Flagship — Rust port, ~5MB RSS, TOON token optimization |
+| **igs-mcp-server** | [npm](https://www.npmjs.com/package/igs-mcp-server) | `npm install igs-mcp-server` | Initial TypeScript proof-of-concept |
 | **instagram-scraper-mcp** | [PyPI](https://pypi.org/project/instagram-scraper-mcp/) | `uvx instagram-scraper-mcp` | — |
 
 ---
