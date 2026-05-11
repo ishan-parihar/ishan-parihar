@@ -1,112 +1,211 @@
 <div align="center">
 
-# 👋 Ishan Parihar — The AI Tradesman
+# Ishan Parihar
 
-**Rust + MCP Infrastructure · Multi-Agent Orchestration · Systems Architecture**
+**AI Tradesman · Rust + Agent Infrastructure · Multi-Agent Orchestration**
 
 📧 [support@ishanparihar.com](mailto:support@ishanparihar.com) · 🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar-111ba3109/)
-📍 Noida, India · 🤝 Independent
+📍 Noida, India · ✈️ Open to remote
 
 [![Available for Work](https://img.shields.io/badge/-AVAILABLE%20FOR%20WORK-brightgreen?style=for-the-badge&color=2ea44f)](https://github.com/ishan-parihar)
 [![Rust](https://img.shields.io/badge/Rust-ed8b00?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![MCP](https://img.shields.io/badge/MCP-000000?style=for-the-badge&logo=protocol&logoColor=white)](https://modelcontextprotocol.io/)
-[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![Svelte](https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)](https://svelte.dev/)
-[![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![MCP](https://img.shields.io/badge/MCP-555555?style=for-the-badge&logo=github&logoColor=white)](https://modelcontextprotocol.io/)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Zig](https://img.shields.io/badge/Zig-F7A41D?style=for-the-badge&logo=zig&logoColor=white)](https://ziglang.org/)
-[![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
+
+*I build the infrastructure that makes AI agents useful in the real world.*  
+47 projects across MCP ecosystems, agent runtimes, and systems engineering — all in Rust, TypeScript, and Python.
 
 </div>
 
 ---
 
-I'm a **production craftsman of AI infrastructure** — not a researcher writing papers or a consultant drawing slides. I build the actual systems: agent runtimes, MCP servers, automation engines, and the protocol layer that connects AI to the world.
+## What I Do
 
-37 repositories across 9 categories. 7+ MCP servers published (npm, PyPI, GitHub). Rust at the core — TypeScript and Python where they fit.
+I am an **AI Tradesman** — not a researcher, not a consultant, but a craftsman who builds the production infrastructure that AI agents operate through. My work sits at the intersection of **systems programming (Rust)** and **agentic AI**: MCP servers that give agents real-world capabilities, runtimes that keep them reliable, and pipelines that turn raw capability into finished output.
+
+Everything I build is **shippable** — published to npm/PyPI, compiled to static binaries, deployable via systemd or Docker. No Jupyter notebooks. No throwaway scripts.
 
 ---
 
-## 🔥 Flagship Projects
+## Flagship Projects
+
+These are the projects that best define my engineering identity — solving hard infrastructure problems for AI agents.
 
 ### ⚙️ [automaton](https://github.com/ishan-parihar/automaton)
-**Rust graph-native automation engine** — 39 MCP tools across a DAG-based execution model. Graph-native architecture where every node is an MCP tool and edges define dataflow. Built for complex multi-step automation that most frameworks can't express.
+**Graph-native automation substrate for AI agents.** Rust. 39 MCP tools.
 
-### 🧠 [hermes-rs](https://github.com/ishan-parihar/hermes-rs)
-**Rust ReAct agent loop** — Streaming-tolerant parsing engine that handles malformed LLM output, partial tool calls, and recovery mid-stream. Validated autonomous development mode. Pure Rust, no framework overhead.
+The fundamental insight: traditional automation tools (shell scripts, CI pipelines, no-code) are designed for humans, not AI agents. Agents can't "see" dependency graphs, can't recover gracefully from partial failures, can't compose capabilities dynamically.
 
-### 🎬 [OpenScript](https://github.com/ishan-parihar/OpenScript)
-**AI-directed video editing pipeline** — 43 MCP tools across Rust (core engine), Python (ML inference), and TypeScript (UI). 17,800+ LOC. Transcription → timeline editing → TTS → b-roll → SFX → music → motion graphics → post-render verification. Full AI-directed pipeline.
+`automaton` replaces the script with a **graph-based module** — every automation unit is a self-contained node with typed inputs/outputs, a content-addressed build cache, and a property graph of capabilities. The engine materializes branching, loops, and parallelism into a DAG, executes with level-based parallel dispatch via Tokio, and exposes the entire lifecycle through MCP.
 
-### 🔄 [ai-mcp-server](https://github.com/ishan-parihar/ai-mcp-server) 
-**8 AI providers, one MCP interface** — Reverse-engineered Anthropic, OpenAI, Google, Groq, OpenRouter, DeepSeek, xAI, and Perplexity APIs into a unified Rust MCP server. ~8MB musl binary, no runtime dependencies. A tour de force of API reverse-engineering.
+- 8 Rust crates (core, SDK with proc macro, CLI, engine, registry, graph, MCP, runtime)
+- Dual-backend SQLite/PostgreSQL with unified query layer
+- Static musl binary (~14MB), zero runtime dependencies
+- Production scheduler with cron expressions
+- Process group isolation — no orphan shells on crash
 
-### 🤖 [operant](https://github.com/ishan-parihar/operant)
-**Multi-agent C-suite** — 227 tests, LanceDB persistent memory, systemd deployment. CEO/CTO/COO/Researcher agents collaborate with shared context. 35+ MCP tools across 25+ database tables (Drizzle + Postgres). Deployed to production.
+### 🧠 [ai-mcp-server](https://github.com/ishan-parihar/ai-mcp-server)
+**Unified AI gateway — 8 providers, zero API keys, real SSE streaming.** Rust. 8.2MB static binary.
 
-### 🌐 [igs-mcp](https://github.com/ishan-parihar/igs-mcp)
-**Intelligence gathering at scale** — 223+ global news sources across 45 countries, unified through MCP. Dual Rust (core) + Node (npm published) packages. Real-time multi-source aggregation with structured reporting.
+The problem: every AI provider has a different auth scheme, different API format, different streaming protocol. Managing API keys for all of them is friction. This server reverse-engineers each provider's session auth and exposes them through a single OpenAI-compatible API — no keys required, just your browser cookies.
 
-### 📱 [wacli-mcp](https://github.com/ishan-parihar/wacli-mcp)
-**WhatsApp MCP server** — 28 tools for messaging, group management (invite/link/approve/remove), media send (image/video/document), per-agent access control scoping. Production WhatsApp automation infrastructure.
+The engineering depth is in the provider-specific SSE parsers: Kimi uses JWT-based streaming with `event: cmpl` frames, Perplexity uses custom `blocks[]` → `chunks[]` deduplication, GLM needs xpath-based JSON extraction from nested responses, Gemini requires a Playwright Firefox proxy because its entire API flows through JS-executed protobuf calls. Each has a custom `AiProvider` trait implementation with native byte-stream parsing.
 
-### 🏗️ [icode](https://github.com/ishan-parihar/icode)
-**Policy-driven agent runtime** — 156,000+ LOC across 20 Rust crates. Hierarchical delegation, MCP server lifecycle management, LSP client dispatch, permission enforcement with granular policies. Agent infrastructure at scale.
+- 46 models across 7/8 working providers (Kimi, Qwen, Gemini, GLM, Perplexity, ChatGPT, Claude — DeepSeek needs re-login)
+- OpenAI-compatible `/v1/chat/completions` and `/v1/models` endpoints
+- Playwright Firefox sidecar for JS-dependent providers
+- Cookie auto-import from Zen/Firefox/Chrome SQLite stores
+- Docker compose with read-only cookie mount, non-root user, health checks
+
+### ⚡ [hermes-rs](https://github.com/ishan-parihar/hermes-rs)
+**Streaming-first, fault-tolerant agent orchestration loop.** Rust. Ratatui TUI.
+
+The hardest problem in agentic systems isn't making the LLM smart — it's keeping the loop running when the LLM produces malformed output. Standard parsers crash on unclosed XML tags or broken JSON, taking down the entire agent.
+
+`hermes-rs` implements a custom **state-machine parser** that detects tool calls incrementally. It can recover intent from truncated output, execute tools before the response finishes streaming, and maintain loop integrity even with unstable network connections. The "validated autonomous" mode enforces a strict Plan → Implement → Validate → Push cycle — the agent *cannot* push unless `cargo test` passes.
+
+- Streaming-tolerant parsing for malformed LLM output
+- Autonomous development mode with hard test gate
+- Dynamic ToolRegistry with MCP compatibility
+- LTO-optimized, stripped binary
+
+### 🎬 [openscript](https://github.com/ishan-parihar/openscript)
+**AI-directed video editing pipeline — raw footage to polished reel.** 43 MCP tools. Rust + Python + TS.
+
+Most "AI video" tools generate from text. This takes real raw footage and edits it professionally: transcription → creative brief → multi-track timeline → rendered 9:16 reel with captions, b-roll, music ducking, and SFX.
+
+The pipeline runs as 43 MCP tools across 6 independent tracks (dialogue, voiceover, captions, b-roll, music, SFX). The AI agent directs like a human editor — choosing which b-roll concepts to use, which music mood fits, where to place sound effects — and the engine executes the technical work.
+
+- 6-track Edit Decision List (EDL v2) with full validation
+- Apex transcription (Hinglish-optimized Whisper) with word-level timestamps
+- `faster-qwen3-tts` voiceover engine with voice profile registry
+- 261 indexed SFX + 16 music tracks with mood/role-based search
+- Pexels API b-roll with director-mode concept extraction
+- FFmpeg rendering with automatic audio ducking
+- Post-render verification layer (audio levels, caption sync, render fidelity)
+- 8 Rust crates + Python orchestration + Remotion TypeScript compositions
+
+### 📡 [igs-mcp](https://github.com/ishan-parihar/igs-mcp) — [npm](https://www.npmjs.com/package/igs-mcp-server)
+**Intelligence Gathering System — 223+ sources across 45 countries.** TypeScript. Published npm.
+
+An MCP server that treats the global news web as a single queryable database. Monitors 223+ curated RSS/Atom/HTML feeds across 14 pre-configured intelligence pools (Global Breaking, Geopolitics, Tech/Cyber, India National, India Investigative, etc.) with local NLP enrichment for entity extraction and sentiment analysis.
+
+The hybrid research pipeline integrates news feeds with academic archives (arXiv, Semantic Scholar) and community discourse (Reddit), enabling "triangulation" workflows — identify a breaking trend in news, verify via Semantic Scholar paper, gauge sentiment via Reddit — all in one agent reasoning loop.
+
+- 9 custom parsers (RSS, Atom, HTML, OFAC, WHO, Semantic Scholar, PDF, Google News proxy)
+- Pool-based source organization for rapid intelligence pivoting
+- ~90% cache hit ratio, ~2s cold start, 50-150MB memory
 
 ---
 
-## 📦 Published MCP Ecosystem
+## MCP Ecosystem (15+ Servers)
 
-| Package | Platform | Description |
-|---|---|---|
-| **igs-mcp-server** | [npm](https://www.npmjs.com/package/igs-mcp-server) | 223+ sources, 45 countries, intelligence gathering |
-| **instagram-scraper-mcp** | [PyPI](https://pypi.org/project/instagram-scraper-mcp/) | Instagram content scraping, anti-detection engineering |
-| **MT5-mcp** | GitHub | MetaTrader 5 trading with regime detection |
-| **gog-cli-mcp** | GitHub | 53 Google tools with persona configuration |
-| **postiz-rust** | GitHub | Dual-interface REST + MCP server |
-| **carousel-mcp** | GitHub | OKLCH color system, WCAG-AA compliant |
-| **perplexity-mcp** | GitHub | 15 models, browser-cookie auth |
-| **n8n-compiler** | GitHub | Workflow compilation to MCP |
-| **lifeos-ops** | GitHub | Rust CLI + MCP, 5MB static binary, Notion integration |
+I've built what may be the largest independent MCP server ecosystem — infrastructure that gives AI agents structured access to real-world systems.
 
----
-
-## 🔬 Select Technical Highlights
-
-- **holosim-infinite** — 650+ Rust modules, universal template compression (MERA architecture), cosmic simulation platform
-- **operant-mcp** — 35 MCP tools, 25+ DB tables, Drizzle + Postgres, multi-agent orchestration
-- **social-media-platform** — Rust-first decentralized social, ActivityPub + AT Protocol, DID/WebAuthn
-- **design-aesthetics-website** — 86K LOC, Next.js 16/React 19/Three.js/GSAP/OGL shaders, procedural art
-- **ishanparihar-svelte** — SvelteKit 5 production SaaS, Razorpay/Redis/Supabase, multi-tenant
-- **nextjs-site** — 74K LOC, Next.js 15 with Auth.js/Supabase/MDX, content platform
-- **sovereign** — 7-domain LifeOS, voice-coached fitness with Kokoro TTS (54+ voices, <0.1s cache latency)
-- **thinking-steroid** — 12 cognitive modalities for LLM reasoning enhancement
+| Server | Tools | What It Does |
+|--------|-------|------|
+| **[gog-cli-mcp](https://github.com/ishan-parihar/gog-cli-mcp)** | 53 | Google Workspace (Calendar, Gmail, Contacts, Drive, Forms, Documents) with per-agent tool scoping |
+| **[wacli-mcp](https://github.com/ishan-parihar/wacli-mcp)** | 28 | WhatsApp messaging, groups, contacts, media — session-aware transport, per-agent access control |
+| **[instagram-mcp-server](https://github.com/stickerdaniel/instagram-mcp-server)** → [PyPI](https://pypi.org/project/instagram-scraper-mcp/) | 28+ | Instagram profile, content, messaging, insights — three-mode browser architecture, innerText extraction, zero CSS dependency |
+| **[postiz-rust](https://github.com/ishan-parihar/postiz-rust)** | 15+ | Social media scheduling engine — dual-interface (REST + MCP), trait-based providers, SSE event stream |
+| **[ishanparihar-com-mcp](https://github.com/ishan-parihar/ishanparihar.com-mcp)** | 60+ | Full website backend — content, products, courses, assessments, newsletter, analytics, orders |
+| **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** | 12 | Cognitive modality library — forced reasoning topologies, DAG-based orchestration, epistemic status framework |
+| **[operant-mcp](https://github.com/ishan-parihar/operant)** | 35 | Multi-agent orchestration — 25+ DB tables, Drizzle + PostgreSQL, MCP bridge |
+| **[carousel-mcp](https://github.com/ishan-parihar/carousel-mcp)** | — | Carousel content generation with OKLCH color system, WCAG-AA compliance |
+| **[perplexity-mcp-server](https://github.com/ishan-parihar/perplexity-mcp-server)** | — | 15 Perplexity models, browser-cookie auth |
+| **n8n-compiler** | — | n8n workflow compilation to MCP tools |
 
 ---
 
-## 🛠️ Tech Stack
+## Agent Infrastructure
+
+| Project | Tech | What It Does |
+|---------|------|------|
+| **[icode](https://github.com/ishan-parihar/icode)** | Rust (20 crates, 156K LOC) | Hardened runtime for AI coding agents — policy-driven permission engine, hierarchical agent delegation, SQLite-backed session management with atomic snapshots, tool parity harness |
+| **[operant](https://github.com/ishan-parihar/operant)** | TypeScript (227 tests) | Multi-agent C-suite — CEO, COO, CFO, CRO, CMO, CPO agents with Kanban boards, LanceDB memory, Telegram interface, systemd deployment |
+| **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** | Rust (CLI + MCP) | Notion-based personal operating system — bidirectional sync with 3-way merge, role-based intelligence briefing, strategic simulator |
+
+---
+
+## LifeOS Ecosystem
+
+A personal sovereignty system spanning 5+ integrated projects:
+
+| Project | Tech | Purpose |
+|---------|------|---------|
+| **lifeos-ops** | Rust CLI + MCP | Notion sync, data science, strategic simulation |
+| **lifeos-saas** | Zig + TypeScript + Python | 6-container Docker SaaS, NullClaw + Honcho |
+| **lifeos-website** | SvelteKit + Rust + Convex | Production multi-tenant website |
+| **operant** | TypeScript | Multi-agent C-suite with memory + Telegram |
+| **sovereign** | Python (7 domains) | Event-driven domain architecture — Nexus pub/sub, cron scheduler, Telegram/Notion gateways |
+| **workout-factory** | Python (9.4K LOC) | Offline TTS AI fitness trainer — progressive overload, 4-tier audio caching (<0.1s) |
+
+---
+
+## Full-Stack Websites
+
+| Project | Stack | Scale |
+|---------|-------|-------|
+| **[design-aesthetics-website](https://github.com/ishan-parihar/design-aesthetics-website)** | Next.js 16, React 19, Three.js, GSAP, OGL shaders | ~86K LOC, 227 files |
+| **[ishanparihar-svelte](https://github.com/ishan-parihar/ishanparihar-svelte)** | SvelteKit 5, Razorpay, Redis, Supabase | Production SaaS |
+| **[nextjs-site](https://github.com/ishan-parihar/nextjs-site)** | Next.js 15, Auth.js, Supabase, MDX | ~74K LOC, 409 files, content platform |
+| **[vectura-labs](https://github.com/ishan-parihar/vectura-labs)** | — | Company website with brand psychology design system |
+| **[webdev-portfolio](https://github.com/ishan-parihar/webdev-portfolio)** | — | Conversion-focused freelance portfolio |
+
+---
+
+## Experiments & Explorations
+
+| Project | Scale | What It Is |
+|---------|-------|------|
+| **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)** | 650+ Rust files | Cosmic simulation engine — MERA tensor compression ($O(n^{2/3})$ memory), 22-archetype consciousness system, fractal multi-scale (9 levels, 61 orders of magnitude) |
+| **[osint-os/scrapecraft](https://github.com/ishan-parihar/OSINT-OS)** | 23+ AI agents | Intelligence agency-grade OSINT platform — zero-trust architecture, WebSocket real-time collaboration, 100+ REST endpoints |
+| **[social-media-platform](https://github.com/ishan-parihar/social-media-platform)** | Planning | Rust-first decentralized social — DID/WebAuthn, ActivityPub/AT Protocol, portable identity layer, anti-blockchain stance |
+| **[cinesync](https://github.com/ishan-parihar/CineSync)** | 1.7K LOC | Emotion-aware ML cinematography — 8-emotion model for shot selection |
+| **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)** | — | Voice clone + binaural TTS system |
+
+---
+
+## Published Packages
+
+| Package | Platform | Install |
+|---------|----------|---------|
+| **igs-mcp-server** | [npm](https://www.npmjs.com/package/igs-mcp-server) | `npm install igs-mcp-server` |
+| **instagram-scraper-mcp** | [PyPI](https://pypi.org/project/instagram-scraper-mcp/) | `uvx instagram-scraper-mcp` |
+
+---
+
+## Tech Stack
 
 | Domain | Technologies |
-|---|---|
-| **Systems** | Rust (15+ projects), Zig, C |
-| **Backend** | Python (FastAPI, LangChain), TypeScript (Node, Deno, Next.js) |
-| **Frontend** | Next.js 15/16, React 19, SvelteKit 5, Tailwind, shadcn/ui, Three.js, GSAP |
-| **AI/ML** | PyTorch, ONNX, Kokoro TTS, LangGraph, multi-agent architectures |
-| **Infrastructure** | Docker, K8s, GitHub Actions, Systemd, n8n |
-| **Databases** | PostgreSQL, Supabase (RLS), SQLite, LanceDB, Redis |
-| **Protocol** | **MCP** (7+ servers), REST, WebSocket, gRPC |
-| **Trading** | MetaTrader 5, MQL5, regime detection, ATR sizing |
+|--------|------|
+| **Languages** | Rust, TypeScript, Python, JavaScript, SQL, Zig, MQL5 |
+| **Backend** | Axum, FastAPI, Next.js API Routes, Express, Deno |
+| **Frontend** | Next.js 16, React 19, SvelteKit 5, Tailwind CSS, shadcn/ui, Three.js, GSAP |
+| **Database** | PostgreSQL, SQLite, Supabase, Convex, LanceDB, Redis |
+| **Protocol** | MCP (Model Context Protocol) — 15+ servers, 300+ total tools |
+| **AI/ML** | OpenAI API, Anthropic API, Gemini, local LLMs (Ollama), Whisper, TTS |
+| **Infrastructure** | Docker, systemd, GitHub Actions, n8n, Docker Compose |
 
 ---
 
-## 🏗️ Currently Building
+## Portfolio Summary
 
-Multi-agent orchestration frameworks in Rust. MCP ecosystem expansion. AI-assisted creative pipelines. The infrastructure layer that makes AI actually useful.
+```
+47 projects across 9 categories:
+
+MCP-AND-CLIS      15 — AI agent infrastructure, real-world tool access
+EXPERIMENTAL       7 — Cosmic simulation, OSINT, decentralized social, TTS
+LIFEOS             5 — Personal sovereignty operating system
+WEBSITES           5 — Production full-stack applications
+HERMES             4 — Agent orchestration runtimes
+CONTENT-CREATION   2 — Video editing pipeline, cinematography
+DEVELOPER-TOOLS    2 — AI coding runtimes
+N8N-WORKFLOWS      1 — Automation configurations
+SOCIAL-MEDIA       1 — Decentralized social platform
+```
 
 ---
 
@@ -115,5 +214,8 @@ Multi-agent orchestration frameworks in Rust. MCP ecosystem expansion. AI-assist
 [![GitHub Stats](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ishan-parihar&theme=tokyonight)](https://github.com/ishan-parihar)
 
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=ishan-parihar&label=Profile%20Views&countColor=%232ea44f)](https://github.com/ishan-parihar)
+
+**AI Tradesman · Building the infrastructure for autonomous systems**  
+*Rust + MCP + Agent Orchestration*
 
 </div>
