@@ -226,6 +226,108 @@ Add link attachments to:
 
 ---
 
+## Projects Section (Highly Optimized)
+
+LinkedIn’s dedicated **Projects** section is heavily indexed by search and scrutinized by technical hiring managers looking for hands-on proof-of-work. Associate each of these with your **AI Agent Infrastructure Engineer** current role.
+
+### Project 1: automaton — Graph-Native Automation Substrate for AI Agents
+- **Project URL**: `github.com/ishan-parihar/automaton`
+- **Associated with**: AI Agent Infrastructure Engineer (Self-Employed)
+- **Skills**: Rust, Model Context Protocol (MCP), Systems Architecture, Asynchronous Programming (Tokio), PostgreSQL
+- **Description**:
+  Traditional automation tools are built for humans, not AI. I architected and built "automaton", a graph-native automation substrate in Rust that enables AI agents to compose, version, and execute modular, multi-step workflows.
+  • Engineered the core runtime in Rust across 8 crates, deploying level-based parallel DAG dispatch using Tokio.
+  • Developed static musl binaries (~14MB) with zero runtime dependencies and a unified SQLite/PostgreSQL query layer.
+  • Created a custom proc-macro SDK for rapid developer onboarding.
+  • Built 39 Model Context Protocol (MCP) tools, making the entire workflow lifecycle dynamically discoverable and executable by LLMs.
+
+### Project 2: igs-rust-mcp — High-Performance Intelligence Gathering System
+- **Project URL**: `github.com/ishan-parihar/igs-rust-mcp`
+- **Associated with**: AI Agent Infrastructure Engineer (Self-Employed)
+- **Skills**: Rust, Model Context Protocol (MCP), Performance Optimization, API Integration, Web Scraping
+- **Description**:
+  Ported an initial TypeScript proof-of-concept to Rust to create a highly optimized, edge-deployable intelligence gathering engine with a ~7MB binary footprint.
+  • Engineered 9 custom parsers (RSS, Atom, HTML, OFAC, Semantic Scholar, PDF, Google News proxy) to continuously scrape and analyze 223+ global sources.
+  • Designed TOON (Token-Oriented Object Notation), an AI-optimized serialization format that reduces LLM token consumption by 40-60%.
+  • Reached ultra-low memory usage, lowering active RSS footprint to ~5MB (a 95% reduction from Node.js) while running on a single edge vCPU.
+
+### Project 3: TDG — Teleological Developmental Graph (Recursive Holonic Knowledge Graph)
+- **Project URL**: `github.com/ishan-parihar/tdg`
+- **Associated with**: Independent Systems Researcher — Applied Systems Architecture (Self-Employed)
+- **Skills**: Python, Model Context Protocol (MCP), Knowledge Graphs, Databases, System Design
+- **Description**:
+  Built a recursive, holonic knowledge graph system in Python (10K+ LOC) that serves as an active, evolving project memory for AI agents.
+  • Architected a dual-layer persistence engine (SQLite + JSONL) with strong validation contracts to store agent goals, constraints, and contextual histories.
+  • Implemented a suite of 55 Model Context Protocol (MCP) tools for real-time memory capture, synthesis, and temporal querying.
+  • Integrated advanced graph algorithms to compute community structures and identify pivotal decision points (god nodes), enabling long-context retention.
+
+### Project 4: social-forge — Dual-Interface Media Orchestration Engine
+- **Project URL**: `github.com/ishan-parihar/social-forge`
+- **Associated with**: AI Agent Infrastructure Engineer (Self-Employed)
+- **Skills**: Rust, SvelteKit, Web Development, REST APIs, Task Scheduling (Tokio)
+- **Description**:
+  Designed and shipped a dual-interface cross-platform content orchestrator that serves both humans (via SvelteKit SPA) and AI agents (via MCP tools) simultaneously with zero code duplication.
+  • Implemented a Shared AppState Architecture utilizing Rust (Axum) and SQLx to handle concurrent REST API and MCP server requests.
+  • Developed a trait-based provider registry, allowing modular addition of new social media APIs.
+  • Created an in-process Tokio task scheduler with exponential-backoff retries to guarantee delivery.
+  • Built real-time SSE notification streams and robust JWT cookie profile management.
+
+### Project 5: operant — Multi-Agent C-Suite Orchestration Framework
+- **Project URL**: `github.com/ishan-parihar/operant`
+- **Associated with**: AI Agent Infrastructure Engineer (Self-Employed)
+- **Skills**: TypeScript, LanceDB, Multi-Agent Systems, Drizzle ORM, PostgreSQL
+- **Description**:
+  Created a multi-agent operational framework that translates standard corporate operations (CEO, COO, CFO, etc.) into collaborative agent networks.
+  • Developed the core runner in TypeScript with Drizzle ORM and PostgreSQL, fully tested with 227 automated unit/integration tests.
+  • Integrated LanceDB vector database for semantic memory retrieval and systemd for robust, self-healing deployments.
+  • Engineered a custom Kanban task engine allowing agents to dynamically track, delegate, and report progress.
+  • Exposed 35 orchestration tools through an MCP interface for seamless system administration.
+
+### Project 6: openscript — AI-Directed Video Editing Pipeline
+- **Project URL**: `github.com/ishan-parihar/openscript`
+- **Associated with**: AI Agent Infrastructure Engineer (Self-Employed)
+- **Skills**: Rust, Python, TypeScript, Whisper, FFmpeg
+- **Description**:
+  Architected an end-to-end automated video production pipeline that converts raw footage into polished, social-ready 9:16 reels under AI agent direction.
+  • Developed a 6-track Edit Decision List (EDL v2) core engine to synchronize dialogue, voiceovers, captions, b-roll, music, and sound effects.
+  • Integrated Hinglish-optimized Whisper models for Apex-level multilingual transcriptions with word-level timestamps.
+  • Built a custom audio engine in Rust for automatic volume ducking and SFX placement during FFmpeg rendering.
+  • Implemented post-render verification layers to guarantee caption-sync and sound-level quality.
+
+---
+
+## LinkedIn Services Page (Inbound Lead Engine)
+
+LinkedIn’s **Services Marketplace** is a high-ticket, low-competition pipeline. Enabling and optimizing this section surfaces your profile in LinkedIn’s dedicated service provider searches.
+
+### 1. Selected Service Categories (Choose up to 10)
+- Software Development (Primary)
+- Artificial Intelligence (Primary)
+- Information Technology Consulting (Primary)
+- Web Development
+- Mobile Application Development
+- Database Administration
+- Technical Writing
+
+### 2. Services "About" Section (Strictly 490/500 Chars for SEO & Conversion)
+```text
+Custom AI Agent Infrastructure and high-performance Rust software development. I help founders, B2B startups, and enterprise teams architect, scale, and deploy autonomous AI systems, custom MCP servers, and fast systems infrastructure.
+
+WHAT I DELIVER:
+• Custom MCP Servers & Agent Orchestration Loop Runtimes
+• High-Performance Rust Systems & Web Backends (Axum)
+• Production SvelteKit/Next.js Integrations
+
+Get a production-ready POC in days. DM me or email support@ishanparihar.com to begin.
+```
+
+### 3. Settings & Client Review Strategy
+- **Pricing**: Choose **"Contact for pricing"** (retains premium perception and pricing flexibility).
+- **Work Location**: Set **"Remote"** and **"Available for work worldwide"**.
+- **Reviews (Crucial)**: Invite up to 20 past clients, colleagues, or open-source contributors to leave reviews specifically on your Service page. LinkedIn’s services algorithm ranks profiles with at least 2 reviews exponentially higher.
+
+---
+
 ## "Open to Work" Settings
 
 **Target Roles** (select all that apply):
@@ -266,6 +368,8 @@ Add link attachments to:
 - [ ] **Step 6: Setup Featured Section** — Add the GitHub profile + 6 key repos (automaton, igs-rust-mcp, TDG, operant, social-forge) + website.
 - [ ] **Step 7: Configure Open to Work** — Set target roles, remote worldwide, contract/part-time.
 - [ ] **Step 8: Update Photo/Banner** — Professional photo if available.
+- [ ] **Step 9: Add Projects to Profile** — Add Projects 1-6, associate them with your current role, list specified skills, and add descriptions.
+- [ ] **Step 10: Setup Services Page** — Activate "Providing Services", pick recommended categories, paste the optimized 490-char Services About section, set up Location/Remote preferences, and request at least 2 client/peer reviews.
 
 ---
 
