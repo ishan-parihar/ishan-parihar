@@ -15,7 +15,7 @@
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
 *I build the infrastructure that makes AI agents useful in the real world.*  
-<!-- PROJECT_COUNT_START -->32<!-- PROJECT_COUNT_END --> projects — 15+ MCP servers, multi-agent orchestration runtimes, and production automation systems.
+<!-- PROJECT_COUNT_START -->30<!-- PROJECT_COUNT_END --> projects — 15+ MCP servers, multi-agent orchestration runtimes, and production automation systems.
 
 </div>
 
@@ -180,7 +180,7 @@ I've also built several infrastructure-level MCP servers for internal use — in
 ```
 MCP-AND-CLIS       15 — Production AI agent infrastructure  
 WEBSITES            5 — Full-stack production applications  
-FRAMEWORKS          3 — TDG knowledge graph, agent architecture patterns  
+FRAMEWORKS          1 — TDG knowledge graph, agent framework patterns  
 HERMES              3 — Agent orchestration runtimes  
 CONTENT-CREATION    2 — Video editing pipeline, cinematography  
 DEVELOPER-TOOLS     2 — AI coding runtimes  
