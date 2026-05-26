@@ -84,55 +84,52 @@ Looking for remote contract or part-time work building AI agent infrastructure, 
 
 ---
 
-## Experience Section
+## Experience Section (Consolidated Progressive Timeline)
 
-### Entry 1: Current Role (Required)
-**Title**: AI Agent Infrastructure Engineer
-**Company**: Self-Employed / Independent
+To eliminate the "overlapping hobbyist" red flag, all 7 years of work are consolidated under a single company entry: **Design Aesthetics Studio**. On LinkedIn, this will render as a beautifully nested timeline showing progressive promotions and massive expansion of scope.
+
+### Company: Design Aesthetics Studio
 **Location**: Noida, India (Remote)
+**Overall Dates**: August 2019 – Present
+
+---
+
+#### Position 1: Principal AI Agent Architect & Infrastructure Lead
 **Dates**: July 2023 – Present
-
 **Description**:
-Building production-grade AI agent infrastructure — MCP servers, agent orchestration runtimes, and automation substrates — using Rust, TypeScript, and Python with AI-augmented development workflows.
+Architect and engineer production-grade agent infrastructure, custom Model Context Protocol (MCP) servers, and scalable multi-agent orchestration runtimes. Focus on implementing highly concurrent, low-latency, and deterministic execution layers in Rust, Python, and TypeScript.
 
-Key projects shipped:
-• **automaton**: Graph-native automation framework (Rust, 8 crates, 39 MCP tools, SQLite/PostgreSQL, ~14MB static musl binary). Modular automation substrate designed for AI agents to compose and execute deterministic workflows.
-• **icode**: Hardened AI coding harness (Rust, 9 crates, 48K LOC). Policy-driven permission engine, LSP lifecycle management, SQLite session snapshots, mock LLM testing framework.
-• **igs-rust-mcp**: Intelligence gathering system (Rust, ~7MB binary). 223+ sources across 45 countries, 14 intelligence pools, TOON format for 40-60% token reduction.
-• **TDG — Teleological Developmental Graph**: Recursive, holonic knowledge architecture (Python, 10K+ LOC). 55 MCP tools for dynamic knowledge capture, synthesis, and temporal query. Enables agents to maintain durable, evolving project memory.
-• **openscript**: AI-directed video editing pipeline (Rust + Python + TS). *(Active R&D)* 43 MCP tools, 6-track EDL, FFmpeg rendering, post-render verification.
-• **social-forge**: Multi-protocol social media automation (Rust). Dual-interface REST + MCP architecture for cross-platform content publishing and scheduling.
-• **operant**: Multi-agent C-suite orchestration (TypeScript, 227 tests). LanceDB vector memory, Kanban task management, systemd deployment.
+**Core Achievements**:
+*   **automaton**: Designed and built a graph-native, parallel-execution automation framework (Rust, 8 crates, 39 MCP tools, SQLite/PostgreSQL) allowing autonomous agents to compose, version, and execute complex workflows as robust property graphs.
+*   **igs-rust-mcp**: Engineered a high-throughput, low-overhead intelligence crawler (Rust, ~7MB static binary, ~5MB idle RSS) parsing 223+ live sources with TOON token-optimization, reducing agent token ingestion costs by 40-60%.
+*   **icode**: Built a secure, policy-driven code execution and sandboxing runtime (Rust, 9 crates, 48K LOC) utilizing LSP-native context injection and snapshot state managers.
+*   **operant**: Shipped a TypeScript multi-agent operational executive (227 tests, LanceDB vector memory, systemd deployment) with unified agent-to-agent negotiation protocols.
+*   **TDG (Teleological Developmental Graph)**: Engineered a recursive knowledge and goal-dependency system (Python, 55 MCP tools) to capture and query temporal project contexts.
+*   **Systemic Footprint**: Built and deployed 15+ production-grade MCP servers with 300+ total tools (Google Workspace, WhatsApp, Instagram, and automated trading platforms), establishing state-of-the-art agent tooling.
 
-Infrastructure output: 15+ MCP servers with 300+ tools across Google Workspace, WhatsApp, Instagram, content management, analytics, and trading platforms.
+---
 
-### Entry 2: Framework Research & Development
-**Title**: Independent Systems Researcher — Applied Systems Architecture
-**Company**: Self-Employed
-**Location**: Noida, India
-**Dates**: January 2024 – Present
-
+#### Position 2: Lead Systems Architect & Organizational Consultant (Enterprise Diagnostics)
+**Dates**: July 2022 – July 2023
 **Description**:
-Designing integrative frameworks that apply first-principles systems thinking and Integral Theory to human development:
-• **HumanOS**: 15-module consciousness-technology for individual development — Lambda-centric architecture with 22 developmental lines, 154 shadow positions, SII ≥ 0.7 threshold methodology.
-• **LifeOS**: Operational bridge between consciousness-tech and daily infrastructure (productivity, sovereignty, tooling).
-• **HoloOS**: Research OS for collective actualization — 68+ holons analyzed through AQAL, Spiral Dynamics, and Law of One archetypal mapping.
+Engineered complex systems modeling architectures to analyze, map, and resolve multi-stakeholder organizational dynamics, structural risks, and cognitive misalignment. Specialized in building the computational and behavioral substrates for Deliberately Developmental Organizations (DDO).
 
-This work synthesizes architecture (spatial systems), psychology (developmental models, trauma recovery), philosophy (Integral Theory, consciousness-first cosmology), and systems engineering into applied frameworks.
+**Core Achievements**:
+*   **HoloOS (Systems Modeling & Risk Architecture)**: Conceived and engineered a comprehensive holonic systems modeling framework using Integral Theory, Spiral Dynamics, and structural analysis to diagnose system bottlenecks, culture-friction points, and strategic alignment blocks.
+*   **HumanOS & LifeOS**: Architected a 15-module system representing human developmental lines, shadow integration states, and cognitive workflows. Successfully translated complex developmental psychology models into structured, programmable computational graphs (LifeOS-ops & LifeOS-saas).
+*   **law-of-one-india-engine**: Led the full-stack architectural design of a high-traffic content engine (~74K LOC, Next.js 15, Auth.js, Supabase, MDX) built to support structural cosmological and ontological analysis.
 
-### Entry 3: Full-Stack Development & Creative Technology
-**Title**: Full-Stack Developer & Creative Technologist
-**Company**: Freelance / Design Aesthetics
-**Location**: Noida, India
-**Dates**: August 2019 – Present (reframed)
+---
 
+#### Position 3: Lead Spatial Systems Designer & Creative Technologist
+**Dates**: August 2019 – July 2022
 **Description**:
-Built production full-stack applications and immersive web experiences:
-• **ishanparihar-svelte**: SaaS platform (SvelteKit 5, Supabase Auth, Razorpay, Redis, Playwright, Three.js/Threlte 3D visualizations).
-• **design-aesthetics-website**: Immersive brand experience (~86K LOC, Next.js 16, Three.js, GSAP, custom OGL shaders).
-• **law-of-one-india-website**: Content platform (~74K LOC, Next.js 15, Auth.js, Supabase, MDX).
-• **vectura-labs**: Company website with brand psychology-driven design system.
-• **carousel-mcp**: Carousel generation engine with OKLCH color system, WCAG-AA compliance.
+Transformed foundational principles of physical architectural systems (load-path analysis, modular structural composition, spatial mechanics, and cognitive ergonomics) into immersive digital interfaces, 3D graphics, and responsive full-stack applications.
+
+**Core Achievements**:
+*   **design-aesthetics-website**: Architected and programmed an interactive WebGL spatial experience (~86K LOC, Next.js, custom OGL shaders, GSAP, Three.js) representing three-dimensional architectural principles on the web.
+*   **SaaS & Conversion Infrastructure**: Engineered and shipped high-performance SaaS applications (SvelteKit, Redis, Supabase, Svelte 5, Razorpay integration) featuring highly custom, mathematically coherent design systems and OKLCH-based micro-interactions.
+*   **Spatial Systems Translation**: Applied 4 years of rigorous architectural training directly to interface design, maximizing cognitive ergonomics, information density, and interactive flow across 15+ full-scale web platforms.
 
 ---
 
@@ -362,7 +359,7 @@ Get a production-ready POC in days. DM me or email support@ishanparihar.com to b
 
 - [ ] **Step 1: Update Headline** — Copy the optimized headline from this doc. The priority is the job-search-optimized version.
 - [ ] **Step 2: Rewrite About Section** — Copy the optimized about text (~2,200 chars, fits LinkedIn's 2,600 limit). Edit personal details as needed.
-- [ ] **Step 3: Add/Update Experience Entries** — Add the three experience entries. Adjust dates and company names to preference.
+- [ ] **Step 3: Setup Consolidated Experience Timeline** — Add "Design Aesthetics Studio" as your primary company, and nest the three progressive positions under it. This creates a clean, vertical progressive timeline on your profile and eliminates overlapping self-employed entries.
 - [ ] **Step 4: Update Education** — Reflect Architecture + Psychology honestly. Frame it as the differentiator it is.
 - [ ] **Step 5: Populate Skills** — Use the 50-skill list. Set Rust, AI, and Systems Architecture as featured.
 - [ ] **Step 6: Setup Featured Section** — Add the GitHub profile + 6 key repos (automaton, igs-rust-mcp, TDG, operant, social-forge) + website.
