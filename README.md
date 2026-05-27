@@ -15,7 +15,7 @@
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
 *I build the infrastructure that makes AI agents useful in the real world.*  
-<!-- PROJECT_COUNT_START -->30<!-- PROJECT_COUNT_END --> projects — 15+ MCP servers, multi-agent orchestration runtimes, and production automation systems.
+<!-- PROJECT_COUNT_START -->31<!-- PROJECT_COUNT_END --> projects — 15+ MCP servers, multi-agent orchestration runtimes, and production automation systems.
 
 </div>
 
@@ -23,11 +23,15 @@
 
 ## What I Do
 
-I architect and ship **production Rust infrastructure for autonomous AI agents** — the servers, runtimes, and orchestration layers that turn LLMs into reliable, auditable systems. My work spans systems programming (Rust, Tokio, Axum, SQLx) to full-stack applications (SvelteKit, Next.js, TypeScript) to multi-agent orchestration with test-driven deployment.
+I build **production-grade systems infrastructure for autonomous AI agents** — the runtimes, compiler substrates, and orchestration layers that turn loose model calls into reliable, deterministic enterprise systems. My work spans high-performance systems engineering (Rust, Tokio, Axum, SQLx) to scalable coordination protocols (Model Context Protocol, SSE, REST) and recursive knowledge graphs.
 
-Unlike specialists who work in one layer, I **design across the entire stack** using first-principles systems thinking — taking a problem from concept through architecture to deployed binary, whether it's a ~7MB static Rust MCP server or a multi-agent C-suite with 227 passing tests. I decompose complex requirements into clean, testable, shippable systems.
+### The Throughline: Spatial Machinery
+My engineering philosophy is rooted in physical architecture (B.Arch training). I do not view software as isolated code blocks; I view it as **load-bearing structures**. 
+* **Load-Path Engineering**: Just as a physical beam transfers structural load, a software runtime must route concurrency, buffer memory, and distribute work. I design for predictable load paths, zero-copy memory patterns, and deterministic state transitions.
+* **Modular Assembly**: I favor lightweight, high-performance, single-purpose components (such as stripped ~7MB static Rust binaries) composed through clear protocol standards (MCP) rather than heavy, bloated, fragile runtimes.
+* **Systems Diagnostics**: Designing complex physical spaces and studying human cognitive structures taught me how multi-agent networks behave. I translate this into enterprise systems modeling, organizational risk dynamics, and resilient agent execution.
 
-**What that means for a company:** I can own entire features end-to-end — from database schema to API design to deployment config — without handoffs between specialists. I ship production Rust infrastructure in days, not weeks.
+**What that means for a company:** I can own entire systems end-to-end — from database schema to API design to custom concurrency engines — without handoffs between specialists. I ship load-bearing systems.
 
 ---
 
@@ -61,6 +65,14 @@ Started as a TypeScript proof-of-concept [published to npm](https://www.npmjs.co
 **Teleological Developmental Graph — a recursive, holonic knowledge architecture.** 55 MCP tools. Python (10K+ LOC).
 
 The most ambitious implementation of an agent's "mind" — using a holonic graph to model goals, constraints, and knowledge. 55 custom MCP tools for dynamic knowledge capture, synthesis, and temporal query, enabling agents to maintain a durable, evolving memory of a project's entire evolution.
+
+### 🌐 [HoloOS](https://github.com/ishan-parihar/HoloOS) (Private R&D)
+**Enterprise systems modeling & risk architecture substrate for Deliberately Developmental Organizations (DDO).** Rust. Python.
+
+A multi-stakeholder systems modeling and risk simulation engine that maps organizational dynamics, resource flows, and structural constraints. Designed as an "enterprise diagnostics" substrate, HoloOS uses holonic theory to model complex systems, simulate structural risk propagation, and optimize resource allocation across adaptive team topologies.
+- Multi-dimensional holonic state engine to map structural and process variables
+- Monte Carlo simulations to model risk propagation across complex corporate topologies
+- Agentic feedback loops that suggest optimal structural and process reconfigurations
 
 ### 🤖 [operant](https://github.com/ishan-parihar/operant)
 **Multi-agent C-suite — 227 tests, LanceDB memory, systemd deployment.**
@@ -180,7 +192,7 @@ I've also built several infrastructure-level MCP servers for internal use — in
 ```
 MCP-AND-CLIS       15 — Production AI agent infrastructure  
 WEBSITES            5 — Full-stack production applications  
-FRAMEWORKS          1 — TDG knowledge graph, agent framework patterns  
+FRAMEWORKS          2 — TDG knowledge graph, HoloOS systems modeling  
 HERMES              3 — Agent orchestration runtimes  
 CONTENT-CREATION    2 — Video editing pipeline, cinematography  
 DEVELOPER-TOOLS     2 — AI coding runtimes  
