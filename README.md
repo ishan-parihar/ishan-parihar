@@ -158,7 +158,7 @@ I've also built several infrastructure-level MCP servers for internal use — in
 |---------|----------|---------|------|
 | **igs-rust-mcp** ⬆️ | [GitHub](https://github.com/ishan-parihar/igs-rust-mcp) | Rust ~7MB binary | Flagship — Rust port, ~5MB RSS, TOON token optimization |
 | **igs-mcp-server** | [npm](https://www.npmjs.com/package/igs-mcp-server) | `npm install igs-mcp-server` | Initial TypeScript proof-of-concept |
-| **instagram-scraper-mcp** | [PyPI](https://pypi.org/project/instagram-scraper-mcp/) | `uvx instagram-scraper-mcp` | — |
+| **instagram-scraper-mcp** | [Test PyPI](https://test.pypi.org/project/instagram-scraper-mcp/) | `uvx --index-url https://test.pypi.org/simple/ instagram-scraper-mcp` | — |
 
 ---
 
