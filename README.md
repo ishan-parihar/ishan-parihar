@@ -15,7 +15,7 @@
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
 *I build the infrastructure that makes AI agents useful in the real world.*  
-<!-- PROJECT_COUNT_START -->31<!-- PROJECT_COUNT_END --> projects — 15+ MCP servers, multi-agent orchestration runtimes, and production automation systems.
+<!-- PROJECT_COUNT_START -->36<!-- PROJECT_COUNT_END --> projects — 15+ MCP servers, multi-agent orchestration runtimes, and production automation systems.
 
 </div>
 
@@ -190,14 +190,53 @@ I've also built several infrastructure-level MCP servers for internal use — in
 
 <!-- PORTFOLIO_START -->
 ```
-MCP-AND-CLIS       15 — Production AI agent infrastructure  
-WEBSITES            5 — Full-stack production applications  
-FRAMEWORKS          2 — TDG knowledge graph, HoloOS systems modeling  
-HERMES              3 — Agent orchestration runtimes  
-CONTENT-CREATION    2 — Video editing pipeline, cinematography  
-DEVELOPER-TOOLS     2 — AI coding runtimes  
-SOCIAL              1 — Multi-platform publishing automation  
-N8N-WORKFLOWS       1 — Automation configurations
+S-TIER 6 — Flagship infrastructure
+  igs-rust        Intelligence Gathering System — Rust, 9 parsers, 20 domains, zero-API-key
+  openscript      AI-directed video pipeline — PyPI, 9 Rust crates, markdown→MP4
+  operant         Multi-agent C-suite — Rust, TDG-lite memory, llama.cpp, MCP+REPL+TUI
+  social-forge    Social orchestration — Rust, triple CLI/REST/MCP interface
+  tdg             Holonic knowledge graph — Python, 55 MCP tools, FTS5+vector
+  tdg-rust        Teleological graph engine — pure Rust port
+
+A-TIER 5 — Production agent tooling
+  automaton           Graph-native workflow engine — 8 Rust crates, 39 MCP tools
+  slideforge-rust     Carousel generator — CLI + MCP, HTML→PNG
+  hermes-prime-bridge Hermes↔Prime stateful kernel bridge
+  thinking-steroid    Cognitive-modality MCP server (TS/Bun)
+  andrometry          Personal context engine for agent alignment
+
+B-TIER 8 — Agent infrastructure & data
+  mindstrata          Rust developer-analysis system
+  scorestrata         Rust behavioral scoring engine
+  lifeos-ops          LifeOS CLI + MCP on Notion — consciousness prosthetic
+  linkedin-lyr        LinkedIn MCP + CLI (1,137 commits)
+  instagram-lyr       Instagram HTTPX MCP (859 commits)
+  twitter-lyr         Twitter/X CLI for AI agents
+  reddit-lyr          Reddit MCP — 56 tools, 1★
+  c-suite-agents-mcp  LifeOS MCP — 35 tools on PostgreSQL
+
+C-TIER 8 — CLI/automation suite
+  discord-cli      Local-first Discord data CLI
+  tg-cli           Telethon Telegram CLI
+  facebook-lyr     Facebook automation
+  threads-lyr      Threads read-only MCP
+  meme-lyr         AXI-compliant meme CLI
+  obscura-core     Browser cookie/daemon library
+  lifeos-saas      LifeOS agent stack (NullClaw)
+  ishanparihar-cms ishanparihar.com MCP — 60+ tools
+
+D-TIER 5 — Websites & web apps
+  design-aesthetics-website 49K LOC GSAP/Three.js showcase
+  ishanparihar-svelte        Production portfolio (Phase 4/W8)
+  mysterium                  SvelteKit + TUI assessment engine
+  holosim-infinite           Emergent world simulation
+  c-suite-agents             Operant orchestration (multi-agent)
+
+E-TIER 4 — Experimental / utility
+  icode                   Rust AI coding harness
+  law-of-one-india-website   Regional community site
+  webdev-portfolio        Web dev portfolio
+  n8n-compiler            n8n workflow reducer
 ```
 <!-- PORTFOLIO_END -->
 
