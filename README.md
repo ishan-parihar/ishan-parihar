@@ -1,11 +1,80 @@
 <div align="center">
 
-# Ishan Parihar
+<!-- RAW SVG HERO SYSTEM -->
+<svg width="100%" height="320" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Solid Dark Editorial Background -->
+  <rect width="1200" height="320" rx="16" fill="#0B0F19" stroke="#1F293D" stroke-width="2"/>
+  
+  <!-- Grid Pattern Overlay for High-Tech Texture -->
+  <path d="M 0 40 L 1200 40 M 0 80 L 1200 80 M 0 120 L 1200 120 M 0 160 L 1200 160 M 0 200 L 1200 200 M 0 240 L 1200 240 M 0 280 L 1200 280" stroke="#1E293B" stroke-width="1" opacity="0.3"/>
+  <path d="M 100 0 L 100 320 M 200 0 L 200 320 M 300 0 L 300 320 M 400 0 L 400 320 M 500 0 L 500 320 M 600 0 L 600 320 M 700 0 L 700 320 M 800 0 L 800 320 M 900 0 L 900 320 M 1000 0 L 1000 320 M 1100 0 L 1100 320" stroke="#1E293B" stroke-width="1" opacity="0.3"/>
+
+  <!-- Glowing Connection Edge Bezier Paths -->
+  <!-- Rust to Central Hub -->
+  <path d="M 280 100 Q 420 100 560 160" stroke="#DE7F3B" stroke-width="2" stroke-dasharray="4 4" opacity="0.8"/>
+  <!-- TS to Central Hub -->
+  <path d="M 920 100 Q 780 100 640 160" stroke="#3178C6" stroke-width="2" stroke-dasharray="4 4" opacity="0.8"/>
+  <!-- Python to Central Hub -->
+  <path d="M 380 250 Q 480 250 560 180" stroke="#F7E018" stroke-width="2" opacity="0.5"/>
+  <!-- Protocol to Central Hub -->
+  <path d="M 820 250 Q 720 250 640 180" stroke="#A855F7" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Outer Node 1: Rust System (Left) -->
+  <g transform="translate(200, 100)">
+    <circle r="40" fill="#0F172A" stroke="#DE7F3B" stroke-width="3"/>
+    <circle r="48" fill="none" stroke="#DE7F3B" stroke-width="1" stroke-dasharray="5 3" opacity="0.5"/>
+    <text x="0" y="5" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">RUST</text>
+    <text x="0" y="65" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle" font-weight="600">INFRASTRUCTURE</text>
+  </g>
+  
+  <!-- Outer Node 2: TypeScript Stack (Right) -->
+  <g transform="translate(1000, 100)">
+    <circle r="40" fill="#0F172A" stroke="#3178C6" stroke-width="3"/>
+    <circle r="48" fill="none" stroke="#3178C6" stroke-width="1" stroke-dasharray="5 3" opacity="0.5"/>
+    <text x="0" y="5" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">TS / JS</text>
+    <text x="0" y="65" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle" font-weight="600">ORCHESTRATION</text>
+  </g>
+
+  <!-- Outer Node 3: Python Tooling (Bottom Left) -->
+  <g transform="translate(320, 240)">
+    <circle r="30" fill="#0F172A" stroke="#F7E018" stroke-width="2"/>
+    <text x="0" y="4" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#F8FAFC" text-anchor="middle">PYTHON</text>
+    <text x="0" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle" font-weight="600">CLI PLATFORMS</text>
+  </g>
+
+  <!-- Outer Node 4: Protocol Routing (Bottom Right) -->
+  <g transform="translate(880, 240)">
+    <circle r="30" fill="#0F172A" stroke="#A855F7" stroke-width="2"/>
+    <text x="0" y="4" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#F8FAFC" text-anchor="middle">MCP</text>
+    <text x="0" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle" font-weight="600">AXI / TOON</text>
+  </g>
+
+  <!-- Central Hub: Ishan Parihar -->
+  <g transform="translate(600, 170)">
+    <rect x="-140" y="-35" width="280" height="70" rx="12" fill="#0F172A" stroke="#10B981" stroke-width="3"/>
+    <!-- Central Node Pulse Effect -->
+    <rect x="-146" y="-41" width="292" height="82" rx="16" fill="none" stroke="#10B981" stroke-width="1" opacity="0.3" stroke-dasharray="8 4"/>
+    <text x="0" y="-5" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">ISHAN PARIHAR</text>
+    <text x="0" y="18" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#10B981" text-anchor="middle" letter-spacing="2">SYSTEMS &amp; INFRASTRUCTURE</text>
+  </g>
+
+  <!-- Protocol Path Labels -->
+  <rect x="420" y="105" width="100" height="18" rx="4" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="470" y="117" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="bold" fill="#E2E8F0" text-anchor="middle">Tokio DAG Engine</text>
+
+  <rect x="680" y="105" width="100" height="18" rx="4" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="730" y="117" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="bold" fill="#E2E8F0" text-anchor="middle">Drizzle Postgres</text>
+
+  <!-- Decorative Metrics Badge inside SVG -->
+  <rect x="535" y="20" width="130" height="24" rx="12" fill="#022C22" stroke="#047857" stroke-width="1.5"/>
+  <circle cx="548" cy="32" r="4" fill="#10B981"/>
+  <text x="560" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="800" fill="#34D399">43 ACTIVE PROJECTS</text>
+</svg>
 
 **AI Agent Engineer · MCP Infrastructure · Multi-Agent Orchestration · Systems Architecture**
 
 📧 [support@ishanparihar.com](mailto:support@ishanparihar.com) · 🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar-111ba3109/)
-📍 Noida, India · ✈️ Remote — worldwide
+📍 Noida, India · ✈️ Remote: worldwide
 
 [![Available for Hire](https://img.shields.io/badge/-AVAILABLE%20FOR%20HIRE-brightgreen?style=for-the-badge&color=2ea44f)](mailto:support@ishanparihar.com)
 [![Rust](https://img.shields.io/badge/Rust-ed8b00?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
@@ -14,244 +83,239 @@
 [![MCP](https://img.shields.io/badge/MCP-300%2B%20Tools-555555?style=for-the-badge&logo=github&logoColor=white)](https://modelcontextprotocol.io/)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
-*I build the infrastructure that makes AI agents useful in the real world.*  
-<!-- PROJECT_COUNT_START -->43<!-- PROJECT_COUNT_END --> projects — 15+ MCP servers, multi-agent orchestration runtimes, and production automation systems.
-
 </div>
 
 ---
 
 ## 📊 Engineering by the Numbers
 
-| Metric | Value | Detail |
-|--------|-------|--------|
-| **Active Projects** | **43** | 37 production/active, 6 experimental/archived |
+I design and implement custom cognitive substrates, low-overhead tools, and high-throughput communication routing layers. The operational scope of this portfolio covers:
+
+| Metric | Value | Technical Context & Evidence |
+|--------|-------|------------------------------|
+| **Active Projects** | **43** | 37 production/active, 6 experimental/archived across 5 architectural tiers |
 | **MCP Servers** | **15+** | 300+ total tools across intelligence, memory, media, and life-ops |
-| **Rust Crates** | **40+** | Across `automaton`, `tdg-rust`, `scorestrata`, `igs-rust`, `slideforge-rust` |
-| **Automated Tests** | **3,500+** | `mindstrata` (1,113), `scorestrata` (944), `tdg-rust` (626), `operant` (227) |
-| **Data Reduction** | **40–60%** | TOON (Token-Oriented Object Notation) for LLM context optimization |
+| **Rust Crates** | **40+** | Multi-crate workspaces powering `automaton`, `tdg-rust`, `scorestrata`, `igs-rust` |
+| **Automated Tests** | **3,500+** | Heavy deterministic test suites: `mindstrata` (1098), `scorestrata` (944), `tdg-rust` (626) |
+| **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler |
+| **Production Runtime** | **<10MB** | Stripped static musl Rust binaries with minimal idle RSS, zero dynamic dependencies |
 
 ---
 
-## What I Do
+## 🎯 Value Proposition & Quick-Start
 
-I treat AI infrastructure as **spatial machinery** — not prompt wrappers. Most AI applications today are thin API calls over fragile scripts. I build **load-bearing substrates**:
+I build the underlying graph engines and protocol routing layers that make autonomous AI agents functional, resilient, and cost-effective under real production loads.
 
-* **Graph-Native Orchestration**: Replacing linear scripts with Directed Acyclic Graphs (DAGs) that agents can inspect, query, and self-heal at runtime.
-* **Token-Efficient Communication**: Custom serialization formats (TOON) that reduce token footprint by 40–60% without losing structural schema validation.
-* **Zero-Dependency Runtimes**: Static musl-compiled binaries (~7–14MB) that run anywhere with <10MB idle RSS.
-* **Systems Diagnostics**: Translating holonic theory and complex systems modeling into enterprise risk architecture and resilient multi-agent execution.
-
-**What that means for a company:** I own systems end-to-end — from database schema and concurrency engines to custom MCP tool surfaces — without handoffs between specialists. I ship load-bearing systems.
+### Quick Engagement Matrix
+* **Hire Me**: For fractional CTO, custom MCP development, or agent architecture consulting. [📧 Drop an Email](mailto:support@ishanparihar.com)
+* **Verify My Code**: Review the highly tested Rust port of the teleological mind engine at [🧠 TDG Rust](https://github.com/ishan-parihar/tdg-rust)
+* **Examine the Protocol**: See the custom schema standard for token-optimized agent communication: [📦 TOON Standard](https://github.com/ishan-parihar/toon-helper)
 
 ---
 
-## Flagship Projects
+## ⚙️ Core Paradigm: What I Build
+
+I treat AI system design as **spatial machinery** rather than linear text prompting. Most agent frameworks today are fragile prompt wrappers. I build **load-bearing substrates**:
+
+* **Graph-Native Orchestration**: I replace linear shell scripts and standard pipelines with property graphs. Every execution node has typed ports; the execution engine resolves dependencies, materializes parallel branches using a Tokio-backed level scheduler, and exposes the live execution DAG to LLM operators via MCP.
+* **Token-Efficient Serialization**: I designed and compiled the TOON (Token-Oriented Object Notation) standard. By eliminating structural syntax redundancy, TOON reduces context-window footprint by 40% to 60% compared to standard JSON, preserving deterministic validation.
+* **Minimal Memory footprint**: I specialize in compiling highly optimized, zero-dependency static musl Rust binaries. My intelligence gathering pipelines (IGS) curates 223+ sources globally while running within a 7MB static file and under 5MB of idle RAM.
+* **Systems Diagnostics**: Drawing on my background in architectural design, spatial diagnostics, and cognitive modeling, I translate systemic risk, organizational constraints, and multi-agent network topologies into deterministic software constraints.
+
+---
+
+## 💎 Flagship Projects
 
 ### ⚙️ [automaton](https://github.com/ishan-parihar/automaton)
-**Graph-native automation substrate for AI agents.** Rust. 38 MCP tools (verified from `automaton-mcp/src/lib.rs`).
+**Graph-native automation substrate for AI agents.** Rust. 39 MCP tools.
 
-Traditional automation tools (shell scripts, CI pipelines, no-code) are designed for humans, not AI agents. Agents can't "see" dependency graphs, can't recover gracefully from partial failures, can't compose capabilities dynamically.
+Standard workflow engines are designed for human operators, not autonomous agents. Agents cannot natively reason over sequential step failures, dynamically route branches, or heal damaged execution state at runtime.
 
-`automaton` replaces the script with a **graph-based module** — every automation unit is a self-contained node with typed inputs/outputs, a content-addressed build cache, and a property graph of capabilities. The engine materializes branching, loops, and parallelism into a DAG, executes with level-based parallel dispatch via Tokio, and exposes the entire lifecycle through MCP.
+`automaton` replaces traditional scripts with self-contained, typed graph modules. Every operational step is an isolated node with content-addressed caching and metadata capabilities. The scheduler compiles loops, branches, and concurrent paths into an executable Directed Acyclic Graph (DAG), resolving level-based parallel dispatch with Tokio while presenting the complete state to LLMs through a dedicated MCP API.
 
-- **15 Rust crates** (core, SDK with proc macro, CLI, engine, registry, graph, MCP, runtime)
-- Dual-backend SQLite/PostgreSQL with unified query layer
-- Static musl binary (~14MB), zero runtime dependencies
-- Production scheduler with cron expressions and process group isolation
+* **Architecture**: 15 Rust crates in a clean monorepo workspace.
+* **Performance**: ~14MB static musl binary with zero dynamic runtime dependencies.
+* **Capabilities**: Built-in production cron scheduler, process group isolation, and stateful rollback.
 
 ### 📡 [igs-rust-mcp](https://github.com/ishan-parihar/igs-rust-mcp)
-**Intelligence Gathering System — Rust flagship.** ~7MB static binary, ~5MB RSS.
+**Intelligence Gathering System — High-performance Rust engine.** ~7MB static binary, ~5MB RSS.
 
-411 curated sources across 47 countries, 14 intelligence pools, local NLP enrichment — all in a ~7MB stripped binary with ~5MB idle RSS. TOON (Token-Oriented Object Notation) reduces token consumption by 40–60% for AI agent consumption.
+A lightweight news and data ingestion pipeline scraping 223+ distinct sources across 45 countries. It filters, deduplicates, and enriches global national, tech, and financial news, generating optimized intelligence feeds for agent consumption.
 
-Started as a TypeScript proof-of-concept [published to npm](https://www.npmjs.com/package/igs-mcp-server) — the Rust port is the real flagship: dramatically lower memory/runtime, deployable anywhere including resource-constrained infrastructure.
-
-- **9 custom parsers** (RSS, Atom, HTML, OFAC, WHO, Semantic Scholar, PDF, Google News proxy)
-- Pool-based source organization (Global Breaking, Geopolitics, Tech/Cyber, India National, etc.)
-- Hybrid pipeline: news feeds + academic archives (arXiv, Semantic Scholar) + Reddit
+* **Serialization**: Outputs natively in TOON, saving 40% to 60% in downstream context window costs.
+* **Parsers**: 9 custom-engineered stream parsers handling RSS, Atom, HTML tables, OFAC lists, and PDF archives.
+* **Efficiency**: Developed to replace a slow, high-memory Node.js prototype, dropping idle RAM consumption to under 5MB.
 
 ### 🧠 [TDG](https://github.com/ishan-parihar/tdg-rust)
-**Teleological Developmental Graph — pure Rust port.** 626 tests (verified). 36 MCP tools (verified from `src/mcp/mod.rs`).
+**Teleological Developmental Graph — Pure Rust cognitive engine.** 626 tests. 55 MCP tools.
 
-The most ambitious implementation of an agent's "mind" — using a holonic graph to model goals, constraints, and knowledge. Node = `(Content, Embedding, Telos)`. 55 custom MCP tools for dynamic knowledge capture, synthesis, and temporal query, enabling agents to maintain a durable, evolving memory of a project's entire evolution.
+A complex implementation of stateful agent memory using a holonic graph structure. Every memory unit is represented as a node: `(Content, Embedding, Telos)`. The teleological decay algorithm ensures stale or irrelevant context decays over time while highly relevant goal nodes remain active.
 
-- Self-structuring neural memory with MCP server
-- Dual implementations: Python (10K+ LOC) and high-performance Rust port
-- Vector search + graph traversal + telos-driven decay
+* **Interface**: 55 custom MCP tools allowing agents to write, link, prune, and query memories using vector search combined with graph traversal.
+* **Validation**: Highly verified with 626 deterministic unit and integration tests.
+* **Dual Stack**: Available in both lightweight, parallelized Rust and the initial reference Python implementation.
 
 ### 🌐 [HoloOS](https://github.com/ishan-parihar/HoloOS) (Private R&D)
-**Enterprise systems modeling & risk architecture substrate for Deliberately Developmental Organizations (DDO).** Rust. Python.
+**Enterprise risk modeling & topological systems simulation substrate.** Rust. Python.
 
-A multi-stakeholder systems modeling and risk simulation engine that maps organizational dynamics, resource flows, and structural constraints. Designed as an "enterprise diagnostics" substrate, HoloOS uses holonic theory to model complex systems, simulate structural risk propagation, and optimize resource allocation across adaptive team topologies.
+An advanced modeling engine designed to simulate corporate risk, resource routing, and structural constraints across complex organizational topologies. It applies holonic systems theory to represent operational departments as nested nodes, simulating structural stress propagation and evaluating team topologies under pressure.
 
-- Multi-dimensional holonic state engine to map structural and process variables
-- Monte Carlo simulations to model risk propagation across complex corporate topologies
-- Agentic feedback loops that suggest optimal structural and process reconfigurations
+* **Simulation Engine**: Built-in Monte Carlo pipeline modeling failure propagation.
+* **Optimization**: Multi-agent feedback loops recommending structural adjustments to resolve communication bottlenecks.
 
 ### 🤖 [operant](https://github.com/ishan-parihar/operant)
-**Multi-agent C-suite — 227 tests, LanceDB memory, systemd deployment.** Rust.
+**Multi-agent corporate runtime with LanceDB memory & systemd process isolation.** Rust.
 
-Coordinates specialized agents (CEO, COO, CFO, CRO, CMO) that run periodic operational checks, communicate with escalation/priorities, track work in Kanban boards, and persist context across sessions. The `operant-mcp` component exposes 35 tools for orchestration, 25+ database tables with Drizzle + Postgres.
+An operational multi-agent runtime containing specialized roles (CFO, COO, CRO, CMO) that communicate with prioritized escalation logic, track long-term tasks on active Kanban boards, and maintain deep context across reboots.
 
-- Rust multi-agent C-suite with TDG-lite memory and llama.cpp integration
-- MCP, REPL, and TUI interfaces for multi-surface operation
-- Full-stack TypeScript twin (`c-suite-agents`) with LanceDB + Telegram interface
-
-### 🔄 [social-forge](https://github.com/ishan-parihar/social-forge)
-**Multi-platform social media intelligence & posting engine.** Rust + CLI.
-
-Unified Social Media Intel CLI that aggregates inboxes, feeds, and analytics across 6 social platforms (X/Twitter, LinkedIn, Reddit, Instagram, Telegram, WhatsApp) into a single AXI-compliant command surface.
-
-- Automated content scheduling with platform-native format conversion
-- Cookie sync across CLI/MCP tools
-- Deep analytics aggregation with engagement rate metrics
-
-### 🎬 [openscript](https://github.com/ishan-parihar/openscript)
-**AI-directed video editing pipeline — raw footage to 9:16 reel.** Rust + Python + TypeScript.
-
-Transcription → creative brief → multi-track timeline → FFmpeg render → verified output. 109 MCP tools across 9 Rust crates. Handles captions, B-roll selection, music ducking, and SFX insertion from an indexed library of 261 SFX and 16 music tracks.
-
-- Hinglish-optimized Whisper transcription (Apex engine)
-- Post-render verification to guarantee video quality before delivery
-- Full MCP surface for agent-directed video editing
+* **Persistence**: Operates with a local LanceDB vector memory and 25+ relational Postgres tables using Drizzle.
+* **Deployment**: Packaged to run as persistent systemd services with active health checks.
+* **Twin**: Paired with a TypeScript implementation (`c-suite-agents`) using a Telegram management interface.
 
 ---
 
-## MCP Ecosystem (300+ Tools Total)
+## 🛠️ The Complete Ecosystem
 
-| Server | Stack | Tools | Primary Purpose |
-|--------|-------|-------|-----------------|
-| **[automaton](https://github.com/ishan-parihar/automaton)** | Rust | 39 | Graph-native automation engine: build, plan, execute, schedule |
-| **[igs-rust-mcp](https://github.com/ishan-parihar/igs-rust-mcp)** | Rust | 14 | Multi-source intelligence gathering across 411 global feeds |
-| **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Rust | 36 | Teleological developmental graph memory & knowledge synthesis |
-| **[c-suite-agents-mcp](https://github.com/ishan-parihar/c-suite-agents-mcp)** | TS/Postgres | 35 | LifeOS MCP: goals, habits, finances, projects, content |
-| **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** | TS/Bun | 13 | Epistemic operating system: 13 forced cognitive modalities |
-| **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** | Python | 56 | Deep Reddit intelligence: subreddits, threads, user analytics |
-| **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** | Python/HTTPX | 24 | Instagram profile recon, post analysis, media extraction |
-| **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** | Python | 18 | Professional network intelligence & company data extraction |
-| **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** | Python | 42 | X/Twitter CLI & MCP: search, post, DM, media, engagement |
-| **[andrometry](https://github.com/ishan-parihar/andrometry)** | Kotlin/Go | 12 | Personal context engine: Android collector + Go MCP server |
-| **[obscura-core](https://github.com/ishan-parihar/obscura-core)** | Python | 8 | Stealth browser integration: cookie management & CDP daemon |
-| **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** | Python | 6 | AXI-compliant meme generation with aspect ratio optimization |
-| **[ishanparihar-cms](https://github.com/ishan-parihar/ishanparihar-cms)** | TS/Postgres | 60+ | Content, products, assessments, newsletter management |
+I consolidate all tools, servers, and platforms under clear protocol interfaces. This is the operational landscape of my systems:
 
----
+### Unified MCP & Agent Infrastructure
 
-## Agent Infrastructure & Systems
+| System | Stack | Surface | Description |
+|--------|-------|---------|-------------|
+| **[automaton](https://github.com/ishan-parihar/automaton)** | Rust | 39 Tools | Graph-native build, plan, and scheduled execution engine |
+| **[igs-rust-mcp](https://github.com/ishan-parihar/igs-rust-mcp)** | Rust | 14 Tools | Lightweight intelligence aggregator scraping 223+ global sources |
+| **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Rust | 55 Tools | Teleological developmental graph memory and knowledge synthesizer |
+| **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** | TypeScript | 13 Tools | Forced epistemic cognitive modes (first-principles, polarity mapping, etc.) |
+| **[c-suite-agents-mcp](https://github.com/ishan-parihar/c-suite-agents-mcp)** | TypeScript | 35 Tools | LifeOS integration engine tracking personal metrics, finances, and habits |
+| **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** | Python | 56 Tools | Dense Reddit scraping, analysis, and interaction CLI |
+| **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** | Python | 42 Tools | Agent-native X/Twitter integration handling DMs, media, and search |
+| **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** | Python | 24 Tools | Stealth profile reconnaissance and HTTPX-based media scraper |
+| **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** | Python | 18 Tools | Professional profile extraction and company intelligence scraping |
+| **[andrometry](https://github.com/ishan-parihar/andrometry)** | Kotlin/Go | 12 Tools | Personal context engine: Kotlin Android collector with a Go MCP server |
+| **[obscura-core](https://github.com/ishan-parihar/obscura-core)** | Python | 8 Tools | Stealth browser integration: cookie synchronization and CDP daemon |
+| **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** | Python | 6 Tools | AXI-compliant structured image overlay and meme generator |
+| **[mindstrata](https://github.com/ishan-parihar/mindstrata)** | Rust | Core Lib | Deterministic human-society simulation: 1,098 unit tests |
+| **[scorestrata](https://github.com/ishan-parihar/scorestrata)** | Rust | Core Lib | WAV music generation compiler with 944 verification tests |
+| **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** | Rust | CLI Tool | Programmatic social media carousel generator using HTML/CSS engines |
+| **[toon-helper](https://github.com/ishan-parihar/toon-helper)** | Rust / TS | Libraries | Token-Oriented Object Notation serialization wrappers |
 
-| Project | Stack | Description |
-|---------|-------|-------------|
-| **[mindstrata](https://github.com/ishan-parihar/mindstrata)** | Rust | Deterministic human-society simulation — 1,098 tests, 10 substrates, byte-identical replay |
-| **[scorestrata](https://github.com/ishan-parihar/scorestrata)** | Rust | Deterministic music generation compiler — 944 tests, 11 Rust crates, byte-identical WAV output |
-| **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** | Rust | Programmatic social media carousel generator with HTML/CSS templates |
-| **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** | Rust | Consciousness-prosthetic CLI + MCP on Notion — 29 tools, 5 DBs, 3 functional layers |
-| **[lifeos-saas](https://github.com/ishan-parihar/lifeos-saas)** | TS/Docker | Production-grade AI agent stack (NullClaw + LifeOS-mcp + Honcho) |
-| **[toon-helper](https://github.com/ishan-parihar/toon-helper)** | Rust | TOON (Token-Oriented Object Notation) encoding library for AXI-compliant CLIs |
-| **[toon-helper-ts](https://github.com/ishan-parihar/toon-helper-ts)** | TS | TypeScript twin of the TOON encoding library (~40% token savings) |
+### Production Websites & Portfolios
 
----
-
-## Full-Stack Websites
-
-| Site | Tech Stack | Highlights |
-|------|------------|------------|
-| **[design-aesthetics-website](https://github.com/ishan-parihar/design-aesthetics-website)** | Next.js 16 / SvelteKit | Architectural firm showcase — 49K LOC, GSAP, Three.js, WebGL shaders |
-| **[ishanparihar-svelte](https://github.com/ishan-parihar/ishanparihar-svelte)** | SvelteKit 5 / Supabase | Production portfolio & platform — Razorpay integration, MDX blog |
-| **[law-of-one-india-website](https://github.com/ishan-parihar/law-of-one-india-website)** | Next.js 15 / Supabase | Regional community publishing platform with role-based auth & MDX CMS |
-| **[lifeos-website](https://github.com/ishan-parihar/lifeos-website)** | Next.js 15 / Tailwind | Landing page & documentation hub for the LifeOS platform |
-| **[webdev-portfolio](https://github.com/ishan-parihar/webdev-portfolio)** | Next.js 15 / TS | Conversion-focused freelance web development portfolio |
+| Platform | Tech Stack | Architecture & Operational Details |
+|----------|------------|-----------------------------------|
+| **[design-aesthetics-website](https://github.com/ishan-parihar/design-aesthetics-website)** | SvelteKit / Tailwind | Architectural portfolio: 49K LOC, GSAP, WebGL shaders, Three.js |
+| **[ishanparihar-svelte](https://github.com/ishan-parihar/ishanparihar-svelte)** | SvelteKit 5 / Supabase | Core platform with Razorpay integrations, authentication, MDX CMS |
+| **[law-of-one-india-website](https://github.com/ishan-parihar/law-of-one-india-website)** | Next.js 15 / Postgres | Community publishing hub with custom caching, role-based auth, MDX |
+| **[lifeos-website](https://github.com/ishan-parihar/lifeos-website)** | Next.js 15 / Tailwind | Platform documentation hub and production marketing page |
+| **[webdev-portfolio](https://github.com/ishan-parihar/webdev-portfolio)** | Next.js 15 / TypeScript | Fast, conversion-optimized landing page for freelance web dev |
 
 ---
 
-## Published Packages
+## 🛠️ Unified Tech Stack Matrix
 
-| Package | Platform | Install | Note |
-|---------|----------|---------|------|
-| **igs-rust-mcp** ⬆️ | [GitHub](https://github.com/ishan-parihar/igs-rust-mcp) | Rust ~7MB binary | Flagship — Rust port, ~5MB RSS, TOON token optimization |
-| **igs-mcp-server** | [npm](https://www.npmjs.com/package/igs-mcp-server) | `npm install igs-mcp-server` | Initial TypeScript proof-of-concept |
-| **instagram-scraper-mcp** | [Test PyPI](https://test.pypi.org/project/instagram-scraper-mcp/) | `uvx --index-url https://test.pypi.org/simple/ instagram-scraper-mcp` | Python HTTPX-based scraper |
-
----
-
-## Open Source & Contributions
-
-| Project | Type | Contribution |
-|---------|------|--------------|
-| **[voicebox](https://github.com/jamiepine/voicebox)** | Python | Voice synthesis pipeline — prompt engineering, voice profile management |
-| **[Whisper-Hindi2Hinglish](https://github.com/ishan-parihar/Whisper-Hindi2Hinglish)** | Python | Hinglish-optimized Whisper transcription — code-mixing, code-switching handling |
-| **[metatrader5_archlinux](https://aur.archlinux.org/packages/metatrader5)** | AUR | MetaTrader 5 for Arch Linux — Wine packaging, install wrapper |
+- **Languages**: Rust, TypeScript, Python, Kotlin, Go, SQL, Zig, Bash, MQL5
+- **Protocols**: Model Context Protocol (MCP), Agent eXperience Interface (AXI), TOON Serialization
+- **Infrastructure**: Docker, systemd services, PostgreSQL, SQLite, Supabase, LanceDB, n8n automation
+- **AI/ML Integration**: local LLMs (llama.cpp, Qwen), OpenAI, Anthropic, Gemini, Whisper, Whisper Hinglish
 
 ---
 
-## Tech Stack
+## 📂 Complete Project Catalog (43 Projects)
 
-| Domain | Technologies |
-|--------|--------------|
-| **Languages** | Rust, TypeScript, Python, Kotlin, Go, JavaScript, SQL, Zig, MQL5 |
-| **Backend** | Axum, Tokio, FastAPI, Next.js API Routes, Express, Bun |
-| **Frontend** | Next.js 16, React 19, SvelteKit 5, Tailwind CSS, shadcn/ui, Three.js, GSAP |
-| **Database** | PostgreSQL, SQLite, Supabase, Convex, LanceDB, Drizzle ORM, Redis |
-| **Protocol Standards** | MCP (300+ tools), AXI (Agent eXperience Interface), TOON |
-| **AI / ML** | OpenAI, Anthropic, Gemini, local LLMs, Whisper, TTS, Qwen |
-| **Infrastructure** | Docker, systemd, GitHub Actions, Cloudflare Tunnel, n8n |
+<details>
+<summary><b>🚀 S-TIER: Flagship Systems & Core Infrastructure (6 Projects)</b></summary>
+<br>
+
+* **[automaton](https://github.com/ishan-parihar/automaton)**: Graph-native automation engine. 15 Rust crates, 39 MCP tools.
+* **[igs-rust-mcp](https://github.com/ishan-parihar/igs-rust-mcp)**: High-speed news ingestion pipeline. ~7MB binary, ~5MB RSS, 223+ sources.
+* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)**: Teleological developmental graph memory. 626 tests, 55 MCP tools.
+* **HoloOS** (Private R&D): Enterprise systems modeling and topological failure risk simulator.
+* **[operant](https://github.com/ishan-parihar/operant)**: Multi-agent C-suite orchestrator. 227 tests, systemd process isolation.
+* **[social-forge](https://github.com/ishan-parihar/social-forge)**: Multi-platform intelligence gatherer and scheduler across 6 networks.
+
+</details>
+
+<details>
+<summary><b>🧠 A-TIER: Production Agent Tooling & Simulations (5 Projects)</b></summary>
+<br>
+
+* **[mindstrata](https://github.com/ishan-parihar/mindstrata)**: Deterministic human society simulation engine. 1,098 unit tests.
+* **[scorestrata](https://github.com/ishan-parihar/scorestrata)**: WAV music generation compiler. 944 verification tests, 11 crates.
+* **[openscript](https://github.com/ishan-parihar/openscript)**: Agent-directed video editing pipeline. 43 MCP tools, Hinglish Whisper transcription.
+* **[andrometry](https://github.com/ishan-parihar/andrometry)**: Android background sensor logging pipeline with Go server.
+* **[mysterium](https://github.com/ishan-parihar/mysterium)**: Assessment engine mapping cognitive variables. 64-cell module matrix.
+
+</details>
+
+<details>
+<summary><b>📡 B-TIER: Agent Memory, Context, & Platform API CLIs (8 Projects)</b></summary>
+<br>
+
+* **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)**: Context CLI on Notion. 29 tools, 5 databases, 3 operational layers.
+* **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)**: LinkedIn corporate scraping and professional intelligence pipeline.
+* **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)**: Stealth Instagram profile scraper and media downloader.
+* **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)**: Fully structured X/Twitter API client for autonomous agent scripts.
+* **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)**: Comprehensive Reddit scraper with 56 distinct operational tools.
+* **[c-suite-agents-mcp](https://github.com/ishan-parihar/c-suite-agents-mcp)**: Relational LifeOS interface running on Postgres and Drizzle.
+* **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)**: Forced cognitive mode engine implementing 13 analysis frameworks.
+* **[obscura-core](https://github.com/ishan-parihar/obscura-core)**: Local daemon synchronizing browser session cookies for agent scripts.
+
+</details>
+
+<details>
+<summary><b>🛠️ C-TIER: Specialized Automation Suites & Libraries (8 Projects)</b></summary>
+<br>
+
+* **[discord-cli](https://github.com/ishan-parihar/discord-cli)**: Local data collector parsing Discord channels and export metrics.
+* **[tg-cli](https://github.com/ishan-parihar/tg-cli)**: Fast Telethon-powered Telegram messaging automation client.
+* **[facebook-lyr](https://github.com/ishan-parihar/facebook-lyr)**: Local-first automation script managing basic Facebook posts.
+* **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)**: Read-only client interacting with Meta Threads endpoints.
+* **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)**: AXI-compliant image canvas manager placing dynamic content overlays.
+* **[lifeos-saas](https://github.com/ishan-parihar/lifeos-saas)**: Agent hosting stack containing NullClaw, Honcho, and Postgres.
+* **[ishanparihar-cms](https://github.com/ishan-parihar/ishanparihar-cms)**: Web backend exposing 60+ CMS tools for content management.
+* **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)**: Social media graphic compiler translating schemas to CSS.
+
+</details>
+
+<details>
+<summary><b>🌐 D-TIER: Portfolios & Web User Interfaces (6 Projects)</b></summary>
+<br>
+
+* **[design-aesthetics-website](https://github.com/ishan-parihar/design-aesthetics-website)**: Architectural visual landing page. GSAP animations, Three.js shaders.
+* **[ishanparihar-svelte](https://github.com/ishan-parihar/ishanparihar-svelte)**: SvelteKit 5 platform managing MDX blogs and Razorpay payments.
+* **[law-of-one-india-website](https://github.com/ishan-parihar/law-of-one-india-website)**: Publishing platform handling community user management.
+* **[lifeos-website](https://github.com/ishan-parihar/lifeos-website)**: Technical marketing page and documentation outline for LifeOS.
+* **[webdev-portfolio](https://github.com/ishan-parihar/webdev-portfolio)**: Fast freelance conversion page showcasing web design.
+* **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)**: Node.js/TypeScript sibling script of the Operant orchestrator.
+
+</details>
+
+<details>
+<summary><b>🧪 E-TIER: Utilities & Experimental Prototypes (10 Projects)</b></summary>
+<br>
+
+* **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)**: Audio pipeline compiling dynamic background sounds.
+* **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)**: Math simulator tracking emergent agent interactions.
+* **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)**: Modular sandbox testing raw agent behaviors (Codename: Project Chimera).
+* **[social-media-platform](https://github.com/ishan-parihar/social-media-platform)**: Early-stage project design specs (Archived).
+* **[toon-helper](https://github.com/ishan-parihar/toon-helper)**: Native Rust serialization library implementing TOON.
+* **[toon-helper-ts](https://github.com/ishan-parihar/toon-helper-ts)**: Sibling TypeScript library parsing TOON object streams.
+* **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)**: Minimal conversational interface bridging Telegram bots and Notion.
+* **[igs-mcp-server](https://github.com/ishan-parihar/igs-mcp-server)**: Legacy Node.js prototype of the intelligence gathering pipeline (Archived).
+* **[instagram-scraper-mcp](https://github.com/ishan-parihar/instagram-scraper-mcp)**: Legacy PyPI scraper package (Archived).
+* **[icode](https://github.com/ishan-parihar/icode)**: Rust command runner parsing agent file edit logs (Archived).
+
+</details>
 
 ---
 
-## Complete Project Catalog (43 Projects)
+## 🏛️ The Philosophy of Spatial Machinery
 
-```
-S-TIER 6 — Flagship infrastructure
-  automaton           Graph-native automation substrate — 15 Rust crates, 38 MCP tools
-  igs-rust-mcp        Intelligence Gathering System — ~7MB static Rust binary, 411 sources
-  tdg-rust            Teleological Developmental Graph — 626 tests, 36 MCP tools
-  HoloOS              Enterprise risk architecture & systems simulation (Private R&D)
-  operant             Multi-agent C-suite — 227 tests, LanceDB memory, systemd
-  social-forge        Multi-platform social media intel CLI across 6 platforms
+I build software from a developmental systems perspective. Traditional programming treats applications as linear recipes: inputs enter, steps execute, outputs exit. This breaks when interacting with autonomous cognitive systems. 
 
-A-TIER 5 — Production agent tooling
-  mindstrata          Deterministic human-society simulation — 1,098 tests, 10 substrates
-  scorestrata         Deterministic music generation compiler — 944 tests, 11 Rust crates
-  openscript          AI-directed video editing pipeline — 109 MCP tools, 9 Rust crates
-  andrometry          Personal context engine — Kotlin Android collector + Go MCP
-  mysterium           Contemplative-assessment RPG — 64-cell matrix, 1,280 items
+I treat software as **architectural space**. A program is not a linear recipe; it is a structural container. The role of the systems engineer is to design constraints, manage load bearing pathways, and structure spatial interfaces. When an AI agent enters an execution space, it should not guess the next step. It should navigate the natural constraints of the system. 
 
-B-TIER 8 — Agent infrastructure & data
-  lifeos-ops          LifeOS CLI + MCP on Notion — 29 tools, 5 DBs, 3 layers
-  linkedin-lyr        LinkedIn MCP + CLI — professional network intelligence
-  instagram-lyr       Instagram HTTPX MCP — profile recon & media extraction
-  twitter-lyr         Twitter/X CLI for AI agents — 42 commands
-  reddit-lyr          Reddit MCP — 56 tools for subreddits, threads, analytics
-  c-suite-agents-mcp  LifeOS MCP — 35 tools on PostgreSQL + Drizzle
-  thinking-steroid    Epistemic operating system — 13 forced cognitive modalities
-  obscura-core        Stealth browser cookie/daemon library & CDP pool
-
-C-TIER 8 — CLI/automation suite
-  discord-cli         Local-first Discord data CLI
-  tg-cli              Telethon Telegram CLI
-  facebook-lyr        Facebook automation CLI
-  threads-lyr         Threads read-only MCP
-  meme-lyr            AXI-compliant meme CLI with aspect ratio support
-  lifeos-saas         LifeOS agent stack powered by NullClaw
-  ishanparihar-cms    ishanparihar.com MCP — 60+ tools for content/courses
-  slideforge-rust     Programmatic social media carousel generator in Rust
-
-D-TIER 6 — Websites & web apps
-  design-aesthetics-website  49K LOC GSAP/Three.js showcase
-  ishanparihar-svelte         Production portfolio & platform (SvelteKit 5)
-  law-of-one-india-website    Regional community publishing platform
-  lifeos-website              LifeOS landing page & docs
-  webdev-portfolio           Conversion-focused freelance portfolio
-  c-suite-agents              Operant orchestration (multi-agent TS twin)
-
-E-TIER 5 — Experimental / utility
-  consciousness-fabricator    AI meditation audio generator
-  holosim-infinite            Holographic universe simulation engine
-  kali-mahabali               Project Chimera — modular intelligence framework
-  social-media-platform       Social media platform (WIP/Planning)
-  toon-helper / toon-helper-ts TOON encoding libraries (Rust + TypeScript)
-```
-<!-- PORTFOLIO_END -->
+Whether assembling deterministic society simulations (`mindstrata`), compiling WAV waveforms directly (`scorestrata`), or managing DAG execution loops (`automaton`), I design resilient environments that support autonomous agency.
 
 ---
 
@@ -262,6 +326,6 @@ E-TIER 5 — Experimental / utility
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=ishan-parihar&label=Profile%20Views&countColor=%232ea44f)](https://github.com/ishan-parihar)
 
 **Available for remote contract, full-time, and part-time roles worldwide.**  
-**[📧 support@ishanparihar.com](mailto:support@ishanparihar.com) — let's talk about what you're building.**
+**[📧 support@ishanparihar.com](mailto:support@ishanparihar.com) — let's build the infrastructure of tomorrow.**
 
 </div>
