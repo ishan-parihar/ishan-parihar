@@ -1,5 +1,7 @@
 <div align="center">
 
+<!-- T2I HERO SPEC — Subject: a systems engineer standing at a control deck orchestrating a constellation of agent infrastructure — DAG execution graphs, MCP tool rings, memory vectors, and token-optimized protocol beams converging on a central hub labeled by the light it emits (no text). Composition: central operator figure with radiating infrastructure nodes; depth-of-field glow. Palette: deep charcoal #0B0F19 background, Rust amber #DE7F3B, TypeScript blue #3178C6, Python gold #F7E018, MCP violet #A855F7, emerald accent #10B981. Style: cinematic dark editorial vector, precise geometry, subtle glow, no text. 16:9. -->
+
 <!-- RAW SVG HERO SYSTEM -->
 <svg width="100%" height="320" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Solid Dark Editorial Background -->
@@ -96,7 +98,7 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 | **Active Projects** | **43** | 37 production/active, 6 experimental/archived across 5 architectural tiers |
 | **MCP Servers** | **15+** | 300+ total tools across intelligence, memory, media, and life-ops |
 | **Rust Crates** | **40+** | Multi-crate workspaces powering `automaton`, `tdg-rust`, `scorestrata`, `igs-rust` |
-| **Automated Tests** | **3,500+** | Heavy deterministic test suites: `mindstrata` (1098), `scorestrata` (944), `tdg-rust` (626) |
+| **Automated Tests** | **3,500+** | Heavy deterministic test suites: `mindstrata` (1100+), `scorestrata` (944), `tdg-rust` (626) |
 | **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler |
 | **Production Runtime** | **<10MB** | Stripped static musl Rust binaries with minimal idle RSS, zero dynamic dependencies |
 
@@ -119,7 +121,7 @@ I treat AI system design as **spatial machinery** rather than linear text prompt
 
 * **Graph-Native Orchestration**: I replace linear shell scripts and standard pipelines with property graphs. Every execution node has typed ports; the execution engine resolves dependencies, materializes parallel branches using a Tokio-backed level scheduler, and exposes the live execution DAG to LLM operators via MCP.
 * **Token-Efficient Serialization**: I designed and compiled the TOON (Token-Oriented Object Notation) standard. By eliminating structural syntax redundancy, TOON reduces context-window footprint by 40% to 60% compared to standard JSON, preserving deterministic validation.
-* **Minimal Memory footprint**: I specialize in compiling highly optimized, zero-dependency static musl Rust binaries. My intelligence gathering pipelines (IGS) curates 223+ sources globally while running within a 7MB static file and under 5MB of idle RAM.
+* **Minimal Memory footprint**: I specialize in compiling highly optimized, zero-dependency static musl Rust binaries. My intelligence gathering pipelines (IGS) curate 411 sources across 47 countries while running within a 7MB static file and under 5MB of idle RAM.
 * **Systems Diagnostics**: Drawing on my background in architectural design, spatial diagnostics, and cognitive modeling, I translate systemic risk, organizational constraints, and multi-agent network topologies into deterministic software constraints.
 
 ---
@@ -127,7 +129,7 @@ I treat AI system design as **spatial machinery** rather than linear text prompt
 ## 💎 Flagship Projects
 
 ### ⚙️ [automaton](https://github.com/ishan-parihar/automaton)
-**Graph-native automation substrate for AI agents.** Rust. 39 MCP tools.
+**Graph-native automation substrate for AI agents.** Rust. 38 MCP tools.
 
 Standard workflow engines are designed for human operators, not autonomous agents. Agents cannot natively reason over sequential step failures, dynamically route branches, or heal damaged execution state at runtime.
 
@@ -140,18 +142,18 @@ Standard workflow engines are designed for human operators, not autonomous agent
 ### 📡 [igs-rust-mcp](https://github.com/ishan-parihar/igs-rust-mcp)
 **Intelligence Gathering System — High-performance Rust engine.** ~7MB static binary, ~5MB RSS.
 
-A lightweight news and data ingestion pipeline scraping 223+ distinct sources across 45 countries. It filters, deduplicates, and enriches global national, tech, and financial news, generating optimized intelligence feeds for agent consumption.
+A lightweight news and data ingestion pipeline scraping 411 distinct sources across 47 countries. It filters, deduplicates, and enriches global national, tech, and financial news, generating optimized intelligence feeds for agent consumption.
 
 * **Serialization**: Outputs natively in TOON, saving 40% to 60% in downstream context window costs.
 * **Parsers**: 9 custom-engineered stream parsers handling RSS, Atom, HTML tables, OFAC lists, and PDF archives.
 * **Efficiency**: Developed to replace a slow, high-memory Node.js prototype, dropping idle RAM consumption to under 5MB.
 
 ### 🧠 [TDG](https://github.com/ishan-parihar/tdg-rust)
-**Teleological Developmental Graph — Pure Rust cognitive engine.** 626 tests. 55 MCP tools.
+**Teleological Developmental Graph — Pure Rust cognitive engine.** 626 tests. 36 MCP tools.
 
 A complex implementation of stateful agent memory using a holonic graph structure. Every memory unit is represented as a node: `(Content, Embedding, Telos)`. The teleological decay algorithm ensures stale or irrelevant context decays over time while highly relevant goal nodes remain active.
 
-* **Interface**: 55 custom MCP tools allowing agents to write, link, prune, and query memories using vector search combined with graph traversal.
+* **Interface**: 36 custom MCP tools allowing agents to write, link, prune, and query memories using vector search combined with graph traversal.
 * **Validation**: Highly verified with 626 deterministic unit and integration tests.
 * **Dual Stack**: Available in both lightweight, parallelized Rust and the initial reference Python implementation.
 
@@ -182,9 +184,9 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 
 | System | Stack | Surface | Description |
 |--------|-------|---------|-------------|
-| **[automaton](https://github.com/ishan-parihar/automaton)** | Rust | 39 Tools | Graph-native build, plan, and scheduled execution engine |
-| **[igs-rust-mcp](https://github.com/ishan-parihar/igs-rust-mcp)** | Rust | 14 Tools | Lightweight intelligence aggregator scraping 223+ global sources |
-| **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Rust | 55 Tools | Teleological developmental graph memory and knowledge synthesizer |
+| **[automaton](https://github.com/ishan-parihar/automaton)** | Rust | 38 Tools | Graph-native build, plan, and scheduled execution engine |
+| **[igs-rust-mcp](https://github.com/ishan-parihar/igs-rust-mcp)** | Rust | 91 Tools | Lightweight intelligence aggregator scraping 411 sources in 47 countries |
+| **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Rust | 36 Tools | Teleological developmental graph memory and knowledge synthesizer |
 | **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** | TypeScript | 13 Tools | Forced epistemic cognitive modes (first-principles, polarity mapping, etc.) |
 | **[c-suite-agents-mcp](https://github.com/ishan-parihar/c-suite-agents-mcp)** | TypeScript | 35 Tools | LifeOS integration engine tracking personal metrics, finances, and habits |
 | **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** | Python | 56 Tools | Dense Reddit scraping, analysis, and interaction CLI |
@@ -194,7 +196,7 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 | **[andrometry](https://github.com/ishan-parihar/andrometry)** | Kotlin/Go | 12 Tools | Personal context engine: Kotlin Android collector with a Go MCP server |
 | **[obscura-core](https://github.com/ishan-parihar/obscura-core)** | Python | 8 Tools | Stealth browser integration: cookie synchronization and CDP daemon |
 | **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** | Python | 6 Tools | AXI-compliant structured image overlay and meme generator |
-| **[mindstrata](https://github.com/ishan-parihar/mindstrata)** | Rust | Core Lib | Deterministic human-society simulation: 1,098 unit tests |
+| **[mindstrata](https://github.com/ishan-parihar/mindstrata)** | Rust | Core Lib | Deterministic human-society simulation: 1,100+ unit tests |
 | **[scorestrata](https://github.com/ishan-parihar/scorestrata)** | Rust | Core Lib | WAV music generation compiler with 944 verification tests |
 | **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** | Rust | CLI Tool | Programmatic social media carousel generator using HTML/CSS engines |
 | **[toon-helper](https://github.com/ishan-parihar/toon-helper)** | Rust / TS | Libraries | Token-Oriented Object Notation serialization wrappers |
@@ -226,9 +228,9 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 <summary><b>🚀 S-TIER: Flagship Systems & Core Infrastructure (6 Projects)</b></summary>
 <br>
 
-* **[automaton](https://github.com/ishan-parihar/automaton)**: Graph-native automation engine. 15 Rust crates, 39 MCP tools.
-* **[igs-rust-mcp](https://github.com/ishan-parihar/igs-rust-mcp)**: High-speed news ingestion pipeline. ~7MB binary, ~5MB RSS, 223+ sources.
-* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)**: Teleological developmental graph memory. 626 tests, 55 MCP tools.
+* **[automaton](https://github.com/ishan-parihar/automaton)**: Graph-native automation engine. 15 Rust crates, 38 MCP tools.
+* **[igs-rust-mcp](https://github.com/ishan-parihar/igs-rust-mcp)**: High-speed news ingestion pipeline. ~7MB binary, ~5MB RSS, 411 sources in 47 countries.
+* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)**: Teleological developmental graph memory. 626 tests, 36 MCP tools.
 * **HoloOS** (Private R&D): Enterprise systems modeling and topological failure risk simulator.
 * **[operant](https://github.com/ishan-parihar/operant)**: Multi-agent C-suite orchestrator. 227 tests, systemd process isolation.
 * **[social-forge](https://github.com/ishan-parihar/social-forge)**: Multi-platform intelligence gatherer and scheduler across 6 networks.
@@ -239,7 +241,7 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 <summary><b>🧠 A-TIER: Production Agent Tooling & Simulations (5 Projects)</b></summary>
 <br>
 
-* **[mindstrata](https://github.com/ishan-parihar/mindstrata)**: Deterministic human society simulation engine. 1,098 unit tests.
+* **[mindstrata](https://github.com/ishan-parihar/mindstrata)**: Deterministic human society simulation engine. 1,100+ unit tests.
 * **[scorestrata](https://github.com/ishan-parihar/scorestrata)**: WAV music generation compiler. 944 verification tests, 11 crates.
 * **[openscript](https://github.com/ishan-parihar/openscript)**: Agent-directed video editing pipeline. 43 MCP tools, Hinglish Whisper transcription.
 * **[andrometry](https://github.com/ishan-parihar/andrometry)**: Android background sensor logging pipeline with Go server.
@@ -251,7 +253,7 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 <summary><b>📡 B-TIER: Agent Memory, Context, & Platform API CLIs (8 Projects)</b></summary>
 <br>
 
-* **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)**: Context CLI on Notion. 29 tools, 5 databases, 3 operational layers.
+* **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)**: Context CLI on Notion. 31 tools, 5 databases, 3 operational layers.
 * **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)**: LinkedIn corporate scraping and professional intelligence pipeline.
 * **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)**: Stealth Instagram profile scraper and media downloader.
 * **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)**: Fully structured X/Twitter API client for autonomous agent scripts.
