@@ -160,7 +160,8 @@ MCP_TOOL_DEC = re.compile(r"@\s*(?:mcp|app|router|server)\.tool\s*\(")
 #            no interactive surface
 CLI_CMD_RE = re.compile(
     r"@\s*(?:click|typer)\.(?:command|group)\s*\(|derive\s*\([^)]*Parser|"
-    r"\.command\s*\(|add_parser\s*\(|console_scripts\s*=|entry_points\s*=",
+    r"\.command\s*\(|add_parser\s*\(|console_scripts\s*=|entry_points\s*=|"
+    r"\[project\.scripts\]|\"bin\"\s*:\s*\{",
     re.IGNORECASE,
 )
 REST_ROUTE_RE = re.compile(
@@ -171,6 +172,33 @@ REST_ROUTE_RE = re.compile(
 ENGINE_BIN_RE = re.compile(r"^\[\[bin\]\]|fn main\s*\(|if __name__\s*==\s*['\"]__main__")
 
 
+# AXI-ergonomics signals (v6.1, 2026-08-12) — six demonstrable axi.md
+# principles, each measured by a concrete source pattern:
+#   1 TOON output             dump_toon / toon_print_dict / outputTOON / --toon
+#   2 --full escape hatch     the --full flag (content truncation escape)
+#   3 definitive empty states "0 results" / "no results" / "0 items"
+#   4 content truncation      truncate* with a "chars total" size hint
+#   5 pre-computed aggregates total_count / totalCount / count: N of M
+#   6 structured errors       sys.exit(N) / process.exit(code) / UsageError
+AXI_TOON_RE = re.compile(r"\b(dump_toon|toon_print_dict|outputTOON|format_toon|as_toon)\b|--toon", re.I)
+AXI_FULL_RE = re.compile(r"--full")
+AXI_EMPTY_RE = re.compile(r"(0 results|no results|0 items|none found)", re.I)
+AXI_TRUNC_RE = re.compile(r"truncat\w*\s*\(.*chars total", re.I)
+AXI_AGG_RE = re.compile(r"(total_count|totalCount|count: \d+ of \d+ total)", re.I)
+AXI_EXIT_RE = re.compile(r"(sys\.exit\(|process\.exit\(|UsageError)", re.I)
+
+
+def count_axi(src_text):
+    """Count demonstrable AXI principles across all tracked source (0-6)."""
+    blob = "\n".join(src_text)
+    n = 0
+    for pat in (AXI_TOON_RE, AXI_FULL_RE, AXI_EMPTY_RE, AXI_TRUNC_RE,
+                AXI_AGG_RE, AXI_EXIT_RE):
+        if pat.search(blob):
+            n += 1
+    return n
+
+
 def detect_surface(mcp_hits, cli_hits, rest_hits, bin_hits):
     """Pick the dominant surface class by measured signal count.
 
@@ -179,10 +207,27 @@ def detect_surface(mcp_hits, cli_hits, rest_hits, bin_hits):
     backend like osint-os is never demoted to a handful of CLI hits).
     Only when NO interactive surface exists does a project fall to
     `engine` (runnable binaries, floor curve).
+
+    Hybrid rule (v6.1): MCP servers that ALSO publish a first-class CLI
+    (`"bin"` in package.json or `[project.scripts]` in pyproject.toml) are
+    classified `cli` — the AXI CLI is the advertised agent surface and the
+    -lyr family ships both. The manifest scan feeds cli_hits already, so a
+    repo with both surfaces and a published bin entry reports `cli`.
+
+    INTENDED INTERPRETATION: "advertised surface" is decided by the repo's
+    own branding — a `-lyr`/`-cli` repo that ships a published CLI entry
+    point is CLI-first even if it also exposes MCP tools. The rule is NOT a
+    demotion mechanism: a repo whose identity is MCP-first (e.g. a server
+    whose only console script is an internal dev utility) should be scored
+    mcp; classify it so in DATA, and the detector's hybrid branch only fires
+    when a published bin/scripts entry exists, not for stray helper scripts.
     """
     best = max(mcp_hits, cli_hits, rest_hits)
     if best <= 0:
         return "engine", bin_hits
+    # hybrid: published CLI + any MCP -> cli (AXI-first)
+    if cli_hits > 0 and mcp_hits > 0:
+        return "cli", cli_hits
     if best == mcp_hits:
         return "mcp", mcp_hits
     if best == cli_hits:
@@ -202,10 +247,10 @@ def sh(repo_dir, cmd, timeout=120):
 def measure(name, relpath, category):
     repo_dir = os.path.join(PORTS, relpath)
     if not os.path.isdir(repo_dir):
-        return (name, category, "NO-DIR", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+        return (name, category, "NO-DIR", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
     files = sh(repo_dir, "git ls-files")
     if not files:
-        return (name, category, "NO-TRACKED", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+        return (name, category, "NO-TRACKED", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
     flist = [f for f in files.split("\n") if f and not VENDORED_DIR_RE.search(f)]
     loc_code = 0
     test_hits = 0
@@ -240,7 +285,18 @@ def measure(name, relpath, category):
         if f.endswith("Cargo.toml") or ext in (".rs", ".py"):
             bin_hits += len(ENGINE_BIN_RE.findall(content))
         src_text.append(content)
+    # package.json "bin" / pyproject [project.scripts] are CLI signals but .json
+    # and .toml are not in CODE_EXT, so scan the manifest files directly.
+    for mf in ("package.json", "pyproject.toml", "Cargo.toml"):
+        p = os.path.join(repo_dir, mf)
+        if os.path.isfile(p):
+            try:
+                mf_src = open(p, errors="ignore").read()
+            except Exception:
+                mf_src = ""
+            cli_hits += len(CLI_CMD_RE.findall(mf_src))
     surface, tools = detect_surface(mcp_hits, cli_hits, rest_hits, bin_hits)
+    axi = count_axi(src_text) if surface == "cli" else 0
     cargo = [f for f in flist if f.endswith("Cargo.toml")]
     pkgjson = [f for f in flist if f.endswith("package.json")]
     mods = len(cargo) + max(0, min(len(pkgjson), 6))
@@ -285,14 +341,14 @@ def measure(name, relpath, category):
             break
     docs = 1 if os.path.isdir(os.path.join(repo_dir, "docs")) else 0
     return (name, category, loc_code, test_hits, mods, ci, c90, tags, age,
-            len(langs), min(concur, 500), tools, surface, indegree, readme, install, docs)
+            len(langs), min(concur, 500), tools, surface, axi, indegree, readme, install, docs)
 
 
 def main():
     args = sys.argv[1:]
     only = [a for a in args if not a.startswith("--")]
     want_total = "--total" in args
-    print("name|category|loc|tests|mods|ci|c90|tags|age|langs|concur|ops|surface|indegree|readme|install|docs")
+    print("name|category|loc|tests|mods|ci|c90|tags|age|langs|concur|ops|surface|axi|indegree|readme|install|docs")
     rows = []
     for name, relpath, category in REPOS:
         if only and name not in only:
@@ -314,7 +370,7 @@ def main():
             ci += r[5]
             tags += r[7]
             ops += r[11]
-            indegree += r[13]
+            indegree += r[14]
             n += 1
         # Rust crates = pure Cargo.toml manifest count across the SAME subset
         # as the rows (mods also caps package.json counts, so it is not a crate

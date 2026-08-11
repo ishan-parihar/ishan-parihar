@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-Objective project ranking engine — v6 (8 criteria, class-aware agent surface).
+Objective project ranking engine — v6.1 (8 criteria, class-aware agent surface,
+AXI-ergonomics CLI bonus).
 
-OpenSSF-Scorecard-inspired, fully machine-measured (v6 re-audit 2026-08-12).
+OpenSSF-Scorecard-inspired, fully machine-measured (v6.1 re-audit 2026-08-12).
 Criteria & weights:
   1. Engineering Scale        (12%)  log LOC + module/crate count
   2. Test Rigor               (18%)  log tests + density bonus
@@ -12,7 +13,12 @@ Criteria & weights:
   6. Development Velocity     ( 8%)  age-normalized commits per 90d
   7. Agent Surface            (14%)  CLASS-AWARE (v6): MCP tools / CLI
                                      commands (AXI) / REST endpoints /
-                                     engine binaries — per own surface class
+                                     engine binaries — per own surface class.
+                                     AXI BONUS (v6.1): CLI projects earn
+                                     +0.4 x min(axi,5) where axi (0-6) is the
+                                     count of demonstrable axi.md principles
+                                     (TOON output, --full, empty states,
+                                     truncation, aggregates, exit codes).
   8. Utility & Ecosystem      (20%)  docs/README, install path, cross-repo in-degree
 
 Tier thresholds (v6):
@@ -52,62 +58,66 @@ import sys
 # ---------------------------------------------------------------------------
 # Measured dataset. Row:
 #   name, category, loc, tests, mods, ci, c90, tags, age, langs, concur,
-#   ops, surface, indegree, readme_lines, install, docs
+#   ops, surface, axi, indegree, readme_lines, install, docs
 # categories: engine | experimental | deprecated | site | kb
-# Agent surface is CLASS-AWARE (v6, measured 2026-08-12): ops is the count
+# Agent surface is CLASS-AWARE (v6.1, measured 2026-08-12): ops is the count
 # on the project's own surface class — mcp (MCP tool count), cli (CLI
 # command count, AXI first-class), rest (HTTP endpoint count), or engine
 # (runnable binary count). Projects are never zeroed for lacking MCP.
+# axi = number of demonstrable AXI principles (0-6, CLI-only bonus): TOON
+# output, --full escape hatch, definitive empty states, content truncation
+# w/ size hint, pre-computed aggregates, structured errors/exit codes.
+# Bonus: cli agent = min(10.0, curve(ops) + 0.4*min(axi, 5)).
 # ---------------------------------------------------------------------------
 DATA = [
     # --- engines -----------------------------------------------------------
-    ("igs-rust", "engine", 27738, 231, 1, 2, 198, 15, 96, 2, 500, 91, "mcp", 0, 432, 1, 1),
-    ("social-forge", "engine", 77836, 257, 3, 2, 479, 2, 96, 5, 500, 43, "mcp", 0, 557, 1, 1),
-    ("operant", "engine", 538394, 9249, 19, 4, 762, 3, 116, 6, 500, 68, "mcp", 3, 206, 1, 1),
-    ("scorestrata", "engine", 72958, 944, 12, 1, 97, 0, 9, 2, 0, 88, "mcp", 0, 158, 1, 1),
-    ("mindstrata", "engine", 82079, 1245, 8, 1, 483, 0, 14, 1, 0, 2, "cli", 0, 169, 1, 1),
-    ("tdg-rust", "engine", 47797, 626, 1, 1, 146, 10, 55, 3, 268, 36, "mcp", 0, 227, 1, 1),
-    ("slideforge-rust", "engine", 35631, 185, 2, 1, 203, 6, 43, 3, 74, 8, "mcp", 1, 346, 1, 1),
-    ("automaton", "engine", 13410, 43, 17, 2, 16, 1, 96, 2, 500, 38, "mcp", 0, 380, 1, 1),
-    ("openscript", "engine", 74606, 510, 12, 2, 463, 0, 129, 5, 500, 109, "mcp", 0, 186, 1, 1),
-    ("mysterium", "engine", 61428, 1090, 1, 2, 467, 0, 86, 4, 281, 9, "cli", 2, 584, 1, 1),
-    ("andrometry", "engine", 25442, 152, 1, 1, 135, 0, 14, 4, 216, 12, "rest", 0, 449, 0, 1),
-    ("lifeos-ops", "engine", 17760, 0, 3, 1, 98, 10, 93, 3, 488, 31, "mcp", 0, 324, 1, 0),
-    ("c-suite-agents", "engine", 46498, 227, 1, 1, 6, 3, 130, 2, 500, 35, "mcp", 2, 140, 1, 1),
-    ("thinking-steroid", "engine", 24997, 247, 1, 2, 16, 0, 122, 1, 18, 13, "mcp", 1, 229, 1, 1),
+    ("igs-rust", "engine", 27738, 231, 1, 2, 198, 15, 96, 2, 500, 91, "mcp", 0, 0, 432, 1, 1),
+    ("social-forge", "engine", 77836, 257, 3, 2, 479, 2, 96, 5, 500, 43, "mcp", 0, 0, 557, 1, 1),
+    ("operant", "engine", 538394, 9249, 19, 4, 762, 3, 116, 6, 500, 68, "mcp", 0, 3, 206, 1, 1),
+    ("scorestrata", "engine", 72958, 944, 12, 1, 97, 0, 9, 2, 0, 88, "mcp", 0, 0, 158, 1, 1),
+    ("mindstrata", "engine", 82079, 1245, 8, 1, 483, 0, 14, 1, 0, 2, "cli", 3, 0, 169, 1, 1),
+    ("tdg-rust", "engine", 47797, 626, 1, 1, 146, 10, 55, 3, 268, 36, "mcp", 0, 0, 227, 1, 1),
+    ("slideforge-rust", "engine", 35631, 185, 2, 1, 203, 6, 43, 3, 74, 8, "mcp", 0, 1, 346, 1, 1),
+    ("automaton", "engine", 13410, 43, 17, 2, 16, 1, 96, 2, 500, 38, "mcp", 0, 0, 380, 1, 1),
+    ("openscript", "engine", 74606, 510, 12, 2, 463, 0, 129, 5, 500, 109, "mcp", 0, 0, 186, 1, 1),
+    ("mysterium", "engine", 61428, 1090, 1, 2, 467, 0, 86, 4, 281, 9, "cli", 5, 2, 584, 1, 1),
+    ("andrometry", "engine", 25442, 152, 1, 1, 135, 0, 14, 4, 216, 12, "rest", 0, 0, 449, 0, 1),
+    ("lifeos-ops", "engine", 17760, 0, 3, 1, 98, 10, 93, 3, 488, 31, "mcp", 0, 0, 324, 1, 0),
+    ("c-suite-agents", "engine", 46498, 227, 1, 1, 6, 3, 130, 2, 500, 35, "mcp", 0, 2, 140, 1, 1),
+    ("thinking-steroid", "engine", 24997, 247, 1, 2, 16, 0, 122, 1, 18, 13, "mcp", 0, 1, 229, 1, 1),
     # --- AXI CLI family (ranked this audit) --------------------------------
-    ("reddit-lyr", "engine", 4430, 24, 0, 1, 51, 0, 84, 2, 222, 56, "cli", 0, 168, 1, 1),
-    ("twitter-lyr", "engine", 13425, 243, 0, 2, 44, 32, 160, 2, 14, 42, "cli", 0, 483, 1, 1),
-    ("instagram-lyr", "engine", 20441, 335, 0, 1, 49, 0, 485, 2, 355, 47, "cli", 0, 433, 1, 1),
-    ("linkedin-lyr", "engine", 50739, 1166, 0, 4, 204, 94, 485, 2, 500, 25, "cli", 1, 379, 1, 1),
-    ("facebook-lyr", "engine", 13977, 229, 0, 1, 19, 0, 7, 2, 318, 41, "cli", 2, 206, 1, 1),
-    ("threads-lyr", "engine", 2374, 31, 0, 1, 9, 0, 1, 2, 21, 3, "cli", 1, 133, 1, 0),
-    ("discord-cli", "engine", 3704, 15, 0, 2, 11, 10, 156, 2, 40, 13, "cli", 0, 333, 1, 0),
-    ("tg-cli", "engine", 4828, 122, 0, 2, 12, 14, 156, 2, 34, 12, "cli", 0, 271, 1, 0),
-    ("meme-lyr", "engine", 1050, 25, 1, 2, 14, 1, 521, 2, 28, 6, "cli", 0, 459, 1, 1),
-    ("obscura-core", "engine", 2896, 15, 0, 1, 12, 0, 10, 1, 104, 8, "mcp", 4, 231, 1, 0),
+    ("reddit-lyr", "engine", 4430, 24, 0, 1, 51, 0, 84, 2, 222, 56, "cli", 5, 0, 168, 1, 1),
+    ("twitter-lyr", "engine", 13425, 243, 0, 2, 44, 32, 160, 2, 14, 42, "cli", 5, 0, 483, 1, 1),
+    ("instagram-lyr", "engine", 20441, 335, 0, 1, 49, 0, 485, 2, 355, 47, "cli", 5, 0, 433, 1, 1),
+    ("linkedin-lyr", "engine", 50739, 1166, 0, 4, 204, 94, 485, 2, 500, 25, "cli", 6, 1, 379, 1, 1),
+    ("facebook-lyr", "engine", 13977, 229, 0, 1, 19, 0, 7, 2, 318, 41, "cli", 3, 2, 206, 1, 1),
+    ("threads-lyr", "engine", 2374, 31, 0, 1, 9, 0, 1, 2, 21, 3, "cli", 3, 1, 133, 1, 0),
+    ("discord-cli", "engine", 3704, 15, 0, 2, 11, 10, 156, 2, 40, 13, "cli", 5, 0, 333, 1, 0),
+    ("tg-cli", "engine", 4828, 122, 0, 2, 12, 14, 156, 2, 34, 12, "cli", 5, 0, 271, 1, 0),
+    ("meme-lyr", "engine", 1050, 25, 1, 2, 14, 1, 521, 2, 28, 6, "cli", 4, 0, 459, 1, 1),
+    ("obscura-core", "engine", 2896, 15, 0, 1, 12, 0, 10, 1, 104, 8, "mcp", 0, 4, 231, 1, 0),
     # --- experimental / archived (capped at C by policy) --------------------
-    ("consciousness-fabricator", "experimental", 9238, 158, 0, 1, 7, 0, 125, 1, 73, 6, "cli", 1, 249, 0, 1),
-    ("holosim-infinite", "experimental", 489296, 7766, 2, 2, 5, 0, 180, 2, 31, 6, "engine", 0, 296, 1, 1),
-    ("kali-mahabali", "experimental", 63118, 690, 0, 1, 15, 1, 314, 2, 500, 20, "mcp", 0, 355, 1, 1),
-    ("icode", "deprecated", 142819, 2095, 21, 2, 7, 0, 133, 3, 500, 10, "mcp", 0, 100, 0, 1),
+    ("consciousness-fabricator", "experimental", 9238, 158, 0, 1, 7, 0, 125, 1, 73, 6, "cli", 2, 1, 249, 0, 1),
+    ("holosim-infinite", "experimental", 489296, 7766, 2, 2, 5, 0, 180, 2, 31, 6, "engine", 0, 0, 296, 1, 1),
+    ("kali-mahabali", "experimental", 63118, 690, 0, 1, 15, 1, 314, 2, 500, 20, "mcp", 0, 0, 355, 1, 1),
+    ("icode", "deprecated", 142819, 2095, 21, 2, 7, 0, 133, 3, 500, 10, "mcp", 0, 0, 100, 0, 1),
     # --- engines added in the 2026-08-11 full-coverage pass -----------------
-    ("browsefleet", "engine", 4558, 86, 4, 5, 29, 2, 130, 4, 239, 22, "rest", 0, 282, 1, 1),
-    ("hermes-prime-bridge", "engine", 919, 14, 0, 2, 23, 1, 4, 2, 1, 3, "mcp", 0, 162, 1, 1),
-    ("lifeos-bot", "engine", 12009, 33, 0, 2, 16, 1, 61, 2, 397, 3, "cli", 0, 107, 1, 1),
+    ("browsefleet", "engine", 4558, 86, 4, 5, 29, 2, 130, 4, 239, 22, "rest", 0, 0, 282, 1, 1),
+    ("hermes-prime-bridge", "engine", 919, 14, 0, 2, 23, 1, 4, 2, 1, 3, "mcp", 0, 0, 162, 1, 1),
+    ("lifeos-bot", "engine", 12009, 33, 0, 2, 16, 1, 61, 2, 397, 3, "cli", 2, 0, 107, 1, 1),
     # --- deprecated / inactive (capped at C by policy) -----------------------
-    ("cinesync", "deprecated", 13744, 16, 2, 2, 3, 0, 298, 4, 23, 13, "rest", 0, 150, 1, 1),
-    ("osint-os", "deprecated", 120754, 399, 1, 1, 2, 0, 406, 4, 500, 122, "rest", 0, 469, 1, 1),
-    ("workout-factory", "deprecated", 9417, 30, 0, 1, 3, 0, 262, 2, 7, 0, "engine", 0, 192, 0, 1),
+    ("cinesync", "deprecated", 13744, 16, 2, 2, 3, 0, 298, 4, 23, 13, "rest", 0, 0, 150, 1, 1),
+    ("osint-os", "deprecated", 120754, 399, 1, 1, 2, 0, 406, 4, 500, 122, "rest", 0, 0, 469, 1, 1),
+    ("workout-factory", "deprecated", 9417, 30, 0, 1, 3, 0, 262, 2, 7, 0, "engine", 0, 0, 192, 0, 1),
     # --- unranked: utility/private ------------------------------------------
-    ("lifeos-saas", "engine", 760, 0, 0, 1, 4, 0, 97, 2, 15, 10, "rest", 0, 277, 1, 1),
+    ("lifeos-saas", "engine", 760, 0, 0, 1, 4, 0, 97, 2, 15, 10, "rest", 0, 0, 277, 1, 1),
     # --- websites / portfolios (separate category, never ranked) ------------
-    ("design-aesthetics-website", "site", 17084, 8, 2, 1, 40, 0, 1209, 3, 58, 15, "rest", 0, 144, 1, 1),
-    ("ishanparihar-cms", "site", 14271, 355, 1, 2, 38, 1, 126, 2, 352, 20, "rest", 1, 96, 1, 1),
-    ("ishanparihar-svelte", "site", 64567, 666, 1, 3, 303, 0, 299, 4, 500, 4, "rest", 1, 203, 1, 1),
-    ("law-of-one-india-website", "site", 69626, 63, 1, 1, 5, 0, 503, 3, 500, 29, "rest", 0, 176, 1, 1),
-    ("webdev-portfolio", "site", 0, 0, 0, 1, 4, 0, 128, 0, 0, 0, "engine", 0, 109, 0, 0),
-    ("lifeos-website", "site", 71179, 1156, 2, 1, 5, 0, 96, 3, 500, 8, "rest", 1, 188, 1, 1),
+    ("design-aesthetics-website", "site", 17084, 8, 2, 1, 40, 0, 1209, 3, 58, 15, "rest", 0, 0, 144, 1, 1),
+    ("ishanparihar-cms", "site", 14271, 355, 1, 2, 38, 1, 126, 2, 352, 20, "rest", 0, 1, 96, 1, 1),
+    ("ishanparihar-svelte", "site", 64567, 666, 1, 3, 303, 0, 299, 4, 500, 4, "rest", 0, 1, 203, 1, 1),
+    ("law-of-one-india-website", "site", 69626, 63, 1, 1, 5, 0, 503, 3, 500, 29, "rest", 0, 0, 176, 1, 1),
+    ("webdev-portfolio", "site", 0, 0, 0, 1, 4, 0, 128, 0, 0, 0, "engine", 0, 0, 109, 0, 0),
+    ("lifeos-website", "site", 71179, 1156, 2, 1, 5, 0, 96, 3, 500, 8, "rest", 0, 1, 188, 1, 1),
 ]
 
 WEIGHTS = {
@@ -178,17 +188,24 @@ def s_velocity(c90, age_days):
     return 10.0
 
 
-def s_agent(ops, surface):
-    """Class-aware agent surface (v6).
+def s_agent(ops, surface, axi=0):
+    """Class-aware agent surface (v6.1) + optional AXI-ergonomics bonus.
 
-    Fixes the v5 gap where any project without `@mcp.tool` decorators scored
+    v6 fixed the gap where any project without `@mcp.tool` decorators scored
     0.0 on the 14% agent criterion — CLI tools (AXI: a first-class agent
     surface, often cheaper than MCP schema overhead), REST servers, and
     simulators were all silently zeroed.
 
+    v6.1 adds an AXI-ergonomics bonus for CLI surfaces that demonstrably
+    implement axi.md principles (TOON output, --full escape hatch, definitive
+    empty states, truncation w/ size hint, pre-computed aggregates,
+    structured errors/exit codes): cli agent = curve(ops) + 0.4*min(axi,5),
+    capped at 10.0. A CLI with the same command count but agent-ergonomic
+    output out-scores a bare one — the AXI thesis made measurable.
+
     Curves (all hard, published):
       mcp:    0|1-10->3|11-30->6|31-60->8|60+->10        (tool count)
-      cli:    0|1-4->4|5-15->6|16-40->8|40+->10          (command count)
+      cli:    0|1-4->4|5-15->6|16-40->8|40+->10 + AXI    (command count)
       rest:   0|1-10->3|11-30->6|31-60->8|60+->10        (endpoint count)
       engine: 0->1 (floor)|1-3->2|4-10->3|10+->4         (runnable bins)
     """
@@ -204,12 +221,15 @@ def s_agent(ops, surface):
         if ops <= 0:
             return 0.0
         if ops <= 4:
-            return 4.0
-        if ops <= 15:
-            return 6.0
-        if ops <= 40:
-            return 8.0
-        return 10.0
+            base = 4.0
+        elif ops <= 15:
+            base = 6.0
+        elif ops <= 40:
+            base = 8.0
+        else:
+            base = 10.0
+        # AXI-ergonomics bonus: +0.4 per demonstrated principle, cap +2.0
+        return round(min(10.0, base + 0.4 * min(axi, 5)), 1)
     # mcp / rest share the tool/endpoint curve
     if ops <= 0:
         return 0.0
@@ -266,7 +286,7 @@ def main():
     results = []
     for row in DATA:
         (name, cat, loc, tests, mods, ci, c90, tags, age, langs, concur,
-         ops, surface, indegree, rl, install, docs) = row
+         ops, surface, axi, indegree, rl, install, docs) = row
         if cat in ("site", "kb") and not show_all:
             continue
         raw = {
@@ -276,7 +296,7 @@ def main():
             "ci":         s_ci(ci),
             "releases":   s_releases(tags),
             "velocity":   s_velocity(c90, age),
-            "agent":      s_agent(ops, surface),
+            "agent":      s_agent(ops, surface, axi),
             "utility":    s_utility(rl, install, docs, indegree),
         }
         total = round(sum(WEIGHTS[k] * v for k, v in raw.items()), 2)
