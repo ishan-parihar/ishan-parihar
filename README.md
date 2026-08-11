@@ -113,71 +113,15 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 ## 🎯 Value Proposition — Proof, Not Promises
 
-I build the graph engines, compilers, and protocol layers that make autonomous AI agents functional, resilient, and cost-effective under real production loads. **Every flagship below ships with a live artifact — a WAV you can play, slides you can see, tests you can run, numbers you can check.** No marketing renders; all of it was produced by the code itself.
+I build the graph engines, compilers, and protocol layers that make autonomous AI agents functional, resilient, and cost-effective under real production loads. **Every flagship below points to the proof living in its own repository** — playable demos, runnable test suites, and measured benchmarks. Open the repo and verify it yourself.
 
-### 🎵 Hear It — Scorestrata: from plain-language brief to mastered WAV
-
-Two full tracks, generated end-to-end by the compiler from a text brief — recorded SF2 instruments, per-layer FX, mastered to −14 LUFS with zero clipping. Same brief → byte-identical audio, every machine, every run. **Download the masters and listen** (the WAVs are committed to the repo — GitHub can't inline-preview files this large, so clicking plays them locally):
-
-| Genre | Track | What to listen for |
+| Flagship | What it does | Proof lives in the repo |
 |---|---|---|
-| 🎸 | **[LP nu-metal](https://github.com/ishan-parihar/scorestrata/blob/master/demos/lp_nu_metal/render/master.wav)** — 60 bars · 137 s · 25 MB | Double-tracked guitars, recorded drum kit, heavy low-mid energy — *Hybrid Theory* era |
-| 🕺 | **[Nu-disco](https://github.com/ishan-parihar/scorestrata/blob/master/demos/nu_disco/render/master.wav)** — 44 bars · 116 BPM · 91 s · 17 MB | Four-on-the-floor kit, octave-bounce bass, off-beat clean guitar stabs — *Get Lucky* pocket |
-
-<p align="center">
-  <a href="https://github.com/ishan-parihar/scorestrata"><img src="https://raw.githubusercontent.com/ishan-parihar/scorestrata/master/assets/readme/showcase-lp-nu-metal.png" width="49%" alt="LP nu-metal spectrogram"></a>
-  <a href="https://github.com/ishan-parihar/scorestrata"><img src="https://raw.githubusercontent.com/ishan-parihar/scorestrata/master/assets/readme/showcase-nu-disco.png" width="49%" alt="Nu-disco spectrogram"></a>
-</p>
-
-> Regenerate either track yourself: `python3 scripts/gen_lp_golden.py` + `ss render demos/lp_nu_metal` · 944 tests enforce the no-regression rules.
-
-### 🧠 Verify It — TDG Rust: the cognitive engine, 626 tests you can run
-
-A pure-Rust implementation of stateful agent memory: every memory is a node `(Content, Embedding, Telos)` with teleological decay. The test suite is the spec — clone it and run it in one command (626 passing, per the repo badge; 509 run with default features, +117 with ONNX):
-
-```bash
-git clone https://github.com/ishan-parihar/tdg-rust.git && cd tdg-rust
-cargo test                     # 430 unit + 8 integration tests
-cargo test --test mcp_e2e      # 66 MCP end-to-end tool tests
-cargo test --test e2e_mind_simulation  # 5 full mind-flow simulations
-cargo test --features onnx     # + ONNX feature tests → 626 total
-```
-
-### 📊 See It — SlideForge: browserless slides, real exports
-
-Every slide below is a **real render** by the embedded Blitz engine (stylo layout + vello-cpu raster) — no Chromium, no screenshots, no doctored images.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ishan-parihar/slideforge-rust/master/docs/previews/preview-hero.png" width="200" alt="Hero slide — dark editorial, gradient accent">
-  <img src="https://raw.githubusercontent.com/ishan-parihar/slideforge-rust/master/docs/previews/preview-chart.png" width="200" alt="Donut chart slide — light card on dark">
-  <img src="https://raw.githubusercontent.com/ishan-parihar/slideforge-rust/master/docs/previews/preview-metric-grid.png" width="200" alt="Metric grid slide — 2x2 KPI cards">
-</p>
-
-<p align="center">46 slide types · 1080×1350 / 1080×1080 / 1200×628 · 4.5× less memory than headless Chrome · WCAG-AA contrast audit</p>
-
-### 📡 Measure It — Browsefleet: stealth browsing, measured live
-
-Real numbers from a fresh Pro build against live test targets — not synthetic benchmarks:
-
-| Target | Result | Time |
-| --- | --- | --- |
-| `https://example.com` | `200 OK`, title captured | **380 ms** |
-| `https://nowsecure.nl` | passes basic fingerprint JS | 1.2 s |
-| `https://bot.sannysoft.com` | all stealth probes pass | 950 ms |
-| Cloudflare Turnstile demo | auto-pass (no challenge page) | — |
-| reCAPTCHA v3 | score **0.9** (Pro binary) | — |
-
-### 🤖 Run It — Operant: the terminal-native agent loop
-
-A real think → act → observe runtime with a JSON-schema tool registry — install, set up, and chat in three commands:
-
-```bash
-git clone https://github.com/ishan-parihar/operant.git && cd operant
-./scripts/install.sh
-operant setup && operant chat    # or one-shot: operant run --query "..."
-```
-
-![Operant TUI](https://raw.githubusercontent.com/ishan-parihar/operant/main/assets/main.png)
+| 🎵 **[scorestrata](https://github.com/ishan-parihar/scorestrata)** | Plain-language brief → mastered, byte-identical WAV | **"Hear it" section** — two rendered demo tracks (LP nu-metal, nu-disco) with spectrogram showcases + `ss render` commands to regenerate. 944 tests enforce the no-regression rules |
+| 🧠 **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Pure-Rust cognitive memory engine — every memory a `(Content, Embedding, Telos)` node | **"Testing" section** — clone and run: `cargo test` = 430 unit + 8 integration + 66 MCP e2e + 5 mind-flow simulations (626 passing, per badge) |
+| 📊 **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** | Browserless carousel factory — 46 slide types, zero Chromium | **Real exports** — `docs/previews/` holds 6 slides actually rendered by the embedded Blitz engine (no browser, no screenshots) |
+| 📡 **[browsefleet](https://github.com/ishan-parihar/browsefleet)** | Stealth browser fleet for agents — leased CDP contexts | **"Proof" section** — live benchmark table: 380 ms first nav, Turnstile auto-pass, reCAPTCHA v3 0.9 |
+| 🤖 **[operant](https://github.com/ishan-parihar/operant)** | Terminal-native ReAct agent runtime — 60+ tools, memory, MCP | **"Quick start"** — `./scripts/install.sh` + `operant setup && operant chat`; runnable in three commands |
 
 ---
 
@@ -428,13 +372,15 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 
 ---
 
-## 🏛️ The Philosophy of Spatial Machinery
+## 🧭 The Arc: Space → Mind → Infrastructure
 
-I build software from a developmental systems perspective. Traditional programming treats applications as linear recipes: inputs enter, steps execute, outputs exit. This breaks when interacting with autonomous cognitive systems. 
+Three disciplines shaped this body of work — and each is visible in how the systems are built.
 
-I treat software as **architectural space**. A program is not a linear recipe; it is a structural container. The role of the systems engineer is to design constraints, manage load bearing pathways, and structure spatial interfaces. When an AI agent enters an execution space, it should not guess the next step. It should navigate the natural constraints of the system. 
+- **Architecture** taught me to think in space and load-bearing structure. A program is a container with designed constraints, not a linear recipe — so every repo here is engineered like a building: for what it must carry under real load.
+- **Psychology** taught me to study minds. That's why the portfolio runs deep into cognitive systems — teleological memory graphs (`tdg-rust`), deterministic society simulations (`mindstrata`), developmental matrices (`mysterium`). Building for agents means building for cognition.
+- **Engineering** fuses both into infrastructure: compilers, runtimes, and protocol layers that let autonomous agents operate at production scale (`operant`, `automaton`, `igs-rust`, `social-forge`).
 
-Whether assembling deterministic society simulations (`mindstrata`), compiling WAV waveforms directly (`scorestrata`), stamping carousels without a browser (`slideforge-rust`), or managing DAG execution loops (`automaton`), I design resilient environments that support autonomous agency.
+The throughline across all of it is the same: **I build infrastructure for AI agents to operate at production scale** — deterministic where it matters, verifiable everywhere, and proven by the artifacts committed beside the code.
 
 ---
 
