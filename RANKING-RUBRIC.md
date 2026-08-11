@@ -154,59 +154,78 @@ and cross-repo in-degree. **No self-reported numbers.**
 | tg-cli | engine | 4,828 | 122 | 0 | 2 | 12 | 14 | 155 | 2 | 12 | 0 |
 | meme-lyr | engine | 899 | 0 | 1 | 1 | 12 | 0 | 521 | 2 | 6 | 0 |
 | obscura-core | engine | 2,896 | 15 | 0 | 1 | 12 | 0 | 10 | 1 | 8 | 4 |
+| browsefleet | engine | 4,254 | 50 | 4 | 5 | 28 | 2 | 130 | 4 | 0 | 0 |
+| hermes-prime-bridge | engine | 919 | 14 | 0 | 1 | 22 | 0 | 4 | 2 | 0 | 0 |
+| toon-helper | engine | 174 | 11 | 1 | 1 | 10 | 0 | 21 | 1 | 0 | 2 |
+| lifeos-bot | engine | 11,857 | 17 | 0 | 1 | 15 | 0 | 61 | 2 | 0 | 0 |
+| lifeos-saas | engine | 760 | 0 | 0 | 1 | 4 | 0 | 96 | 2 | 0 | 0 |
 | consciousness-fabricator | experimental | 9,238 | 158 | 0 | 1 | 6 | 0 | 125 | 1 | 0 | 1 |
 | holosim-infinite | experimental | 489,296 | 7,766 | 2 | 2 | 5 | 0 | 180 | 2 | 0 | 0 |
 | kali-mahabali | experimental | 63,118 | 690 | 0 | 1 | 15 | 1 | 314 | 2 | 20 | 0 |
 | icode | deprecated | 142,819 | 2,095 | 21 | 2 | 7 | 0 | 132 | 3 | 10 | 0 |
-| lifeos-saas | engine | 760 | 0 | 0 | 1 | 4 | 0 | 96 | 2 | 0 | 0 |
+| cinesync | deprecated | 13,744 | 16 | 2 | 2 | 3 | 0 | 298 | 4 | 0 | 0 |
+| open-claude | deprecated | 48,038 | 1,053 | 5 | 1 | 2 | 0 | 125 | 1 | 0 | 0 |
+| osint-os | deprecated | 120,754 | 399 | 1 | 1 | 2 | 0 | 405 | 4 | 0 | 1 |
+| sovereign | deprecated | 9,417 | 30 | 0 | 1 | 2 | 0 | 262 | 2 | 0 | 1 |
+| workout-factory | deprecated | 9,417 | 30 | 0 | 1 | 3 | 0 | 262 | 2 | 0 | 0 |
+| tdg | deprecated | 0 | 0 | 0 | 0 | 37 | 0 | 92 | 0 | 0 | 0 |
 
 ---
 
-## 5. Scored Results (engine output, v5)
+## 5. Scored Results (engine output, v5 — 39 ranked repos)
 
 | Rank | Project | Scale | Test | Cplx | CI | Rel | Vel | Agent | Util | **Total** | Tier |
 |------|---------|-------|------|------|----|----|-----|-------|------|-----------|------|
-| 1 | igs-rust | 9.2 | 8.7 | 5.6 | 10 | 10 | 8 | 10 | 9.9 | **8.96** | **S** |
-| 2 | operant | 10.0 | 10.0 | 9.3 | 10 | 6 | 10 | 6 | 8.4 | **8.72** | **S** |
-| 3 | social-forge | 10.0 | 8.4 | 7.9 | 10 | 4 | 10 | 8 | 6.0 | **7.90** | A |
-| 4 | linkedin-lyr | 8.9 | 10.0 | 4.7 | 10 | 10 | 4 | 6 | 7.0 | **7.59** | A |
-| 5 | openscript | 10.0 | 9.6 | 8.9 | 10 | 0 | 8 | 8 | 4.2 | **7.40** | A |
-| 6 | tdg-rust | 9.3 | 10.0 | 6.0 | 5 | 8 | 8 | 8 | 4.5 | **7.34** | A |
-| 7 | slideforge-rust | 9.6 | 8.2 | 6.2 | 5 | 6 | 10 | 3 | 9.3 | **7.33** | A |
-| 8 | twitter-lyr | 7.8 | 9.4 | 3.4 | 10 | 10 | 4 | 8 | 6.0 | **7.28** | A |
-| 9 | c-suite-agents | 9.3 | 10.0 | 5.3 | 5 | 6 | 2 | 8 | 6.9 | **7.09** | A |
-| 10 | scorestrata | 10.0 | 10.0 | 4.7 | 5 | 0 | 10 | 10 | 4.1 | **6.98** | A |
-| 11 | mysterium | 9.5 | 10.0 | 7.1 | 10 | 0 | 10 | 0 | 7.5 | **6.89** | A |
-| 12 | automaton | 9.7 | 6.1 | 7.2 | 10 | 4 | 4 | 8 | 5.5 | **6.79** | A |
-| 13 | facebook-lyr | 7.9 | 9.2 | 4.5 | 5 | 0 | 8 | 8 | 7.4 | **6.78** | A |
-| 14 | andrometry | 8.8 | 9.7 | 7.0 | 5 | 0 | 10 | 6 | 4.0 | **6.48** | B |
-| 15 | tg-cli | 7.0 | 8.9 | 3.7 | 10 | 10 | 2 | 6 | 3.8 | **6.25** | B |
-| 16 | instagram-lyr | 8.2 | 9.7 | 4.5 | 5 | 0 | 2 | 8 | 5.9 | **6.13** | B |
-| 17 | thinking-steroid | 8.8 | 8.8 | 3.1 | 10 | 0 | 2 | 6 | 4.5 | **5.71** | B |
-| 18 | mindstrata | 10.0 | 10.0 | 3.4 | 5 | 0 | 10 | 0 | 4.1 | **5.43** | B |
-| 19 | discord-cli | 6.8 | 4.8 | 3.8 | 10 | 8 | 2 | 6 | 4.2 | **5.42** | B |
-| 20 | lifeos-ops | 9.0 | 0.0 | 6.9 | 5 | 8 | 6 | 8 | 4.2 | **5.39** | B |
-| 21 | reddit-lyr | 6.9 | 5.5 | 4.4 | 5 | 0 | 6 | 8 | 4.1 | **5.17** | B |
-| 22 | obscura-core | 6.6 | 4.9 | 3.1 | 5 | 0 | 6 | 3 | 7.5 | **4.85** | B |
-| 23 | threads-lyr | 6.4 | 6.3 | 3.6 | 5 | 0 | 8 | 3 | 4.4 | **4.67** | B |
-| 24 | kali-mahabali | 9.1 | 10.0 | 4.7 | 5 | 4 | 2 | 6 | 5.4 | **6.26** | C* |
-| 25 | icode | 10.0 | 10.0 | 8.3 | 10 | 0 | 2 | 3 | 1.7 | **5.72** | C* |
-| 26 | holosim-infinite | 10.0 | 10.0 | 4.7 | 10 | 0 | 2 | 0 | 5.0 | **5.52** | C* |
-| 27 | consciousness-fabricator | 7.5 | 8.7 | 3.0 | 5 | 0 | 2 | 0 | 3.2 | **4.03** | C* |
-| 28 | meme-lyr | 6.1 | 0.0 | 4.3 | 5 | 0 | 2 | 3 | 6.0 | **3.43** | C |
-| 29 | lifeos-saas | 5.5 | 0.0 | 3.5 | 5 | 0 | 2 | 0 | 4.8 | **2.60** | D |
+| 1 | igs-rust | 9.2 | 8.7 | 5.6 | 10.0 | 10.0 | 8.0 | 10.0 | 9.9 | **8.96** | **S** |
+| 2 | operant | 10.0 | 10.0 | 9.3 | 10.0 | 6.0 | 10.0 | 6.0 | 8.4 | **8.72** | **S** |
+| 3 | social-forge | 10.0 | 8.4 | 7.9 | 10.0 | 4.0 | 10.0 | 8.0 | 6.0 | **7.90** | A |
+| 4 | linkedin-lyr | 8.9 | 10.0 | 4.7 | 10.0 | 10.0 | 4.0 | 6.0 | 7.0 | **7.59** | A |
+| 5 | openscript | 10.0 | 9.6 | 8.9 | 10.0 | 0.0 | 8.0 | 8.0 | 4.2 | **7.40** | A |
+| 6 | tdg-rust | 9.3 | 10.0 | 6.0 | 5.0 | 8.0 | 8.0 | 8.0 | 4.5 | **7.34** | A |
+| 7 | slideforge-rust | 9.6 | 8.2 | 6.2 | 5.0 | 6.0 | 10.0 | 3.0 | 9.3 | **7.33** | A |
+| 8 | twitter-lyr | 7.8 | 9.4 | 3.4 | 10.0 | 10.0 | 4.0 | 8.0 | 6.0 | **7.28** | A |
+| 9 | c-suite-agents | 9.3 | 10.0 | 5.3 | 5.0 | 6.0 | 2.0 | 8.0 | 6.9 | **7.09** | A |
+| 10 | scorestrata | 10.0 | 10.0 | 4.7 | 5.0 | 0.0 | 10.0 | 10.0 | 4.1 | **6.98** | A |
+| 11 | mysterium | 9.5 | 10.0 | 7.1 | 10.0 | 0.0 | 10.0 | 0.0 | 7.5 | **6.89** | A |
+| 12 | automaton | 6.8 | 6.1 | 7.2 | 10.0 | 4.0 | 4.0 | 8.0 | 5.5 | **6.79** | A |
+| 13 | facebook-lyr | 7.9 | 9.2 | 4.5 | 5.0 | 0.0 | 8.0 | 8.0 | 7.4 | **6.78** | A |
+| 14 | andrometry | 8.8 | 9.7 | 7.0 | 5.0 | 0.0 | 10.0 | 6.0 | 4.0 | **6.48** | B |
+| 15 | kali-mahabali | 9.1 | 10.0 | 4.7 | 5.0 | 4.0 | 2.0 | 6.0 | 5.4 | **6.26** | C* |
+| 16 | tg-cli | 7.0 | 8.9 | 3.7 | 10.0 | 10.0 | 2.0 | 6.0 | 3.8 | **6.25** | B |
+| 17 | instagram-lyr | 8.2 | 9.7 | 4.5 | 5.0 | 0.0 | 2.0 | 8.0 | 5.9 | **6.13** | B |
+| 18 | osint-os | 10.0 | 9.0 | 7.3 | 5.0 | 0.0 | 2.0 | 0.0 | 7.5 | **5.76** | C* |
+| 19 | icode | 10.0 | 10.0 | 8.3 | 10.0 | 0.0 | 2.0 | 3.0 | 1.7 | **5.72** | C* |
+| 20 | thinking-steroid | 8.8 | 8.8 | 3.1 | 10.0 | 0.0 | 2.0 | 6.0 | 4.5 | **5.71** | B |
+| 21 | browsefleet | 7.9 | 6.9 | 7.8 | 10.0 | 4.0 | 4.0 | 0.0 | 4.9 | **5.55** | B |
+| 22 | holosim-infinite | 10.0 | 10.0 | 4.7 | 10.0 | 0.0 | 2.0 | 0.0 | 5.0 | **5.52** | C* |
+| 23 | mindstrata | 10.0 | 10.0 | 3.4 | 5.0 | 0.0 | 10.0 | 0.0 | 4.1 | **5.43** | B |
+| 24 | discord-cli | 6.8 | 4.8 | 3.8 | 10.0 | 8.0 | 2.0 | 6.0 | 4.2 | **5.42** | B |
+| 25 | lifeos-ops | 9.0 | 0.0 | 6.9 | 5.0 | 8.0 | 6.0 | 8.0 | 4.2 | **5.39** | B |
+| 26 | reddit-lyr | 6.9 | 5.5 | 4.4 | 5.0 | 0.0 | 6.0 | 8.0 | 4.1 | **5.17** | B |
+| 27 | open-claude | 10.0 | 10.0 | 5.2 | 5.0 | 0.0 | 2.0 | 0.0 | 3.7 | **4.92** | C* |
+| 28 | obscura-core | 6.6 | 4.9 | 3.1 | 5.0 | 0.0 | 6.0 | 3.0 | 7.5 | **4.85** | B |
+| 29 | threads-lyr | 6.4 | 6.3 | 3.6 | 5.0 | 0.0 | 8.0 | 3.0 | 4.4 | **4.67** | B |
+| 30 | cinesync | 8.6 | 4.7 | 6.6 | 10.0 | 0.0 | 2.0 | 0.0 | 4.0 | **4.43** | C |
+| 31 | consciousness-fabricator | 7.5 | 8.7 | 3.0 | 5.0 | 0.0 | 2.0 | 0.0 | 3.2 | **4.03** | C* |
+| 32 | hermes-prime-bridge | 5.6 | 5.5 | 2.7 | 5.0 | 0.0 | 10.0 | 0.0 | 4.1 | **4.01** | C |
+| 33 | toon-helper | 4.7 | 6.6 | 2.1 | 5.0 | 0.0 | 4.0 | 0.0 | 5.7 | **3.86** | C |
+| 34 | lifeos-bot | 7.7 | 4.8 | 4.6 | 5.0 | 0.0 | 4.0 | 0.0 | 3.7 | **3.80** | C |
+| 35 | sovereign | 7.6 | 5.6 | 3.2 | 5.0 | 0.0 | 2.0 | 0.0 | 3.6 | **3.58** | C |
+| 36 | meme-lyr | 6.1 | 0.0 | 4.3 | 5.0 | 0.0 | 2.0 | 3.0 | 6.0 | **3.43** | C |
+| 37 | workout-factory | 7.6 | 5.6 | 3.2 | 5.0 | 0.0 | 2.0 | 0.0 | 2.3 | **3.32** | C |
+| 38 | lifeos-saas | 5.5 | 0.0 | 3.5 | 5.0 | 0.0 | 2.0 | 0.0 | 4.8 | **2.60** | **D** |
+| 39 | tdg | 0.0 | 0.0 | 0.5 | 0.0 | 0.0 | 4.0 | 0.0 | 1.2 | **0.62** | **D** |
 
 \* = policy-capped at C by §7 (experimental flag / archived) despite a higher raw capability score.
+C without \* = natural tier. `tdg` (deprecated, 0 executable LOC) keeps its natural D — the §7 cap is a ceiling, not a floor.
 
----
-
-## 6. What the Data Says (evidence-backed findings, v5 re-audit)
+---## 6. What the Data Says (evidence-backed findings, full-coverage audit)
 
 1. **S-tier stays two, by design:** `igs-rust` (8.96) and `operant` (8.72) are the
    only repos that clear every criterion at production grade. `social-forge`
    (7.90) is 0.10 short — its 51→257 test improvement narrowed the gap but test
    density is still the sole lever.
-2. **The AXI CLI family is now ranked and lands B/A, not C.** All ten `-lyr`/`-cli`
+2. **The AXI CLI family is ranked and lands B/A, not C.** All ten `-lyr`/`-cli`
    tools scored fully-functional utility (4.67–7.59). `linkedin-lyr` (7.59, A) and
    `twitter-lyr` (7.28, A) are the standouts — deep test suites, real release
    histories, and strong agent surfaces. The previous C-tier listing was a
@@ -214,36 +233,47 @@ and cross-repo in-degree. **No self-reported numbers.**
 3. **`obscura-core` proves the Utility criterion works.** 2.9K LOC, 15 tests — by
    raw scale it looks trivial, but it has the **highest cross-repo in-degree (4)**:
    every browser-scraping tool depends on its cookie vault. Utility lifts it to B.
-4. **`holosim-infinite` and `icode` are the strongest "C" repos in the portfolio**
-   (5.52 and 5.72 raw). Both are policy-capped: `icode` is archived, `holosim` is
-   flagged experimental with 0 releases, 0 agent surface, and 5 commits/90d. Per
-   §7, capability alone cannot promote an inactive repo to A/S.
-5. **`lifeos-ops` remains the biggest test gap:** 0 tests across 17.8K Rust LOC
+4. **Full-coverage pass added 10 previously-unranked repos** (2026-08-11):
+   `browsefleet` (5.55, B), `hermes-prime-bridge` (4.01, C), `toon-helper`
+   (3.86, C), `lifeos-bot` (3.80, C), plus six archived repos (`cinesync`,
+   `open-claude`, `osint-os`, `sovereign`, `workout-factory`, `tdg`). Every repo
+   in the portfolio now passes through the same eight-criteria engine.
+5. **`browsefleet` (5.55, B) is the CI leader:** 5 workflows (most in the
+   portfolio), 4 languages, 130-day-old stealth-browser fleet. It lost points only
+   on agent surface (REST+CDP rather than MCP tool decorators) and velocity.
+6. **`holosim-infinite` and `icode` are the strongest "C" repos** (5.52 and 5.72
+   raw). Both are policy-capped: `icode` is archived, `holosim` is flagged
+   experimental with 0 releases, 0 agent surface, and 5 commits/90d.
+7. **`lifeos-ops` remains the biggest test gap:** 0 tests across 17.8K Rust LOC
    (the sole reason it sits at 5.39, B). Writing ~150 tests adds ≈ +2.0 and jumps
    it to A-tier territory.
-6. **`mindstrata` (5.43, B)** is a simulator with **zero agent surface and zero
+8. **`mindstrata` (5.43, B)** is a simulator with **zero agent surface and zero
    releases** — elite tests (1,238) and velocity, but no way for an agent or user
    to *operate* it. A CLI/API + a v0.1 release would move it up ~1.2 points.
-7. **Websites/portfolios are excluded from the tiered system** (v5): they are
-   delivery artifacts, not repos, and now live in their own
-   **Portfolios & Web User Interfaces** category in the README.
-8. **`meme-lyr` (3.43, C)** is the smallest repo in the portfolio (899 LOC, 0
-   tests) — functional but minimal; the only uncapped C.
+9. **`tdg` (0.62, D) validates the cap-ceiling fix:** the original Python TDG is
+   now a Rust-only docs/skills corpus with 0 executable LOC. It stays at its
+   natural D — the §7 cap is a ceiling, never a floor that inflates a dead repo.
+10. **Forks and merged repos are excluded, not hidden.** `hermes-agent`
+    (nousresearch), `hermes-agent-ultra` (sheawinkler), `zeroclaw`
+    (zeroclaw-labs) are upstream-owned forks; `c-suite-agents-mcp` was merged
+    into `c-suite-agents` and removed from GitHub. All are documented exclusions.
 
 ---
 
 ## 7. Contextual Adjustment Policy (explicit, not hidden subjectivity)
 
-The rubric is a *baseline*. Category mismatches are handled by **documented rules**,
-never silent bias:
+The rubric is a *baseline*. Category mismatches are handled by **documented rules**, never silent bias:
 
 | Rule | Application |
 |------|-------------|
-| **Archived/deprecated repos** | `icode` — a repo whose own README declares DEPRECATED / INACTIVE is **capped at C** regardless of capability score. It is not promotable while inactive. |
+| **Archived/deprecated repos** | A repo whose own README declares DEPRECATED / INACTIVE (`icode`, `osint-os`, `open-claude`, `cinesync`, `sovereign`, `workout-factory`, `tdg`) is **capped at C** regardless of capability score — *as a ceiling*. A near-zero repo keeps its natural lower tier. Not promotable while inactive. |
 | **Experimental flag** | Repos under `EXPERIMENTAL/` (`holosim-infinite`, `consciousness-fabricator`, `kali-mahabali`) are **capped at C** until they earn a tagged release **and** an agent surface **and** sustained velocity. |
+| **Forks of other orgs' projects** | `hermes-agent` (nousresearch), `hermes-agent-ultra` (sheawinkler), `zeroclaw` (zeroclaw-labs) — upstream-owned forks are **excluded from ranking** (not original work). Documented here, not ranked. |
+| **Merged / removed repos** | `c-suite-agents-mcp` was merged into `c-suite-agents` (GitHub 404). Not ranked as a standalone repo. |
+| **Embedded / vendored repos** | Nested `.git` dirs inside a ranked repo (`openscript/third_party/*`, `icode/rust/references/*`, `igs-rust/last30days-skill`, `z.archive/*`, `webdev-portfolio/my-portfolio`) are not standalone portfolio projects — excluded. |
 | **Websites / portfolios** | Delivery artifacts are **excluded from ranking entirely** and grouped in the separate `Portfolios & Web User Interfaces` category. |
 | **Knowledge/spec repos** | Non-executable content (HoloOS: 14K YAML) is labeled `KNOWLEDGE-BASE`, not ranked against executable-engine criteria. |
-| **Non-tool domains** | Domains with no agent surface (simulators) get Agent Surface scored from their CLI/API; the 10% never silently reweights. |
+| **Non-tool domains** | Domains with no agent surface (simulators) get Agent Surface scored from their CLI/API; the weight never silently reweights. |
 | **Age grace** | Repos < 30 days old are reviewed at velocity-normalized score + capability components; release count is noted as "pending first release" rather than scored as failure. |
 
 ---
@@ -251,12 +281,21 @@ never silent bias:
 ## 8. How to Re-Rank (reproducibility)
 
 1. **Measure:** `python3 scripts/measure_repos.py` regenerates the full measured
-   dataset from the live worktrees (edit the `REPOS` manifest to add repos).
+   dataset from the live worktrees (edit the `REPOS` manifest to add repos — every
+   portfolio repo now has a row; the manifest is the single source of truth).
 2. **Score:** fold fresh numbers into the `DATA` table of `scripts/rank_score.py`,
    then `python3 scripts/rank_score.py`.
-3. **Apply §7 caps** (experimental/deprecated/websites).
+3. **Apply §7 caps** (experimental/deprecated ceilings, fork/merged exclusions,
+   websites/kb exclusions).
 4. **Update the tier `<details>` blocks in `README.md`** to match.
 5. Re-audit monthly, or after any major release/test/CI milestone.
+
+> **Coverage invariant:** `scripts/measure_repos.py`'s `REPOS` manifest + the
+> `EXCLUDED` note in `scripts/rank_score.py` must together account for **every**
+> standalone `.git` directory under `MY-PROJECTS/`. Embedded/vendored repos
+> (nested `.git` inside a ranked repo — third_party, references, archives) are
+> documented exclusions. If a new repo appears, it gets a manifest row — never
+> silently dropped.
 
 **Formula transparency means anyone can see the exact lever to pull** — e.g.
 *"add 400 tests to social-forge → +0.85 total → crosses S"*.

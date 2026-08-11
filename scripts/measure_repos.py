@@ -74,8 +74,20 @@ REPOS = [
     ("holosim-infinite",       "EXPERIMENTAL/holosim-infinite", "experimental"),
     ("kali-mahabali",          "EXPERIMENTAL/kali-mahabali", "experimental"),
     ("icode",                  "DEVELOPER-TOOLS (Deprecated\u2044Inactive)/icode", "deprecated"),
+    # engines added in the 2026-08-11 full-coverage pass
+    ("browsefleet",            "browsefleet", "engine"),
+    ("hermes-prime-bridge",    "hermes-prime-bridge", "engine"),
+    ("toon-helper",            "MCP-AND-CLIS/toon-helper", "engine"),
+    ("lifeos-bot",             "LIFEOS/lifeos-bot", "engine"),
     # utility/private
     ("lifeos-saas",            "LIFEOS/lifeos-saas", "engine"),
+    # deprecated / inactive (capped at C by policy)
+    ("cinesync",               "CONTENT-CREATION/cinesync (Deprecated\u2044Inactive)", "deprecated"),
+    ("open-claude",            "DEVELOPER-TOOLS (Deprecated\u2044Inactive)/open-claude", "deprecated"),
+    ("osint-os",               "EXPERIMENTAL/osint-os (Deprecated\u2044Inactive)", "deprecated"),
+    ("sovereign",              "EXPERIMENTAL/sovereign (Deprecated\u2044Inactive)", "deprecated"),
+    ("workout-factory",        "EXPERIMENTAL/workout-factory (Deprecated\u2044Inactive)", "deprecated"),
+    ("tdg",                    "tdg (Deprecated\u2044Inactive)", "deprecated"),
     # websites / portfolios (separate category, never ranked)
     ("design-aesthetics-website", "WEBSITES/design-aesthetics-website", "site"),
     ("ishanparihar-cms",       "WEBSITES/ishanparihar-cms", "site"),

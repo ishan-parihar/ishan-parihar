@@ -17,10 +17,19 @@ Tier thresholds (v5):
   S >= 8.00  A 6.50-7.99  B 4.50-6.49  C 3.25-4.49  D < 3.25
 
 Cap rules (documented, transparent — see RANKING-RUBRIC.md §7):
-  - 'deprecated' category is capped at C (archived, not promotable while inactive)
-  - 'experimental' category is capped at C (EXPERIMENTAL/ flag; promotion requires
-    a tagged release + agent surface + sustained velocity)
-  - 'site' and 'kb' categories are excluded from ranking entirely
+  - 'deprecated' and 'experimental' categories are capped at C (archived/inactive
+    flags; promotion requires reactivation + release + agent surface). The cap is a
+    ceiling: a near-zero deprecated repo keeps its natural (lower) tier.
+  - 'site' and 'kb' categories are excluded from ranking entirely.
+  - NOT RANKED (excluded, documented 2026-08-11):
+      * hermes-agent, hermes-agent-ultra, zeroclaw — forks of other orgs'
+        projects (nousresearch / sheawinkler / zeroclaw-labs), not original work
+      * c-suite-agents-mcp — merged into c-suite-agents (repo removed from GitHub)
+      * vectura-labs — deprecated website (site category, excluded)
+      * embedded/vendored repos (nested .git dirs inside a ranked repo, not
+        standalone portfolio projects): openscript/third_party/*,
+        icode/rust/references/*, igs-rust/last30days-skill,
+        MCP-AND-CLIS/z.archive/*, webdev-portfolio/my-portfolio
 
 Usage:  python3 scripts/rank_score.py [--all]
 Regenerate the dataset with:  python3 scripts/measure_repos.py
@@ -70,6 +79,18 @@ DATA = [
     ("holosim-infinite",   "experimental", 489296, 7766, 2, 2, 5, 0, 180, 2, 31, 0, 0, 296, 1, 1),
     ("kali-mahabali",      "experimental",  63118,  690, 0, 1, 15, 1, 314, 2, 500, 20, 0, 355, 1, 1),
     ("icode",              "deprecated",   142819, 2095, 21, 2, 7, 0, 132, 3, 500, 10, 0, 100, 0, 1),
+    # --- engines added in the 2026-08-11 full-coverage pass -----------------
+    ("browsefleet",        "engine",      4254,   50,  4, 5,  28,  2, 130, 4, 219,  0, 0, 282, 1, 1),
+    ("hermes-prime-bridge","engine",       919,   14,  0, 1,  22,  0,   4, 2,   1,  0, 0, 162, 1, 1),
+    ("toon-helper",        "engine",       174,   11,  1, 1,  10,  0,  21, 1,   0,  0, 2, 106, 1, 0),
+    ("lifeos-bot",         "engine",     11857,   17,  0, 1,  15,  0,  61, 2, 397,  0, 0, 107, 1, 1),
+    # --- deprecated / inactive (capped at C by policy) -----------------------
+    ("cinesync",           "deprecated", 13744,   16,  2, 2,   3,  0, 298, 4,  23,  0, 0, 150, 1, 1),
+    ("open-claude",        "deprecated", 48038, 1053,  5, 1,   2,  0, 125, 1, 500,  0, 0,  99, 1, 1),
+    ("osint-os",           "deprecated",120754,  399,  1, 1,   2,  0, 405, 4, 500,  0, 1, 469, 1, 1),
+    ("sovereign",          "deprecated",  9417,   30,  0, 1,   2,  0, 262, 2,   7,  0, 1, 161, 0, 1),
+    ("workout-factory",    "deprecated",  9417,   30,  0, 1,   3,  0, 262, 2,   7,  0, 0, 192, 0, 1),
+    ("tdg",                "deprecated",     0,    0,  0, 0,  37,  0,  92, 0,   0,  0, 0,  31, 0, 1),
     # --- unranked: utility/private ------------------------------------------
     ("lifeos-saas",        "engine",       760,    0,  0, 1,   4,  0,  96, 2,  15,  0, 0, 277, 1, 1),
     # --- websites / portfolios (separate category, never ranked) ------------
@@ -169,20 +190,32 @@ def s_utility(readme_lines, install, docs, indegree):
     return round(min(10.0, readme_score + install_score + docs_score + indegree_score), 1)
 
 
-def tier(total, category):
-    if category == "deprecated":
-        return "C", "capped: archived/deprecated — not promotable while inactive"
-    if category == "experimental":
-        return "C", "capped: experimental flag — promote via release + agent surface"
+_TIER_ORDER = {"S": 0, "A": 1, "B": 2, "C": 3, "D": 4}
+
+
+def _natural_tier(total):
     if total >= 8.0:
-        return "S", ""
+        return "S"
     if total >= 6.5:
-        return "A", ""
+        return "A"
     if total >= 4.5:
-        return "B", ""
+        return "B"
     if total >= 3.25:
-        return "C", ""
-    return "D", ""
+        return "C"
+    return "D"
+
+
+def tier(total, category):
+    natural = _natural_tier(total)
+    if category == "deprecated":
+        if _TIER_ORDER[natural] < _TIER_ORDER["C"]:
+            return "C", "capped: archived/deprecated — not promotable while inactive"
+        return natural, ""
+    if category == "experimental":
+        if _TIER_ORDER[natural] < _TIER_ORDER["C"]:
+            return "C", "capped: experimental flag — promote via release + agent surface"
+        return natural, ""
+    return natural, ""
 
 
 def main():
