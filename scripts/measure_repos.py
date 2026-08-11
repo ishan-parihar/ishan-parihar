@@ -4,7 +4,7 @@ Companion to rank_score.py — machine-measures every portfolio repo into the
 exact row format the ranking engine consumes.
 
   name, category, loc, tests, mods, ci, c90, tags, age, langs, concur,
-  tools, indegree, readme_lines, install, docs
+  ops, surface, indegree, readme_lines, install, docs
 
 All values are measured from the live git worktrees (no self-reports):
   - loc:       tracked CODE lines (assets/data/lockfiles excluded)
@@ -16,7 +16,11 @@ All values are measured from the live git worktrees (no self-reports):
   - age:       days since first commit
   - langs:     distinct language families among tracked code
   - concur:    concurrency/async pattern hits (tokio, async, threads, mcp, ...)
-  - tools:     @mcp.tool decorator count (Python family) — authoritative
+  - ops:       agent-callable operations on the project's OWN surface class
+               (CLASS-AWARE v6): MCP tool count | CLI command count | REST
+               endpoint count | runnable binary count
+  - surface:   detected surface class: mcp | cli | rest | engine (dominant
+               by measured registration count; engine only when none exist)
   - indegree:  number of sibling portfolio repos referenced in this repo's code
   - readme:    README.md line count
   - install:   1 if an install/build entry point exists (Cargo.toml/pyproject/
@@ -145,6 +149,45 @@ CONCUR_RE = re.compile(
     re.IGNORECASE,
 )
 MCP_TOOL_DEC = re.compile(r"@\s*(?:mcp|app|router|server)\.tool\s*\(")
+# Class-aware surface detection (v6, 2026-08-12). A project is scored against
+# the surface it actually exposes — never zeroed for lacking MCP:
+#   mcp   -> @mcp.tool / FastMCP / mcp.server registrations
+#   cli   -> click/typer @command, clap derive(Parser), commander .command(,
+#            argparse subparsers, console_scripts entry points
+#   rest  -> FastAPI @app/@router.(get|post|...), Hono app.(get|post|...),
+#            Go mux.Handle("METHOD /path"
+#   engine-> runnable binaries ([[bin]] targets / main() entry points) with
+#            no interactive surface
+CLI_CMD_RE = re.compile(
+    r"@\s*(?:click|typer)\.(?:command|group)\s*\(|derive\s*\([^)]*Parser|"
+    r"\.command\s*\(|add_parser\s*\(|console_scripts\s*=|entry_points\s*=",
+    re.IGNORECASE,
+)
+REST_ROUTE_RE = re.compile(
+    r"@\s*(?:app|router)\.(?:get|post|put|delete|patch)\s*\(|app\.(?:get|post|put|delete|patch)\s*\(|"
+    r"mux\.Handle\s*\(\s*\"(?:GET|POST|PUT|DELETE|PATCH)\s+/",
+    re.IGNORECASE,
+)
+ENGINE_BIN_RE = re.compile(r"^\[\[bin\]\]|fn main\s*\(|if __name__\s*==\s*['\"]__main__")
+
+
+def detect_surface(mcp_hits, cli_hits, rest_hits, bin_hits):
+    """Pick the dominant surface class by measured signal count.
+
+    The three interactive classes (mcp/cli/rest) compete on evidence: the
+    surface with the most real registrations wins (so a 122-route REST
+    backend like osint-os is never demoted to a handful of CLI hits).
+    Only when NO interactive surface exists does a project fall to
+    `engine` (runnable binaries, floor curve).
+    """
+    best = max(mcp_hits, cli_hits, rest_hits)
+    if best <= 0:
+        return "engine", bin_hits
+    if best == mcp_hits:
+        return "mcp", mcp_hits
+    if best == cli_hits:
+        return "cli", cli_hits
+    return "rest", rest_hits
 
 
 def sh(repo_dir, cmd, timeout=120):
@@ -168,7 +211,10 @@ def measure(name, relpath, category):
     test_hits = 0
     langs = set()
     concur = 0
-    tools = 0
+    mcp_hits = 0
+    cli_hits = 0
+    rest_hits = 0
+    bin_hits = 0
     src_text = []
     for f in flist:
         ext = os.path.splitext(f)[1].lower()
@@ -188,8 +234,13 @@ def measure(name, relpath, category):
         for pat in TEST_PATTERNS.get(ext, []):
             test_hits += len(pat.findall(content))
         concur += len(CONCUR_RE.findall(content))
-        tools += len(MCP_TOOL_DEC.findall(content))
+        mcp_hits += len(MCP_TOOL_DEC.findall(content))
+        cli_hits += len(CLI_CMD_RE.findall(content))
+        rest_hits += len(REST_ROUTE_RE.findall(content))
+        if f.endswith("Cargo.toml") or ext in (".rs", ".py"):
+            bin_hits += len(ENGINE_BIN_RE.findall(content))
         src_text.append(content)
+    surface, tools = detect_surface(mcp_hits, cli_hits, rest_hits, bin_hits)
     cargo = [f for f in flist if f.endswith("Cargo.toml")]
     pkgjson = [f for f in flist if f.endswith("package.json")]
     mods = len(cargo) + max(0, min(len(pkgjson), 6))
@@ -234,14 +285,14 @@ def measure(name, relpath, category):
             break
     docs = 1 if os.path.isdir(os.path.join(repo_dir, "docs")) else 0
     return (name, category, loc_code, test_hits, mods, ci, c90, tags, age,
-            len(langs), min(concur, 500), tools, indegree, readme, install, docs)
+            len(langs), min(concur, 500), tools, surface, indegree, readme, install, docs)
 
 
 def main():
     args = sys.argv[1:]
     only = [a for a in args if not a.startswith("--")]
     want_total = "--total" in args
-    print("name|category|loc|tests|mods|ci|c90|tags|age|langs|concur|tools|indegree|readme|install|docs")
+    print("name|category|loc|tests|mods|ci|c90|tags|age|langs|concur|ops|surface|indegree|readme|install|docs")
     rows = []
     for name, relpath, category in REPOS:
         if only and name not in only:
@@ -253,7 +304,7 @@ def main():
         # Portfolio-scope totals — the exact numbers behind the profile README's
         # headline metrics. Scope is REPOS above (the 41 ranked portfolio repos;
         # upstream forks and nested repos are excluded by manifest design).
-        n = loc = tests = mods = ci = tags = tools = indegree = 0
+        n = loc = tests = mods = ci = tags = ops = indegree = 0
         for r in rows:
             if r[2] in ("NO-DIR", "NO-TRACKED"):
                 continue
@@ -262,8 +313,8 @@ def main():
             mods += r[4]
             ci += r[5]
             tags += r[7]
-            tools += r[11]
-            indegree += r[12]
+            ops += r[11]
+            indegree += r[13]
             n += 1
         # Rust crates = pure Cargo.toml manifest count across the SAME subset
         # as the rows (mods also caps package.json counts, so it is not a crate
@@ -279,7 +330,7 @@ def main():
             )
         print(
             f"# TOTAL|repos={n}|loc={loc}|tests={tests}|mods={mods}|"
-            f"ci={ci}|tags={tags}|tools={tools}|indegree={indegree}|rust_crates={rust_crates}"
+            f"ci={ci}|tags={tags}|ops={ops}|indegree={indegree}|rust_crates={rust_crates}"
         )
 
 
