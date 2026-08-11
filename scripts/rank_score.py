@@ -79,17 +79,17 @@ DATA = [
     ("threads-lyr",        "engine",      2374,   31,  0, 1,   9,  0,   1, 2,  21,  3, 1, 133, 1, 0),
     ("discord-cli",        "engine",      3704,   15,  0, 2,  11, 10, 156, 2,  40, 13, 0, 333, 1, 0),
     ("tg-cli",             "engine",      4828,  122,   0, 2,  12, 14, 156, 2,  34, 12, 0, 271, 1, 0),
-    ("meme-lyr",           "engine",       899,    0,  1, 1,  12,  0, 521, 2,  28,  6, 0, 459, 1, 1),
+    ("meme-lyr",           "engine",      1050,   25,  1, 2,  14,  1, 521, 2,  28,  6, 0, 459, 1, 1),
     ("obscura-core",       "engine",      2896,   15,  0, 1,  12,  0,  10, 1, 104,  8, 4, 231, 1, 0),
     # --- experimental / archived (capped at C by policy) --------------------
-    ("consciousness-fabricator", "experimental", 9238, 158, 0, 1, 6, 0, 125, 1, 73, 0, 1, 249, 0, 0),
+    ("consciousness-fabricator", "experimental", 9238, 158, 0, 1, 7, 0, 125, 1, 73, 0, 1, 249, 0, 1),
     ("holosim-infinite",   "experimental", 489296, 7766, 2, 2, 5, 0, 180, 2, 31, 0, 0, 296, 1, 1),
     ("kali-mahabali",      "experimental",  63118,  690, 0, 1, 15, 1, 314, 2, 500, 20, 0, 355, 1, 1),
     ("icode",              "deprecated",   142819, 2095, 21, 2, 7, 0, 133, 3, 500, 10, 0, 100, 0, 1),
     # --- engines added in the 2026-08-11 full-coverage pass -----------------
     ("browsefleet",        "engine",      4558,   86,  4, 5,  29,  2, 130, 4, 239,  0, 0, 282, 1, 1),
-    ("hermes-prime-bridge","engine",       919,   14,  0, 1,  22,  0,   4, 2,   1,  0, 0, 162, 1, 1),
-    ("lifeos-bot",         "engine",     11857,   17,  0, 1,  15,  0,  61, 2, 397,  0, 0, 107, 1, 1),
+    ("hermes-prime-bridge","engine",       919,   14,  0, 2,  23,  1,   4, 2,   1,  3, 0, 162, 1, 1),
+    ("lifeos-bot",         "engine",     12009,   33,  0, 2,  16,  1,  61, 2, 397,  0, 0, 107, 1, 1),
     # --- deprecated / inactive (capped at C by policy) -----------------------
     ("cinesync",           "deprecated", 13744,   16,  2, 2,   3,  0, 298, 4,  23,  0, 0, 150, 1, 1),
     ("osint-os",           "deprecated",120754,  399,  1, 1,   2,  0, 406, 4, 500,  0, 0, 469, 1, 1),

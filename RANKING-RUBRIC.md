@@ -152,15 +152,15 @@ and cross-repo in-degree. **No self-reported numbers.**
 | threads-lyr | engine | 2,374 | 31 | 0 | 1 | 9 | 0 | 1 | 2 | 3 | 1 |
 | discord-cli | engine | 3,704 | 15 | 0 | 2 | 11 | 10 | 156 | 2 | 13 | 0 |
 | tg-cli | engine | 4,828 | 122 | 0 | 2 | 12 | 14 | 156 | 2 | 12 | 0 |
-| meme-lyr | engine | 899 | 0 | 1 | 1 | 12 | 0 | 521 | 2 | 6 | 0 |
+| meme-lyr | engine | 1,050 | 25 | 1 | 2 | 14 | 1 | 521 | 2 | 6 | 0 |
 | obscura-core | engine | 2,896 | 15 | 0 | 1 | 12 | 0 | 10 | 1 | 8 | 4 |
-| consciousness-fabricator | experimental | 9,238 | 158 | 0 | 1 | 6 | 0 | 125 | 1 | 0 | 1 |
+| consciousness-fabricator | experimental | 9,238 | 158 | 0 | 1 | 7 | 0 | 125 | 1 | 0 | 1 |
 | holosim-infinite | experimental | 489,296 | 7,766 | 2 | 2 | 5 | 0 | 180 | 2 | 0 | 0 |
 | kali-mahabali | experimental | 63,118 | 690 | 0 | 1 | 15 | 1 | 314 | 2 | 20 | 0 |
 | icode | deprecated | 142,819 | 2,095 | 21 | 2 | 7 | 0 | 133 | 3 | 10 | 0 |
 | browsefleet | engine | 4,558 | 86 | 4 | 5 | 29 | 2 | 130 | 4 | 0 | 0 |
-| hermes-prime-bridge | engine | 919 | 14 | 0 | 1 | 22 | 0 | 4 | 2 | 0 | 0 |
-| lifeos-bot | engine | 11,857 | 17 | 0 | 1 | 15 | 0 | 61 | 2 | 0 | 0 |
+| hermes-prime-bridge | engine | 919 | 14 | 0 | 2 | 23 | 1 | 4 | 2 | 3 | 0 |
+| lifeos-bot | engine | 12,009 | 33 | 0 | 2 | 16 | 1 | 61 | 2 | 0 | 0 |
 | cinesync | deprecated | 13,744 | 16 | 2 | 2 | 3 | 0 | 298 | 4 | 0 | 0 |
 | osint-os | deprecated | 120,754 | 399 | 1 | 1 | 2 | 0 | 406 | 4 | 0 | 0 |
 | sovereign | deprecated | 9,417 | 30 | 0 | 1 | 2 | 0 | 262 | 2 | 0 | 1 |
@@ -198,18 +198,17 @@ and cross-repo in-degree. **No self-reported numbers.**
 | 23 | mindstrata | 10.0 | 10.0 | 3.4 | 5.0 | 0.0 | 10.0 | 0.0 | 4.1 | **5.43** | B |
 | 24 | discord-cli | 6.8 | 4.8 | 3.8 | 10.0 | 8.0 | 2.0 | 6.0 | 4.2 | **5.42** | B |
 | 25 | lifeos-ops | 9.0 | 0.0 | 6.9 | 5.0 | 8.0 | 6.0 | 8.0 | 4.2 | **5.39** | B |
-| 26 | reddit-lyr | 6.9 | 5.5 | 4.4 | 5.0 | 0.0 | 6.0 | 8.0 | 4.1 | **5.17** | B |
-| 27 | obscura-core | 6.6 | 4.9 | 3.1 | 5.0 | 0.0 | 6.0 | 3.0 | 7.5 | **4.85** | B |
-| 28 | threads-lyr | 6.4 | 6.3 | 3.6 | 5.0 | 0.0 | 8.0 | 3.0 | 4.4 | **4.67** | B |
-| 29 | cinesync | 8.6 | 4.7 | 6.6 | 10.0 | 0.0 | 2.0 | 0.0 | 4.0 | **4.43** | C |
-| 30 | consciousness-fabricator | 7.5 | 8.7 | 3.0 | 5.0 | 0.0 | 2.0 | 0.0 | 3.2 | **4.03** | C |
-| 31 | hermes-prime-bridge | 5.6 | 5.5 | 2.7 | 5.0 | 0.0 | 10.0 | 0.0 | 4.1 | **4.01** | C |
-| 32 | lifeos-bot | 7.7 | 4.8 | 4.6 | 5.0 | 0.0 | 4.0 | 0.0 | 3.7 | **3.80** | C |
-| 33 | sovereign | 7.6 | 5.6 | 3.2 | 5.0 | 0.0 | 2.0 | 0.0 | 3.6 | **3.58** | C |
-| 34 | meme-lyr | 6.1 | 0.0 | 4.3 | 5.0 | 0.0 | 2.0 | 3.0 | 6.0 | **3.43** | C |
+| 26 | meme-lyr | 6.2 | 6.8 | 4.3 | 10.0 | 4.0 | 2.0 | 3.0 | 6.0 | **5.38** | B |
+| 27 | reddit-lyr | 6.9 | 5.5 | 4.4 | 5.0 | 0.0 | 6.0 | 8.0 | 4.1 | **5.17** | B |
+| 28 | hermes-prime-bridge | 5.6 | 5.5 | 2.7 | 10.0 | 4.0 | 10.0 | 3.0 | 4.1 | **5.15** | B |
+| 29 | obscura-core | 6.6 | 4.9 | 3.1 | 5.0 | 0.0 | 6.0 | 3.0 | 7.5 | **4.85** | B |
+| 30 | lifeos-bot | 7.8 | 5.7 | 4.6 | 10.0 | 4.0 | 4.0 | 0.0 | 3.7 | **4.69** | B |
+| 31 | threads-lyr | 6.4 | 6.3 | 3.6 | 5.0 | 0.0 | 8.0 | 3.0 | 4.4 | **4.67** | B |
+| 32 | cinesync | 8.6 | 4.7 | 6.6 | 10.0 | 0.0 | 2.0 | 0.0 | 4.0 | **4.43** | C |
+| 33 | consciousness-fabricator | 7.5 | 8.7 | 3.0 | 5.0 | 0.0 | 2.0 | 0.0 | 4.2 | **4.23** | C |
+| 34 | sovereign | 7.6 | 5.6 | 3.2 | 5.0 | 0.0 | 2.0 | 0.0 | 3.6 | **3.58** | C |
 | 35 | workout-factory | 7.6 | 5.6 | 3.2 | 5.0 | 0.0 | 2.0 | 0.0 | 2.3 | **3.32** | C |
 | 36 | lifeos-saas | 5.5 | 0.0 | 3.5 | 5.0 | 0.0 | 2.0 | 0.0 | 4.8 | **2.60** | **D** |
-
 \* = policy-capped at C by §7 (experimental flag / archived) despite a higher raw capability score.
 C without \* = natural tier. `tdg` (deprecated, 0 executable LOC) keeps its natural D — the §7 cap is a ceiling, not a floor.
 
@@ -232,10 +231,11 @@ C without \* = natural tier. `tdg` (deprecated, 0 executable LOC) keeps its natu
    raw scale it looks trivial, but it has the **highest cross-repo in-degree (4)**:
    every browser-scraping tool depends on its cookie vault. Utility lifts it to B.
 4. **Full-coverage pass added 10 previously-unranked repos** (2026-08-11):
-   `browsefleet` (5.55, B), `hermes-prime-bridge` (4.01, C), `toon-helper`
-   (3.86, C), `lifeos-bot` (3.80, C), plus six archived repos (`cinesync`,
-   `open-claude`, `osint-os`, `sovereign`, `workout-factory`, `tdg`). Every repo
-   in the portfolio now passes through the same eight-criteria engine.
+   `browsefleet` (5.77, B), `hermes-prime-bridge` (5.15, B), `toon-helper`
+   (removed — vendored into dependents), `lifeos-bot` (4.69, B), plus six
+   archived repos (`cinesync`, `open-claude`, `osint-os`, `sovereign`,
+   `workout-factory`, `tdg`). Every repo in the portfolio now passes
+   through the same eight-criteria engine.
 5. **Vendored code is counted once, not N times (first-party rule).** When
    `toon-helper` was folded from a standalone repo into its dependents, the raw
    scan counted the identical ~170-LOC crate in every copy and its `slideforge`
@@ -271,6 +271,27 @@ C without \* = natural tier. `tdg` (deprecated, 0 executable LOC) keeps its natu
     (nousresearch), `hermes-agent-ultra` (sheawinkler), `zeroclaw`
     (zeroclaw-labs) are upstream-owned forks; `c-suite-agents-mcp` was merged
     into `c-suite-agents` and removed from GitHub. All are documented exclusions.
+12. **C-tier audit sprint (2026-08-11): genuine gaps closed, three repos promoted.**
+    * `meme-lyr` 3.43 → **5.38 (B)**: was the only portfolio repo with **zero
+      tests** — added a 19-test vitest suite over the pure CLI core (ratio/color
+      data integrity, truncation, background parsing, arg parsing), exported the
+      pure core + guarded `main()` for testability, switched the toolchain to
+      npm (stale yarn.lock dropped), and shipped the tag-only CI + release
+      pipeline with a v2.0.0 tag.
+    * `hermes-prime-bridge` 4.01 → **5.15 (B)**: pyproject declared v0.2.0 but
+      there was no tag — tagged v0.2.0, added a tag-triggered release workflow
+      (pytest gate + GitHub release notes), and corrected its agent surface to
+      its real 3 Hermes MCP tools (pinned by its own contract tests).
+    * `lifeos-bot` 3.80 → **4.69 (B)**: added 16 unit tests for the pure
+      Telegram formatting layer (17 → 33), added the release pipeline, created
+      the GitHub repo (it existed only locally!), pushed, and tagged v0.1.0.
+    * `consciousness-fabricator` 4.03 → **4.23 (C*)** — docs/ architecture
+      deep-dive added (was the only gap in an otherwise strong suite); stays
+      policy-capped at C until release + agent surface.
+    * C-tier shrank 11 → 8; B grew 11 → 14. The remaining C repos are capped
+      experimental/deprecated (kali-mahabali 6.26, icode 5.72, holosim 5.52,
+      osint-os 5.46) or genuinely small/dormant (cinesync 4.43, sovereign 3.58,
+      workout-factory 3.32) — no authentic code change could move them.
 
 ---
 
@@ -343,10 +364,10 @@ Priority order = nearest to next tier first.
 | **instagram-lyr** | B 6.13 | **A** | Ship 1–2 releases (**+0.32**) + velocity band (**+0.32**) → 6.77, A |
 | **lifeos-ops** | B 5.39 | **A** | **Write tests** 0 → 150 (**+1.5**) + 2nd CI (**+0.4**) → 7.29, A — single biggest win in the portfolio |
 | **obscura-core** | B 4.85 | **A** | Tools 8→31 (**+0.42**) + releases (**+0.32**) + tests 15→100 (**+0.5**) → 6.09, B+ |
+| **lifeos-bot** | B 4.69 | **A** | Agent surface 0→11 (**+0.42**) + velocity band (**+0.32**) + tests 33→100 (**+0.4**) → 5.83, B+ |
 | **holosim-infinite** | C 5.52* | **A** | Uncap: ship v0.1 release (**+0.32**) + add MCP/CLI surface 0→30 (**+0.84**) + velocity (**+0.32**) → 7.00, A |
 | **kali-mahabali** | C 6.26* | **A** | Uncap: release + surface + velocity → A |
-| **consciousness-fabricator** | C 4.03* | **B** | Uncap: release + surface; tests already strong (158) |
-| **meme-lyr** | C 3.43 | **B** | Add tests (0→50: **+0.9**) + tools 6→11 (**+0.42**) → 4.75, B |
+| **consciousness-fabricator** | C 4.23* | **B** | Uncap: ship a release + add an agent surface (docs done) — tests already strong (158) |
 
 **Portfolio-wide rule:** re-run `scripts/rank_score.py` + `scripts/measure_repos.py`
 after every milestone and update `README.md` tiers. The dataset is machine-generated,

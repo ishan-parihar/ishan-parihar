@@ -95,7 +95,7 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 | Metric | Value | Technical Context & Evidence |
 |--------|-------|------------------------------|
-| **Active Projects** | **43** | 2 S-tier · 11 A-tier · 11 B-tier · 11 C-tier · 1 D-tier · 1 knowledge-base · 6 websites (separate category) — tiered by the objective [ranking rubric](./RANKING-RUBRIC.md) |
+| **Active Projects** | **43** | 2 S-tier · 11 A-tier · 14 B-tier · 8 C-tier · 1 D-tier · 1 knowledge-base · 6 websites (separate category) — tiered by the objective [ranking rubric](./RANKING-RUBRIC.md) |
 | **MCP Servers** | **20+** | 800+ total tools across intelligence, memory, media, social, and life-ops |
 | **Rust Crates** | **40+** | Multi-crate workspaces powering `scorestrata`, `mindstrata`, `tdg-rust`, `igs-rust`, `automaton` |
 | **Lines of Code** | **2.4M+** | Machine-counted tracked source across all projects (Rust, TypeScript, Python, Go, Kotlin) |
@@ -207,7 +207,7 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 | **[andrometry](https://github.com/ishan-parihar/andrometry)** | Kotlin/Go | 12 Tools | Personal context engine: Kotlin Android collector with a Go MCP server |
 | **[browsefleet](https://github.com/ishan-parihar/browsefleet)** | Node/TS | REST + CDP | Stealth browser fleet: leased CDP contexts, sessions/screenshots/PDFs for agents |
 | **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** | Python | plugin | Live plugin importing Prime Agent's persistent kernel into Hermes's stateless runtime |
-| **lifeos-bot** (local) | Python | Telegram MCP | LifeOS conversational interface — activity/diet/journal/financial logging |
+| **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** | Python | Telegram MCP | LifeOS conversational interface — activity/diet/journal/financial logging |
 
 ### Agent-Native Platform CLIs (`-lyr` / `-cli`) & Obscura
 
@@ -223,7 +223,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 | **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)** | Python | 3 Tools | Threads.net MCP server via anonymous scraping |
 | **[discord-cli](https://github.com/ishan-parihar/discord-cli)** | Python | 13 Tools | Local-first Discord data CLI (SQLite sync, search, analytics) |
 | **[tg-cli](https://github.com/ishan-parihar/tg-cli)** | Python | 12 Tools | Fast Telethon-powered Telegram messaging automation client |
-| **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** | Python | 6 Tools | AXI-compliant structured image overlay and meme generator |
+| **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** | TypeScript | 6 Tools | AXI-compliant structured image overlay and meme generator |
 | **[obscura-core](https://github.com/ishan-parihar/obscura-core)** | Python | 8 Tools | Stealth browser integration: cookie vault + CDP daemon powering the lyr family |
 
 ### Portfolios & Web User Interfaces (Separate Category — not tiered)
@@ -286,7 +286,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 </details>
 
 <details>
-<summary><b>📡 B-TIER: Solid Utilities — Score 4.5–6.49 (11 Projects)</b></summary>
+<summary><b>📡 B-TIER: Solid Utilities — Score 4.5–6.49 (14 Projects)</b></summary>
 <br>
 
 * **[andrometry](https://github.com/ishan-parihar/andrometry)** `6.48` (0.02 from A): Personal context engine — Kotlin Android collector with a Go MCP server. 367 tests, 13 days old.
@@ -297,14 +297,17 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[mindstrata](https://github.com/ishan-parihar/mindstrata)** `5.43`: Deterministic emergent society simulation. 82K LOC, 1,238 tests. Simulator — no agent surface; needs a CLI/API + release.
 * **[discord-cli](https://github.com/ishan-parihar/discord-cli)** `5.42`: Local-first Discord data CLI (SQLite sync, search, analytics). 10 releases, 2 CI workflows.
 * **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** `5.39`: Unified CLI + MCP server for Notion-based LifeOS. 31 tools, 10 releases — but **zero automated tests** across 18K Rust LOC (biggest test gap in the portfolio).
+* **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** `5.38` (was C 3.43 — C-tier audit sprint): TypeScript CLI meme generator. First test suite added (19 tests), tag-only CI + release pipeline, v2.0.0 released.
 * **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** `5.17`: Comprehensive Reddit scraper with 56 distinct operational tools. 24 tests, 1 CI workflow.
+* **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** `5.15` (was C 4.01): Live plugin bridging a persistent kernel into Hermes's stateless runtime. 3 MCP tools, 14 contract tests, v0.2.0 released.
 * **[obscura-core](https://github.com/ishan-parihar/obscura-core)** `4.85`: Shared cookie-vault + CDP daemon powering the lyr family — highest cross-repo in-degree in the portfolio (4 dependents).
+* **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** `4.69` (was C 3.80 — published this audit): LifeOS conversational interface — Telegram bot + agent CLI. 12K LOC, 33 tests, v0.1.0 released.
 * **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)** `4.67`: Threads.net MCP server. 31 tests, 1 day old — youngest repo in the portfolio.
 
 </details>
 
 <details>
-<summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (11 Projects)</b></summary>
+<summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (8 Projects)</b></summary>
 <br>
 
 * **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `6.26` (capped): Modular sandbox testing raw agent behaviors (Codename: Project Chimera). Cap: experimental flag — promote via release + agent surface. 🔒
@@ -312,11 +315,8 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[icode](https://github.com/ishan-parihar/icode)** `5.72` (capped): Rust command runner parsing agent file edit logs (Archived). Cap: deprecated — not promotable while inactive.
 * **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)** `5.52` (capped): Math simulator tracking emergent agent interactions. 489K LOC, 7,766 tests. Cap: experimental flag — promote via release + agent surface.
 * **[cinesync](https://github.com/ishan-parihar/cinesync)** `4.43`: Character-asset automation pipeline for lipsync animation. 13.7K LOC, 2 CI workflows. Natural C — archived/inactive.
-* **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)** `4.03` (capped): Audio pipeline compiling dynamic background sounds. 158 tests. Cap: experimental flag.
-* **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** `4.01`: Live plugin bridging a persistent kernel into Hermes's stateless runtime. 4 days old — will climb with tests.
-* **lifeos-bot** `3.80` (local — pending publish): LifeOS conversational interface — Telegram bot for activity/diet/journal/financial logging. 11.9K LOC, 17 tests.
+* **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)** `4.23` (capped): Audio pipeline compiling dynamic background sounds. 158 tests + architecture docs. Cap: experimental flag — needs release + agent surface.
 * **[sovereign](https://github.com/ishan-parihar/sovereign)** `3.58`: Archived agent framework (voice/cache tooling). Natural C — archived/inactive.
-* **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** `3.43`: AXI-compliant image canvas manager placing dynamic content overlays. Smallest repo (899 LOC, 0 tests).
 * **[workout-factory](https://github.com/ishan-parihar/workout-factory)** `3.32`: Archived trainer voice/audio-cache factory. Natural C — archived/inactive.
 
 </details>
