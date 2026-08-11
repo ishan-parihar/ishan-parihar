@@ -201,8 +201,8 @@ and cross-repo in-degree. **No self-reported numbers.**
 | 26 | meme-lyr | 6.2 | 6.8 | 4.3 | 10.0 | 4.0 | 2.0 | 3.0 | 6.0 | **5.38** | B |
 | 27 | reddit-lyr | 6.9 | 5.5 | 4.4 | 5.0 | 0.0 | 6.0 | 8.0 | 4.1 | **5.17** | B |
 | 28 | hermes-prime-bridge | 5.6 | 5.5 | 2.7 | 10.0 | 4.0 | 10.0 | 3.0 | 4.1 | **5.15** | B |
-| 29 | obscura-core | 6.6 | 4.9 | 3.1 | 5.0 | 0.0 | 6.0 | 3.0 | 7.5 | **4.85** | B |
-| 30 | lifeos-bot | 7.8 | 5.7 | 4.6 | 10.0 | 4.0 | 4.0 | 0.0 | 3.7 | **4.69** | B |
+| 29 | lifeos-bot | 7.8 | 5.7 | 4.6 | 10.0 | 4.0 | 4.0 | 3.0 | 3.7 | **5.11** | B |
+| 30 | obscura-core | 6.6 | 4.9 | 3.1 | 5.0 | 0.0 | 6.0 | 3.0 | 7.5 | **4.85** | B |
 | 31 | threads-lyr | 6.4 | 6.3 | 3.6 | 5.0 | 0.0 | 8.0 | 3.0 | 4.4 | **4.67** | B |
 | 32 | cinesync | 8.6 | 4.7 | 6.6 | 10.0 | 0.0 | 2.0 | 0.0 | 4.0 | **4.43** | C |
 | 33 | consciousness-fabricator | 7.5 | 8.7 | 3.0 | 5.0 | 0.0 | 2.0 | 0.0 | 4.2 | **4.23** | C |
@@ -282,9 +282,10 @@ C without \* = natural tier. `tdg` (deprecated, 0 executable LOC) keeps its natu
       there was no tag — tagged v0.2.0, added a tag-triggered release workflow
       (pytest gate + GitHub release notes), and corrected its agent surface to
       its real 3 Hermes MCP tools (pinned by its own contract tests).
-    * `lifeos-bot` 3.80 → **4.69 (B)**: added 16 unit tests for the pure
+    * `lifeos-bot` 3.80 → **5.11 (B)**: added 16 unit tests for the pure
       Telegram formatting layer (17 → 33), added the release pipeline, created
-      the GitHub repo (it existed only locally!), pushed, and tagged v0.1.0.
+      the GitHub repo (it existed only locally!), pushed, tagged v0.1.0, and
+      counted its real `python -m lifeos` CLI surface (simulate/direct/debug).
     * `consciousness-fabricator` 4.03 → **4.23 (C*)** — docs/ architecture
       deep-dive added (was the only gap in an otherwise strong suite); stays
       policy-capped at C until release + agent surface.
@@ -364,7 +365,7 @@ Priority order = nearest to next tier first.
 | **instagram-lyr** | B 6.13 | **A** | Ship 1–2 releases (**+0.32**) + velocity band (**+0.32**) → 6.77, A |
 | **lifeos-ops** | B 5.39 | **A** | **Write tests** 0 → 150 (**+1.5**) + 2nd CI (**+0.4**) → 7.29, A — single biggest win in the portfolio |
 | **obscura-core** | B 4.85 | **A** | Tools 8→31 (**+0.42**) + releases (**+0.32**) + tests 15→100 (**+0.5**) → 6.09, B+ |
-| **lifeos-bot** | B 4.69 | **A** | Agent surface 0→11 (**+0.42**) + velocity band (**+0.32**) + tests 33→100 (**+0.4**) → 5.83, B+ |
+| **lifeos-bot** | B 5.11 | **A** | Agent surface 3→11 (**+0.42**) + velocity band (**+0.32**) + tests 33→100 (**+0.4**) → 6.25, B+ |
 | **holosim-infinite** | C 5.52* | **A** | Uncap: ship v0.1 release (**+0.32**) + add MCP/CLI surface 0→30 (**+0.84**) + velocity (**+0.32**) → 7.00, A |
 | **kali-mahabali** | C 6.26* | **A** | Uncap: release + surface + velocity → A |
 | **consciousness-fabricator** | C 4.23* | **B** | Uncap: ship a release + add an agent surface (docs done) — tests already strong (158) |

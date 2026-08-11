@@ -206,7 +206,7 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 | **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** | TypeScript | 13 Tools | Forced epistemic cognitive modes (first-principles, polarity mapping, etc.) |
 | **[andrometry](https://github.com/ishan-parihar/andrometry)** | Kotlin/Go | 12 Tools | Personal context engine: Kotlin Android collector with a Go MCP server |
 | **[browsefleet](https://github.com/ishan-parihar/browsefleet)** | Node/TS | REST + CDP | Stealth browser fleet: leased CDP contexts, sessions/screenshots/PDFs for agents |
-| **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** | Python | plugin | Live plugin importing Prime Agent's persistent kernel into Hermes's stateless runtime |
+| **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** | Python | 3 Tools | Live plugin importing Prime Agent's persistent kernel into Hermes's stateless runtime |
 | **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** | Python | Telegram MCP | LifeOS conversational interface — activity/diet/journal/financial logging |
 
 ### Agent-Native Platform CLIs (`-lyr` / `-cli`) & Obscura
@@ -301,7 +301,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** `5.17`: Comprehensive Reddit scraper with 56 distinct operational tools. 24 tests, 1 CI workflow.
 * **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** `5.15` (was C 4.01): Live plugin bridging a persistent kernel into Hermes's stateless runtime. 3 MCP tools, 14 contract tests, v0.2.0 released.
 * **[obscura-core](https://github.com/ishan-parihar/obscura-core)** `4.85`: Shared cookie-vault + CDP daemon powering the lyr family — highest cross-repo in-degree in the portfolio (4 dependents).
-* **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** `4.69` (was C 3.80 — published this audit): LifeOS conversational interface — Telegram bot + agent CLI. 12K LOC, 33 tests, v0.1.0 released.
+* **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** `5.11` (was C 3.80 — published this audit): LifeOS conversational interface — Telegram bot + agent CLI (simulate/direct/debug). 12K LOC, 33 tests, v0.1.0 released.
 * **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)** `4.67`: Threads.net MCP server. 31 tests, 1 day old — youngest repo in the portfolio.
 
 </details>

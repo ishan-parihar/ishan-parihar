@@ -89,7 +89,7 @@ DATA = [
     # --- engines added in the 2026-08-11 full-coverage pass -----------------
     ("browsefleet",        "engine",      4558,   86,  4, 5,  29,  2, 130, 4, 239,  0, 0, 282, 1, 1),
     ("hermes-prime-bridge","engine",       919,   14,  0, 2,  23,  1,   4, 2,   1,  3, 0, 162, 1, 1),
-    ("lifeos-bot",         "engine",     12009,   33,  0, 2,  16,  1,  61, 2, 397,  0, 0, 107, 1, 1),
+    ("lifeos-bot",         "engine",     12009,   33,  0, 2,  16,  1,  61, 2, 397,  3, 0, 107, 1, 1),
     # --- deprecated / inactive (capped at C by policy) -----------------------
     ("cinesync",           "deprecated", 13744,   16,  2, 2,   3,  0, 298, 4,  23,  0, 0, 150, 1, 1),
     ("osint-os",           "deprecated",120754,  399,  1, 1,   2,  0, 406, 4, 500,  0, 0, 469, 1, 1),
