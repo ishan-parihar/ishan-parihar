@@ -140,14 +140,15 @@ I treat AI system design as **spatial machinery** rather than linear text prompt
 > [Complete Project Catalog](#-complete-project-catalog-42-projects) below via the
 > [ranking rubric](./RANKING-RUBRIC.md).
 
-### 🎵 [scorestrata](https://github.com/ishan-parihar/scorestrata)
-**Contract-first music compiler — from plain-language brief to mastered WAV.** Rust. 11 crates, 944 tests.
+### 🤖 [operant](https://github.com/ishan-parihar/operant)
+**Terminal-native ReAct agent runtime.** Rust. 9,200+ tests. MCP client + server, skills, messaging channels.
 
-A deterministic composition compiler that turns a human brief into a full-length WAV: event-sourced composition state, a validator gate with genre/register/layer checks, a production-grade layered synth, and a mastering chain. Same brief → byte-identical audio, every run.
+A production-grade agent runtime written in Rust that runs from your shell: a real think → act → observe loop with a JSON-schema tool registry, memory-context injection every turn, provider fallbacks, and self-healing retries.
 
-* **Pipeline**: Brief → plan → compile → validate → render → master.
-* **Audio**: Production-grade layered synth voices (SF2-sampled drums, doubled guitar, organics) with per-layer spectral auditing.
-* **Determinism**: Byte-identical replay from contract + seed; 944 tests enforce no-regression rules.
+* **Memory**: `agentmemory` hybrid semantic memory (BM25 + vector + graph), auto-spawned on first use; optional Postgres backend.
+* **Tools**: 60+ JSON-schema tools — fs, git, web, CDP browser, shell, code, http, memory, skills, cron, kanban, notes, checkpoints.
+* **Channels**: Telegram · Discord · Slack · WhatsApp via the gateway; WASM plugins; `operant autonomous` dev loop.
+* **Local-first**: no telemetry, no account; any OpenAI-compatible endpoint or a local llama.cpp / Ollama model.
 
 ### 📡 [igs-rust](https://github.com/ishan-parihar/igs-rust)
 **Intelligence Gathering System — High-performance Rust engine.** ~7MB static binary, ~5MB RSS.
@@ -163,26 +164,6 @@ A lightweight news and data ingestion pipeline scraping 411 distinct sources acr
 
 A Rust backend with an axum REST API + rmcp MCP server, JWT auth, SSE realtime, and an in-process scheduler for cross-platform social content operations — Reddit, LinkedIn, Instagram, Telegram, Threads, Facebook, YouTube, Discord, and X/Twitter.
 
-### 🧠 [mindstrata](https://github.com/ishan-parihar/mindstrata)
-**Deterministic emergent human-society simulation — every agent a complete mind.** Rust. 82K LOC, 1,238 tests.
-
-Not just a "society sim": a full cognitive-science stack — bodies, nervous systems, appraisal-based emotion, belief systems, social bonds, institutions, culture, and noospheric fields. Three architecture plans (AP1 → AP2 → AP3) deepen it from a medieval settlement into a multi-scale civilization simulation where history always emerges from locally bounded agents.
-
-### 📊 [slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)
-**The browserless slide factory.** Rust. 46 slide types, 185 tests, ~35K LOC.
-
-High-quality Instagram / LinkedIn / TikTok / X carousels as HTML → PNG via an embedded Blitz renderer — **no Chromium, no browser, no screenshot hacks**. 4.5× less memory than headless-Chrome pipelines, fully static musl binary, WCAG-AA contrast auditing, and an MCP server for AI-driven generation.
-
-### 🤖 [operant](https://github.com/ishan-parihar/operant)
-**Terminal-native ReAct agent runtime.** Rust. 9,200+ tests. MCP client + server, skills, messaging channels.
-
-A production-grade agent runtime written in Rust that runs from your shell: a real think → act → observe loop with a JSON-schema tool registry, memory-context injection every turn, provider fallbacks, and self-healing retries.
-
-* **Memory**: `agentmemory` hybrid semantic memory (BM25 + vector + graph), auto-spawned on first use; optional Postgres backend.
-* **Tools**: 60+ JSON-schema tools — fs, git, web, CDP browser, shell, code, http, memory, skills, cron, kanban, notes, checkpoints.
-* **Channels**: Telegram · Discord · Slack · WhatsApp via the gateway; WASM plugins; `operant autonomous` dev loop.
-* **Local-first**: no telemetry, no account; any OpenAI-compatible endpoint or a local llama.cpp / Ollama model.
-
 ### 🧠 [tdg-rust](https://github.com/ishan-parihar/tdg-rust)
 **Teleological Developmental Graph — Pure Rust cognitive engine.** 626 tests. 36 MCP tools.
 
@@ -191,6 +172,25 @@ A complex implementation of stateful agent memory using a holonic graph structur
 * **Interface**: 36 custom MCP tools allowing agents to write, link, prune, and query memories using vector search combined with graph traversal.
 * **Validation**: Highly verified with 637 deterministic unit and integration tests.
 * **Canonical**: The Rust port supersedes the original Python reference (now private); `tdg-rust` is the single canonical TDG project.
+
+### 🎵 [scorestrata](https://github.com/ishan-parihar/scorestrata)
+**Contract-first music compiler — from plain-language brief to mastered WAV.** Rust. 11 crates, 944 tests.
+
+A deterministic composition compiler that turns a human brief into a full-length WAV: event-sourced composition state, a validator gate with genre/register/layer checks, a production-grade layered synth, and a mastering chain. Same brief → byte-identical audio, every run.
+
+* **Pipeline**: Brief → plan → compile → validate → render → master.
+* **Audio**: Production-grade layered synth voices (SF2-sampled drums, doubled guitar, organics) with per-layer spectral auditing.
+* **Determinism**: Byte-identical replay from contract + seed; 944 tests enforce no-regression rules.
+
+### 📊 [slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)
+**The browserless slide factory.** Rust. 46 slide types, 185 tests, ~35K LOC.
+
+High-quality Instagram / LinkedIn / TikTok / X carousels as HTML → PNG via an embedded Blitz renderer — **no Chromium, no browser, no screenshot hacks**. 4.5× less memory than headless-Chrome pipelines, fully static musl binary, WCAG-AA contrast auditing, and an MCP server for AI-driven generation.
+
+### 🧠 [mindstrata](https://github.com/ishan-parihar/mindstrata)
+**Deterministic emergent human-society simulation — every agent a complete mind.** Rust. 82K LOC, 1,238 tests.
+
+Not just a "society sim": a full cognitive-science stack — bodies, nervous systems, appraisal-based emotion, belief systems, social bonds, institutions, culture, and noospheric fields. Three architecture plans (AP1 → AP2 → AP3) deepen it from a medieval settlement into a multi-scale civilization simulation where history always emerges from locally bounded agents.
 
 ---
 
@@ -204,15 +204,15 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 |--------|-------|---------|-------------|
 | **[igs-rust](https://github.com/ishan-parihar/igs-rust)** | Rust | 91 Tools | Lightweight intelligence aggregator scraping 411 sources in 47 countries |
 | **[social-forge](https://github.com/ishan-parihar/social-forge)** | Rust | MCP + REST | Multi-network content ops engine (25 platforms, JWT auth, SSE realtime) |
+| **[openscript](https://github.com/ishan-parihar/openscript)** | Rust/TS | 109 Tools | AI-directed video editing pipeline (TTS, FFmpeg, Remotion) |
 | **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Rust | 36 Tools | Teleological developmental graph memory and knowledge synthesizer |
+| **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** | TypeScript | 35 Tools | Multi-agent orchestration daemon + LifeOS MCP server (LanceDB + Telegram) |
 | **[automaton](https://github.com/ishan-parihar/automaton)** | Rust | 38 Tools | Graph-native build, plan, and scheduled execution engine |
 | **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** | Rust | 8 Tools | Browserless carousel factory — 46 slide types, embedded Blitz renderer |
-| **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** | TypeScript | 35 Tools | Multi-agent orchestration daemon + LifeOS MCP server (LanceDB + Telegram) |
-| **[openscript](https://github.com/ishan-parihar/openscript)** | Rust/TS | 109 Tools | AI-directed video editing pipeline (TTS, FFmpeg, Remotion) |
-| **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** | Rust | 31 Tools | Unified CLI + MCP server for Notion-based LifeOS |
 | **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** | TypeScript | 13 Tools | Forced epistemic cognitive modes (first-principles, polarity mapping, etc.) |
 | **[andrometry](https://github.com/ishan-parihar/andrometry)** | Kotlin/Go | 12 Tools | Personal context engine: Kotlin Android collector with a Go MCP server |
 | **[browsefleet](https://github.com/ishan-parihar/browsefleet)** | Node/TS | REST + CDP | Stealth browser fleet: leased CDP contexts, sessions/screenshots/PDFs for agents |
+| **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** | Rust | 31 Tools | Unified CLI + MCP server for Notion-based LifeOS |
 | **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** | Python | 3 Tools | Live plugin importing Prime Agent's persistent kernel into Hermes's stateless runtime |
 | **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** | Python | Telegram MCP | LifeOS conversational interface — activity/diet/journal/financial logging |
 
@@ -222,16 +222,16 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 
 | Tool | Stack | Surface | Description |
 |------|-------|---------|-------------|
-| **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** | Python | 56 Tools | Dense Reddit scraping, analysis, and interaction CLI |
-| **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** | Python | 42 Tools | Agent-native X/Twitter integration handling DMs, media, and search |
-| **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** | Python | 47 Tools | Stealth profile reconnaissance and HTTPX-based media scraper |
 | **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** | Python | 25 Tools | Professional profile extraction and company intelligence scraping |
+| **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** | Python | 42 Tools | Agent-native X/Twitter integration handling DMs, media, and search |
 | **[facebook-lyr](https://github.com/ishan-parihar/facebook-lyr)** | Python | 41 Tools | Facebook / Messenger MCP server via cookie-based scraping |
-| **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)** | Python | 3 Tools | Threads.net MCP server via anonymous scraping |
-| **[discord-cli](https://github.com/ishan-parihar/discord-cli)** | Python | 13 Tools | Local-first Discord data CLI (SQLite sync, search, analytics) |
 | **[tg-cli](https://github.com/ishan-parihar/tg-cli)** | Python | 12 Tools | Fast Telethon-powered Telegram messaging automation client |
+| **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** | Python | 47 Tools | Stealth profile reconnaissance and HTTPX-based media scraper |
+| **[discord-cli](https://github.com/ishan-parihar/discord-cli)** | Python | 13 Tools | Local-first Discord data CLI (SQLite sync, search, analytics) |
 | **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** | TypeScript | 6 Tools | AXI-compliant structured image overlay and meme generator |
+| **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** | Python | 56 Tools | Dense Reddit scraping, analysis, and interaction CLI |
 | **[obscura-core](https://github.com/ishan-parihar/obscura-core)** | Python | 8 Tools | Stealth browser integration: cookie vault + CDP daemon powering the lyr family |
+| **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)** | Python | 3 Tools | Threads.net MCP server via anonymous scraping |
 
 ### Portfolios & Web User Interfaces (Separate Category — not tiered)
 
@@ -284,13 +284,13 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <br>
 
 * **[social-forge](https://github.com/ishan-parihar/social-forge)** `7.90` (0.10 from S): 78K LOC across 25 platforms (registry-verified). Extreme velocity (479 commits/90d). Needs test density (257 tests for its size) to reach S.
-* **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** `7.59`: Professional profile extraction + Voyager profile-edit surface. 1,166 tests, 25 MCP tools, 94 releases, 4 CI workflows.
 * **[openscript](https://github.com/ishan-parihar/openscript)** `7.68`: Agent-directed video editing pipeline. 109 MCP tools, 510 tests, Hinglish Whisper transcription.
+* **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** `7.59`: Professional profile extraction + Voyager profile-edit surface. 1,166 tests, 25 MCP tools, 94 releases, 4 CI workflows.
 * **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `7.34`: Teleological developmental graph memory. 626 tests, 36 MCP tools, 10 releases. Needs a second CI workflow for S.
 * **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** `7.28`: Agent-native X/Twitter integration. 243 tests, 42 tools, 32 releases, 2 CI workflows.
 * **[mysterium](https://github.com/ishan-parihar/mysterium)** `7.19`: Education-system replacement — 64-cell developmental matrix, holonic curriculum. 1,090 tests.
-* **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `6.80`: Multi-agent daemon + bundled LifeOS MCP server (35 tools, LanceDB/SQLite + Telegram). 227 tests, 3 releases — velocity (6 commits/90d) is the only drag.
 * **[scorestrata](https://github.com/ishan-parihar/scorestrata)** `6.98`: WAV music compiler. 944 tests, 88 MCP tools, 73K LOC in 9 days. A v0.x release + 2nd CI = S.
+* **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `6.80`: Multi-agent daemon + bundled LifeOS MCP server (35 tools, LanceDB/SQLite + Telegram). 227 tests, 3 releases — velocity (6 commits/90d) is the only drag.
 * **[automaton](https://github.com/ishan-parihar/automaton)** `6.79`: Graph-native automation substrate. 17 Rust crates, 38 MCP tools. Needs velocity + releases.
 * **[facebook-lyr](https://github.com/ishan-parihar/facebook-lyr)** `6.78`: Facebook / Messenger MCP server. 229 tests, 41 tools, 7 days old — will climb fast.
 * **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** `6.77`: Browserless carousel factory. 46 slide types, embedded Blitz renderer, 185 tests, 6 releases. More tools + 2nd CI = S.
@@ -301,10 +301,10 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <summary><b>📡 B-TIER: Solid Utilities — Score 4.5–6.49 (14 Projects)</b></summary>
 <br>
 
-* **[andrometry](https://github.com/ishan-parihar/andrometry)** `6.16`: Personal context engine — Kotlin Android collector with a Go MCP server. 152 tests, 2 weeks old.
 * **[tg-cli](https://github.com/ishan-parihar/tg-cli)** `6.25`: Fast Telethon-powered Telegram automation client. 122 tests, 14 releases, 2 CI workflows.
-* **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** `6.13`: Stealth Instagram profile scraper. 335 tests, 47 tools. Releases (0) are the gap.
 * **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** `6.17`: Forced cognitive mode engine implementing 13 analysis frameworks. 247 tests, 2 CI workflows.
+* **[andrometry](https://github.com/ishan-parihar/andrometry)** `6.16`: Personal context engine — Kotlin Android collector with a Go MCP server. 152 tests, 2 weeks old.
+* **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** `6.13`: Stealth Instagram profile scraper. 335 tests, 47 tools. Releases (0) are the gap.
 * **[browsefleet](https://github.com/ishan-parihar/browsefleet)** `5.77`: Stealth browser fleet — CDP pool proxying sessions/screenshots/PDFs to agents. 5 CI workflows (most in portfolio), 86 tests, 4 languages.
 * **[mindstrata](https://github.com/ishan-parihar/mindstrata)** `5.43`: Deterministic emergent society simulation. 82K LOC, 1,238 tests. Simulator — no agent surface; needs a CLI/API + release.
 * **[discord-cli](https://github.com/ishan-parihar/discord-cli)** `5.42`: Local-first Discord data CLI (SQLite sync, search, analytics). 10 releases, 2 CI workflows.
@@ -323,9 +323,9 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <br>
 
 * **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `6.26` (capped): Modular sandbox testing raw agent behaviors (Codename: Project Chimera). Cap: experimental flag — promote via release + agent surface. 🔒
-* **[osint-os](https://github.com/ishan-parihar/osint-os)** `5.46` (capped): ScrapeCraft OSINT platform — 121K LOC, 399 tests. Cap: archived/deprecated — not promotable while inactive.
 * **[icode](https://github.com/ishan-parihar/icode)** `5.72` (capped): Rust command runner parsing agent file edit logs (Archived). Cap: deprecated — not promotable while inactive.
 * **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)** `5.52` (capped): Math simulator tracking emergent agent interactions. 489K LOC, 7,766 tests. Cap: experimental flag — promote via release + agent surface.
+* **[osint-os](https://github.com/ishan-parihar/osint-os)** `5.46` (capped): ScrapeCraft OSINT platform — 121K LOC, 399 tests. Cap: archived/deprecated — not promotable while inactive.
 * **[cinesync](https://github.com/ishan-parihar/cinesync)** `4.43`: Character-asset automation pipeline for lipsync animation. 13.7K LOC, 2 CI workflows. Natural C — archived/inactive.
 * **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)** `4.23` (capped): Audio pipeline compiling dynamic background sounds. 158 tests + architecture docs. Cap: experimental flag — needs release + agent surface.
 * **[workout-factory](https://github.com/ishan-parihar/workout-factory)** `3.32`: Archived trainer voice/audio-cache factory. Natural C — archived/inactive.
