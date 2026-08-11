@@ -300,8 +300,8 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** `5.38` (was C 3.43 — C-tier audit sprint): TypeScript CLI meme generator. First test suite added (19 tests), tag-only CI + release pipeline, v2.0.0 released.
 * **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** `5.17`: Comprehensive Reddit scraper with 56 distinct operational tools. 24 tests, 1 CI workflow.
 * **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** `5.15` (was C 4.01): Live plugin bridging a persistent kernel into Hermes's stateless runtime. 3 MCP tools, 14 contract tests, v0.2.0 released.
-* **[obscura-core](https://github.com/ishan-parihar/obscura-core)** `4.85`: Shared cookie-vault + CDP daemon powering the lyr family — highest cross-repo in-degree in the portfolio (4 dependents).
 * **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** `5.11` (was C 3.80 — published this audit): LifeOS conversational interface — Telegram bot + agent CLI (simulate/direct/debug). 12K LOC, 33 tests, v0.1.0 released.
+* **[obscura-core](https://github.com/ishan-parihar/obscura-core)** `4.85`: Shared cookie-vault + CDP daemon powering the lyr family — highest cross-repo in-degree in the portfolio (4 dependents).
 * **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)** `4.67`: Threads.net MCP server. 31 tests, 1 day old — youngest repo in the portfolio.
 
 </details>
