@@ -1,27 +1,34 @@
 #!/usr/bin/env python3
 """
-Objective project ranking engine — v6.1 (8 criteria, class-aware agent surface,
-AXI-ergonomics CLI bonus).
+Objective project ranking engine — v7 (solo-dev honest: architecture &
+sophistication first, zero logistics/time-based scoring).
 
-OpenSSF-Scorecard-inspired, fully machine-measured (v6.1 re-audit 2026-08-12).
+OpenSSF-Scorecard-inspired, fully machine-measured (v7 re-audit 2026-08-12).
 Criteria & weights:
-  1. Engineering Scale        (12%)  log LOC + module/crate count
-  2. Test Rigor               (18%)  log tests + density bonus
-  3. Architectural Complexity (12%)  modules, language diversity, concurrency/async depth
-  4. CI/CD Discipline         ( 8%)  GitHub Actions workflow count
-  5. Release Discipline       ( 8%)  tagged releases
-  6. Development Velocity     ( 8%)  age-normalized commits per 90d
-  7. Agent Surface            (14%)  CLASS-AWARE (v6): MCP tools / CLI
+  1. Architecture & Sophistication (30%)  modules, language diversity,
+                                          concurrency depth, + measured
+                                          advanced-engineering families
+                                          (state machines, graphs, DSLs,
+                                          protocols, storage, AI/ML,
+                                          rendering, determinism,
+                                          distributed, security, plugins)
+  2. Test Rigor               (25%)  log tests + density bonus
+  3. Agent Surface            (20%)  CLASS-AWARE (v6): MCP tools / CLI
                                      commands (AXI) / REST endpoints /
-                                     engine binaries — per own surface class.
-                                     AXI BONUS (v6.1): CLI projects earn
-                                     +0.4 x min(axi,5) where axi (0-6) is the
-                                     count of demonstrable axi.md principles
-                                     (TOON output, --full, empty states,
-                                     truncation, aggregates, exit codes).
-  8. Utility & Ecosystem      (20%)  docs/README, install path, cross-repo in-degree
+                                     engine binaries — per own surface
+                                     class + AXI-ergonomics bonus
+  4. Engineering Scale        (15%)  log LOC + module/crate count
+  5. Utility & Ecosystem      (10%)  docs/README, install path, cross-repo
+                                     in-degree
 
-Tier thresholds (v6):
+DELIBERATELY REMOVED (v7, 2026-08-12): Development Velocity, Release
+Discipline, CI workflow count, and age-grace. These are team/company
+logistics — a solo dev maintaining 40 projects cannot (and should not) ship
+10 releases or 400 commits/90d per repo, and that says nothing about whether
+the CODE is good. The ranking now measures what the code IS, not how often
+its author poked it.
+
+Tier thresholds (v7):
   S >= 8.00  A 6.50-7.99  B 4.50-6.49  C 3.25-4.49  D < 3.25
 
 Cap rules (documented, transparent — see RANKING-RUBRIC.md §7):
@@ -58,7 +65,10 @@ import sys
 # ---------------------------------------------------------------------------
 # Measured dataset. Row:
 #   name, category, loc, tests, mods, ci, c90, tags, age, langs, concur,
-#   ops, surface, axi, indegree, readme_lines, install, docs
+#   ops, soph, surface, axi, indegree, readme_lines, install, docs
+# soph = measured advanced-engineering family count (0-12) from
+#        scripts/soph_audit.py — code-only, count-gated. ci/c90/tags/age are
+#        retained for reference but are NOT scored in v7 (logistics removed).
 # categories: engine | experimental | deprecated | site | kb
 # Agent surface is CLASS-AWARE (v6.1, measured 2026-08-12): ops is the count
 # on the project's own surface class — mcp (MCP tool count), cli (CLI
@@ -71,64 +81,61 @@ import sys
 # ---------------------------------------------------------------------------
 DATA = [
     # --- engines -----------------------------------------------------------
-    ("igs-rust", "engine", 27738, 231, 1, 2, 198, 15, 96, 2, 500, 91, "mcp", 0, 0, 432, 1, 1),
-    ("social-forge", "engine", 77836, 257, 3, 2, 479, 2, 96, 5, 500, 43, "mcp", 0, 0, 557, 1, 1),
-    ("operant", "engine", 538394, 9249, 19, 4, 762, 3, 116, 6, 500, 68, "mcp", 0, 3, 206, 1, 1),
-    ("scorestrata", "engine", 72958, 944, 12, 1, 97, 0, 9, 2, 0, 88, "mcp", 0, 0, 158, 1, 1),
-    ("mindstrata", "engine", 82079, 1245, 8, 1, 483, 0, 14, 1, 0, 2, "cli", 3, 0, 169, 1, 1),
-    ("tdg-rust", "engine", 47797, 626, 1, 1, 146, 10, 55, 3, 268, 36, "mcp", 0, 0, 227, 1, 1),
-    ("slideforge-rust", "engine", 35631, 185, 2, 1, 203, 6, 43, 3, 74, 8, "mcp", 0, 1, 346, 1, 1),
-    ("automaton", "engine", 13410, 43, 17, 2, 16, 1, 96, 2, 500, 38, "mcp", 0, 0, 380, 1, 1),
-    ("openscript", "engine", 74606, 510, 12, 2, 463, 0, 129, 5, 500, 109, "mcp", 0, 0, 186, 1, 1),
-    ("mysterium", "engine", 61428, 1090, 1, 2, 467, 0, 86, 4, 281, 9, "cli", 5, 2, 584, 1, 1),
-    ("andrometry", "engine", 25442, 152, 1, 1, 135, 0, 14, 4, 216, 12, "rest", 0, 0, 449, 0, 1),
-    ("lifeos-ops", "engine", 17760, 0, 3, 1, 98, 10, 93, 3, 488, 31, "mcp", 0, 0, 324, 1, 0),
-    ("c-suite-agents", "engine", 46498, 227, 1, 1, 6, 3, 130, 2, 500, 35, "mcp", 0, 2, 140, 1, 1),
-    ("thinking-steroid", "engine", 24997, 247, 1, 2, 16, 0, 122, 1, 18, 13, "mcp", 0, 1, 229, 1, 1),
+    ("igs-rust", "engine", 27738, 231, 1, 2, 198, 15, 96, 2, 500, 91, 11, "mcp", 0, 0, 432, 1, 1),
+    ("social-forge", "engine", 77836, 257, 3, 2, 479, 2, 96, 5, 500, 43, 10, "mcp", 0, 0, 557, 1, 1),
+    ("operant", "engine", 538394, 9249, 19, 4, 762, 3, 116, 6, 500, 68, 12, "mcp", 0, 3, 206, 1, 1),
+    ("scorestrata", "engine", 72958, 944, 12, 1, 97, 0, 9, 2, 0, 88, 9, "mcp", 0, 0, 158, 1, 1),
+    ("mindstrata", "engine", 82079, 1245, 8, 1, 483, 0, 14, 1, 0, 2, 10, "cli", 3, 0, 169, 1, 1),
+    ("tdg-rust", "engine", 47797, 626, 1, 1, 146, 10, 55, 3, 268, 36, 11, "mcp", 0, 0, 227, 1, 1),
+    ("slideforge-rust", "engine", 35631, 185, 2, 1, 203, 6, 43, 3, 74, 8, 10, "mcp", 0, 1, 346, 1, 1),
+    ("automaton", "engine", 13410, 43, 17, 2, 16, 1, 96, 2, 500, 38, 8, "mcp", 0, 0, 380, 1, 1),
+    ("openscript", "engine", 74606, 510, 12, 2, 463, 0, 129, 5, 500, 109, 12, "mcp", 0, 0, 186, 1, 1),
+    ("mysterium", "engine", 61428, 1090, 1, 2, 467, 0, 86, 4, 281, 9, 10, "cli", 5, 2, 584, 1, 1),
+    ("andrometry", "engine", 25442, 152, 1, 1, 135, 0, 14, 4, 216, 12, 3, "rest", 0, 0, 449, 0, 1),
+    ("lifeos-ops", "engine", 17760, 0, 3, 1, 98, 10, 93, 3, 488, 31, 8, "mcp", 0, 0, 324, 1, 0),
+    ("c-suite-agents", "engine", 46498, 227, 1, 1, 6, 3, 130, 2, 500, 35, 10, "mcp", 0, 2, 140, 1, 1),
+    ("thinking-steroid", "engine", 24997, 247, 1, 2, 16, 0, 122, 1, 18, 13, 5, "mcp", 0, 1, 229, 1, 1),
     # --- AXI CLI family (ranked this audit) --------------------------------
-    ("reddit-lyr", "engine", 4430, 24, 0, 1, 51, 0, 84, 2, 222, 56, "cli", 5, 0, 168, 1, 1),
-    ("twitter-lyr", "engine", 13425, 243, 0, 2, 44, 32, 160, 2, 14, 42, "cli", 5, 0, 483, 1, 1),
-    ("instagram-lyr", "engine", 20441, 335, 0, 1, 49, 0, 485, 2, 355, 47, "cli", 5, 0, 433, 1, 1),
-    ("linkedin-lyr", "engine", 50739, 1166, 0, 4, 204, 94, 485, 2, 500, 25, "cli", 6, 1, 379, 1, 1),
-    ("facebook-lyr", "engine", 13977, 229, 0, 1, 19, 0, 7, 2, 318, 41, "cli", 3, 2, 206, 1, 1),
-    ("threads-lyr", "engine", 2374, 31, 0, 1, 9, 0, 1, 2, 21, 3, "cli", 3, 1, 133, 1, 0),
-    ("discord-cli", "engine", 3704, 15, 0, 2, 11, 10, 156, 2, 40, 13, "cli", 5, 0, 333, 1, 0),
-    ("tg-cli", "engine", 4828, 122, 0, 2, 12, 14, 156, 2, 34, 12, "cli", 5, 0, 271, 1, 0),
-    ("meme-lyr", "engine", 1050, 25, 1, 2, 14, 1, 521, 2, 28, 6, "cli", 4, 0, 459, 1, 1),
-    ("obscura-core", "engine", 2896, 15, 0, 1, 12, 0, 10, 1, 104, 8, "mcp", 0, 4, 231, 1, 0),
+    ("reddit-lyr", "engine", 4430, 24, 0, 1, 51, 0, 84, 2, 222, 56, 6, "cli", 5, 0, 168, 1, 1),
+    ("twitter-lyr", "engine", 13425, 243, 0, 2, 44, 32, 160, 2, 14, 42, 6, "cli", 5, 0, 483, 1, 1),
+    ("instagram-lyr", "engine", 20441, 335, 0, 1, 49, 0, 485, 2, 355, 47, 6, "cli", 5, 0, 433, 1, 1),
+    ("linkedin-lyr", "engine", 50739, 1166, 0, 4, 204, 94, 485, 2, 500, 25, 9, "cli", 6, 1, 379, 1, 1),
+    ("facebook-lyr", "engine", 13977, 229, 0, 1, 19, 0, 7, 2, 318, 41, 5, "cli", 3, 2, 206, 1, 1),
+    ("threads-lyr", "engine", 2374, 31, 0, 1, 9, 0, 1, 2, 21, 3, 3, "cli", 3, 1, 133, 1, 0),
+    ("discord-cli", "engine", 3704, 15, 0, 2, 11, 10, 156, 2, 40, 13, 2, "cli", 5, 0, 333, 1, 0),
+    ("tg-cli", "engine", 4828, 122, 0, 2, 12, 14, 156, 2, 34, 12, 2, "cli", 5, 0, 271, 1, 0),
+    ("meme-lyr", "engine", 1050, 25, 1, 2, 14, 1, 521, 2, 28, 6, 0, "cli", 4, 0, 459, 1, 1),
+    ("obscura-core", "engine", 2896, 15, 0, 1, 12, 0, 10, 1, 104, 8, 4, "mcp", 0, 4, 231, 1, 0),
     # --- experimental / archived (capped at C by policy) --------------------
-    ("consciousness-fabricator", "experimental", 9238, 158, 0, 1, 7, 0, 125, 1, 73, 6, "cli", 2, 1, 249, 0, 1),
-    ("holosim-infinite", "experimental", 489296, 7766, 2, 2, 5, 0, 180, 2, 31, 6, "engine", 0, 0, 296, 1, 1),
-    ("kali-mahabali", "experimental", 63118, 690, 0, 1, 15, 1, 314, 2, 500, 20, "mcp", 0, 0, 355, 1, 1),
-    ("icode", "deprecated", 142819, 2095, 21, 2, 7, 0, 133, 3, 500, 10, "mcp", 0, 0, 100, 0, 1),
+    ("consciousness-fabricator", "experimental", 9238, 158, 0, 1, 7, 0, 125, 1, 73, 6, 8, "cli", 2, 1, 249, 0, 1),
+    ("holosim-infinite", "experimental", 489296, 7766, 2, 2, 5, 0, 180, 2, 31, 6, 11, "engine", 0, 0, 296, 1, 1),
+    ("kali-mahabali", "experimental", 63118, 690, 0, 1, 15, 1, 314, 2, 500, 20, 8, "mcp", 0, 0, 355, 1, 1),
+    ("icode", "deprecated", 142819, 2095, 21, 2, 7, 0, 133, 3, 500, 10, 11, "mcp", 0, 0, 100, 0, 1),
     # --- engines added in the 2026-08-11 full-coverage pass -----------------
-    ("browsefleet", "engine", 4558, 86, 4, 5, 29, 2, 130, 4, 239, 22, "rest", 0, 0, 282, 1, 1),
-    ("hermes-prime-bridge", "engine", 919, 14, 0, 2, 23, 1, 4, 2, 1, 3, "mcp", 0, 0, 162, 1, 1),
-    ("lifeos-bot", "engine", 12009, 33, 0, 2, 16, 1, 61, 2, 397, 3, "cli", 2, 0, 107, 1, 1),
+    ("browsefleet", "engine", 4558, 86, 4, 5, 29, 2, 130, 4, 239, 22, 5, "rest", 0, 0, 282, 1, 1),
+    ("hermes-prime-bridge", "engine", 919, 14, 0, 2, 23, 1, 4, 2, 1, 3, 2, "mcp", 0, 0, 162, 1, 1),
+    ("lifeos-bot", "engine", 12009, 33, 0, 2, 16, 1, 61, 2, 397, 3, 3, "cli", 2, 0, 107, 1, 1),
     # --- deprecated / inactive (capped at C by policy) -----------------------
-    ("cinesync", "deprecated", 13744, 16, 2, 2, 3, 0, 298, 4, 23, 13, "rest", 0, 0, 150, 1, 1),
-    ("osint-os", "deprecated", 120754, 399, 1, 1, 2, 0, 406, 4, 500, 122, "rest", 0, 0, 469, 1, 1),
-    ("workout-factory", "deprecated", 9417, 30, 0, 1, 3, 0, 262, 2, 7, 0, "engine", 0, 0, 192, 0, 1),
+    ("cinesync", "deprecated", 13744, 16, 2, 2, 3, 0, 298, 4, 23, 13, 5, "rest", 0, 0, 150, 1, 1),
+    ("osint-os", "deprecated", 120754, 399, 1, 1, 2, 0, 406, 4, 500, 122, 9, "rest", 0, 0, 469, 1, 1),
+    ("workout-factory", "deprecated", 9417, 30, 0, 1, 3, 0, 262, 2, 7, 0, 4, "engine", 0, 0, 192, 0, 1),
     # --- unranked: utility/private ------------------------------------------
-    ("lifeos-saas", "engine", 760, 0, 0, 1, 4, 0, 97, 2, 15, 10, "rest", 0, 0, 277, 1, 1),
+    ("lifeos-saas", "engine", 760, 0, 0, 1, 4, 0, 97, 2, 15, 10, 1, "rest", 0, 0, 277, 1, 1),
     # --- websites / portfolios (separate category, never ranked) ------------
-    ("design-aesthetics-website", "site", 17084, 8, 2, 1, 40, 0, 1209, 3, 58, 15, "rest", 0, 0, 144, 1, 1),
-    ("ishanparihar-cms", "site", 14271, 355, 1, 2, 38, 1, 126, 2, 352, 20, "rest", 0, 1, 96, 1, 1),
-    ("ishanparihar-svelte", "site", 64567, 666, 1, 3, 303, 0, 299, 4, 500, 4, "rest", 0, 1, 203, 1, 1),
-    ("law-of-one-india-website", "site", 69626, 63, 1, 1, 5, 0, 503, 3, 500, 29, "rest", 0, 0, 176, 1, 1),
-    ("webdev-portfolio", "site", 0, 0, 0, 1, 4, 0, 128, 0, 0, 0, "engine", 0, 0, 109, 0, 0),
-    ("lifeos-website", "site", 71179, 1156, 2, 1, 5, 0, 96, 3, 500, 8, "rest", 0, 1, 188, 1, 1),
+    ("design-aesthetics-website", "site", 17084, 8, 2, 1, 40, 0, 1209, 3, 58, 15, 6, "rest", 0, 0, 144, 1, 1),
+    ("ishanparihar-cms", "site", 14271, 355, 1, 2, 38, 1, 126, 2, 352, 20, 3, "rest", 0, 1, 96, 1, 1),
+    ("ishanparihar-svelte", "site", 64567, 666, 1, 3, 303, 0, 299, 4, 500, 4, 8, "rest", 0, 1, 203, 1, 1),
+    ("law-of-one-india-website", "site", 69626, 63, 1, 1, 5, 0, 503, 3, 500, 29, 8, "rest", 0, 0, 176, 1, 1),
+    ("webdev-portfolio", "site", 0, 0, 0, 1, 4, 0, 128, 0, 0, 0, 0, "engine", 0, 0, 109, 0, 0),
+    ("lifeos-website", "site", 71179, 1156, 2, 1, 5, 0, 96, 3, 500, 8, 9, "rest", 0, 1, 188, 1, 1),
 ]
 
 WEIGHTS = {
-    "scale":     0.12,
-    "tests":     0.18,
-    "complexity": 0.12,
-    "ci":        0.08,
-    "releases":  0.08,
-    "velocity":  0.08,
-    "agent":     0.14,
-    "utility":   0.20,
+    "architecture": 0.30,  # sophistication families (majority) + modules + languages
+    "tests":        0.25,  # test count + density
+    "agent":        0.20,  # class-aware agent surface + AXI bonus
+    "scale":        0.15,  # log LOC + modules
+    "utility":      0.10,  # docs, install path, cross-repo in-degree
 }
 
 
@@ -149,55 +156,30 @@ def s_tests(tests, loc):
     return round(min(10.0, n + r), 1)
 
 
-def s_complexity(mods, langs, concur):
-    mod_score = min(4.0, math.log10(mods + 1) * 2.0)
-    lang_score = min(3.0, (langs - 1) * 1.0)
-    concur_score = min(3.0, math.log10(concur + 1) * 0.8)
-    return round(min(10.0, 1.5 + mod_score + lang_score + concur_score), 1)
+def s_architecture(mods, langs, concur, soph):
+    """Architecture & Sophistication (v7) — the centerpiece criterion.
 
-
-def s_ci(n):
-    return {0: 0.0, 1: 5.0}.get(n, 10.0)
-
-
-def s_releases(n, age_days, c90=0):
-    """Release discipline score.
-
-    Implements the rubric §7 Age-grace rule (v6.2): a repo younger than 30
-    days with zero tagged releases AND demonstrated recent activity (c90 > 0)
-    is not scored as a failure — its release is "pending first release" and
-    scores the 1-2 band (4.0), the same as a repo that has shipped its first
-    release. A repo older than 30 days with zero releases honestly scores
-    0.0 (a release never shipped), as does a young-but-dormant repo (0
-    commits in 90 days) — grace is for active young projects only.
+    Rewarded: structural depth (module/crate count), language diversity,
+    concurrency/async complexity, and the measured count of advanced
+    engineering families in the repo's own code (0-12): state machines,
+    graphs/holonic structures, DSLs/parsers, concurrency, protocols, storage
+    engines, AI/ML, rendering/audio, determinism, distributed systems,
+    security, plugin systems. `soph` is machine-measured by
+    `scripts/soph_audit.py` (code files only, count-gated — no README/config
+    noise). A repo that is architecturally deep but young or unreleased is
+    NOT penalized: that is logistics, not code quality.
     """
-    if n <= 0 and age_days < 30 and c90 > 0:
-        return 4.0  # age grace: pending first release, not a failure
-    if n <= 0:
-        return 0.0
-    if n <= 2:
-        return 4.0
-    if n <= 6:
-        return 6.0
-    if n <= 10:
-        return 8.0
-    return 10.0
-
-
-def s_velocity(c90, age_days):
-    life_units = max(age_days / 90.0, 0.05)
-    norm = c90 / life_units
-    if norm <= 0:
-        return 0.0
-    if norm < 10:
-        return 2.0
-    if norm < 50:
-        return 4.0
-    if norm < 150:
-        return 6.0
-    if norm < 400:
-        return 8.0
-    return 10.0
+    # v7.1 (2026-08-12): sophistication is the centerpiece, not an afterthought.
+    # The measured engineering-family count (0-12) carries the majority of the
+    # architecture score; module count and language diversity are supporting
+    # evidence. `concur` is deliberately NOT scored separately: concurrency is
+    # already one of the 12 soph families, and the loose `measure_repos`
+    # counter double-credits it (and miscredits TS repos whose `await`/
+    # `async function` syntax the strict family detector never fires on).
+    soph_score = min(5.0, soph * 0.42)  # 12 families -> 5.0
+    mod_score = min(3.0, math.log10(mods + 1) * 1.2)
+    lang_score = min(1.5, (langs - 1) * 0.5)
+    return round(min(10.0, 1.0 + soph_score + mod_score + lang_score), 1)
 
 
 def s_agent(ops, surface, axi=0):
@@ -292,32 +274,28 @@ def tier(total, category):
 
 def main():
     show_all = "--all" in sys.argv
-    print(f"{'project':<24}{'scale':>6}{'test':>6}{'cplx':>6}{'ci':>5}{'rel':>5}"
-          f"{'vel':>5}{'agnt':>6}{'util':>6}  {'TOTAL':>6}  tier")
-    print("-" * 90)
+    print(f"{'project':<24}{'arch':>6}{'test':>6}{'agnt':>6}{'scale':>6}"
+          f"{'util':>6}  {'TOTAL':>6}  tier")
+    print("-" * 70)
     results = []
     for row in DATA:
         (name, cat, loc, tests, mods, ci, c90, tags, age, langs, concur,
-         ops, surface, axi, indegree, rl, install, docs) = row
+         ops, soph, surface, axi, indegree, rl, install, docs) = row
         if cat in ("site", "kb") and not show_all:
             continue
         raw = {
-            "scale":      s_scale(loc, mods),
-            "tests":      s_tests(tests, loc),
-            "complexity": s_complexity(mods, langs, concur),
-            "ci":         s_ci(ci),
-            "releases":   s_releases(tags, age, c90),
-            "velocity":   s_velocity(c90, age),
-            "agent":      s_agent(ops, surface, axi),
-            "utility":    s_utility(rl, install, docs, indegree),
+            "architecture": s_architecture(mods, langs, concur, soph),
+            "tests":        s_tests(tests, loc),
+            "agent":        s_agent(ops, surface, axi),
+            "scale":        s_scale(loc, mods),
+            "utility":      s_utility(rl, install, docs, indegree),
         }
         total = round(sum(WEIGHTS[k] * v for k, v in raw.items()), 2)
         t, note = tier(total, cat)
         results.append((total, name, cat, raw, t, note))
         print(
-            f"{name:<24}{raw['scale']:>6}{raw['tests']:>6}{raw['complexity']:>6}"
-            f"{raw['ci']:>5}{raw['releases']:>5}{raw['velocity']:>5}{raw['agent']:>6}"
-            f"{raw['utility']:>6}  {total:>6.2f}  {t}"
+            f"{name:<24}{raw['architecture']:>6}{raw['tests']:>6}{raw['agent']:>6}"
+            f"{raw['scale']:>6}{raw['utility']:>6}  {total:>6.2f}  {t}"
         )
 
     print()
@@ -341,7 +319,8 @@ def main():
     print()
     print("=== WEIGHTS ===")
     for k, v in WEIGHTS.items():
-        print(f"  {k:<10} {v*100:.0f}%")
+        print(f"  {k:<14} {v*100:.0f}%")
+    print("  (removed v7: velocity, releases, CI count, age-grace — logistics)")
 
 
 if __name__ == "__main__":

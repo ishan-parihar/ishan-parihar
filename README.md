@@ -159,6 +159,17 @@ A production-grade agent runtime written in Rust that runs from your shell: a re
 * **Local-first**: no telemetry, no account; any OpenAI-compatible endpoint or a local llama.cpp / Ollama model.
 
 
+### 🎬 [openscript](https://github.com/ishan-parihar/openscript)
+**Agent-directed video editing pipeline.** Rust + TypeScript. 109 MCP tools, 510 tests.
+
+A full agent-native media pipeline: take a brief, generate a script, synthesize voices, cut a timeline, and render — driven end-to-end through MCP tools rather than a GUI.
+
+* **Pipeline**: brief → script → TTS → vision → FFmpeg → Remotion render, orchestrated as MCP tool calls.
+* **Depth**: 12/12 measured sophistication families (state machines, DSLs, protocols, storage, determinism, plugins…) across 5 languages.
+* **Surface**: 109 MCP tools — the widest tool surface in the portfolio after operant.
+* **Score**: `8.96` S — #2 overall on the v7 architecture-driven rubric.
+
+
 ### 🧠 [mysterium](https://github.com/ishan-parihar/mysterium)
 **Education-system replacement — holonic developmental matrix.** TS + Python. 61K LOC, 1,090 tests.
 
@@ -173,7 +184,7 @@ A structured cognitive curriculum engine: a 64-cell developmental matrix with a 
 
 A full LinkedIn integration with a **25-command agent-first CLI** and the most complete AXI ergonomics in the portfolio (6/6 axi.md signals). Every interaction is machine-parseable: TOON structured output, a `--full` escape hatch from content truncation, definitive empty states, size-hinted truncation, pre-computed `total_count` aggregates, and structured exit codes.
 
-* **AXI 6/6**: the only portfolio repo implementing every axi.md principle end-to-end — the 8.15 S score reflects the measured bonus.
+* **AXI 6/6**: the only portfolio repo implementing every axi.md principle end-to-end — the `8.12` S score reflects the measured bonus.
 * **Surface**: 25 CLI commands; profile fetch, search, and edit flows agents drive deterministically.
 * **Track record**: 94 releases, 4 CI workflows, 204 commits/90d — the most shipped tool in the lyr family.
 
@@ -300,64 +311,64 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 > `scripts/check_loc_badges.py` (LOC badge freshness).
 
 <details>
-<summary><b>🚀 S-TIER: Flagship Systems — Score ≥ 8.0 (4 Projects)</b></summary>
+<summary><b>🚀 S-TIER: Flagship Systems — Score ≥ 8.0 (8 Projects)</b></summary>
 <br>
 
-* **[operant](https://github.com/ishan-parihar/operant)** `9.28`: Terminal-native ReAct agent runtime. 538K LOC, 9,249 tests, 19 crates, 4 CI workflows, 3 releases.
-* **[mysterium](https://github.com/ishan-parihar/mysterium)** `8.31`: Education-system replacement — 64-cell developmental matrix, holonic curriculum. 1,090 tests, 9-command AXI-first CLI (5/6 signals).
-* **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** `8.15` (was A 7.87 — v6.1 AXI bonus): Professional profile extraction + Voyager profile-edit surface. 1,166 tests, 25 CLI commands, 94 releases, 4 CI workflows, 6/6 axi.md signals.
-* **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `8.07`: High-speed news ingestion pipeline. ~7MB binary, ~5MB RSS, 411 sources in 47 countries, 91 MCP tools, 15 releases.
+* **[operant](https://github.com/ishan-parihar/operant)** `9.57`: Terminal-native ReAct agent runtime — 538K LOC, 9,249 tests, 19 crates, 12/12 sophistication families (state machines, DSLs, storage, determinism, plugins…).
+* **[openscript](https://github.com/ishan-parihar/openscript)** `8.96`: Agent-directed video editing pipeline — 109 MCP tools, 510 tests, 12/12 sophistication families, 5 languages.
+* **[mysterium](https://github.com/ishan-parihar/mysterium)** `8.55`: Education-system replacement — 64-cell developmental matrix, holonic curriculum, 1,090 tests, 10 sophistication families, 9-command AXI-first CLI (5/6 signals).
+* **[scorestrata](https://github.com/ishan-parihar/scorestrata)** `8.39` (was A 7.30 — v7 logistics removed): WAV music compiler — 12 crates, 944 tests, 88 MCP tools, 9 sophistication families (state machines, graphs, DSLs, determinism, render/audio…). 73K LOC in 9 days.
+* **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** `8.12`: Professional profile extraction + Voyager profile-edit surface. 1,166 tests, 25 CLI commands, 9 sophistication families, 6/6 axi.md signals.
+* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `8.04`: Teleological developmental graph memory — 626 tests, 36 MCP tools, 11 sophistication families, 10 releases.
+* **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `8.03`: High-speed news ingestion pipeline — 11 sophistication families, 91 MCP tools, 15 releases, 411 sources in 47 countries.
+* **[social-forge](https://github.com/ishan-parihar/social-forge)** `8.02`: 78K LOC across 25 platforms (registry-verified), 10 sophistication families, 43 MCP tools. Test density is the only S-lever left.
 
 </details>
 
 <details>
-<summary><b>🧠 A-TIER: Production-Grade Engines — Score 6.5–7.99 (11 Projects)</b></summary>
+<summary><b>🧠 A-TIER: Production-Grade Engines — Score 6.5–7.99 (8 Projects)</b></summary>
 <br>
 
-* **[social-forge](https://github.com/ishan-parihar/social-forge)** `7.90` (0.10 from S): 78K LOC across 25 platforms (registry-verified). Extreme velocity (479 commits/90d). Needs test density (257 tests for its size) to reach S.
-* **[openscript](https://github.com/ishan-parihar/openscript)** `7.68`: Agent-directed video editing pipeline. 109 MCP tools, 510 tests, Hinglish Whisper transcription.
-* **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** `7.56`: Agent-native X/Twitter integration. 243 tests, 42 CLI commands, 32 releases, 2 CI workflows.
-* **[facebook-lyr](https://github.com/ishan-parihar/facebook-lyr)** `7.38`: Facebook / Messenger CLI. 229 tests, 41 CLI commands, 7 days old — will climb fast.
-* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `7.34`: Teleological developmental graph memory. 626 tests, 36 MCP tools, 10 releases. Needs a second CI workflow for S.
-* **[scorestrata](https://github.com/ishan-parihar/scorestrata)** `7.30`: WAV music compiler. 944 tests, 88 MCP tools, 73K LOC in 9 days. A v0.x release + 2nd CI = S.
-* **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `6.80`: Multi-agent daemon + bundled LifeOS MCP server (35 tools, LanceDB/SQLite + Telegram). 227 tests, 3 releases — velocity (6 commits/90d) is the only drag.
-* **[automaton](https://github.com/ishan-parihar/automaton)** `6.79`: Graph-native automation substrate. 17 Rust crates, 38 MCP tools. Needs velocity + releases.
-* **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** `6.77`: Browserless carousel factory. 46 slide types, embedded Blitz renderer, 185 tests, 6 releases. More tools + 2nd CI = S.
-* **[browsefleet](https://github.com/ishan-parihar/browsefleet)** `6.61` (was B 5.77 — v6 REST surface): Stealth browser fleet — CDP pool proxying sessions/screenshots/PDFs to agents. 22 REST endpoints now scored; 5 CI workflows (most in portfolio), 86 tests, 4 languages.
-* **[tg-cli](https://github.com/ishan-parihar/tg-cli)** `6.53` (was B 6.25 — v6.1 AXI bonus): Fast Telethon-powered Telegram automation client. 122 tests, 14 releases, 2 CI workflows, 5/6 axi.md signals.
+* **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `7.62` (0.38 from S): Multi-agent daemon + bundled LifeOS MCP server (35 tools, LanceDB/SQLite + Telegram). 227 tests, 10 sophistication families — 450 tests = S.
+* **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** `7.44`: Stealth Instagram profile scraper. 335 tests, 47 CLI commands, 5/6 axi signals. Architecture (+2 families) = S.
+* **[mindstrata](https://github.com/ishan-parihar/mindstrata)** `7.34` (was B 6.48 — v7 category-fairness): Deterministic emergent society simulation — 8 crates, 82K LOC, 1,245 tests, **10 measured sophistication families** (state machines, graphs/holonics, DSLs, determinism, plugins…). A real tool surface (31+ ops) = S.
+* **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** `7.32`: Agent-native X/Twitter integration. 243 tests, 42 CLI commands, 32 releases, 5/6 axi signals.
+* **[facebook-lyr](https://github.com/ishan-parihar/facebook-lyr)** `7.30`: Facebook / Messenger CLI. 229 tests, 41 CLI commands, 7 days old — will climb fast.
+* **[automaton](https://github.com/ishan-parihar/automaton)** `7.05`: Graph-native automation substrate — 17 Rust crates, 38 MCP tools, 8 sophistication families. **Tests are the gap** (43): 450 tests = S.
+* **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** `6.75`: Browserless carousel factory — 46 slide types, embedded Blitz renderer, 185 tests, 6 releases, 10 sophistication families. Tools 8→31 = A+.
+* **[browsefleet](https://github.com/ishan-parihar/browsefleet)** `6.54`: Stealth browser fleet — CDP pool proxying sessions/screenshots/PDFs to agents. 22 REST endpoints, 86 tests, 4 languages.
 
 </details>
 
 <details>
-<summary><b>📡 B-TIER: Solid Utilities — Score 4.5–6.49 (12 Projects)</b></summary>
+<summary><b>📡 B-TIER: Solid Utilities — Score 4.5–6.49 (9 Projects)</b></summary>
 <br>
 
-* **[mindstrata](https://github.com/ishan-parihar/mindstrata)** `6.48`: Deterministic emergent society simulation — 8 crates, 82K LOC, 1,238 tests. 2-command agent-first CLI (`Sim`, `Scenario`) + TUI. Age-grace credits its pending release; a v0.1 tag + 2nd CI = A.
-* **[andrometry](https://github.com/ishan-parihar/andrometry)** `6.48`: Personal context engine — Kotlin Android collector with a Go MCP server. 152 tests, 2 weeks old.
-* **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** `6.41`: Stealth Instagram profile scraper. 335 tests, 47 tools. Releases (0) are the gap.
-* **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** `6.17`: Forced cognitive mode engine implementing 13 analysis frameworks. 247 tests, 2 CI workflows.
-* **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** `6.03` (was C 3.43 — C-tier audit sprint): TypeScript CLI meme generator. First test suite added (19 tests), tag-only CI + release pipeline, v2.0.0 released.
-* **[discord-cli](https://github.com/ishan-parihar/discord-cli)** `5.70`: Local-first Discord data CLI (SQLite sync, search, analytics). 10 releases, 2 CI workflows.
-* **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** `5.45`: Comprehensive Reddit scraper with 56 distinct operational tools. 24 tests, 1 CI workflow.
-* **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** `5.39`: Unified CLI + MCP server for Notion-based LifeOS. 31 tools, 10 releases — but **zero automated tests** across 18K Rust LOC (biggest test gap in the portfolio).
-* **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** `5.37` (was C 3.80 — published this audit): LifeOS conversational interface — Telegram bot + agent CLI (simulate/direct/debug). 12K LOC, 33 tests, v0.1.0 released.
-* **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)** `5.30`: Threads.net MCP server. 31 tests, 1 day old — youngest repo in the portfolio.
-* **[obscura-core](https://github.com/ishan-parihar/obscura-core)** `5.17`: Shared cookie-vault + CDP daemon powering the lyr family — highest cross-repo in-degree in the portfolio (4 dependents).
-* **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** `5.15` (was C 4.01): Live plugin bridging a persistent kernel into Hermes's stateless runtime. 3 MCP tools, 14 contract tests, v0.2.0 released.
+* **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** `6.37` (0.13 from A): Forced cognitive mode engine implementing 13 analysis frameworks. 247 tests, 13 MCP tools, 5 sophistication families. Ops 13→31 = A.
+* **[andrometry](https://github.com/ishan-parihar/andrometry)** `6.12`: Personal context engine — Kotlin Android collector with a Go REST server. 152 tests, 2 weeks old.
+* **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** `6.02`: Comprehensive Reddit scraper with 56 distinct operational tools — 10.0 agent score. **Tests are the gap** (24): 150 tests = A.
+* **[tg-cli](https://github.com/ishan-parihar/tg-cli)** `5.95`: Fast Telethon-powered Telegram automation client. 122 tests, 14 releases, 5/6 axi signals. Ops 12→31 = A.
+* **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** `5.32` (was C 3.43 — C-tier audit sprint): TypeScript CLI meme generator. First test suite added (19 tests), tag-only CI + release pipeline, v2.0.0 released.
+* **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** `5.20`: Unified CLI + MCP server for Notion-based LifeOS. 31 tools, 8 sophistication families — but **zero automated tests** across 18K Rust LOC (biggest test gap: 150 tests = A).
+* **[discord-cli](https://github.com/ishan-parihar/discord-cli)** `4.93`: Local-first Discord data CLI (SQLite sync, search, analytics). 10 releases, 2 CI workflows.
+* **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)** `4.86`: Threads.net MCP server. 31 tests, 1 day old — youngest repo in the portfolio.
+* **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** `4.76` (was C 3.80): LifeOS conversational interface — Telegram bot + agent CLI (simulate/direct/debug). 12K LOC, 33 tests, v0.1.0 released.
 
 </details>
 
 <details>
-<summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (7 Projects)</b></summary>
+<summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (9 Projects)</b></summary>
 <br>
 
-* **[osint-os](https://github.com/ishan-parihar/osint-os)** `6.86` (capped): ScrapeCraft OSINT platform — 121K LOC, 399 tests. Cap: archived/deprecated — not promotable while inactive.
-* **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `6.26` (capped): Modular sandbox testing raw agent behaviors (Codename: Project Chimera). Cap: experimental flag — promote via release + agent surface. 🔒
-* **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)** `5.94` (capped): Math simulator tracking emergent agent interactions. 489K LOC, 7,766 tests. Cap: experimental flag — promote via release + agent surface.
-* **[icode](https://github.com/ishan-parihar/icode)** `5.72` (capped): Rust command runner parsing agent file edit logs (Archived). Cap: deprecated — not promotable while inactive.
-* **[cinesync](https://github.com/ishan-parihar/cinesync)** `5.27`: Character-asset automation pipeline for lipsync animation. 13.7K LOC, 2 CI workflows. Natural C — archived/inactive.
-* **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)** `5.18` (capped): Audio pipeline compiling dynamic background sounds. 158 tests + architecture docs. Cap: experimental flag — needs release + agent surface.
-* **[workout-factory](https://github.com/ishan-parihar/workout-factory)** `3.46`: Archived trainer voice/audio-cache factory. Natural C — archived/inactive.
+* **[osint-os](https://github.com/ishan-parihar/osint-os)** `8.33` (capped): ScrapeCraft OSINT platform — 121K LOC, 399 tests, 122 REST routes, 9 sophistication families. Cap: archived/deprecated — not promotable while inactive.
+* **[icode](https://github.com/ishan-parihar/icode)** `7.23` (capped): Rust command runner parsing agent file edit logs (Archived) — 11 sophistication families, 2,095 tests. Cap: deprecated — not promotable while inactive.
+* **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)** `7.11` (capped): Math simulator tracking emergent agent interactions — 489K LOC, 7,766 tests, 11 sophistication families. Cap: experimental flag — promote via release + agent surface.
+* **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `7.08` (capped): Modular sandbox testing raw agent behaviors (Codename: Project Chimera). Cap: experimental flag — promote via release + agent surface. 🔒
+* **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)** `6.40` (capped): Audio pipeline compiling dynamic background sounds. 158 tests + architecture docs. Cap: experimental flag — needs release + agent surface.
+* **[cinesync](https://github.com/ishan-parihar/cinesync)** `5.62`: Character-asset automation pipeline for lipsync animation. 13.7K LOC, 2 CI workflows. Natural C — archived/inactive.
+* **[obscura-core](https://github.com/ishan-parihar/obscura-core)** `4.38`: Shared cookie-vault + CDP daemon powering the lyr family — highest cross-repo in-degree (4 dependents) and 7.5 utility, but 2.7K LOC / 15 tests / 8 MCP tools keep it below the B floor. Tools 8→31 + tests = B.
+* **[workout-factory](https://github.com/ishan-parihar/workout-factory)** `3.93`: Archived trainer voice/audio-cache factory. Natural C — archived/inactive.
+* **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** `3.92` (was C 4.01 → v7 honest): Live plugin bridging a persistent kernel into Hermes's stateless runtime. 3 MCP tools, 14 contract tests, v0.2.0 released — naturally small.
 
 </details>
 
@@ -365,7 +376,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <summary><b>📉 D-TIER: Minimal / Stalled (1 Project)</b></summary>
 <br>
 
-* 🔒 **[lifeos-saas](https://github.com/ishan-parihar/lifeos-saas)** `3.02`: Agent hosting stack (NullClaw, Honcho, Postgres). 760 LOC, 0 tests.
+* 🔒 **[lifeos-saas](https://github.com/ishan-parihar/lifeos-saas)** `2.62`: Agent hosting stack (NullClaw, Honcho, Postgres). 760 LOC, 0 tests.
 
 </details>
 

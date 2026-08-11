@@ -3,9 +3,15 @@
 live `scripts/rank_score.py` DATA, so the rubric can never drift from the
 engine. Run:  python3 scripts/gen_rubric_tables.py > /tmp/tables.md
 
-The output markdown is spliced into RANKING-RUBRIC.md by hand (or by the
-`update_rubric.py` helper in the same workflow) — the important invariant is
-that every number in the two tables is produced by the scoring engine itself.
+The output markdown is spliced into RANKING-RUBRIC.md (see the workflow's
+`update_rubric.py` helper) — the important invariant is that every number in
+the two tables is produced by the scoring engine itself.
+
+v7: criteria are architecture (30%), tests (25%), agent (20%), scale (15%),
+utility (10%). Velocity, releases and CI count were removed — logistics are
+not architecture. `soph` (0-12) is the measured advanced-engineering family
+count from scripts/soph_audit.py and carries the majority of the architecture
+score.
 """
 import importlib.util
 import sys
@@ -20,15 +26,14 @@ spec.loader.exec_module(rs)
 
 def total(r):
     """Weighted total for a DATA row (mirrors main())."""
+    (name, cat, loc, tests, mods, ci, c90, tags, age, langs, concur,
+     ops, soph, surface, axi, indegree, rl, install, docs) = r
     raw = {
-        "scale": rs.s_scale(r[2], r[4]),
-        "tests": rs.s_tests(r[3], r[2]),
-        "complexity": rs.s_complexity(r[4], r[9], r[10]),
-        "ci": rs.s_ci(r[5]),
-        "releases": rs.s_releases(r[7], r[8], r[6]),
-        "velocity": rs.s_velocity(r[6], r[8]),
-        "agent": rs.s_agent(r[11], r[12], r[13]),
-        "utility": rs.s_utility(r[15], r[16], r[17], r[14]),
+        "architecture": rs.s_architecture(mods, langs, concur, soph),
+        "tests":        rs.s_tests(tests, loc),
+        "agent":        rs.s_agent(ops, surface, axi),
+        "scale":        rs.s_scale(loc, mods),
+        "utility":      rs.s_utility(rl, install, docs, indegree),
     }
     return round(sum(rs.WEIGHTS[k] * v for k, v in raw.items()), 2)
 
@@ -38,25 +43,26 @@ def main():
     rows.sort(key=lambda r: -total(r))
 
     print("=== DATASET TABLE (§4) ===")
-    print("| Project | Cat | LOC | Tests | Mods | CI | C90 | Rel | Age | Langs | Ops | Surf | AXI | InDeg |")
-    print("|---------|-----|-----|-------|------|----|----|-----|-----|-------|-----|------|-----|-------|")
+    print("| Project | Cat | LOC | Tests | Mods | Langs | Concur | Soph | Surf | Ops | AXI |")
+    print("|---------|-----|-----|-------|------|-------|--------|------|------|-----|-----|")
     for r in rows:
         (name, cat, loc, tests, mods, ci, c90, tags, age, langs, concur,
-         ops, surface, axi, indegree, rl, install, docs) = r
-        print(f"| {name} | {cat} | {loc:,} | {tests:,} | {mods} | {ci} | {c90} | {tags} | {age} | {langs} | {ops} | {surface} | {axi} | {indegree} |")
+         ops, soph, surface, axi, indegree, rl, install, docs) = r
+        print(f"| {name} | {cat} | {loc:,} | {tests:,} | {mods} | {langs} | {concur} | {soph} | {surface} | {ops} | {axi} |")
 
     print()
     print("=== SCORED RESULTS TABLE (§5) ===")
-    print("| # | Project | Scale | Test | Cplx | CI | Rel | Vel | Agnt | Util | **Total** | Tier |")
-    print("|---|---------|-------|------|------|----|----|-----|------|------|-----------|------|")
+    print("| # | Project | Arch | Test | Agnt | Scale | Util | **Total** | Tier |")
+    print("|---|---------|------|------|------|-------|------|-----------|------|")
     for i, r in enumerate(rows, 1):
         (name, cat, loc, tests, mods, ci, c90, tags, age, langs, concur,
-         ops, surface, axi, indegree, rl, install, docs) = r
+         ops, soph, surface, axi, indegree, rl, install, docs) = r
         t, note = rs.tier(total(r), cat)
         marker = "*" if note else ""
-        print(f"| {i} | {name} | {rs.s_scale(r[2], r[4]):.1f} | {rs.s_tests(r[3], r[2]):.1f} | {rs.s_complexity(r[4], r[9], r[10]):.1f} | "
-              f"{rs.s_ci(r[5]):.1f} | {rs.s_releases(r[7], r[8], r[6]):.1f} | {rs.s_velocity(r[6], r[8]):.1f} | {rs.s_agent(r[11], r[12], r[13]):.1f} | "
-              f"{rs.s_utility(r[15], r[16], r[17], r[14]):.1f} | **{total(r):.2f}** | {t}{marker} |")
+        print(f"| {i} | {name} | {rs.s_architecture(mods, langs, concur, soph):.1f} | "
+              f"{rs.s_tests(tests, loc):.1f} | {rs.s_agent(ops, surface, axi):.1f} | "
+              f"{rs.s_scale(loc, mods):.1f} | {rs.s_utility(rl, install, docs, indegree):.1f} | "
+              f"**{total(r):.2f}** | {t}{marker} |")
 
     print()
     print("=== TIER COUNTS ===")
