@@ -118,7 +118,7 @@ def main():
     print("-" * 72)
     results = []
     for row in DATA:
-        name, loc, tests, mods, ci, c90, rel, tools, stars, age = row
+        name, loc, tests, mods, ci, c90, rel, tools, _stars, age = row
         raw = {
             "scale":      s_scale(loc, mods),
             "tests":      s_tests(tests, loc),

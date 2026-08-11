@@ -191,22 +191,25 @@ never silent bias:
 
 The tier gaps are all *mechanical*: **releases, CI workflows, test density, and agent
 surface**. None require new features — they are release-engineering work. Priority
-order = nearest to next tier first.
+order = nearest to next tier first. Gains below are **derived from the actual engine
+formulas** (not estimates). Remember velocity is age-normalized: for a repo `A` days
+old, `norm = commits_90d ÷ (A/90)`, so the *commits needed* to move a velocity band
+scales with repo age.
 
 | Project | Current | To reach | Concrete actions (each ~1 session) |
 |---------|---------|----------|-------------------------------------|
-| **social-forge** | A 7.93 | **S** | +0.07 needed → add ~400 unit tests (51 → 450+; raises Tests 6.2→8.2, +0.5 total) · ship 1 more release (→2: Rel 4→… marginal) — **tests are the only lever** |
-| **scorestrata** | A 7.75 | **S** | Ship v0.1 release (Rel 0→4: +0.6 total) · add a 2nd CI workflow (CI 5→10: +0.75 total) · done = **9.10, S** |
-| **tdg-rust** | A 7.70 | **S** | Add CI workflow(s) (CI 0→10: +1.5 total → 9.20, S). Releases already strong (9) |
-| **mysterium** | A 7.40 | **S** | 0 releases (→+0.6 with 1–2) · add an agent surface (CLI/API; +0.3) → 8.3, S |
-| **openscript** | A 7.38 | **S** | Ship 1–2 releases (+0.6) · grow agent surface 10→31 tools (+0.3) → 8.28, S |
-| **slideforge-rust** | A 7.29 | **S** | Ship 2 more releases (→8: +0.3) · add tools 8→11 (+0.3) · add 2nd CI (+0.75) → 8.6, S |
-| **automaton** | A 6.92 | A→S | Velocity is the gap: 14 commits/90d → target 50+ (sustained 1–2/wk) (+0.6) · ship releases (+0.6) → 8.1, S |
-| **mindstrata** | A 6.75 | **S** | Add CLI/API agent surface (0→30 tools or CLI: +0.6–0.8) · ship v0.1 release (+0.6) → 8.0+, S. Tests & velocity already elite |
-| **andrometry** | B 5.99 | A | 14 days old — accumulate releases (0→2: +0.6) · add MCP surface 0→10 (+0.3) · add CI workflow 2nd (+0.75) → 7.6, A |
-| **thinking-steroid** | B 5.96 | A | Velocity: 12 commits/90d → 50+ (+0.6) · ship releases (+0.6) · tests 96→150+ → ~7.3, A |
-| **c-suite-agents** | B 5.49 | A | Reactivate: 3 commits/90d → 50+ (+0.9) · ship v0.1 release (+0.6) → 7.0, A |
-| **lifeos-ops** | C 4.89 | B | **Write tests** (0 → 150+: +1.9 total) — single biggest win in the portfolio · add CI 2nd (+0.75) → 7.5, A |
+| **social-forge** | A 7.93 | **S** | Add ~400 unit tests (51 → 450: Tests 6.2→9.6, **+0.85** total → 8.78, S). Tests are the only real lever (releases already at 4/10) |
+| **scorestrata** | A 7.75 | **S** | Ship v0.1 release (Rel 0→4: **+0.6**) · add 2nd CI workflow (CI 5→10: **+0.75**) → **9.10, S** |
+| **tdg-rust** | A 7.70 | **S** | Add CI workflow(s) (CI 0→10: **+1.5** → 9.20, S). Releases already strong (8/10) |
+| **mysterium** | A 7.40 | **S** | Ship 1–2 releases (**+0.6**) · add a CLI/API surface 0→11 tools (**+0.3**) → 8.30, S |
+| **openscript** | A 7.38 | **S** | Ship 1–2 releases (**+0.6**) · grow agent surface 10→31 (**+0.3**) → 8.28, S |
+| **slideforge-rust** | A 7.29 | **S** | 2 more releases →8 (**+0.3**) · tools 8→11 (**+0.3**) · 2nd CI (**+0.75**) → 8.64, S |
+| **automaton** | A 6.92 | **S** | Age 97d: velocity needs 54+ commits/90d for one band (**+0.3**) · ship 2 releases (**+0.6**) → ~7.8, A+. Velocity band 6.0 needs 108+/90d (**+0.6**) |
+| **mindstrata** | A 6.75 | **S** | Add CLI/API agent surface 0→30 (**+0.6**) · ship v0.1 release (**+0.6**) → 7.95; add 2nd CI (**+0.75**) → 8.70, S. Tests & velocity already elite |
+| **andrometry** | B 5.99 | A | Age 14d: accumulate releases 0→2 (**+0.6**) · MCP surface 0→10 (**+0.3**) · 2nd CI (**+0.75**) → 7.64, A |
+| **thinking-steroid** | B 5.96 | A | Age 123d: velocity 6.0 band needs 68+ commits/90d (**+0.6**) · ship 2 releases (**+0.6**) → ~7.2, A |
+| **c-suite-agents** | B 5.49 | A | Age 130d: velocity 6.0 band needs 72+ commits/90d (**+0.6**) · ship 2 releases (**+0.6**) → 6.69, A. (50 commits alone would only give +0.3 — still B) |
+| **lifeos-ops** | C 4.89 | B | **Write tests** 0 → 150 (**+2.05**) — single biggest win in the portfolio · 2nd CI (**+0.75**) → 7.69, A |
 | **HoloOS** | KB | KB→ranked | Add tests, CI, and an executable API to the spec corpus, or keep as KNOWLEDGE-BASE |
 
 **Portfolio-wide release & CI sprint** (user directive): every A/B/C project gets

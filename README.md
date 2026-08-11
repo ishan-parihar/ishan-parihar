@@ -202,7 +202,7 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 | **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** | Rust | 8 Tools | Browserless carousel factory — 46 slide types, embedded Blitz renderer |
 | **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** | TypeScript | 35 Tools | Multi-agent orchestration daemon + LifeOS MCP server (Postgres/Drizzle) |
 | **[openscript](https://github.com/ishan-parihar/openscript)** | TypeScript | 43 Tools | AI-directed video editing pipeline (TTS, FFmpeg, Remotion) |
-| **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** | TypeScript | 31 Tools | Unified CLI + MCP server for Notion-based LifeOS |
+| **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** | Rust | 31 Tools | Unified CLI + MCP server for Notion-based LifeOS |
 | **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** | TypeScript | 13 Tools | Forced epistemic cognitive modes (first-principles, polarity mapping, etc.) |
 | **[andrometry](https://github.com/ishan-parihar/andrometry)** | Kotlin/Go | 12 Tools | Personal context engine: Kotlin Android collector with a Go MCP server |
 
