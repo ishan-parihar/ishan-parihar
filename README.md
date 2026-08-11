@@ -111,15 +111,79 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 ---
 
-## 🎯 Value Proposition & Quick-Start
+## 🎯 Value Proposition — Proof, Not Promises
 
-I build the underlying graph engines and protocol routing layers that make autonomous AI agents functional, resilient, and cost-effective under real production loads.
+I build the graph engines, compilers, and protocol layers that make autonomous AI agents functional, resilient, and cost-effective under real production loads. **Every flagship below ships with a live artifact — a WAV you can play, slides you can see, tests you can run, numbers you can check.** No marketing renders; all of it was produced by the code itself.
 
-### Quick Engagement Matrix
-* **Hire Me**: For fractional CTO, custom MCP development, or agent architecture consulting. [📧 Drop an Email](mailto:support@ishanparihar.com)
-* **Verify My Code**: Review the highly tested Rust port of the teleological mind engine at [🧠 TDG Rust](https://github.com/ishan-parihar/tdg-rust)
-* **Hear the Compiler**: WAV music generated end-to-end from a plain-language brief: [🎵 Scorestrata](https://github.com/ishan-parihar/scorestrata)
-* **See the Slides**: Browserless carousel generation — 46 slide types, zero Chromium overhead: [📊 SlideForge](https://github.com/ishan-parihar/slideforge-rust)
+### 🎵 Hear It — Scorestrata: from plain-language brief to mastered WAV
+
+Two full tracks, generated end-to-end by the compiler from a text brief — recorded SF2 instruments, per-layer FX, mastered to −14 LUFS with zero clipping. Same brief → byte-identical audio, every machine, every run. **Download the masters and listen** (the WAVs are committed to the repo — GitHub can't inline-preview files this large, so clicking plays them locally):
+
+| Genre | Track | What to listen for |
+|---|---|---|
+| 🎸 | **[LP nu-metal](https://github.com/ishan-parihar/scorestrata/blob/master/demos/lp_nu_metal/render/master.wav)** — 60 bars · 137 s · 25 MB | Double-tracked guitars, recorded drum kit, heavy low-mid energy — *Hybrid Theory* era |
+| 🕺 | **[Nu-disco](https://github.com/ishan-parihar/scorestrata/blob/master/demos/nu_disco/render/master.wav)** — 44 bars · 116 BPM · 91 s · 17 MB | Four-on-the-floor kit, octave-bounce bass, off-beat clean guitar stabs — *Get Lucky* pocket |
+
+<p align="center">
+  <a href="https://github.com/ishan-parihar/scorestrata"><img src="https://raw.githubusercontent.com/ishan-parihar/scorestrata/master/assets/readme/showcase-lp-nu-metal.png" width="49%" alt="LP nu-metal spectrogram"></a>
+  <a href="https://github.com/ishan-parihar/scorestrata"><img src="https://raw.githubusercontent.com/ishan-parihar/scorestrata/master/assets/readme/showcase-nu-disco.png" width="49%" alt="Nu-disco spectrogram"></a>
+</p>
+
+> Regenerate either track yourself: `python3 scripts/gen_lp_golden.py` + `ss render demos/lp_nu_metal` · 944 tests enforce the no-regression rules.
+
+### 🧠 Verify It — TDG Rust: the cognitive engine, 626 tests you can run
+
+A pure-Rust implementation of stateful agent memory: every memory is a node `(Content, Embedding, Telos)` with teleological decay. The test suite is the spec — clone it and run it in one command (626 passing, per the repo badge; 509 run with default features, +117 with ONNX):
+
+```bash
+git clone https://github.com/ishan-parihar/tdg-rust.git && cd tdg-rust
+cargo test                     # 430 unit + 8 integration tests
+cargo test --test mcp_e2e      # 66 MCP end-to-end tool tests
+cargo test --test e2e_mind_simulation  # 5 full mind-flow simulations
+cargo test --features onnx     # + ONNX feature tests → 626 total
+```
+
+### 📊 See It — SlideForge: browserless slides, real exports
+
+Every slide below is a **real render** by the embedded Blitz engine (stylo layout + vello-cpu raster) — no Chromium, no screenshots, no doctored images.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ishan-parihar/slideforge-rust/master/docs/previews/preview-hero.png" width="200" alt="Hero slide — dark editorial, gradient accent">
+  <img src="https://raw.githubusercontent.com/ishan-parihar/slideforge-rust/master/docs/previews/preview-chart.png" width="200" alt="Donut chart slide — light card on dark">
+  <img src="https://raw.githubusercontent.com/ishan-parihar/slideforge-rust/master/docs/previews/preview-metric-grid.png" width="200" alt="Metric grid slide — 2x2 KPI cards">
+</p>
+
+<p align="center">46 slide types · 1080×1350 / 1080×1080 / 1200×628 · 4.5× less memory than headless Chrome · WCAG-AA contrast audit</p>
+
+### 📡 Measure It — Browsefleet: stealth browsing, measured live
+
+Real numbers from a fresh Pro build against live test targets — not synthetic benchmarks:
+
+| Target | Result | Time |
+| --- | --- | --- |
+| `https://example.com` | `200 OK`, title captured | **380 ms** |
+| `https://nowsecure.nl` | passes basic fingerprint JS | 1.2 s |
+| `https://bot.sannysoft.com` | all stealth probes pass | 950 ms |
+| Cloudflare Turnstile demo | auto-pass (no challenge page) | — |
+| reCAPTCHA v3 | score **0.9** (Pro binary) | — |
+
+### 🤖 Run It — Operant: the terminal-native agent loop
+
+A real think → act → observe runtime with a JSON-schema tool registry — install, set up, and chat in three commands:
+
+```bash
+git clone https://github.com/ishan-parihar/operant.git && cd operant
+./scripts/install.sh
+operant setup && operant chat    # or one-shot: operant run --query "..."
+```
+
+![Operant TUI](https://raw.githubusercontent.com/ishan-parihar/operant/main/assets/main.png)
+
+---
+
+### 💼 Hire Me — or verify the code yourself first
+
+For fractional CTO, custom MCP development, or agent architecture consulting — [📧 support@ishanparihar.com](mailto:support@ishanparihar.com). Or audit the code first: start from the portfolio's highest-test-count runtime ([Operant](https://github.com/ishan-parihar/operant), 9,249 tests) or the compact fully-verified engine ([TDG Rust](https://github.com/ishan-parihar/tdg-rust), 626 tests).
 
 ---
 
