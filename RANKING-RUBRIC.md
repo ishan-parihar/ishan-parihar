@@ -215,7 +215,9 @@ and cross-repo in-degree. **No self-reported numbers.**
 \* = policy-capped at C by §7 (experimental flag / archived) despite a higher raw capability score.
 C without \* = natural tier. `tdg` (deprecated, 0 executable LOC) keeps its natural D — the §7 cap is a ceiling, not a floor.
 
----## 6. What the Data Says (evidence-backed findings, full-coverage audit)
+---
+
+## 6. What the Data Says (evidence-backed findings, full-coverage audit)
 
 1. **S-tier stays two, by design:** `igs-rust` (8.96) and `operant` (8.72) are the
    only repos that clear every criterion at production grade. `social-forge`
@@ -242,8 +244,10 @@ C without \* = natural tier. `tdg` (deprecated, 0 executable LOC) keeps its natu
    social-forge and tdg-rust. `measure_repos.py` now excludes vendored paths
    from every metric; the re-measured rows are first-party truth:
    `social-forge` 7.90, `tdg-rust` 7.64, `automaton` 6.79 — all A. `tdg-rust`'s
-   in-degree of 1 is genuine (its own code references the `tdg` sibling it
-   supersedes). `open-claude` was deleted (successors: thinking-steroid +
+   in-degree of 1 is a word-boundary match of its own domain name ("TDG"
+   appears throughout its own code, matching the deprecated `tdg` sibling it
+   supersedes) — a known metric limitation of self-named siblings, not vendored
+   leakage. `open-claude` was deleted (successors: thinking-steroid +
    mysterium) and removed from the portfolio, dataset, and rubric.
 6. **`browsefleet` (5.55, B) is the CI leader:** 5 workflows (most in the
    portfolio), 4 languages, 130-day-old stealth-browser fleet. It lost points only
@@ -293,6 +297,13 @@ The rubric is a *baseline*. Category mismatches are handled by **documented rule
    portfolio repo now has a row; the manifest is the single source of truth).
 2. **Score:** fold fresh numbers into the `DATA` table of `scripts/rank_score.py`,
    then `python3 scripts/rank_score.py`.
+
+> **Agent-surface caveat:** `measure_repos.py`'s `tools` scan counts
+> `@mcp.tool` decorators (Python family) and reports 0 for Rust/TS servers.
+> When folding fresh numbers, **carry the `tools` value forward from the
+> previous DATA row** (README-listed MCP surface / CLI command count) rather
+> than overwriting it with the raw scan — otherwise every Rust/TS repo's agent
+> surface silently zeroes out.
 3. **Apply §7 caps** (experimental/deprecated ceilings, fork/merged exclusions,
    websites/kb exclusions).
 4. **Update the tier `<details>` blocks in `README.md`** to match.

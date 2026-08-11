@@ -70,7 +70,7 @@
   <!-- Decorative Metrics Badge inside SVG -->
   <rect x="535" y="20" width="130" height="24" rx="12" fill="#022C22" stroke="#047857" stroke-width="1.5"/>
   <circle cx="548" cy="32" r="4" fill="#10B981"/>
-  <text x="560" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="800" fill="#34D399">44 ACTIVE PROJECTS</text>
+  <text x="560" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="800" fill="#34D399">44 PROJECTS</text>
 </svg>
 
 **AI Agent Engineer · MCP Infrastructure · Multi-Agent Orchestration · Systems Architecture**
