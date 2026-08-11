@@ -255,8 +255,8 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <summary><b>🚀 S-TIER: Flagship Systems — Score ≥ 8.0 (2 Projects)</b></summary>
 <br>
 
-* **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `9.13`: High-speed news ingestion pipeline. ~7MB binary, ~5MB RSS, 411 sources in 47 countries, 91 MCP tools, 14 releases.
-* **[operant](https://github.com/ishan-parihar/operant)** `8.70`: Multi-agent C-suite orchestrator. 537K LOC, 8,581 tests, 18 crates, 4 CI workflows, systemd process isolation.
+* **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `9.13`: High-speed news ingestion pipeline. ~7MB binary, ~5MB RSS, 411 sources in 47 countries, 91 MCP tools, 15 releases.
+* **[operant](https://github.com/ishan-parihar/operant)** `9.00`: Multi-agent C-suite orchestrator. 537K LOC, 8,581 tests, 18 crates, 4 CI workflows, systemd process isolation, 3 releases.
 
 </details>
 
@@ -266,7 +266,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 
 * **[social-forge](https://github.com/ishan-parihar/social-forge)** `7.93` (0.07 from S): 95K LOC across 9 networks. Needs test density — only 51 tests for its size.
 * **[scorestrata](https://github.com/ishan-parihar/scorestrata)** `7.75` (0.25 from S): WAV music compiler. 944 tests, 88 MCP tools, 73K LOC in 9 days. First release + 2nd CI workflow = S.
-* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `7.70` (0.30 from S): Teleological developmental graph memory. 626 tests, 36 MCP tools, 9 releases. Missing CI entirely.
+* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `7.70` (0.30 from S): Teleological developmental graph memory. 626 tests, 36 MCP tools, 10 releases. Missing CI entirely.
 * **[mysterium](https://github.com/ishan-parihar/mysterium)** `7.40`: Education-system replacement — 64-cell developmental matrix, holonic curriculum. 806 tests.
 * **[openscript](https://github.com/ishan-parihar/openscript)** `7.38`: Agent-directed video editing pipeline. 43 MCP tools, Hinglish Whisper transcription.
 * **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** `7.29`: Browserless carousel factory. 46 slide types, embedded Blitz renderer, 185 tests.
@@ -279,9 +279,9 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <summary><b>📡 B-TIER: Solid Utilities — Score 5.0–6.49 (3 Projects)</b></summary>
 <br>
 
+* **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `6.38` (0.12 from A): Multi-agent daemon + bundled LifeOS MCP server (35 tools, Postgres/Drizzle). 339 tests, 3 releases — only drag is velocity (3 commits/90d).
 * **[andrometry](https://github.com/ishan-parihar/andrometry)** `5.99`: Personal context engine — Kotlin Android collector with a Go MCP server. 14 days old; will climb with releases.
 * **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** `5.96`: Forced cognitive mode engine implementing 13 analysis frameworks. 96 tests. Needs velocity.
-* **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `5.49`: Multi-agent daemon + bundled LifeOS MCP server (35 tools, Postgres/Drizzle). 339 tests, near-dormant (3 commits/90d).
 
 </details>
 
@@ -289,7 +289,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <summary><b>🧰 C-TIER: Agent-Native Platform CLIs — `-lyr` / `-cli` & Obscura (11 Projects)</b></summary>
 <br>
 
-* **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** `4.89`: Unified CLI + MCP server for Notion-based LifeOS. 31 tools, 8 releases — but **zero automated tests** across 15K Rust LOC (biggest test gap in the portfolio).
+* **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** `4.89`: Unified CLI + MCP server for Notion-based LifeOS. 31 tools, 10 releases — but **zero automated tests** across 15K Rust LOC (biggest test gap in the portfolio).
 * **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)**: Comprehensive Reddit scraper with 56 distinct operational tools.
 * **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)**: Fully structured X/Twitter API client for autonomous agent scripts.
 * **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)**: Stealth Instagram profile scraper and media downloader.

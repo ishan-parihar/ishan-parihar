@@ -86,75 +86,81 @@ TOTAL = 0.20·scale + 0.25·tests + 0.15·ci + 0.15·releases + 0.15·velocity +
 
 ---
 
-## 4. Measured Dataset (2026-08-11)
+## 4. Measured Dataset (2026-08-11, re-audit after version-tag + CI sprint)
 
-Machine-measured: `git ls-files | wc -l` per language, test-runner output, GitHub
-REST API (`gh api repos/...`). No self-reported numbers.
+Machine-measured: `git ls-files` LOC per language, test-runner output, GitHub REST
+API (`gh api repos/...`), live `git tag` counts and `.github/workflows/` file counts.
+No self-reported numbers. Release counts and CI workflow counts were re-measured
+**after** the portfolio-wide version-tag + CI pipeline sprint.
 
 | Project | LOC | Tests | Modules | CI | Commits/90d | Releases | MCP tools | Age (d) |
 |---------|-----|-------|---------|----|-------------|----------|-----------|---------|
-| igs-rust | 27,563 | 231 | 1 | 2 | 197 | 14 | 91 | 97 |
-| social-forge | 95,578 | 51 | 1 | 2 | 475 | 1 | 43 | 96 |
-| operant | 537,083 | 8,581 | 18 | 4 | 757 | 2 | 30 | 92 |
+| igs-rust | 27,563 | 231 | 1 | 2 | 197 | **15** | 91 | 97 |
+| social-forge | 95,578 | 51 | 1 | 2 | 475 | **2** | 43 | 96 |
+| operant | 537,083 | 8,581 | 18 | 4 | 757 | **3** | 30 | 92 |
 | scorestrata | 72,958 | 944 | 11 | 1 | 93 | 0 | 88 | 9 |
 | mindstrata | 74,998 | 1,238 | 7 | 1 | 480 | 0 | 0 | 8 |
-| tdg-rust | 47,365 | 626 | 6 | 0 | 143 | 9 | 36 | 55 |
+| tdg-rust | 47,365 | 626 | 6 | 0 | 143 | **10** | 36 | 55 |
 | slideforge-rust | 35,484 | 185 | 1 | 1 | 202 | 6 | 8 | 42 |
 | automaton | 11,727 | 43 | 15 | 2 | 14 | 1 | 38 | 97 |
 | openscript | 65,241 | 470 | 9 | 2 | 449 | 0 | 10 | 129 |
 | mysterium | 56,747 | 806 | 1 | 2 | 461 | 0 | 0 | 86 |
 | andrometry | 12,244 | 153 | 1 | 1 | 133 | 0 | 0 | 14 |
 | HoloOS | 44,879* | 0 | 0 | 0 | 95 | 0 | 0 | 101 |
-| lifeos-ops | 15,265 | 0 | 2 | 1 | 97 | 8 | 7 | 93 |
-| c-suite-agents | 45,493 | 339 | 1 | 1 | 3 | 0 | 10 | 130 |
+| lifeos-ops | 15,265 | 0 | 2 | 1 | 97 | **10** | 7 | 93 |
+| c-suite-agents | 45,493 | 339 | 1 | 1 | 3 | **3** | 10 | 130 |
 | thinking-steroid | 24,997 | 96 | 1 | 2 | 12 | 0 | 13 | 123 |
 
 \* HoloOS: 14,144 of those lines are YAML (knowledge/spec content), 1,191 are Markdown.
-Executable Python is 98 files. See §7.
+Executable Python is 98 files (verified live: Python/Jinja repo, no workflows, no tags).
+See §7.
 
 ---
 
-## 5. Scored Results (engine output)
+## 5. Scored Results (engine output, re-audit)
 
-| Rank | Project | Scale | Tests | CI | Rel | Vel | Tools | **Total** | Tier |
-|------|---------|-------|-------|----|----|-----|-------|-----------|------|
-| 1 | igs-rust | 8.9 | 8.6 | 10 | 10 | 8.0 | 10 | **9.13** | **S** |
-| 2 | operant | 10.0 | 10.0 | 10 | 4 | 10 | 6.0 | **8.70** | **S** |
-| 3 | social-forge | 9.9 | 6.2 | 10 | 4 | 10 | 8.0 | **7.93** | A |
-| 4 | scorestrata | 10.0 | 10.0 | 5 | 0 | 10 | 10 | **7.75** | A |
-| 5 | tdg-rust | 10.0 | 10.0 | 0 | 8 | 8.0 | 8.0 | **7.70** | A |
-| 6 | mysterium | 9.5 | 10.0 | 10 | 0 | 10 | 0 | **7.40** | A |
-| 7 | openscript | 10.0 | 9.5 | 10 | 0 | 8.0 | 3.0 | **7.38** | A |
-| 8 | slideforge-rust | 9.1 | 8.1 | 5 | 6 | 10 | 3.0 | **7.29** | A |
-| 9 | automaton | 9.5 | 6.1 | 10 | 4 | 4.0 | 8.0 | **6.92** | A |
-| 10 | mindstrata | 10.0 | 10.0 | 5 | 0 | 10 | 0 | **6.75** | A |
-| 11 | andrometry | 8.2 | 8.4 | 5 | 0 | 10 | 0 | **5.99** | B |
-| 12 | thinking-steroid | 8.8 | 7.2 | 10 | 0 | 2.0 | 6.0 | **5.96** | B |
-| 13 | c-suite-agents | 9.3 | 9.1 | 5 | 0 | 2.0 | 3.0 | **5.49** | B |
-| 14 | lifeos-ops | 8.7 | 0.0 | 5 | 8 | 6.0 | 3.0 | **4.89** | C |
-| 15 | HoloOS | 8.8 | 0.0 | 0 | 0 | 6.0 | 0 | **2.66** | D |
+| Rank | Project | Scale | Tests | CI | Rel | Vel | Tools | **Total** | Tier | Δ vs audit |
+|------|---------|-------|-------|----|----|-----|-------|-----------|------|-----------|
+| 1 | igs-rust | 8.9 | 8.6 | 10 | 10 | 8.0 | 10 | **9.13** | **S** | — |
+| 2 | operant | 10.0 | 10.0 | 10 | 6 | 10 | 6.0 | **9.00** | **S** | **+0.30** |
+| 3 | social-forge | 9.9 | 6.2 | 10 | 4 | 10 | 8.0 | **7.93** | A | — |
+| 4 | scorestrata | 10.0 | 10.0 | 5 | 0 | 10 | 10 | **7.75** | A | — |
+| 5 | tdg-rust | 10.0 | 10.0 | 0 | 8 | 8.0 | 8.0 | **7.70** | A | — |
+| 6 | mysterium | 9.5 | 10.0 | 10 | 0 | 10 | 0 | **7.40** | A | — |
+| 7 | openscript | 10.0 | 9.5 | 10 | 0 | 8.0 | 3.0 | **7.38** | A | — |
+| 8 | slideforge-rust | 9.1 | 8.1 | 5 | 6 | 10 | 3.0 | **7.29** | A | — |
+| 9 | automaton | 9.5 | 6.1 | 10 | 4 | 4.0 | 8.0 | **6.92** | A | — |
+| 10 | mindstrata | 10.0 | 10.0 | 5 | 0 | 10 | 0 | **6.75** | A | — |
+| 11 | c-suite-agents | 9.3 | 9.1 | 5 | 6 | 2.0 | 3.0 | **6.38** | B | **+0.89** |
+| 12 | andrometry | 8.2 | 8.4 | 5 | 0 | 10 | 0 | **5.99** | B | — |
+| 13 | thinking-steroid | 8.8 | 7.2 | 10 | 0 | 2.0 | 6.0 | **5.96** | B | — |
+| 14 | lifeos-ops | 8.7 | 0.0 | 5 | 8 | 6.0 | 3.0 | **4.89** | C | — |
+| 15 | HoloOS | 8.8 | 0.0 | 0 | 0 | 6.0 | 0 | **2.66** | D | — |
 
 ---
 
-## 6. What the Data Says (evidence-backed findings)
+## 6. What the Data Says (evidence-backed findings, re-audit)
 
-1. **S-tier is genuinely two projects:** `igs-rust` (9.13) and `operant` (8.70) are the
-   only repos clearing 8.0. Both are deep, heavily tested, shipped, and active.
-2. **social-forge (7.93) misses S by 0.07** — 95K LOC and extreme velocity, but only
-   **51 tests** for its size. Closing that test gap would promote it.
+1. **S-tier is still two projects, now close:** `igs-rust` (9.13) holds #1, but
+   **operant rose 8.70 → 9.00** on the sprint's v0.1.4 release — a 0.13 gap. Both are
+   deep, heavily tested, shipped, and active.
+2. **social-forge (7.93) still misses S by 0.07** — 95K LOC and extreme velocity, but
+   only **51 tests** for its size. Closing that test gap is the sole remaining lever.
 3. **scorestrata (7.75) is the strongest 9-day-old repo in the portfolio** — 944 tests,
    88 MCP tools, 73K LOC. It scores S-tier capability on every criterion except
    **releases (0)** and CI (1). Shipping a v0.x release + a second workflow = S.
 4. **mindstrata (6.75) is dragged down by zero agent surface and zero releases** — a
-   simulator, not a tool server, so Agent Surface is structurally 0. Tests (1,238) and
-   velocity are elite.
+   simulator, not a tool server, so Agent Surface is structurally 0.
 5. **HoloOS (2.66, D) is not an engineering project today** — it's a knowledge/spec
-   corpus (14K YAML + 1.2K MD), with **zero tests, zero CI, zero tools**, last pushed
-   30+ days ago. Ranking it as software is why it lands last.
+   corpus (Python/Jinja, 14K YAML + 1.2K MD), with **zero tests, zero CI, zero tools**,
+   last pushed 30+ days ago (verified live). Ranking it as software is why it lands last.
+   The sprint added a 2nd CI workflow and release tags to 6 other repos — HoloOS is
+   untouched and remains KNOWLEDGE-BASE per §7.
 6. **lifeos-ops (4.89, C) has zero automated tests** across 15K Rust LOC — the single
    biggest test gap in the portfolio.
-7. **c-suite-agents (5.49, B) and thinking-steroid (5.96, B)** have near-dormant
-   velocity (3 and 12 commits/90d) — they need sustained maintenance to rise.
+7. **c-suite-agents rose 5.49 → 6.38** (v0.1.2–v0.1.4 releases) and is now **0.12 from
+   A-tier**; velocity (3 commits/90d) is the only drag. thinking-steroid (5.96) also
+   needs sustained velocity to rise.
 8. **andrometry (5.99, B)** — only 14 days old; velocity-normalized score is strong and
    will climb as test coverage and releases accumulate.
 
@@ -210,6 +216,7 @@ scales with repo age.
 | **thinking-steroid** | B 5.96 | A | Age 123d: velocity 6.0 band needs 68+ commits/90d (**+0.6**) · ship 2 releases (**+0.6**) → ~7.2, A |
 | **c-suite-agents** | B 5.49 | A | Age 130d: velocity 6.0 band needs 72+ commits/90d (**+0.6**) · ship 2 releases (**+0.6**) → 6.69, A. (50 commits alone would only give +0.3 — still B) |
 | **lifeos-ops** | C 4.89 | B | **Write tests** 0 → 150 (**+2.05**) — single biggest win in the portfolio · 2nd CI (**+0.75**) → 7.69, A |
+| **c-suite-agents** | B 6.38 | A | 0.12 away — velocity 6.0 band needs 72+ commits/90d (**+0.6**) → 6.98, A |
 | **HoloOS** | KB | KB→ranked | Add tests, CI, and an executable API to the spec corpus, or keep as KNOWLEDGE-BASE |
 
 **Portfolio-wide release & CI sprint** (user directive): every A/B/C project gets

@@ -11,22 +11,25 @@ import math
 
 # ---------------------------------------------------------------------------
 # Measured dataset (name, LOC, tests, mods, ci, c90, rel, tools, stars, age)
+# Re-audited 2026-08-11 after the version-tag + CI sprint: release counts and
+# CI workflow counts live-measured. HoloOS stays the Python/Jinja knowledge
+# corpus (verified against the live repo: no workflows, no tags).
 # ---------------------------------------------------------------------------
 DATA = [
-    ("igs-rust",         27563,  231,   1,    2,   197, 14,  91,    1,    97),
-    ("social-forge",     95578,  51,    1,    2,   475, 1,   43,    0,    96),
-    ("operant",          537083, 8581,  18,   4,   757, 2,   30,    0,    92),
+    ("igs-rust",         27563,  231,   1,    2,   197, 15,  91,    1,    97),
+    ("social-forge",     95578,  51,    1,    2,   475, 2,   43,    0,    96),
+    ("operant",          537083, 8581,  18,   4,   757, 3,   30,    0,    92),
     ("scorestrata",      72958,  944,   11,   1,   93,  0,   88,    0,    9),
     ("mindstrata",       74998,  1238,  7,    1,   480, 0,   0,     0,    8),
-    ("tdg-rust",         47365,  626,   6,    0,   143, 9,   36,    0,    55),
+    ("tdg-rust",         47365,  626,   6,    0,   143, 10,  36,    0,    55),
     ("slideforge-rust",  35484,  185,   1,    1,   202, 6,   8,     0,    42),
     ("automaton",        11727,  43,    15,   2,   14,  1,   38,    0,    97),
     ("openscript",       65241,  470,   9,    2,   449, 0,   10,    2,    129),
     ("mysterium",        56747,  806,   1,    2,   461, 0,   0,     0,    86),
     ("andrometry",       12244,  153,   1,    1,   133, 0,   0,     0,    14),
     ("holoos",           44879,  0,     0,    0,   95,  0,   0,     0,    101),
-    ("lifeos-ops",       15265,  0,     2,    1,   97,  8,   7,     0,    93),
-    ("c-suite-agents",   45493,  339,   1,    1,   3,   0,   10,    0,    130),
+    ("lifeos-ops",       15265,  0,     2,    1,   97,  10,  7,     0,    93),
+    ("c-suite-agents",   45493,  339,   1,    1,   3,   3,   10,    0,    130),
     ("thinking-steroid", 24997,  96,    1,    2,   12,  0,   13,    0,    123),
 ]
 
