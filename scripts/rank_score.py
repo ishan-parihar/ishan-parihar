@@ -263,7 +263,8 @@ def main():
     for t in "SABC":
         print(f"{t}: {', '.join(tiers.get(t, [])) if tiers.get(t) else '(none)'}")
     print(f"D: {', '.join(tiers.get('D', [])) if tiers.get('D') else '(none)'}")
-    print("EXCLUDED: websites/portfolios (site) + knowledge-base (kb)")
+    print("EXCLUDED: websites (site) + knowledge-base (kb) + upstream forks")
+    print("          + merged/embedded repos (see docstring for the full list)")
 
     print()
     print("=== WEIGHTS ===")

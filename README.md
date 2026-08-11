@@ -207,7 +207,7 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 | **[andrometry](https://github.com/ishan-parihar/andrometry)** | Kotlin/Go | 12 Tools | Personal context engine: Kotlin Android collector with a Go MCP server |
 | **[browsefleet](https://github.com/ishan-parihar/browsefleet)** | Node/TS | REST + CDP | Stealth browser fleet: leased CDP contexts, sessions/screenshots/PDFs for agents |
 | **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** | Python | plugin | Live plugin importing Prime Agent's persistent kernel into Hermes's stateless runtime |
-| **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** | Python | Telegram MCP | LifeOS conversational interface — activity/diet/journal/financial logging |
+| **lifeos-bot** (local) | Python | Telegram MCP | LifeOS conversational interface — activity/diet/journal/financial logging |
 
 ### Agent-Native Platform CLIs (`-lyr` / `-cli`) & Obscura
 
@@ -225,7 +225,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 | **[tg-cli](https://github.com/ishan-parihar/tg-cli)** | Python | 12 Tools | Fast Telethon-powered Telegram messaging automation client |
 | **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** | Python | 6 Tools | AXI-compliant structured image overlay and meme generator |
 | **[obscura-core](https://github.com/ishan-parihar/obscura-core)** | Python | 8 Tools | Stealth browser integration: cookie vault + CDP daemon powering the lyr family |
-| **[toon-helper](https://github.com/ishan-parihar/toon-helper)** | Rust | 2 dependents | Shared TOON (Token-Oriented Object Notation) output lib for AXI-compliant CLIs |
+| **toon-helper** (local) | Rust | 2 dependents | Shared TOON (Token-Oriented Object Notation) output lib for AXI-compliant CLIs |
 
 ### Portfolios & Web User Interfaces (Separate Category — not tiered)
 
@@ -316,8 +316,8 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[cinesync](https://github.com/ishan-parihar/cinesync)** `4.43`: Character-asset automation pipeline for lipsync animation. 13.7K LOC, 2 CI workflows. Natural C — archived/inactive.
 * **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)** `4.03` (capped): Audio pipeline compiling dynamic background sounds. 158 tests. Cap: experimental flag.
 * **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** `4.01`: Live plugin bridging a persistent kernel into Hermes's stateless runtime. 4 days old — will climb with tests.
-* **[toon-helper](https://github.com/ishan-parihar/toon-helper)** `3.86`: Shared Rust lib for TOON (Token-Oriented Object Notation) output in AXI-compliant CLIs. 11 tests, in-degree 2 (used by the lyr family).
-* **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** `3.80`: LifeOS conversational interface — Telegram bot for activity/diet/journal/financial logging. 11.9K LOC, 17 tests.
+* **toon-helper** `3.86` (local — pending publish): Shared Rust lib for TOON (Token-Oriented Object Notation) output in AXI-compliant CLIs. 11 tests, in-degree 2 (used by the lyr family).
+* **lifeos-bot** `3.80` (local — pending publish): LifeOS conversational interface — Telegram bot for activity/diet/journal/financial logging. 11.9K LOC, 17 tests.
 * **[sovereign](https://github.com/ishan-parihar/sovereign)** `3.58`: Archived agent framework (voice/cache tooling). Natural C — archived/inactive.
 * **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** `3.43`: AXI-compliant image canvas manager placing dynamic content overlays. Smallest repo (899 LOC, 0 tests).
 * **[workout-factory](https://github.com/ishan-parihar/workout-factory)** `3.32`: Archived trainer voice/audio-cache factory. Natural C — archived/inactive.

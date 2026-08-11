@@ -237,7 +237,9 @@ C without \* = natural tier. `tdg` (deprecated, 0 executable LOC) keeps its natu
    `browsefleet` (5.55, B), `hermes-prime-bridge` (4.01, C), `toon-helper`
    (3.86, C), `lifeos-bot` (3.80, C), plus six archived repos (`cinesync`,
    `open-claude`, `osint-os`, `sovereign`, `workout-factory`, `tdg`). Every repo
-   in the portfolio now passes through the same eight-criteria engine.
+   in the portfolio now passes through the same eight-criteria engine. Note:
+   `toon-helper` and `lifeos-bot` have **no GitHub remote yet** (local-only,
+   pending publish) — their README links are marked as such, not dead-linked.
 5. **`browsefleet` (5.55, B) is the CI leader:** 5 workflows (most in the
    portfolio), 4 languages, 130-day-old stealth-browser fleet. It lost points only
    on agent surface (REST+CDP rather than MCP tool decorators) and velocity.
