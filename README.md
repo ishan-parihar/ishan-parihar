@@ -98,7 +98,7 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 | **Active Projects** | **42** | 2 S-tier · 11 A-tier · 14 B-tier · 7 C-tier · 1 D-tier · 1 knowledge-base · 6 websites (separate category) — tiered by the objective [ranking rubric](./RANKING-RUBRIC.md) |
 | **MCP Servers** | **20+** | 800+ total tools across intelligence, memory, media, social, and life-ops |
 | **Rust Crates** | **90+** | 99 `Cargo.toml` manifests — `operant` 19, `automaton` 17, `scorestrata` 12, `mindstrata` 8 |
-| **Lines of Code** | **2.38M** | 2,377,812 tracked source lines (Rust, TypeScript, Python, Go, Kotlin) |
+| **Lines of Code** | **2.38M** | 2,377,838 tracked source lines (Rust, TypeScript, Python, Go, Kotlin) |
 | **Automated Tests** | **31,300+** | 31,319 test markers — top suites: `operant` 9.2K, `holosim` 7.7K, `mindstrata` 1.2K, `linkedin-lyr` 1.1K |
 | **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler |
 | **Production Runtime** | **<10MB** | Stripped static musl Rust binaries with minimal idle RSS, zero dynamic dependencies |
@@ -344,7 +344,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <summary><b>🧠 KNOWLEDGE-BASE (1 Project — Spec Corpus, Not Ranked as Software)</b></summary>
 <br>
 
-* **[HoloOS](https://github.com/ishan-parihar/HoloOS)**: Enterprise systems modeling & topological risk — a knowledge/spec corpus (14K YAML + 1.2K MD, 98 executable Python files) rather than a verified software project. Re-labeled per RANKING-RUBRIC §7 (spec repos are not ranked against executable-engine criteria). **0 tests, 0 CI, 0 tools** — needs engineering verification before it can be tiered.
+* **[HoloOS](https://github.com/ishan-parihar/HoloOS)**: Enterprise systems modeling & topological risk — a knowledge/spec corpus (14K YAML + 1.2K MD, 98 executable Python files) rather than a verified software project. Re-labeled per RANKING-RUBRIC §7 (spec repos are not ranked against executable-engine criteria). 448 Python test markers + a working `holos` CLI (80+ subcommand surface) and MCP server exist, but 0 CI — needs engineering verification before it can be tiered.
 
 </details>
 
