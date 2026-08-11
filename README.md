@@ -70,7 +70,7 @@
   <!-- Decorative Metrics Badge inside SVG -->
   <rect x="535" y="20" width="130" height="24" rx="12" fill="#022C22" stroke="#047857" stroke-width="1.5"/>
   <circle cx="548" cy="32" r="4" fill="#10B981"/>
-  <text x="560" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="800" fill="#34D399">44 PROJECTS</text>
+  <text x="560" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="800" fill="#34D399">43 PROJECTS</text>
 </svg>
 
 **AI Agent Engineer · MCP Infrastructure · Multi-Agent Orchestration · Systems Architecture**
@@ -95,7 +95,7 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 | Metric | Value | Technical Context & Evidence |
 |--------|-------|------------------------------|
-| **Active Projects** | **44** | 2 S-tier · 11 A-tier · 11 B-tier · 11 C-tier · 2 D-tier · 1 knowledge-base · 6 websites (separate category) — tiered by the objective [ranking rubric](./RANKING-RUBRIC.md) |
+| **Active Projects** | **43** | 2 S-tier · 11 A-tier · 11 B-tier · 11 C-tier · 1 D-tier · 1 knowledge-base · 6 websites (separate category) — tiered by the objective [ranking rubric](./RANKING-RUBRIC.md) |
 | **MCP Servers** | **20+** | 800+ total tools across intelligence, memory, media, social, and life-ops |
 | **Rust Crates** | **40+** | Multi-crate workspaces powering `scorestrata`, `mindstrata`, `tdg-rust`, `igs-rust`, `automaton` |
 | **Lines of Code** | **2.4M+** | Machine-counted tracked source across all projects (Rust, TypeScript, Python, Go, Kotlin) |
@@ -131,7 +131,7 @@ I treat AI system design as **spatial machinery** rather than linear text prompt
 ## 💎 Flagship Projects
 
 > Narrative showcase — *not* the tier ranking. Tiers are scored objectively in the
-> [Complete Project Catalog](#-complete-project-catalog-44-projects) below via the
+> [Complete Project Catalog](#-complete-project-catalog-43-projects) below via the
 > [ranking rubric](./RANKING-RUBRIC.md).
 
 ### 🎵 [scorestrata](https://github.com/ishan-parihar/scorestrata)
@@ -183,7 +183,7 @@ A complex implementation of stateful agent memory using a holonic graph structur
 
 * **Interface**: 36 custom MCP tools allowing agents to write, link, prune, and query memories using vector search combined with graph traversal.
 * **Validation**: Highly verified with 637 deterministic unit and integration tests.
-* **Dual Stack**: Available in both lightweight, parallelized Rust and the initial reference Python implementation.
+* **Canonical**: The Rust port supersedes the original Python reference (now private); `tdg-rust` is the single canonical TDG project.
 
 ---
 
@@ -248,7 +248,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 
 ---
 
-## 📂 Complete Project Catalog (44 Projects)
+## 📂 Complete Project Catalog (43 Projects)
 
 > 🔒 = private repository — **available on request**. Contact me for access.
 
@@ -262,8 +262,8 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <summary><b>🚀 S-TIER: Flagship Systems — Score ≥ 8.0 (2 Projects)</b></summary>
 <br>
 
-* **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `8.96`: High-speed news ingestion pipeline. ~7MB binary, ~5MB RSS, 411 sources in 47 countries, 91 MCP tools, 15 releases, 432-line README.
 * **[operant](https://github.com/ishan-parihar/operant)** `8.72`: Multi-agent C-suite orchestrator. 538K LOC, 9,240 tests, 20 crates, 4 CI workflows, systemd process isolation, 3 releases.
+* **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `8.07`: High-speed news ingestion pipeline. ~7MB binary, ~5MB RSS, 411 sources in 47 countries, 91 MCP tools, 15 releases, 432-line README.
 
 </details>
 
@@ -272,16 +272,16 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <br>
 
 * **[social-forge](https://github.com/ishan-parihar/social-forge)** `7.90` (0.10 from S): 78K LOC across 9 networks. Extreme velocity (478 commits/90d). Needs test density (257 tests for its size) to reach S.
-* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `7.64`: Teleological developmental graph memory. 637 tests, 36 MCP tools, 10 releases. Adding CI = S.
 * **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** `7.59`: Professional profile extraction + Voyager profile-edit surface. 1,166 tests, 25 MCP tools, 94 releases, 4 CI workflows.
-* **[openscript](https://github.com/ishan-parihar/openscript)** `7.40`: Agent-directed video editing pipeline. 43 MCP tools, 505 tests, Hinglish Whisper transcription.
-* **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** `7.33`: Browserless carousel factory. 46 slide types, embedded Blitz renderer, 196 tests, 6 releases.
+* **[openscript](https://github.com/ishan-parihar/openscript)** `7.40`: Agent-directed video editing pipeline. 43 MCP tools, 510 tests, Hinglish Whisper transcription.
+* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `7.34`: Teleological developmental graph memory. 637 tests, 36 MCP tools, 10 releases. Needs CI + README depth for S.
 * **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** `7.28`: Agent-native X/Twitter integration. 243 tests, 42 tools, 32 releases, 2 CI workflows.
+* **[mysterium](https://github.com/ishan-parihar/mysterium)** `7.19`: Education-system replacement — 64-cell developmental matrix, holonic curriculum. 1,090 tests.
 * **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `7.09`: Multi-agent daemon + bundled LifeOS MCP server (35 tools, Postgres/Drizzle). 555 tests, 3 releases — velocity (5 commits/90d) is the only drag.
-* **[scorestrata](https://github.com/ishan-parihar/scorestrata)** `6.98`: WAV music compiler. 944 tests, 88 MCP tools, 73K LOC in 8 days. A v0.x release + 2nd CI = S.
-* **[mysterium](https://github.com/ishan-parihar/mysterium)** `6.89`: Education-system replacement — 64-cell developmental matrix, holonic curriculum. 1,090 tests.
+* **[scorestrata](https://github.com/ishan-parihar/scorestrata)** `6.98`: WAV music compiler. 944 tests, 88 MCP tools, 73K LOC in 9 days. A v0.x release + 2nd CI = S.
 * **[automaton](https://github.com/ishan-parihar/automaton)** `6.79`: Graph-native automation substrate. 17 Rust crates, 38 MCP tools. Needs velocity + releases.
 * **[facebook-lyr](https://github.com/ishan-parihar/facebook-lyr)** `6.78`: Facebook / Messenger MCP server. 229 tests, 41 tools, 7 days old — will climb fast.
+* **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** `6.77`: Browserless carousel factory. 46 slide types, embedded Blitz renderer, 185 tests, 6 releases. More tools + 2nd CI = S.
 
 </details>
 
@@ -292,8 +292,8 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[andrometry](https://github.com/ishan-parihar/andrometry)** `6.48` (0.02 from A): Personal context engine — Kotlin Android collector with a Go MCP server. 367 tests, 13 days old.
 * **[tg-cli](https://github.com/ishan-parihar/tg-cli)** `6.25`: Fast Telethon-powered Telegram automation client. 122 tests, 14 releases, 2 CI workflows.
 * **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** `6.13`: Stealth Instagram profile scraper. 335 tests, 47 tools. Releases (0) are the gap.
-* **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** `5.71`: Forced cognitive mode engine implementing 13 analysis frameworks. 247 tests, 2 CI workflows.
-* **[browsefleet](https://github.com/ishan-parihar/browsefleet)** `5.55`: Stealth browser fleet — CDP pool proxying sessions/screenshots/PDFs to agents. 5 CI workflows (most in portfolio), 50 tests, 4 languages.
+* **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** `6.01`: Forced cognitive mode engine implementing 13 analysis frameworks. 247 tests, 2 CI workflows.
+* **[browsefleet](https://github.com/ishan-parihar/browsefleet)** `5.77`: Stealth browser fleet — CDP pool proxying sessions/screenshots/PDFs to agents. 5 CI workflows (most in portfolio), 86 tests, 4 languages.
 * **[mindstrata](https://github.com/ishan-parihar/mindstrata)** `5.43`: Deterministic emergent society simulation. 82K LOC, 1,238 tests. Simulator — no agent surface; needs a CLI/API + release.
 * **[discord-cli](https://github.com/ishan-parihar/discord-cli)** `5.42`: Local-first Discord data CLI (SQLite sync, search, analytics). 10 releases, 2 CI workflows.
 * **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** `5.39`: Unified CLI + MCP server for Notion-based LifeOS. 31 tools, 10 releases — but **zero automated tests** across 18K Rust LOC (biggest test gap in the portfolio).
@@ -308,7 +308,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <br>
 
 * **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `6.26` (capped): Modular sandbox testing raw agent behaviors (Codename: Project Chimera). Cap: experimental flag — promote via release + agent surface. 🔒
-* **[osint-os](https://github.com/ishan-parihar/osint-os)** `5.76` (capped): ScrapeCraft OSINT platform — 121K LOC, 399 tests. Cap: archived/deprecated — not promotable while inactive.
+* **[osint-os](https://github.com/ishan-parihar/osint-os)** `5.46` (capped): ScrapeCraft OSINT platform — 121K LOC, 399 tests. Cap: archived/deprecated — not promotable while inactive.
 * **[icode](https://github.com/ishan-parihar/icode)** `5.72` (capped): Rust command runner parsing agent file edit logs (Archived). Cap: deprecated — not promotable while inactive.
 * **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)** `5.52` (capped): Math simulator tracking emergent agent interactions. 489K LOC, 7,766 tests. Cap: experimental flag — promote via release + agent surface.
 * **[cinesync](https://github.com/ishan-parihar/cinesync)** `4.43`: Character-asset automation pipeline for lipsync animation. 13.7K LOC, 2 CI workflows. Natural C — archived/inactive.
@@ -322,11 +322,10 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 </details>
 
 <details>
-<summary><b>📉 D-TIER: Minimal / Stalled (2 Projects)</b></summary>
+<summary><b>📉 D-TIER: Minimal / Stalled (1 Project)</b></summary>
 <br>
 
 * 🔒 **[lifeos-saas](https://github.com/ishan-parihar/lifeos-saas)** `2.60`: Agent hosting stack (NullClaw, Honcho, Postgres). 760 LOC, 0 tests.
-* **[tdg](https://gitlab.com/ishan-parihar/tdg)** `0.62`: Original Python TDG reference — superseded by `tdg-rust`; now a Rust-only docs/skills corpus (0 executable LOC).
 
 </details>
 

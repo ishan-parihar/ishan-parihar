@@ -35,6 +35,8 @@ Cap rules (documented, transparent — see RANKING-RUBRIC.md §7):
         standalone portfolio projects): openscript/third_party/*,
         icode/rust/references/*, igs-rust/last30days-skill,
         MCP-AND-CLIS/z.archive/*, webdev-portfolio/my-portfolio
+      * tdg — made private on GitHub and removed from the local portfolio
+        (2026-08-11); tdg-rust is the canonical TDG project
 
 Usage:  python3 scripts/rank_score.py [--all]
 Regenerate the dataset with:  python3 scripts/measure_repos.py
@@ -54,48 +56,47 @@ import sys
 # ---------------------------------------------------------------------------
 DATA = [
     # --- engines -----------------------------------------------------------
-    ("igs-rust",           "engine",     27912,  242,   2, 2, 198, 15,  96, 2, 500, 91, 3, 432, 1, 1),
+    ("igs-rust",           "engine",     27738,  231,   1, 2, 198, 15,  96, 2, 500, 91, 0, 432, 1, 1),
     ("social-forge",       "engine",     77836,  257,   3, 2, 478,  2,  96, 5, 500, 43, 0, 554, 1, 1),
     ("operant",            "engine",    537854, 9240,  20, 4, 758,  3, 116, 6, 500, 30, 3, 205, 1, 1),
-    ("scorestrata",        "engine",     72958,  944,  12, 1,  97,  0,   8, 2,   0, 88, 0, 158, 1, 1),
-    ("mindstrata",         "engine",     81638, 1238,   8, 1, 481,  0,  14, 1,   0,  0, 0, 169, 1, 1),
-    ("tdg-rust",           "engine",     47797,  637,   1, 1, 145, 10,  54, 3, 268, 36, 1, 225, 1, 1),
-    ("slideforge-rust",    "engine",     35805,  196,   3, 1, 203,  6,  42, 3,  74,  8, 3, 346, 1, 1),
+    ("scorestrata",        "engine",     72958,  944,  12, 1,  97,  0,   9, 2,   0, 88, 0, 158, 1, 1),
+    ("mindstrata",         "engine",     82079, 1245,   8, 1, 483,  0,  14, 1,   0,  0, 0, 169, 1, 1),
+    ("tdg-rust",           "engine",     47797,  637,   1, 1, 145, 10,  55, 3, 268, 36, 0, 225, 1, 1),
+    ("slideforge-rust",    "engine",     35631,  185,   2, 1, 203,  6,  43, 3,  74,  8, 1, 346, 1, 1),
     ("automaton",          "engine",     13410,   43,  17, 2,  16,  1,  96, 2, 500, 38, 0, 380, 1, 1),
-    ("openscript",         "engine",     72430,  505,  12, 2, 456,  0, 128, 5, 500, 43, 0, 185, 1, 1),
-    ("mysterium",          "engine",     61428, 1090,   1, 2, 463,  0,  85, 4, 281,  0, 1, 585, 1, 1),
+    ("openscript",         "engine",     74083,  510,  12, 2, 457,  0, 128, 5, 500, 43, 0, 185, 1, 1),
+    ("mysterium",          "engine",     61428, 1090,   1, 2, 463,  0,  86, 4, 281,  0, 2, 585, 1, 1),
     ("andrometry",         "engine",     25442,  367,   1, 1, 134,  0,  13, 4, 216, 12, 0, 449, 0, 1),
-    ("lifeos-ops",         "engine",     17760,    0,   3, 1,  98, 10,  92, 3, 488, 31, 0, 324, 1, 0),
+    ("lifeos-ops",         "engine",     17760,    0,   3, 1,  98, 10,  93, 3, 488, 31, 0, 324, 1, 0),
     ("c-suite-agents",     "engine",     46498,  555,   1, 1,   5,  3, 130, 2, 500, 35, 2, 139, 1, 1),
-    ("thinking-steroid",   "engine",     24997,  247,   1, 2,  13,  0, 122, 1,  18, 13, 0, 219, 1, 1),
+    ("thinking-steroid",   "engine",     24997,  247,   1, 2,  13,  0, 122, 1,  18, 13, 1, 219, 1, 1),
     # --- AXI CLI family (ranked this audit) --------------------------------
     ("reddit-lyr",         "engine",      4430,   24,  0, 1,  51,  0,  84, 2, 222, 56, 0, 168, 1, 1),
-    ("twitter-lyr",        "engine",     13425,  243,   0, 2,  44, 32, 159, 2,  14, 42, 0, 483, 1, 1),
+    ("twitter-lyr",        "engine",     13425,  243,   0, 2,  44, 32, 160, 2,  14, 42, 0, 483, 1, 1),
     ("instagram-lyr",      "engine",     20441,  335,   0, 1,  49,  0, 485, 2, 355, 47, 0, 433, 1, 1),
     ("linkedin-lyr",       "engine",     50739, 1166,   0, 4, 204, 94, 485, 2, 500, 25, 1, 379, 1, 1),
     ("facebook-lyr",       "engine",     13977,  229,   0, 1,  19,  0,   7, 2, 318, 41, 2, 206, 1, 1),
     ("threads-lyr",        "engine",      2374,   31,  0, 1,   9,  0,   1, 2,  21,  3, 1, 133, 1, 0),
-    ("discord-cli",        "engine",      3704,   15,  0, 2,  11, 10, 155, 2,  40, 13, 0, 333, 1, 0),
-    ("tg-cli",             "engine",      4828,  122,   0, 2,  12, 14, 155, 2,  34, 12, 0, 271, 1, 0),
+    ("discord-cli",        "engine",      3704,   15,  0, 2,  11, 10, 156, 2,  40, 13, 0, 333, 1, 0),
+    ("tg-cli",             "engine",      4828,  122,   0, 2,  12, 14, 156, 2,  34, 12, 0, 271, 1, 0),
     ("meme-lyr",           "engine",       899,    0,  1, 1,  12,  0, 521, 2,  28,  6, 0, 459, 1, 1),
     ("obscura-core",       "engine",      2896,   15,  0, 1,  12,  0,  10, 1, 104,  8, 4, 231, 1, 0),
     # --- experimental / archived (capped at C by policy) --------------------
     ("consciousness-fabricator", "experimental", 9238, 158, 0, 1, 6, 0, 125, 1, 73, 0, 1, 249, 0, 0),
     ("holosim-infinite",   "experimental", 489296, 7766, 2, 2, 5, 0, 180, 2, 31, 0, 0, 296, 1, 1),
     ("kali-mahabali",      "experimental",  63118,  690, 0, 1, 15, 1, 314, 2, 500, 20, 0, 355, 1, 1),
-    ("icode",              "deprecated",   142819, 2095, 21, 2, 7, 0, 132, 3, 500, 10, 0, 100, 0, 1),
+    ("icode",              "deprecated",   142819, 2095, 21, 2, 7, 0, 133, 3, 500, 10, 0, 100, 0, 1),
     # --- engines added in the 2026-08-11 full-coverage pass -----------------
-    ("browsefleet",        "engine",      4254,   50,  4, 5,  28,  2, 130, 4, 219,  0, 0, 282, 1, 1),
+    ("browsefleet",        "engine",      4558,   86,  4, 5,  29,  2, 130, 4, 239,  0, 0, 282, 1, 1),
     ("hermes-prime-bridge","engine",       919,   14,  0, 1,  22,  0,   4, 2,   1,  0, 0, 162, 1, 1),
     ("lifeos-bot",         "engine",     11857,   17,  0, 1,  15,  0,  61, 2, 397,  0, 0, 107, 1, 1),
     # --- deprecated / inactive (capped at C by policy) -----------------------
     ("cinesync",           "deprecated", 13744,   16,  2, 2,   3,  0, 298, 4,  23,  0, 0, 150, 1, 1),
-    ("osint-os",           "deprecated",120754,  399,  1, 1,   2,  0, 405, 4, 500,  0, 1, 469, 1, 1),
+    ("osint-os",           "deprecated",120754,  399,  1, 1,   2,  0, 406, 4, 500,  0, 0, 469, 1, 1),
     ("sovereign",          "deprecated",  9417,   30,  0, 1,   2,  0, 262, 2,   7,  0, 1, 161, 0, 1),
     ("workout-factory",    "deprecated",  9417,   30,  0, 1,   3,  0, 262, 2,   7,  0, 0, 192, 0, 1),
-    ("tdg",                "deprecated",     0,    0,  0, 0,  37,  0,  92, 0,   0,  0, 0,  31, 0, 1),
     # --- unranked: utility/private ------------------------------------------
-    ("lifeos-saas",        "engine",       760,    0,  0, 1,   4,  0,  96, 2,  15,  0, 0, 277, 1, 1),
+    ("lifeos-saas",        "engine",       760,    0,  0, 1,   4,  0,  97, 2,  15,  0, 0, 277, 1, 1),
     # --- websites / portfolios (separate category, never ranked) ------------
     ("design-aesthetics-website", "site", 17084,    8,  2, 1,  40,  0, 1209, 3,  58, 15, 0, 144, 1, 1),
     ("ishanparihar-cms",   "site",       14271,  355,   1, 2,  38,  1, 126, 2, 352, 20, 1,  96, 1, 1),

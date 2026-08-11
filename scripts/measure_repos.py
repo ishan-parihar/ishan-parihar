@@ -92,7 +92,8 @@ REPOS = [
     ("osint-os",               "EXPERIMENTAL/osint-os (Deprecated\u2044Inactive)", "deprecated"),
     ("sovereign",              "EXPERIMENTAL/sovereign (Deprecated\u2044Inactive)", "deprecated"),
     ("workout-factory",        "EXPERIMENTAL/workout-factory (Deprecated\u2044Inactive)", "deprecated"),
-    ("tdg",                    "tdg (Deprecated\u2044Inactive)", "deprecated"),
+    # (tdg — removed from portfolio 2026-08-11: made private on GitHub, local
+    #  folder deleted; tdg-rust is the canonical TDG project)
     # websites / portfolios (separate category, never ranked)
     ("design-aesthetics-website", "WEBSITES/design-aesthetics-website", "site"),
     ("ishanparihar-cms",       "WEBSITES/ishanparihar-cms", "site"),
@@ -121,7 +122,9 @@ DATA_DIR_RE = re.compile(
 # leak sibling-name references into the in-degree scan. Do NOT add generic
 # dirs like vendor/ or third_party/ — several repos track real code there and
 # silently excluding it would change unrelated measurements.
-VENDORED_DIR_RE = re.compile(r"(^|/)crates/toon-helper/")
+# toon-helper is vendored at crates/toon-helper/ (automaton, social-forge,
+# tdg-rust, slideforge-rust) AND at top-level toon-helper/ (igs-rust).
+VENDORED_DIR_RE = re.compile(r"(^|/)(crates/)?toon-helper/")
 # (igs-rust/last30days-skill is excluded at ranking time — it is a nested repo,
 #  not tracked code, so it needs no pattern here.)
 TEST_PATTERNS = {
