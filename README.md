@@ -159,7 +159,7 @@ A lightweight news and data ingestion pipeline scraping 411 distinct sources acr
 * **Efficiency**: Developed to replace a slow, high-memory Node.js prototype, dropping idle RAM consumption to under 5MB.
 
 ### 🌐 [social-forge](https://github.com/ishan-parihar/social-forge)
-**Multi-platform intelligence gatherer and scheduler across 9 networks.** Rust. ~78K LOC.
+**Multi-platform intelligence gatherer and scheduler across 25 platforms.** Rust. ~78K LOC.
 
 A Rust backend with an axum REST API + rmcp MCP server, JWT auth, SSE realtime, and an in-process scheduler for cross-platform social content operations — Reddit, LinkedIn, Instagram, Telegram, Threads, Facebook, YouTube, Discord, and X/Twitter.
 
@@ -174,16 +174,17 @@ Not just a "society sim": a full cognitive-science stack — bodies, nervous sys
 High-quality Instagram / LinkedIn / TikTok / X carousels as HTML → PNG via an embedded Blitz renderer — **no Chromium, no browser, no screenshot hacks**. 4.5× less memory than headless-Chrome pipelines, fully static musl binary, WCAG-AA contrast auditing, and an MCP server for AI-driven generation.
 
 ### 🤖 [operant](https://github.com/ishan-parihar/operant)
-**Multi-agent corporate runtime with LanceDB memory & systemd process isolation.** Rust. 9,200+ tests.
+**Terminal-native ReAct agent runtime.** Rust. 9,200+ tests. MCP client + server, skills, messaging channels.
 
-An operational multi-agent runtime containing specialized roles (CFO, COO, CRO, CMO) that communicate with prioritized escalation logic, track long-term tasks on active Kanban boards, and maintain deep context across reboots.
+A production-grade agent runtime written in Rust that runs from your shell: a real think → act → observe loop with a JSON-schema tool registry, memory-context injection every turn, provider fallbacks, and self-healing retries.
 
-* **Persistence**: Operates with a local LanceDB vector memory and 25+ relational Postgres tables using Drizzle.
-* **Deployment**: Packaged to run as persistent systemd services with active health checks.
-* **Twin**: Paired with a TypeScript implementation (`c-suite-agents`) using a Telegram management interface.
+* **Memory**: `agentmemory` hybrid semantic memory (BM25 + vector + graph), auto-spawned on first use; optional Postgres backend.
+* **Tools**: 60+ JSON-schema tools — fs, git, web, CDP browser, shell, code, http, memory, skills, cron, kanban, notes, checkpoints.
+* **Channels**: Telegram · Discord · Slack · WhatsApp via the gateway; WASM plugins; `operant autonomous` dev loop.
+* **Local-first**: no telemetry, no account; any OpenAI-compatible endpoint or a local llama.cpp / Ollama model.
 
 ### 🧠 [tdg-rust](https://github.com/ishan-parihar/tdg-rust)
-**Teleological Developmental Graph — Pure Rust cognitive engine.** 637 tests. 36 MCP tools.
+**Teleological Developmental Graph — Pure Rust cognitive engine.** 626 tests. 36 MCP tools.
 
 A complex implementation of stateful agent memory using a holonic graph structure. Every memory unit is represented as a node: `(Content, Embedding, Telos)`. The teleological decay algorithm ensures stale or irrelevant context decays over time while highly relevant goal nodes remain active.
 
@@ -202,12 +203,12 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 | System | Stack | Surface | Description |
 |--------|-------|---------|-------------|
 | **[igs-rust](https://github.com/ishan-parihar/igs-rust)** | Rust | 91 Tools | Lightweight intelligence aggregator scraping 411 sources in 47 countries |
-| **[social-forge](https://github.com/ishan-parihar/social-forge)** | Rust | MCP + REST | Multi-network content ops engine (9 networks, JWT auth, SSE realtime) |
+| **[social-forge](https://github.com/ishan-parihar/social-forge)** | Rust | MCP + REST | Multi-network content ops engine (25 platforms, JWT auth, SSE realtime) |
 | **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Rust | 36 Tools | Teleological developmental graph memory and knowledge synthesizer |
 | **[automaton](https://github.com/ishan-parihar/automaton)** | Rust | 38 Tools | Graph-native build, plan, and scheduled execution engine |
 | **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** | Rust | 8 Tools | Browserless carousel factory — 46 slide types, embedded Blitz renderer |
-| **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** | TypeScript | 35 Tools | Multi-agent orchestration daemon + LifeOS MCP server (Postgres/Drizzle) |
-| **[openscript](https://github.com/ishan-parihar/openscript)** | TypeScript | 43 Tools | AI-directed video editing pipeline (TTS, FFmpeg, Remotion) |
+| **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** | TypeScript | 35 Tools | Multi-agent orchestration daemon + LifeOS MCP server (LanceDB + Telegram) |
+| **[openscript](https://github.com/ishan-parihar/openscript)** | Rust/TS | 109 Tools | AI-directed video editing pipeline (TTS, FFmpeg, Remotion) |
 | **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** | Rust | 31 Tools | Unified CLI + MCP server for Notion-based LifeOS |
 | **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** | TypeScript | 13 Tools | Forced epistemic cognitive modes (first-principles, polarity mapping, etc.) |
 | **[andrometry](https://github.com/ishan-parihar/andrometry)** | Kotlin/Go | 12 Tools | Personal context engine: Kotlin Android collector with a Go MCP server |
@@ -240,7 +241,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 | 🔒 **[law-of-one-india-website](https://github.com/ishan-parihar/law-of-one-india-website)** | Next.js 15 / Postgres | Community publishing hub with custom caching, role-based auth, MDX |
 | 🔒 **[design-aesthetics-website](https://github.com/ishan-parihar/design-aesthetics-website)** | SvelteKit / Tailwind | Architectural portfolio: 49K LOC, GSAP, WebGL shaders, Three.js |
 | 🔒 **[lifeos-website](https://github.com/ishan-parihar/lifeos-website)** | Next.js 15 / Tailwind | Platform documentation hub and production marketing page |
-| 🔒 **[webdev-portfolio](https://github.com/ishan-parihar/webdev-portfolio)** | Next.js 15 / TypeScript | Fast, conversion-optimized landing page for freelance web dev |
+| 🔒 **[webdev-portfolio](https://github.com/ishan-parihar/webdev-portfolio)** | Next.js / TypeScript | Freelance portfolio scaffold — agent prompt + design system; site source lives in the nested `my-portfolio` repo |
 | 🔒 **[ishanparihar-cms](https://github.com/ishan-parihar/ishanparihar-cms)** | TypeScript | Web backend exposing 60+ CMS tools for content management |
 
 ---
@@ -273,7 +274,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <summary><b>🚀 S-TIER: Flagship Systems — Score ≥ 8.0 (2 Projects)</b></summary>
 <br>
 
-* **[operant](https://github.com/ishan-parihar/operant)** `8.72`: Multi-agent C-suite orchestrator. 538K LOC, 9,240 tests, 20 crates, 4 CI workflows, systemd process isolation, 3 releases.
+* **[operant](https://github.com/ishan-parihar/operant)** `9.28`: Terminal-native ReAct agent runtime. 538K LOC, 9,249 tests, 19 crates, 4 CI workflows, 3 releases.
 * **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `8.07`: High-speed news ingestion pipeline. ~7MB binary, ~5MB RSS, 411 sources in 47 countries, 91 MCP tools, 15 releases.
 
 </details>
@@ -282,13 +283,13 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <summary><b>🧠 A-TIER: Production-Grade Engines — Score 6.5–7.99 (11 Projects)</b></summary>
 <br>
 
-* **[social-forge](https://github.com/ishan-parihar/social-forge)** `7.90` (0.10 from S): 78K LOC across 9 networks. Extreme velocity (478 commits/90d). Needs test density (257 tests for its size) to reach S.
+* **[social-forge](https://github.com/ishan-parihar/social-forge)** `7.90` (0.10 from S): 78K LOC across 25 platforms (registry-verified). Extreme velocity (479 commits/90d). Needs test density (257 tests for its size) to reach S.
 * **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** `7.59`: Professional profile extraction + Voyager profile-edit surface. 1,166 tests, 25 MCP tools, 94 releases, 4 CI workflows.
-* **[openscript](https://github.com/ishan-parihar/openscript)** `7.40`: Agent-directed video editing pipeline. 43 MCP tools, 510 tests, Hinglish Whisper transcription.
-* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `7.34`: Teleological developmental graph memory. 637 tests, 36 MCP tools, 10 releases. Needs a second CI workflow for S.
+* **[openscript](https://github.com/ishan-parihar/openscript)** `7.68`: Agent-directed video editing pipeline. 109 MCP tools, 510 tests, Hinglish Whisper transcription.
+* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `7.34`: Teleological developmental graph memory. 626 tests, 36 MCP tools, 10 releases. Needs a second CI workflow for S.
 * **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** `7.28`: Agent-native X/Twitter integration. 243 tests, 42 tools, 32 releases, 2 CI workflows.
 * **[mysterium](https://github.com/ishan-parihar/mysterium)** `7.19`: Education-system replacement — 64-cell developmental matrix, holonic curriculum. 1,090 tests.
-* **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `7.09`: Multi-agent daemon + bundled LifeOS MCP server (35 tools, Postgres/Drizzle). 555 tests, 3 releases — velocity (5 commits/90d) is the only drag.
+* **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `6.80`: Multi-agent daemon + bundled LifeOS MCP server (35 tools, LanceDB/SQLite + Telegram). 227 tests, 3 releases — velocity (6 commits/90d) is the only drag.
 * **[scorestrata](https://github.com/ishan-parihar/scorestrata)** `6.98`: WAV music compiler. 944 tests, 88 MCP tools, 73K LOC in 9 days. A v0.x release + 2nd CI = S.
 * **[automaton](https://github.com/ishan-parihar/automaton)** `6.79`: Graph-native automation substrate. 17 Rust crates, 38 MCP tools. Needs velocity + releases.
 * **[facebook-lyr](https://github.com/ishan-parihar/facebook-lyr)** `6.78`: Facebook / Messenger MCP server. 229 tests, 41 tools, 7 days old — will climb fast.
@@ -300,10 +301,10 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <summary><b>📡 B-TIER: Solid Utilities — Score 4.5–6.49 (14 Projects)</b></summary>
 <br>
 
-* **[andrometry](https://github.com/ishan-parihar/andrometry)** `6.48` (0.02 from A): Personal context engine — Kotlin Android collector with a Go MCP server. 367 tests, 13 days old.
+* **[andrometry](https://github.com/ishan-parihar/andrometry)** `6.16`: Personal context engine — Kotlin Android collector with a Go MCP server. 152 tests, 2 weeks old.
 * **[tg-cli](https://github.com/ishan-parihar/tg-cli)** `6.25`: Fast Telethon-powered Telegram automation client. 122 tests, 14 releases, 2 CI workflows.
 * **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** `6.13`: Stealth Instagram profile scraper. 335 tests, 47 tools. Releases (0) are the gap.
-* **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** `6.01`: Forced cognitive mode engine implementing 13 analysis frameworks. 247 tests, 2 CI workflows.
+* **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** `6.17`: Forced cognitive mode engine implementing 13 analysis frameworks. 247 tests, 2 CI workflows.
 * **[browsefleet](https://github.com/ishan-parihar/browsefleet)** `5.77`: Stealth browser fleet — CDP pool proxying sessions/screenshots/PDFs to agents. 5 CI workflows (most in portfolio), 86 tests, 4 languages.
 * **[mindstrata](https://github.com/ishan-parihar/mindstrata)** `5.43`: Deterministic emergent society simulation. 82K LOC, 1,238 tests. Simulator — no agent surface; needs a CLI/API + release.
 * **[discord-cli](https://github.com/ishan-parihar/discord-cli)** `5.42`: Local-first Discord data CLI (SQLite sync, search, analytics). 10 releases, 2 CI workflows.
@@ -359,7 +360,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * 🔒 **[law-of-one-india-website](https://github.com/ishan-parihar/law-of-one-india-website)**: Publishing platform handling community user management.
 * 🔒 **[design-aesthetics-website](https://github.com/ishan-parihar/design-aesthetics-website)**: Architectural visual landing page. GSAP animations, Three.js shaders.
 * 🔒 **[lifeos-website](https://github.com/ishan-parihar/lifeos-website)**: Technical marketing page and documentation outline for LifeOS.
-* 🔒 **[webdev-portfolio](https://github.com/ishan-parihar/webdev-portfolio)**: Fast freelance conversion page showcasing web design.
+* 🔒 **[webdev-portfolio](https://github.com/ishan-parihar/webdev-portfolio)**: Freelance portfolio scaffold (agent prompt + design system); site source in the nested `my-portfolio` repo.
 * 🔒 **[ishanparihar-cms](https://github.com/ishan-parihar/ishanparihar-cms)**: Web backend exposing 60+ CMS tools for content management.
 
 ---

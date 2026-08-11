@@ -223,3 +223,22 @@ misrepresents the repo today · **LOW** = numeric drift.
 
 *Note: "test markers" counts `#[test]`/`#[tokio::test]`/`def test_`/`it(` occurrences and can exceed
 the passing count reported by the project's runner (e.g. disabled/ignored tests).*
+
+---
+
+## 7. Fix status (2026-08-12 — executed)
+
+| # | Fix | Status |
+|---|---|---|
+| 1 | operant entry rewritten to the real Rust product (terminal ReAct runtime, agentmemory, channels); C-suite/LanceDB/Telegram story now lives with c-suite-agents; catalog `20 crates`→`19`, `9,240`→`9,249 tests`, score `8.72`→`9.28` | ✅ |
+| 2 | openscript `43`→`109` MCP tools (ecosystem + A-tier), stack label `TypeScript`→`Rust/TS`, score `7.40`→`7.68` | ✅ |
+| 3 | andrometry `367`→`152` tests (badge-verified Go suite; the 367 marker count was inflated by a production JS MCP file matching `it(`/`test(`), score `6.48`→`6.16` | ✅ |
+| 4 | c-suite-agents `555`→`227` tests (repo badge; jest cannot collect locally), `Postgres/Drizzle`→`LanceDB/SQLite + Telegram` (no DB ORM in deps), score `7.09`→`6.80` | ✅ |
+| 5 | social-forge `9 networks`→`25 platforms` (registry.rs verified — 25 platform ids; repo README fixed 30→25), flagship + catalog | ✅ |
+| 6 | webdev-portfolio relabeled (agent-prompt + design-system scaffold; site source lives in the nested `my-portfolio` repo) | ✅ |
+| 7 | rank_score.py DATA re-folded: operant tests 9,249/tools 68/mods 19, tdg 626 (badge), c-suite 227, andrometry 152; marker-vs-badge audit findings (mysterium 1,090, thinking-steroid 247, osint-os 399, andrometry 367) were re-verified as engine-consistent markers — kept | ✅ |
+| 8 | sovereign/HoloOS — still no local checkout; catalog entries unchanged (unverifiable), tracked as open item | ⏳ |
+| 9 | operant README: LICENSE link → LICENSE-MIT/LICENSE-APACHE; `50+`→`60+` tools (68 registered) | ✅ |
+
+Score-impact check after re-fold: **no tier shifts** (S: operant 9.28, igs-rust 8.07 · A: 11 · B: 14 · C: 8 · D: 1).
+Tier-count headers in the profile README unchanged.
