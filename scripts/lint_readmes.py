@@ -17,7 +17,11 @@ Checks (weight = share of the /10 score):
   S05 no placeholders      (1.0)  no [PLACEHOLDER]/[N]K/[OWNER]/[REPO]/your-key
                                   tokens left in the README (TEMPLATE leakage)
   S06 CI badge iff CI      (1.0)  badge present <=> .github/workflows/ exists;
-                                  no stale CI badge pointing at a dead workflow
+                                  no stale CI badge pointing at a dead workflow.
+                                  Note: the lint cannot distinguish CI from
+                                  tag-only release workflows (e.g. lifeos-ops
+                                  release.yml) — a badge on a tag-only workflow
+                                  renders grey until a tagged release runs.
   S07 badge row            (0.5)  Language / LOC / License / Status badges present
   S08 length < 400 lines   (0.5)  detail belongs in docs/, not the README
   S09 no emoji headings    (0.5)  headings do not start with an emoji
@@ -156,8 +160,9 @@ def check_loc_sync(repo: str, readme_text: str, loc_map: dict[str, int],
     actual = loc_map.get(repo)
     if actual is not None and actual < MIN_LOC_FOR_BADGE:
         return []  # pure-content repo: LOC badge not meaningful, not required
+    # Badge presence is S07's job; S02 only verifies sync when a badge exists.
     if not badges:
-        return ["missing LOC badge (S07)"]
+        return []
     if actual is None:
         return []  # repo not measurable (no tracked code) — skip
     for b in badges:
@@ -171,15 +176,31 @@ def check_loc_sync(repo: str, readme_text: str, loc_map: dict[str, int],
     return issues
 
 
-def check_first_screen(text: str) -> list[str]:
-    head = "\n".join(text.splitlines()[:25])
-    # Markdown bold, HTML <strong>/<em>, or a paragraph of plain-language value.
+def first_screen_head(text: str) -> str:
+    """The first screen: text before the first H2 heading (hero + intro block).
+
+    A fixed line window is wrong for hero-heavy READMEs (large inline SVG
+    heroes push the intro far past line 25); the first H2 is the honest
+    boundary of "what a visitor sees before scrolling past the intro".
+    """
+    first_h2 = text.find("\n## ")
+    return text if first_h2 < 0 else text[:first_h2]
+
+
+def check_first_screen(text: str, head: str | None = None) -> list[str]:
+    head = head if head is not None else "\n".join(text.splitlines()[:25])
+    # Value signals: bold markdown, HTML <strong>, a bolded blockquote, a plain
+    # blockquote statement, or a substantial paragraph. HTML comments (T2I
+    # spec, hero comment) deliberately do NOT count — every README would pass
+    # on its hero comment alone.
     has_quote_value = bool(re.search(r">\s*\*\*[^*]{10,}\*\*", head))
-    has_bold = bool(re.search(r"\*\*[^*]{25,}\*\*|<!--[^*]{10,}-->", head))
+    has_quote_plain = bool(re.search(r">\s+[A-Z][^>]{40,}", head))
+    has_bold = bool(re.search(r"\*\*[^*]{25,}\*\*", head))
     has_strong = bool(re.search(r"<strong>[^<]{15,}</strong>", head))
     has_statement = bool(re.search(r"^[A-Z][^\n]{80,}", head, re.MULTILINE))
-    if not (has_quote_value or has_bold or has_strong or has_statement):
-        return ["no first-screen value statement in first 25 lines (S03)"]
+    if not (has_quote_value or has_quote_plain or has_bold or has_strong
+            or has_statement):
+        return ["no first-screen value statement (S03)"]
     return []
 
 
@@ -243,10 +264,6 @@ def check_ci_badge(repo: Path, text: str) -> list[str]:
     return issues
 
 
-LANG_BADGES = ("Language", "Rust", "Go", "Python", "Kotlin", "TypeScript",
-               "JavaScript", "Swift", "Java", "Ruby", "PHP", "Zig", "Dart",
-               "HTML", "CSS", "C%2B%2B", "C++", "Solidity", "Scala", "Vue",
-               "Svelte", "React", "Terraform", "Shell")
 LANG_BADGE_RE = re.compile(
     r"/badge/(Language|Rust|Go|Python|Kotlin|TypeScript|JavaScript|Swift|"
     r"Java|Ruby|PHP|Zig|Dart|HTML|CSS|C%2B%2B|C\+\+|Solidity|Scala|Vue|Svelte|"
@@ -314,8 +331,7 @@ PROFILE_REPO = "ishan-parihar"
 def profile_checks(_repo_dir: Path, text: str, readme_path: Path) -> list[tuple[str, list[str]]]:
     # "first screen" = everything before the first H2 heading (the hero + intro
     # block), not a fixed line window — profiles carry large SVG heroes.
-    first_h2 = text.find("\n## ")
-    head = text if first_h2 < 0 else text[:first_h2]
+    head = first_screen_head(text)
     out = [
         ("P01", [] if re.search(r"<svg|<img|T2I HERO SPEC", head) else
          ["no hero (SVG/T2I spec) on the first screen"]),
@@ -336,7 +352,7 @@ def profile_checks(_repo_dir: Path, text: str, readme_path: Path) -> list[tuple[
         ("P09", audit_images(readme_path)),
         ("P10", check_placeholders(text)),
         ("P11", check_stray_markdown(text)),
-        ("P12", check_first_screen(text)),
+        ("P12", check_first_screen(text, head=head)),
     ]
     return out
 
