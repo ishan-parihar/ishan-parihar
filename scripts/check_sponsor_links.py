@@ -28,6 +28,9 @@ EXCLUDED = {
     "MCP-AND-CLIS/igs-rust/last30days-skill",  # nested skill
     "MCP-AND-CLIS/z.archive",  # archived
     "WEBSITES/webdev-portfolio/my-portfolio",  # nested portfolio
+    # vendored upstream copies — never add sponsor blocks to other people's code
+    "DEVELOPER-TOOLS (Deprecated\u2044Inactive)/icode/rust/references",
+    "CONTENT-CREATION/openscript/third_party",
 }
 
 # Tool-state directories that are never git repos but may appear as walk roots.
@@ -45,13 +48,15 @@ BLOCK = (
 
 def find_repos():
     repos = []
-    for root, dirs, files in os.walk(PORTS):
-        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+    for root, dirs, _files in os.walk(PORTS):
+        # Detect a repo BEFORE pruning: .git must not be filtered out ahead
+        # of the check (it lives in SKIP_DIRS for other walkers).
         if ".git" in dirs:
             rel = os.path.relpath(root, PORTS)
             if not any(rel == ex or rel.startswith(ex + os.sep) for ex in EXCLUDED):
                 repos.append(rel)
             dirs.remove(".git")
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
     return sorted(repos)
 
 
