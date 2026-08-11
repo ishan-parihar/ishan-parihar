@@ -1,4 +1,4 @@
-# 📐 Project Ranking Rubric — Objective Tiering Matrix (v6.1)
+# 📐 Project Ranking Rubric — Objective Tiering Matrix (v6.2)
 
 > **Purpose:** replace subjective, vibes-based tier rankings with an **objective,
 > reproducible, evidence-driven ranking matrix** for every project in this portfolio.
@@ -20,7 +20,7 @@
 >    are capped at C-tier by explicit, published rules (§7), never by an invisible
 >    thumb on the scale.
 >
-> **Audit date:** 2026-08-12 (v6.1: AXI-ergonomics bonus on the CLI curve).
+> **Audit date:** 2026-08-12 (v6.2: age-grace implemented for repos < 30 days).
 > **Applies to:** S / A / B / C / D tiering in `README.md`.
 > **Engine:** `scripts/rank_score.py` · **Measurement tool:** `scripts/measure_repos.py`.
 
@@ -85,6 +85,15 @@ All thresholds are hard, published, and purely quantitative.
 
 ### CI — `0 → 0 · 1 workflow → 5 · 2+ workflows → 10`
 ### Releases — `0 → 0 · 1–2 → 4 · 3–6 → 6 · 7–10 → 8 · 10+ → 10`
+> **Age grace (v6.2, engine-implemented):** a repo younger than 30 days with
+> zero tagged releases **and demonstrated recent activity (c90 > 0)** scores
+> the **1–2 band (4.0)** — its release is "pending first release", not a
+> failure. Older repos with zero releases honestly score 0.0, as does a
+> young-but-dormant repo (0 commits/90d) — grace is for active young projects
+> only, so it can't be claimed by creating a repo and abandoning it. This
+> closes the gap between §7's documented policy and the engine, which
+> previously zeroed releases for every age (penalizing a 14-day-old repo with
+> 491 commits/90d identically to a 6-month-old dormant one).
 ### Velocity — age-normalized commits per 90-day-equivalent
 ```
 life_units = max(age_days / 90, 0.05)
@@ -177,8 +186,8 @@ from ranking (see §7) but shown here for completeness.
 | social-forge | engine | 77,836 | 257 | 3 | 2 | 479 | 2 | 96 | 5 | 43 | mcp | 0 | 0 |
 | openscript | engine | 74,606 | 510 | 12 | 2 | 463 | 0 | 129 | 5 | 109 | mcp | 0 | 0 |
 | twitter-lyr | engine | 13,425 | 243 | 0 | 2 | 44 | 32 | 160 | 2 | 42 | cli | 5 | 0 |
-| tdg-rust | engine | 47,797 | 626 | 1 | 1 | 146 | 10 | 55 | 3 | 36 | mcp | 0 | 0 |
 | facebook-lyr | engine | 13,977 | 229 | 0 | 1 | 19 | 0 | 7 | 2 | 41 | cli | 3 | 2 |
+| tdg-rust | engine | 47,797 | 626 | 1 | 1 | 146 | 10 | 55 | 3 | 36 | mcp | 0 | 0 |
 | scorestrata | engine | 72,958 | 944 | 12 | 1 | 97 | 0 | 9 | 2 | 88 | mcp | 0 | 0 |
 | osint-os | deprecated | 120,754 | 399 | 1 | 1 | 2 | 0 | 406 | 4 | 122 | rest | 0 | 0 |
 | c-suite-agents | engine | 46,498 | 227 | 1 | 1 | 6 | 3 | 130 | 2 | 35 | mcp | 0 | 2 |
@@ -186,11 +195,11 @@ from ranking (see §7) but shown here for completeness.
 | slideforge-rust | engine | 35,631 | 185 | 2 | 1 | 203 | 6 | 43 | 3 | 8 | mcp | 0 | 1 |
 | browsefleet | engine | 4,558 | 86 | 4 | 5 | 29 | 2 | 130 | 4 | 22 | rest | 0 | 0 |
 | tg-cli | engine | 4,828 | 122 | 0 | 2 | 12 | 14 | 156 | 2 | 12 | cli | 5 | 0 |
+| mindstrata | engine | 82,079 | 1,245 | 8 | 1 | 483 | 0 | 14 | 1 | 2 | cli | 3 | 0 |
+| andrometry | engine | 25,442 | 152 | 1 | 1 | 135 | 0 | 14 | 4 | 12 | rest | 0 | 0 |
 | instagram-lyr | engine | 20,441 | 335 | 0 | 1 | 49 | 0 | 485 | 2 | 47 | cli | 5 | 0 |
 | kali-mahabali | experimental | 63,118 | 690 | 0 | 1 | 15 | 1 | 314 | 2 | 20 | mcp | 0 | 0 |
 | thinking-steroid | engine | 24,997 | 247 | 1 | 2 | 16 | 0 | 122 | 1 | 13 | mcp | 0 | 1 |
-| andrometry | engine | 25,442 | 152 | 1 | 1 | 135 | 0 | 14 | 4 | 12 | rest | 0 | 0 |
-| mindstrata | engine | 82,079 | 1,245 | 8 | 1 | 483 | 0 | 14 | 1 | 2 | cli | 3 | 0 |
 | meme-lyr | engine | 1,050 | 25 | 1 | 2 | 14 | 1 | 521 | 2 | 6 | cli | 4 | 0 |
 | holosim-infinite | experimental | 489,296 | 7,766 | 2 | 2 | 5 | 0 | 180 | 2 | 6 | engine | 0 | 0 |
 | icode | deprecated | 142,819 | 2,095 | 21 | 2 | 7 | 0 | 133 | 3 | 10 | mcp | 0 | 0 |
@@ -198,11 +207,11 @@ from ranking (see §7) but shown here for completeness.
 | reddit-lyr | engine | 4,430 | 24 | 0 | 1 | 51 | 0 | 84 | 2 | 56 | cli | 5 | 0 |
 | lifeos-ops | engine | 17,760 | 0 | 3 | 1 | 98 | 10 | 93 | 3 | 31 | mcp | 0 | 0 |
 | lifeos-bot | engine | 12,009 | 33 | 0 | 2 | 16 | 1 | 61 | 2 | 3 | cli | 2 | 0 |
+| threads-lyr | engine | 2,374 | 31 | 0 | 1 | 9 | 0 | 1 | 2 | 3 | cli | 3 | 1 |
 | cinesync | deprecated | 13,744 | 16 | 2 | 2 | 3 | 0 | 298 | 4 | 13 | rest | 0 | 0 |
 | consciousness-fabricator | experimental | 9,238 | 158 | 0 | 1 | 7 | 0 | 125 | 1 | 6 | cli | 2 | 1 |
-| hermes-prime-bridge | engine | 919 | 14 | 0 | 2 | 23 | 1 | 4 | 2 | 3 | mcp | 0 | 0 |
-| threads-lyr | engine | 2,374 | 31 | 0 | 1 | 9 | 0 | 1 | 2 | 3 | cli | 3 | 1 |
 | obscura-core | engine | 2,896 | 15 | 0 | 1 | 12 | 0 | 10 | 1 | 8 | mcp | 0 | 4 |
+| hermes-prime-bridge | engine | 919 | 14 | 0 | 2 | 23 | 1 | 4 | 2 | 3 | mcp | 0 | 0 |
 | workout-factory | deprecated | 9,417 | 30 | 0 | 1 | 3 | 0 | 262 | 2 | 0 | engine | 0 | 0 |
 | lifeos-saas | engine | 760 | 0 | 0 | 1 | 4 | 0 | 97 | 2 | 10 | rest | 0 | 0 |
 
@@ -219,20 +228,20 @@ from ranking (see §7) but shown here for completeness.
 | 5 | social-forge | 10.0 | 8.4 | 7.9 | 10.0 | 4.0 | 10.0 | 8.0 | 6.0 | **7.90** | A |
 | 6 | openscript | 10.0 | 9.6 | 8.9 | 10.0 | 0.0 | 8.0 | 10.0 | 4.2 | **7.68** | A |
 | 7 | twitter-lyr | 7.8 | 9.4 | 3.4 | 10.0 | 10.0 | 4.0 | 10.0 | 6.0 | **7.56** | A |
-| 8 | tdg-rust | 9.3 | 10.0 | 6.0 | 5.0 | 8.0 | 8.0 | 8.0 | 4.5 | **7.34** | A |
-| 9 | facebook-lyr | 7.9 | 9.2 | 4.5 | 5.0 | 0.0 | 8.0 | 10.0 | 7.4 | **7.06** | A |
-| 10 | scorestrata | 10.0 | 10.0 | 4.7 | 5.0 | 0.0 | 10.0 | 10.0 | 4.1 | **6.98** | A |
+| 8 | facebook-lyr | 7.9 | 9.2 | 4.5 | 5.0 | 4.0 | 8.0 | 10.0 | 7.4 | **7.38** | A |
+| 9 | tdg-rust | 9.3 | 10.0 | 6.0 | 5.0 | 8.0 | 8.0 | 8.0 | 4.5 | **7.34** | A |
+| 10 | scorestrata | 10.0 | 10.0 | 4.7 | 5.0 | 4.0 | 10.0 | 10.0 | 4.1 | **7.30** | A |
 | 11 | osint-os | 10.0 | 9.0 | 7.3 | 5.0 | 0.0 | 2.0 | 10.0 | 6.0 | **6.86** | C* |
 | 12 | c-suite-agents | 9.3 | 8.4 | 5.3 | 5.0 | 6.0 | 2.0 | 8.0 | 6.9 | **6.80** | A |
 | 13 | automaton | 9.7 | 6.1 | 7.2 | 10.0 | 4.0 | 4.0 | 8.0 | 5.5 | **6.79** | A |
 | 14 | slideforge-rust | 9.4 | 8.1 | 6.0 | 5.0 | 6.0 | 10.0 | 3.0 | 6.8 | **6.77** | A |
 | 15 | browsefleet | 8.0 | 8.1 | 7.8 | 10.0 | 4.0 | 4.0 | 6.0 | 4.9 | **6.61** | A |
 | 16 | tg-cli | 7.0 | 8.9 | 3.7 | 10.0 | 10.0 | 2.0 | 8.0 | 3.8 | **6.53** | A |
-| 17 | instagram-lyr | 8.2 | 9.7 | 4.5 | 5.0 | 0.0 | 2.0 | 10.0 | 5.9 | **6.41** | B |
-| 18 | kali-mahabali | 9.1 | 10.0 | 4.7 | 5.0 | 4.0 | 2.0 | 6.0 | 5.4 | **6.26** | C* |
-| 19 | thinking-steroid | 8.8 | 8.8 | 3.1 | 10.0 | 0.0 | 4.0 | 6.0 | 6.0 | **6.17** | B |
-| 20 | andrometry | 8.8 | 7.9 | 7.0 | 5.0 | 0.0 | 10.0 | 6.0 | 4.0 | **6.16** | B |
-| 21 | mindstrata | 10.0 | 10.0 | 3.4 | 5.0 | 0.0 | 10.0 | 5.2 | 4.1 | **6.16** | B |
+| 17 | mindstrata | 10.0 | 10.0 | 3.4 | 5.0 | 4.0 | 10.0 | 5.2 | 4.1 | **6.48** | B |
+| 18 | andrometry | 8.8 | 7.9 | 7.0 | 5.0 | 4.0 | 10.0 | 6.0 | 4.0 | **6.48** | B |
+| 19 | instagram-lyr | 8.2 | 9.7 | 4.5 | 5.0 | 0.0 | 2.0 | 10.0 | 5.9 | **6.41** | B |
+| 20 | kali-mahabali | 9.1 | 10.0 | 4.7 | 5.0 | 4.0 | 2.0 | 6.0 | 5.4 | **6.26** | C* |
+| 21 | thinking-steroid | 8.8 | 8.8 | 3.1 | 10.0 | 0.0 | 4.0 | 6.0 | 6.0 | **6.17** | B |
 | 22 | meme-lyr | 6.2 | 6.8 | 4.3 | 10.0 | 4.0 | 2.0 | 7.6 | 6.0 | **6.03** | B |
 | 23 | holosim-infinite | 10.0 | 10.0 | 4.7 | 10.0 | 0.0 | 2.0 | 3.0 | 5.0 | **5.94** | C* |
 | 24 | icode | 10.0 | 10.0 | 8.3 | 10.0 | 0.0 | 2.0 | 3.0 | 1.7 | **5.72** | C* |
@@ -240,11 +249,11 @@ from ranking (see §7) but shown here for completeness.
 | 26 | reddit-lyr | 6.9 | 5.5 | 4.4 | 5.0 | 0.0 | 6.0 | 10.0 | 4.1 | **5.45** | B |
 | 27 | lifeos-ops | 9.0 | 0.0 | 6.9 | 5.0 | 8.0 | 6.0 | 8.0 | 4.2 | **5.39** | B |
 | 28 | lifeos-bot | 7.8 | 5.7 | 4.6 | 10.0 | 4.0 | 4.0 | 4.8 | 3.7 | **5.37** | B |
-| 29 | cinesync | 8.6 | 4.7 | 6.6 | 10.0 | 0.0 | 2.0 | 6.0 | 4.0 | **5.27** | C* |
-| 30 | consciousness-fabricator | 7.5 | 8.7 | 3.0 | 5.0 | 0.0 | 2.0 | 6.8 | 4.2 | **5.18** | C* |
-| 31 | hermes-prime-bridge | 5.6 | 5.5 | 2.7 | 10.0 | 4.0 | 10.0 | 3.0 | 4.1 | **5.15** | B |
-| 32 | threads-lyr | 6.4 | 6.3 | 3.6 | 5.0 | 0.0 | 8.0 | 5.2 | 4.4 | **4.98** | B |
-| 33 | obscura-core | 6.6 | 4.9 | 3.1 | 5.0 | 0.0 | 6.0 | 3.0 | 7.5 | **4.85** | B |
+| 29 | threads-lyr | 6.4 | 6.3 | 3.6 | 5.0 | 4.0 | 8.0 | 5.2 | 4.4 | **5.30** | B |
+| 30 | cinesync | 8.6 | 4.7 | 6.6 | 10.0 | 0.0 | 2.0 | 6.0 | 4.0 | **5.27** | C* |
+| 31 | consciousness-fabricator | 7.5 | 8.7 | 3.0 | 5.0 | 0.0 | 2.0 | 6.8 | 4.2 | **5.18** | C* |
+| 32 | obscura-core | 6.6 | 4.9 | 3.1 | 5.0 | 4.0 | 6.0 | 3.0 | 7.5 | **5.17** | B |
+| 33 | hermes-prime-bridge | 5.6 | 5.5 | 2.7 | 10.0 | 4.0 | 10.0 | 3.0 | 4.1 | **5.15** | B |
 | 34 | workout-factory | 7.6 | 5.6 | 3.2 | 5.0 | 0.0 | 2.0 | 1.0 | 2.3 | **3.46** | C |
 | 35 | lifeos-saas | 5.5 | 0.0 | 3.5 | 5.0 | 0.0 | 2.0 | 3.0 | 4.8 | **3.02** | D |
 
@@ -336,11 +345,34 @@ C without \* = natural tier. `tdg` (deprecated, 0 executable LOC) keeps its natu
     (`count_axi()` in `measure_repos.py`) and every scored `axi` value is
     verified against the repo's source, so the bonus can't be gamed by
     README claims alone.
-14. **Forks and merged repos are excluded, not hidden.** `hermes-agent`
+14. **v6.2 age-grace implemented (2026-08-12): young repos no longer zeroed on releases.**
+    The rubric's §7 age-grace policy — "release count is noted as 'pending
+    first release' rather than scored as failure" for repos < 30 days — was
+    documented but never wired into the engine; `s_releases(0)` scored 0.0 for
+    every age, punishing a 14-day-old repo with 491 commits/90d identically to
+    a 6-month-old dormant one. **v6.2 makes it engine-implemented**: repos
+    younger than 30 days with zero releases **and c90 > 0 (demonstrated
+    activity — a created-and-abandoned repo can't claim it)** score the 1–2
+    band (4.0). Net
+    effect: `mindstrata` 6.16→**6.48** (B, 14d), `scorestrata` 6.98→**7.30**
+    (A, 9d), `facebook-lyr` 7.06→**7.38** (A, 7d), `andrometry` 6.16→**6.48**
+    (B, 14d), `threads-lyr` 4.98→**5.30** (B, 1d), `obscura-core` 4.85→**5.17**
+    (B, 10d). No tier membership changed — the fix corrects scores, not
+    rankings. `holosim-infinite` (180d) correctly keeps its 0.0 release score
+    and stays C* (experimental cap + low velocity).
+15. **Simulator/game category audit (2026-08-12): surfaces verified honest.**
+    `mindstrata` (deterministic society sim, 8 crates) — surface `cli` ops 2
+    (`Sim`, `Scenario` — verified in `mindstrata-cli/src/main.rs`), axi 3
+    (empty states, aggregates, exit codes — verified in source).
+    `holosim-infinite` (math sim, 489K LOC) — surface `engine` ops 6 (5
+    declared `[[bin]]` + bevy crate; the detector's 13 overcounts `fn main`
+    in test/string fixtures). Both scored against their own surface class;
+    no misclassification found.
+16. **Forks and merged repos are excluded, not hidden.** `hermes-agent`
     (nousresearch), `hermes-agent-ultra` (sheawinkler), `zeroclaw`
     (zeroclaw-labs) are upstream-owned forks; `c-suite-agents-mcp` was merged
     into `c-suite-agents` and removed from GitHub. All are documented exclusions.
-15. **C-tier audit sprint (2026-08-11): genuine gaps closed, three repos promoted.**
+17. **C-tier audit sprint (2026-08-11): genuine gaps closed, three repos promoted.**
     * `meme-lyr` 3.43 → **5.38 (B)**: was the only portfolio repo with **zero
       tests** — added a 19-test vitest suite over the pure CLI core (ratio/color
       data integrity, truncation, background parsing, arg parsing), exported the
@@ -364,8 +396,7 @@ C without \* = natural tier. `tdg` (deprecated, 0 executable LOC) keeps its natu
       osint-os 5.46) or genuinely small/dormant (cinesync 4.43,
       workout-factory 3.32) — no authentic code change could move them.
 
----
-## 7. Contextual Adjustment Policy (explicit, not hidden subjectivity)
+---## 7. Contextual Adjustment Policy (explicit, not hidden subjectivity)
 
 The rubric is a *baseline*. Category mismatches are handled by **documented rules**, never silent bias:
 
@@ -380,7 +411,7 @@ The rubric is a *baseline*. Category mismatches are handled by **documented rule
 | **Websites / portfolios** | Delivery artifacts are **excluded from ranking entirely** and grouped in the separate `Portfolios & Web User Interfaces` category. |
 | **Knowledge/spec repos** | Non-executable content (HoloOS: 14K YAML) is labeled `KNOWLEDGE-BASE`, not ranked against executable-engine criteria. |
 | **Non-tool domains (v6)** | Every project is scored against the surface it actually exposes: MCP tools, CLI commands (AXI first-class), REST endpoints, or — for simulators/libs with no interactive surface — runnable binaries on a floor curve. The 14% weight never silently reweights and never silently zeroes a real surface. |
-| **Age grace** | Repos < 30 days old are reviewed at velocity-normalized score + capability components; release count is noted as "pending first release" rather than scored as failure. |
+| **Age grace** | Repos < 30 days old are reviewed at velocity-normalized score + capability components; release count is noted as "pending first release" rather than scored as failure. **Engine-implemented since v6.2** — `s_releases(tags, age)` returns the 1–2 band (4.0) for < 30-day-old repos with zero releases, instead of 0.0. |
 
 ---
 
@@ -440,11 +471,12 @@ Priority order = nearest to next tier first.
 | **tdg-rust** | A 7.34 | **S** | Add CI workflow(s) (CI 5→10: **+0.4**) + README depth (225→450 lines: **+0.2**) → 7.94; one release-band bump → S |
 | **slideforge-rust** | A 6.77 | **S** | Tools 8→60 (**+0.7**) + 2nd CI (**+0.4**) + tests 185→450 (**+0.29**) + release band (**+0.16**) → 8.32, S |
 | **twitter-lyr** | A 7.56 | **S** | Velocity band (44 commits/90d at 159d → need ~80: **+0.32**) + 2nd CI (**+0.4**) → 8.28, S |
-| **scorestrata** | A 6.98 | **S** | Ship v0.1 release (Rel 0→4: **+0.32**) + 2nd CI (**+0.4**) + README depth (**+0.2**) → 7.90; velocity band bump → S |
-| **andrometry** | B 6.16 | **A** | 2 releases (**+0.32**) + 57 REST endpoints→60 (**+0.28**) → 6.76, A |
+| **scorestrata** | A 7.30 | **S** | 2nd CI (**+0.4**) + README depth (**+0.2**) → 7.90; ship 3–6 releases to exit the age-grace band (Rel 4→6: **+0.16**) → 8.06, S. (Age-grace already credits its pending release: 6.98→7.30.) |
+| **mindstrata** | B 6.48 | **A** | 2nd CI workflow (**+0.4**) → 6.88 A — 0.02 from the A floor today. A v0.1 tag then locks the release band; 3rd+ CLI commands raise agent. |
+| **andrometry** | B 6.48 | **A** | 0.02 from A — 12 REST endpoints→16 (**+0.28**) → 6.76, A. Age-grace already credits its pending release (6.16→6.48). |
 | **instagram-lyr** | B 6.41 | **A** | Ship 1–2 releases (**+0.32**) + velocity band (**+0.32**) → 7.05, A |
 | **lifeos-ops** | B 5.39 | **A** | **Write tests** 0 → 150 (**+1.5**) + 2nd CI (**+0.4**) → 7.29, A — single biggest win in the portfolio |
-| **obscura-core** | B 4.85 | **A** | MCP tools 8→31 (**+0.42**) + releases (**+0.32**) + tests 15→100 (**+0.5**) → 6.09, B+ |
+| **obscura-core** | B 5.17 | **A** | MCP tools 8→31 (**+0.42**) + releases (**+0.32**) + tests 15→100 (**+0.5**) → 6.41, B+ (age-grace 4.85→5.17 already applied) |
 | **lifeos-bot** | B 5.37 | **A** | CLI commands 3→5 (**+0.28**) + velocity band (**+0.32**) + tests 33→100 (**+0.4**) → 6.37, A |
 | **discord-cli** | B 5.70 | **A** | Velocity band (11 commits/90d at 156d → need ~30: **+0.32**) + 2nd CI (**+0.4**) → 6.42, A |
 | **holosim-infinite** | C 5.94* | **A** | Uncap: ship v0.1 release (**+0.32**) + add interactive surface (CLI/REST 0→16: **+0.42**) + velocity (**+0.32**) → 7.00, A |

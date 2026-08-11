@@ -25,7 +25,7 @@ def total(r):
         "tests": rs.s_tests(r[3], r[2]),
         "complexity": rs.s_complexity(r[4], r[9], r[10]),
         "ci": rs.s_ci(r[5]),
-        "releases": rs.s_releases(r[7]),
+        "releases": rs.s_releases(r[7], r[8], r[6]),
         "velocity": rs.s_velocity(r[6], r[8]),
         "agent": rs.s_agent(r[11], r[12], r[13]),
         "utility": rs.s_utility(r[15], r[16], r[17], r[14]),
@@ -55,7 +55,7 @@ def main():
         t, note = rs.tier(total(r), cat)
         marker = "*" if note else ""
         print(f"| {i} | {name} | {rs.s_scale(r[2], r[4]):.1f} | {rs.s_tests(r[3], r[2]):.1f} | {rs.s_complexity(r[4], r[9], r[10]):.1f} | "
-              f"{rs.s_ci(r[5]):.1f} | {rs.s_releases(r[7]):.1f} | {rs.s_velocity(r[6], r[8]):.1f} | {rs.s_agent(r[11], r[12], r[13]):.1f} | "
+              f"{rs.s_ci(r[5]):.1f} | {rs.s_releases(r[7], r[8], r[6]):.1f} | {rs.s_velocity(r[6], r[8]):.1f} | {rs.s_agent(r[11], r[12], r[13]):.1f} | "
               f"{rs.s_utility(r[15], r[16], r[17], r[14]):.1f} | **{total(r):.2f}** | {t}{marker} |")
 
     print()

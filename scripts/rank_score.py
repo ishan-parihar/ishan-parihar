@@ -160,7 +160,19 @@ def s_ci(n):
     return {0: 0.0, 1: 5.0}.get(n, 10.0)
 
 
-def s_releases(n):
+def s_releases(n, age_days, c90=0):
+    """Release discipline score.
+
+    Implements the rubric §7 Age-grace rule (v6.2): a repo younger than 30
+    days with zero tagged releases AND demonstrated recent activity (c90 > 0)
+    is not scored as a failure — its release is "pending first release" and
+    scores the 1-2 band (4.0), the same as a repo that has shipped its first
+    release. A repo older than 30 days with zero releases honestly scores
+    0.0 (a release never shipped), as does a young-but-dormant repo (0
+    commits in 90 days) — grace is for active young projects only.
+    """
+    if n <= 0 and age_days < 30 and c90 > 0:
+        return 4.0  # age grace: pending first release, not a failure
     if n <= 0:
         return 0.0
     if n <= 2:
@@ -294,7 +306,7 @@ def main():
             "tests":      s_tests(tests, loc),
             "complexity": s_complexity(mods, langs, concur),
             "ci":         s_ci(ci),
-            "releases":   s_releases(tags),
+            "releases":   s_releases(tags, age, c90),
             "velocity":   s_velocity(c90, age),
             "agent":      s_agent(ops, surface, axi),
             "utility":    s_utility(rl, install, docs, indegree),
