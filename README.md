@@ -95,7 +95,7 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 | Metric | Value | Technical Context & Evidence |
 |--------|-------|------------------------------|
-| **Active Projects** | **36** | 32 production/active, 4 experimental/archived across 6 architectural tiers |
+| **Active Projects** | **36** | 31 production/active, 5 experimental/archived across 6 architectural tiers |
 | **MCP Servers** | **15+** | 500+ total tools across intelligence, memory, media, and life-ops |
 | **Rust Crates** | **40+** | Multi-crate workspaces powering `scorestrata`, `mindstrata`, `tdg-rust`, `igs-rust`, `automaton` |
 | **Lines of Code** | **1.6M+** | Sum of source across all projects (Rust, TypeScript, Python, Go, Kotlin) |
@@ -228,6 +228,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 | 🔒 **[design-aesthetics-website](https://github.com/ishan-parihar/design-aesthetics-website)** | SvelteKit / Tailwind | Architectural portfolio: 49K LOC, GSAP, WebGL shaders, Three.js |
 | 🔒 **[lifeos-website](https://github.com/ishan-parihar/lifeos-website)** | Next.js 15 / Tailwind | Platform documentation hub and production marketing page |
 | 🔒 **[webdev-portfolio](https://github.com/ishan-parihar/webdev-portfolio)** | Next.js 15 / TypeScript | Fast, conversion-optimized landing page for freelance web dev |
+| 🔒 **[ishanparihar-cms](https://github.com/ishan-parihar/ishanparihar-cms)** | TypeScript | Web backend exposing 60+ CMS tools for content management |
 
 ---
 
