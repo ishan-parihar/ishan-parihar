@@ -257,6 +257,11 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 > agent surface, utility & ecosystem), the machine-measured dataset, the documented cap
 > policy (§7), and the reproducible `scripts/rank_score.py` engine + `scripts/measure_repos.py`
 > measurement tool. Scores are re-audited after every release/test/CI milestone.
+>
+> **Every new repo starts from [TEMPLATE.md](./TEMPLATE.md)** — the S-grade README baseline
+> (readme-craft mandates + mandatory GitHub Sponsors/Razorpay support block + LOC/CI badge
+> rules). Coverage is enforced by `scripts/check_sponsor_links.py` (support links) and
+> `scripts/check_loc_badges.py` (LOC badge freshness).
 
 <details>
 <summary><b>🚀 S-TIER: Flagship Systems — Score ≥ 8.0 (2 Projects)</b></summary>
