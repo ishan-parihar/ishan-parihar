@@ -82,7 +82,7 @@
 [![Rust](https://img.shields.io/badge/Rust-ed8b00?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![MCP](https://img.shields.io/badge/MCP-300%2B%20Tools-555555?style=for-the-badge&logo=github&logoColor=white)](https://modelcontextprotocol.io/)
+[![MCP](https://img.shields.io/badge/MCP-800%2B%20Tools-555555?style=for-the-badge&logo=github&logoColor=white)](https://modelcontextprotocol.io/)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
 </div>
@@ -95,11 +95,11 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 | Metric | Value | Technical Context & Evidence |
 |--------|-------|------------------------------|
-| **Active Projects** | **36** | 2 S-tier · 8 A-tier · 3 B-tier · 11 C-tier · 6 D-tier · 5 E-tier · 1 knowledge-base — tiered by the objective [ranking rubric](./RANKING-RUBRIC.md) |
-| **MCP Servers** | **15+** | 500+ total tools across intelligence, memory, media, and life-ops |
+| **Active Projects** | **36** | 2 S-tier · 11 A-tier · 10 B-tier · 5 C-tier · 1 D-tier · 1 knowledge-base · 6 websites (separate category) — tiered by the objective [ranking rubric](./RANKING-RUBRIC.md) |
+| **MCP Servers** | **20+** | 800+ total tools across intelligence, memory, media, social, and life-ops |
 | **Rust Crates** | **40+** | Multi-crate workspaces powering `scorestrata`, `mindstrata`, `tdg-rust`, `igs-rust`, `automaton` |
-| **Lines of Code** | **1.6M+** | Sum of source across all projects (Rust, TypeScript, Python, Go, Kotlin) |
-| **Automated Tests** | **11,000+** | Heavy deterministic test suites: `operant` (8,500+), `mindstrata` (1,238), `scorestrata` (944), `tdg-rust` (626) |
+| **Lines of Code** | **2.2M+** | Machine-counted tracked source across all projects (Rust, TypeScript, Python, Go, Kotlin) |
+| **Automated Tests** | **30,000+** | Machine-counted test markers: `operant` (9,240), `holosim` (7,766), `mindstrata` (1,238), `linkedin-lyr` (1,166) |
 | **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler |
 | **Production Runtime** | **<10MB** | Stripped static musl Rust binaries with minimal idle RSS, zero dynamic dependencies |
 
@@ -214,16 +214,16 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 |------|-------|---------|-------------|
 | **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** | Python | 56 Tools | Dense Reddit scraping, analysis, and interaction CLI |
 | **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** | Python | 42 Tools | Agent-native X/Twitter integration handling DMs, media, and search |
-| **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** | Python | 24 Tools | Stealth profile reconnaissance and HTTPX-based media scraper |
-| **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** | Python | 18 Tools | Professional profile extraction and company intelligence scraping |
-| **[facebook-lyr](https://github.com/ishan-parihar/facebook-lyr)** | Python | — | Facebook / Messenger MCP server via cookie-based scraping |
-| **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)** | Python | — | Threads.net MCP server via anonymous scraping |
-| **[discord-cli](https://github.com/ishan-parihar/discord-cli)** | Python | — | Local-first Discord data CLI (SQLite sync, search, analytics) |
-| **[tg-cli](https://github.com/ishan-parihar/tg-cli)** | Python | — | Fast Telethon-powered Telegram messaging automation client |
+| **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** | Python | 47 Tools | Stealth profile reconnaissance and HTTPX-based media scraper |
+| **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** | Python | 25 Tools | Professional profile extraction and company intelligence scraping |
+| **[facebook-lyr](https://github.com/ishan-parihar/facebook-lyr)** | Python | 41 Tools | Facebook / Messenger MCP server via cookie-based scraping |
+| **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)** | Python | 3 Tools | Threads.net MCP server via anonymous scraping |
+| **[discord-cli](https://github.com/ishan-parihar/discord-cli)** | Python | 13 Tools | Local-first Discord data CLI (SQLite sync, search, analytics) |
+| **[tg-cli](https://github.com/ishan-parihar/tg-cli)** | Python | 12 Tools | Fast Telethon-powered Telegram messaging automation client |
 | **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** | Python | 6 Tools | AXI-compliant structured image overlay and meme generator |
 | **[obscura-core](https://github.com/ishan-parihar/obscura-core)** | Python | 8 Tools | Stealth browser integration: cookie vault + CDP daemon powering the lyr family |
 
-### Production Websites & Portfolios
+### Portfolios & Web User Interfaces (Separate Category — not tiered)
 
 | Platform | Tech Stack | Architecture & Operational Details |
 |----------|------------|-----------------------------------|
@@ -249,82 +249,73 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 
 > 🔒 = private repository — **available on request**. Contact me for access.
 
-> **Tiers are scored objectively** — see [RANKING-RUBRIC.md](./RANKING-RUBRIC.md) for the six weighted criteria (scale, tests, CI, releases, velocity, agent surface), the measured dataset, and the reproducible `scripts/rank_score.py` engine.
+> **Tiers are scored objectively** — see [RANKING-RUBRIC.md](./RANKING-RUBRIC.md) for the
+> **eight weighted criteria** (scale, tests, architectural complexity, CI, releases, velocity,
+> agent surface, utility & ecosystem), the machine-measured dataset, the documented cap
+> policy (§7), and the reproducible `scripts/rank_score.py` engine + `scripts/measure_repos.py`
+> measurement tool. Scores are re-audited after every release/test/CI milestone.
 
 <details>
 <summary><b>🚀 S-TIER: Flagship Systems — Score ≥ 8.0 (2 Projects)</b></summary>
 <br>
 
-* **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `9.13`: High-speed news ingestion pipeline. ~7MB binary, ~5MB RSS, 411 sources in 47 countries, 91 MCP tools, 15 releases.
-* **[operant](https://github.com/ishan-parihar/operant)** `9.00`: Multi-agent C-suite orchestrator. 537K LOC, 8,581 tests, 18 crates, 4 CI workflows, systemd process isolation, 3 releases.
+* **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `8.96`: High-speed news ingestion pipeline. ~7MB binary, ~5MB RSS, 411 sources in 47 countries, 91 MCP tools, 15 releases, 432-line README.
+* **[operant](https://github.com/ishan-parihar/operant)** `8.72`: Multi-agent C-suite orchestrator. 538K LOC, 9,240 tests, 20 crates, 4 CI workflows, systemd process isolation, 3 releases.
 
 </details>
 
 <details>
-<summary><b>🧠 A-TIER: Production-Grade Engines — Score 6.5–7.99 (8 Projects)</b></summary>
+<summary><b>🧠 A-TIER: Production-Grade Engines — Score 6.5–7.99 (11 Projects)</b></summary>
 <br>
 
-* **[social-forge](https://github.com/ishan-parihar/social-forge)** `7.93` (0.07 from S): 95K LOC across 9 networks. Needs test density — only 51 tests for its size.
-* **[scorestrata](https://github.com/ishan-parihar/scorestrata)** `7.75` (0.25 from S): WAV music compiler. 944 tests, 88 MCP tools, 73K LOC in 9 days. First release + 2nd CI workflow = S.
-* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `7.70` (0.30 from S): Teleological developmental graph memory. 626 tests, 36 MCP tools, 10 releases. Missing CI entirely.
-* **[mysterium](https://github.com/ishan-parihar/mysterium)** `7.40`: Education-system replacement — 64-cell developmental matrix, holonic curriculum. 806 tests.
-* **[openscript](https://github.com/ishan-parihar/openscript)** `7.38`: Agent-directed video editing pipeline. 43 MCP tools, Hinglish Whisper transcription.
-* **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** `7.29`: Browserless carousel factory. 46 slide types, embedded Blitz renderer, 185 tests.
-* **[automaton](https://github.com/ishan-parihar/automaton)** `6.92`: Graph-native automation substrate. 15 Rust crates, 38 MCP tools. Needs velocity + releases.
-* **[mindstrata](https://github.com/ishan-parihar/mindstrata)** `6.75`: Deterministic emergent society simulation. 75K LOC, 1,238 tests. Simulator — no MCP surface; needs a CLI/API surface.
+* **[social-forge](https://github.com/ishan-parihar/social-forge)** `7.90` (0.10 from S): 78K LOC across 9 networks. Extreme velocity (477 commits/90d). Needs test density (257 tests for its size) to reach S.
+* **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** `7.59`: Professional profile extraction + Voyager profile-edit surface. 1,166 tests, 25 MCP tools, 94 releases, 4 CI workflows.
+* **[openscript](https://github.com/ishan-parihar/openscript)** `7.40`: Agent-directed video editing pipeline. 43 MCP tools, 505 tests, Hinglish Whisper transcription.
+* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `7.34`: Teleological developmental graph memory. 637 tests, 36 MCP tools, 10 releases. Adding CI = S.
+* **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** `7.33`: Browserless carousel factory. 46 slide types, embedded Blitz renderer, 196 tests, 6 releases.
+* **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** `7.28`: Agent-native X/Twitter integration. 243 tests, 42 tools, 32 releases, 2 CI workflows.
+* **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `7.09`: Multi-agent daemon + bundled LifeOS MCP server (35 tools, Postgres/Drizzle). 555 tests, 3 releases — velocity (5 commits/90d) is the only drag.
+* **[scorestrata](https://github.com/ishan-parihar/scorestrata)** `6.98`: WAV music compiler. 944 tests, 88 MCP tools, 73K LOC in 8 days. A v0.x release + 2nd CI = S.
+* **[mysterium](https://github.com/ishan-parihar/mysterium)** `6.89`: Education-system replacement — 64-cell developmental matrix, holonic curriculum. 1,090 tests.
+* **[automaton](https://github.com/ishan-parihar/automaton)** `6.79`: Graph-native automation substrate. 17 Rust crates, 38 MCP tools. Needs velocity + releases.
+* **[facebook-lyr](https://github.com/ishan-parihar/facebook-lyr)** `6.78`: Facebook / Messenger MCP server. 229 tests, 41 tools, 7 days old — will climb fast.
 
 </details>
 
 <details>
-<summary><b>📡 B-TIER: Solid Utilities — Score 5.0–6.49 (3 Projects)</b></summary>
+<summary><b>📡 B-TIER: Solid Utilities — Score 4.5–6.49 (10 Projects)</b></summary>
 <br>
 
-* **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `6.38` (0.12 from A): Multi-agent daemon + bundled LifeOS MCP server (35 tools, Postgres/Drizzle). 339 tests, 3 releases — only drag is velocity (3 commits/90d).
-* **[andrometry](https://github.com/ishan-parihar/andrometry)** `5.99`: Personal context engine — Kotlin Android collector with a Go MCP server. 14 days old; will climb with releases.
-* **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** `5.96`: Forced cognitive mode engine implementing 13 analysis frameworks. 96 tests. Needs velocity.
+* **[andrometry](https://github.com/ishan-parihar/andrometry)** `6.48` (0.02 from A): Personal context engine — Kotlin Android collector with a Go MCP server. 367 tests, 13 days old.
+* **[tg-cli](https://github.com/ishan-parihar/tg-cli)** `6.25`: Fast Telethon-powered Telegram automation client. 122 tests, 14 releases, 2 CI workflows.
+* **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** `6.13`: Stealth Instagram profile scraper. 335 tests, 47 tools. Releases (0) are the gap.
+* **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** `5.71`: Forced cognitive mode engine implementing 13 analysis frameworks. 247 tests, 2 CI workflows.
+* **[mindstrata](https://github.com/ishan-parihar/mindstrata)** `5.43`: Deterministic emergent society simulation. 82K LOC, 1,238 tests. Simulator — no agent surface; needs a CLI/API + release.
+* **[discord-cli](https://github.com/ishan-parihar/discord-cli)** `5.42`: Local-first Discord data CLI (SQLite sync, search, analytics). 10 releases, 2 CI workflows.
+* **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** `5.39`: Unified CLI + MCP server for Notion-based LifeOS. 31 tools, 10 releases — but **zero automated tests** across 18K Rust LOC (biggest test gap in the portfolio).
+* **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** `5.17`: Comprehensive Reddit scraper with 56 distinct operational tools. 24 tests, 1 CI workflow.
+* **[obscura-core](https://github.com/ishan-parihar/obscura-core)** `4.85`: Shared cookie-vault + CDP daemon powering the lyr family — highest cross-repo in-degree in the portfolio (4 dependents).
+* **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)** `4.67`: Threads.net MCP server. 31 tests, 1 day old — youngest repo in the portfolio.
 
 </details>
 
 <details>
-<summary><b>🧰 C-TIER: Agent-Native Platform CLIs — `-lyr` / `-cli` & Obscura (11 Projects)</b></summary>
+<summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (5 Projects)</b></summary>
 <br>
 
-* **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** `4.89`: Unified CLI + MCP server for Notion-based LifeOS. 31 tools, 10 releases — but **zero automated tests** across 15K Rust LOC (biggest test gap in the portfolio).
-* **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)**: Comprehensive Reddit scraper with 56 distinct operational tools.
-* **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)**: Fully structured X/Twitter API client for autonomous agent scripts.
-* **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)**: Stealth Instagram profile scraper and media downloader.
-* **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)**: LinkedIn corporate scraping and professional intelligence pipeline.
-* **[facebook-lyr](https://github.com/ishan-parihar/facebook-lyr)**: Local-first automation script managing basic Facebook posts.
-* **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)**: Read-only client interacting with Meta Threads endpoints.
-* **[discord-cli](https://github.com/ishan-parihar/discord-cli)**: Local data collector parsing Discord channels and export metrics.
-* **[tg-cli](https://github.com/ishan-parihar/tg-cli)**: Fast Telethon-powered Telegram messaging automation client.
-* **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)**: AXI-compliant image canvas manager placing dynamic content overlays.
-* **[obscura-core](https://github.com/ishan-parihar/obscura-core)**: Local daemon synchronizing browser session cookies for the lyr family.
+* **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `6.26` (capped): Modular sandbox testing raw agent behaviors (Codename: Project Chimera). Cap: experimental flag — promote via release + agent surface. 🔒
+* **[icode](https://github.com/ishan-parihar/icode)** `5.72` (capped): Rust command runner parsing agent file edit logs (Archived). Cap: deprecated — not promotable while inactive.
+* **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)** `5.52` (capped): Math simulator tracking emergent agent interactions. 489K LOC, 7,766 tests. Cap: experimental flag — promote via release + agent surface.
+* **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)** `4.03` (capped): Audio pipeline compiling dynamic background sounds. 158 tests. Cap: experimental flag.
+* **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** `3.43`: AXI-compliant image canvas manager placing dynamic content overlays. Smallest repo (899 LOC, 0 tests).
 
 </details>
 
 <details>
-<summary><b>🌐 D-TIER: Portfolios & Web User Interfaces (6 Projects)</b></summary>
+<summary><b>📉 D-TIER: Minimal / Stalled (1 Project)</b></summary>
 <br>
 
-* 🔒 **[ishanparihar-svelte](https://github.com/ishan-parihar/ishanparihar-svelte)**: SvelteKit 5 platform managing MDX blogs and Razorpay payments.
-* 🔒 **[law-of-one-india-website](https://github.com/ishan-parihar/law-of-one-india-website)**: Publishing platform handling community user management.
-* 🔒 **[design-aesthetics-website](https://github.com/ishan-parihar/design-aesthetics-website)**: Architectural visual landing page. GSAP animations, Three.js shaders.
-* 🔒 **[lifeos-website](https://github.com/ishan-parihar/lifeos-website)**: Technical marketing page and documentation outline for LifeOS.
-* 🔒 **[webdev-portfolio](https://github.com/ishan-parihar/webdev-portfolio)**: Fast freelance conversion page showcasing web design.
-* 🔒 **[ishanparihar-cms](https://github.com/ishan-parihar/ishanparihar-cms)**: Web backend exposing 60+ CMS tools for content management.
-
-</details>
-
-<details>
-<summary><b>🧪 E-TIER: Utilities & Experimental Prototypes (5 Projects)</b></summary>
-<br>
-
-* **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)**: Audio pipeline compiling dynamic background sounds.
-* **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)**: Math simulator tracking emergent agent interactions.
-* 🔒 **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)**: Modular sandbox testing raw agent behaviors (Codename: Project Chimera).
-* 🔒 **[lifeos-saas](https://github.com/ishan-parihar/lifeos-saas)**: Agent hosting stack containing NullClaw, Honcho, and Postgres.
-* **[icode](https://github.com/ishan-parihar/icode)**: Rust command runner parsing agent file edit logs (Archived).
+* 🔒 **[lifeos-saas](https://github.com/ishan-parihar/lifeos-saas)** `2.60`: Agent hosting stack (NullClaw, Honcho, Postgres). 760 LOC, 0 tests.
 
 </details>
 
@@ -335,6 +326,20 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[HoloOS](https://github.com/ishan-parihar/HoloOS)**: Enterprise systems modeling & topological risk — a knowledge/spec corpus (14K YAML + 1.2K MD, 98 executable Python files) rather than a verified software project. Re-labeled per RANKING-RUBRIC §7 (spec repos are not ranked against executable-engine criteria). **0 tests, 0 CI, 0 tools** — needs engineering verification before it can be tiered.
 
 </details>
+
+---
+
+### 🌐 Portfolios & Web User Interfaces (Separate Category — 6 Projects)
+
+> Websites and portfolios are **not ranked** against the software-engineering rubric — they are
+> delivery artifacts, not repos, and belong to their own category. See the ecosystem table above.
+
+* 🔒 **[ishanparihar-svelte](https://github.com/ishan-parihar/ishanparihar-svelte)**: SvelteKit 5 platform managing MDX blogs and Razorpay payments.
+* 🔒 **[law-of-one-india-website](https://github.com/ishan-parihar/law-of-one-india-website)**: Publishing platform handling community user management.
+* 🔒 **[design-aesthetics-website](https://github.com/ishan-parihar/design-aesthetics-website)**: Architectural visual landing page. GSAP animations, Three.js shaders.
+* 🔒 **[lifeos-website](https://github.com/ishan-parihar/lifeos-website)**: Technical marketing page and documentation outline for LifeOS.
+* 🔒 **[webdev-portfolio](https://github.com/ishan-parihar/webdev-portfolio)**: Fast freelance conversion page showcasing web design.
+* 🔒 **[ishanparihar-cms](https://github.com/ishan-parihar/ishanparihar-cms)**: Web backend exposing 60+ CMS tools for content management.
 
 ---
 
