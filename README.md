@@ -158,7 +158,7 @@ A lightweight news and data ingestion pipeline scraping 411 distinct sources acr
 A Rust backend with an axum REST API + rmcp MCP server, JWT auth, SSE realtime, and an in-process scheduler for cross-platform social content operations — Reddit, LinkedIn, Instagram, Telegram, Threads, Facebook, YouTube, Discord, and X/Twitter.
 
 ### 🧠 [mindstrata](https://github.com/ishan-parihar/mindstrata)
-**Deterministic emergent human-society simulation — every agent a complete mind.** Rust. 75K LOC, 1,238 tests.
+**Deterministic emergent human-society simulation — every agent a complete mind.** Rust. 82K LOC, 1,238 tests.
 
 Not just a "society sim": a full cognitive-science stack — bodies, nervous systems, appraisal-based emotion, belief systems, social bonds, institutions, culture, and noospheric fields. Three architecture plans (AP1 → AP2 → AP3) deepen it from a medieval settlement into a multi-scale civilization simulation where history always emerges from locally bounded agents.
 
@@ -168,7 +168,7 @@ Not just a "society sim": a full cognitive-science stack — bodies, nervous sys
 High-quality Instagram / LinkedIn / TikTok / X carousels as HTML → PNG via an embedded Blitz renderer — **no Chromium, no browser, no screenshot hacks**. 4.5× less memory than headless-Chrome pipelines, fully static musl binary, WCAG-AA contrast auditing, and an MCP server for AI-driven generation.
 
 ### 🤖 [operant](https://github.com/ishan-parihar/operant)
-**Multi-agent corporate runtime with LanceDB memory & systemd process isolation.** Rust. 8,500+ tests.
+**Multi-agent corporate runtime with LanceDB memory & systemd process isolation.** Rust. 9,200+ tests.
 
 An operational multi-agent runtime containing specialized roles (CFO, COO, CRO, CMO) that communicate with prioritized escalation logic, track long-term tasks on active Kanban boards, and maintain deep context across reboots.
 
@@ -268,7 +268,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <br>
 
 * **[operant](https://github.com/ishan-parihar/operant)** `8.72`: Multi-agent C-suite orchestrator. 538K LOC, 9,240 tests, 20 crates, 4 CI workflows, systemd process isolation, 3 releases.
-* **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `8.07`: High-speed news ingestion pipeline. ~7MB binary, ~5MB RSS, 411 sources in 47 countries, 91 MCP tools, 15 releases, 432-line README.
+* **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `8.07`: High-speed news ingestion pipeline. ~7MB binary, ~5MB RSS, 411 sources in 47 countries, 91 MCP tools, 15 releases.
 
 </details>
 
@@ -279,7 +279,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[social-forge](https://github.com/ishan-parihar/social-forge)** `7.90` (0.10 from S): 78K LOC across 9 networks. Extreme velocity (478 commits/90d). Needs test density (257 tests for its size) to reach S.
 * **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** `7.59`: Professional profile extraction + Voyager profile-edit surface. 1,166 tests, 25 MCP tools, 94 releases, 4 CI workflows.
 * **[openscript](https://github.com/ishan-parihar/openscript)** `7.40`: Agent-directed video editing pipeline. 43 MCP tools, 510 tests, Hinglish Whisper transcription.
-* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `7.34`: Teleological developmental graph memory. 637 tests, 36 MCP tools, 10 releases. Needs CI + README depth for S.
+* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `7.34`: Teleological developmental graph memory. 637 tests, 36 MCP tools, 10 releases. Needs a second CI workflow for S.
 * **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** `7.28`: Agent-native X/Twitter integration. 243 tests, 42 tools, 32 releases, 2 CI workflows.
 * **[mysterium](https://github.com/ishan-parihar/mysterium)** `7.19`: Education-system replacement — 64-cell developmental matrix, holonic curriculum. 1,090 tests.
 * **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `7.09`: Multi-agent daemon + bundled LifeOS MCP server (35 tools, Postgres/Drizzle). 555 tests, 3 releases — velocity (5 commits/90d) is the only drag.

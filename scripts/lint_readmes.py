@@ -306,6 +306,41 @@ def check_stray_markdown(text: str) -> list[str]:
 # --------------------------------------------------------------------------
 # Engine
 # --------------------------------------------------------------------------
+PROFILE_REPO = "ishan-parihar"
+
+# Profile-specific checks (the profile is a landing page, not a project):
+# S07's badge-row rules (LOC/License/Status) don't apply; emoji headings are the
+# profile's deliberate design language. Weighted identically (sum 12.0).
+def profile_checks(_repo_dir: Path, text: str, readme_path: Path) -> list[tuple[str, list[str]]]:
+    # "first screen" = everything before the first H2 heading (the hero + intro
+    # block), not a fixed line window — profiles carry large SVG heroes.
+    first_h2 = text.find("\n## ")
+    head = text if first_h2 < 0 else text[:first_h2]
+    out = [
+        ("P01", [] if re.search(r"<svg|<img|T2I HERO SPEC", head) else
+         ["no hero (SVG/T2I spec) on the first screen"]),
+        ("P02", [] if re.search(r"Agent Engineer|Engineer|Developer|Architect|Builder|Systems", head) else
+         ["no role/value line on the first screen"]),
+        ("P03", [] if ("mailto:" in head or "linkedin.com" in head or
+                        "http" in head) else ["no contact link on the first screen"]),
+        ("P04", [] if re.search(r"[Aa]vailable|[Hh]ire|[Cc]ontact|[Bb]ook", text) else
+         ["no engagement CTA (hire/contact/book)"]),
+        ("P05", [] if ("Complete Project Catalog" in text and "RANKING-RUBRIC" in text) else
+         ["catalog + rubric link missing"]),
+        ("P06", [] if re.search(r"S-TIER.*\d+ Projects|A-TIER.*\d+ Projects|B-TIER.*\d+ Projects",
+                                 text, re.I) else
+         ["tier catalog missing"]),
+        ("P07", check_support(text)),
+        ("P08", [] if len(text.splitlines()) <= MAX_LINES else
+         [f"{len(text.splitlines())} lines > {MAX_LINES}"]),
+        ("P09", audit_images(readme_path)),
+        ("P10", check_placeholders(text)),
+        ("P11", check_stray_markdown(text)),
+        ("P12", check_first_screen(text)),
+    ]
+    return out
+
+
 def lint_repo(repo: str, ports: Path, loc_map: dict[str, int]) -> dict:
     repo_dir = ports / repo
     readme_path = repo_dir / "README.md"
@@ -320,27 +355,32 @@ def lint_repo(repo: str, ports: Path, loc_map: dict[str, int]) -> dict:
     deprecated = is_deprecated(repo, text)
     result["deprecated"] = deprecated
 
-    low_loc = loc_map.get(repo, 0) < MIN_LOC_FOR_BADGE
-    checks: list[tuple[str, list[str]]] = [
-        ("S01", check_support(text)),
-        ("S02", check_loc_sync(repo, text, loc_map, ports)),
-        ("S03", check_first_screen(text)),
-        ("S04", audit_images(readme_path)),
-        ("S05", check_placeholders(text)),
-        ("S06", check_ci_badge(repo_dir, text)),
-        ("S07", check_badge_row(text, skip_loc=low_loc)),
-        ("S09", check_emoji_headings(text)),
-        ("S10", check_contrib_changelog(text)),
-        ("S11", check_t2i_top(text)),
-        ("S12", check_stray_markdown(text)),
-    ]
-    if len(text.splitlines()) > MAX_LINES:
-        checks.append(("S08", [f"{result['lines']} lines > {MAX_LINES} (S08)"]))
+    if repo == PROFILE_REPO:
+        checks = profile_checks(repo_dir, text, readme_path)
+    else:
+        low_loc = loc_map.get(repo, 0) < MIN_LOC_FOR_BADGE
+        checks: list[tuple[str, list[str]]] = [
+            ("S01", check_support(text)),
+            ("S02", check_loc_sync(repo, text, loc_map, ports)),
+            ("S03", check_first_screen(text)),
+            ("S04", audit_images(readme_path)),
+            ("S05", check_placeholders(text)),
+            ("S06", check_ci_badge(repo_dir, text)),
+            ("S07", check_badge_row(text, skip_loc=low_loc)),
+            ("S09", check_emoji_headings(text)),
+            ("S10", check_contrib_changelog(text)),
+            ("S11", check_t2i_top(text)),
+            ("S12", check_stray_markdown(text)),
+        ]
+        if len(text.splitlines()) > MAX_LINES:
+            checks.append(("S08", [f"{result['lines']} lines > {MAX_LINES} (S08)"]))
 
     earned = 0.0
     for code, issues in checks:
         if not issues:
-            earned += WEIGHTS[code]
+            # Profile checks (P01..P12) default to weight 1.0; project checks
+            # use their SXX weights.
+            earned += WEIGHTS.get(code, 1.0)
             continue
         # S04 (broken images) and S05 (leaked placeholders) are hard errors
         # everywhere. For deprecated repos everything else is advisory.
