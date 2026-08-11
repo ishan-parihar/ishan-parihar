@@ -125,18 +125,20 @@ misrepresents the repo today · **LOW** = numeric drift.
   discord-cli, tg-cli, lifeos-bot, lifeos-ops, obscura-core, hermes-prime-bridge, meme-lyr,
   kali-mahabali (Chimera), icode/osint-os/cinesync/workout-factory (deprecated banners) all match.
 
-### 2.4 Missing local checkouts (numbers unverifiable)
+### 2.4 Local checkouts (corrected 2026-08-12 — see AUDIT-HOLOOS-KOSMOS-SOVEREIGN.md)
 
 | Catalog entry | Local state | Impact |
 |---|---|---|
 | osint-os | `EXPERIMENTAL/osint-os (Deprecated⁄Inactive)` — measured above | verified in this audit (see §2.2) |
 | cinesync | `CONTENT-CREATION/cinesync (Deprecated⁄Inactive)` — 11,336 code LOC · 2 CI ✓ | ✓ |
 | workout-factory | `EXPERIMENTAL/workout-factory (Deprecated⁄Inactive)` — 9,404 code LOC · 1 CI | ✓ |
-| sovereign | **no repo checked out** (only an unrelated `src/lib/utils/sovereign` folder inside ishanparihar-svelte) | unverifiable |
-| HoloOS | **no repo checked out** (only the `02-holoos-salon` initiative folder) | unverifiable |
+| sovereign | `EXPERIMENTAL/sovereign (Deprecated⁄Inactive)` — found + cloned + tested (see new audit) | ✓ verified: 9,404 LOC · 30 tests · not runnable out of the box |
+| HoloOS | `~/Documents/HoloOS` — lives OUTSIDE `MY-PROJECTS` (standalone in `~/Documents`) | ✓ verified: 14,144 yaml · 1,191 md · 98 py · 448 test markers |
 
-`measure_repos.py` reports these as NO-DIR, so the profile's headline aggregates
-(2.38M LOC / 31,340 tests) structurally **exclude** osint-os + cinesync + workout-factory + sovereign + HoloOS.
+`measure_repos.py` does NOT include these (HoloOS is outside the manifest scope;
+sovereign is under `EXPERIMENTAL/`), so the profile's headline aggregates
+(2.38M LOC / 31,340 tests) structurally exclude sovereign + HoloOS — plus the unrelated
+`KosmOS` vault (1,054 commits, 1,520 passing tests) which is absent from the catalog entirely.
 
 ---
 
