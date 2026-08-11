@@ -23,6 +23,13 @@ All values are measured from the live git worktrees (no self-reports):
                package.json/Makefile/install.sh/Dockerfile)
   - docs:      1 if a docs/ directory exists
 
+First-party rule (2026-08-11): vendored/embedded third-party code is excluded
+from every metric. These are identical copies maintained inside multiple
+portfolio repos (e.g. crates/toon-helper vendored into automaton,
+social-forge, tdg-rust). Counting them would (a) double-count the same code
+across the portfolio and (b) pollute the in-degree signal with sibling-name
+mentions that live in the vendored copy, not the repo's own code.
+
 Usage:
   python3 scripts/measure_repos.py > /tmp/measured.csv
   # then fold the numbers into the DATA table of scripts/rank_score.py
@@ -77,13 +84,11 @@ REPOS = [
     # engines added in the 2026-08-11 full-coverage pass
     ("browsefleet",            "browsefleet", "engine"),
     ("hermes-prime-bridge",    "hermes-prime-bridge", "engine"),
-    ("toon-helper",            "MCP-AND-CLIS/toon-helper", "engine"),
     ("lifeos-bot",             "LIFEOS/lifeos-bot", "engine"),
     # utility/private
     ("lifeos-saas",            "LIFEOS/lifeos-saas", "engine"),
     # deprecated / inactive (capped at C by policy)
     ("cinesync",               "CONTENT-CREATION/cinesync (Deprecated\u2044Inactive)", "deprecated"),
-    ("open-claude",            "DEVELOPER-TOOLS (Deprecated\u2044Inactive)/open-claude", "deprecated"),
     ("osint-os",               "EXPERIMENTAL/osint-os (Deprecated\u2044Inactive)", "deprecated"),
     ("sovereign",              "EXPERIMENTAL/sovereign (Deprecated\u2044Inactive)", "deprecated"),
     ("workout-factory",        "EXPERIMENTAL/workout-factory (Deprecated\u2044Inactive)", "deprecated"),
@@ -109,6 +114,16 @@ DATA_DIR_RE = re.compile(
     r"srt-word|meditation-repo|references|datasets?|static|public|golden|"
     r"golden-runs)/", re.IGNORECASE,
 )
+# Vendored/embedded third-party code — excluded from ALL metrics (first-party
+# rule). Keep this list explicit and event-driven: add a path pattern ONLY when
+# a shared library is actually vendored into a portfolio repo (as toon-helper
+# was on 2026-08-11), so the identical copy is not counted N times and does not
+# leak sibling-name references into the in-degree scan. Do NOT add generic
+# dirs like vendor/ or third_party/ — several repos track real code there and
+# silently excluding it would change unrelated measurements.
+VENDORED_DIR_RE = re.compile(r"(^|/)crates/toon-helper/")
+# (igs-rust/last30days-skill is excluded at ranking time — it is a nested repo,
+#  not tracked code, so it needs no pattern here.)
 TEST_PATTERNS = {
     ".rs": [re.compile(r"#\[(tokio::)?test\]")],
     ".py": [re.compile(r"\bdef test_")],
@@ -145,7 +160,7 @@ def measure(name, relpath, category):
     files = sh(repo_dir, "git ls-files")
     if not files:
         return (name, category, "NO-TRACKED", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-    flist = [f for f in files.split("\n") if f]
+    flist = [f for f in files.split("\n") if f and not VENDORED_DIR_RE.search(f)]
     loc_code = 0
     test_hits = 0
     langs = set()

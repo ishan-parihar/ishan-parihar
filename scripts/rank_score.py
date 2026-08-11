@@ -21,6 +21,11 @@ Cap rules (documented, transparent — see RANKING-RUBRIC.md §7):
     flags; promotion requires reactivation + release + agent surface). The cap is a
     ceiling: a near-zero deprecated repo keeps its natural (lower) tier.
   - 'site' and 'kb' categories are excluded from ranking entirely.
+  - FIRST-PARTY RULE (2026-08-11): metrics measure the repo's own code only.
+    Vendored copies (e.g. crates/toon-helper, vendored into automaton,
+    social-forge, tdg-rust on 2026-08-11) are excluded by measure_repos.py —
+    otherwise the same code is counted N times and its sibling-name mentions
+    leak into the in-degree scan.
   - NOT RANKED (excluded, documented 2026-08-11):
       * hermes-agent, hermes-agent-ultra, zeroclaw — forks of other orgs'
         projects (nousresearch / sheawinkler / zeroclaw-labs), not original work
@@ -50,13 +55,13 @@ import sys
 DATA = [
     # --- engines -----------------------------------------------------------
     ("igs-rust",           "engine",     27912,  242,   2, 2, 198, 15,  96, 2, 500, 91, 3, 432, 1, 1),
-    ("social-forge",       "engine",     77836,  257,   3, 2, 477,  2,  96, 5, 500, 43, 0, 554, 1, 1),
+    ("social-forge",       "engine",     77836,  257,   3, 2, 478,  2,  96, 5, 500, 43, 0, 554, 1, 1),
     ("operant",            "engine",    537854, 9240,  20, 4, 758,  3, 116, 6, 500, 30, 3, 205, 1, 1),
     ("scorestrata",        "engine",     72958,  944,  12, 1,  97,  0,   8, 2,   0, 88, 0, 158, 1, 1),
     ("mindstrata",         "engine",     81638, 1238,   8, 1, 481,  0,  14, 1,   0,  0, 0, 169, 1, 1),
-    ("tdg-rust",           "engine",     47797,  637,   1, 1, 144, 10,  54, 3, 268, 36, 0, 225, 1, 1),
+    ("tdg-rust",           "engine",     47797,  637,   1, 1, 145, 10,  54, 3, 268, 36, 1, 225, 1, 1),
     ("slideforge-rust",    "engine",     35805,  196,   3, 1, 203,  6,  42, 3,  74,  8, 3, 346, 1, 1),
-    ("automaton",          "engine",     13410,   43,  17, 2,  15,  1,  96, 2, 500, 38, 0, 380, 1, 1),
+    ("automaton",          "engine",     13410,   43,  17, 2,  16,  1,  96, 2, 500, 38, 0, 380, 1, 1),
     ("openscript",         "engine",     72430,  505,  12, 2, 456,  0, 128, 5, 500, 43, 0, 185, 1, 1),
     ("mysterium",          "engine",     61428, 1090,   1, 2, 463,  0,  85, 4, 281,  0, 1, 585, 1, 1),
     ("andrometry",         "engine",     25442,  367,   1, 1, 134,  0,  13, 4, 216, 12, 0, 449, 0, 1),
@@ -82,11 +87,9 @@ DATA = [
     # --- engines added in the 2026-08-11 full-coverage pass -----------------
     ("browsefleet",        "engine",      4254,   50,  4, 5,  28,  2, 130, 4, 219,  0, 0, 282, 1, 1),
     ("hermes-prime-bridge","engine",       919,   14,  0, 1,  22,  0,   4, 2,   1,  0, 0, 162, 1, 1),
-    ("toon-helper",        "engine",       174,   11,  1, 1,  10,  0,  21, 1,   0,  0, 2, 106, 1, 0),
     ("lifeos-bot",         "engine",     11857,   17,  0, 1,  15,  0,  61, 2, 397,  0, 0, 107, 1, 1),
     # --- deprecated / inactive (capped at C by policy) -----------------------
     ("cinesync",           "deprecated", 13744,   16,  2, 2,   3,  0, 298, 4,  23,  0, 0, 150, 1, 1),
-    ("open-claude",        "deprecated", 48038, 1053,  5, 1,   2,  0, 125, 1, 500,  0, 0,  99, 1, 1),
     ("osint-os",           "deprecated",120754,  399,  1, 1,   2,  0, 405, 4, 500,  0, 1, 469, 1, 1),
     ("sovereign",          "deprecated",  9417,   30,  0, 1,   2,  0, 262, 2,   7,  0, 1, 161, 0, 1),
     ("workout-factory",    "deprecated",  9417,   30,  0, 1,   3,  0, 262, 2,   7,  0, 0, 192, 0, 1),
