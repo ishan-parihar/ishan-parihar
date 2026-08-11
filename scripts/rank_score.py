@@ -37,6 +37,8 @@ Cap rules (documented, transparent — see RANKING-RUBRIC.md §7):
         MCP-AND-CLIS/z.archive/*, webdev-portfolio/my-portfolio
       * tdg — made private on GitHub and removed from the local portfolio
         (2026-08-11); tdg-rust is the canonical TDG project
+      * sovereign — made private + archived on GitHub and removed from the
+        local portfolio (2026-08-12); succeeded by lifeos-ops / lifeos-saas
 
 Usage:  python3 scripts/rank_score.py [--all]
 Regenerate the dataset with:  python3 scripts/measure_repos.py
@@ -93,7 +95,6 @@ DATA = [
     # --- deprecated / inactive (capped at C by policy) -----------------------
     ("cinesync",           "deprecated", 13744,   16,  2, 2,   3,  0, 298, 4,  23,  0, 0, 150, 1, 1),
     ("osint-os",           "deprecated",120754,  399,  1, 1,   2,  0, 406, 4, 500,  0, 0, 469, 1, 1),
-    ("sovereign",          "deprecated",  9417,   30,  0, 1,   2,  0, 262, 2,   7,  0, 1, 161, 0, 1),
     ("workout-factory",    "deprecated",  9417,   30,  0, 1,   3,  0, 262, 2,   7,  0, 0, 192, 0, 1),
     # --- unranked: utility/private ------------------------------------------
     ("lifeos-saas",        "engine",       760,    0,  0, 1,   4,  0,  97, 2,  15,  0, 0, 277, 1, 1),

@@ -91,7 +91,6 @@ REPOS = [
     # deprecated / inactive (capped at C by policy)
     ("cinesync",               "CONTENT-CREATION/cinesync (Deprecated\u2044Inactive)", "deprecated"),
     ("osint-os",               "EXPERIMENTAL/osint-os (Deprecated\u2044Inactive)", "deprecated"),
-    ("sovereign",              "EXPERIMENTAL/sovereign (Deprecated\u2044Inactive)", "deprecated"),
     ("workout-factory",        "EXPERIMENTAL/workout-factory (Deprecated\u2044Inactive)", "deprecated"),
     # (tdg — removed from portfolio 2026-08-11: made private on GitHub, local
     #  folder deleted; tdg-rust is the canonical TDG project)
@@ -252,7 +251,7 @@ def main():
         rows.append(r)
     if want_total:
         # Portfolio-scope totals — the exact numbers behind the profile README's
-        # headline metrics. Scope is REPOS above (the 42 ranked portfolio repos;
+        # headline metrics. Scope is REPOS above (the 41 ranked portfolio repos;
         # upstream forks and nested repos are excluded by manifest design).
         n = loc = tests = mods = ci = tags = tools = indegree = 0
         for r in rows:

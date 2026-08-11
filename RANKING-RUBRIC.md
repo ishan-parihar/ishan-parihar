@@ -163,7 +163,6 @@ and cross-repo in-degree. **No self-reported numbers.**
 | lifeos-bot | engine | 12,009 | 33 | 0 | 2 | 16 | 1 | 61 | 2 | 0 | 0 |
 | cinesync | deprecated | 13,744 | 16 | 2 | 2 | 3 | 0 | 298 | 4 | 0 | 0 |
 | osint-os | deprecated | 120,754 | 399 | 1 | 1 | 2 | 0 | 406 | 4 | 0 | 0 |
-| sovereign | deprecated | 9,417 | 30 | 0 | 1 | 2 | 0 | 262 | 2 | 0 | 1 |
 | workout-factory | deprecated | 9,417 | 30 | 0 | 1 | 3 | 0 | 262 | 2 | 0 | 0 |
 | lifeos-saas | engine | 760 | 0 | 0 | 1 | 4 | 0 | 97 | 2 | 0 | 0 |
 
@@ -206,9 +205,8 @@ and cross-repo in-degree. **No self-reported numbers.**
 | 31 | threads-lyr | 6.4 | 6.3 | 3.6 | 5.0 | 0.0 | 8.0 | 3.0 | 4.4 | **4.67** | B |
 | 32 | cinesync | 8.6 | 4.7 | 6.6 | 10.0 | 0.0 | 2.0 | 0.0 | 4.0 | **4.43** | C |
 | 33 | consciousness-fabricator | 7.5 | 8.7 | 3.0 | 5.0 | 0.0 | 2.0 | 0.0 | 4.2 | **4.23** | C |
-| 34 | sovereign | 7.6 | 5.6 | 3.2 | 5.0 | 0.0 | 2.0 | 0.0 | 3.6 | **3.58** | C |
-| 35 | workout-factory | 7.6 | 5.6 | 3.2 | 5.0 | 0.0 | 2.0 | 0.0 | 2.3 | **3.32** | C |
-| 36 | lifeos-saas | 5.5 | 0.0 | 3.5 | 5.0 | 0.0 | 2.0 | 0.0 | 4.8 | **2.60** | **D** |
+| 34 | workout-factory | 7.6 | 5.6 | 3.2 | 5.0 | 0.0 | 2.0 | 0.0 | 2.3 | **3.32** | C |
+| 35 | lifeos-saas | 5.5 | 0.0 | 3.5 | 5.0 | 0.0 | 2.0 | 0.0 | 4.8 | **2.60** | **D** |
 \* = policy-capped at C by §7 (experimental flag / archived) despite a higher raw capability score.
 C without \* = natural tier. `tdg` (deprecated, 0 executable LOC) keeps its natural D — the §7 cap is a ceiling, not a floor.
 
@@ -232,10 +230,13 @@ C without \* = natural tier. `tdg` (deprecated, 0 executable LOC) keeps its natu
    every browser-scraping tool depends on its cookie vault. Utility lifts it to B.
 4. **Full-coverage pass added 10 previously-unranked repos** (2026-08-11):
    `browsefleet` (5.77, B), `hermes-prime-bridge` (5.15, B), `toon-helper`
-   (removed — vendored into dependents), `lifeos-bot` (4.69, B), plus six
-   archived repos (`cinesync`, `open-claude`, `osint-os`, `sovereign`,
+   (removed — vendored into dependents), `lifeos-bot` (4.69, B), plus five
+   archived repos (`cinesync`, `open-claude`, `osint-os`,
    `workout-factory`, `tdg`). Every repo in the portfolio now passes
    through the same eight-criteria engine.
+5. **`sovereign` removed (2026-08-12).** Archived + made private on GitHub,
+   local folder deleted — succeeded by `lifeos-ops` / `lifeos-saas`. Dropped
+   from the dataset and the C tier (C shrank 8 → 7).
 5. **Vendored code is counted once, not N times (first-party rule).** When
    `toon-helper` was folded from a standalone repo into its dependents, the raw
    scan counted the identical ~170-LOC crate in every copy and its `slideforge`
@@ -289,9 +290,10 @@ C without \* = natural tier. `tdg` (deprecated, 0 executable LOC) keeps its natu
     * `consciousness-fabricator` 4.03 → **4.23 (C*)** — docs/ architecture
       deep-dive added (was the only gap in an otherwise strong suite); stays
       policy-capped at C until release + agent surface.
-    * C-tier shrank 11 → 8; B grew 11 → 14. The remaining C repos are capped
+    * C-tier shrank 11 → 8 (then 7 — `sovereign` archived + privatized
+      2026-08-12); B grew 11 → 14. The remaining C repos are capped
       experimental/deprecated (kali-mahabali 6.26, icode 5.72, holosim 5.52,
-      osint-os 5.46) or genuinely small/dormant (cinesync 4.43, sovereign 3.58,
+      osint-os 5.46) or genuinely small/dormant (cinesync 4.43,
       workout-factory 3.32) — no authentic code change could move them.
 
 ---
@@ -302,7 +304,7 @@ The rubric is a *baseline*. Category mismatches are handled by **documented rule
 
 | Rule | Application |
 |------|-------------|
-| **Archived/deprecated repos** | A repo whose own README declares DEPRECATED / INACTIVE (`icode`, `osint-os`, `cinesync`, `sovereign`, `workout-factory`) is **capped at C** regardless of capability score — *as a ceiling*. A near-zero repo keeps its natural lower tier. Not promotable while inactive. (`open-claude` deleted in 2026-08 — successors: thinking-steroid + mysterium; `tdg` made private + removed 2026-08-11 — `tdg-rust` is canonical.) |
+| **Archived/deprecated repos** | A repo whose own README declares DEPRECATED / INACTIVE (`icode`, `osint-os`, `cinesync`, `workout-factory`) is **capped at C** regardless of capability score — *as a ceiling*. A near-zero repo keeps its natural lower tier. Not promotable while inactive. (`open-claude` deleted in 2026-08 — successors: thinking-steroid + mysterium; `tdg` made private + removed 2026-08-11 — `tdg-rust` is canonical; `sovereign` made private + archived 2026-08-12 — removed from the portfolio.) |
 | **Vendored code (first-party rule)** | Identical code vendored INTO a ranked repo (`crates/toon-helper` in automaton, social-forge, tdg-rust) is **excluded from every metric** by `measure_repos.py` — counted once, never N times; its sibling-name mentions never pollute in-degree. |
 | **Experimental flag** | Repos under `EXPERIMENTAL/` (`holosim-infinite`, `consciousness-fabricator`, `kali-mahabali`) are **capped at C** until they earn a tagged release **and** an agent surface **and** sustained velocity. |
 | **Forks of other orgs' projects** | `hermes-agent` (nousresearch), `hermes-agent-ultra` (sheawinkler), `zeroclaw` (zeroclaw-labs) — upstream-owned forks are **excluded from ranking** (not original work). Documented here, not ranked. |

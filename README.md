@@ -70,7 +70,7 @@
   <!-- Decorative Metrics Badge inside SVG -->
   <rect x="535" y="20" width="130" height="24" rx="12" fill="#022C22" stroke="#047857" stroke-width="1.5"/>
   <circle cx="548" cy="32" r="4" fill="#10B981"/>
-  <text x="560" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="800" fill="#34D399">43 PROJECTS</text>
+  <text x="560" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="800" fill="#34D399">42 PROJECTS</text>
 </svg>
 
 **AI Agent Engineer · MCP Infrastructure · Multi-Agent Orchestration · Systems Architecture**
@@ -95,16 +95,16 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 | Metric | Value | Technical Context & Evidence |
 |--------|-------|------------------------------|
-| **Active Projects** | **43** | 2 S-tier · 11 A-tier · 14 B-tier · 8 C-tier · 1 D-tier · 1 knowledge-base · 6 websites (separate category) — tiered by the objective [ranking rubric](./RANKING-RUBRIC.md) |
+| **Active Projects** | **42** | 2 S-tier · 11 A-tier · 14 B-tier · 7 C-tier · 1 D-tier · 1 knowledge-base · 6 websites (separate category) — tiered by the objective [ranking rubric](./RANKING-RUBRIC.md) |
 | **MCP Servers** | **20+** | 800+ total tools across intelligence, memory, media, social, and life-ops |
 | **Rust Crates** | **90+** | 99 `Cargo.toml` manifests — `operant` 19, `automaton` 17, `scorestrata` 12, `mindstrata` 8 |
-| **Lines of Code** | **2.38M** | 2,380,638 tracked source lines (Rust, TypeScript, Python, Go, Kotlin) |
-| **Automated Tests** | **31,300+** | 31,340 test markers — top suites: `operant` 9.2K, `holosim` 7.7K, `mindstrata` 1.2K, `linkedin-lyr` 1.1K |
+| **Lines of Code** | **2.38M** | 2,377,812 tracked source lines (Rust, TypeScript, Python, Go, Kotlin) |
+| **Automated Tests** | **31,300+** | 31,319 test markers — top suites: `operant` 9.2K, `holosim` 7.7K, `mindstrata` 1.2K, `linkedin-lyr` 1.1K |
 | **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler |
 | **Production Runtime** | **<10MB** | Stripped static musl Rust binaries with minimal idle RSS, zero dynamic dependencies |
 
 > **Portfolio counts (projects, Rust crates, LOC, test markers) are machine-measured** —
-> `scripts/measure_repos.py --total` (scope: the 42 measured portfolio repos; upstream
+> `scripts/measure_repos.py --total` (scope: the 41 measured portfolio repos; upstream
 > forks and nested repos excluded). Re-run the script to regenerate; `scripts/rank_score.py`
 > consumes the same dataset. Performance claims (context reduction, runtime footprint)
 > are benchmark-verified on the linked flagship repos.
@@ -137,7 +137,7 @@ I treat AI system design as **spatial machinery** rather than linear text prompt
 ## 💎 Flagship Projects
 
 > Narrative showcase — *not* the tier ranking. Tiers are scored objectively in the
-> [Complete Project Catalog](#-complete-project-catalog-43-projects) below via the
+> [Complete Project Catalog](#-complete-project-catalog-42-projects) below via the
 > [ranking rubric](./RANKING-RUBRIC.md).
 
 ### 🎵 [scorestrata](https://github.com/ishan-parihar/scorestrata)
@@ -255,7 +255,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 
 ---
 
-## 📂 Complete Project Catalog (43 Projects)
+## 📂 Complete Project Catalog (42 Projects)
 
 > 🔒 = private repository — **available on request**. Contact me for access.
 
@@ -319,7 +319,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 </details>
 
 <details>
-<summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (8 Projects)</b></summary>
+<summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (7 Projects)</b></summary>
 <br>
 
 * **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `6.26` (capped): Modular sandbox testing raw agent behaviors (Codename: Project Chimera). Cap: experimental flag — promote via release + agent surface. 🔒
@@ -328,7 +328,6 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)** `5.52` (capped): Math simulator tracking emergent agent interactions. 489K LOC, 7,766 tests. Cap: experimental flag — promote via release + agent surface.
 * **[cinesync](https://github.com/ishan-parihar/cinesync)** `4.43`: Character-asset automation pipeline for lipsync animation. 13.7K LOC, 2 CI workflows. Natural C — archived/inactive.
 * **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)** `4.23` (capped): Audio pipeline compiling dynamic background sounds. 158 tests + architecture docs. Cap: experimental flag — needs release + agent surface.
-* **[sovereign](https://github.com/ishan-parihar/sovereign)** `3.58`: Archived agent framework (voice/cache tooling). Natural C — archived/inactive.
 * **[workout-factory](https://github.com/ishan-parihar/workout-factory)** `3.32`: Archived trainer voice/audio-cache factory. Natural C — archived/inactive.
 
 </details>
@@ -390,7 +389,7 @@ Whether assembling deterministic society simulations (`mindstrata`), compiling W
 
 ## ☕ Sponsor this work
 
-Every sponsorship funds the open ecosystem behind this profile — new releases, test suites, CI, and infrastructure across all 43 projects:
+Every sponsorship funds the open ecosystem behind this profile — new releases, test suites, CI, and infrastructure across all 42 projects:
 
 [![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?style=flat-square&logo=github)](https://github.com/sponsors/ishan-parihar)
 [![Donate](https://img.shields.io/badge/Donate-Razorpay-3395FF?style=flat-square)](https://rzp.io/rzp/ishan-parihar)
