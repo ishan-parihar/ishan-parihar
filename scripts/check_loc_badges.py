@@ -89,14 +89,21 @@ def parse_loc_badge(value: str) -> int | None:
         return None
 
 
-def repo_locs(root: pathlib.Path) -> dict[str, int]:
-    """Map repo-relpath -> tracked source LOC, for every git repo under root.
+def repo_locs(root: pathlib.Path) -> tuple[dict[str, int], list[str]]:
+    """(repo-relpath -> tracked source LOC, capped-files) for every repo under root.
 
     The portfolio is nested (MCP-AND-CLIS/*, LIFEOS/*, HERMES/*, WEBSITES/*),
     so we walk the whole tree and treat any directory containing a .git entry
     (dir for a real repo, file for a worktree/submodule) as a repo.
+
+    Counting method (canonical): tracked files only (git ls-files), code
+    extensions only, with docs/, assets/ and generated/build dirs deliberately
+    excluded. This tool is the source of truth for LOC badge values — repos
+    that keep hand-authored source under a dir named docs/ or assets/ will be
+    undercounted by design.
     """
     out: dict[str, int] = {}
+    capped: list[str] = []
     for dirpath, dirnames, _filenames in os.walk(root):
         dirnames[:] = [d for d in dirnames if d != ".git"]
         cur = pathlib.Path(dirpath)
@@ -122,16 +129,19 @@ def repo_locs(root: pathlib.Path) -> dict[str, int]:
             full = cur / path
             try:
                 with full.open("r", errors="replace") as fh:
-                    total += min(MAX_LINES, sum(1 for _ in fh))
+                    n = sum(1 for _ in fh)
+                if n >= MAX_LINES:
+                    capped.append(str(full.relative_to(root)))
+                total += min(MAX_LINES, n)
             except (OSError, UnicodeDecodeError):
                 continue
         out[str(cur.relative_to(root))] = total
         dirnames[:] = []  # don't descend into a repo's internals
-    return out
+    return out, capped
 
 
-def find_badges(readme: pathlib.Path) -> list[tuple[int, str, str]]:
-    """(line_number, full_badge_value, raw_match) for each LOC badge in a README."""
+def find_badges(readme: pathlib.Path) -> list[tuple[int, str]]:
+    """(line_number, badge_value) for each LOC badge in a README."""
     found = []
     try:
         lines = readme.read_text(errors="replace").splitlines()
@@ -139,7 +149,7 @@ def find_badges(readme: pathlib.Path) -> list[tuple[int, str, str]]:
         return found
     for i, line in enumerate(lines, 1):
         for m in BADGE_RE.finditer(line):
-            found.append((i, m.group(1), m.group(0)))
+            found.append((i, m.group(1)))
     return found
 
 
@@ -154,6 +164,30 @@ def repo_owner(root: pathlib.Path, repo: str) -> str:
     return m.group(1) if m else ""
 
 
+def fix_line(path: pathlib.Path, line_no: int, value: str) -> bool:
+    """Replace the LOC badge value on a specific line. Returns True on change.
+
+    Line-targeted (not whole-file regex) so multi-badge READMEs can never have
+    one badge's fix clobber another's.
+    """
+    try:
+        lines = path.read_text(errors="replace").splitlines(keepends=True)
+    except OSError:
+        return False
+    idx = line_no - 1
+    if idx < 0 or idx >= len(lines):
+        return False
+    new, n = BADGE_RE.subn(
+        lambda m: m.group(0).replace(m.group(1), value),
+        lines[idx], count=1,
+    )
+    if not n:
+        return False
+    lines[idx] = new
+    path.write_text("".join(lines))
+    return True
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Cross-check LOC badges against real code.")
     ap.add_argument("--root", type=pathlib.Path, default=DEFAULT_ROOT,
@@ -166,7 +200,7 @@ def main() -> int:
                     help="GitHub owner whose repos are fixable (default ishan-parihar)")
     args = ap.parse_args()
 
-    locs = repo_locs(args.root)
+    locs, capped = repo_locs(args.root)
     stale: list[dict] = []
     upstream: list[dict] = []
     ok_count = 0
@@ -174,9 +208,12 @@ def main() -> int:
     for name, actual in sorted(locs.items()):
         repo_dir = args.root / name
         owner = repo_owner(args.root, name)
-        readmes = sorted(repo_dir.glob("README.md"))
-        for readme in readmes:
-            for line_no, badge_val, raw in find_badges(readme):
+        readmes = [
+            p for p in repo_dir.rglob("README.md")
+            if not any(part in EXCLUDE_DIRS for part in p.parts)
+        ]
+        for readme in sorted(readmes):
+            for line_no, badge_val in find_badges(readme):
                 parsed = parse_loc_badge(badge_val)
                 if parsed is None:
                     continue
@@ -203,6 +240,7 @@ def main() -> int:
             "checked_repos": len(locs),
             "stale": stale,
             "upstream_skipped": upstream,
+            "capped_files": capped,
         }, indent=2))
         return 1 if stale else 0
 
@@ -214,22 +252,17 @@ def main() -> int:
     for r in stale:
         print(f"{r['repo']:<32}{r['badge']:>10}{r['actual']:>10}  {r['readme']}:{r['line']}")
         if args.fix:
-            path = args.root / r["readme"]
-            try:
-                text = path.read_text(errors="replace")
-            except OSError:
-                continue
-            new_text, count = BADGE_RE.subn(
-                lambda m: m.group(0).replace(m.group(1), r["actual"]),
-                text, count=1,
-            )
-            if count:
-                path.write_text(new_text)
+            if fix_line(args.root / r["readme"], r["line"], r["actual"]):
                 print(f"    -> fixed to {r['actual']}")
+            else:
+                print(f"    !! could not fix {r['readme']}:{r['line']}")
     if upstream:
         print("\nupstream-authored (badge authored elsewhere; report-only, no fix):")
         for r in upstream:
             print(f"  {r['repo']:<32}{r['badge']:>10}{r['actual']:>10}  owner={r['owner']}")
+    if capped:
+        print(f"\nwarning: {len(capped)} file(s) hit the {MAX_LINES}-line cap "
+              "(undercounted): " + ", ".join(capped))
 
     if not stale:
         print("All LOC badges are current. Nothing to do.")
