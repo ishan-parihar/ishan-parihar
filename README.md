@@ -103,9 +103,11 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 | **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler |
 | **Production Runtime** | **<10MB** | Stripped static musl Rust binaries with minimal idle RSS, zero dynamic dependencies |
 
-> **Every portfolio metric above is machine-measured** — `scripts/measure_repos.py --total`
-> (scope: the 42 ranked portfolio repos; upstream forks and nested repos excluded).
-> Re-run the script to regenerate; `scripts/rank_score.py` consumes the same dataset.
+> **Portfolio counts (projects, Rust crates, LOC, test markers) are machine-measured** —
+> `scripts/measure_repos.py --total` (scope: the 42 measured portfolio repos; upstream
+> forks and nested repos excluded). Re-run the script to regenerate; `scripts/rank_score.py`
+> consumes the same dataset. Performance claims (context reduction, runtime footprint)
+> are benchmark-verified on the linked flagship repos.
 
 ---
 

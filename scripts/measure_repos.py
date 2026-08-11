@@ -32,6 +32,7 @@ mentions that live in the vendored copy, not the repo's own code.
 
 Usage:
   python3 scripts/measure_repos.py > /tmp/measured.csv
+  python3 scripts/measure_repos.py --total   # portfolio-scope totals (README headlines)
   # then fold the numbers into the DATA table of scripts/rank_score.py
 """
 
@@ -265,10 +266,13 @@ def main():
             tools += r[11]
             indegree += r[12]
             n += 1
-        # Rust crates = pure Cargo.toml manifest count across the same scope
-        # (mods also caps package.json counts, so it is not a crate count).
+        # Rust crates = pure Cargo.toml manifest count across the SAME subset
+        # as the rows (mods also caps package.json counts, so it is not a crate
+        # count). Respect the `only` filter so --total never mixes scopes.
         rust_crates = 0
-        for _name, relpath, _cat in REPOS:
+        for name, relpath, _cat in REPOS:
+            if only and name not in only:
+                continue
             files = sh(os.path.join(PORTS, relpath), "git ls-files")
             rust_crates += sum(
                 1 for f in files.split("\n")
