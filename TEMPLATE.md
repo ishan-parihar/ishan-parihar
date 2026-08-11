@@ -39,7 +39,7 @@
 [![CI](https://github.com/[OWNER]/[REPO]/actions/workflows/ci.yml/badge.svg)](https://github.com/[OWNER]/[REPO]/actions/workflows/ci.yml)
 ![Tools](https://img.shields.io/badge/[MCP/CLI]-[N]%20Tools-orange?logo=modelcontextprotocol)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-[Active/Research] -[brightgreen/orange])
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)  <!-- or Research-Prototype-orange -->
 
 > **The one sentence.** — what the project does, who it is for, and the single
 > outcome it delivers. No jargon, no brand name required to understand it.
@@ -145,7 +145,7 @@ Your support funds new features, releases, and infrastructure for the whole ecos
   [ ] Every visual module has a communication job
   [ ] Works when images fail: alt text, headings, commands, links meaningful
   [ ] Removing the repo name would break the hero (project-native, not templated)
-  [ ] No LICENSE/CONTRIBUTING/CHANGELOG sections (dedicated files exist)
+  [ ] License is a single short line (portfolio convention); the full license lives in the LICENSE file
   [ ] Emojis used sparingly; no emoji headings
   [ ] Shortest install path appears before advanced configuration
   [ ] One end-to-end example over disconnected snippets
