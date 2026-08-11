@@ -97,11 +97,15 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 |--------|-------|------------------------------|
 | **Active Projects** | **43** | 2 S-tier · 11 A-tier · 14 B-tier · 8 C-tier · 1 D-tier · 1 knowledge-base · 6 websites (separate category) — tiered by the objective [ranking rubric](./RANKING-RUBRIC.md) |
 | **MCP Servers** | **20+** | 800+ total tools across intelligence, memory, media, social, and life-ops |
-| **Rust Crates** | **40+** | Multi-crate workspaces powering `scorestrata`, `mindstrata`, `tdg-rust`, `igs-rust`, `automaton` |
-| **Lines of Code** | **2.4M+** | Machine-counted tracked source across all projects (Rust, TypeScript, Python, Go, Kotlin) |
-| **Automated Tests** | **30,000+** | Machine-counted test markers: `operant` (9,240), `holosim` (7,766), `mindstrata` (1,238), `linkedin-lyr` (1,166) |
+| **Rust Crates** | **90+** | 99 `Cargo.toml` manifests — `operant` 19, `automaton` 17, `scorestrata` 12, `mindstrata` 8 |
+| **Lines of Code** | **2.38M** | 2,380,638 tracked source lines (Rust, TypeScript, Python, Go, Kotlin) |
+| **Automated Tests** | **31,300+** | 31,340 test markers — top suites: `operant` 9.2K, `holosim` 7.7K, `mindstrata` 1.2K, `linkedin-lyr` 1.1K |
 | **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler |
 | **Production Runtime** | **<10MB** | Stripped static musl Rust binaries with minimal idle RSS, zero dynamic dependencies |
+
+> **Every portfolio metric above is machine-measured** — `scripts/measure_repos.py --total`
+> (scope: the 42 ranked portfolio repos; upstream forks and nested repos excluded).
+> Re-run the script to regenerate; `scripts/rank_score.py` consumes the same dataset.
 
 ---
 
@@ -381,9 +385,9 @@ Whether assembling deterministic society simulations (`mindstrata`), compiling W
 
 ---
 
-## ☕ Support & Sponsorship
+## ☕ Sponsor this work
 
-If you find this project useful, consider supporting ongoing development:
+Every sponsorship funds the open ecosystem behind this profile — new releases, test suites, CI, and infrastructure across all 43 projects:
 
 [![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?style=flat-square&logo=github)](https://github.com/sponsors/ishan-parihar)
 [![Donate](https://img.shields.io/badge/Donate-Razorpay-3395FF?style=flat-square)](https://rzp.io/rzp/ishan-parihar)

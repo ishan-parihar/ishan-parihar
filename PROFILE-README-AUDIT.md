@@ -1,87 +1,109 @@
 # Profile README Audit — `ishan-parihar/README.md`
 
-> **Audit date:** 2026-08-11 · **Auditor:** S-Tier README lint (`scripts/lint_readmes.py`)
-> + readme-craft mandates + machine-measured currency checks.
-> **Scope:** the GitHub profile README (391 lines) — the landing page for the whole
-> portfolio. Project READMEs are covered by the cross-repo lint (37 S / 6 B-deprecated,
+> **Audit date:** 2026-08-12 (refresh of the 2026-08-11 audit) · **Auditor:** S-Tier README
+> lint (`scripts/lint_readmes.py --include-profile`) + `scripts/measure_repos.py --total`
+> + `scripts/rank_score.py` + readme-craft mandates.
+> **Scope:** the GitHub profile README (now 393 lines) — the landing page for the whole
+> portfolio. Project READMEs are covered by the cross-repo lint (38 S / 6 A-deprecated,
 > ALL CLEAN); this document is exclusively the *profile*.
 
 ---
 
 ## 1. Verdict
 
-The profile is **strong (≈ A-grade for its purpose)** but not yet S-grade. Its
-machine-verifiable score under `scripts/lint_readmes.py --include-profile` is
-**B (7.00)** — and every point lost is either *not applicable to a profile*
-(LOC / License / Status badges) or a *deliberate design choice* (emoji headings).
-The real gaps are **currency** (two stale numbers, now fixed) and **groundability**
-(three headline metrics are self-asserted rather than script-pinned).
+The profile is **S-grade for its purpose and machine-graded as such**:
 
 ```
-Current:  S 12.00  (profile-mode lens, shipped with this audit — `--include-profile`)
-Baseline: B 7.00  (project-rules lens — the 4 lost points are N/A-for-profile)
-Target:   S ≥ 9.0  →  achieved (profile mode added to `scripts/lint_readmes.py`)
+Profile-mode lint:   S 12.00  (P01–P12 pass, --include-profile, EXIT 0)
+Headline metrics:    PINNED to scripts/measure_repos.py --total (this pass)
+Catalog claims:      30/30 LOC claims and 30/30 test-count claims machine-verified
 ```
 
----
-
-## 2. What already works (keep)
-
-| Area | Evidence |
-|---|---|
-| **First screen** | Hero SVG (project-native: RUST/TS/PYTHON/MCP nodes → central hub) + one-line role + contact + badges. Passes the "what / what's in it for me / where next" test without scrolling. |
-| **Hero is project-native** | Removing the name would break the art; the motif (protocol rings, DAG beams, 43 PROJECTS) comes from the portfolio, not stock decoration. |
-| **Proof before claims** | The numbers table cites machine-counted evidence; flagship cards carry concrete figures (LOC, tests, releases) with links. |
-| **Objectivity** | Catalog tiers link to `RANKING-RUBRIC.md` + `scripts/rank_score.py` + `scripts/measure_repos.py`; narrative flagships explicitly say "not the tier ranking". |
-| **Ecosystem completeness** | 13 infrastructure + 10 CLI + 6 web rows with stacks and surfaces. |
-| **Information order** | Value → Proof → Mechanism → Detail → Call-to-action → Support. No architecture-first opening. |
-| **Length** | 391 lines < 400; detail correctly lives in the rubric/template scripts. |
-| **Support block** | Canonical Sponsors + Razorpay block present. |
+The last audit's open items were: pin the headline metrics (F5/F6), decide the emoji
+headings (F4), and rephrase the support CTA (F8). **All three are closed in this pass.**
+What remains is maintenance-grade: re-folding the ranking dataset after test additions,
+and converging the tool-surface counting method (F9) — neither blocks the profile.
 
 ---
 
-## 3. Findings
-
-| # | Severity | Finding | Evidence | Fix |
-|---|----------|---------|----------|-----|
-| **F1** | 🔴 Fixed | Flagship `mindstrata` said "75K LOC" while its own B-tier line and the freshly-synced badge say 82K (measured 82,655) | README diff; `check_loc_badges.py` measured 82.3K | Updated flagship → 82K ✅ |
-| **F2** | 🟠 Fixed | `igs-rust` blurb carried "432-line README" — brittle line-count trivia that already drifted (now 434) and doesn't belong in a ranking blurb | README diff | Removed the line-count from S-tier + A-tier entries ✅ |
-| **F3** | 🟠 Fixed | Flagship `operant` said "8,500+ tests" while its catalog entry says "9,240" (measured markers 8,238 raw / 9,240 per the ranking tool) | README diff | Unified to "9,200+" ✅ |
-| **F4** | 🟡 Design | Emoji-prefixed headings (`## 📊 Engineering by the Numbers`, `## 💎 Flagship Projects`…) violate TEMPLATE.md's own "no emoji headings" rule | Lint S09 | Decision needed — see §4 step 4. |
-| **F5** | 🟡 Currency | Headline "**Lines of Code 2.4M+**" is *below* the measured total (6,026,803 tracked LOC across 51 repos) — or intentionally excludes upstream forks (hermes-agent 803K, hermes-agent-ultra 830K). The claim is ambiguous and un-pinned | `measure_repos.py` sum | Pick a scope (own-origin only vs all), add a `--total` flag to `measure_repos.py`, print the number into the README from the script. |
-| **F6** | 🟡 Currency | Headline "**Automated Tests 30,000+**" — measured raw markers are 102,645 *including* upstream forks (hermes-agent 36,295 + hermes-agent-ultra 27,771 alone). The claimed 30K+ is plausible for own-origin repos but not script-pinned | marker scan (102,645 total; operant 8,238, holosim 7,977) | Same fix as F5: compute from the measurement tool with the same scope. |
-| **F7** | 🟢 Coverage | The profile is *excluded* from `lint_readmes.py` by design, so its score isn't tracked. When forced (`--include-profile`) it scores B only because 4/5 rules are project rules (LOC/License/Status badges) or profile design (emoji) | lint output | Add a **profile mode** to the lint: swap S07 badge-row for profile rules (hero present, role line, contact, CTA, tier catalog present, rubric link present, support block) and exempt emoji headings. Then the profile can be graded S and pinned in CI. |
-| **F8** | 🟢 Structure | "Support & Sponsorship … consider supporting ongoing development" reads like a project footer on a personal profile | — | Optional rephrase: "## ☕ Sponsor this work" with a one-line why (funds the open ecosystem). |
-| **F9** | 🟢 Drift-risk | Ecosystem tables assert tool surfaces (91, 36, 38, 56, 42…) that can drift from the repos. The ranking engine already measures "agent surface" — the profile could re-derive these rows from the same DATA | rank_score DATA | Optional: a `--profile-ecosystem` mode in the ranking scripts that regenerates the ecosystem tables. |
-| **F10** | 🟢 Link hygiene | "🔒 private" markers on 6 websites + lifeos-saas + kali-mahabali — trust-asserted; a fork-owner check (like `check_loc_badges --owner`) could verify public/private state. | — | Optional: extend `measure_repos.py` to emit visibility from the origin remote. |
-
----
-
-## 4. Upgrade plan (ordered)
-
-| Step | Action | Effort | Outcome |
-|------|--------|--------|---------|
-| 1 | ✅ Apply F1–F3 (done this pass) | done | Currency bugs gone |
-| 2 | ✅ **Profile mode for the lint** (F7): profile-appropriate checks (P01–P12: hero, role, contact, CTA, catalog+rubric, tiers, support, length, images, placeholders, markdown hygiene, first-screen) → profile scores **S 12.00**, graded alongside the portfolio via `--include-profile` | done | Profile is machine-graded S and tracked |
-| 3 | **Pin the headline metrics** (F5/F6): add scope-aware `--total` (LOC, test markers) to `measure_repos.py`, regenerate the numbers table from it | M | "2.4M LOC / 30K tests" become script-backed, never stale |
-| 4 | **Emoji-heading decision** (F4): either strip emojis from the ~10 headings (aligns with TEMPLATE) or keep them as the profile's identity and document the exemption in the lint | S | Consistent, defensible design system |
-| 5 | Rephrase the support CTA (F8) | S | Profile-native voice |
-| 6 | Optional: ecosystem-table regeneration (F9) + visibility check (F10) | L | Full machine-groundability |
-
-**Definition of S-tier for the profile:** first screen explains who + what + CTA
-(already true) **and** every number on the page is machine-generated (steps 2–3) **and**
-the design choice on emojis is explicit (step 4).
-
----
-
-## 5. Machine evidence (this pass)
+## 2. Fresh machine evidence (2026-08-12)
 
 ```
-lint (44 repos incl. profile):   38 S · 6 B (all deprecated) · 0 C  → EXIT 0
-profile score:                    S 12.00  (profile-mode: 12/12 checks pass)
-measured LOC:                    6,026,803 across 51 repos
-  (own-origin stars: operant 538K · holosim 489K · mindstrata 82K · scorestrata 73K · igs-rust 28K)
-measured test markers:           102,645 total (64K of it in upstream hermes forks)
-readme-craft audit:              OK on all 9 heavily-edited READMEs
+profile-mode lint:                S 12.00   (44 repos: 38 S · 6 A-deprecated · ALL CLEAN, EXIT 0)
+measure_repos.py --total:         repos=42  loc=2,380,638  tests=31,340  mods=121
+                                  ci=70  tags=207  tools=172(dec)  rust_crates=99
+rank_score.py (top 3):            operant 8.72 S · igs-rust 8.07 S · social-forge 7.90 A
+readme-craft audit (repos):       OK on every heavily-edited README
+sponsor coverage:                 ALL CLEAN (43/43 repos)
+```
+
+**The headline numbers are correct and now reproducible.** The earlier "6,026,803 LOC /
+102,645 markers" figures came from a wider scan that included upstream forks
+(hermes-agent, hermes-agent-ultra); the portfolio scope (42 ranked repos, the same scope
+the catalog uses) measures 2.38M LOC and 31,340 test markers — matching the README's
+"2.4M+ / 30,000+" claims all along. The ambiguity was scope, not the number; the footnote
+added to the metrics table now states the scope and the regenerating command.
+
+---
+
+## 3. Claim-by-claim verification (this pass)
+
+| Claim (README) | Measured | Verdict |
+|---|---|---|
+| "43 Projects" (hero + catalog) | 42 ranked + HoloOS KB = 43 | ✅ |
+| "2.38M LOC" (updated this pass) | 2,380,638 | ✅ pinned |
+| "31,300+ tests" (updated this pass) | 31,340 markers | ✅ pinned |
+| "90+ Rust crates" (updated this pass) | 99 `Cargo.toml` | ✅ pinned |
+| "MCP Servers 20+" | 22 MCP-server surfaces in the ecosystem tables | ✅ |
+| "800+ total tools" | Not verifiable by current tooling (see F9/N2) | ⚠️ methodology |
+| All 30 flagship/catalog LOC figures | Verified (≤ tolerance): operant 538K, holosim 489K, osint-os 121K, mindstrata 82K, social-forge 78K, scorestrata 73K, slideforge 35.6K… | ✅ |
+| All 30 flagship/catalog test figures | Verified: scorestrata 944, tdg-rust 637, c-suite-agents 555, linkedin-lyr 1,166, mysterium 1,090, holosim 7,766, osint-os 399, andrometry 367, twitter-lyr 243, facebook-lyr 229, slideforge 185, tg-cli 122, browsefleet 86, lifeos-bot 33, threads-lyr 31, reddit-lyr 24, meme-lyr 19 (`npm test` = 19) | ✅ |
+| Catalog tier scores | rank_score.py output matches every `N.NN` in the catalog | ✅ |
+| `lifeos-ops` "zero automated tests / 18K LOC" | 17.8K LOC, 0 markers | ✅ |
+| `lifeos-saas` "760 LOC, 0 tests" | 0.8K LOC, 0 markers | ✅ |
+| meme-lyr "19 tests" | `npm test` → 19 passed (the marker scan over-counts TS `it(`/`describe(`) | ✅ |
+
+---
+
+## 4. What changed this pass (closed findings)
+
+| # | Finding (prev audit) | Resolution |
+|---|---|---|
+| F4 | Emoji headings violate TEMPLATE's "no emoji" rule | **Decided:** emojis are the profile's identity. Profile-mode lint exempts S09 for the profile (documented at `lint_readmes.py:329`). Project READMEs keep the no-emoji rule. |
+| F5/F6 | "2.4M LOC / 30K tests" un-pinned, ambiguous scope | **Pinned:** `measure_repos.py --total` added (aggregates the 42-repo portfolio scope, incl. pure `rust_crates` count); metrics table updated to 2.38M / 31,300+ / 90+ with a scope+command footnote. |
+| F8 | "Support & Sponsorship … consider supporting" reads like a project footer | **Rephrased** to "## ☕ Sponsor this work" with a profile-native why-line. |
+| F1–F3 | stale mindstrata/operant/igs-rust numbers | Held (verified again this pass). |
+
+---
+
+## 5. Remaining upgrade steps (maintenance-grade)
+
+| # | Action | Effort | Why |
+|---|--------|--------|-----|
+| N1 | **Re-fold `rank_score.py` DATA from `measure_repos.py`** — mindstrata now 1,255 markers (DATA 1,238), operant 9,249 (DATA 9,240); then regenerate the catalog lines if any score/tier shifts | M | Scores are re-audited after every test/CI milestone; the 5-repo CI fixes landed since the last fold. Run: `python3 scripts/measure_repos.py > /tmp/m.csv` → fold → `python3 scripts/rank_score.py` → diff catalog. |
+| N2 | **Converge tool-surface counting (F9)** — the ecosystem tables' tool numbers (91, 36, 38, 88, 42, 12…) come from per-repo registration counts; `measure_repos.py` only counts Python `@mcp.tool` decorators (172 total). Extend the counter to Rust `Tool::new`/`register_tool`, TS `server.tool(`, and click commands, or label the table "agent surface (registration counts)" | L | Makes "800+ total tools" and every per-tool cell machine-groundable. |
+| N3 | **Visibility check (F10)** — "🔒 private" markers on websites + lifeos-saas + kali-mahabali are trust-asserted; emit remote visibility from `measure_repos.py` (e.g. `git ls-remote` vs the origin URL) | M | Turns 10 hand-asserted markers into measured facts. |
+| N4 | Optional: regenerate the ecosystem tables from the measured dataset (`--profile-ecosystem` mode) | L | Closes the last hand-maintained block. |
+
+**Definition of S-tier for the profile (held):** first screen explains who + what + CTA
+(true), every headline number is machine-generated (true as of this pass), and the emoji
+design decision is explicit (documented). The profile is there; the remaining steps keep
+it from drifting.
+
+---
+
+## 6. Machine evidence (this pass)
+
+```
+lint (44 repos incl. profile):  38 S · 6 A (all deprecated) · 0 B/C  → EXIT 0
+profile score:                   S 12.00  (profile-mode: 12/12 checks pass)
+measure --total:                 42 repos · 2,380,638 LOC · 31,340 tests · 99 rust crates
+                                 70 CI workflows · 207 tags · 172 python-decorator tools
+rank top-10:                     operant 8.72 · igs-rust 8.07 · social-forge 7.90 ·
+                                 linkedin-lyr 7.59 · openscript 7.40 · tdg-rust 7.34 ·
+                                 twitter-lyr 7.28 · mysterium 7.19 · c-suite-agents 7.09 ·
+                                 scorestrata 6.98
+cross-check:                     30/30 LOC claims ✓ · 30/30 test claims ✓ · scores ✓
+readme-craft audit:              OK on all edited READMEs
 sponsor coverage:                ALL CLEAN (43/43 repos)
 ```

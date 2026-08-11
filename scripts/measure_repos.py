@@ -238,13 +238,46 @@ def measure(name, relpath, category):
 
 
 def main():
-    only = sys.argv[1:] if len(sys.argv) > 1 else None
+    args = sys.argv[1:]
+    only = [a for a in args if not a.startswith("--")]
+    want_total = "--total" in args
     print("name|category|loc|tests|mods|ci|c90|tags|age|langs|concur|tools|indegree|readme|install|docs")
+    rows = []
     for name, relpath, category in REPOS:
         if only and name not in only:
             continue
         r = measure(name, relpath, category)
         print("|".join(str(x) for x in r))
+        rows.append(r)
+    if want_total:
+        # Portfolio-scope totals — the exact numbers behind the profile README's
+        # headline metrics. Scope is REPOS above (the 42 ranked portfolio repos;
+        # upstream forks and nested repos are excluded by manifest design).
+        n = loc = tests = mods = ci = tags = tools = indegree = 0
+        for r in rows:
+            if r[2] in ("NO-DIR", "NO-TRACKED"):
+                continue
+            loc += r[2]
+            tests += r[3]
+            mods += r[4]
+            ci += r[5]
+            tags += r[7]
+            tools += r[11]
+            indegree += r[12]
+            n += 1
+        # Rust crates = pure Cargo.toml manifest count across the same scope
+        # (mods also caps package.json counts, so it is not a crate count).
+        rust_crates = 0
+        for _name, relpath, _cat in REPOS:
+            files = sh(os.path.join(PORTS, relpath), "git ls-files")
+            rust_crates += sum(
+                1 for f in files.split("\n")
+                if f.endswith("Cargo.toml") and not VENDORED_DIR_RE.search(f)
+            )
+        print(
+            f"# TOTAL|repos={n}|loc={loc}|tests={tests}|mods={mods}|"
+            f"ci={ci}|tags={tags}|tools={tools}|indegree={indegree}|rust_crates={rust_crates}"
+        )
 
 
 if __name__ == "__main__":
