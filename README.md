@@ -95,7 +95,7 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 | Metric | Value | Technical Context & Evidence |
 |--------|-------|------------------------------|
-| **Active Projects** | **36** | 31 production/active, 5 experimental/archived across 6 architectural tiers |
+| **Active Projects** | **36** | 2 S-tier · 8 A-tier · 3 B-tier · 11 C-tier · 6 D-tier · 5 E-tier · 1 knowledge-base — tiered by the objective [ranking rubric](./RANKING-RUBRIC.md) |
 | **MCP Servers** | **15+** | 500+ total tools across intelligence, memory, media, and life-ops |
 | **Rust Crates** | **40+** | Multi-crate workspaces powering `scorestrata`, `mindstrata`, `tdg-rust`, `igs-rust`, `automaton` |
 | **Lines of Code** | **1.6M+** | Sum of source across all projects (Rust, TypeScript, Python, Go, Kotlin) |
@@ -129,6 +129,10 @@ I treat AI system design as **spatial machinery** rather than linear text prompt
 ---
 
 ## 💎 Flagship Projects
+
+> Narrative showcase — *not* the tier ranking. Tiers are scored objectively in the
+> [Complete Project Catalog](#-complete-project-catalog-36-projects) below via the
+> [ranking rubric](./RANKING-RUBRIC.md).
 
 ### 🎵 [scorestrata](https://github.com/ishan-parihar/scorestrata)
 **Contract-first music compiler — from plain-language brief to mastered WAV.** Rust. 11 crates, 944 tests.
@@ -245,46 +249,47 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 
 > 🔒 = private repository — **available on request**. Contact me for access.
 
+> **Tiers are scored objectively** — see [RANKING-RUBRIC.md](./RANKING-RUBRIC.md) for the six weighted criteria (scale, tests, CI, releases, velocity, agent surface), the measured dataset, and the reproducible `scripts/rank_score.py` engine.
+
 <details>
-<summary><b>🚀 S-TIER: Flagship Systems & Core Infrastructure (6 Projects)</b></summary>
+<summary><b>🚀 S-TIER: Flagship Systems — Score ≥ 8.0 (2 Projects)</b></summary>
 <br>
 
-* **[igs-rust](https://github.com/ishan-parihar/igs-rust)**: High-speed news ingestion pipeline. ~7MB binary, ~5MB RSS, 411 sources in 47 countries.
-* **[social-forge](https://github.com/ishan-parihar/social-forge)**: Multi-platform intelligence gatherer and scheduler across 9 networks.
-* **[operant](https://github.com/ishan-parihar/operant)**: Multi-agent C-suite orchestrator. 8,500+ tests, systemd process isolation.
-* **[scorestrata](https://github.com/ishan-parihar/scorestrata)**: WAV music generation compiler. 944 verification tests, 11 crates.
-* **[mindstrata](https://github.com/ishan-parihar/mindstrata)**: Deterministic emergent society simulation. 75K LOC, 1,238 tests, 10 substrates.
-* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)**: Teleological developmental graph memory. 626 tests, 36 MCP tools.
+* **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `9.13`: High-speed news ingestion pipeline. ~7MB binary, ~5MB RSS, 411 sources in 47 countries, 91 MCP tools, 14 releases.
+* **[operant](https://github.com/ishan-parihar/operant)** `8.70`: Multi-agent C-suite orchestrator. 537K LOC, 8,581 tests, 18 crates, 4 CI workflows, systemd process isolation.
 
 </details>
 
 <details>
-<summary><b>🧠 A-TIER: Production Agent Tooling & Engines (6 Projects)</b></summary>
+<summary><b>🧠 A-TIER: Production-Grade Engines — Score 6.5–7.99 (8 Projects)</b></summary>
 <br>
 
-* **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)**: Browserless carousel factory. 46 slide types, embedded Blitz renderer, 185 tests.
-* **[automaton](https://github.com/ishan-parihar/automaton)**: Graph-native automation substrate. 15 Rust crates, 38 MCP tools.
-* **[openscript](https://github.com/ishan-parihar/openscript)**: Agent-directed video editing pipeline. 43 MCP tools, Hinglish Whisper transcription.
-* **[mysterium](https://github.com/ishan-parihar/mysterium)**: Education-system replacement — 64-cell developmental matrix, holonic curriculum. 70K LOC.
-* **[andrometry](https://github.com/ishan-parihar/andrometry)**: Android background sensor logging pipeline with Go server.
-* **[HoloOS](https://github.com/ishan-parihar/HoloOS)**: Enterprise systems modeling and topological failure risk simulator.
+* **[social-forge](https://github.com/ishan-parihar/social-forge)** `7.93` (0.07 from S): 95K LOC across 9 networks. Needs test density — only 51 tests for its size.
+* **[scorestrata](https://github.com/ishan-parihar/scorestrata)** `7.75` (0.25 from S): WAV music compiler. 944 tests, 88 MCP tools, 73K LOC in 9 days. First release + 2nd CI workflow = S.
+* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `7.70` (0.30 from S): Teleological developmental graph memory. 626 tests, 36 MCP tools, 9 releases. Missing CI entirely.
+* **[mysterium](https://github.com/ishan-parihar/mysterium)** `7.40`: Education-system replacement — 64-cell developmental matrix, holonic curriculum. 806 tests.
+* **[openscript](https://github.com/ishan-parihar/openscript)** `7.38`: Agent-directed video editing pipeline. 43 MCP tools, Hinglish Whisper transcription.
+* **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** `7.29`: Browserless carousel factory. 46 slide types, embedded Blitz renderer, 185 tests.
+* **[automaton](https://github.com/ishan-parihar/automaton)** `6.92`: Graph-native automation substrate. 15 Rust crates, 38 MCP tools. Needs velocity + releases.
+* **[mindstrata](https://github.com/ishan-parihar/mindstrata)** `6.75`: Deterministic emergent society simulation. 75K LOC, 1,238 tests. Simulator — no MCP surface; needs a CLI/API surface.
 
 </details>
 
 <details>
-<summary><b>📡 B-TIER: Agent Context, Memory, & Life-Ops (3 Projects)</b></summary>
+<summary><b>📡 B-TIER: Solid Utilities — Score 5.0–6.49 (3 Projects)</b></summary>
 <br>
 
-* **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)**: Context CLI on Notion. 31 tools, 5 databases, 3 operational layers.
-* **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)**: Multi-agent daemon + bundled LifeOS MCP server (35 tools, Postgres/Drizzle).
-* **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)**: Forced cognitive mode engine implementing 13 analysis frameworks.
+* **[andrometry](https://github.com/ishan-parihar/andrometry)** `5.99`: Personal context engine — Kotlin Android collector with a Go MCP server. 14 days old; will climb with releases.
+* **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** `5.96`: Forced cognitive mode engine implementing 13 analysis frameworks. 96 tests. Needs velocity.
+* **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `5.49`: Multi-agent daemon + bundled LifeOS MCP server (35 tools, Postgres/Drizzle). 339 tests, near-dormant (3 commits/90d).
 
 </details>
 
 <details>
-<summary><b>🧰 C-TIER: Agent-Native Platform CLIs — `-lyr` / `-cli` & Obscura (10 Projects)</b></summary>
+<summary><b>🧰 C-TIER: Agent-Native Platform CLIs — `-lyr` / `-cli` & Obscura (11 Projects)</b></summary>
 <br>
 
+* **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** `4.89`: Unified CLI + MCP server for Notion-based LifeOS. 31 tools, 8 releases — but **zero automated tests** across 15K Rust LOC (biggest test gap in the portfolio).
 * **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)**: Comprehensive Reddit scraper with 56 distinct operational tools.
 * **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)**: Fully structured X/Twitter API client for autonomous agent scripts.
 * **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)**: Stealth Instagram profile scraper and media downloader.
@@ -320,6 +325,14 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * 🔒 **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)**: Modular sandbox testing raw agent behaviors (Codename: Project Chimera).
 * 🔒 **[lifeos-saas](https://github.com/ishan-parihar/lifeos-saas)**: Agent hosting stack containing NullClaw, Honcho, and Postgres.
 * **[icode](https://github.com/ishan-parihar/icode)**: Rust command runner parsing agent file edit logs (Archived).
+
+</details>
+
+<details>
+<summary><b>🧠 KNOWLEDGE-BASE (1 Project — Spec Corpus, Not Ranked as Software)</b></summary>
+<br>
+
+* **[HoloOS](https://github.com/ishan-parihar/HoloOS)**: Enterprise systems modeling & topological risk — a knowledge/spec corpus (14K YAML + 1.2K MD, 98 executable Python files) rather than a verified software project. Re-labeled per RANKING-RUBRIC §7 (spec repos are not ranked against executable-engine criteria). **0 tests, 0 CI, 0 tools** — needs engineering verification before it can be tiered.
 
 </details>
 
