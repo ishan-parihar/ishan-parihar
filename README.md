@@ -1,88 +1,62 @@
 <div align="center">
 
-<!-- T2I HERO SPEC — Subject: a systems engineer standing at a control deck orchestrating a constellation of agent infrastructure — DAG execution graphs, MCP tool rings, memory vectors, and token-optimized protocol beams converging on a central hub labeled by the light it emits (no text). Composition: central operator figure with radiating infrastructure nodes; depth-of-field glow. Palette: deep charcoal #0B0F19 background, Rust amber #DE7F3B, TypeScript blue #3178C6, Python gold #F7E018, MCP violet #A855F7, emerald accent #10B981. Style: cinematic dark editorial vector, precise geometry, subtle glow, no text. 16:9. -->
-
-<!-- RAW SVG HERO SYSTEM -->
-<svg width="100%" height="320" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Solid Dark Editorial Background -->
+<svg width="100%" style="max-width:880px;height:auto;display:block;margin:0 auto" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="1200" height="320" rx="16" fill="#0B0F19" stroke="#1F293D" stroke-width="2"/>
-  
-  <!-- Grid Pattern Overlay for High-Tech Texture -->
   <path d="M 0 40 L 1200 40 M 0 80 L 1200 80 M 0 120 L 1200 120 M 0 160 L 1200 160 M 0 200 L 1200 200 M 0 240 L 1200 240 M 0 280 L 1200 280" stroke="#1E293B" stroke-width="1" opacity="0.3"/>
   <path d="M 100 0 L 100 320 M 200 0 L 200 320 M 300 0 L 300 320 M 400 0 L 400 320 M 500 0 L 500 320 M 600 0 L 600 320 M 700 0 L 700 320 M 800 0 L 800 320 M 900 0 L 900 320 M 1000 0 L 1000 320 M 1100 0 L 1100 320" stroke="#1E293B" stroke-width="1" opacity="0.3"/>
-
-  <!-- Glowing Connection Edge Bezier Paths -->
-  <!-- Rust to Central Hub -->
-  <path d="M 280 100 Q 420 100 560 160" stroke="#DE7F3B" stroke-width="2" stroke-dasharray="4 4" opacity="0.8"/>
-  <!-- TS to Central Hub -->
-  <path d="M 920 100 Q 780 100 640 160" stroke="#3178C6" stroke-width="2" stroke-dasharray="4 4" opacity="0.8"/>
-  <!-- Python to Central Hub -->
-  <path d="M 380 250 Q 480 250 560 180" stroke="#F7E018" stroke-width="2" opacity="0.5"/>
-  <!-- Protocol to Central Hub -->
-  <path d="M 820 250 Q 720 250 640 180" stroke="#A855F7" stroke-width="2" opacity="0.5"/>
   
-  <!-- Outer Node 1: Rust System (Left) -->
+  <path d="M 280 100 Q 420 100 560 160" stroke="#DE7F3B" stroke-width="2" stroke-dasharray="4 4" opacity="0.8"/>
+  <path d="M 920 100 Q 780 100 640 160" stroke="#3178C6" stroke-width="2" stroke-dasharray="4 4" opacity="0.8"/>
+  <path d="M 380 250 Q 480 250 560 180" stroke="#F7E018" stroke-width="2" opacity="0.5"/>
+  <path d="M 820 250 Q 720 250 640 180" stroke="#A855F7" stroke-width="2" opacity="0.5"/>
   <g transform="translate(200, 100)">
     <circle r="40" fill="#0F172A" stroke="#DE7F3B" stroke-width="3"/>
     <circle r="48" fill="none" stroke="#DE7F3B" stroke-width="1" stroke-dasharray="5 3" opacity="0.5"/>
     <text x="0" y="5" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">RUST</text>
     <text x="0" y="65" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle" font-weight="600">INFRASTRUCTURE</text>
   </g>
-  
-  <!-- Outer Node 2: TypeScript Stack (Right) -->
   <g transform="translate(1000, 100)">
     <circle r="40" fill="#0F172A" stroke="#3178C6" stroke-width="3"/>
     <circle r="48" fill="none" stroke="#3178C6" stroke-width="1" stroke-dasharray="5 3" opacity="0.5"/>
     <text x="0" y="5" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">TS / JS</text>
     <text x="0" y="65" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle" font-weight="600">ORCHESTRATION</text>
   </g>
-
-  <!-- Outer Node 3: Python Tooling (Bottom Left) -->
   <g transform="translate(320, 240)">
     <circle r="30" fill="#0F172A" stroke="#F7E018" stroke-width="2"/>
     <text x="0" y="4" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#F8FAFC" text-anchor="middle">PYTHON</text>
     <text x="0" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle" font-weight="600">CLI PLATFORMS</text>
   </g>
-
-  <!-- Outer Node 4: Protocol Routing (Bottom Right) -->
   <g transform="translate(880, 240)">
     <circle r="30" fill="#0F172A" stroke="#A855F7" stroke-width="2"/>
     <text x="0" y="4" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#F8FAFC" text-anchor="middle">MCP</text>
     <text x="0" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle" font-weight="600">AXI / TOON</text>
   </g>
-
-  <!-- Central Hub: Ishan Parihar -->
   <g transform="translate(600, 170)">
     <rect x="-140" y="-35" width="280" height="70" rx="12" fill="#0F172A" stroke="#10B981" stroke-width="3"/>
-    <!-- Central Node Pulse Effect -->
     <rect x="-146" y="-41" width="292" height="82" rx="16" fill="none" stroke="#10B981" stroke-width="1" opacity="0.3" stroke-dasharray="8 4"/>
     <text x="0" y="-5" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">ISHAN PARIHAR</text>
     <text x="0" y="18" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#10B981" text-anchor="middle" letter-spacing="2">SYSTEMS &amp; INFRASTRUCTURE</text>
   </g>
-
-  <!-- Protocol Path Labels -->
   <rect x="420" y="105" width="100" height="18" rx="4" fill="#1E293B" stroke="#334155" stroke-width="1"/>
   <text x="470" y="117" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="bold" fill="#E2E8F0" text-anchor="middle">Tokio DAG Engine</text>
 
   <rect x="680" y="105" width="100" height="18" rx="4" fill="#1E293B" stroke="#334155" stroke-width="1"/>
   <text x="730" y="117" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="bold" fill="#E2E8F0" text-anchor="middle">Drizzle Postgres</text>
-
-  <!-- Decorative Metrics Badge inside SVG -->
   <rect x="535" y="20" width="130" height="24" rx="12" fill="#022C22" stroke="#047857" stroke-width="1.5"/>
   <circle cx="548" cy="32" r="4" fill="#10B981"/>
   <text x="560" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="800" fill="#34D399">42 PROJECTS</text>
 </svg>
 
-**AI Agent Engineer · MCP Infrastructure · Multi-Agent Orchestration · Systems Architecture**
+**AI Agent Engineer** · MCP Infrastructure · Multi-Agent Orchestration · Systems Architecture
 
 📧 [support@ishanparihar.com](mailto:support@ishanparihar.com) · 🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar-111ba3109/)
 📍 Noida, India · ✈️ Remote: worldwide
 
-[![Available for Hire](https://img.shields.io/badge/-AVAILABLE%20FOR%20HIRE-brightgreen?style=for-the-badge&color=2ea44f)](mailto:support@ishanparihar.com)
-[![Rust](https://img.shields.io/badge/Rust-ed8b00?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
+[![Available for Hire](https://img.shields.io/badge/-AVAILABLE%20FOR%20HIRE-brightgreen?style=for-the-badge&color=10b981)](mailto:support@ishanparihar.com)
+[![Rust](https://img.shields.io/badge/Rust-DE7F3B?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![MCP](https://img.shields.io/badge/MCP-800%2B%20Tools-555555?style=for-the-badge&logo=github&logoColor=white)](https://modelcontextprotocol.io/)
+[![MCP](https://img.shields.io/badge/MCP-800%2B%20Tools-A855F7?style=for-the-badge&logo=github&logoColor=white)](https://modelcontextprotocol.io/)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
 </div>
@@ -97,7 +71,7 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 |--------|-------|------------------------------|
 | **Active Projects** | **42** | 8 S-tier · 8 A-tier · 9 B-tier · 9 C-tier · 1 D-tier · 1 knowledge-base · 6 websites (separate category) — tiered by the objective [ranking rubric](./RANKING-RUBRIC.md) |
 | **MCP Servers** | **20+** | 800+ total tools across intelligence, memory, media, social, and life-ops |
-| **Rust Crates** | **90+** | 99 `Cargo.toml` manifests — `operant` 19, `automaton` 17, `scorestrata` 12, `mindstrata` 8 |
+| **Rust Crates** | **99+** | 99 `Cargo.toml` manifests — `operant` 19, `automaton` 17, `scorestrata` 12, `mindstrata` 8 |
 | **Lines of Code** | **2.38M** | 2,380,188 tracked source lines (Rust, TypeScript, Python, Go, Kotlin) |
 | **Automated Tests** | **31,300+** | 31,364 test markers — top suites: `operant` 9.2K, `holosim` 7.7K, `mindstrata` 1.2K, `linkedin-lyr` 1.1K |
 | **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler |
@@ -115,7 +89,7 @@ I build the graph engines, compilers, and protocol layers that make autonomous A
 | Flagship | What it does | Proof lives in the repo |
 |---|---|---|
 | 🎵 **[scorestrata](https://github.com/ishan-parihar/scorestrata)** | Plain-language brief → mastered, byte-identical WAV | **"Hear it" section** — two rendered demo tracks (LP nu-metal, nu-disco) with spectrogram showcases + `ss render` commands to regenerate. 944 tests enforce the no-regression rules |
-| 🧠 **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Pure-Rust cognitive memory engine — every memory a `(Content, Embedding, Telos)` node | **"Testing" section** — clone and run: `cargo test` = 430 unit + 8 integration + 66 MCP e2e + 5 mind-flow simulations (626 passing, per badge) |
+| 🧠 **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Pure-Rust cognitive memory engine — every memory a `(Content, Embedding, Telos)` node | **"Testing" section** — clone and run: `cargo test` = 626 passing (449 lib + 68 MCP e2e + 44 plugin + integration + property suites, per badge) |
 | 📊 **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** | Browserless carousel factory — 46 slide types, zero Chromium | **Real exports** — `docs/previews/` holds 6 slides actually rendered by the embedded Blitz engine (no browser, no screenshots) |
 | 📡 **[browsefleet](https://github.com/ishan-parihar/browsefleet)** | Stealth browser fleet for agents — leased CDP contexts | **"Proof" section** — live benchmark table: 380 ms first nav, Turnstile auto-pass, reCAPTCHA v3 0.9 |
 | 🤖 **[operant](https://github.com/ishan-parihar/operant)** | Terminal-native ReAct agent runtime — 60+ tools, memory, MCP | **"Quick start"** — `./scripts/install.sh` + `operant setup && operant chat`; runnable in three commands |
@@ -141,10 +115,8 @@ I treat AI system design as **spatial machinery** rather than linear text prompt
 
 ## 💎 Flagship Projects
 
-
-
 ### 🤖 [operant](https://github.com/ishan-parihar/operant)
-**Terminal-native ReAct agent runtime.** Rust. 9,200+ tests. MCP client + server, skills, messaging channels.
+**Terminal-native ReAct agent runtime.** Rust. 9,249 tests. MCP client + server, skills, messaging channels.
 
 A production-grade agent runtime written in Rust that runs from your shell: a real think → act → observe loop with a JSON-schema tool registry, memory-context injection every turn, provider fallbacks, and self-healing retries.
 
@@ -204,11 +176,11 @@ A Rust backend with an axum REST API + rmcp MCP server, JWT auth, SSE realtime, 
 A complex implementation of stateful agent memory using a holonic graph structure. Every memory unit is represented as a node: `(Content, Embedding, Telos)`. The teleological decay algorithm ensures stale or irrelevant context decays over time while highly relevant goal nodes remain active.
 
 * **Interface**: 36 custom MCP tools allowing agents to write, link, prune, and query memories using vector search combined with graph traversal.
-* **Validation**: Highly verified with 637 deterministic unit and integration tests.
+* **Validation**: 626 tests total — zero warnings, zero regressions, verified against the current suite.
 * **Canonical**: The Rust port supersedes the original Python reference (now private); `tdg-rust` is the single canonical TDG project.
 
 ### 🎵 [scorestrata](https://github.com/ishan-parihar/scorestrata)
-**Contract-first music compiler — from plain-language brief to mastered WAV.** Rust. 11 crates, 944 tests.
+**Contract-first music compiler — from plain-language brief to mastered WAV.** Rust. 12 crates, 944 tests.
 
 A deterministic composition compiler that turns a human brief into a full-length WAV: event-sourced composition state, a validator gate with genre/register/layer checks, a production-grade layered synth, and a mastering chain. Same brief → byte-identical audio, every run.
 
@@ -222,7 +194,7 @@ A deterministic composition compiler that turns a human brief into a full-length
 High-quality Instagram / LinkedIn / TikTok / X carousels as HTML → PNG via an embedded Blitz renderer — **no Chromium, no browser, no screenshot hacks**. 4.5× less memory than headless-Chrome pipelines, fully static musl binary, WCAG-AA contrast auditing, and an MCP server for AI-driven generation.
 
 ### 🧠 [mindstrata](https://github.com/ishan-parihar/mindstrata)
-**Deterministic emergent human-society simulation — every agent a complete mind.** Rust. 82K LOC, 1,238 tests.
+**Deterministic emergent human-society simulation — every agent a complete mind.** Rust. 82K LOC, 1,245 tests.
 
 Not just a "society sim": a full cognitive-science stack — bodies, nervous systems, appraisal-based emotion, belief systems, social bonds, institutions, culture, and noospheric fields. Three architecture plans (AP1 → AP2 → AP3) deepen it from a medieval settlement into a multi-scale civilization simulation where history always emerges from locally bounded agents.
 
@@ -262,7 +234,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 | **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** | Python | 47 Tools | Stealth profile reconnaissance and HTTPX-based media scraper |
 | **[tg-cli](https://github.com/ishan-parihar/tg-cli)** | Python | 12 Tools | Fast Telethon-powered Telegram messaging automation client |
 | **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** | TypeScript | 6 Tools | AXI-compliant structured image overlay and meme generator |
-| **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** | Python | 56 Tools | Dense Reddit scraping, analysis, and interaction CLI |
+| **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** | Python | 32 Tools | Dense Reddit scraping, analysis, and interaction CLI |
 | **[discord-cli](https://github.com/ishan-parihar/discord-cli)** | Python | 13 Tools | Local-first Discord data CLI (SQLite sync, search, analytics) |
 | **[obscura-core](https://github.com/ishan-parihar/obscura-core)** | Python | 8 Tools | Stealth browser integration: cookie vault + CDP daemon powering the lyr family |
 | **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)** | Python | 3 Tools | Threads.net MCP server via anonymous scraping |
@@ -280,7 +252,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 
 ---
 
-## 🛠️ Unified Tech Stack Matrix
+## 🔬 Unified Tech Stack Matrix
 
 - **Languages**: Rust, TypeScript, Python, Kotlin, Go, SQL, Zig, Bash, MQL5
 - **Protocols**: Model Context Protocol (MCP), Agent eXperience Interface (AXI), TOON Serialization
@@ -332,7 +304,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 
 * **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** `6.37`: Forced cognitive mode engine implementing 13 analysis frameworks. 247 tests, 13 MCP tools, 5 sophistication families.
 * **[andrometry](https://github.com/ishan-parihar/andrometry)** `6.12`: Personal context engine — Kotlin Android collector with a Go REST server. 152 tests.
-* **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** `6.02`: Comprehensive Reddit scraper with 56 distinct operational tools — 10.0 agent score.
+* **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** `6.02`: Comprehensive Reddit scraper with 32 MCP tools for agents (browse, post, comment, vote, mod).
 * **[tg-cli](https://github.com/ishan-parihar/tg-cli)** `5.95`: Fast Telethon-powered Telegram automation client. 122 tests, 14 releases, 5/6 axi signals.
 * **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** `5.32`: TypeScript CLI meme generator. 25 tests, tag-only CI + release pipeline, v2.0.0.
 * **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** `5.20`: Unified CLI + MCP server for Notion-based LifeOS. 31 tools, 8 sophistication families — zero automated tests across 18K Rust LOC.
@@ -367,7 +339,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 </details>
 
 <details>
-<summary><b>🧠 KNOWLEDGE-BASE (1 Project — Spec Corpus, Not Ranked as Software)</b></summary>
+<summary><b>📚 KNOWLEDGE-BASE (1 Project — Spec Corpus, Not Ranked as Software)</b></summary>
 <br>
 
 * **[HoloOS](https://github.com/ishan-parihar/HoloOS)**: Enterprise systems modeling & topological risk — a knowledge/spec corpus (14K YAML + 1.2K MD, 98 executable Python files) with a `holos` CLI (80+ subcommands) and MCP server. Tracked separately from software, pending engineering verification.
@@ -405,7 +377,7 @@ The throughline across all of it is the same: **I build infrastructure for AI ag
 
 [![GitHub Stats](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ishan-parihar&theme=tokyonight)](https://github.com/ishan-parihar)
 
-[![Visitors](https://api.visitorbadge.io/api/visitors?path=ishan-parihar&label=Profile%20Views&countColor=%232ea44f)](https://github.com/ishan-parihar)
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=ishan-parihar&label=Profile%20Views&countColor=%2310b981)](https://github.com/ishan-parihar)
 
 **Available for remote contract, full-time, and part-time roles worldwide.**  
 **[📧 support@ishanparihar.com](mailto:support@ishanparihar.com) — let's build the infrastructure of tomorrow.**
