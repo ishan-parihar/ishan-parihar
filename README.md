@@ -1,51 +1,6 @@
 <div align="center">
 
-<svg width="100%" style="max-width:880px;height:auto;display:block;margin:0 auto" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="320" rx="16" fill="#0B0F19" stroke="#1F293D" stroke-width="2"/>
-  <path d="M 0 40 L 1200 40 M 0 80 L 1200 80 M 0 120 L 1200 120 M 0 160 L 1200 160 M 0 200 L 1200 200 M 0 240 L 1200 240 M 0 280 L 1200 280" stroke="#1E293B" stroke-width="1" opacity="0.3"/>
-  <path d="M 100 0 L 100 320 M 200 0 L 200 320 M 300 0 L 300 320 M 400 0 L 400 320 M 500 0 L 500 320 M 600 0 L 600 320 M 700 0 L 700 320 M 800 0 L 800 320 M 900 0 L 900 320 M 1000 0 L 1000 320 M 1100 0 L 1100 320" stroke="#1E293B" stroke-width="1" opacity="0.3"/>
-  
-  <path d="M 280 100 Q 420 100 560 160" stroke="#DE7F3B" stroke-width="2" stroke-dasharray="4 4" opacity="0.8"/>
-  <path d="M 920 100 Q 780 100 640 160" stroke="#3178C6" stroke-width="2" stroke-dasharray="4 4" opacity="0.8"/>
-  <path d="M 380 250 Q 480 250 560 180" stroke="#F7E018" stroke-width="2" opacity="0.5"/>
-  <path d="M 820 250 Q 720 250 640 180" stroke="#A855F7" stroke-width="2" opacity="0.5"/>
-  <g transform="translate(200, 100)">
-    <circle r="40" fill="#0F172A" stroke="#DE7F3B" stroke-width="3"/>
-    <circle r="48" fill="none" stroke="#DE7F3B" stroke-width="1" stroke-dasharray="5 3" opacity="0.5"/>
-    <text x="0" y="5" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">RUST</text>
-    <text x="0" y="65" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle" font-weight="600">INFRASTRUCTURE</text>
-  </g>
-  <g transform="translate(1000, 100)">
-    <circle r="40" fill="#0F172A" stroke="#3178C6" stroke-width="3"/>
-    <circle r="48" fill="none" stroke="#3178C6" stroke-width="1" stroke-dasharray="5 3" opacity="0.5"/>
-    <text x="0" y="5" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#F8FAFC" text-anchor="middle">TS / JS</text>
-    <text x="0" y="65" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle" font-weight="600">ORCHESTRATION</text>
-  </g>
-  <g transform="translate(320, 240)">
-    <circle r="30" fill="#0F172A" stroke="#F7E018" stroke-width="2"/>
-    <text x="0" y="4" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#F8FAFC" text-anchor="middle">PYTHON</text>
-    <text x="0" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle" font-weight="600">CLI PLATFORMS</text>
-  </g>
-  <g transform="translate(880, 240)">
-    <circle r="30" fill="#0F172A" stroke="#A855F7" stroke-width="2"/>
-    <text x="0" y="4" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#F8FAFC" text-anchor="middle">MCP</text>
-    <text x="0" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle" font-weight="600">AXI / TOON</text>
-  </g>
-  <g transform="translate(600, 170)">
-    <rect x="-140" y="-35" width="280" height="70" rx="12" fill="#0F172A" stroke="#10B981" stroke-width="3"/>
-    <rect x="-146" y="-41" width="292" height="82" rx="16" fill="none" stroke="#10B981" stroke-width="1" opacity="0.3" stroke-dasharray="8 4"/>
-    <text x="0" y="-5" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">ISHAN PARIHAR</text>
-    <text x="0" y="18" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#10B981" text-anchor="middle" letter-spacing="2">SYSTEMS &amp; INFRASTRUCTURE</text>
-  </g>
-  <rect x="420" y="105" width="100" height="18" rx="4" fill="#1E293B" stroke="#334155" stroke-width="1"/>
-  <text x="470" y="117" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="bold" fill="#E2E8F0" text-anchor="middle">Tokio DAG Engine</text>
-
-  <rect x="680" y="105" width="100" height="18" rx="4" fill="#1E293B" stroke="#334155" stroke-width="1"/>
-  <text x="730" y="117" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="bold" fill="#E2E8F0" text-anchor="middle">Drizzle Postgres</text>
-  <rect x="535" y="20" width="130" height="24" rx="12" fill="#022C22" stroke="#047857" stroke-width="1.5"/>
-  <circle cx="548" cy="32" r="4" fill="#10B981"/>
-  <text x="560" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="800" fill="#34D399">42 PROJECTS</text>
-</svg>
+<img src="./assets/readme/hero.svg" alt="Ishan Parihar — Systems &amp; Infrastructure Engineer — a constellation of Rust, TypeScript, Python and MCP/AXI nodes converging on a central hub" style="max-width:880px;width:100%;height:auto;display:block;margin:0 auto">
 
 **AI Agent Engineer** · MCP Infrastructure · Multi-Agent Orchestration · Systems Architecture
 

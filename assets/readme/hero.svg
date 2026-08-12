@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="heroTitle heroDesc">
+  <title id="heroTitle">Ishan Parihar — Systems &amp; Infrastructure Engineer</title>
+  <desc id="heroDesc">A constellation diagram: Rust, TypeScript, Python and MCP/AXI nodes connected to a central hub labeled Ishan Parihar, with stat chips reading 31K+ tests and 42 projects.</desc>
+
+  <defs>
+    <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.30"/>
+      <stop offset="60%" stop-color="#10B981" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panelFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#16213A"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="hubFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0E2A22"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="1200" height="320" rx="16" fill="#0B0F19" stroke="#1F293D" stroke-width="2"/>
+
+  <!-- Grid overlay -->
+  <g stroke="#1E293B" stroke-width="1" opacity="0.35">
+    <path d="M 0 40 L 1200 40 M 0 80 L 1200 80 M 0 120 L 1200 120 M 0 160 L 1200 160 M 0 200 L 1200 200 M 0 240 L 1200 240 M 0 280 L 1200 280"/>
+    <path d="M 100 0 L 100 320 M 200 0 L 200 320 M 300 0 L 300 320 M 400 0 L 400 320 M 500 0 L 500 320 M 600 0 L 600 320 M 700 0 L 700 320 M 800 0 L 800 320 M 900 0 L 900 320 M 1000 0 L 1000 320 M 1100 0 L 1100 320"/>
+  </g>
+
+  <!-- Hub glow -->
+  <circle cx="600" cy="170" r="150" fill="url(#hubGlow)"/>
+
+  <!-- Connection edges -->
+  <path d="M 280 100 Q 420 100 560 160" stroke="#DE7F3B" stroke-width="2" stroke-dasharray="4 4" opacity="0.85"/>
+  <path d="M 920 100 Q 780 100 640 160" stroke="#3178C6" stroke-width="2" stroke-dasharray="4 4" opacity="0.85"/>
+  <path d="M 380 250 Q 480 250 560 180" stroke="#F7E018" stroke-width="2" stroke-dasharray="4 4" opacity="0.55"/>
+  <path d="M 820 250 Q 720 250 640 180" stroke="#A855F7" stroke-width="2" stroke-dasharray="4 4" opacity="0.55"/>
+
+  <!-- Data-flow dots at edge midpoints -->
+  <circle cx="420" cy="115" r="3" fill="#DE7F3B"/>
+  <circle cx="780" cy="115" r="3" fill="#3178C6"/>
+  <circle cx="475" cy="232" r="3" fill="#F7E018"/>
+  <circle cx="725" cy="232" r="3" fill="#A855F7"/>
+
+  <!-- Node: Rust -->
+  <g transform="translate(200, 100)">
+    <circle r="48" fill="none" stroke="#DE7F3B" stroke-width="1" stroke-dasharray="5 3" opacity="0.5"/>
+    <circle r="40" fill="url(#panelFill)" stroke="#DE7F3B" stroke-width="3"/>
+    <text x="0" y="4" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800" fill="#F8FAFC" text-anchor="middle" letter-spacing="1">RUST</text>
+    <text x="0" y="72" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="middle" letter-spacing="2.5">INFRASTRUCTURE</text>
+  </g>
+
+  <!-- Node: TypeScript -->
+  <g transform="translate(1000, 100)">
+    <circle r="48" fill="none" stroke="#3178C6" stroke-width="1" stroke-dasharray="5 3" opacity="0.5"/>
+    <circle r="40" fill="url(#panelFill)" stroke="#3178C6" stroke-width="3"/>
+    <text x="0" y="4" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#F8FAFC" text-anchor="middle" letter-spacing="1">TS / JS</text>
+    <text x="0" y="72" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#94A3B8" text-anchor="middle" letter-spacing="2.5">ORCHESTRATION</text>
+  </g>
+
+  <!-- Node: Python -->
+  <g transform="translate(320, 240)">
+    <circle r="36" fill="none" stroke="#F7E018" stroke-width="1" stroke-dasharray="5 3" opacity="0.5"/>
+    <circle r="29" fill="url(#panelFill)" stroke="#F7E018" stroke-width="2.5"/>
+    <text x="0" y="4" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#F8FAFC" text-anchor="middle" letter-spacing="0.5">PYTHON</text>
+    <text x="0" y="55" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="600" fill="#94A3B8" text-anchor="middle" letter-spacing="2">CLI PLATFORMS</text>
+  </g>
+
+  <!-- Node: MCP / AXI -->
+  <g transform="translate(880, 240)">
+    <circle r="36" fill="none" stroke="#A855F7" stroke-width="1" stroke-dasharray="5 3" opacity="0.5"/>
+    <circle r="29" fill="url(#panelFill)" stroke="#A855F7" stroke-width="2.5"/>
+    <text x="0" y="4" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#F8FAFC" text-anchor="middle" letter-spacing="0.5">MCP</text>
+    <text x="0" y="55" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="600" fill="#94A3B8" text-anchor="middle" letter-spacing="2">AXI / TOON</text>
+  </g>
+
+  <!-- Central hub -->
+  <g transform="translate(600, 170)">
+    <rect x="-160" y="-39" width="320" height="78" rx="14" fill="url(#hubFill)" stroke="#10B981" stroke-width="3" filter="url(#softGlow)"/>
+    <rect x="-166" y="-45" width="332" height="90" rx="18" fill="none" stroke="#10B981" stroke-width="1" opacity="0.3" stroke-dasharray="8 4"/>
+    <text x="0" y="-6" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="2.5">ISHAN PARIHAR</text>
+    <text x="0" y="19" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#34D399" text-anchor="middle" letter-spacing="3">SYSTEMS &amp; INFRASTRUCTURE</text>
+  </g>
+
+  <!-- Stat chip: tests -->
+  <g>
+    <rect x="40" y="16" width="150" height="26" rx="13" fill="#022C22" stroke="#047857" stroke-width="1.5"/>
+    <circle cx="58" cy="29" r="4" fill="#10B981"/>
+    <text x="72" y="33" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#34D399" letter-spacing="1">31K+ TESTS</text>
+  </g>
+
+  <!-- Stat chip: projects -->
+  <g>
+    <rect x="1010" y="16" width="150" height="26" rx="13" fill="#022C22" stroke="#047857" stroke-width="1.5"/>
+    <circle cx="1028" cy="29" r="4" fill="#10B981"/>
+    <text x="1042" y="33" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#34D399" letter-spacing="1">42 PROJECTS</text>
+  </g>
+</svg>

@@ -13,7 +13,7 @@
 
 | # | Gap | Severity | Why it was a problem | Fix applied |
 |---|-----|----------|----------------------|-------------|
-| H1 | Responsive SVG bug — `width="100%" height="320"` | **High** | A fixed 320px height with a 1200px viewBox letterboxes on mobile (content shrinks to an illegible strip) and distorts on ultra-wide screens | `max-width:880px;height:auto` + `preserveAspectRatio="xMidYMid meet"`; fixed height removed |
+| H1 | Inline-SVG text flattened to a single line — README sanitizers / mobile clients drop the `transform`/`x`/`y` layout attributes on inline `<svg><text>`, so every label stacked at the origin as one unstyled line | **High** | **Root-cause fix:** the hero now lives as a real SVG file (`assets/readme/hero.svg`) mounted via `<img src="./assets/readme/hero.svg">` — the browser's native SVG engine lays it out identically on desktop, mobile web, and mobile apps (verified by headless Chrome: 4 positioned nodes + hub + chips, no flattening) |
 | H2 | T2I HERO SPEC meta-comment (5-line block) + `<!-- RAW SVG HERO SYSTEM -->` | Medium | Process/meta commentary in a public profile README; invisible but violates the no-meta-commentary rule | Removed; spec relocated to `docs/hero-spec.md` |
 | H3 | 15 structural HTML comments inside the SVG | Low | Same class; bloats the header | All stripped — the header is now zero-comment |
 | H4 | Badge palette mismatch — SVG uses `#10B981`/`#DE7F3B`/`#A855F7`; badges used `2ea44f`/`ed8b00`/grey `555555` | Medium | Header reads as two different designs; the MCP badge was bland grey | Badges aligned to SVG tokens (`10b981`, `DE7F3B` — Rust's official brand orange, `A855F7`); visitor badge aligned too |
