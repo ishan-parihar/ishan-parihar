@@ -36,7 +36,7 @@ owning repo's README. **5 real inconsistencies found and fixed:**
 | Rust crates display | `90+` (evidence: 99) | 99 manifests | → `99+` for exactness |
 
 **Verified-clean on re-check:** all catalog scores/LOC/tests (`operant 538K/9,249/19` ·
-`scorestrata 73K/944/12/88` · `social-forge 78K/43` · `igs-rust 91` · `openscript 109/510`
+`scorestrata 73K/944/12/88` · `social-forge 78K/328` · `igs-rust 93` · `openscript 109/510`
 · ecosystem surface counts for the other 20 rows), tier math (8+8+9+9+1+1+6 = 42),
 numbers table totals, and header `42 PROJECTS` chip.
 

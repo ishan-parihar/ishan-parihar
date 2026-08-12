@@ -148,7 +148,16 @@ CONCUR_RE = re.compile(
     r"\bactix\b|\basync_trait\b|\bmpsc::|\bArc<Mutex>\b|modelcontextprotocol|\brmcp\b",
     re.IGNORECASE,
 )
-MCP_TOOL_DEC = re.compile(r"@\s*(?:mcp|app|router|server)\.tool\s*\(")
+# MCP tool registration patterns — Python FastMCP decorators (@mcp.tool(...))
+# AND Rust rmcp attribute macros (#[tool(...)]). The Rust form was missing
+# (2026-08-13 fix): every rmcp-based repo (social-forge, igs-rust, tdg-rust,
+# slideforge-rust) measured 0 mcp hits and fell to the wrong surface. The
+# pattern is `tool` + `(` so #[tool_router(...)] (a macro, not a tool) does
+# not match.
+MCP_TOOL_DEC = re.compile(
+    r"@\s*(?:mcp|app|router|server)\.tool\s*\(|"
+    r"#\s*\[tool\s*\("
+)
 # Class-aware surface detection (v6, 2026-08-12). A project is scored against
 # the surface it actually exposes — never zeroed for lacking MCP:
 #   mcp   -> @mcp.tool / FastMCP / mcp.server registrations
@@ -199,7 +208,7 @@ def count_axi(src_text):
     return n
 
 
-def detect_surface(mcp_hits, cli_hits, rest_hits, bin_hits):
+def detect_surface(mcp_hits, cli_hits, rest_hits, bin_hits, pub_cli=False):
     """Pick the dominant surface class by measured signal count.
 
     The three interactive classes (mcp/cli/rest) compete on evidence: the
@@ -219,15 +228,24 @@ def detect_surface(mcp_hits, cli_hits, rest_hits, bin_hits):
     point is CLI-first even if it also exposes MCP tools. The rule is NOT a
     demotion mechanism: a repo whose identity is MCP-first (e.g. a server
     whose only console script is an internal dev utility) should be scored
-    mcp; classify it so in DATA, and the detector's hybrid branch only fires
-    when a published bin/scripts entry exists, not for stray helper scripts.
+    mcp.
+
+    `pub_cli` gates the hybrid branch (2026-08-13 fix): it is true ONLY when
+    a published CLI entry point exists in a manifest (package.json "bin" /
+    pyproject.toml [project.scripts]). Previously the branch fired on ANY
+    cli hit, so a stray `#[derive(Parser)]` inside an MCP-first Rust server
+    (social-forge) was misclassified `cli` with ops=1 despite 328 MCP tools.
     """
     best = max(mcp_hits, cli_hits, rest_hits)
     if best <= 0:
         return "engine", bin_hits
-    # hybrid: published CLI + any MCP -> cli (AXI-first)
-    if cli_hits > 0 and mcp_hits > 0:
-        return "cli", cli_hits
+    # hybrid: PUBLISHED CLI + any MCP -> cli (AXI-first). Report the tool
+    # count (max of the two signals): the -lyr family advertises its MCP
+    # tool count as the ops figure (reddit-lyr 56, instagram-lyr 47, ...)
+    # and its only cli_hit is the [project.scripts] manifest entry. Without
+    # the max, regeneration would collapse those rows to ops=1.
+    if pub_cli and mcp_hits > 0:
+        return "cli", max(cli_hits, mcp_hits)
     if best == mcp_hits:
         return "mcp", mcp_hits
     if best == cli_hits:
@@ -258,6 +276,7 @@ def measure(name, relpath, category):
     concur = 0
     mcp_hits = 0
     cli_hits = 0
+    pub_cli = False
     rest_hits = 0
     bin_hits = 0
     src_text = []
@@ -286,7 +305,9 @@ def measure(name, relpath, category):
             bin_hits += len(ENGINE_BIN_RE.findall(content))
         src_text.append(content)
     # package.json "bin" / pyproject [project.scripts] are CLI signals but .json
-    # and .toml are not in CODE_EXT, so scan the manifest files directly.
+    # and .toml are not in CODE_EXT, so scan the manifest files directly. A
+    # PUBLISHED CLI entry point ("bin" / [project.scripts]) is what gates the
+    # hybrid mcp+cli classification — not stray source-level clap derives.
     for mf in ("package.json", "pyproject.toml", "Cargo.toml"):
         p = os.path.join(repo_dir, mf)
         if os.path.isfile(p):
@@ -295,7 +316,16 @@ def measure(name, relpath, category):
             except Exception:
                 mf_src = ""
             cli_hits += len(CLI_CMD_RE.findall(mf_src))
-    surface, tools = detect_surface(mcp_hits, cli_hits, rest_hits, bin_hits)
+            # PUBLISHED CLI = a first-class entry point a user installs: the
+            # "bin" key in package.json or [project.scripts] in pyproject.toml.
+            # Cargo.toml's [[bin]] is NOT one (internal build target, not a
+            # published console script) — social-forge ships a clap dashboard
+            # binary yet its identity is MCP-first (300+ tools).
+            if mf == "package.json" and '"bin"' in mf_src:
+                pub_cli = True
+            elif mf == "pyproject.toml" and "[project.scripts]" in mf_src:
+                pub_cli = True
+    surface, tools = detect_surface(mcp_hits, cli_hits, rest_hits, bin_hits, pub_cli)
     axi = count_axi(src_text) if surface == "cli" else 0
     cargo = [f for f in flist if f.endswith("Cargo.toml")]
     pkgjson = [f for f in flist if f.endswith("package.json")]

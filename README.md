@@ -25,7 +25,7 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 | Metric | Value | Technical Context & Evidence |
 |--------|-------|------------------------------|
 | **Active Projects** | **42** | 8 S-tier · 8 A-tier · 9 B-tier · 9 C-tier · 1 D-tier · 1 knowledge-base · 6 websites (separate category) — tiered by the objective [ranking rubric](./RANKING-RUBRIC.md) |
-| **MCP Servers** | **20+** | 800+ total tools across intelligence, memory, media, social, and life-ops |
+| **MCP Servers** | **20+** | 1,300+ total tools across intelligence, memory, media, social, and life-ops |
 | **Rust Crates** | **99+** | 99 `Cargo.toml` manifests — `operant` 19, `automaton` 17, `scorestrata` 12, `mindstrata` 8 |
 | **Lines of Code** | **2.38M** | 2,380,188 tracked source lines (Rust, TypeScript, Python, Go, Kotlin) |
 | **Automated Tests** | **31,300+** | 31,364 test markers — top suites: `operant` 9.2K, `holosim` 7.7K, `mindstrata` 1.2K, `linkedin-lyr` 1.1K |
@@ -126,11 +126,11 @@ A lightweight news and data ingestion pipeline scraping 411 distinct sources acr
 A Rust backend with an axum REST API + rmcp MCP server, JWT auth, SSE realtime, and an in-process scheduler for cross-platform social content operations — Reddit, LinkedIn, Instagram, Telegram, Threads, Facebook, YouTube, Discord, and X/Twitter.
 
 ### 🧠 [tdg-rust](https://github.com/ishan-parihar/tdg-rust)
-**Teleological Developmental Graph — Pure Rust cognitive engine.** 626 tests. 36 MCP tools.
+**Teleological Developmental Graph — Pure Rust cognitive engine.** 626 tests. 50 MCP tools.
 
 A complex implementation of stateful agent memory using a holonic graph structure. Every memory unit is represented as a node: `(Content, Embedding, Telos)`. The teleological decay algorithm ensures stale or irrelevant context decays over time while highly relevant goal nodes remain active.
 
-* **Interface**: 36 custom MCP tools allowing agents to write, link, prune, and query memories using vector search combined with graph traversal.
+* **Interface**: 50 custom MCP tools allowing agents to write, link, prune, and query memories using vector search combined with graph traversal.
 * **Validation**: 626 tests total — zero warnings, zero regressions, verified against the current suite.
 * **Canonical**: The Rust port supersedes the original Python reference (now private); `tdg-rust` is the single canonical TDG project.
 
@@ -163,13 +163,13 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 
 | System | Stack | Surface | Description |
 |--------|-------|---------|-------------|
-| **[igs-rust](https://github.com/ishan-parihar/igs-rust)** | Rust | 91 Tools | Lightweight intelligence aggregator scraping 411 sources in 47 countries |
+| **[igs-rust](https://github.com/ishan-parihar/igs-rust)** | Rust | 93 Tools | Lightweight intelligence aggregator scraping 411 sources in 47 countries |
 | **[social-forge](https://github.com/ishan-parihar/social-forge)** | Rust | MCP + REST | Multi-network content ops engine (25 platforms, JWT auth, SSE realtime) |
 | **[openscript](https://github.com/ishan-parihar/openscript)** | Rust/TS | 109 Tools | AI-directed video editing pipeline (TTS, FFmpeg, Remotion) |
-| **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Rust | 36 Tools | Teleological developmental graph memory and knowledge synthesizer |
+| **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Rust | 50 Tools | Teleological developmental graph memory and knowledge synthesizer |
 | **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** | TypeScript | 35 Tools | Multi-agent orchestration daemon + LifeOS MCP server (LanceDB + Telegram) |
 | **[automaton](https://github.com/ishan-parihar/automaton)** | Rust | 38 Tools | Graph-native build, plan, and scheduled execution engine |
-| **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** | Rust | 8 Tools | Browserless carousel factory — 46 slide types, embedded Blitz renderer |
+| **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** | Rust | 20 Tools | Browserless carousel factory — 46 slide types, embedded Blitz renderer |
 | **[browsefleet](https://github.com/ishan-parihar/browsefleet)** | Node/TS | REST + CDP | Stealth browser fleet: leased CDP contexts, sessions/screenshots/PDFs for agents |
 | **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** | TypeScript | 13 Tools | Forced epistemic cognitive modes (first-principles, polarity mapping, etc.) |
 | **[andrometry](https://github.com/ishan-parihar/andrometry)** | Kotlin/Go | 12 Tools | Personal context engine: Kotlin Android collector with a Go MCP server |
@@ -230,11 +230,11 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[operant](https://github.com/ishan-parihar/operant)** `9.57`: Terminal-native ReAct agent runtime — 538K LOC, 9,249 tests, 19 crates, 12/12 sophistication families (state machines, DSLs, storage, determinism, plugins…).
 * **[openscript](https://github.com/ishan-parihar/openscript)** `8.96`: Agent-directed video editing pipeline — 109 MCP tools, 510 tests, 12/12 sophistication families, 5 languages.
 * **[mysterium](https://github.com/ishan-parihar/mysterium)** `8.55`: Education-system replacement — 64-cell developmental matrix, holonic curriculum, 1,090 tests, 10 sophistication families, 9-command AXI-first CLI (5/6 signals).
+* **[social-forge](https://github.com/ishan-parihar/social-forge)** `8.42`: 78K LOC across 25 platforms (registry-verified), 10 sophistication families, 328 MCP tools across 42 tool modules.
 * **[scorestrata](https://github.com/ishan-parihar/scorestrata)** `8.39`: WAV music compiler — 12 crates, 944 tests, 88 MCP tools, 9 sophistication families (state machines, graphs, DSLs, determinism, render/audio…). 73K LOC.
 * **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** `8.12`: Professional profile extraction + Voyager profile-edit surface. 1,166 tests, 25 CLI commands, 9 sophistication families, 6/6 axi.md signals.
-* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `8.04`: Teleological developmental graph memory — 626 tests, 36 MCP tools, 11 sophistication families, 10 releases.
-* **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `8.03`: High-speed news ingestion pipeline — 11 sophistication families, 91 MCP tools, 15 releases, 411 sources in 47 countries.
-* **[social-forge](https://github.com/ishan-parihar/social-forge)** `8.02`: 78K LOC across 25 platforms (registry-verified), 10 sophistication families, 300+ MCP tools.
+* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `8.04`: Teleological developmental graph memory — 626 tests, 50 MCP tools, 11 sophistication families, 10 releases.
+* **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `8.03`: High-speed news ingestion pipeline — 11 sophistication families, 93 MCP tools, 15 releases, 411 sources in 47 countries.
 
 </details>
 
@@ -244,11 +244,11 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 
 * **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `7.62`: Multi-agent daemon + bundled LifeOS MCP server (35 tools, LanceDB/SQLite + Telegram). 227 tests, 10 sophistication families.
 * **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** `7.44`: Stealth Instagram profile scraper. 335 tests, 47 CLI commands, 5/6 axi signals.
+* **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** `7.36`: Browserless carousel factory — 46 slide types, embedded Blitz renderer, 20 MCP tools, 185 tests, 6 releases, 10 sophistication families.
 * **[mindstrata](https://github.com/ishan-parihar/mindstrata)** `7.34`: Deterministic emergent society simulation — 8 crates, 82K LOC, 1,245 tests, 10 measured sophistication families (state machines, graphs/holonics, DSLs, determinism, plugins…).
 * **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** `7.32`: Agent-native X/Twitter integration. 243 tests, 42 CLI commands, 32 releases, 5/6 axi signals.
 * **[facebook-lyr](https://github.com/ishan-parihar/facebook-lyr)** `7.30`: Facebook / Messenger CLI. 229 tests, 41 CLI commands.
 * **[automaton](https://github.com/ishan-parihar/automaton)** `7.05`: Graph-native automation substrate — 17 Rust crates, 38 MCP tools, 8 sophistication families.
-* **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** `6.75`: Browserless carousel factory — 46 slide types, embedded Blitz renderer, 185 tests, 6 releases, 10 sophistication families.
 * **[browsefleet](https://github.com/ishan-parihar/browsefleet)** `6.54`: Stealth browser fleet — CDP pool proxying sessions/screenshots/PDFs to agents. 22 REST endpoints, 86 tests, 4 languages.
 
 </details>

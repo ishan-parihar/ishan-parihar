@@ -178,14 +178,15 @@ ranking (see §7).
 | operant | engine | 538,394 | 9,249 | 19 | 6 | 500 | 12 | mcp | 68 | 0 |
 | openscript | engine | 74,606 | 510 | 12 | 5 | 500 | 12 | mcp | 109 | 0 |
 | mysterium | engine | 61,428 | 1,090 | 1 | 4 | 281 | 10 | cli | 9 | 5 |
+| social-forge | engine | 77,836 | 257 | 3 | 5 | 500 | 10 | mcp | 328 | 0 |
 | scorestrata | engine | 72,958 | 944 | 12 | 2 | 0 | 9 | mcp | 88 | 0 |
 | osint-os | deprecated | 120,754 | 399 | 1 | 4 | 500 | 9 | rest | 122 | 0 |
 | linkedin-lyr | engine | 50,739 | 1,166 | 0 | 2 | 500 | 9 | cli | 25 | 6 |
-| tdg-rust | engine | 47,797 | 626 | 1 | 3 | 268 | 11 | mcp | 36 | 0 |
-| igs-rust | engine | 27,738 | 231 | 1 | 2 | 500 | 11 | mcp | 91 | 0 |
-| social-forge | engine | 77,836 | 257 | 3 | 5 | 500 | 10 | mcp | 43 | 0 |
+| tdg-rust | engine | 47,797 | 626 | 1 | 3 | 268 | 11 | mcp | 50 | 0 |
+| igs-rust | engine | 27,738 | 231 | 1 | 2 | 500 | 11 | mcp | 93 | 0 |
 | c-suite-agents | engine | 46,498 | 227 | 1 | 2 | 500 | 10 | mcp | 35 | 0 |
 | instagram-lyr | engine | 20,441 | 335 | 0 | 2 | 355 | 6 | cli | 47 | 5 |
+| slideforge-rust | engine | 35,631 | 185 | 2 | 3 | 74 | 10 | mcp | 20 | 0 |
 | mindstrata | engine | 82,079 | 1,245 | 8 | 1 | 0 | 10 | cli | 2 | 3 |
 | twitter-lyr | engine | 13,425 | 243 | 0 | 2 | 14 | 6 | cli | 42 | 5 |
 | facebook-lyr | engine | 13,977 | 229 | 0 | 2 | 318 | 5 | cli | 41 | 3 |
@@ -193,7 +194,6 @@ ranking (see §7).
 | holosim-infinite | experimental | 489,296 | 7,766 | 2 | 2 | 31 | 11 | engine | 6 | 0 |
 | kali-mahabali | experimental | 63,118 | 690 | 0 | 2 | 500 | 8 | mcp | 20 | 0 |
 | automaton | engine | 13,410 | 43 | 17 | 2 | 500 | 8 | mcp | 38 | 0 |
-| slideforge-rust | engine | 35,631 | 185 | 2 | 3 | 74 | 10 | mcp | 8 | 0 |
 | browsefleet | engine | 4,558 | 86 | 4 | 4 | 239 | 5 | rest | 22 | 0 |
 | consciousness-fabricator | experimental | 9,238 | 158 | 0 | 1 | 73 | 8 | cli | 6 | 2 |
 | thinking-steroid | engine | 24,997 | 247 | 1 | 1 | 18 | 5 | mcp | 13 | 0 |
@@ -210,8 +210,6 @@ ranking (see §7).
 | workout-factory | deprecated | 9,417 | 30 | 0 | 2 | 7 | 4 | engine | 0 | 0 |
 | hermes-prime-bridge | engine | 919 | 14 | 0 | 2 | 1 | 2 | mcp | 3 | 0 |
 | lifeos-saas | engine | 760 | 0 | 0 | 2 | 15 | 1 | rest | 10 | 0 |
----
-
 ## 5. Scored Results (engine output, v7 — 35 ranked repos)
 
 | # | Project | Arch | Test | Agnt | Scale | Util | **Total** | Tier |
@@ -219,22 +217,22 @@ ranking (see §7).
 | 1 | operant | 9.1 | 10.0 | 10.0 | 10.0 | 8.4 | **9.57** | S |
 | 2 | openscript | 8.8 | 9.6 | 10.0 | 10.0 | 4.2 | **8.96** | S |
 | 3 | mysterium | 7.1 | 10.0 | 8.0 | 9.5 | 9.0 | **8.55** | S |
-| 4 | scorestrata | 6.6 | 10.0 | 10.0 | 10.0 | 4.1 | **8.39** | S |
-| 5 | osint-os | 6.6 | 9.0 | 10.0 | 10.0 | 6.0 | **8.33** | C* |
-| 6 | linkedin-lyr | 5.3 | 10.0 | 10.0 | 8.9 | 7.0 | **8.12** | S |
-| 7 | tdg-rust | 7.0 | 10.0 | 8.0 | 9.3 | 4.5 | **8.04** | S |
-| 8 | igs-rust | 6.5 | 8.6 | 10.0 | 8.9 | 5.9 | **8.03** | S |
-| 9 | social-forge | 7.4 | 8.4 | 8.0 | 10.0 | 6.0 | **8.02** | S |
+| 4 | social-forge | 7.4 | 8.4 | 10.0 | 10.0 | 6.0 | **8.42** | S |
+| 5 | scorestrata | 6.6 | 10.0 | 10.0 | 10.0 | 4.1 | **8.39** | S |
+| 6 | osint-os | 6.6 | 9.0 | 10.0 | 10.0 | 6.0 | **8.33** | C* |
+| 7 | linkedin-lyr | 5.3 | 10.0 | 10.0 | 8.9 | 7.0 | **8.12** | S |
+| 8 | tdg-rust | 7.0 | 10.0 | 8.0 | 9.3 | 4.5 | **8.04** | S |
+| 9 | igs-rust | 6.5 | 8.6 | 10.0 | 8.9 | 5.9 | **8.03** | S |
 | 10 | c-suite-agents | 6.1 | 8.4 | 8.0 | 9.3 | 6.9 | **7.62** | A |
 | 11 | instagram-lyr | 4.0 | 9.7 | 10.0 | 8.2 | 5.9 | **7.44** | A |
-| 12 | mindstrata | 6.3 | 10.0 | 5.2 | 10.0 | 4.1 | **7.34** | A |
-| 13 | twitter-lyr | 4.0 | 9.4 | 10.0 | 7.8 | 6.0 | **7.32** | A |
-| 14 | facebook-lyr | 3.6 | 9.2 | 10.0 | 7.9 | 7.4 | **7.30** | A |
-| 15 | icode | 8.2 | 10.0 | 3.0 | 10.0 | 1.7 | **7.23** | C* |
-| 16 | holosim-infinite | 6.7 | 10.0 | 3.0 | 10.0 | 5.0 | **7.11** | C* |
-| 17 | kali-mahabali | 4.9 | 10.0 | 6.0 | 9.1 | 5.4 | **7.08** | C* |
-| 18 | automaton | 6.4 | 6.1 | 8.0 | 9.7 | 5.5 | **7.05** | A |
-| 19 | slideforge-rust | 6.8 | 8.1 | 3.0 | 9.4 | 6.8 | **6.75** | A |
+| 12 | slideforge-rust | 6.8 | 8.1 | 6.0 | 9.4 | 6.8 | **7.36** | A |
+| 13 | mindstrata | 6.3 | 10.0 | 5.2 | 10.0 | 4.1 | **7.34** | A |
+| 14 | twitter-lyr | 4.0 | 9.4 | 10.0 | 7.8 | 6.0 | **7.32** | A |
+| 15 | facebook-lyr | 3.6 | 9.2 | 10.0 | 7.9 | 7.4 | **7.30** | A |
+| 16 | icode | 8.2 | 10.0 | 3.0 | 10.0 | 1.7 | **7.23** | C* |
+| 17 | holosim-infinite | 6.7 | 10.0 | 3.0 | 10.0 | 5.0 | **7.11** | C* |
+| 18 | kali-mahabali | 4.9 | 10.0 | 6.0 | 9.1 | 5.4 | **7.08** | C* |
+| 19 | automaton | 6.4 | 6.1 | 8.0 | 9.7 | 5.5 | **7.05** | A |
 | 20 | browsefleet | 5.4 | 8.1 | 6.0 | 8.0 | 4.9 | **6.54** | A |
 | 21 | consciousness-fabricator | 4.4 | 8.7 | 6.8 | 7.5 | 4.2 | **6.40** | C* |
 | 22 | thinking-steroid | 3.5 | 8.8 | 6.0 | 8.8 | 6.0 | **6.37** | B |
@@ -251,21 +249,23 @@ ranking (see §7).
 | 33 | workout-factory | 3.2 | 5.6 | 1.0 | 7.6 | 2.3 | **3.93** | C |
 | 34 | hermes-prime-bridge | 2.3 | 5.5 | 3.0 | 5.6 | 4.1 | **3.92** | C |
 | 35 | lifeos-saas | 1.9 | 0.0 | 3.0 | 5.5 | 4.8 | **2.48** | D |
----
+
+* = policy-capped at C by §7 (experimental flag / archived) despite a higher raw capability score.
+C without * = natural tier.
 
 ## 6. What the Data Says (evidence-backed findings)
 
 1. **v7 re-ranks on architecture, not calendar.** Removing velocity, releases and
    CI-count (24% → 0%) and centering the measured sophistication families (30%)
-   reshuffles the top: `operant` **9.81**, `openscript` **9.23**, `mysterium`
-   **8.82** lead on deep code (12/12/10 families). `scorestrata` (9 families:
+   reshuffles the top: `operant` **9.57**, `openscript` **8.96**, `mysterium`
+   **8.55** lead on deep code (12/12/10 families). `scorestrata` (9 families:
    state machines, graphs, DSLs, storage, render/audio, determinism, distributed,
-   security, plugins — 12 crates, 944 tests, 88 MCP tools) crosses into **S 8.33**,
-   which v6.2's logistics mix had parked in A. `osint-os` scores **8.66 raw** —
-   the 4th-highest capability in the portfolio — but stays C* (archived, §7).
-2. **S-tier is eight.** operant 9.81, openscript 9.23, mysterium 8.82,
-   linkedin-lyr 8.46, scorestrata 8.33, social-forge 8.32, igs-rust 8.32,
-   tdg-rust 8.31. All are engines with 9–12 sophistication families, 200+ tests,
+   security, plugins — 12 crates, 944 tests, 88 MCP tools) crosses into **S 8.39**,
+   which v6.2's logistics mix had parked in A. `osint-os` scores **8.33 raw** —
+   the 6th-highest capability in the portfolio — but stays C* (archived, §7).
+2. **S-tier is eight.** operant 9.57, openscript 8.96, mysterium 8.55,
+   social-forge 8.42, scorestrata 8.39, linkedin-lyr 8.12, tdg-rust 8.04,
+   igs-rust 8.03. All are engines with 9–12 sophistication families, 200+ tests,
    and a real agent surface. The `-lyr` family's top member (linkedin-lyr, 6/6
    AXI) holds S on surface quality + test rigor.
 3. **The AXI CLI family is ranked and lands B/A/S, not C.** All ten
@@ -278,17 +278,17 @@ ranking (see §7).
    raw scale it looks trivial, but it has the **highest cross-repo in-degree (4)**:
    every browser-scraping tool depends on its cookie vault. Utility lifts it to B.
 5. **`lifeos-ops` remains the biggest test gap:** 0 tests across 17.8K Rust LOC —
-   the sole reason it sits at 5.47, B. Writing ~150 tests adds ≈ +1.9 and jumps it
+   the sole reason it sits at 5.20, B. Writing ~150 tests adds ≈ +1.9 and jumps it
    to A-tier territory.
-6. **`holosim-infinite` (7.26 raw) is the strongest capped C** — 489K LOC, 7,766
+6. **`holosim-infinite` (7.11 raw) is the strongest capped C** — 489K LOC, 7,766
    tests, 11 sophistication families — but it is flagged experimental with a
    3.0 agent floor and 0 releases, so §7 caps it at C until it ships a release
-   and a real interactive surface. Same story for `icode` (7.47 raw, archived)
-   and `kali-mahabali` (7.38 raw, experimental).
+   and a real interactive surface. Same story for `icode` (7.23 raw, archived)
+   and `kali-mahabali` (7.08 raw, experimental).
 7. **`mindstrata` is the v7 category-fairness story.** Its 10 measured families
    (state machines, graphs/holonics, DSLs, storage, AI/ML, render/audio,
    determinism, distributed, security, plugins) and 1,245 tests put its
-   architecture at 6.2 and its total at **7.31 A** — above the v6.2 score (6.48 B)
+   architecture at 6.2 and its total at **7.34 A** — above the v6.2 score (6.48 B)
    because the logistics mix had been zeroing its release score. A deterministic
    single-threaded society sim (verified: no tokio/threads in source) is *not*
    penalized for being synchronous — determinism is a sophistication family.
@@ -332,15 +332,15 @@ ranking (see §7).
     `meme-lyr` (was 0 tests) added a 19-test vitest suite + tag-only CI + v2.0.0;
     `hermes-prime-bridge` tagged v0.2.0 + release workflow; `lifeos-bot` added 16
     tests, created its GitHub repo, tagged v0.1.0. All three now sit B. The
-    remaining C repos are capped experimental/deprecated (osint-os 8.66*,
-    icode 7.47*, kali-mahabali 7.38*, holosim 7.26*, consciousness-fabricator
-    6.61*) or genuinely small/dormant (workout-factory, hermes-prime-bridge) —
+    remaining C repos are capped experimental/deprecated (osint-os 8.33*,
+    icode 7.23*, kali-mahabali 7.08*, holosim 7.11*, consciousness-fabricator
+    6.40*) or genuinely small/dormant (workout-factory, hermes-prime-bridge) —
     no authentic code change could move them without reactivation.
 14. **The v7 re-rank's biggest movers are all evidence-based, not opinion:**
     scorestrata A→**S** (soph 9 families measured; logistics removed),
     mindstrata B→**A** (soph 10; release-zeroing removed), thinking-steroid
     A→**B** (content-noise false positives removed), andrometry A→**B** (soph
-    4→3 honest), igs-rust/tdg-rust S (render_audio tightening, still ≥8.3).
+    4→3 honest), igs-rust/tdg-rust S (render_audio tightening, 8.03/8.04).
 
 ---
 
