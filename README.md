@@ -234,7 +234,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** `8.12`: Professional profile extraction + Voyager profile-edit surface. 1,166 tests, 25 CLI commands, 9 sophistication families, 6/6 axi.md signals.
 * **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `8.04`: Teleological developmental graph memory — 626 tests, 36 MCP tools, 11 sophistication families, 10 releases.
 * **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `8.03`: High-speed news ingestion pipeline — 11 sophistication families, 91 MCP tools, 15 releases, 411 sources in 47 countries.
-* **[social-forge](https://github.com/ishan-parihar/social-forge)** `8.02`: 78K LOC across 25 platforms (registry-verified), 10 sophistication families, 43 MCP tools.
+* **[social-forge](https://github.com/ishan-parihar/social-forge)** `8.02`: 78K LOC across 25 platforms (registry-verified), 10 sophistication families, 300+ MCP tools.
 
 </details>
 
