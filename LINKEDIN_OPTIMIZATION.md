@@ -97,7 +97,7 @@ I do not build toys. I build quasi-deterministic, reliable infrastructure for th
 
 Looking for high-ticket consulting, fractional systems architecture, or remote contract roles.
 
-Email: support@ishanparihar.com
+Email: contact@ishanparihar.com
 
 ---
 
@@ -259,7 +259,7 @@ WHAT I DELIVER:
 - High-Performance Rust Systems & Web Backends (Axum)
 - Production SvelteKit/Next.js Integrations
 
-Get a production-ready POC in days. DM me or email support@ishanparihar.com to begin.
+Get a production-ready POC in days. DM me or email contact@ishanparihar.com to begin.
 
 ### 3. Settings & Client Review Strategy
 *   **Pricing**: Choose **"Contact for pricing"** (retains premium perception and pricing flexibility).

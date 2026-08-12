@@ -4,10 +4,10 @@
 
 **AI Agent Engineer** · MCP Infrastructure · Multi-Agent Orchestration · Systems Architecture
 
-📧 [support@ishanparihar.com](mailto:support@ishanparihar.com) · 🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar-111ba3109/)
+📧 [contact@ishanparihar.com](mailto:contact@ishanparihar.com) · 🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar-111ba3109/)
 📍 Noida, India · ✈️ Remote: worldwide
 
-[![Available for Hire](https://img.shields.io/badge/-AVAILABLE%20FOR%20HIRE-brightgreen?style=for-the-badge&color=10b981)](mailto:support@ishanparihar.com)
+[![Available for Hire](https://img.shields.io/badge/-AVAILABLE%20FOR%20HIRE-brightgreen?style=for-the-badge&color=10b981)](mailto:contact@ishanparihar.com)
 [![Rust](https://img.shields.io/badge/Rust-DE7F3B?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
@@ -53,7 +53,7 @@ I build the graph engines, compilers, and protocol layers that make autonomous A
 
 ### 💼 Hire Me — or verify the code yourself first
 
-For fractional CTO, custom MCP development, or agent architecture consulting — [📧 support@ishanparihar.com](mailto:support@ishanparihar.com). Or audit the code first: start from the portfolio's highest-test-count runtime ([Operant](https://github.com/ishan-parihar/operant), 9,249 tests) or the compact fully-verified engine ([TDG Rust](https://github.com/ishan-parihar/tdg-rust), 626 tests).
+For fractional CTO, custom MCP development, or agent architecture consulting — [📧 contact@ishanparihar.com](mailto:contact@ishanparihar.com). Or audit the code first: start from the portfolio's highest-test-count runtime ([Operant](https://github.com/ishan-parihar/operant), 9,249 tests) or the compact fully-verified engine ([TDG Rust](https://github.com/ishan-parihar/tdg-rust), 626 tests).
 
 ---
 
@@ -335,7 +335,7 @@ The throughline across all of it is the same: **I build infrastructure for AI ag
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=ishan-parihar&label=Profile%20Views&countColor=%2310b981)](https://github.com/ishan-parihar)
 
 **Available for remote contract, full-time, and part-time roles worldwide.**  
-**[📧 support@ishanparihar.com](mailto:support@ishanparihar.com) — let's build the infrastructure of tomorrow.**
+**[📧 contact@ishanparihar.com](mailto:contact@ishanparihar.com) — let's build the infrastructure of tomorrow.**
 
 </div>
 
