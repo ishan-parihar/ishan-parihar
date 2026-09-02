@@ -1,18 +1,18 @@
 <div align="center">
 
-<img src="./assets/readme/hero.svg" alt="Ishan Parihar — Systems &amp; Infrastructure Engineer — a constellation of Rust, TypeScript, Python and MCP/AXI nodes converging on a central hub" style="max-width:880px;width:100%;height:auto;display:block;margin:0 auto">
+<img src="./assets/readme/hero.svg" alt="Ishan Parihar — Agentic AI Systems Engineer &amp; Operator — a constellation of MCP, multi-agent, cognitive-memory, and domain-compiler nodes converging on a central hub, directed by AI-augmented architecture" style="max-width:880px;width:100%;height:auto;display:block;margin:0 auto">
 
-**AI Agent Engineer** · MCP Infrastructure · Multi-Agent Orchestration · Systems Architecture
+**Agentic AI Systems Engineer & Operator** · Production Agentic Infrastructure · AI-Augmented Architecture · Multi-Agent Orchestration
 
-📧 [contact@ishanparihar.com](mailto:contact@ishanparihar.com) · 🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar-111ba3109/)
+📧 [contact@ishanparihar.com](mailto:contact@ishanparihar.com) · 🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar/)
 📍 Noida, India · ✈️ Remote: worldwide
 
 [![Available for Hire](https://img.shields.io/badge/-AVAILABLE%20FOR%20HIRE-brightgreen?style=for-the-badge&color=10b981)](mailto:contact@ishanparihar.com)
+[![Agentic AI](https://img.shields.io/badge/Agentic_AI_Engineer_%26_Operator-0F172A?style=for-the-badge&logo=anthropic&logoColor=white)](https://modelcontextprotocol.io/)
+[![MCP](https://img.shields.io/badge/MCP-1%2C300%2B%20Tools-A855F7?style=for-the-badge&logo=github&logoColor=white)](https://modelcontextprotocol.io/)
 [![Rust](https://img.shields.io/badge/Rust-DE7F3B?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![MCP](https://img.shields.io/badge/MCP-800%2B%20Tools-A855F7?style=for-the-badge&logo=github&logoColor=white)](https://modelcontextprotocol.io/)
-[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
 </div>
 
@@ -39,7 +39,7 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 ## 🎯 Value Proposition — Proof, Not Promises
 
-I build the graph engines, compilers, and protocol layers that make autonomous AI agents functional, resilient, and cost-effective under real production loads. **Every flagship below points to the proof living in its own repository** — playable demos, runnable test suites, and measured benchmarks. Open the repo and verify it yourself.
+I'm an **Agentic AI Systems Engineer & Operator** — I direct AI-augmented builds of the graph engines, compilers, and protocol layers that make autonomous AI agents functional, resilient, and cost-effective under real production loads. **Substrates are chosen per project (Rust, TypeScript, Python, Go, Kotlin) — never as identity.** Outcomes over protocols; operator, not coder. **Every flagship below points to the proof living in its own repository** — playable demos, runnable test suites, and measured benchmarks. Open the repo and verify it yourself.
 
 | Flagship | What it does | Proof lives in the repo |
 |---|---|---|
@@ -53,14 +53,15 @@ I build the graph engines, compilers, and protocol layers that make autonomous A
 
 ### 💼 Hire Me — or verify the code yourself first
 
-For fractional CTO, custom MCP development, or agent architecture consulting — [📧 contact@ishanparihar.com](mailto:contact@ishanparihar.com). Or audit the code first: start from the portfolio's highest-test-count runtime ([Operant](https://github.com/ishan-parihar/operant), 9,249 tests) or the compact fully-verified engine ([TDG Rust](https://github.com/ishan-parihar/tdg-rust), 626 tests).
+For founding / forward-deployed engagements, agentic-systems architecture, or fractional CTO work for AI-first teams — [📧 contact@ishanparihar.com](mailto:contact@ishanparihar.com). I ship production agentic infrastructure end-to-end via AI-augmented architecture; substrates chosen for the project, not the team. Or audit the code first: start from the portfolio's highest-test-count runtime ([Operant](https://github.com/ishan-parihar/operant), 9,249 tests) or the compact fully-verified engine ([TDG Rust](https://github.com/ishan-parihar/tdg-rust), 626 tests).
 
 ---
 
-## ⚙️ Core Paradigm: What I Build
+## ⚙️ Core Paradigm: How I Operate
 
-I treat AI system design as **spatial machinery** rather than linear text prompting. Most agent frameworks today are fragile prompt wrappers. I build **load-bearing substrates**:
+I treat AI system design as **spatial machinery** rather than linear text prompting, and I direct its construction via **AI-augmented architecture** — systems thinking first, substrates chosen per project, the agent runtime writing the implementation under operator supervision. Most agent frameworks today are fragile prompt wrappers. I deliver **load-bearing substrates**:
 
+* **Operator-led, AI-augmented builds**: I architect the system, set the test discipline, choose the substrate (Rust/TypeScript/Python/Go/Kotlin), and direct the build. The 31,000+ tests across the portfolio are the audit trail of that method — not the result of typing each line by hand.
 * **Graph-Native Orchestration**: I replace linear shell scripts and standard pipelines with property graphs. Every execution node has typed ports; the execution engine resolves dependencies, materializes parallel branches using a Tokio-backed level scheduler, and exposes the live execution DAG to LLM operators via MCP.
 * **Token-Efficient Serialization**: I designed and compiled the TOON (Token-Oriented Object Notation) standard. By eliminating structural syntax redundancy, TOON reduces context-window footprint by 40% to 60% compared to standard JSON, preserving deterministic validation.
 * **Minimal Memory footprint**: I specialize in compiling highly optimized, zero-dependency static musl Rust binaries. My intelligence gathering pipelines (IGS) curate 411 sources across 47 countries while running within a 7MB static file and under 5MB of idle RAM.
