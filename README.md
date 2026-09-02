@@ -45,7 +45,7 @@ I'm an **Agentic AI Systems Engineer & Operator** — I direct AI-augmented buil
 |---|---|---|
 | 🎵 **[scorestrata](https://github.com/ishan-parihar/scorestrata)** | Plain-language brief → mastered, byte-identical WAV | **"Hear it" section** — two rendered demo tracks (LP nu-metal, nu-disco) with spectrogram showcases + `ss render` commands to regenerate. 944 tests enforce the no-regression rules |
 | 🧠 **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Pure-Rust cognitive memory engine — every memory a `(Content, Embedding, Telos)` node | **"Testing" section** — clone and run: `cargo test` = 626 passing (449 lib + 68 MCP e2e + 44 plugin + integration + property suites, per badge) |
-| 📊 **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** | Browserless carousel factory — 46 slide types, zero Chromium | **Real exports** — `docs/previews/` holds 6 slides actually rendered by the embedded Blitz engine (no browser, no screenshots) |
+| 📊 **[deckmill](https://github.com/ishan-parihar/deckmill)** | Browserless carousel factory — 46 slide types, zero Chromium | **Real exports** — `docs/previews/` holds 6 slides actually rendered by the embedded Blitz engine (no browser, no screenshots) |
 | 📡 **[browsefleet](https://github.com/ishan-parihar/browsefleet)** | Stealth browser fleet for agents — leased CDP contexts | **"Proof" section** — live benchmark table: 380 ms first nav, Turnstile auto-pass, reCAPTCHA v3 0.9 |
 | 🤖 **[operant](https://github.com/ishan-parihar/operant)** | Terminal-native ReAct agent runtime — 60+ tools, memory, MCP | **"Quick start"** — `./scripts/install.sh` + `operant setup && operant chat`; runnable in three commands |
 
@@ -111,7 +111,7 @@ A full LinkedIn integration with a **25-command agent-first CLI** and the most c
 * **Track record**: 94 releases — the most shipped tool in the lyr family.
 
 
-### 📡 [igs-rust](https://github.com/ishan-parihar/igs-rust)
+### 📡 [sourcehound](https://github.com/ishan-parihar/sourcehound)
 **Intelligence Gathering System — High-performance Rust engine.** ~7MB static binary, ~5MB RSS.
 
 A lightweight news and data ingestion pipeline scraping 411 distinct sources across 47 countries. It filters, deduplicates, and enriches global national, tech, and financial news, generating optimized intelligence feeds for agent consumption.
@@ -144,7 +144,7 @@ A deterministic composition compiler that turns a human brief into a full-length
 * **Audio**: Production-grade layered synth voices (SF2-sampled drums, doubled guitar, organics) with per-layer spectral auditing.
 * **Determinism**: Byte-identical replay from contract + seed; 944 tests enforce no-regression rules.
 
-### 📊 [slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)
+### 📊 [deckmill](https://github.com/ishan-parihar/deckmill)
 **The browserless slide factory.** Rust. 46 slide types, 185 tests, ~35K LOC.
 
 High-quality Instagram / LinkedIn / TikTok / X carousels as HTML → PNG via an embedded Blitz renderer — **no Chromium, no browser, no screenshot hacks**. 4.5× less memory than headless-Chrome pipelines, fully static musl binary, WCAG-AA contrast auditing, and an MCP server for AI-driven generation.
@@ -164,13 +164,13 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 
 | System | Stack | Surface | Description |
 |--------|-------|---------|-------------|
-| **[igs-rust](https://github.com/ishan-parihar/igs-rust)** | Rust | 93 Tools | Lightweight intelligence aggregator scraping 411 sources in 47 countries |
+| **[sourcehound](https://github.com/ishan-parihar/sourcehound)** | Rust | 93 Tools | Lightweight intelligence aggregator scraping 411 sources in 47 countries |
 | **[social-forge](https://github.com/ishan-parihar/social-forge)** | Rust | MCP + REST | Multi-network content ops engine (25 platforms, JWT auth, SSE realtime) |
 | **[openscript](https://github.com/ishan-parihar/openscript)** | Rust/TS | 109 Tools | AI-directed video editing pipeline (TTS, FFmpeg, Remotion) |
 | **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Rust | 50 Tools | Teleological developmental graph memory and knowledge synthesizer |
 | **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** | TypeScript | 35 Tools | Multi-agent orchestration daemon + LifeOS MCP server (LanceDB + Telegram) |
 | **[automaton](https://github.com/ishan-parihar/automaton)** | Rust | 38 Tools | Graph-native build, plan, and scheduled execution engine |
-| **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** | Rust | 20 Tools | Browserless carousel factory — 46 slide types, embedded Blitz renderer |
+| **[deckmill](https://github.com/ishan-parihar/deckmill)** | Rust | 20 Tools | Browserless carousel factory — 46 slide types, embedded Blitz renderer |
 | **[browsefleet](https://github.com/ishan-parihar/browsefleet)** | Node/TS | REST + CDP | Stealth browser fleet: leased CDP contexts, sessions/screenshots/PDFs for agents |
 | **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** | TypeScript | 13 Tools | Forced epistemic cognitive modes (first-principles, polarity mapping, etc.) |
 | **[andrometry](https://github.com/ishan-parihar/andrometry)** | Kotlin/Go | 12 Tools | Personal context engine: Kotlin Android collector with a Go MCP server |
@@ -235,7 +235,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[scorestrata](https://github.com/ishan-parihar/scorestrata)** `8.39`: WAV music compiler — 12 crates, 944 tests, 88 MCP tools, 9 sophistication families (state machines, graphs, DSLs, determinism, render/audio…). 73K LOC.
 * **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** `8.12`: Professional profile extraction + Voyager profile-edit surface. 1,166 tests, 25 CLI commands, 9 sophistication families, 6/6 axi.md signals.
 * **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `8.04`: Teleological developmental graph memory — 626 tests, 50 MCP tools, 11 sophistication families, 10 releases.
-* **[igs-rust](https://github.com/ishan-parihar/igs-rust)** `8.03`: High-speed news ingestion pipeline — 11 sophistication families, 93 MCP tools, 15 releases, 411 sources in 47 countries.
+* **[sourcehound](https://github.com/ishan-parihar/sourcehound)** `8.03`: High-speed news ingestion pipeline — 11 sophistication families, 93 MCP tools, 15 releases, 411 sources in 47 countries.
 
 </details>
 
@@ -245,7 +245,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 
 * **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `7.62`: Multi-agent daemon + bundled LifeOS MCP server (35 tools, LanceDB/SQLite + Telegram). 227 tests, 10 sophistication families.
 * **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** `7.44`: Stealth Instagram profile scraper. 335 tests, 47 CLI commands, 5/6 axi signals.
-* **[slideforge-rust](https://github.com/ishan-parihar/slideforge-rust)** `7.36`: Browserless carousel factory — 46 slide types, embedded Blitz renderer, 20 MCP tools, 185 tests, 6 releases, 10 sophistication families.
+* **[deckmill](https://github.com/ishan-parihar/deckmill)** `7.36`: Browserless carousel factory — 46 slide types, embedded Blitz renderer, 20 MCP tools, 185 tests, 6 releases, 10 sophistication families.
 * **[mindstrata](https://github.com/ishan-parihar/mindstrata)** `7.34`: Deterministic emergent society simulation — 8 crates, 82K LOC, 1,245 tests, 10 measured sophistication families (state machines, graphs/holonics, DSLs, determinism, plugins…).
 * **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** `7.32`: Agent-native X/Twitter integration. 243 tests, 42 CLI commands, 32 releases, 5/6 axi signals.
 * **[facebook-lyr](https://github.com/ishan-parihar/facebook-lyr)** `7.30`: Facebook / Messenger CLI. 229 tests, 41 CLI commands.
@@ -274,12 +274,12 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (9 Projects)</b></summary>
 <br>
 
-* **[osint-os](https://github.com/ishan-parihar/osint-os)** `8.33` (capped): ScrapeCraft OSINT platform — 121K LOC, 399 tests, 122 REST routes, 9 sophistication families. Archived.
+* **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `8.33` (capped): ScrapeCraft OSINT platform — 121K LOC, 399 tests, 122 REST routes, 9 sophistication families. Archived.
 * **[icode](https://github.com/ishan-parihar/icode)** `7.23` (capped): Rust command runner parsing agent file edit logs — 11 sophistication families, 2,095 tests. Archived.
 * **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)** `7.11` (capped): Math simulator tracking emergent agent interactions — 489K LOC, 7,766 tests, 11 sophistication families. Experimental.
 * **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `7.08` (capped): Modular sandbox testing raw agent behaviors (Codename: Project Chimera). Experimental. 🔒
 * **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)** `6.40` (capped): Audio pipeline compiling dynamic background sounds. 158 tests + architecture docs. Experimental.
-* **[cinesync](https://github.com/ishan-parihar/cinesync)** `5.62`: Character-asset automation pipeline for lipsync animation. 13.7K LOC, 2 CI workflows. Archived.
+* **[CineSync](https://github.com/ishan-parihar/CineSync)** `5.62`: Character-asset automation pipeline for lipsync animation. 13.7K LOC, 2 CI workflows. Archived.
 * **[obscura-core](https://github.com/ishan-parihar/obscura-core)** `4.38`: Shared cookie-vault + CDP daemon powering the lyr family — highest cross-repo in-degree (4 dependents).
 * **[workout-factory](https://github.com/ishan-parihar/workout-factory)** `3.93`: Archived trainer voice/audio-cache factory.
 * **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** `3.92`: Live plugin bridging a persistent kernel into Hermes's stateless runtime. 3 MCP tools, 14 contract tests, v0.2.0.
