@@ -274,7 +274,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (9 Projects)</b></summary>
 <br>
 
-* **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `8.33` (capped): ScrapeCraft OSINT platform — 121K LOC, 399 tests, 122 REST routes, 9 sophistication families. Archived.
+* **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `8.33` (capped): Modular intelligence framework — Codename Chimera. Interchangeable modules (reasoning, memory, tools, models) snapping into a central spine. 63K LOC (Rails engine), CI build, MIT license. Experimental.
 * **[icode](https://github.com/ishan-parihar/icode)** `7.23` (capped): Rust command runner parsing agent file edit logs — 11 sophistication families, 2,095 tests. Archived.
 * **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)** `7.11` (capped): Math simulator tracking emergent agent interactions — 489K LOC, 7,766 tests, 11 sophistication families. Experimental.
 * **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `7.08` (capped): Modular sandbox testing raw agent behaviors (Codename: Project Chimera). Experimental. 🔒
