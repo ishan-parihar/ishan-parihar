@@ -1,3 +1,4 @@
+# Ishan Parihar
 <div align="center">
 
 <img src="./assets/readme/hero.svg" alt="Ishan Parihar — Agentic AI Systems Engineer &amp; Operator — a constellation of MCP, multi-agent, cognitive-memory, and domain-compiler nodes converging on a central hub, directed by AI-augmented architecture" style="max-width:880px;width:100%;height:auto;display:block;margin:0 auto">
