@@ -32,4 +32,5 @@ checklist = []             # judgement items `genome close` reminds you of
 never_commit = []          # globs `genome close` leaves out of the named-path commit list
 
 [card]
+architecture = "RANKING-RUBRIC.md"
 status_into = "docs/handoff/STATE.md"

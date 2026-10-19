@@ -330,6 +330,12 @@ The throughline across all of it is the same: **I build infrastructure for AI ag
 
 ---
 
+## 📄 Documentation
+
+Every doc in `docs/` is listed with the question it answers in [docs/PAGE-INDEX.md](docs/PAGE-INDEX.md). The ranking engine that produced the tiers above is specified in [RANKING-RUBRIC.md](RANKING-RUBRIC.md), and the README baseline every repo here is held to is [TEMPLATE.md](TEMPLATE.md).
+
+---
+
 <div align="center">
 
 [![GitHub Stats](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ishan-parihar&theme=tokyonight)](https://github.com/ishan-parihar)
