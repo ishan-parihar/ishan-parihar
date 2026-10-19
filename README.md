@@ -53,7 +53,6 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 | Metric | Value | Technical Context & Evidence |
 |--------|-------|------------------------------|
-| **Active Projects** | **42** | 8 S-tier · 8 A-tier · 9 B-tier · 9 C-tier · 1 D-tier · 1 knowledge-base · 6 websites (separate category) — tiered by the objective [ranking rubric](./RANKING-RUBRIC.md) |
 | **MCP Servers** | **20+** | 1,300+ total tools across intelligence, memory, media, social, and life-ops |
 | **Rust Crates** | **99+** | 99 `Cargo.toml` manifests — `operant` 19, `automaton` 17, `scorestrata` 12, `mindstrata` 8 |
 | **Lines of Code** | **2.38M** | 2,380,188 tracked source lines (Rust, TypeScript, Python, Go, Kotlin) |
@@ -250,7 +249,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 
 > 🔒 = private repository — **available on request**. Contact me for access.
 
-> **Tiers are scored objectively** — see the [ranking rubric](./RANKING-RUBRIC.md) for the
+> **Tiers are scored objectively** — see the [ranking rubric](docs/kb/RANKING-RUBRIC.md) for the
 > machine-measured dataset, the published formulas, and the documented cap policy.
 
 <details>
@@ -360,7 +359,7 @@ The throughline across all of it is the same: **I build infrastructure for AI ag
 
 ## 📄 Documentation
 
-Every doc in `docs/` is listed with the question it answers in [docs/PAGE-INDEX.md](docs/PAGE-INDEX.md). The ranking engine that produced the tiers above is specified in [RANKING-RUBRIC.md](RANKING-RUBRIC.md), and the README baseline every repo here is held to is [TEMPLATE.md](TEMPLATE.md).
+Every doc in `docs/` is listed with the question it answers in [docs/PAGE-INDEX.md](docs/PAGE-INDEX.md). The ranking engine that produced the tiers above is specified in [RANKING-RUBRIC.md](docs/kb/RANKING-RUBRIC.md), and the README baseline every repo here is held to is [TEMPLATE.md](docs/TEMPLATE.md).
 
 ---
 

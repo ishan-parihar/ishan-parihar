@@ -7,8 +7,8 @@
 >
 > **Method:** read-only investigation (one new doc written; no source changes).
 > Evidence: per-repo README inspection + `git ls-files` LOC / test-marker / tag / CI /
-> crate-directory measurement for all 43 catalog entries. Companion: `PROFILE-README-AUDIT.md`
-> (metric-verification audit) and `RANKING-RUBRIC.md`.
+> crate-directory measurement for all 43 catalog entries. Companion: `docs/audit/2026-08-11-PROFILE-README-AUDIT.md`
+> (metric-verification audit) and `docs/kb/RANKING-RUBRIC.md`.
 >
 > **Audit date:** 2026-08-12 · Repos measured at their local HEADs.
 
