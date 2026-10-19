@@ -1,4 +1,32 @@
 # Ishan Parihar
+## Contents
+
+- [📊 Engineering by the Numbers](#engineering-by-the-numbers)
+- [🎯 Value Proposition — Proof, Not Promises](#value-proposition-proof-not-promises)
+  - [💼 Hire Me — or verify the code yourself first](#hire-me-or-verify-the-code-yourself-first)
+- [⚙️ Core Paradigm: How I Operate](#core-paradigm-how-i-operate)
+- [💎 Flagship Projects](#flagship-projects)
+  - [🤖 [operant](https://github.com/ishan-parihar/operant)](#operanthttpsgithubcomishan-pariharoperant)
+  - [🎬 [openscript](https://github.com/ishan-parihar/openscript)](#openscripthttpsgithubcomishan-pariharopenscript)
+  - [🧠 [mysterium](https://github.com/ishan-parihar/mysterium)](#mysteriumhttpsgithubcomishan-pariharmysterium)
+  - [💼 [linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)](#linkedin-lyrhttpsgithubcomishan-pariharlinkedin-lyr)
+  - [📡 [sourcehound](https://github.com/ishan-parihar/sourcehound)](#sourcehoundhttpsgithubcomishan-pariharsourcehound)
+  - [🌐 [social-forge](https://github.com/ishan-parihar/social-forge)](#social-forgehttpsgithubcomishan-pariharsocial-forge)
+  - [🧠 [tdg-rust](https://github.com/ishan-parihar/tdg-rust)](#tdg-rusthttpsgithubcomishan-parihartdg-rust)
+  - [🎵 [scorestrata](https://github.com/ishan-parihar/scorestrata)](#scorestratahttpsgithubcomishan-pariharscorestrata)
+  - [📊 [deckmill](https://github.com/ishan-parihar/deckmill)](#deckmillhttpsgithubcomishan-parihardeckmill)
+  - [🧠 [mindstrata](https://github.com/ishan-parihar/mindstrata)](#mindstratahttpsgithubcomishan-pariharmindstrata)
+- [🛠️ The Complete Ecosystem](#the-complete-ecosystem)
+  - [Unified MCP & Agent Infrastructure](#unified-mcp-agent-infrastructure)
+  - [Agent-Native Platform CLIs (-lyr / -cli) & Obscura](#agent-native-platform-clis--lyr--cli-obscura)
+  - [Portfolios & Web User Interfaces (Separate Category — not tiered)](#portfolios-web-user-interfaces-separate-category-not-tiered)
+- [🔬 Unified Tech Stack Matrix](#unified-tech-stack-matrix)
+- [📂 Complete Project Catalog (42 Projects)](#complete-project-catalog-42-projects)
+  - [🌐 Portfolios & Web User Interfaces (Separate Category — 6 Projects)](#portfolios-web-user-interfaces-separate-category-6-projects)
+- [🧭 The Arc: Space → Mind → Infrastructure](#the-arc-space-mind-infrastructure)
+- [📄 Documentation](#documentation)
+- [☕ Sponsor this work](#sponsor-this-work)
+
 <div align="center">
 
 <img src="./assets/readme/hero.svg" alt="Ishan Parihar — Agentic AI Systems Engineer &amp; Operator — a constellation of MCP, multi-agent, cognitive-memory, and domain-compiler nodes converging on a central hub, directed by AI-augmented architecture" style="max-width:880px;width:100%;height:auto;display:block;margin:0 auto">
