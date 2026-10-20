@@ -361,7 +361,8 @@ def lint_repo(repo: str, ports: Path, loc_map: dict[str, int]) -> dict:
     repo_dir = ports / repo
     readme_path = repo_dir / "README.md"
     result = {"repo": repo, "score": 0.0, "grade": "F",
-              "issues": {"error": [], "warn": []}, "lines": 0}
+              "issues": {"error": [], "warn": []}, "lines": 0,
+              "deprecated": False}
     if not readme_path.is_file():
         result["issues"]["error"].append("NO README.md (C1)")
         return result
@@ -431,7 +432,7 @@ def main() -> int:
 
     loc_map, _capped = clb.repo_locs(args.root)
     repos = [args.repo] if args.repo else find_repos(args.root)
-    if args.include_profile:
+    if args.include_profile and "ishan-parihar" not in repos:
         repos.append("ishan-parihar")
 
     results = [lint_repo(r, args.root, loc_map) for r in repos]

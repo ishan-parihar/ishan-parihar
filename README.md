@@ -1,40 +1,40 @@
-# Ishan Parihar
-## Contents
+<p align="center">
+  <img src="./assets/readme/hero.svg" width="100%" alt="Ishan Parihar — Systems &amp; Infrastructure Engineer. A constellation of Rust, TypeScript, Python and MCP nodes around a central hub.">
+</p>
 
+<p align="center">
+  <b>Agentic AI Systems Engineer &amp; Operator</b> · Production Agentic Infrastructure · AI-Augmented Architecture · Multi-Agent Orchestration
+</p>
+
+<p align="center">
+  📧 [contact@ishanparihar.com](mailto:contact@ishanparihar.com) · 🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar/)
+  <br>📍 Noida, India · ✈️ Remote: worldwide
+</p>
+
+<p align="center">
+  <b>Every claim below carries a commit, and every number is re-measured.</b>
+  Start with <a href="#hire-me--or-verify-the-code-yourself-first">Hire Me</a>,
+  or read the <a href="#complete-project-catalog-42-projects">full catalog</a> and
+  check the code yourself first.
+</p>
+
+---
+
+## Contents
 - [📊 Engineering by the Numbers](#engineering-by-the-numbers)
 - [🎯 Value Proposition — Proof, Not Promises](#value-proposition-proof-not-promises)
   - [💼 Hire Me — or verify the code yourself first](#hire-me-or-verify-the-code-yourself-first)
 - [⚙️ Core Paradigm: How I Operate](#core-paradigm-how-i-operate)
 - [💎 Flagship Projects](#flagship-projects)
-  - [🤖 [operant](https://github.com/ishan-parihar/operant)](#operanthttpsgithubcomishan-pariharoperant)
-  - [🎬 [openscript](https://github.com/ishan-parihar/openscript)](#openscripthttpsgithubcomishan-pariharopenscript)
-  - [🧠 [mysterium](https://github.com/ishan-parihar/mysterium)](#mysteriumhttpsgithubcomishan-pariharmysterium)
-  - [💼 [linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)](#linkedin-lyrhttpsgithubcomishan-pariharlinkedin-lyr)
-  - [📡 [sourcehound](https://github.com/ishan-parihar/sourcehound)](#sourcehoundhttpsgithubcomishan-pariharsourcehound)
-  - [🌐 [social-forge](https://github.com/ishan-parihar/social-forge)](#social-forgehttpsgithubcomishan-pariharsocial-forge)
-  - [🧠 [tdg-rust](https://github.com/ishan-parihar/tdg-rust)](#tdg-rusthttpsgithubcomishan-parihartdg-rust)
-  - [🎵 [scorestrata](https://github.com/ishan-parihar/scorestrata)](#scorestratahttpsgithubcomishan-pariharscorestrata)
-  - [📊 [deckmill](https://github.com/ishan-parihar/deckmill)](#deckmillhttpsgithubcomishan-parihardeckmill)
-  - [🧠 [mindstrata](https://github.com/ishan-parihar/mindstrata)](#mindstratahttpsgithubcomishan-pariharmindstrata)
 - [🛠️ The Complete Ecosystem](#the-complete-ecosystem)
-  - [Unified MCP & Agent Infrastructure](#unified-mcp-agent-infrastructure)
-  - [Agent-Native Platform CLIs (-lyr / -cli) & Obscura](#agent-native-platform-clis--lyr--cli-obscura)
-  - [Portfolios & Web User Interfaces (Separate Category — not tiered)](#portfolios-web-user-interfaces-separate-category-not-tiered)
 - [🔬 Unified Tech Stack Matrix](#unified-tech-stack-matrix)
 - [📂 Complete Project Catalog (42 Projects)](#complete-project-catalog-42-projects)
-  - [🌐 Portfolios & Web User Interfaces (Separate Category — 6 Projects)](#portfolios-web-user-interfaces-separate-category-6-projects)
 - [🧭 The Arc: Space → Mind → Infrastructure](#the-arc-space-mind-infrastructure)
 - [📄 Documentation](#documentation)
 - [☕ Sponsor this work](#sponsor-this-work)
-
 <div align="center">
 
-<img src="./assets/readme/hero.svg" alt="Ishan Parihar — Agentic AI Systems Engineer &amp; Operator — a constellation of MCP, multi-agent, cognitive-memory, and domain-compiler nodes converging on a central hub, directed by AI-augmented architecture" style="max-width:880px;width:100%;height:auto;display:block;margin:0 auto">
 
-**Agentic AI Systems Engineer & Operator** · Production Agentic Infrastructure · AI-Augmented Architecture · Multi-Agent Orchestration
-
-📧 [contact@ishanparihar.com](mailto:contact@ishanparihar.com) · 🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar/)
-📍 Noida, India · ✈️ Remote: worldwide
 
 [![Available for Hire](https://img.shields.io/badge/-AVAILABLE%20FOR%20HIRE-brightgreen?style=for-the-badge&color=10b981)](mailto:contact@ishanparihar.com)
 [![Agentic AI](https://img.shields.io/badge/Agentic_AI_Engineer_%26_Operator-0F172A?style=for-the-badge&logo=anthropic&logoColor=white)](https://modelcontextprotocol.io/)
