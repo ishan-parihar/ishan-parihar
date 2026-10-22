@@ -1,3 +1,4 @@
 # Worklog
 
 Append-only: `genome log "<entry>"`, one per unit of work.
+- **2026-10-23T03:06** — scripts/gen_rubric_tables.py executes again: SPEC now derives rank_score.py from the script's own directory (Path(__file__).parent) instead of a dead MY-PROJECTS absolute path from an older machine layout, which raised FileNotFoundError and made the RUNBOOK's documented 'gen rubric tables' regeneration step unrunnable (root register V-82, refresh outline A2). Verified: exit 0, 84 lines out, and all 35 generated dataset rows are byte-identical to RANKING-RUBRIC.md's committed §4 rows, so the fix is idempotent against the frozen snapshot. RANKING-RUBRIC.md is deliberately untouched and the regeneration step remains unrun per Q30's freeze at the root: the path fix makes the documented command honest, it does not run it.

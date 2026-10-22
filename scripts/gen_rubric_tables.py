@@ -15,8 +15,12 @@ score.
 """
 import importlib.util
 import sys
+from pathlib import Path
 
-SPEC = "/home/ishanp/Documents/GitHub/MY-PROJECTS/ishan-parihar/scripts/rank_score.py"
+# Derived from this file's own location, so the generator works on any machine
+# layout (the pre-2026-10-22 form hardcoded an absolute MY-PROJECTS path that
+# only existed on an older machine and raised FileNotFoundError everywhere else).
+SPEC = str(Path(__file__).resolve().parent / "rank_score.py")
 
 spec = importlib.util.spec_from_file_location("rank_score", SPEC)
 rs = importlib.util.module_from_spec(spec)
