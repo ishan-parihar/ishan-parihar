@@ -40,6 +40,16 @@ owning repo's README. **5 real inconsistencies found and fixed:**
 · ecosystem surface counts for the other 20 rows), tier math (8+8+9+9+1+1+6 = 42),
 numbers table totals, and header `42 PROJECTS` chip.
 
+> **Note, 2026-10-24 (V-84): the two `9,249` figures above were correct as of this audit's
+> 2026-08-13 method and are no longer current, so they are left as the record of what was done
+> then rather than rewritten.** operant's real gate was **7,168 passed / 0 failed / 24 ignored**
+> across 72 binaries at `ca33d4c` (2026-10-20), and its marker count has since moved to 4,970
+> at `42ba9c85` and 4,949 at `e2190f24`, because the repo commits every 30-40 minutes. The
+> distinction that makes the correction: the column this audit filled (`9,200+` → 9,249) came
+> from `measure_repos.py`'s marker regex, so the audit's own terms call the number "tests" while
+> its method counted markers. The profile README now carries the gate figure with its commit and
+> date, and `RANKING-RUBRIC.md`'s column is headed `Test markers` for the same reason.
+
 ## 3. Similar aesthetic gaps elsewhere (inventory)
 
 ### 3.1 T2I HERO SPEC meta-comments — 12 repos (recommended purge)

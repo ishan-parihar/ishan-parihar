@@ -173,7 +173,7 @@ count (`soph`, 0–12)**, agent surface class + ops, and AXI signal count.
 **No self-reported numbers.** Websites + knowledge-base repos are excluded from
 ranking (see §7).
 
-| Project | Cat | LOC | Tests | Mods | Langs | Concur | Soph | Surf | Ops | AXI |
+| Project | Cat | LOC | Test markers | Mods | Langs | Concur | Soph | Surf | Ops | AXI |
 |---------|-----|-----|-------|------|-------|--------|------|------|-----|-----|
 | operant | engine | 538,394 | 9,249 | 19 | 6 | 500 | 12 | mcp | 68 | 0 |
 | openscript | engine | 74,606 | 510 | 12 | 5 | 500 | 12 | mcp | 109 | 0 |
@@ -210,6 +210,18 @@ ranking (see §7).
 | workout-factory | deprecated | 9,417 | 30 | 0 | 2 | 7 | 4 | engine | 0 | 0 |
 | hermes-prime-bridge | engine | 919 | 14 | 0 | 2 | 1 | 2 | mcp | 3 | 0 |
 | lifeos-saas | engine | 760 | 0 | 0 | 2 | 15 | 1 | rest | 10 | 0 |
+
+> **Correction, 2026-10-24 (V-84): the column above is headed `Test markers` because that is
+> what the engine counts, and it is not the number a reader wants when the claim is about tests.**
+> A marker is a function the compiler can see; a test is one that ran and passed. operant's real
+> gate is **7,168 passed / 0 failed / 24 ignored across 72 binaries** at `ca33d4c` (2026-10-20,
+> `cargo test --workspace`), and its marker count has since moved - 4,970 at `42ba9c85`, 4,949 at
+> `e2190f24` ten minutes later, because that repo commits every 30-40 minutes. So the frozen 9,249
+> is neither family's current figure. It stays in the table as the frozen dataset row it is (the
+> ranking used it and its ordering is unaffected), and §5's `Test` column below is a score out of
+> 10 rather than a count, so it is unchanged. Cite the gate figure when the claim is about tests;
+> cite this table when the claim is about the ranking.
+
 ## 5. Scored Results (engine output, v7 — 35 ranked repos)
 
 | # | Project | Arch | Test | Agnt | Scale | Util | **Total** | Tier |

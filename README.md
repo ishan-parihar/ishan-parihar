@@ -81,7 +81,7 @@ I'm an **Agentic AI Systems Engineer & Operator** — I direct AI-augmented buil
 
 ### 💼 Hire Me — or verify the code yourself first
 
-For founding / forward-deployed engagements, agentic-systems architecture, or fractional CTO work for AI-first teams — [📧 contact@ishanparihar.com](mailto:contact@ishanparihar.com). I ship production agentic infrastructure end-to-end via AI-augmented architecture; substrates chosen for the project, not the team. Or audit the code first: start from the portfolio's highest-test-count runtime ([Operant](https://github.com/ishan-parihar/operant), 9,249 tests) or the compact fully-verified engine ([TDG Rust](https://github.com/ishan-parihar/tdg-rust), 626 tests).
+For founding / forward-deployed engagements, agentic-systems architecture, or fractional CTO work for AI-first teams — [📧 contact@ishanparihar.com](mailto:contact@ishanparihar.com). I ship production agentic infrastructure end-to-end via AI-augmented architecture; substrates chosen for the project, not the team. Or audit the code first: start from the portfolio's highest-test-count runtime ([Operant](https://github.com/ishan-parihar/operant), 7,168 Rust tests passing at `ca33d4c`, 2026-10-20 gate) or the compact fully-verified engine ([TDG Rust](https://github.com/ishan-parihar/tdg-rust), 626 tests).
 
 ---
 
@@ -100,7 +100,7 @@ I treat AI system design as **spatial machinery** rather than linear text prompt
 ## 💎 Flagship Projects
 
 ### 🤖 [operant](https://github.com/ishan-parihar/operant)
-**Terminal-native ReAct agent runtime.** Rust. 9,249 tests. MCP client + server, skills, messaging channels.
+**Terminal-native ReAct agent runtime.** Rust. Tests: 7,168 passed, 0 failed, 24 ignored across 72 binaries at `ca33d4c` (2026-10-20, `cargo test --workspace`; the suite is active, so treat the figure as that day's gate, not a current count). MCP client + server, skills, messaging channels.
 
 A production-grade agent runtime written in Rust that runs from your shell: a real think → act → observe loop with a JSON-schema tool registry, memory-context injection every turn, provider fallbacks, and self-healing retries.
 
@@ -256,7 +256,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <summary><b>🚀 S-TIER: Flagship Systems — Score ≥ 8.0 (8 Projects)</b></summary>
 <br>
 
-* **[operant](https://github.com/ishan-parihar/operant)** `9.57`: Terminal-native ReAct agent runtime — 538K LOC, 9,249 tests, 19 crates, 12/12 sophistication families (state machines, DSLs, storage, determinism, plugins…).
+* **[operant](https://github.com/ishan-parihar/operant)** `9.57`: Terminal-native ReAct agent runtime — 538K LOC, 7,168 tests passing at `ca33d4c` (2026-10-20 gate; the suite is active), 19 crates, 12/12 sophistication families (state machines, DSLs, storage, determinism, plugins…).
 * **[openscript](https://github.com/ishan-parihar/openscript)** `8.96`: Agent-directed video editing pipeline — 109 MCP tools, 510 tests, 12/12 sophistication families, 5 languages.
 * **[mysterium](https://github.com/ishan-parihar/mysterium)** `8.55`: Education-system replacement — 64-cell developmental matrix, holonic curriculum, 1,090 tests, 10 sophistication families, 9-command AXI-first CLI (5/6 signals).
 * **[social-forge](https://github.com/ishan-parihar/social-forge)** `8.42`: 78K LOC across 25 platforms (registry-verified), 10 sophistication families, 328 MCP tools across 42 tool modules.
