@@ -155,7 +155,7 @@ A lightweight news and data ingestion pipeline scraping 411 distinct sources acr
 A Rust backend with an axum REST API + rmcp MCP server, JWT auth, SSE realtime, and an in-process scheduler for cross-platform social content operations — Reddit, LinkedIn, Instagram, Telegram, Threads, Facebook, YouTube, Discord, and X/Twitter.
 
 ### 🧠 [tdg-rust](https://github.com/ishan-parihar/tdg-rust)
-**Teleological Developmental Graph — Pure Rust cognitive engine.** 626 tests. 50 MCP tools.
+**Teleological Developmental Graph — Pure Rust cognitive engine.** 626 tests (`cargo test`, 626 passed / 0 failed, measured 2026-10-20 at `44e7f9b`; ledger row 40). 50 MCP tools.
 
 A complex implementation of stateful agent memory using a holonic graph structure. Every memory unit is represented as a node: `(Content, Embedding, Telos)`. The teleological decay algorithm ensures stale or irrelevant context decays over time while highly relevant goal nodes remain active.
 
@@ -164,16 +164,16 @@ A complex implementation of stateful agent memory using a holonic graph structur
 * **Canonical**: The Rust port supersedes the original Python reference (now private); `tdg-rust` is the single canonical TDG project.
 
 ### 🎵 [scorestrata](https://github.com/ishan-parihar/scorestrata)
-**Contract-first music compiler — from plain-language brief to mastered WAV.** Rust. 12 crates, 944 tests.
+**Contract-first music compiler — from plain-language brief to mastered WAV.** Rust. 12 crates, 944 tests (`cargo test`, 944 passed / 0 failed, measured 2026-10-20 at `c5dc71b5`; ledger row 42).
 
 A deterministic composition compiler that turns a human brief into a full-length WAV: event-sourced composition state, a validator gate with genre/register/layer checks, a production-grade layered synth, and a mastering chain. Same brief → byte-identical audio, every run.
 
 * **Pipeline**: Brief → plan → compile → validate → render → master.
 * **Audio**: Production-grade layered synth voices (SF2-sampled drums, doubled guitar, organics) with per-layer spectral auditing.
-* **Determinism**: Byte-identical replay from contract + seed; 944 tests enforce no-regression rules.
+* **Determinism**: Byte-identical replay from contract + seed; the same 944 tests (`c5dc71b5`, 2026-10-20) enforce no-regression rules.
 
 ### 📊 [deckmill](https://github.com/ishan-parihar/deckmill)
-**The browserless slide factory.** Rust. 46 slide types, 185 tests, ~35K LOC.
+**The browserless slide factory.** Rust. 38 of 46 slide types renderable (8 are tombstones, verified 2026-10-27), 192 tests (`cargo test`, green at `18036f4`, ledger row 332), ~35K LOC.
 
 High-quality Instagram / LinkedIn / TikTok / X carousels as HTML → PNG via an embedded Blitz renderer — **no Chromium, no browser, no screenshot hacks**. 4.5× less memory than headless-Chrome pipelines, fully static musl binary, WCAG-AA contrast auditing, and an MCP server for AI-driven generation.
 
@@ -198,7 +198,7 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 | **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Rust | 50 Tools | Teleological developmental graph memory and knowledge synthesizer |
 | **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** | TypeScript | 35 Tools | Multi-agent orchestration daemon + LifeOS MCP server (LanceDB + Telegram) |
 | **[automaton](https://github.com/ishan-parihar/automaton)** | Rust | 38 Tools | Graph-native build, plan, and scheduled execution engine |
-| **[deckmill](https://github.com/ishan-parihar/deckmill)** | Rust | 20 Tools | Browserless carousel factory — 46 slide types, embedded Blitz renderer |
+| **[deckmill](https://github.com/ishan-parihar/deckmill)** | Rust | 20 Tools | Browserless carousel factory — 38 of 46 slide types renderable (verified 2026-10-27), embedded Blitz renderer |
 | **[browsefleet](https://github.com/ishan-parihar/browsefleet)** | Node/TS | REST + CDP | Stealth browser fleet: leased CDP contexts, sessions/screenshots/PDFs for agents |
 | **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** | TypeScript | 13 Tools | Forced epistemic cognitive modes (first-principles, polarity mapping, etc.) |
 | **[andrometry](https://github.com/ishan-parihar/andrometry)** | Kotlin/Go | 12 Tools | Personal context engine: Kotlin Android collector with a Go MCP server |
@@ -260,9 +260,9 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[openscript](https://github.com/ishan-parihar/openscript)** `8.96`: Agent-directed video editing pipeline — 109 MCP tools, 510 tests, 12/12 sophistication families, 5 languages.
 * **[mysterium](https://github.com/ishan-parihar/mysterium)** `8.55`: Education-system replacement — 64-cell developmental matrix, holonic curriculum, 1,090 tests, 10 sophistication families, 9-command AXI-first CLI (5/6 signals).
 * **[social-forge](https://github.com/ishan-parihar/social-forge)** `8.42`: 78K LOC across 25 platforms (registry-verified), 10 sophistication families, 328 MCP tools across 42 tool modules.
-* **[scorestrata](https://github.com/ishan-parihar/scorestrata)** `8.39`: WAV music compiler — 12 crates, 944 tests, 88 MCP tools, 9 sophistication families (state machines, graphs, DSLs, determinism, render/audio…). 73K LOC.
+* **[scorestrata](https://github.com/ishan-parihar/scorestrata)** `8.39`: WAV music compiler — 12 crates, 944 tests (944 passed / 0 failed at `c5dc71b5`, 2026-10-20), 88 MCP tools, 9 sophistication families (state machines, graphs, DSLs, determinism, render/audio…). 73K LOC.
 * **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** `8.12`: Professional profile extraction + Voyager profile-edit surface. 1,166 tests, 25 CLI commands, 9 sophistication families, 6/6 axi.md signals.
-* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `8.04`: Teleological developmental graph memory — 626 tests, 50 MCP tools, 11 sophistication families, 10 releases.
+* **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `8.04`: Teleological developmental graph memory — 626 tests (626 passed / 0 failed at `44e7f9b`, 2026-10-20), 50 MCP tools, 11 sophistication families, 10 releases.
 * **[sourcehound](https://github.com/ishan-parihar/sourcehound)** `8.03`: High-speed news ingestion pipeline — 11 sophistication families, 93 MCP tools, 15 releases, 411 sources in 47 countries.
 
 </details>
@@ -273,7 +273,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 
 * **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `7.62`: Multi-agent daemon + bundled LifeOS MCP server (35 tools, LanceDB/SQLite + Telegram). 227 tests, 10 sophistication families.
 * **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** `7.44`: Stealth Instagram profile scraper. 335 tests, 47 CLI commands, 5/6 axi signals.
-* **[deckmill](https://github.com/ishan-parihar/deckmill)** `7.36`: Browserless carousel factory — 46 slide types, embedded Blitz renderer, 20 MCP tools, 185 tests, 6 releases, 10 sophistication families.
+* **[deckmill](https://github.com/ishan-parihar/deckmill)** `7.36`: Browserless carousel factory — 38 of 46 slide types renderable (verified 2026-10-27), embedded Blitz renderer, 20 MCP tools, 192 tests (green at `18036f4`), 6 releases, 10 sophistication families.
 * **[mindstrata](https://github.com/ishan-parihar/mindstrata)** `7.34`: Deterministic emergent society simulation — 8 crates, 82K LOC, 1,245 tests, 10 measured sophistication families (state machines, graphs/holonics, DSLs, determinism, plugins…).
 * **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** `7.32`: Agent-native X/Twitter integration. 243 tests, 42 CLI commands, 32 releases, 5/6 axi signals.
 * **[facebook-lyr](https://github.com/ishan-parihar/facebook-lyr)** `7.30`: Facebook / Messenger CLI. 229 tests, 41 CLI commands.
