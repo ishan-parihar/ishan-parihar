@@ -57,6 +57,10 @@ Cap rules (documented, transparent — see RANKING-RUBRIC.md §7):
 
 Usage:  python3 scripts/rank_score.py [--all]
 Regenerate the dataset with:  python3 scripts/measure_repos.py
+  Resolves the manifest by repo name against the live portfolio tree: it measures the
+  repos it finds, prints `RETIRED` for the ones that are gone, and exits 2 without
+  emitting a row of zeros if it resolves nothing at all. That last guard exists so a run
+  on the wrong machine cannot silently replace the DATA block below with zeros.
 """
 
 import math

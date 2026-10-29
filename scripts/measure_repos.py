@@ -47,8 +47,68 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# By default measure the sibling portfolio repos next to this repo.
-PORTS = os.path.dirname(ROOT)
+
+# The portfolio tree that holds the repos below. The manifest's *relpaths* were
+# written against an older machine layout (MCP-AND-CLIS/igs-rust) and indexed 0 of their
+# 41 entries, so this script reported NO-DIR for repos that exist. The *names* were
+# always right. So the base is now discovered by name: walk up from this script and take
+# the first ancestor from which every manifest name resolves to a directory. If nothing
+# resolves, the script says so and exits non-zero rather than emitting a table of zeros
+# that reads as a measurement.
+DEFAULT_PORTS = os.path.dirname(ROOT)
+PORTS = None
+# Manifest relpath -> resolved path under the discovered base, filled by resolve_ports().
+REL = {}
+
+
+def resolve_ports(manifest):
+    """Discover the portfolio base and each repo's real path under it.
+
+    One pruned walk from the script's own root builds an index of every git directory by
+    basename; each ancestor is then scored by dictionary lookups alone. Walking once
+    matters: this file's siblings under the portfolio are large trees, and re-walking
+    per name per ancestor turned a 3-minute measurement into an unbounded one.
+    """
+    global REL
+
+    def prune(dirs):
+        for skip in ("node_modules", ".git", "target", ".venv", "__pycache__"):
+            if skip in dirs:
+                dirs.remove(skip)
+        return dirs
+
+    # Index absolute paths under the portfolio root, so any ancestor can be scored by
+    # relpath arithmetic alone. Walking once matters: this file's siblings under the
+    # portfolio are large trees, and re-walking per name per ancestor turned a
+    # 3-minute measurement into an unbounded one.
+    by_name = {}
+    for base, dirs, _files in os.walk(DEFAULT_PORTS):
+        prune(dirs)
+        if os.path.isdir(os.path.join(base, ".git")):
+            by_name.setdefault(os.path.basename(base), base)
+    candidates = []
+    cur = DEFAULT_PORTS
+    while True:
+        candidates.append(cur)
+        parent = os.path.dirname(cur)
+        if parent == cur:
+            break
+        cur = parent
+    best, best_n, best_rel = None, -1, {}
+    for cur in candidates:
+        rel, n = {}, 0
+        for name, relpath, _cat in manifest:
+            if os.path.isdir(os.path.join(cur, relpath)):
+                rel[name] = relpath
+            elif by_name.get(name):
+                rel[name] = os.path.relpath(by_name[name], cur)
+            else:
+                continue
+            n += 1
+        if n > best_n:
+            best, best_n, best_rel = cur, n, rel
+    REL = best_rel
+    return best, best_n
 
 # ---------------------------------------------------------------------------
 # Repo manifest: (name, relative path under PORTS, category)
@@ -263,9 +323,12 @@ def sh(repo_dir, cmd, timeout=120):
 
 
 def measure(name, relpath, category):
-    repo_dir = os.path.join(PORTS, relpath)
+    repo_dir = os.path.join(PORTS, REL.get(name, relpath))
     if not os.path.isdir(repo_dir):
-        return (name, category, "NO-DIR", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+        # A named absence, not a zero. 9 of the 41 manifest repos are retired (3 are
+        # renames already proved by git remote -v, 6 are archived or private), and a
+        # row of zeros is indistinguishable from a measurement of an empty repo.
+        return (name, category, "RETIRED", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
     files = sh(repo_dir, "git ls-files")
     if not files:
         return (name, category, "NO-TRACKED", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -375,9 +438,27 @@ def measure(name, relpath, category):
 
 
 def main():
+    global PORTS
     args = sys.argv[1:]
     only = [a for a in args if not a.startswith("--")]
     want_total = "--total" in args
+    manifest = REPOS
+    if only:
+        manifest = [r for r in REPOS if r[0] in only]
+    PORTS, n_resolve = resolve_ports(manifest)
+    # A measurement that finds nothing is not a measurement. Rank_score.py's docstring and
+    # docs/RUNBOOK.md both name this command as the way to regenerate the dataset, so a
+    # silent zeros table would overwrite a correct snapshot. Same form as deslop.py's
+    # exit 2: refuse, name the reason, do not report a figure.
+    if n_resolve <= 0:
+        sys.stderr.write(
+            "measure_repos: no manifest repo resolves under any ancestor of "
+            f"{ROOT} (resolved {n_resolve} of {len(manifest)}). Refusing to emit a "
+            "table of zeros. Pass --base <path> to name the portfolio tree.\n"
+        )
+        sys.exit(2)
+    if "--base" in args:
+        PORTS = args[args.index("--base") + 1]
     print("name|category|loc|tests|mods|ci|c90|tags|age|langs|concur|ops|surface|axi|indegree|readme|install|docs")
     rows = []
     for name, relpath, category in REPOS:
@@ -392,7 +473,7 @@ def main():
         # upstream forks and nested repos are excluded by manifest design).
         n = loc = tests = mods = ci = tags = ops = indegree = 0
         for r in rows:
-            if r[2] in ("NO-DIR", "NO-TRACKED"):
+            if r[2] in ("RETIRED", "NO-TRACKED"):
                 continue
             loc += r[2]
             tests += r[3]
@@ -409,7 +490,7 @@ def main():
         for name, relpath, _cat in REPOS:
             if only and name not in only:
                 continue
-            files = sh(os.path.join(PORTS, relpath), "git ls-files")
+            files = sh(os.path.join(PORTS, REL.get(name, relpath)), "git ls-files")
             rust_crates += sum(
                 1 for f in files.split("\n")
                 if f.endswith("Cargo.toml") and not VENDORED_DIR_RE.search(f)
