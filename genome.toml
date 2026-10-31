@@ -21,9 +21,17 @@ feed = "docs/kb/feed.md"
 workflows = "docs/kb/workflows"
 
 [core]
-gate = "python3 scripts/lint_readmes.py --repo ishan-parihar --include-profile"
+gate = "python3 scripts/lint_readmes.py --repo ishan-parihar --include-profile && python3 scripts/check_repo_links.py"
 # the portfolio's own README rubric, run locally: GitHub Actions is not
 # available for this portfolio, so the gate is the local check.
+#
+# `check_repo_links.py` was added 2026-10-31 because the rubric graded this README
+# 12.00 / ALL CLEAN while four of its repo links named renamed repositories
+# (social-forge -> switchpost, tg-cli -> tg-lyr, discord-cli -> discord-lyr, and
+# igs-rust -> sourcehound). `gh repo view` FOLLOWS a rename and exits 0, so the
+# check compares the returned repo NAME against the name the document claims.
+# Chained with && so both must pass; the link check fails closed (exit 2) when
+# neither `gh` nor `curl` can resolve, so an unverifiable run is never a pass.
 worklog_form = "file"      # or "numbered" (worklog = a directory of NNNN-date-slug.md + INDEX.md)
 archive_form = "flat"      # or "generations" (archive/<generation>/ + README manifest, no tombstones)
 living_plans = []          # plans that evolve (phase rows, a 'Resume here' section)

@@ -149,7 +149,7 @@ A lightweight news and data ingestion pipeline scraping 411 distinct sources acr
 * **Efficiency**: Developed to replace a slow, high-memory Node.js prototype, dropping idle RAM consumption to under 5MB.
 
 
-### 🌐 [social-forge](https://github.com/ishan-parihar/social-forge)
+### 🌐 [switchpost](https://github.com/ishan-parihar/switchpost)
 **Multi-platform intelligence gatherer and scheduler across 25 platforms.** Rust. ~78K LOC.
 
 A Rust backend with an axum REST API + rmcp MCP server, JWT auth, SSE realtime, and an in-process scheduler for cross-platform social content operations — Reddit, LinkedIn, Instagram, Telegram, Threads, Facebook, YouTube, Discord, and X/Twitter.
@@ -193,7 +193,7 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 | System | Stack | Surface | Description |
 |--------|-------|---------|-------------|
 | **[sourcehound](https://github.com/ishan-parihar/sourcehound)** | Rust | 93 Tools | Lightweight intelligence aggregator scraping 411 sources in 47 countries |
-| **[social-forge](https://github.com/ishan-parihar/social-forge)** | Rust | MCP + REST | Multi-network content ops engine (25 platforms, JWT auth, SSE realtime) |
+| **[switchpost](https://github.com/ishan-parihar/switchpost)** | Rust | MCP + REST | Multi-network content ops engine (25 platforms, JWT auth, SSE realtime) |
 | **[openscript](https://github.com/ishan-parihar/openscript)** | Rust/TS | 109 Tools | AI-directed video editing pipeline (TTS, FFmpeg, Remotion) |
 | **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Rust | 50 Tools | Teleological developmental graph memory and knowledge synthesizer |
 | **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** | TypeScript | 35 Tools | Multi-agent orchestration daemon + LifeOS MCP server (LanceDB + Telegram) |
@@ -206,7 +206,7 @@ I consolidate all tools, servers, and platforms under clear protocol interfaces.
 | **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** | Python | Telegram MCP | LifeOS conversational interface — activity/diet/journal/financial logging |
 | **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** | Python | 3 Tools | Live plugin importing Prime Agent's persistent kernel into Hermes's stateless runtime |
 
-### Agent-Native Platform CLIs (`-lyr` / `-cli`) & Obscura
+### Agent-Native Platform CLIs (`-lyr` Family) & Obscura
 
 One shared AXI-compliant architecture: every tool speaks TOON/YAML output, structured errors, and contextual help; `obscura-core` is the shared cookie-vault daemon underneath the browser-scraping family.
 
@@ -216,10 +216,10 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 | **[twitter-lyr](https://github.com/ishan-parihar/twitter-lyr)** | Python | 42 Tools | Agent-native X/Twitter integration handling DMs, media, and search |
 | **[facebook-lyr](https://github.com/ishan-parihar/facebook-lyr)** | Python | 41 Tools | Facebook / Messenger MCP server via cookie-based scraping |
 | **[instagram-lyr](https://github.com/ishan-parihar/instagram-lyr)** | Python | 47 Tools | Stealth profile reconnaissance and HTTPX-based media scraper |
-| **[tg-cli](https://github.com/ishan-parihar/tg-cli)** | Python | 12 Tools | Fast Telethon-powered Telegram messaging automation client |
+| **[tg-lyr](https://github.com/ishan-parihar/tg-lyr)** | Python | 12 Tools | Fast Telethon-powered Telegram messaging automation client |
 | **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** | TypeScript | 6 Tools | AXI-compliant structured image overlay and meme generator |
 | **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** | Python | 32 Tools | Dense Reddit scraping, analysis, and interaction CLI |
-| **[discord-cli](https://github.com/ishan-parihar/discord-cli)** | Python | 13 Tools | Local-first Discord data CLI (SQLite sync, search, analytics) |
+| **[discord-lyr](https://github.com/ishan-parihar/discord-lyr)** | Python | 13 Tools | Local-first Discord data CLI (SQLite sync, search, analytics) |
 | **[obscura-core](https://github.com/ishan-parihar/obscura-core)** | Python | 8 Tools | Stealth browser integration: cookie vault + CDP daemon powering the lyr family |
 | **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)** | Python | 3 Tools | Threads.net MCP server via anonymous scraping |
 
@@ -259,7 +259,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[operant](https://github.com/ishan-parihar/operant)** `9.57`: Terminal-native ReAct agent runtime — 538K LOC, 7,168 tests passing at `ca33d4c` (2026-10-20 gate; the suite is active), 19 crates, 12/12 sophistication families (state machines, DSLs, storage, determinism, plugins…).
 * **[openscript](https://github.com/ishan-parihar/openscript)** `8.96`: Agent-directed video editing pipeline — 109 MCP tools, 158 passing with 1 failing (measured `cargo test` at HEAD, 2026-10-28), 12/12 sophistication families, 5 languages.
 * **[mysterium](https://github.com/ishan-parihar/mysterium)** `8.55`: Education-system replacement — 64-cell developmental matrix, holonic curriculum, 2,110 of 2,112 cases passing across 188 test files (measured `vitest run` at HEAD after `svelte-kit sync`, 2026-10-28), 10 sophistication families, 9-command AXI-first CLI (5/6 signals).
-* **[social-forge](https://github.com/ishan-parihar/social-forge)** `8.42`: 78K LOC across 25 platforms (registry-verified), 10 sophistication families, 328 MCP tools across 42 tool modules.
+* **[switchpost](https://github.com/ishan-parihar/switchpost)** `8.42`: 78K LOC across 25 platforms (registry-verified), 10 sophistication families, 328 MCP tools across 42 tool modules.
 * **[scorestrata](https://github.com/ishan-parihar/scorestrata)** `8.39`: WAV music compiler — 12 crates, 944 tests (944 passed / 0 failed at `c5dc71b5`, 2026-10-20), 88 MCP tools, 9 sophistication families (state machines, graphs, DSLs, determinism, render/audio…). 73K LOC.
 * **[linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)** `8.12`: Professional profile extraction + Voyager profile-edit surface. 1,400 tests passing, 32 skipped (measured `pytest` at HEAD, 2026-10-30), 25 CLI commands, 9 sophistication families, 6/6 axi.md signals.
 * **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** `8.04`: Teleological developmental graph memory — 626 tests (626 passed / 0 failed at `44e7f9b`, 2026-10-20), 50 MCP tools, 11 sophistication families, 10 releases.
@@ -289,23 +289,23 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** `6.37`: Forced cognitive mode engine implementing 13 analysis frameworks. 5 test suites (compiled-JS asserts, measured `npm test` at HEAD, 2026-10-28 — not a per-case runner, so no case count exists), 13 MCP tools, 5 sophistication families.
 * **[andrometry](https://github.com/ishan-parihar/andrometry)** `6.12`: Personal context engine — Kotlin Android collector with a Go REST server. 163 tests passing (measured `go test ./... -v` at `8d27108`, 2026-10-28).
 * **[reddit-lyr](https://github.com/ishan-parihar/reddit-lyr)** `6.02`: Comprehensive Reddit scraper with 32 MCP tools for agents (browse, post, comment, vote, mod). 86 tests passing (measured `pytest` at HEAD, 2026-10-30).
-* **[tg-cli](https://github.com/ishan-parihar/tg-cli)** `5.95`: Fast Telethon-powered Telegram automation client. 281 tests passing (measured `pytest` at HEAD, 2026-10-30), 14 releases, 5/6 axi signals.
+* **[tg-lyr](https://github.com/ishan-parihar/tg-lyr)** `5.95`: Fast Telethon-powered Telegram automation client. 281 tests passing (measured `pytest` at HEAD, 2026-10-30), 14 releases, 5/6 axi signals.
 * **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** `5.32`: TypeScript CLI meme generator. 25 tests, tag-only CI + release pipeline, v2.0.0.
 * **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** `5.20`: Unified CLI + MCP server for Notion-based LifeOS. 31 tools, 8 sophistication families — zero automated tests across 18K Rust LOC.
-* **[discord-cli](https://github.com/ishan-parihar/discord-cli)** `4.93`: Local-first Discord data CLI (SQLite sync, search, analytics). 41 tests passing (measured `pytest` at HEAD, 2026-10-30), 10 releases, 2 CI workflows.
+* **[discord-lyr](https://github.com/ishan-parihar/discord-lyr)** `4.93`: Local-first Discord data CLI (SQLite sync, search, analytics). 41 tests passing (measured `pytest` at HEAD, 2026-10-30), 10 releases, 2 CI workflows.
 * **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)** `4.86`: Threads.net MCP server. 57 tests passing (measured `pytest` at HEAD, 2026-10-30).
 * **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** `4.76`: LifeOS conversational interface — Telegram bot + agent CLI (simulate/direct/debug). 12K LOC, 33 tests, v0.1.0.
 
 </details>
 
 <details>
-<summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (9 Projects)</b></summary>
+<summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (8 Projects)</b></summary>
 <br>
 
 * **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `8.33` (capped): Modular intelligence framework — Codename Chimera. Interchangeable modules (reasoning, memory, tools, models) snapping into a central spine. 63K LOC (Rails engine), CI build, MIT license. Experimental.
-* **[icode](https://github.com/ishan-parihar/icode)** `7.23` (capped): Rust command runner parsing agent file edit logs — 11 sophistication families. Archived; its 2,095-test figure predates the archive and cannot be re-measured here.
+* **[icode](https://github.com/ishan-parihar/icode)** `7.23` (capped) <!-- retired-link: the repo is archived and its 2,095-test figure predates the archive and cannot be re-measured here -->: Rust command runner parsing agent file edit logs — 11 sophistication families. Archived; its 2,095-test figure predates the archive and cannot be re-measured here.
 * **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)** `7.11` (capped): Math simulator tracking emergent agent interactions — 489K LOC, **no measurable test count: the workspace does not compile at HEAD** (10 duplicate-definition errors in `holonic_realms`, `cargo build` on a clean export, 2026-10-28), 11 sophistication families. Experimental.
-* **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `7.08` (capped): Modular sandbox testing raw agent behaviors (Codename: Project Chimera). Experimental. 🔒
+* ~~**[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `7.08` (capped): Modular sandbox testing raw agent behaviors (Codename: Project Chimera). Experimental. 🔒~~ <!-- duplicate-row: measured 2026-10-31, only ONE `kali-mahabali` repo exists (private, `gh repo view`), and it matches the 8.33 row above — Python 3.11, 63.3K LOC, the Chimera modular-intelligence spine. This row describes a second, unverifiable experiment and double-counts the repo, which is why the catalog sums to 43 against its own 42. Retained struck-through rather than deleted, per the no-deletion rule; awaiting the operator's ruling on whether a separate repo ever existed. -->
 * **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)** `6.40` (capped): Audio pipeline compiling dynamic background sounds. 144 passing, 13 failing (measured `pytest` at HEAD, 2026-10-28) + architecture docs. Experimental.
 * **[CineSync](https://github.com/ishan-parihar/CineSync)** `5.62`: Character-asset automation pipeline for lipsync animation. 13.7K LOC, 2 CI workflows. Archived.
 * **[obscura-core](https://github.com/ishan-parihar/obscura-core)** `4.38`: Shared cookie-vault + CDP daemon powering the lyr family — highest cross-repo in-degree (4 dependents).
@@ -351,7 +351,7 @@ Three disciplines shaped this body of work — and each is visible in how the sy
 
 - **Architecture** taught me to think in space and load-bearing structure. A program is a container with designed constraints, not a linear recipe — so every repo here is engineered like a building: for what it must carry under real load.
 - **Psychology** taught me to study minds. That's why the portfolio runs deep into cognitive systems — teleological memory graphs (`tdg-rust`), deterministic society simulations (`mindstrata`), developmental matrices (`mysterium`). Building for agents means building for cognition.
-- **Engineering** fuses both into infrastructure: compilers, runtimes, and protocol layers that let autonomous agents operate at production scale (`operant`, `automaton`, `igs-rust`, `social-forge`).
+- **Engineering** fuses both into infrastructure: compilers, runtimes, and protocol layers that let autonomous agents operate at production scale (`operant`, `automaton`, `sourcehound`, `switchpost`).
 
 The throughline across all of it is the same: **I build infrastructure for AI agents to operate at production scale** — deterministic where it matters, verifiable everywhere, and proven by the artifacts committed beside the code.
 
