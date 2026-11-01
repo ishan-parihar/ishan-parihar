@@ -54,9 +54,9 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 | Metric | Value | Technical Context & Evidence |
 |--------|-------|------------------------------|
 | **MCP Servers** | **20+** | 1,300+ total tools across intelligence, memory, media, social, and life-ops |
-| **Rust Crates** | **99+** | 99 `Cargo.toml` manifests — `operant` 19, `automaton` 17, `scorestrata` 12, `mindstrata` 8 |
-| **Lines of Code** | **2.38M** | 2,380,188 tracked source lines (Rust, TypeScript, Python, Go, Kotlin) |
-| **Automated Tests** | **14,183 measured / 28,706 markers** | 14,183 cases measured at each repo's own HEAD, 2026-10-20 through 2026-10-28 (every figure in this README cites its command and date). The remaining 14,523 markers across 15 repos are not measured and are not claimed as passing; six of the measured suites are red at their own HEAD (twitter-lyr 6, consciousness-fabricator 13, mindstrata 3, openscript 1, c-suite-agents 16, mysterium 2). |
+| **Rust Crates** | **87** | 87 `Cargo.toml` manifests across the 35 measured repos — `automaton` 17, `mindstrata` 14, `sourcehound` 13, `scorestrata` 12, `openscript` 12 (`measure_repos.py --total`, 2026-11-01) |
+| **Lines of Code** | **2.55M** | 2,552,477 tracked source lines (Rust, TypeScript, Python, Go, Kotlin) across the 35 measured repos (`measure_repos.py --total`, 2026-11-01 — this rose from 2.38M because the register was repaired: 5 repos that previously measured `RETIRED` now measure real code) |
+| **Automated Tests** | **30,415 markers** | 30,415 test markers counted across the 35 measured repos (`measure_repos.py --total`, 2026-11-01). Markers are NOT passing cases: the per-suite green/red counts in the tier rows below are each measured at their own HEAD and date, and the six red suites are named there. |
 | **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler |
 | **Production Runtime** | **<10MB** | Stripped static musl Rust binaries with minimal idle RSS, zero dynamic dependencies |
 
@@ -89,7 +89,7 @@ For founding / forward-deployed engagements, agentic-systems architecture, or fr
 
 I treat AI system design as **spatial machinery** rather than linear text prompting, and I direct its construction via **AI-augmented architecture** — systems thinking first, substrates chosen per project, the agent runtime writing the implementation under operator supervision. Most agent frameworks today are fragile prompt wrappers. I deliver **load-bearing substrates**:
 
-* **Operator-led, AI-augmented builds**: I architect the system, set the test discipline, choose the substrate (Rust/TypeScript/Python/Go/Kotlin), and direct the build. The 31,000+ tests across the portfolio are the audit trail of that method — not the result of typing each line by hand.
+* **Operator-led, AI-augmented builds**: I architect the system, set the test discipline, choose the substrate (Rust/TypeScript/Python/Go/Kotlin), and direct the build. The **30,415 test markers** across the 35 measured repos are the audit trail of that method — not the result of typing each line by hand. Markers are counted, not claimed as passing: every tier row below states its own measured pass/fail at its own HEAD and date.
 * **Graph-Native Orchestration**: I replace linear shell scripts and standard pipelines with property graphs. Every execution node has typed ports; the execution engine resolves dependencies, materializes parallel branches using a Tokio-backed level scheduler, and exposes the live execution DAG to LLM operators via MCP.
 * **Token-Efficient Serialization**: I designed and compiled the TOON (Token-Oriented Object Notation) standard. By eliminating structural syntax redundancy, TOON reduces context-window footprint by 40% to 60% compared to standard JSON, preserving deterministic validation.
 * **Minimal Memory footprint**: I specialize in compiling highly optimized, zero-dependency static musl Rust binaries. My intelligence gathering pipelines (IGS) curate 411 sources across 47 countries while running within a 7MB static file and under 5MB of idle RAM.
@@ -256,7 +256,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 <summary><b>🚀 S-TIER: Flagship Systems — Score ≥ 8.0 (8 Projects)</b></summary>
 <br>
 
-* **[operant](https://github.com/ishan-parihar/operant)** `9.57`: Terminal-native ReAct agent runtime — 538K LOC, 7,168 tests passing at `ca33d4c` (2026-10-20 gate; the suite is active), 19 crates, 12/12 sophistication families (state machines, DSLs, storage, determinism, plugins…).
+* **[operant](https://github.com/ishan-parihar/operant)** `9.57`: Terminal-native ReAct agent runtime — 538K LOC, 7,168 tests passing at `ca33d4c` (2026-10-20 gate; the suite is active), 7 workspace crates (re-measured 2026-11-01: `Cargo.toml` `members = [api, os, config, core, cli, plugins, harness]`, 10 manifests in total — an earlier "19 crates" here counted vendored and nested manifests and is corrected), 12/12 sophistication families (state machines, DSLs, storage, determinism, plugins…).
 * **[openscript](https://github.com/ishan-parihar/openscript)** `8.96`: Agent-directed video editing pipeline — 109 MCP tools, 158 passing with 1 failing (measured `cargo test` at HEAD, 2026-10-28), 12/12 sophistication families, 5 languages.
 * **[mysterium](https://github.com/ishan-parihar/mysterium)** `8.55`: Education-system replacement — 64-cell developmental matrix, holonic curriculum, 2,110 of 2,112 cases passing across 188 test files (measured `vitest run` at HEAD after `svelte-kit sync`, 2026-10-28), 10 sophistication families, 9-command AXI-first CLI (5/6 signals).
 * **[switchpost](https://github.com/ishan-parihar/switchpost)** `8.42`: 78K LOC across 25 platforms (registry-verified), 10 sophistication families, 328 MCP tools across 42 tool modules.
