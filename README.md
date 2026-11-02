@@ -6,7 +6,7 @@ I build and operate production agentic infrastructure: MCP servers, agent runtim
 
 <p align="center"><b>Agentic AI Systems Engineer &amp; Operator</b> · Production Agentic Infrastructure · AI-Augmented Architecture · Multi-Agent Orchestration</p>
 
-<p align="center">📧 [[REDACTED:email]](mailto:[REDACTED:email]) · 🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar/) · 📍 Noida, India · ✈️ Remote: worldwide</p>
+🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar/) · 📍 Noida, India · ✈️ Remote: worldwide · [📧 Get in touchhref="mailto:[REDACTED:email]"
 
 <p align="center"><b>Every claim below carries a commit, and every number is re-measured.</b> Start with <a href="#hire-me--or-verify-the-code-yourself-first">Hire Me</a>, or read the <a href="#complete-project-catalog-56-ranked-projects--1-struck--6-web-sites">full catalog</a> and check the code yourself first.</p>
 

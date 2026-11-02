@@ -198,25 +198,32 @@ REPOS = [
     #   site    -- a web delivery artefact, ranked outside the software rubric
     #   profile -- this profile repo itself; config, not a software project
     #   spec    -- a knowledge/spec corpus, tracked separately per the rubric
-    ("artificial-route", "_extra-catalog/artificial-route", "engine"),
-    ("cloakctl", "_extra-catalog/cloakctl", "engine"),
-    ("memory-wire", "_extra-catalog/memory-wire", "engine"),
-    ("metatrader-bridge", "_extra-catalog/metatrader-bridge", "engine"),
-    ("metatrader-docker-deployment", "_extra-catalog/metatrader-docker-deployment", "infra"),
-    ("palimpsest", "_extra-catalog/palimpsest", "engine"),
-    ("swiggy-lyr", "_extra-catalog/swiggy-lyr", "engine"),
-    ("amazon-lyr", "_extra-catalog/amazon-lyr", "engine"),
-    ("etmoney-lyr", "_extra-catalog/etmoney-lyr", "engine"),
+    # 2026-11-03: the ten `_extra-catalog` rows below were CLONES of repos with a
+    # canonical path elsewhere in the tree; the clones were purged after verifying
+    # each had no unpushed commits and no dirty files, and these rows now name the
+    # canonical home. The five omarchy rows were rehomed 2026-11-02 but their
+    # relpaths here were never updated — same fix, same day's reasoning: a register
+    # that names a path which no longer exists measures nothing and reports
+    # RETIRED for a live repo.
+    ("artificial-route", "agentic-utility/proxy/artificial-route", "engine"),
+    ("cloakctl", "agentic-utility/internet/cloakctl", "engine"),
+    ("memory-wire", "agentic-utility/memory/memory-wire", "engine"),
+    ("metatrader-bridge", "qf-core/metatrader-bridge", "engine"),
+    ("metatrader-docker-deployment", "qf-core/metatrader-docker-deployment", "infra"),
+    ("palimpsest", "game-development/palimpsest", "engine"),
+    ("swiggy-lyr", "agentic-utility/interaction-surfaces/swiggy-lyr", "engine"),
+    ("amazon-lyr", "agentic-utility/interaction-surfaces/amazon-lyr", "engine"),
+    ("etmoney-lyr", "agentic-utility/interaction-surfaces/etmoney-lyr", "engine"),
     ("linux-telemetry", "_extra-catalog/linux-telemetry", "engine"),
     ("AI-CAD", "_extra-catalog/AI-CAD", "engine"),
     ("jesse", "_extra-catalog/jesse", "deprecated"),
     ("n8n-compiler", "_extra-catalog/n8n-compiler", "infra"),
-    ("android-webcam", "_extra-catalog/android-webcam", "infra"),
-    ("omarchy-vpn", "_extra-catalog/omarchy-vpn", "tool"),
-    ("pill-bar", "_extra-catalog/pill-bar", "tool"),
-    ("pill-suite", "_extra-catalog/pill-suite", "tool"),
-    ("segmented-pill-bar", "_extra-catalog/segmented-pill-bar", "tool"),
-    ("static-tray", "_extra-catalog/static-tray", "tool"),
+    ("android-webcam", "omarchy-repos/android-webcam", "infra"),
+    ("omarchy-vpn", "omarchy-repos/omarchy-vpn", "tool"),
+    ("pill-bar", "omarchy-repos/pill-bar", "tool"),
+    ("pill-suite", "omarchy-repos/pill-suite", "tool"),
+    ("segmented-pill-bar", "omarchy-repos/segmented-pill-bar", "tool"),
+    ("static-tray", "omarchy-repos/static-tray", "tool"),
     ("holon", "holon", "engine"),
     ("project-genome", "project-genome", "tool"),
     ("ishan-parihar", "ishan-parihar", "profile"),
