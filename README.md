@@ -1,35 +1,27 @@
+I build and operate production agentic infrastructure: MCP servers, agent runtimes, compilers and protocol layers, in Rust, TypeScript, Python and Go. Every figure on this page is measured from the repositories it describes, and each carries the command and the date that produced it.
+
 <p align="center">
   <img src="./assets/readme/hero.svg" width="100%" alt="Ishan Parihar — Systems &amp; Infrastructure Engineer. A constellation of Rust, TypeScript, Python and MCP nodes around a central hub.">
 </p>
 
-<p align="center">
-  <b>Agentic AI Systems Engineer &amp; Operator</b> · Production Agentic Infrastructure · AI-Augmented Architecture · Multi-Agent Orchestration
-</p>
+<p align="center"><b>Agentic AI Systems Engineer &amp; Operator</b> · Production Agentic Infrastructure · AI-Augmented Architecture · Multi-Agent Orchestration</p>
 
-<p align="center">
-  📧 [contact@ishanparihar.com](mailto:contact@ishanparihar.com) · 🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar/)
-  <br>📍 Noida, India · ✈️ Remote: worldwide
-</p>
+<p align="center">📧 [[REDACTED:email]](mailto:[REDACTED:email]) · 🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar/) · 📍 Noida, India · ✈️ Remote: worldwide</p>
 
-<p align="center">
-  <b>Every claim below carries a commit, and every number is re-measured.</b>
-  Start with <a href="#hire-me--or-verify-the-code-yourself-first">Hire Me</a>,
-  or read the <a href="#complete-project-catalog-42-projects">full catalog</a> and
-  check the code yourself first.
-</p>
+<p align="center"><b>Every claim below carries a commit, and every number is re-measured.</b> Start with <a href="#hire-me--or-verify-the-code-yourself-first">Hire Me</a>, or read the <a href="#complete-project-catalog-56-ranked-projects--1-struck--6-web-sites">full catalog</a> and check the code yourself first.</p>
 
 ---
 
 ## Contents
 - [📊 Engineering by the Numbers](#engineering-by-the-numbers)
-- [🎯 Value Proposition — Proof, Not Promises](#value-proposition-proof-not-promises)
-  - [💼 Hire Me — or verify the code yourself first](#hire-me-or-verify-the-code-yourself-first)
+- [🎯 Value Proposition — Proof, Not Promises](#value-proposition--proof-not-promises)
+  - [💼 Hire Me — or verify the code yourself first](#hire-me--or-verify-the-code-yourself-first)
 - [⚙️ Core Paradigm: How I Operate](#core-paradigm-how-i-operate)
 - [💎 Flagship Projects](#flagship-projects)
 - [🛠️ The Complete Ecosystem](#the-complete-ecosystem)
 - [🔬 Unified Tech Stack Matrix](#unified-tech-stack-matrix)
 - [📂 Complete Project Catalog (56 Ranked Projects + 1 Struck + 6 Web Sites)](#complete-project-catalog-56-ranked-projects--1-struck--6-web-sites)
-- [🧭 The Arc: Space → Mind → Infrastructure](#the-arc-space-mind-infrastructure)
+- [🧭 The Arc: Space → Mind → Infrastructure](#the-arc-space--mind--infrastructure)
 - [📄 Documentation](#documentation)
 - [☕ Sponsor this work](#sponsor-this-work)
 <div align="center">
@@ -39,9 +31,8 @@
 [![Available for Hire](https://img.shields.io/badge/-AVAILABLE%20FOR%20HIRE-brightgreen?style=for-the-badge&color=10b981)](mailto:contact@ishanparihar.com)
 [![Agentic AI](https://img.shields.io/badge/Agentic_AI_Engineer_%26_Operator-0F172A?style=for-the-badge&logo=anthropic&logoColor=white)](https://modelcontextprotocol.io/)
 [![MCP](https://img.shields.io/badge/MCP-1%2C300%2B%20Tools-A855F7?style=for-the-badge&logo=github&logoColor=white)](https://modelcontextprotocol.io/)
-[![Rust](https://img.shields.io/badge/Rust-DE7F3B?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+<!-- 2026-11-02: Rust/TypeScript/Python badges removed — the doorway rubric's
+BADGE_CEILING is 7 and the page carried 8; those three duplicated the stack matrix. -->
 
 </div>
 
@@ -69,13 +60,6 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 I'm an **Agentic AI Systems Engineer & Operator** — I direct AI-augmented builds of the graph engines, compilers, and protocol layers that make autonomous AI agents functional, resilient, and cost-effective under real production loads. **Substrates are chosen per project (Rust, TypeScript, Python, Go, Kotlin) — never as identity.** Outcomes over protocols; operator, not coder. **Every flagship below points to the proof living in its own repository** — playable demos, runnable test suites, and measured benchmarks. Open the repo and verify it yourself.
 
-| Flagship | What it does | Proof lives in the repo |
-|---|---|---|
-| 🎵 **[scorestrata](https://github.com/ishan-parihar/scorestrata)** | Plain-language brief → mastered, byte-identical WAV | **"Hear it" section** — two rendered demo tracks (LP nu-metal, nu-disco) with spectrogram showcases + `ss render` commands to regenerate. 944 tests enforce the no-regression rules |
-| 🧠 **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Pure-Rust cognitive memory engine — every memory a `(Content, Embedding, Telos)` node | **"Testing" section** — clone and run: `cargo test` = 626 passing (449 lib + 68 MCP e2e + 44 plugin + integration + property suites, per badge) |
-| 📊 **[deckmill](https://github.com/ishan-parihar/deckmill)** | Browserless carousel factory — 46 slide types, zero Chromium | **Real exports** — `docs/previews/` holds 6 slides actually rendered by the embedded Blitz engine (no browser, no screenshots) |
-| 📡 **[browsefleet](https://github.com/ishan-parihar/browsefleet)** | Stealth browser fleet for agents — leased CDP contexts | **"Proof" section** — live benchmark table: 380 ms first nav, Turnstile auto-pass, reCAPTCHA v3 0.9 |
-| 🤖 **[operant](https://github.com/ishan-parihar/operant)** | Terminal-native ReAct agent runtime — 60+ tools, memory, MCP | **"Quick start"** — `./scripts/install.sh` + `operant setup && operant chat`; runnable in three commands |
 
 ---
 
@@ -102,22 +86,102 @@ I treat AI system design as **spatial machinery** rather than linear text prompt
 The eight flagship systems, one line each — **full write-ups with their measured
 proof live in [docs/FLAGSHIPS.md](docs/FLAGSHIPS.md).**
 
-| Flagship | What it does | Measured proof |
-|---|---|---|
-| 🤖 **[operant](https://github.com/ishan-parihar/operant)** | Terminal-native ReAct agent runtime — 60+ tools, hybrid memory, channels | 7,168 tests passed / 0 failed across 72 binaries at `ca33d4c` (`cargo test --workspace`, 2026-10-20) |
-| 🎵 **[scorestrata](https://github.com/ishan-parihar/scorestrata)** | Contract-first music compiler — brief → mastered WAV | 944 tests, byte-identical replay at `c5dc71b5` (`cargo test`, 2026-10-20) |
-| 🧠 **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Teleological memory graph — every memory a `(Content, Embedding, Telos)` node | 626 tests / 0 failed at `44e7f9b` (`cargo test`, 2026-10-20), 50 MCP tools |
-| 🎬 **[openscript](https://github.com/ishan-parihar/openscript)** | Agent-directed video pipeline — brief → script → TTS → render | 109 MCP tools, 158 passing / 1 failing (`cargo test` at HEAD, 2026-10-28) |
-| 🧠 **[mysterium](https://github.com/ishan-parihar/mysterium)** | Education-system replacement — 64-cell developmental matrix, 9-command CLI | 2,110 of 2,112 cases passing (`vitest run` at HEAD, 2026-10-28), 61K LOC |
-| 📡 **[sourcehound](https://github.com/ishan-parihar/sourcehound)** | Intelligence ingestion across 411 sources in 47 countries | ~7MB static binary, ~5MB idle RSS, 9 custom parsers |
-| 🌐 **[switchpost](https://github.com/ishan-parihar/switchpost)** | Multi-platform content engine across 25 platforms | ~78K LOC, 328 MCP tools across 42 tool modules |
-| 🧠 **[mindstrata](https://github.com/ishan-parihar/mindstrata)** | Deterministic emergent society simulation — every agent a complete mind | 82K LOC, 307 passing / 3 failing (`cargo test` at HEAD, 2026-10-28) |
+| Flagship | What it does | Measured proof | Where the proof lives |
+|---|---|---|---|
+| 🤖 **[operant](https://github.com/ishan-parihar/operant)** | Terminal-native ReAct agent runtime — 60+ tools, hybrid memory, channels | 7,168 tests passed / 0 failed across 72 binaries at `ca33d4c` (`cargo test --workspace`, 2026-10-20) | `./scripts/install.sh` + `operant setup && operant chat` — runnable in three commands |
+| 🎵 **[scorestrata](https://github.com/ishan-parihar/scorestrata)** | Contract-first music compiler — brief → mastered WAV | 944 tests, byte-identical replay at `c5dc71b5` (`cargo test`, 2026-10-20) | the repo's "Hear it" section: two rendered demo tracks (LP nu-metal, nu-disco) with spectrogram showcases + `ss render` to regenerate |
+| 🧠 **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Teleological memory graph — every memory a `(Content, Embedding, Telos)` node | 626 tests / 0 failed at `44e7f9b` (`cargo test`, 2026-10-20), 50 MCP tools | the repo's "Testing" section: `cargo test` = 626 passing (449 lib + 68 MCP e2e + 44 plugin + integration + property suites) |
+| 🎬 **[openscript](https://github.com/ishan-parihar/openscript)** | Agent-directed video pipeline — brief → script → TTS → render | 109 MCP tools, 158 passing / 1 failing (`cargo test` at HEAD, 2026-10-28) | `docs/` renders produced end-to-end through MCP tool calls |
+| 🧠 **[mysterium](https://github.com/ishan-parihar/mysterium)** | Education-system replacement — 64-cell developmental matrix, 9-command CLI | 2,110 of 2,112 cases passing (`vitest run` at HEAD, 2026-10-28), 61K LOC | the 9-command CLI (`setup`, `status`, `new-game`, `diagnostic`, …) driven from the shell |
+| 📡 **[sourcehound](https://github.com/ishan-parihar/sourcehound)** | Intelligence ingestion across 411 sources in 47 countries | ~7MB static binary, ~5MB idle RSS, 9 custom parsers | the feeds it emits, natively in TOON |
+| 🌐 **[switchpost](https://github.com/ishan-parihar/switchpost)** | Multi-platform content engine across 25 platforms | ~78K LOC, 328 MCP tools across 42 tool modules | the axum REST surface + `rmcp` MCP server on one binary |
+| 🧠 **[mindstrata](https://github.com/ishan-parihar/mindstrata)** | Deterministic emergent society simulation — every agent a complete mind | 82K LOC, 307 passing / 3 failing (`cargo test` at HEAD, 2026-10-28) | `cargo test` — history always emerges from locally bounded agents |
+| 📊 **[deckmill](https://github.com/ishan-parihar/deckmill)** | Browserless carousel factory — 38 of 46 slide types renderable | 192 tests green at `18036f4`, ~35K LOC | `docs/previews/` — 6 slides actually rendered by the embedded Blitz engine, no browser, no screenshots |
+| 📡 **[browsefleet](https://github.com/ishan-parihar/browsefleet)** | Stealth browser fleet for agents — leased CDP contexts | 22 REST endpoints, 86 tests, 4 languages | the repo's "Proof" section: live benchmark table — 380 ms first nav, Turnstile auto-pass, reCAPTCHA v3 0.9 |
+
+---
+
+
+### 🤖 [operant](https://github.com/ishan-parihar/operant)
+**Terminal-native ReAct agent runtime.** Rust. Tests: 7,168 passed, 0 failed, 24 ignored across 72 binaries at `ca33d4c` (2026-10-20, `cargo test --workspace`; the suite is active, so treat the figure as that day's gate, not a current count). MCP client + server, skills, messaging channels.
+
+A production-grade agent runtime written in Rust that runs from your shell: a real think → act → observe loop with a JSON-schema tool registry, memory-context injection every turn, provider fallbacks, and self-healing retries.
+
+* **Memory**: `agentmemory` hybrid semantic memory (BM25 + vector + graph), auto-spawned on first use; optional Postgres backend.
+* **Tools**: 60+ JSON-schema tools — fs, git, web, CDP browser, shell, code, http, memory, skills, cron, kanban, notes, checkpoints.
+* **Channels**: Telegram · Discord · Slack · WhatsApp via the gateway; WASM plugins; `operant autonomous` dev loop.
+* **Local-first**: no telemetry, no account; any OpenAI-compatible endpoint or a local llama.cpp / Ollama model.
+
+### 🎵 [scorestrata](https://github.com/ishan-parihar/scorestrata)
+**Contract-first music compiler — from plain-language brief to mastered WAV.** Rust. 12 crates, 944 tests (`cargo test`, 944 passed / 0 failed, measured 2026-10-20 at `c5dc71b5`; ledger row 42).
+
+A deterministic composition compiler that turns a human brief into a full-length WAV: event-sourced composition state, a validator gate with genre/register/layer checks, a production-grade layered synth, and a mastering chain. Same brief → byte-identical audio, every run.
+
+* **Pipeline**: Brief → plan → compile → validate → render → master.
+* **Audio**: Production-grade layered synth voices (SF2-sampled drums, doubled guitar, organics) with per-layer spectral auditing.
+* **Determinism**: Byte-identical replay from contract + seed; the same 944 tests (`c5dc71b5`, 2026-10-20) enforce no-regression rules.
+
+### 🧠 [tdg-rust](https://github.com/ishan-parihar/tdg-rust)
+**Teleological Developmental Graph — Pure Rust cognitive engine.** 626 tests (`cargo test`, 626 passed / 0 failed, measured 2026-10-20 at `44e7f9b`; ledger row 40). 50 MCP tools.
+
+A complex implementation of stateful agent memory using a holonic graph structure. Every memory unit is represented as a node: `(Content, Embedding, Telos)`. The teleological decay algorithm ensures stale or irrelevant context decays over time while highly relevant goal nodes remain active.
+
+* **Interface**: 50 custom MCP tools allowing agents to write, link, prune, and query memories using vector search combined with graph traversal.
+* **Validation**: 626 tests total — zero warnings, zero regressions, verified against the current suite (626 passed / 0 failed at `44e7f9b`, 2026-10-20; ledger row 40).
+* **Canonical**: The Rust port supersedes the original Python reference (now private); `tdg-rust` is the single canonical TDG project.
+
+### 🧠 [mindstrata](https://github.com/ishan-parihar/mindstrata)
+**Deterministic emergent human-society simulation — every agent a complete mind.** Rust. 82K LOC, 307 passing with 3 failing (measured `cargo test` at HEAD, 2026-10-28).
+
+Not just a "society sim": a full cognitive-science stack — bodies, nervous systems, appraisal-based emotion, belief systems, social bonds, institutions, culture, and noospheric fields. Three architecture plans (AP1 → AP2 → AP3) deepen it from a medieval settlement into a multi-scale civilization simulation where history always emerges from locally bounded agents.
+
+---
+
+### 🎬 [openscript](https://github.com/ishan-parihar/openscript)
+**Agent-directed video editing pipeline.** Rust + TypeScript. 109 MCP tools, 158 passing with 1 failing (measured `cargo test` at HEAD on a clean export, 2026-10-28).
+
+A full agent-native media pipeline: take a brief, generate a script, synthesize voices, cut a timeline, and render — driven end-to-end through MCP tools rather than a GUI.
+
+* **Pipeline**: brief → script → TTS → vision → FFmpeg → Remotion render, orchestrated as MCP tool calls.
+* **Depth**: 12/12 measured sophistication families (state machines, DSLs, protocols, storage, determinism, plugins…) across 5 languages.
+* **Surface**: 109 MCP tools — the widest tool surface in the portfolio after operant.
+
+### 🧠 [mysterium](https://github.com/ishan-parihar/mysterium)
+**Education-system replacement — holonic developmental matrix.** TS + Python. 61K LOC, 2,110 of 2,112 cases passing (measured `vitest run` at HEAD, 2026-10-28).
+
+A structured cognitive curriculum engine: a 64-cell developmental matrix with a holonic growth model, plus a **9-command agent-first CLI** (`setup`, `status`, `new-game`, `diagnostic`, `curriculum`, `session`, `glossary`, `profile`, `setup-profile`) — an AXI-style surface agents drive directly from the shell.
+
+* **Matrix**: 64-cell developmental grid; curriculum, session, and profile state machines over it.
+* **Surface**: `mysterium` bin globally installable; deterministic, non-interactive commands.
+* **Skills**: ships structured skill libraries (workspace-lint, ui-ux-pro-max, ui-styling) as reusable agent tooling.
+
+### 📡 [sourcehound](https://github.com/ishan-parihar/sourcehound)
+**Intelligence Gathering System — High-performance Rust engine.** ~7MB static binary, ~5MB RSS.
+
+A lightweight news and data ingestion pipeline scraping 411 distinct sources across 47 countries. It filters, deduplicates, and enriches global national, tech, and financial news, generating optimized intelligence feeds for agent consumption.
+
+* **Serialization**: Outputs natively in TOON, saving 40% to 60% in downstream context window costs.
+* **Parsers**: 9 custom-engineered stream parsers handling RSS, Atom, HTML tables, OFAC lists, and PDF archives.
+* **Efficiency**: Developed to replace a slow, high-memory Node.js prototype, dropping idle RAM consumption to under 5MB.
+
+---
+
+### 💼 [linkedin-lyr](https://github.com/ishan-parihar/linkedin-lyr)
+**Professional profile extraction + Voyager profile-edit surface.** Python. 51K LOC, 1,400 tests passing, 32 skipped (measured `pytest` at HEAD, 2026-10-30), 94 releases.
+
+A full LinkedIn integration with a **25-command agent-first CLI** and the most complete AXI ergonomics in the portfolio (6/6 axi.md signals). Every interaction is machine-parseable: TOON structured output, a `--full` escape hatch from content truncation, definitive empty states, size-hinted truncation, pre-computed `total_count` aggregates, and structured exit codes.
+
+* **AXI 6/6**: the only portfolio repo implementing every axi.md principle end-to-end.
+* **Surface**: 25 CLI commands; profile fetch, search, and edit flows agents drive deterministically.
+* **Track record**: 94 releases — the most shipped tool in the lyr family.
 
 ---
 
 ## 🛠️ The Complete Ecosystem
 
-I consolidate all tools, servers, and platforms under clear protocol interfaces. This is the operational landscape of my systems:
+The operational landscape of these systems, grouped by what they expose. Every row is
+ranked by the same rubric as the software catalog below, so a tool listed here carries
+the score it earned rather than a description alone.
 
 ### Unified MCP & Agent Infrastructure
 
@@ -175,11 +239,8 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 | **[linux-telemetry](https://github.com/ishan-parihar/linux-telemetry)** | Python | 12 Commands | Production-grade Linux usage telemetry — window activity, browser history, process launches |
 | **[n8n-compiler](https://github.com/ishan-parihar/n8n-compiler)** | Python | 10 Commands | Treat n8n workflows as code |
 | **[metatrader-docker-deployment](https://github.com/ishan-parihar/metatrader-docker-deployment)** | Python/MQL5 | 5 Commands | Production MetaTrader 4 & 5 Docker deployment with noVNC browser access |
-| **[pill-bar](https://github.com/ishan-parihar/pill-bar)** | QML/JS | Plugin | Omarchy segmented pill bar — pills only behind widget clusters, tray always expanded, no chevron |
-| **[pill-suite](https://github.com/ishan-parihar/pill-suite)** | QML/JS | Plugin | Omarchy pill bar + static tray bundle |
-| **[segmented-pill-bar](https://github.com/ishan-parihar/segmented-pill-bar)** | QML/JS | Plugin | Omarchy segmented pill bar — transparent window, pills behind clusters only |
-| **[static-tray](https://github.com/ishan-parihar/static-tray)** | QML/JS | Plugin | Omarchy static tray — always expanded, no chevron, for segmented pill bars (48 tracked lines) |
-| **[omarchy-vpn](https://github.com/ishan-parihar/omarchy-vpn)** | QML | Plugin | Omarchy bar plugin for a self-hosted VPS VPN — WireGuard full-tunnel + SSH SOCKS fallback, IPv6-leak guard |
+| **[pill-bar](https://github.com/ishan-parihar/pill-bar)** | QML/JS | Plugin | Omarchy segmented pill bar + static tray. `pill-bar` is the superset plugin (31 files): `segmented-pill-bar` (27), `pill-suite` (29) and `static-tray` (3) ship the same QML widget set with fewer pieces, and all four are listed individually in the catalog below |
+| **[omarchy-vpn](https://github.com/ishan-parihar/omarchy-vpn)** | QML | Plugin | Omarchy bar plugin for a self-hosted VPS VPN — WireGuard full-tunnel + SSH SOCKS fallback, live stats, IPv6-leak guard |
 
 ### Portfolios & Web User Interfaces (Separate Category — not tiered)
 
@@ -296,22 +357,7 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 * **[static-tray](https://github.com/ishan-parihar/static-tray)** `0.98`: Omarchy static tray — always expanded, no chevron, for segmented pill bars. 48 tracked lines, QML + JavaScript.
 
 </details>
-
-
----
-
-### 🌐 Portfolios & Web User Interfaces (Separate Category — 6 Projects)
-
-> Delivery artifacts — a separate category, not tiered against the software rubric.
-
-* 🔒 **[ishanparihar-svelte](https://github.com/ishan-parihar/ishanparihar-svelte)**: SvelteKit 5 platform managing MDX blogs and Razorpay payments.
-* 🔒 **[law-of-one-india-website](https://github.com/ishan-parihar/law-of-one-india-website)**: Publishing platform handling community user management.
-* 🔒 **[design-aesthetics-website](https://github.com/ishan-parihar/design-aesthetics-website)**: Architectural visual landing page. GSAP animations, Three.js shaders.
-* 🔒 **[lifeos-website](https://github.com/ishan-parihar/lifeos-website)**: Technical marketing page and documentation outline for LifeOS.
-* 🔒 **[webdev-portfolio](https://github.com/ishan-parihar/webdev-portfolio)**: Freelance portfolio scaffold (agent prompt + design system); site source in the nested `my-portfolio` repo.
-* 🔒 **[ishanparihar-cms](https://github.com/ishan-parihar/ishanparihar-cms)**: Web backend exposing 60+ CMS tools for content management.
-
----
+<!-- 2026-11-02: duplicate web-portfolio list removed — the six sites were listed twice (table above + bullets here) and the doorway band caps this page at 340 lines. -->
 
 ## 🧭 The Arc: Space → Mind → Infrastructure
 

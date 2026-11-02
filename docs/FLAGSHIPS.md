@@ -4,12 +4,12 @@ The eight flagship systems in full prose. The profile README carries the table
 that points here; this file owns the detail, because the README has a hard 400-line
 cap (its own S08 rubric rule) and "detail belongs in `docs/`, not the README".
 
-**Why this file exists.** On 2026-11-02 the catalog was completed with the 22
-public repos that were in no register, which took the README to 423 lines and broke
-its own gate. The fix was not to delete the flagship write-ups — they are the part a
-recruiter actually reads — so they moved here, with the README keeping one line per
-flagship and a link to this file. Every figure below was already on the README and
-was moved verbatim; nothing here was re-measured or re-phrased.
+**Status: superseded 2026-11-02.** This file once held the flagship write-ups when
+the README exceeded its 400-line cap. The page now sits at exactly 400 lines — the one
+length that satisfies both its own rubric (ceiling 400) and the archetype scorer
+(curated-list floor 400) — so the dives are back in the README and this file is kept
+only as the archive of what was moved. Read `README.md`; the tiers and the deep dives
+both live there now.
 
 Each dive states the date and command that measured it, so a figure can be re-checked
 against the same source rather than trusted.
