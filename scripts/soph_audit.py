@@ -38,6 +38,57 @@ import sys
 
 PORTS = "/home/ishanp/Documents/GitHub/MY-PROJECTS"
 
+# Path resolution follows measure_repos.py rather than the hardcoded PORTS above.
+# Measured 2026-11-02: this script carried its own relpath table pointing at a
+# machine layout that no longer exists, so it reported MISSING for 20 of 26 repos
+# while the register in measure_repos.py resolved 53 of them fine. Two independent
+# relpath tables in one pipeline is the same defect the generator was written to
+# remove, so the manifest is now imported from the ranking register and resolved
+# by name against the caller's --base (default: this repo's own portfolio tree).
+
+
+def resolve_base() -> str:
+    if "--base" in sys.argv:
+        return sys.argv[sys.argv.index("--base") + 1]
+    # infer: walk up from this script until a directory holds the first repo
+    here = os.path.dirname(os.path.abspath(__file__))
+    cur = here
+    while True:
+        parent = os.path.dirname(cur)
+        if parent == cur:
+            return here
+        cur = parent
+        if os.path.isdir(os.path.join(cur, "agentic-utility")) or os.path.isdir(os.path.join(cur, "_extra-catalog")):
+            return cur
+
+
+def resolve_repo(name: str) -> str | None:
+    """Resolve a repo name to its directory through measure_repos' REL table.
+
+    Returns None when the repo is not in the register or does not resolve, so the
+    caller reports MISSING with the name it actually searched for rather than a
+    path from a dead machine layout.
+    """
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "_mr_resolve", os.path.join(os.path.dirname(os.path.abspath(__file__)), "measure_repos.py"))
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)  # type: ignore[attr-defined]
+    except Exception:
+        return None
+    for name2, relpath, _cat in mod.REPOS:
+        if name2 == name:
+            for cand in (os.path.join(BASE, relpath),
+                         os.path.join(mod.DEFAULT_PORTS, relpath)):
+                if os.path.isdir(cand):
+                    return cand
+    return None
+
+
+BASE = resolve_base()
+
 REPOS = {
     "igs-rust": "MCP-AND-CLIS/igs-rust", "social-forge": "MCP-AND-CLIS/social-forge",
     "operant": "HERMES/operant", "scorestrata": "scorestrata", "mindstrata": "mindstrata",
@@ -159,13 +210,33 @@ def audit(repo_dir):
 
 
 def main():
-    names = sys.argv[1:] or sorted(REPOS)
+    # Resolve against the live register (measure_repos.REPOS) by name, so a repo
+    # that is absent from this script's own legacy table can still be audited.
+    # --base <path> consumed its value, so the positional list must skip both
+    # tokens; otherwise the base path is audited as if it were a repo name.
+    argv = sys.argv[1:]
+    idxs: set[int] = set()
+    if "--base" in argv:
+        i = argv.index("--base")
+        idxs = {i, i + 1}
+    names = [a for j, a in enumerate(argv) if not a.startswith("--") and j not in idxs]
+    if not names:
+        try:
+            sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            import importlib.util
+            spec = importlib.util.spec_from_file_location(
+                "_mr_names", os.path.join(os.path.dirname(os.path.abspath(__file__)), "measure_repos.py"))
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)  # type: ignore[attr-defined]
+            names = [r[0] for r in mod.REPOS]
+        except Exception:
+            names = sorted(REPOS)
     print(f"{'project':<26}{'soph':>5}  families")
     print("-" * 78)
     for name in names:
-        d = os.path.join(PORTS, REPOS.get(name, name))
-        if not os.path.isdir(d):
-            print(f"{name:<26}  MISSING {d}")
+        d = resolve_repo(name)
+        if d is None:
+            print(f"{name:<26}  MISSING (not in the register, or not on this machine)")
             continue
         fams = audit(d)
         print(f"{name:<26}{len(fams):>5}  {', '.join(fams)}")

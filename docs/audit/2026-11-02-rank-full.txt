@@ -1,0 +1,143 @@
+project                   arch  test  agnt scale  util   TOTAL  tier
+----------------------------------------------------------------------
+sourcehound                8.9  10.0  10.0  10.0   7.6    9.43  S
+switchpost                 7.8  10.0  10.0  10.0   9.2    9.26  S
+operant                    8.8  10.0   9.2  10.0   9.2    9.40  S
+scorestrata                6.6  10.0   4.4  10.0   4.1    7.27  A
+mindstrata                 7.6  10.0   4.8  10.0   5.8    7.82  A
+tdg-rust                   7.0  10.0   8.0   9.3   8.6    8.46  S
+deckmill                   6.8   8.2   6.0   9.4   9.6    7.66  A
+automaton                  6.4   6.1   4.4   9.8   7.5    6.54  A
+openscript                 8.8   9.9   6.8  10.0   7.2    8.70  S
+mysterium                  7.1  10.0  10.0  10.0   7.4    8.87  S
+andrometry                 4.1   9.7   8.0   8.8   4.0    6.97  A
+lifeos-ops                 6.1   0.0   4.8   9.0   9.0    5.04  B
+c-suite-agents             6.1  10.0   9.2   9.3   7.9    8.36  S
+thinking-steroid           3.5   8.8   4.4   8.8   4.5    5.90  B
+reddit-lyr                 4.0   7.7  10.0   7.2   5.9    6.79  A
+twitter-lyr                4.0   9.5  10.0   7.9   7.5    7.51  A
+instagram-lyr              4.0   9.8  10.0   8.2   7.4    7.62  A
+linkedin-lyr               5.7  10.0   9.6   9.0   9.6    8.44  S
+facebook-lyr               3.6   9.4  10.0   7.9   8.4    7.46  A
+threads-lyr                2.8   7.4   4.8   6.7   6.9    5.34  B
+discord-lyr                2.8   6.4   9.2   7.0   6.9    6.02  B
+tg-lyr                     3.2  10.0   9.2   7.5   6.8    7.10  A
+meme-lyr                   1.9   6.6   4.8   6.3   7.5    4.88  B
+obscura-core               2.7   4.9   3.0   6.6   8.5    4.48  C
+browsefleet                5.4   8.1   6.0   8.1   7.9    6.85  A
+hermes-prime-bridge        2.3   5.3   2.0   5.7   5.6    3.83  C
+lifeos-bot                 2.8   5.7   8.4   7.8   5.2    5.63  B
+consciousness-fabricator   4.4   8.7   6.4   7.5   4.3    6.33  C
+holosim-infinite           6.7  10.0   4.0  10.0   6.7    7.48  C
+kali-mahabali              4.9  10.0  10.0   9.1   5.4    7.88  C
+icode                      3.6  10.0   4.8  10.0   1.7    6.21  C
+CineSync                   3.1   4.7   6.0   8.6   4.0    5.00  C
+workout-factory            1.5   5.6   4.0   7.6   2.3    4.02  C
+lifeos-saas                1.9   0.0   3.0   5.5   6.4    2.64  D
+artificial-route           8.6  10.0   5.2  10.0   9.0    8.52  S
+cloakctl                   4.9   7.2  10.0   7.7   5.6    6.99  A
+memory-wire                7.1  10.0   5.2   9.4  10.0    8.08  S
+metatrader-bridge          4.0  10.0  10.0   8.9   6.4    7.67  A
+metatrader-docker-deployment   2.8   0.0   3.0   6.7   3.4    2.79  D
+palimpsest                 2.3   9.5   1.0   7.3   6.2    4.98  B
+swiggy-lyr                 3.6   9.8   4.4   7.0   5.6    6.02  B
+amazon-lyr                 3.2   9.6   8.8   7.1   8.0    6.99  A
+etmoney-lyr                3.6  10.0   7.6   7.0   8.1    6.96  A
+linux-telemetry            1.9   3.6   6.4   6.0   3.7    4.02  C
+AI-CAD                     4.5   6.5   6.0   8.6   1.6    5.62  B
+jesse                      4.0   6.9   8.4   8.0   2.7    6.08  B
+n8n-compiler               1.8   4.1   6.0   6.4   2.7    4.00  C
+android-webcam             3.8   7.7   4.8   7.7   6.2    5.80  B
+omarchy-vpn                1.0   0.0   1.0   2.8   4.0    1.32  D
+pill-bar                   1.0   2.8   1.0   5.2   0.7    2.05  D
+pill-suite                 1.0   2.9   1.0   5.0   0.0    1.98  D
+segmented-pill-bar         1.0   2.9   1.0   5.0   0.0    1.98  D
+static-tray                1.0   0.0   1.0   3.2   0.0    0.98  D
+holon                      5.7  10.0   8.8   8.8   8.1    8.10  S
+project-genome             4.0   0.0   6.8   7.7   8.3    4.54  B
+ishan-parihar              6.0   1.0   8.0   6.6   7.6    5.40  B
+HoloOS                     4.4   9.6  10.0   8.8   2.6    7.30  A
+ishanparihar-svelte        6.2  10.0   2.0   9.6   8.4    7.04  A
+law-of-one-india-website   5.7   6.5   2.0   9.7   4.2    5.61  B
+webdev-portfolio           0.5   0.0   1.0   0.0   1.8    0.53  D
+lifeos-website             6.4  10.0   2.0  10.0   7.3    7.05  A
+
+=== SORTED RANKING ===
+ 1. sourcehound                9.43  [S]
+ 2. operant                    9.40  [S]
+ 3. switchpost                 9.26  [S]
+ 4. mysterium                  8.87  [S]
+ 5. openscript                 8.70  [S]
+ 6. artificial-route           8.52  [S]
+ 7. tdg-rust                   8.46  [S]
+ 8. linkedin-lyr               8.44  [S]
+ 9. c-suite-agents             8.36  [S]
+10. holon                      8.10  [S]
+11. memory-wire                8.08  [S]
+12. kali-mahabali              7.88  [C]  [capped: experimental flag — promote via release + agent surface]
+13. mindstrata                 7.82  [A]
+14. metatrader-bridge          7.67  [A]
+15. deckmill                   7.66  [A]
+16. instagram-lyr              7.62  [A]
+17. twitter-lyr                7.51  [A]
+18. holosim-infinite           7.48  [C]  [capped: experimental flag — promote via release + agent surface]
+19. facebook-lyr               7.46  [A]
+20. HoloOS                     7.30  [A]  [spec: knowledge/spec corpus — tracked separately from software]
+21. scorestrata                7.27  [A]
+22. tg-lyr                     7.10  [A]
+23. lifeos-website             7.05  [A]
+24. ishanparihar-svelte        7.04  [A]
+25. cloakctl                   6.99  [A]
+26. amazon-lyr                 6.99  [A]
+27. andrometry                 6.97  [A]
+28. etmoney-lyr                6.96  [A]
+29. browsefleet                6.85  [A]
+30. reddit-lyr                 6.79  [A]
+31. automaton                  6.54  [A]
+32. consciousness-fabricator   6.33  [C]  [capped: experimental flag — promote via release + agent surface]
+33. icode                      6.21  [C]  [capped: archived/deprecated — not promotable while inactive]
+34. jesse                      6.08  [B]
+35. swiggy-lyr                 6.02  [B]
+36. discord-lyr                6.02  [B]
+37. thinking-steroid           5.90  [B]
+38. android-webcam             5.80  [B]  [infra: deployment/runtime config — no agent surface]
+39. lifeos-bot                 5.63  [B]
+40. AI-CAD                     5.62  [B]
+41. law-of-one-india-website   5.61  [B]
+42. ishan-parihar              5.40  [B]  [profile: this profile repo — configuration, not a software project]
+43. threads-lyr                5.34  [B]
+44. lifeos-ops                 5.04  [B]
+45. CineSync                   5.00  [C]  [capped: archived/deprecated — not promotable while inactive]
+46. palimpsest                 4.98  [B]
+47. meme-lyr                   4.88  [B]
+48. project-genome             4.54  [B]  [tool: developer/desktop tooling — not an agent surface]
+49. obscura-core               4.48  [C]
+50. workout-factory            4.02  [C]
+51. linux-telemetry            4.02  [C]
+52. n8n-compiler               4.00  [C]  [infra: deployment/runtime config — no agent surface]
+53. hermes-prime-bridge        3.83  [C]
+54. metatrader-docker-deployment   2.79  [D]  [infra: deployment/runtime config — no agent surface]
+55. lifeos-saas                2.64  [D]
+56. pill-bar                   2.05  [D]  [tool: developer/desktop tooling — not an agent surface]
+57. segmented-pill-bar         1.98  [D]  [tool: developer/desktop tooling — not an agent surface]
+58. pill-suite                 1.98  [D]  [tool: developer/desktop tooling — not an agent surface]
+59. omarchy-vpn                1.32  [D]  [tool: developer/desktop tooling — not an agent surface]
+60. static-tray                0.98  [D]  [tool: developer/desktop tooling — not an agent surface]
+61. webdev-portfolio           0.53  [D]
+
+=== TIER SUMMARY ===
+S: sourcehound, operant, switchpost, mysterium, openscript, artificial-route, tdg-rust, linkedin-lyr, c-suite-agents, holon, memory-wire
+A: mindstrata, metatrader-bridge, deckmill, instagram-lyr, twitter-lyr, facebook-lyr, HoloOS, scorestrata, tg-lyr, lifeos-website, ishanparihar-svelte, cloakctl, amazon-lyr, andrometry, etmoney-lyr, browsefleet, reddit-lyr, automaton
+B: jesse, swiggy-lyr, discord-lyr, thinking-steroid, android-webcam, lifeos-bot, AI-CAD, law-of-one-india-website, ishan-parihar, threads-lyr, lifeos-ops, palimpsest, meme-lyr, project-genome
+C: kali-mahabali, holosim-infinite, consciousness-fabricator, icode, CineSync, obscura-core, workout-factory, linux-telemetry, n8n-compiler, hermes-prime-bridge
+D: metatrader-docker-deployment, lifeos-saas, pill-bar, segmented-pill-bar, pill-suite, omarchy-vpn, static-tray, webdev-portfolio
+EXCLUDED: websites (site) + knowledge-base (kb) + upstream forks
+          + merged/embedded repos (see docstring for the full list)
+
+=== WEIGHTS ===
+  architecture   30%
+  tests          25%
+  agent          20%
+  scale          15%
+  utility        10%
+  (removed v7: velocity, releases, CI count, age-grace — logistics)

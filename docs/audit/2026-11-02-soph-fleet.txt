@@ -1,0 +1,66 @@
+project                    soph  families
+------------------------------------------------------------------------------
+sourcehound                  12  state_machines, graphs, dsl_parsers, concurrency, protocols, storage, ai_ml, render_audio, determinism, distributed, security, plugins
+switchpost                   11  state_machines, dsl_parsers, concurrency, protocols, storage, ai_ml, render_audio, determinism, distributed, security, plugins
+operant                      12  state_machines, graphs, dsl_parsers, concurrency, protocols, storage, ai_ml, render_audio, determinism, distributed, security, plugins
+scorestrata                   9  state_machines, graphs, dsl_parsers, storage, render_audio, determinism, distributed, security, plugins
+mindstrata                   10  state_machines, graphs, dsl_parsers, storage, ai_ml, render_audio, determinism, distributed, security, plugins
+tdg-rust                     11  state_machines, graphs, dsl_parsers, concurrency, protocols, storage, ai_ml, determinism, distributed, security, plugins
+deckmill                     10  state_machines, dsl_parsers, concurrency, protocols, storage, ai_ml, render_audio, determinism, distributed, plugins
+automaton                     8  state_machines, graphs, concurrency, protocols, storage, distributed, security, plugins
+openscript                   12  state_machines, graphs, dsl_parsers, concurrency, protocols, storage, ai_ml, render_audio, determinism, distributed, security, plugins
+mysterium                    10  state_machines, graphs, dsl_parsers, storage, ai_ml, render_audio, determinism, distributed, security, plugins
+andrometry                    3  state_machines, dsl_parsers, plugins
+lifeos-ops                    8  state_machines, graphs, dsl_parsers, concurrency, protocols, storage, render_audio, distributed
+c-suite-agents               10  state_machines, dsl_parsers, protocols, storage, ai_ml, render_audio, determinism, distributed, security, plugins
+thinking-steroid              5  graphs, ai_ml, determinism, distributed, plugins
+reddit-lyr                    6  dsl_parsers, concurrency, protocols, distributed, security, plugins
+twitter-lyr                   6  dsl_parsers, concurrency, protocols, ai_ml, distributed, security
+instagram-lyr                 6  dsl_parsers, concurrency, protocols, ai_ml, distributed, plugins
+linkedin-lyr                 10  state_machines, dsl_parsers, concurrency, protocols, storage, ai_ml, determinism, distributed, security, plugins
+facebook-lyr                  5  dsl_parsers, concurrency, protocols, distributed, plugins
+threads-lyr                   3  dsl_parsers, concurrency, protocols
+discord-lyr                   3  dsl_parsers, concurrency, distributed
+tg-lyr                        4  dsl_parsers, concurrency, protocols, distributed
+meme-lyr                      0  
+obscura-core                  4  concurrency, protocols, security, plugins
+consciousness-fabricator      8  state_machines, dsl_parsers, concurrency, protocols, ai_ml, render_audio, distributed, security
+holosim-infinite             11  state_machines, graphs, dsl_parsers, concurrency, storage, ai_ml, render_audio, determinism, distributed, security, plugins
+kali-mahabali                 8  dsl_parsers, concurrency, protocols, render_audio, determinism, distributed, security, plugins
+icode                       MISSING (not in the register, or not on this machine)
+browsefleet                   5  state_machines, dsl_parsers, protocols, ai_ml, distributed
+hermes-prime-bridge           2  state_machines, plugins
+lifeos-bot                    3  state_machines, concurrency, distributed
+lifeos-saas                   1  concurrency
+CineSync                    MISSING (not in the register, or not on this machine)
+osint-os                    MISSING (not in the register, or not on this machine)
+workout-factory             MISSING (not in the register, or not on this machine)
+design-aesthetics-website   MISSING (not in the register, or not on this machine)
+ishanparihar-cms            MISSING (not in the register, or not on this machine)
+ishanparihar-svelte           8  graphs, dsl_parsers, storage, ai_ml, render_audio, distributed, security, plugins
+law-of-one-india-website      8  dsl_parsers, storage, ai_ml, render_audio, determinism, distributed, security, plugins
+webdev-portfolio              0  
+lifeos-website                9  graphs, dsl_parsers, concurrency, protocols, storage, ai_ml, distributed, security, plugins
+artificial-route             11  state_machines, dsl_parsers, concurrency, protocols, storage, ai_ml, render_audio, determinism, distributed, security, plugins
+cloakctl                      8  state_machines, graphs, dsl_parsers, concurrency, protocols, ai_ml, security, plugins
+memory-wire                  10  state_machines, dsl_parsers, concurrency, protocols, storage, ai_ml, determinism, distributed, security, plugins
+metatrader-bridge             6  state_machines, dsl_parsers, concurrency, protocols, distributed, plugins
+metatrader-docker-deployment    3  state_machines, dsl_parsers, plugins
+palimpsest                    2  dsl_parsers, determinism
+swiggy-lyr                    5  dsl_parsers, concurrency, protocols, security, plugins
+amazon-lyr                    4  dsl_parsers, concurrency, protocols, plugins
+etmoney-lyr                   5  dsl_parsers, concurrency, protocols, ai_ml, plugins
+linux-telemetry               1  dsl_parsers
+AI-CAD                        4  dsl_parsers, concurrency, protocols, plugins
+jesse                         6  state_machines, dsl_parsers, concurrency, protocols, ai_ml, plugins
+n8n-compiler                  2  graphs, ai_ml
+android-webcam                3  state_machines, dsl_parsers, plugins
+omarchy-vpn                   0  
+pill-bar                      0  
+pill-suite                    0  
+segmented-pill-bar            0  
+static-tray                   0  
+holon                        10  state_machines, dsl_parsers, protocols, storage, ai_ml, render_audio, determinism, distributed, security, plugins
+project-genome                6  state_machines, dsl_parsers, ai_ml, determinism, security, plugins
+ishan-parihar                12  state_machines, graphs, dsl_parsers, concurrency, protocols, storage, ai_ml, render_audio, determinism, distributed, security, plugins
+HoloOS                        7  state_machines, graphs, dsl_parsers, ai_ml, render_audio, distributed, plugins

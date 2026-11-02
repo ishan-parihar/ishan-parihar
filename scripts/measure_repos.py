@@ -77,17 +77,24 @@ def resolve_ports(manifest):
                 dirs.remove(skip)
         return dirs
 
+    # The walk root is the caller's base when one is named, else the script's own
+    # default. Measured 2026-11-02: a caller naming `--base ~/Documents/github`
+    # got PORTS overwritten but the index still built from `my-projects` alone,
+    # so any repo living outside that subtree resolved to nothing and the
+    # manifest looked empty even though 53 of its rows resolve fine.
+    root = PORTS or DEFAULT_PORTS
+
     # Index absolute paths under the portfolio root, so any ancestor can be scored by
     # relpath arithmetic alone. Walking once matters: this file's siblings under the
     # portfolio are large trees, and re-walking per name per ancestor turned a
     # 3-minute measurement into an unbounded one.
     by_name = {}
-    for base, dirs, _files in os.walk(DEFAULT_PORTS):
+    for base, dirs, _files in os.walk(root):
         prune(dirs)
         if os.path.isdir(os.path.join(base, ".git")):
             by_name.setdefault(os.path.basename(base), base)
     candidates = []
-    cur = DEFAULT_PORTS
+    cur = root
     while True:
         candidates.append(cur)
         parent = os.path.dirname(cur)
@@ -176,6 +183,44 @@ REPOS = [
     ("law-of-one-india-website", "webdev/law-of-one-india-website", "site"),
     ("webdev-portfolio", "webdev/webdev-portfolio", "site"),
     ("lifeos-website", "saas/lifeos-website", "site"),
+    # --- 2026-11-02: the 22 public non-fork repos the register had never
+    # carried. These rows are the BOOTSTRAP the generator's header asks for:
+    # gen_register.py deliberately "does not decide categories for repos that
+    # are not already in the register", so the row and its category are seeded
+    # here once and the generator repairs the relpath from GitHub truth
+    # afterwards. Category is the operator's ruling, not a default, and it is
+    # what the tier columns below are derived from.
+    #
+    #   engine  -- an agent-facing codebase scored by the same rubric as the
+    #              flagship engines
+    #   tool    -- developer/desktop tooling, real code, not agent-surface work
+    #   infra   -- deployment/runtime configuration, no agent surface
+    #   site    -- a web delivery artefact, ranked outside the software rubric
+    #   profile -- this profile repo itself; config, not a software project
+    #   spec    -- a knowledge/spec corpus, tracked separately per the rubric
+    ("artificial-route", "_extra-catalog/artificial-route", "engine"),
+    ("cloakctl", "_extra-catalog/cloakctl", "engine"),
+    ("memory-wire", "_extra-catalog/memory-wire", "engine"),
+    ("metatrader-bridge", "_extra-catalog/metatrader-bridge", "engine"),
+    ("metatrader-docker-deployment", "_extra-catalog/metatrader-docker-deployment", "infra"),
+    ("palimpsest", "_extra-catalog/palimpsest", "engine"),
+    ("swiggy-lyr", "_extra-catalog/swiggy-lyr", "engine"),
+    ("amazon-lyr", "_extra-catalog/amazon-lyr", "engine"),
+    ("etmoney-lyr", "_extra-catalog/etmoney-lyr", "engine"),
+    ("linux-telemetry", "_extra-catalog/linux-telemetry", "engine"),
+    ("AI-CAD", "_extra-catalog/AI-CAD", "engine"),
+    ("jesse", "_extra-catalog/jesse", "deprecated"),
+    ("n8n-compiler", "_extra-catalog/n8n-compiler", "infra"),
+    ("android-webcam", "_extra-catalog/android-webcam", "infra"),
+    ("omarchy-vpn", "_extra-catalog/omarchy-vpn", "tool"),
+    ("pill-bar", "_extra-catalog/pill-bar", "tool"),
+    ("pill-suite", "_extra-catalog/pill-suite", "tool"),
+    ("segmented-pill-bar", "_extra-catalog/segmented-pill-bar", "tool"),
+    ("static-tray", "_extra-catalog/static-tray", "tool"),
+    ("holon", "holon", "engine"),
+    ("project-genome", "project-genome", "tool"),
+    ("ishan-parihar", "ishan-parihar", "profile"),
+    ("HoloOS", "HoloOS", "spec"),
 ]
 CODE_EXT = {
     ".rs": "Rust", ".py": "Python", ".ts": "TS", ".tsx": "TS", ".js": "JS",
@@ -448,13 +493,34 @@ def measure(name, relpath, category):
 
 
 def main():
-    global PORTS
+    global PORTS, REL
     args = sys.argv[1:]
-    only = [a for a in args if not a.startswith("--")]
+    # `--base <path>` consumed its value, so build the positional list from
+    # args EXCLUDING that flag and the token that follows it. Measured
+    # 2026-11-02: `only` used to be "every token not starting with --", which
+    # swallowed `--base`'s own value and filtered the manifest down to a repo
+    # literally named `/home/ishanp/Documents/github`. The manifest then resolved
+    # 0 of 0 and the command reported "no repo resolves" for a base that has
+    # 60 of them. A repo name can never equal a path we just accepted, so
+    # skipping the pair is lossless.
+    skip: set[int] = set()
+    if "--base" in args:
+        i = args.index("--base")
+        skip = {i, i + 1}
+    only = [a for idx, a in enumerate(args) if not a.startswith("--") and idx not in skip]
     want_total = "--total" in args
     manifest = REPOS
     if only:
         manifest = [r for r in REPOS if r[0] in only]
+    # --base must be applied BEFORE resolution, not after. Measured 2026-11-02:
+    # it used to be read after `resolve_ports` had already run, so REL carried
+    # relpaths relative to the auto-discovered ancestor while PORTS was
+    # overwritten with the caller's tree, and every `os.path.join(PORTS, rel)`
+    # then pointed at <caller-base>/<ancestor-relative path> -- a path that does
+    # not exist. The rewrite is only correct if the resolution happens against
+    # the base the caller actually named, so it moves above the call.
+    if "--base" in args:
+        PORTS = args[args.index("--base") + 1]
     PORTS, n_resolve = resolve_ports(manifest)
     # A measurement that finds nothing is not a measurement. Rank_score.py's docstring and
     # docs/RUNBOOK.md both name this command as the way to regenerate the dataset, so a
@@ -467,8 +533,6 @@ def main():
             "table of zeros. Pass --base <path> to name the portfolio tree.\n"
         )
         sys.exit(2)
-    if "--base" in args:
-        PORTS = args[args.index("--base") + 1]
     print("name|category|loc|tests|mods|ci|c90|tags|age|langs|concur|ops|surface|axi|indegree|readme|install|docs")
     rows = []
     for name, relpath, category in REPOS:

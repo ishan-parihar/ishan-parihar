@@ -84,54 +84,77 @@ import sys
 # Bonus: cli agent = min(10.0, curve(ops) + 0.4*min(axi, 5)).
 # ---------------------------------------------------------------------------
 DATA = [
-    # --- engines -----------------------------------------------------------
-    ("sourcehound", "engine", 27738, 231, 1, 2, 198, 15, 96, 2, 500, 93, 11, "mcp", 0, 0, 432, 1, 1),
-    ("switchpost", "engine", 77836, 257, 3, 2, 479, 2, 96, 5, 500, 328, 10, "mcp", 0, 0, 557, 1, 1),
-    ("operant", "engine", 538394, 9249, 19, 4, 762, 3, 116, 6, 500, 68, 12, "mcp", 0, 3, 206, 1, 1),
-    ("scorestrata", "engine", 72958, 944, 12, 1, 97, 0, 9, 2, 0, 88, 9, "mcp", 0, 0, 158, 1, 1),
-    ("mindstrata", "engine", 82079, 1245, 8, 1, 483, 0, 14, 1, 0, 2, 10, "cli", 3, 0, 169, 1, 1),
-    ("tdg-rust", "engine", 47797, 626, 1, 1, 146, 10, 55, 3, 268, 50, 11, "mcp", 0, 0, 227, 1, 1),
-    ("deckmill", "engine", 35631, 185, 2, 1, 203, 6, 43, 3, 74, 20, 10, "mcp", 0, 1, 346, 1, 1),
-    ("automaton", "engine", 13410, 43, 17, 2, 16, 1, 96, 2, 500, 38, 8, "mcp", 0, 0, 380, 1, 1),
-    ("openscript", "engine", 74606, 510, 12, 2, 463, 0, 129, 5, 500, 109, 12, "mcp", 0, 0, 186, 1, 1),
-    ("mysterium", "engine", 61428, 1090, 1, 2, 467, 0, 86, 4, 281, 9, 10, "cli", 5, 2, 584, 1, 1),
-    ("andrometry", "engine", 25442, 152, 1, 1, 135, 0, 14, 4, 216, 12, 3, "rest", 0, 0, 449, 0, 1),
-    ("lifeos-ops", "engine", 17760, 0, 3, 1, 98, 10, 93, 3, 488, 31, 8, "mcp", 0, 0, 324, 1, 0),
-    ("c-suite-agents", "engine", 46498, 227, 1, 1, 6, 3, 130, 2, 500, 35, 10, "mcp", 0, 2, 140, 1, 1),
-    ("thinking-steroid", "engine", 24997, 247, 1, 2, 16, 0, 122, 1, 18, 13, 5, "mcp", 0, 1, 229, 1, 1),
-    # --- AXI CLI family (ranked this audit) --------------------------------
-    ("reddit-lyr", "engine", 4430, 24, 0, 1, 51, 0, 84, 2, 222, 56, 6, "cli", 5, 0, 168, 1, 1),
-    ("twitter-lyr", "engine", 13425, 243, 0, 2, 44, 32, 160, 2, 14, 42, 6, "cli", 5, 0, 483, 1, 1),
-    ("instagram-lyr", "engine", 20441, 335, 0, 1, 49, 0, 485, 2, 355, 47, 6, "cli", 5, 0, 433, 1, 1),
-    ("linkedin-lyr", "engine", 50739, 1166, 0, 4, 204, 94, 485, 2, 500, 25, 9, "cli", 6, 1, 379, 1, 1),
-    ("facebook-lyr", "engine", 13977, 229, 0, 1, 19, 0, 7, 2, 318, 41, 5, "cli", 3, 2, 206, 1, 1),
-    ("threads-lyr", "engine", 2374, 31, 0, 1, 9, 0, 1, 2, 21, 3, 3, "cli", 3, 1, 133, 1, 0),
-    ("discord-lyr", "engine", 3704, 15, 0, 2, 11, 10, 156, 2, 40, 13, 2, "cli", 5, 0, 333, 1, 0),
-    ("tg-lyr", "engine", 4828, 122, 0, 2, 12, 14, 156, 2, 34, 12, 2, "cli", 5, 0, 271, 1, 0),
-    ("meme-lyr", "engine", 1050, 25, 1, 2, 14, 1, 521, 2, 28, 6, 0, "cli", 4, 0, 459, 1, 1),
-    ("obscura-core", "engine", 2896, 15, 0, 1, 12, 0, 10, 1, 104, 8, 4, "mcp", 0, 4, 231, 1, 0),
-    # --- experimental / archived (capped at C by policy) --------------------
-    ("consciousness-fabricator", "experimental", 9238, 158, 0, 1, 7, 0, 125, 1, 73, 6, 8, "cli", 2, 1, 249, 0, 1),
-    ("holosim-infinite", "experimental", 489296, 7766, 2, 2, 5, 0, 180, 2, 31, 6, 11, "engine", 0, 0, 296, 1, 1),
-    ("kali-mahabali", "experimental", 63118, 690, 0, 1, 15, 1, 314, 2, 500, 20, 8, "mcp", 0, 0, 355, 1, 1),
-    ("icode", "deprecated", 142819, 2095, 21, 2, 7, 0, 133, 3, 500, 10, 11, "mcp", 0, 0, 100, 0, 1),
-    # --- engines added in the 2026-08-11 full-coverage pass -----------------
-    ("browsefleet", "engine", 4558, 86, 4, 5, 29, 2, 130, 4, 239, 22, 5, "rest", 0, 0, 282, 1, 1),
-    ("hermes-prime-bridge", "engine", 919, 14, 0, 2, 23, 1, 4, 2, 1, 3, 2, "mcp", 0, 0, 162, 1, 1),
-    ("lifeos-bot", "engine", 12009, 33, 0, 2, 16, 1, 61, 2, 397, 3, 3, "cli", 2, 0, 107, 1, 1),
-    # --- deprecated / inactive (capped at C by policy) -----------------------
-    ("CineSync", "deprecated", 13744, 16, 2, 2, 3, 0, 298, 4, 23, 13, 5, "rest", 0, 0, 150, 1, 1),
-    ("osint-os", "deprecated", 120754, 399, 1, 1, 2, 0, 406, 4, 500, 122, 9, "rest", 0, 0, 469, 1, 1),
-    ("workout-factory", "deprecated", 9417, 30, 0, 1, 3, 0, 262, 2, 7, 0, 4, "engine", 0, 0, 192, 0, 1),
-    # --- unranked: utility/private ------------------------------------------
-    ("lifeos-saas", "engine", 760, 0, 0, 1, 4, 0, 97, 2, 15, 10, 1, "rest", 0, 0, 277, 1, 1),
-    # --- websites / portfolios (separate category, never ranked) ------------
-    ("design-aesthetics-website", "site", 17084, 8, 2, 1, 40, 0, 1209, 3, 58, 15, 6, "rest", 0, 0, 144, 1, 1),
-    ("ishanparihar-cms", "site", 14271, 355, 1, 2, 38, 1, 126, 2, 352, 20, 3, "rest", 0, 1, 96, 1, 1),
-    ("ishanparihar-svelte", "site", 64567, 666, 1, 3, 303, 0, 299, 4, 500, 4, 8, "rest", 0, 1, 203, 1, 1),
-    ("law-of-one-india-website", "site", 69626, 63, 1, 1, 5, 0, 503, 3, 500, 29, 8, "rest", 0, 0, 176, 1, 1),
-    ("webdev-portfolio", "site", 0, 0, 0, 1, 4, 0, 128, 0, 0, 0, 0, "engine", 0, 0, 109, 0, 0),
-    ("lifeos-website", "site", 71179, 1156, 2, 1, 5, 0, 96, 3, 500, 8, 9, "rest", 0, 1, 188, 1, 1),
+    # --- engines -----------------------------------------------------------------
+    ("sourcehound", "engine", 280285, 2304, 13, 2, 137, 30, 179, 4, 500, 156, 12, "mcp", 0, 2, 239, 1, 1),
+    ("switchpost", "engine", 132144, 1036, 3, 2, 456, 4, 178, 5, 500, 403, 11, "mcp", 0, 4, 337, 1, 1),
+    ("operant", "engine", 504966, 5691, 11, 5, 1879, 6, 199, 6, 500, 17, 12, "cli", 3, 7, 323, 1, 1),
+    ("scorestrata", "engine", 72958, 944, 12, 1, 75, 0, 91, 2, 0, 1, 9, "cli", 1, 0, 161, 1, 1),
+    ("mindstrata", "engine", 155412, 1696, 14, 1, 668, 0, 97, 3, 0, 1, 10, "cli", 2, 1, 190, 1, 1),
+    ("tdg-rust", "engine", 47889, 637, 1, 1, 38, 11, 137, 3, 268, 50, 11, "mcp", 0, 3, 236, 1, 1),
+    ("deckmill", "engine", 35826, 192, 2, 1, 87, 7, 125, 3, 74, 20, 10, "mcp", 0, 3, 383, 1, 1),
+    ("automaton", "engine", 13861, 43, 17, 2, 40, 2, 179, 2, 500, 1, 8, "cli", 1, 1, 443, 1, 1),
+    ("openscript", "engine", 152993, 716, 12, 2, 142, 0, 211, 7, 500, 15, 12, "cli", 2, 2, 180, 1, 1),
+    ("mysterium", "engine", 124381, 2783, 1, 2, 259, 0, 168, 4, 500, 42, 10, "cli", 2, 4, 54, 1, 1),
+    ("andrometry", "engine", 25442, 367, 1, 1, 27, 0, 96, 4, 216, 57, 3, "rest", 0, 0, 481, 0, 1),
+    ("lifeos-ops", "engine", 17885, 0, 3, 1, 28, 11, 175, 3, 488, 1, 8, "cli", 2, 3, 305, 1, 1),
+    ("c-suite-agents", "engine", 46602, 555, 1, 1, 25, 3, 213, 2, 500, 36, 10, "cli", 3, 3, 140, 1, 1),
+    ("thinking-steroid", "engine", 24997, 247, 1, 2, 26, 0, 205, 1, 18, 1, 5, "cli", 1, 0, 228, 1, 1),
+    # --- AXI CLI family ----------------------------------------------------------
+    ("reddit-lyr", "engine", 6095, 86, 0, 1, 44, 0, 167, 2, 232, 56, 6, "cli", 3, 1, 207, 1, 1),
+    ("twitter-lyr", "engine", 14353, 269, 0, 2, 37, 32, 242, 2, 14, 65, 6, "cli", 3, 1, 494, 1, 1),
+    ("instagram-lyr", "engine", 21380, 361, 0, 1, 29, 0, 567, 2, 355, 47, 6, "cli", 3, 1, 441, 1, 1),
+    ("linkedin-lyr", "engine", 54816, 1211, 0, 4, 73, 95, 567, 2, 500, 25, 10, "cli", 4, 4, 388, 1, 1),
+    ("facebook-lyr", "engine", 14920, 255, 0, 1, 36, 0, 90, 2, 318, 41, 5, "cli", 3, 3, 213, 1, 1),
+    ("threads-lyr", "engine", 3353, 57, 0, 1, 28, 0, 84, 2, 21, 3, 3, "cli", 2, 2, 140, 1, 1),
+    ("discord-lyr", "engine", 4742, 41, 0, 2, 34, 10, 238, 2, 40, 28, 3, "cli", 3, 1, 364, 1, 1),
+    ("tg-lyr", "engine", 9390, 281, 0, 2, 46, 18, 238, 2, 71, 39, 4, "cli", 3, 1, 346, 1, 1),
+    ("meme-lyr", "engine", 1172, 25, 1, 2, 33, 1, 604, 2, 28, 1, 0, "cli", 2, 1, 503, 1, 1),
+    ("obscura-core", "engine", 2938, 15, 0, 1, 25, 0, 93, 1, 104, 8, 4, "rest", 0, 4, 225, 1, 1),
+    # --- engines added in the 2026-08-11 full-coverage pass ----------------------
+    ("browsefleet", "engine", 5129, 94, 4, 5, 30, 3, 212, 4, 261, 28, 5, "rest", 0, 2, 284, 1, 1),
+    ("hermes-prime-bridge", "engine", 1028, 14, 0, 2, 41, 1, 87, 2, 1, 1, 2, "engine", 0, 1, 165, 1, 1),
+    ("lifeos-bot", "engine", 12100, 33, 0, 2, 30, 1, 144, 2, 397, 25, 3, "cli", 1, 1, 110, 1, 1),
+    # --- experimental / archived (capped at C by policy) -------------------------
+    ("consciousness-fabricator", "experimental", 9238, 158, 0, 1, 26, 0, 208, 1, 73, 6, 8, "cli", 1, 1, 263, 0, 1),
+    ("holosim-infinite", "experimental", 489296, 7766, 2, 2, 27, 0, 263, 2, 31, 13, 11, "engine", 0, 1, 329, 1, 1),
+    ("kali-mahabali", "experimental", 63118, 690, 0, 1, 14, 1, 397, 2, 500, 189, 8, "rest", 0, 0, 366, 1, 1),
+    ("icode", "deprecated", 142819, 2095, 21, 2, 1, 0, 82, 3, 500, 1, 0, "cli", 2, 0, 100, 0, 1),
+    ("CineSync", "deprecated", 13744, 16, 2, 2, 1, 0, 82, 4, 23, 13, 0, "rest", 0, 0, 150, 1, 1),
+    # NOTE: "osint-os" does not resolve on this machine; row carried from the previous snapshot.
+    ("workout-factory", "deprecated", 9417, 30, 0, 1, 1, 0, 82, 2, 7, 23, 0, "engine", 0, 0, 192, 0, 1),
+    # --- unranked: utility/private -----------------------------------------------
+    ("lifeos-saas", "engine", 760, 0, 0, 1, 24, 0, 179, 2, 15, 10, 1, "rest", 0, 1, 287, 1, 1),
+    # --- 2026-11-02 catalog completion: the 22 public repos that were in no register -
+    ("artificial-route", "engine", 121732, 2502, 17, 2, 376, 27, 32, 4, 500, 1, 11, "cli", 3, 3, 297, 1, 1),
+    ("cloakctl", "engine", 11688, 81, 0, 0, 33, 5, 46, 2, 49, 64, 8, "cli", 3, 1, 171, 1, 1),
+    ("memory-wire", "engine", 49945, 640, 1, 3, 122, 14, 35, 4, 294, 2, 10, "cli", 3, 4, 1077, 1, 1),
+    ("metatrader-bridge", "engine", 50767, 801, 0, 0, 19, 0, 213, 2, 319, 127, 6, "rest", 0, 1, 289, 1, 1),
+    ("metatrader-docker-deployment", "infra", 3546, 0, 0, 0, 29, 2, 115, 2, 0, 5, 3, "engine", 0, 1, 138, 0, 1),
+    ("palimpsest", "engine", 7247, 186, 0, 0, 39, 0, 33, 2, 149, 0, 2, "engine", 0, 3, 185, 0, 1),
+    ("swiggy-lyr", "engine", 4865, 159, 0, 2, 26, 0, 70, 2, 92, 1, 5, "cli", 1, 1, 172, 1, 1),
+    ("amazon-lyr", "engine", 5701, 165, 0, 1, 25, 0, 70, 2, 131, 21, 4, "cli", 2, 4, 155, 1, 1),
+    ("etmoney-lyr", "engine", 4882, 187, 0, 2, 19, 0, 70, 2, 116, 14, 5, "cli", 4, 3, 169, 1, 1),
+    ("linux-telemetry", "engine", 1396, 6, 0, 0, 0, 0, 108, 2, 0, 12, 1, "cli", 1, 0, 255, 1, 0),
+    ("AI-CAD", "engine", 19560, 58, 1, 0, 0, 0, 120, 4, 167, 23, 4, "rest", 0, 0, 89, 0, 1),
+    ("jesse", "deprecated", 15472, 74, 0, 0, 0, 0, 163, 2, 410, 21, 6, "cli", 1, 0, 100, 1, 0),
+    ("n8n-compiler", "infra", 2235, 9, 0, 2, 0, 0, 174, 1, 0, 10, 2, "cli", 0, 0, 111, 1, 0),
+    ("android-webcam", "infra", 11393, 106, 0, 0, 120, 0, 66, 4, 1, 1, 3, "cli", 2, 1, 250, 1, 1),
+    ("omarchy-vpn", "tool", 29, 0, 0, 0, 1, 0, 59, 1, 0, 0, 0, "engine", 0, 1, 69, 1, 0),
+    ("pill-bar", "tool", 545, 3, 0, 0, 1, 0, 58, 1, 0, 0, 0, "engine", 0, 0, 99, 0, 0),
+    ("pill-suite", "tool", 452, 3, 0, 0, 1, 0, 69, 1, 0, 0, 0, "engine", 0, 0, 0, 0, 0),
+    ("segmented-pill-bar", "tool", 404, 3, 0, 0, 1, 0, 69, 1, 0, 0, 0, "engine", 0, 0, 0, 0, 0),
+    ("static-tray", "tool", 48, 0, 0, 0, 1, 0, 69, 1, 0, 0, 0, "engine", 0, 0, 0, 0, 0),
+    ("holon", "engine", 44954, 837, 0, 1, 424, 0, 21, 2, 0, 22, 10, "cli", 2, 9, 165, 1, 1),
+    ("project-genome", "tool", 11728, 0, 0, 0, 56, 0, 8, 2, 0, 11, 6, "cli", 2, 5, 202, 1, 1),
+    ("ishan-parihar", "profile", 2905, 1, 0, 0, 82, 0, 748, 1, 14, 10, 12, "cli", 5, 63, 386, 0, 1),
+    ("HoloOS", "spec", 43795, 448, 0, 0, 1, 0, 82, 2, 1, 187, 7, "cli", 3, 1, 171, 0, 0),
+    # --- websites / portfolios (separate category, never ranked) -----------------
+    # NOTE: "design-aesthetics-website" does not resolve on this machine; row carried from the previous snapshot.
+    # NOTE: "ishanparihar-cms" does not resolve on this machine; row carried from the previous snapshot.
+    ("ishanparihar-svelte", "site", 65674, 712, 1, 3, 31, 0, 382, 4, 500, 3, 8, "engine", 0, 5, 207, 1, 1),
+    ("law-of-one-india-website", "site", 69958, 63, 1, 1, 20, 0, 586, 3, 500, 1, 8, "engine", 0, 0, 178, 1, 1),
+    ("webdev-portfolio", "site", 0, 0, 0, 1, 26, 0, 211, 0, 0, 0, 0, "engine", 0, 0, 114, 0, 1),
+    ("lifeos-website", "site", 72999, 1156, 2, 1, 34, 0, 179, 3, 500, 1, 9, "engine", 0, 2, 199, 1, 1),
 ]
 
 WEIGHTS = {
@@ -273,6 +296,18 @@ def tier(total, category):
         if _TIER_ORDER[natural] < _TIER_ORDER["C"]:
             return "C", "capped: experimental flag — promote via release + agent surface"
         return natural, ""
+    # Categories introduced 2026-11-02 when the catalog was completed with the 22
+    # public repos the register had never carried. They are RANKED, not excluded,
+    # because each is real code that a recruiter can open and read — but each is
+    # tagged so no one reads a system-config repo as a peer of an agent runtime.
+    if category == "infra":
+        return natural, "infra: deployment/runtime config — no agent surface"
+    if category == "tool":
+        return natural, "tool: developer/desktop tooling — not an agent surface"
+    if category == "profile":
+        return natural, "profile: this profile repo — configuration, not a software project"
+    if category == "spec":
+        return natural, "spec: knowledge/spec corpus — tracked separately from software"
     return natural, ""
 
 
