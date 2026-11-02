@@ -1,0 +1,198 @@
+#!/usr/bin/env python3
+"""gen_vitals.py — render the profile README's vitals table from the figure engine.
+
+WHY THIS EXISTS. Measured 2026-11-02: the page published 61 / 3,139,549 /
+38,911 / 126 crates, and `measure_repos.py --total` — the command the page
+named as its source — returned 58 / 2,977,018 / 36,810 / 105. The page was the
+most-viewed surface in the portfolio and the only one whose numbers its own
+named command could not reproduce. A reader who checked was right and the page
+was wrong.
+
+The fix is not another hand-edit. The table's four attribute rows are now
+GENERATED from `my-projects/docs/audit/portfolio-measurements.json`, which
+`genome close` re-derives on every iteration. The two rows that are NOT engine
+attributes (context reduction, runtime footprint) stay hand-written, because
+they are benchmark claims, not tree counts, and the engine cannot mint them.
+
+LINE COUNT IS LOAD-BEARING. This page is exactly 400 lines and two linters
+disagree about it: the portfolio lint caps at 400 and the archetype scorer
+floors a curated list at 400. So the generator replaces the six data rows IN
+PLACE and refuses to run if the table is not the expected shape.
+
+USAGE
+  python3 scripts/gen_vitals.py --check   # exit 1 if the page disagrees
+  python3 scripts/gen_vitals.py --write   # rewrite the six rows
+"""
+
+import json
+import os
+import re
+import sys
+import tempfile
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+README = os.path.join(os.path.dirname(HERE), "README.md")
+PORTFOLIO = os.environ.get(
+    "PORTFOLIO_ROOT",
+    os.path.expanduser("~/Documents/github/my-projects"))
+MEASUREMENTS = os.path.join(PORTFOLIO, "docs", "audit",
+                            "portfolio-measurements.json")
+
+HEADER = "| Metric | Value |"
+ROW = re.compile(r"^\| \*\*[^*]+\*\* \| \*\*")
+STATIC = {
+    "Context Reduction": ("**40–60%**",
+                          "Token savings verified via custom Token-Oriented "
+                          "Object Notation (TOON) compiler — benchmark claim, "
+                          "not an engine attribute"),
+    "Production Runtime": ("**<10MB**",
+                           "Stripped static musl Rust binaries with minimal "
+                           "idle RSS, zero dynamic dependencies — benchmark "
+                           "claim, not an engine attribute"),
+}
+
+
+def fmt_m(n):
+    return "{:.2f}M".format(n / 1_000_000) if n >= 1_000_000 else "{:,}".format(n)
+
+
+def load():
+    if not os.path.isfile(MEASUREMENTS):
+        return None, None
+    with open(MEASUREMENTS, encoding="utf-8") as f:
+        d = json.load(f)
+    rows = list((d.get("repos") or {}).values())
+    if not rows:
+        raise SystemExit("gen_vitals: {} carries no repos".format(MEASUREMENTS))
+    return d, rows
+
+
+def generated_rows(d, rows):
+    # DATE, not timestamp: the page is refreshed on its own repo's close, and a
+    # page that goes stale every time ANOTHER repo closes would be re-rendered
+    # far more often than it changes. A date still lets a reader check it.
+    stamp = d["measured_at"][:10]
+    roster = d["roster"]
+    mcp_repos = [r for r in rows if (r.get("mcp_tools") or 0) > 0]
+    mcp_tools = sum(r["mcp_tools"] for r in mcp_repos)
+    crates = sum(r.get("crates") or 0 for r in rows)
+    loc = sum(r.get("loc") or 0 for r in rows)
+    tested = [r for r in rows if r.get("test_markers") is not None]
+    tests = sum(r["test_markers"] for r in tested)
+    pop = ("{} published repos ({} federation + {} catalog)"
+           .format(roster["published"], roster["federation"],
+                   roster["catalog"]))
+    src = "`portfolio-measurements.json`, measured {}, re-derived by `genome close`".format(
+        stamp)
+    return [
+        ("MCP Servers", "**{}**".format(len(mcp_repos)),
+         "{} registered MCP tools across {} MCP-exposing repos ({})".format(
+             "{:,}".format(mcp_tools), len(mcp_repos), src)),
+        ("Rust Crates", "**{}**".format(crates),
+         "{} `Cargo.toml` manifests across the {} — vendored, generated and "
+         "documentation trees excluded ({})".format(crates, pop, src)),
+        ("Lines of Code", "**{}**".format(fmt_m(loc)),
+         "{:,} first-party source lines (Rust, TypeScript, Python, Go, "
+         "Svelte, QML, shell) across the {} ({})".format(loc, pop, src)),
+        ("Automated Tests", "**{:,} markers**".format(tests),
+         "{:,} test markers across {} of {} repos; {} report none because "
+         "their language has no marker rule here. Markers are NOT passing "
+         "cases — gate results are recorded separately with their commit ({})"
+         .format(tests, len(tested), roster["published"],
+                 roster["published"] - len(tested), src)),
+    ]
+
+
+def render(readme_text):
+    lines = readme_text.splitlines()
+    start = None
+    for i, ln in enumerate(lines):
+        if ln.startswith(HEADER):
+            start = i
+            break
+    if start is None:
+        raise SystemExit("gen_vitals: no '{}' table found".format(HEADER))
+    # skip the separator, then the six data rows
+    first = start + 2
+    idx = [i for i in range(first, min(first + 12, len(lines)))
+           if ROW.match(lines[i])]
+    if len(idx) < 6:
+        raise SystemExit(
+            "gen_vitals: expected 6 data rows after the header, found {} — "
+            "refusing to guess (this page's 400-line budget is load-bearing)"
+            .format(len(idx)))
+    idx = idx[:6]
+
+    d, rows = load()
+    if d is None:
+        # A repo cloned without its sibling portfolio cannot verify the page.
+        # The `.genome` rule is the same one identity-core's LOC gate uses:
+        # skip, and say why, rather than fail for the wrong reason.
+        raise SystemExit("skip")
+    gen = generated_rows(d, rows)
+    new_rows = []
+    for name, value, context in gen[:4]:
+        new_rows.append("| **{}** | {} | {} |".format(name, value, context))
+    for name in ("Context Reduction", "Production Runtime"):
+        value, context = STATIC[name]
+        new_rows.append("| **{}** | {} | {} |".format(name, value, context))
+
+    out = list(lines)
+    for pos, line in zip(idx, new_rows):
+        out[pos] = line
+    return "\n".join(out) + ("\n" if readme_text.endswith("\n") else ""), \
+        [lines[i] for i in idx], new_rows
+
+
+def atomic_write(path, content):
+    d = os.path.dirname(os.path.abspath(path))
+    fd, tmp = tempfile.mkstemp(dir=d, prefix=".vitals-", suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            f.write(content)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, path)
+    except BaseException:
+        try:
+            os.unlink(tmp)
+        except OSError:
+            pass
+        raise
+
+
+def main():
+    check = "--check" in sys.argv
+    write = "--write" in sys.argv
+    if not (check or write):
+        print(__doc__.strip().split("USAGE")[1].strip(), file=sys.stderr)
+        return 2
+    with open(README, encoding="utf-8") as f:
+        text = f.read()
+    try:
+        rendered, old, new = render(text)
+    except SystemExit as exc:
+        if str(exc) == "skip":
+            print("gen_vitals: engine output absent at {} — nothing written"
+                  .format(MEASUREMENTS))
+            return 0
+        raise
+    if old == new:
+        print("gen_vitals: page already matches the engine")
+        return 0
+    if check:
+        print("gen_vitals: STALE — the page disagrees with the engine.")
+        for o, n in zip(old, new):
+            if o != n:
+                print("  old: {}".format(o[:150]))
+                print("  new: {}".format(n[:150]))
+        return 1
+    before = len(text.splitlines())
+    atomic_write(README, rendered)
+    after = len(rendered.splitlines())
+    print("gen_vitals: rewrote 6 data rows ({} -> {} lines)".format(before, after))
+    return 0 if before == after else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -44,12 +44,12 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 | Metric | Value | Technical Context & Evidence |
 |--------|-------|------------------------------|
-| **MCP Servers** | **20+** | 1,300+ total tools across intelligence, memory, media, social, and life-ops |
-| **Rust Crates** | **126** | 126 `Cargo.toml` manifests across the 61 measured repos — `automaton` 18, `mindstrata` 14, `sourcehound` 15, `scorestrata` 12, `openscript` 10 (`measure_repos.py --total`, 2026-11-02) |
-| **Lines of Code** | **3.14M** | 3,139,549 tracked source lines (Rust, TypeScript, Python, Go, Kotlin, QML, MQL5) across the 61 measured repos (`measure_repos.py --total`, 2026-11-02 — this rose from 2.55M because the register was completed on 2026-11-02: the 22 public repos that were in no register now measure real code, adding 23 previously invisible repos to the total) |
-| **Automated Tests** | **38,911 markers** | 38,911 test markers counted across the 61 measured repos (`measure_repos.py --total`, 2026-11-02). Markers are NOT passing cases: the per-suite green/red counts in the tier rows below are each measured at their own HEAD and date, and the six red suites are named there. |
-| **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler |
-| **Production Runtime** | **<10MB** | Stripped static musl Rust binaries with minimal idle RSS, zero dynamic dependencies |
+| **MCP Servers** | **17** | 1,190 registered MCP tools across 17 MCP-exposing repos (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
+| **Rust Crates** | **94** | 94 `Cargo.toml` manifests across the 73 published repos (64 federation + 9 catalog) — vendored, generated and documentation trees excluded (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
+| **Lines of Code** | **3.34M** | 3,344,096 first-party source lines (Rust, TypeScript, Python, Go, Svelte, QML, shell) across the 73 published repos (64 federation + 9 catalog) (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
+| **Automated Tests** | **31,067 markers** | 31,067 test markers across 58 of 73 repos; 15 report none because their language has no marker rule here. Markers are NOT passing cases — gate results are recorded separately with their commit (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
+| **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler — benchmark claim, not an engine attribute |
+| **Production Runtime** | **<10MB** | Stripped static musl Rust binaries with minimal idle RSS, zero dynamic dependencies — benchmark claim, not an engine attribute |
 
 > All metrics are machine-measured from the repositories — no self-reported numbers.
 > Performance claims (context reduction, runtime footprint) are benchmark-verified on the linked flagships.

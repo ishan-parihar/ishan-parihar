@@ -37,7 +37,14 @@ archive_form = "flat"      # or "generations" (archive/<generation>/ + README ma
 living_plans = []          # plans that evolve (phase rows, a 'Resume here' section)
 # resume = "docs/plans/<living-plan>.md#Resume here"   # what `genome wake` shows
 budgets = {}               # e.g. { "AGENTS.md" = 60000 } — bytes; entry surfaces stay cheap to read
-emitters = []              # extra commands `genome close` runs to regenerate derived files
+emitters = [
+  "python3 scripts/gen_vitals.py --write",
+]
+# `gen_vitals.py` re-renders the README's six-row vitals table from
+# my-projects/docs/audit/portfolio-measurements.json, which the portfolio's own
+# close re-derives. The page cannot drift from the engine while this runs: the
+# check path exits 1 on disagreement, and an absent portfolio is a named skip
+# (a repo cloned without its sibling is not a failure of this page).
 checklist = []             # judgement items `genome close` reminds you of
 never_commit = []          # globs `genome close` leaves out of the named-path commit list
 

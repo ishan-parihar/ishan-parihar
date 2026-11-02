@@ -129,12 +129,58 @@ def resolve_tree(base: Path) -> dict[str, str]:
     return idx
 
 
+ENGINE_JSON = Path(os.environ.get(
+    "PORTFOLIO_ROOT", str(Path.home() / "Documents" / "github" / "my-projects")
+)) / "docs" / "audit" / "portfolio-measurements.json"
+
+
+def roster_check() -> int:
+    """Compare this register's membership with the engine's published roster.
+
+    WHY THIS EXISTS. The register is `rank_score.py`'s input population, and the
+    engine is the published roster. They are two lists answering different
+    questions, and until 2026-11-02 nothing compared them: the engine's 17 extras
+    over the register were invisible, which is exactly how nine live public repos
+    carried README rows and no measured figures anywhere.
+
+    THIS DOES NOT SYNC. Adding a repo here changes `rank_score.py`'s population,
+    and re-ranking is gated on Q30 (the operator's ruling). So the check reports
+    divergence by name and exits non-zero; it never rewrites membership.
+    """
+    if not ENGINE_JSON.is_file():
+        print(f"roster-check: engine output absent at {ENGINE_JSON}; cannot compare")
+        return 3
+    doc = json.loads(ENGINE_JSON.read_text(encoding="utf-8"))
+    published = set(doc.get("repos") or {})
+    register = {name for name, _rel, _cat in current_repos()}
+    missing = sorted(published - register)
+    stale = sorted(register - published)
+    print(f"roster-check: engine publishes {len(published)}, register holds {len(register)}")
+    if missing:
+        print("  in the engine, absent from the register (no ranking input):")
+        for name in missing:
+            print(f"   + {name}")
+    if stale:
+        print("  in the register, absent from the engine (retired, gone, or not published):")
+        for name in stale:
+            print(f"   - {name}")
+    if not missing and not stale:
+        print("  identical")
+        return 0
+    return 1
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--base", default=str(Path.cwd()))
     ap.add_argument("--diff", action="store_true", help="only show what changes")
     ap.add_argument("--write", action="store_true", help="rewrite the REPOS block")
+    ap.add_argument("--roster-check", action="store_true",
+                    help="compare this register with the figure engine's published roster")
     args = ap.parse_args()
+
+    if args.roster_check:
+        return roster_check()
 
     base = Path(args.base)
     repos = current_repos()
