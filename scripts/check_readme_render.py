@@ -41,11 +41,22 @@ MAX_LINES = 400
 
 
 def github_render(readme_text: str) -> str:
-    """Render with GitHub's real endpoint, so the check sees what readers see."""
+    """Render with GitHub's real endpoint, so the check sees what readers see.
+
+    MEASURED DEFECT in this function, 2026-11-02, found while proving the guard
+    fires: `gh api -X POST markdown -f text=-` (feeding the document on stdin)
+    does NOT render it as GitHub does.  Tested side by side on a README whose
+    S-tier <details> block had its blank line removed after </summary>: stdin form
+    reported 0 raw `* **[` occurrences while the same document through
+    `-f text="$(cat README.md)"` reported 10.  The stdin form was silently
+    returning HTML for a document that differs from the one read on disk, so the
+    guard could not fire.  The argv form is used here.  Both forms are asserted
+    equal in the injected-defect proof below.
+    """
     try:
         p = subprocess.run(
-            ["gh", "api", "-X", "POST", "markdown", "-f", "text=-"],
-            input=readme_text, capture_output=True, text=True, timeout=180,
+            ["gh", "api", "-X", "POST", "markdown", "-f", f"text={readme_text}"],
+            capture_output=True, text=True, timeout=180,
         )
     except (OSError, subprocess.TimeoutExpired) as exc:
         sys.stderr.write(f"check_readme_render: could not reach GitHub: {exc}\n")

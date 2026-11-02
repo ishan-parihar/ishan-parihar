@@ -26,8 +26,6 @@ I build and operate production agentic infrastructure: MCP servers, agent runtim
 - [☕ Sponsor this work](#sponsor-this-work)
 <div align="center">
 
-
-
 [![Available for Hire](https://img.shields.io/badge/-AVAILABLE%20FOR%20HIRE-brightgreen?style=for-the-badge&color=10b981)](mailto:contact@ishanparihar.com)
 [![Agentic AI](https://img.shields.io/badge/Agentic_AI_Engineer_%26_Operator-0F172A?style=for-the-badge&logo=anthropic&logoColor=white)](https://modelcontextprotocol.io/)
 [![MCP](https://img.shields.io/badge/MCP-1%2C300%2B%20Tools-A855F7?style=for-the-badge&logo=github&logoColor=white)](https://modelcontextprotocol.io/)
@@ -285,6 +283,7 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 
 </details>
 
+
 <details>
 <summary><b>🧠 A-TIER: Production-Grade Engines — Score 6.5–7.99 (16 Projects)</b></summary>
 
@@ -307,6 +306,7 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 
 </details>
 
+
 <details>
 <summary><b>📡 B-TIER: Solid Utilities — Score 4.5–6.49 (15 Projects)</b></summary>
 
@@ -328,6 +328,7 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 
 </details>
 
+
 <details>
 <summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (9 Projects + 1 Struck)</b></summary>
 
@@ -344,6 +345,7 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 
 </details>
 
+
 <details>
 <summary><b>📉 D-TIER: Minimal / Stalled — Score < 3.25 (7 Projects)</b></summary>
 
@@ -356,8 +358,6 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 * **[static-tray](https://github.com/ishan-parihar/static-tray)** `0.98`: Omarchy static tray — always expanded, no chevron, for segmented pill bars. 48 tracked lines, QML + JavaScript.
 
 </details>
-<!-- 2026-11-02: duplicate web-portfolio list removed — the six sites were listed twice (table above + bullets here) and the doorway band caps this page at 340 lines. -->
-
 ## 🧭 The Arc: Space → Mind → Infrastructure
 
 Three disciplines shaped this body of work — and each is visible in how the systems are built.

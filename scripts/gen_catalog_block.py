@@ -308,6 +308,7 @@ def main() -> int:
         label = f"{live} Project{'s' if live != 1 else ''}"
         if n_struck:
             label += f" + {n_struck} Struck"
+        out.append("")
         out.append("<details>")
         out.append(f"<summary><b>{TIER_HEADS[tier]} ({label})</b></summary>")
         # A blank line MUST separate </summary> from the list, and no <br> may sit
