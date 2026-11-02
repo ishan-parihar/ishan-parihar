@@ -91,14 +91,20 @@ def generated_rows(d, rows):
         ("Rust Crates", "**{}**".format(crates),
          "{} `Cargo.toml` manifests across the {} — vendored, generated and "
          "documentation trees excluded ({})".format(crates, pop, src)),
+        # ROUNDED, deliberately. The exact counts move between two closes on the
+        # actively developed repos (measured 2026-11-02: operant moved 121 lines
+        # in under an hour), and a page that publishes an exact number is stale
+        # the moment it renders. The rule is already in the corpus: do not assert
+        # a moving figure exactly in public prose. The artefact keeps the exact
+        # values; the page keeps the claim.
         ("Lines of Code", "**{}**".format(fmt_m(loc)),
-         "{:,} first-party source lines (Rust, TypeScript, Python, Go, "
-         "Svelte, QML, shell) across the {} ({})".format(loc, pop, src)),
-        ("Automated Tests", "**{:,} markers**".format(tests),
-         "{:,} test markers across {} of {} repos; {} report none because "
+         "≈{} first-party source lines (Rust, TypeScript, Python, Go, "
+         "Svelte, QML, shell) across the {} ({})".format(fmt_m(loc), pop, src)),
+        ("Automated Tests", "**≈{:,} markers**".format(round(tests, -2)),
+         "≈{:,} test markers across {} of {} repos; {} report none because "
          "their language has no marker rule here. Markers are NOT passing "
          "cases — gate results are recorded separately with their commit ({})"
-         .format(tests, len(tested), roster["published"],
+         .format(round(tests, -2), len(tested), roster["published"],
                  roster["published"] - len(tested), src)),
     ]
 

@@ -46,8 +46,8 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 |--------|-------|------------------------------|
 | **MCP Servers** | **17** | 1,190 registered MCP tools across 17 MCP-exposing repos (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
 | **Rust Crates** | **94** | 94 `Cargo.toml` manifests across the 73 published repos (64 federation + 9 catalog) — vendored, generated and documentation trees excluded (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
-| **Lines of Code** | **3.34M** | 3,344,096 first-party source lines (Rust, TypeScript, Python, Go, Svelte, QML, shell) across the 73 published repos (64 federation + 9 catalog) (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
-| **Automated Tests** | **31,067 markers** | 31,067 test markers across 58 of 73 repos; 15 report none because their language has no marker rule here. Markers are NOT passing cases — gate results are recorded separately with their commit (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
+| **Lines of Code** | **3.34M** | ≈3.34M first-party source lines (Rust, TypeScript, Python, Go, Svelte, QML, shell) across the 73 published repos (64 federation + 9 catalog) (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
+| **Automated Tests** | **≈31,100 markers** | ≈31,100 test markers across 58 of 73 repos; 15 report none because their language has no marker rule here. Markers are NOT passing cases — gate results are recorded separately with their commit (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
 | **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler — benchmark claim, not an engine attribute |
 | **Production Runtime** | **<10MB** | Stripped static musl Rust binaries with minimal idle RSS, zero dynamic dependencies — benchmark claim, not an engine attribute |
 
