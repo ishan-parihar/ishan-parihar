@@ -85,7 +85,7 @@ import sys
 # ---------------------------------------------------------------------------
 DATA = [
     # --- engines -----------------------------------------------------------------
-    ("sourcehound", "engine", 280285, 2304, 13, 2, 137, 30, 179, 4, 500, 156, 12, "mcp", 0, 2, 239, 1, 1),
+    ("sourcehound", "private", 280285, 2304, 13, 2, 137, 30, 179, 4, 500, 156, 12, "mcp", 0, 2, 239, 1, 1),
     ("switchpost", "engine", 132144, 1036, 3, 2, 456, 4, 178, 5, 500, 403, 11, "mcp", 0, 4, 337, 1, 1),
     ("operant", "engine", 504966, 5691, 11, 5, 1879, 6, 199, 6, 500, 17, 12, "cli", 3, 7, 323, 1, 1),
     ("scorestrata", "engine", 72958, 944, 12, 1, 75, 0, 91, 2, 0, 1, 9, "cli", 1, 0, 161, 1, 1),
@@ -96,8 +96,8 @@ DATA = [
     ("openscript", "engine", 152993, 716, 12, 2, 142, 0, 211, 7, 500, 15, 12, "cli", 2, 2, 180, 1, 1),
     ("mysterium", "engine", 124381, 2783, 1, 2, 259, 0, 168, 4, 500, 42, 10, "cli", 2, 4, 54, 1, 1),
     ("andrometry", "engine", 25442, 367, 1, 1, 27, 0, 96, 4, 216, 57, 3, "rest", 0, 0, 481, 0, 1),
-    ("lifeos-ops", "engine", 17885, 0, 3, 1, 28, 11, 175, 3, 488, 1, 8, "cli", 2, 3, 305, 1, 1),
-    ("c-suite-agents", "engine", 46602, 555, 1, 1, 25, 3, 213, 2, 500, 36, 10, "cli", 3, 3, 140, 1, 1),
+    ("lifeos-ops", "private", 17885, 0, 3, 1, 28, 11, 175, 3, 488, 1, 8, "cli", 2, 3, 305, 1, 1),
+    ("c-suite-agents", "private", 46602, 555, 1, 1, 25, 3, 213, 2, 500, 36, 10, "cli", 3, 3, 140, 1, 1),
     ("thinking-steroid", "engine", 24997, 247, 1, 2, 26, 0, 205, 1, 18, 1, 5, "cli", 1, 0, 228, 1, 1),
     # --- AXI CLI family ----------------------------------------------------------
     ("reddit-lyr", "engine", 6095, 86, 0, 1, 44, 0, 167, 2, 232, 56, 6, "cli", 3, 1, 207, 1, 1),
@@ -113,17 +113,17 @@ DATA = [
     # --- engines added in the 2026-08-11 full-coverage pass ----------------------
     ("browsefleet", "engine", 5129, 94, 4, 5, 30, 3, 212, 4, 261, 28, 5, "rest", 0, 2, 284, 1, 1),
     ("hermes-prime-bridge", "engine", 1028, 14, 0, 2, 41, 1, 87, 2, 1, 1, 2, "engine", 0, 1, 165, 1, 1),
-    ("lifeos-bot", "engine", 12100, 33, 0, 2, 30, 1, 144, 2, 397, 25, 3, "cli", 1, 1, 110, 1, 1),
+    ("lifeos-bot", "private", 12100, 33, 0, 2, 30, 1, 144, 2, 397, 25, 3, "cli", 1, 1, 110, 1, 1),
     # --- experimental / archived (capped at C by policy) -------------------------
     ("consciousness-fabricator", "experimental", 9238, 158, 0, 1, 26, 0, 208, 1, 73, 6, 8, "cli", 1, 1, 263, 0, 1),
     ("holosim-infinite", "experimental", 489296, 7766, 2, 2, 27, 0, 263, 2, 31, 13, 11, "engine", 0, 1, 329, 1, 1),
-    ("kali-mahabali", "experimental", 63118, 690, 0, 1, 14, 1, 397, 2, 500, 189, 8, "rest", 0, 0, 366, 1, 1),
+    ("kali-mahabali", "private", 63118, 690, 0, 1, 14, 1, 397, 2, 500, 189, 8, "rest", 0, 0, 366, 1, 1),
     ("icode", "deprecated", 142819, 2095, 21, 2, 1, 0, 82, 3, 500, 1, 0, "cli", 2, 0, 100, 0, 1),
     ("CineSync", "deprecated", 13744, 16, 2, 2, 1, 0, 82, 4, 23, 13, 0, "rest", 0, 0, 150, 1, 1),
     # NOTE: "osint-os" does not resolve on this machine; row carried from the previous snapshot.
     ("workout-factory", "deprecated", 9417, 30, 0, 1, 1, 0, 82, 2, 7, 23, 0, "engine", 0, 0, 192, 0, 1),
     # --- unranked: utility/private -----------------------------------------------
-    ("lifeos-saas", "engine", 760, 0, 0, 1, 24, 0, 179, 2, 15, 10, 1, "rest", 0, 1, 287, 1, 1),
+    ("lifeos-saas", "private", 760, 0, 0, 1, 24, 0, 179, 2, 15, 10, 1, "rest", 0, 1, 287, 1, 1),
     # --- 2026-11-02 catalog completion: the 22 public repos that were in no register -
     ("artificial-route", "engine", 121732, 2502, 17, 2, 376, 27, 32, 4, 500, 1, 11, "cli", 3, 3, 297, 1, 1),
     ("cloakctl", "engine", 11688, 81, 0, 0, 33, 5, 46, 2, 49, 64, 8, "cli", 3, 1, 171, 1, 1),
@@ -308,6 +308,24 @@ def tier(total, category):
         return natural, "profile: this profile repo — configuration, not a software project"
     if category == "spec":
         return natural, "spec: knowledge/spec corpus — tracked separately from software"
+    # A repo the visitor cannot open is not flagship evidence. Added 2026-11-02 on
+    # the operator's ruling: "Deprecated and privated projects like c-suite-agents
+    # should not be shown as production-grade." Measured with `gh api
+    # repos/ishan-parihar/<name>`: 12 of the 63 repos the page links are private.
+    # Six of them (the web portfolios) are excluded from ranking by the `site`
+    # category anyway. The other six are ranked, and would otherwise still reach
+    # S/A on their code alone — c-suite-agents scores 8.36 on 46.6K LOC while its
+    # own gate is red (76 passing, 8 failing, 8 errors of 95 cases, `bun test` at
+    # HEAD 2026-10-28). A reader following that row finds a 404, so the page is
+    # claiming a proof it cannot offer. Capped to B, tagged, and locked (the lock
+    # is emitted by gen_catalog_block from the same GitHub measurement). The cap
+    # lifts automatically when the repo goes public again; nothing is deleted, and
+    # the operator keeps his flagship sourcehound on the page since he plans to
+    # re-publish it.
+    if category == "private":
+        if _TIER_ORDER[natural] < _TIER_ORDER["B"]:
+            return "B", "private: link 404s for visitors — verify with the owner"
+        return natural, ""
     return natural, ""
 
 
