@@ -78,7 +78,11 @@ def main() -> int:
     text = open(README, encoding="utf-8").read()
     problems = []
 
-    lines = text.count("\n") + 1
+    # `wc -l` counts newlines; a file with a final newline on its last
+    # line reports the true line count. Adding 1 here over-counts by one and would
+    # report a 399-line page as 400 - measured, not assumed: `wc -l` = 399 and the
+    # byte at the end is a single \n.
+    lines = text.count("\n")
     if lines > MAX_LINES:
         problems.append(
             f"README is {lines} lines, over the {MAX_LINES}-line rubric cap "
