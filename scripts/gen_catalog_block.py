@@ -26,6 +26,7 @@ Regenerate with:
     python3 scripts/gen_catalog_block.py            # prints the block to stdout
 """
 
+import os
 import re
 import subprocess
 import sys
@@ -181,6 +182,43 @@ def load_site_names(path: str):
     return out
 
 
+def load_visibility(path: str):
+    """Repo -> 'private'/'public'/'404', measured from GitHub, never a guess.
+
+    Added 2026-11-02 after the operator reported that the page ranked software
+    repos as if they were public while they had in fact been privated:
+    "Deprecated and privated projects like c-suite-agents should not be shown
+    as production-grade."  Measured with `gh api repos/ishan-parihar/<name>` over
+    every link the page emits.  A 404 is treated as private-ish rather than
+    dropped, so a repo that vanished still fails closed rather than silently
+    rendering as public.
+    """
+    out = {}
+    if not path or not os.path.exists(path):
+        return out
+    for line in open(path, encoding="utf-8"):
+        parts = line.split()
+        if len(parts) >= 2:
+            out[parts[0]] = parts[1]
+    return out
+
+
+def visibility_prefix(name: str, vis: dict):
+    """Mark a row's opener so a private repo never reads as public.  '' if public.
+
+    Measurement that found the need: 12 of the 63 repos the page links are
+    private per `gh api` (2026-11-02): c-suite-agents, design-aesthetics-website,
+    ishanparihar-cms, ishanparihar-svelte, kali-mahabali,
+    law-of-one-india-website, lifeos-bot, lifeos-ops, lifeos-saas,
+    lifeos-website, sourcehound, webdev-portfolio.  Only the six web portfolios
+    already carried the lock; the six software repos (including the operator's
+    flagship sourcehound, which is private today and will be re-published later)
+    did not, so a reader clicked a link that 404'd.
+    """
+    state = vis.get(name, "public")
+    return "" if state == "public" else "\U0001f512 "
+
+
 def load_verbatim_descriptions(path: str):
     """Existing catalog sentences, so a working description is never rewritten."""
     out = {}
@@ -192,8 +230,39 @@ def load_verbatim_descriptions(path: str):
         re.M,
     )
     for m in pat.finditer(open(path, encoding="utf-8").read()):
-        out.setdefault(m.group(1), m.group(2))
+        # Normalise the captured sentence: a struck row carries its closing `~~`
+        # INSIDE the capture (it sits before any trailing HTML comment), and
+        # `load_struck` owns re-applying the markers. Leaving it in produced
+        # `...~~ <!-- ... -->~~` — doubled markers — the first time this ran.
+        text = re.sub(r"~~\s*(?=<!--)", "", m.group(2))
+        text = re.sub(r"\s*~~$", "", text)
+        out.setdefault(m.group(1), text)
     return out
+
+
+def load_struck(path: str):
+    """Rows the README strikes through, so a regeneration keeps them struck.
+
+    MEASURED DEFECT, 2026-11-02: `load_verbatim_descriptions` reads a row with
+    `(?:~~)?` — it SKIPS the strike markers when parsing — but the emit template
+    below has no way to write them back. Running the generator on a README whose
+    icode row was struck therefore returned `* **[icode](...)** ...: <text>~~`,
+    dropping only the OPENING `~~`: the row read as live while its closing marker
+    stayed, and the row the whole dead-link comment is about stopped being struck.
+
+    A row is struck when the line begins `* ~~`. Read from the source, not from
+    the description text: the trailing `~~` may sit inside a captured group and
+    its absence from the front is exactly the failure being fixed.
+    """
+    struck = set()
+    for line in open(path, encoding="utf-8").read().splitlines():
+        if not line.startswith("* ~~"):
+            continue
+        m = re.match(
+            r"^\* ~~(?:🔒 )?\*\*\[([A-Za-z0-9_.-]+)\]", line)
+        if m:
+            struck.add(m.group(1))
+    return struck
 
 
 def note_tag(note: str):
@@ -217,6 +286,8 @@ def main() -> int:
         return 2
     sites = load_site_names(f"{HERE}/rank_score.py")
     verbatim = load_verbatim_descriptions(README)
+    struck = load_struck(README)
+    vis = load_visibility("/tmp/visibility.txt")
 
     rows = [r for r in ranked if r[0] not in sites]
     by_tier = defaultdict(list)
@@ -228,9 +299,17 @@ def main() -> int:
     for tier in "SABCD":
         members = sorted(by_tier[tier], key=lambda r: -r[1])
         n = len(members)
-        plural = "s" if n != 1 else ""
+        # A struck row is counted separately, because it is not an active member
+        # of the tier: folding icode into "11 Projects" made the label read as
+        # eleven live projects while the ToC above still said "56 Ranked +
+        # 1 Struck". The two labels must not disagree.
+        n_struck = sum(1 for r in members if r[0] in struck)
+        live = n - n_struck
+        label = f"{live} Project{'s' if live != 1 else ''}"
+        if n_struck:
+            label += f" + {n_struck} Struck"
         out.append("<details>")
-        out.append(f"<summary><b>{TIER_HEADS[tier]} ({n} Project{plural})</b></summary>")
+        out.append(f"<summary><b>{TIER_HEADS[tier]} ({label})</b></summary>")
         # A blank line MUST separate </summary> from the list, and no <br> may sit
         # between them. Both measured against GitHub's own renderer
         # (`gh api -X POST markdown`) rather than assumed, 2026-11-02:
@@ -270,8 +349,17 @@ def main() -> int:
                 return 2
             tag = note_tag(note)
             suffix = f" ({tag})" if tag else ""
+            # A struck row stays struck across a regeneration, with the markers
+            # wrapping the WHOLE row (not just its tail) — see load_struck.
+            open_strike = "~~" if name in struck else ""
+            # A private repo is marked at the point of the link, so a reader is not
+            # led to a 404. Driven by GitHub truth, not a hand-kept list: the
+            # operator found six software repos (sourcehound among them, his
+            # flagship) reading as public while private.
+            lock = visibility_prefix(name, vis)
             out.append(
-                f"* **[{name}](https://github.com/ishan-parihar/{name})** `{score:.2f}`{suffix}: {text}"
+                f"* {open_strike}{lock}**[{name}](https://github.com/ishan-parihar/{name})** "
+                f"`{score:.2f}`{suffix}: {text}{open_strike}"
             )
         out.append("")
         out.append("</details>")

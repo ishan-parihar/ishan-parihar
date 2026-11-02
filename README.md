@@ -264,6 +264,8 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 
 ---
 
+## 📂 Complete Project Catalog (56 Ranked Projects + 1 Struck + 6 Web Sites)
+
 <details>
 <summary><b>🚀 S-TIER: Flagship Systems — Score ≥ 8.0 (11 Projects)</b></summary>
 
@@ -322,12 +324,12 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 </details>
 
 <details>
-<summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (11 Projects)</b></summary>
+<summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (10 Projects + 1 Struck)</b></summary>
 
 * **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `7.88` (experimental): Modular intelligence framework — Codename Chimera. Interchangeable modules (reasoning, memory, tools, models) snapping into a central spine. 63K LOC (Rails engine), CI build, MIT license. Experimental.
 * **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)** `7.48` (experimental): Math simulator tracking emergent agent interactions — 489K LOC, **no measurable test count: the workspace does not compile at HEAD** (10 duplicate-definition errors in `holonic_realms`, `cargo build` on a clean export, 2026-10-28), 11 sophistication families. Experimental.
 * **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)** `6.33` (experimental): Audio pipeline compiling dynamic background sounds. 144 passing, 13 failing (measured `pytest` at HEAD, 2026-10-28) + architecture docs. Experimental.
-* **[icode](https://github.com/ishan-parihar/icode)** `6.21` (archived): Rust command runner parsing agent file edit logs — 11 sophistication families. Archived; its 2,095-test figure predates the archive and cannot be re-measured here.~~ <!-- dead-link: measured 2026-11-02, `gh api repos/ishan-parihar/icode` returns HTTP 404 — the repository is GONE from GitHub, not merely archived, so the profile README is the artefact that still links it. The row is struck through rather than deleted under the no-deletion rule, and its tier contribution is removed from the D/C count below: the catalog now lists 57 ranked repos of which 56 resolve and this one does not. The gate `check_repo_links.py` fails on this row by design, which is the correct signal — a gate that passes would mean the link had silently been dropped. -->
+* ~~**[icode](https://github.com/ishan-parihar/icode)** `6.21` (archived): Rust command runner parsing agent file edit logs — 11 sophistication families. Archived; its 2,095-test figure predates the archive and cannot be re-measured here.<!-- dead-link: measured 2026-11-02, `gh api repos/ishan-parihar/icode` returns HTTP 404 — the repository is GONE from GitHub, not merely archived, so the profile README is the artefact that still links it. The row is struck through rather than deleted under the no-deletion rule, and its tier contribution is removed from the D/C count below: the catalog now lists 57 ranked repos of which 56 resolve and this one does not. The gate `check_repo_links.py` fails on this row by design, which is the correct signal — a gate that passes would mean the link had silently been dropped. -->~~
 * **[jesse](https://github.com/ishan-parihar/jesse)** `6.08` (archived): Deprecated — its own README says so ("no longer actively maintained"). 21 measured CLI commands, MIT. Ranked at its measured score and capped at C by the documented archived/deprecated policy.
 * **[CineSync](https://github.com/ishan-parihar/CineSync)** `5.00` (archived): Character-asset automation pipeline for lipsync animation. 13.7K LOC, 2 CI workflows. Archived.
 * **[obscura-core](https://github.com/ishan-parihar/obscura-core)** `4.48`: Shared cookie-vault + CDP daemon powering the lyr family — highest cross-repo in-degree (4 dependents).
@@ -350,6 +352,7 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 * **[static-tray](https://github.com/ishan-parihar/static-tray)** `0.98`: Omarchy static tray — always expanded, no chevron, for segmented pill bars. 48 tracked lines, QML + JavaScript.
 
 </details>
+<!-- 2026-11-02: duplicate web-portfolio list removed — the six sites were listed twice (table above + bullets here) and the doorway band caps this page at 340 lines. -->
 
 ## 🧭 The Arc: Space → Mind → Infrastructure
 
