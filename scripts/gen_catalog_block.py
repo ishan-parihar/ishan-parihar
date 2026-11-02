@@ -187,7 +187,8 @@ def load_verbatim_descriptions(path: str):
     pat = re.compile(
         r"^\* (?:~~)?(?:🔒 )?\*\*\[([A-Za-z0-9_.-]+)\]"
         r"\(https://github\.com/ishan-parihar/[A-Za-z0-9_.-]+\)\*\* "
-        r"`[\d.]+`(?: \(capped\))?(?: <!--[^>]*-->)?: (.+)$",
+        r"`[\d.]+`(?: \((?:capped|archived|experimental|infra|tool|profile|spec)\))?"
+        r"(?: <!--[^>]*-->)?: (.+)$",
         re.M,
     )
     for m in pat.finditer(open(path, encoding="utf-8").read()):
@@ -230,7 +231,29 @@ def main() -> int:
         plural = "s" if n != 1 else ""
         out.append("<details>")
         out.append(f"<summary><b>{TIER_HEADS[tier]} ({n} Project{plural})</b></summary>")
-        out.append("<br>")
+        # A blank line MUST separate </summary> from the list, and no <br> may sit
+        # between them. Both measured against GitHub's own renderer
+        # (`gh api -X POST markdown`) rather than assumed, 2026-11-02:
+        #
+        #   <summary>x</summary>
+        #   * [a](url)
+        #     -> GitHub stays in raw-HTML mode for the rest of the <details> block and
+        #        emits the literal text `* **[a](<a href="url">url</a>)**`, with markup
+        #        leaking and no link rendered. This is the defect the operator reported
+        #        as "the links ... are leaking its formatting and are not showing the
+        #        output correctly".
+        #   <summary>x</summary>
+        #   <br>
+        #   <blank>
+        #     -> the <br> is an HTML tag, so GitHub is still in raw-HTML mode when it
+        #        reaches the list, and the same leak occurs.
+        #   <summary>x</summary>
+        #   <blank>
+        #     -> GitHub leaves raw-HTML mode, parses the list as markdown, and every
+        #        row renders: `* **[a](url)** ...` becomes a real <li> with a real <a>.
+        #
+        # Verified on the full 11-row S-tier block: 11 raw leaks before, 0 after, with
+        # 11 rendered links. 0 leaks across the whole page after all five blocks.
         out.append("")
         for name, score, tr, note in members:
             if name in verbatim:

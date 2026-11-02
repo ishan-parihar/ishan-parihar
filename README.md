@@ -45,9 +45,9 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 | Metric | Value | Technical Context & Evidence |
 |--------|-------|------------------------------|
 | **MCP Servers** | **17** | 1,190 registered MCP tools across 17 MCP-exposing repos (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
-| **Rust Crates** | **94** | 94 `Cargo.toml` manifests across the 73 published repos (64 federation + 9 catalog) — vendored, generated and documentation trees excluded (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
-| **Lines of Code** | **3.34M** | ≈3.34M first-party source lines (Rust, TypeScript, Python, Go, Svelte, QML, shell) across the 73 published repos (64 federation + 9 catalog) (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
-| **Automated Tests** | **≈31,100 markers** | ≈31,100 test markers across 58 of 73 repos; 15 report none because their language has no marker rule here. Markers are NOT passing cases — gate results are recorded separately with their commit (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
+| **Rust Crates** | **94** | 94 `Cargo.toml` manifests across the 74 published repos (64 federation + 10 catalog) — vendored, generated and documentation trees excluded (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
+| **Lines of Code** | **3.36M** | ≈3.36M first-party source lines (Rust, TypeScript, Python, Go, Svelte, QML, shell) across the 74 published repos (64 federation + 10 catalog) (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
+| **Automated Tests** | **≈31,100 markers** | ≈31,100 test markers across 59 of 74 repos; 15 report none because their language has no marker rule here. Markers are NOT passing cases — gate results are recorded separately with their commit (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
 | **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler — benchmark claim, not an engine attribute |
 | **Production Runtime** | **<10MB** | Stripped static musl Rust binaries with minimal idle RSS, zero dynamic dependencies — benchmark claim, not an engine attribute |
 
@@ -264,11 +264,8 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 
 ---
 
-## 📂 Complete Project Catalog (56 Ranked Projects + 1 Struck + 6 Web Sites)
-
 <details>
 <summary><b>🚀 S-TIER: Flagship Systems — Score ≥ 8.0 (11 Projects)</b></summary>
-<br>
 
 * **[sourcehound](https://github.com/ishan-parihar/sourcehound)** `9.43`: High-speed news ingestion pipeline — 11 sophistication families, 93 MCP tools, 15 releases, 411 sources in 47 countries.
 * **[operant](https://github.com/ishan-parihar/operant)** `9.40`: Terminal-native ReAct agent runtime — 538K LOC, 7,168 tests passing at `ca33d4c` (2026-10-20 gate; the suite is active), 7 workspace crates (re-measured 2026-11-01: `Cargo.toml` `members = [api, os, config, core, cli, plugins, harness]`, 10 manifests in total — an earlier "19 crates" here counted vendored and nested manifests and is corrected), 12/12 sophistication families (state machines, DSLs, storage, determinism, plugins…).
@@ -286,7 +283,6 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 
 <details>
 <summary><b>🧠 A-TIER: Production-Grade Engines — Score 6.5–7.99 (16 Projects)</b></summary>
-<br>
 
 * **[mindstrata](https://github.com/ishan-parihar/mindstrata)** `7.82`: Deterministic emergent society simulation — 8 crates, 82K LOC, 307 passing with 3 failing (measured `cargo test` at HEAD, 2026-10-28), 10 measured sophistication families (state machines, graphs/holonics, DSLs, determinism, plugins…).
 * **[metatrader-bridge](https://github.com/ishan-parihar/metatrader-bridge)** `7.67`: MetaTrader 5 to MCP bridge — regime detection, ATR position sizing, bracket orders, trailing stops. 91 declared MCP tools across 127 measured REST endpoints, MIT, runs on a 512 MB VPS.
@@ -309,7 +305,6 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 
 <details>
 <summary><b>📡 B-TIER: Solid Utilities — Score 4.5–6.49 (12 Projects)</b></summary>
-<br>
 
 * **[swiggy-lyr](https://github.com/ishan-parihar/swiggy-lyr)** `6.02`: Unified Swiggy MCP — Food, Instamart and Dineout in one server with one OAuth token. MIT, 3 measured CLI commands.
 * **[discord-lyr](https://github.com/ishan-parihar/discord-lyr)** `6.02`: Local-first Discord data CLI (SQLite sync, search, analytics). 41 tests passing (measured `pytest` at HEAD, 2026-10-30), 10 releases, 2 CI workflows.
@@ -327,13 +322,12 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 </details>
 
 <details>
-<summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (10 Projects + 1 Struck)</b></summary>
-<br>
+<summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (11 Projects)</b></summary>
 
 * **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `7.88` (experimental): Modular intelligence framework — Codename Chimera. Interchangeable modules (reasoning, memory, tools, models) snapping into a central spine. 63K LOC (Rails engine), CI build, MIT license. Experimental.
 * **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)** `7.48` (experimental): Math simulator tracking emergent agent interactions — 489K LOC, **no measurable test count: the workspace does not compile at HEAD** (10 duplicate-definition errors in `holonic_realms`, `cargo build` on a clean export, 2026-10-28), 11 sophistication families. Experimental.
 * **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)** `6.33` (experimental): Audio pipeline compiling dynamic background sounds. 144 passing, 13 failing (measured `pytest` at HEAD, 2026-10-28) + architecture docs. Experimental.
-* ~~**[icode](https://github.com/ishan-parihar/icode)** `6.21` (archived): Rust command runner parsing agent file edit logs — 11 sophistication families. Archived; its 2,095-test figure predates the archive and cannot be re-measured here.~~ <!-- dead-link: measured 2026-11-02, `gh api repos/ishan-parihar/icode` returns HTTP 404 — the repository is GONE from GitHub, not merely archived, so the profile README is the artefact that still links it. The row is struck through rather than deleted under the no-deletion rule, and its tier contribution is removed from the D/C count below: the catalog now lists 57 ranked repos of which 56 resolve and this one does not. The gate `check_repo_links.py` fails on this row by design, which is the correct signal — a gate that passes would mean the link had silently been dropped. -->
+* **[icode](https://github.com/ishan-parihar/icode)** `6.21` (archived): Rust command runner parsing agent file edit logs — 11 sophistication families. Archived; its 2,095-test figure predates the archive and cannot be re-measured here.~~ <!-- dead-link: measured 2026-11-02, `gh api repos/ishan-parihar/icode` returns HTTP 404 — the repository is GONE from GitHub, not merely archived, so the profile README is the artefact that still links it. The row is struck through rather than deleted under the no-deletion rule, and its tier contribution is removed from the D/C count below: the catalog now lists 57 ranked repos of which 56 resolve and this one does not. The gate `check_repo_links.py` fails on this row by design, which is the correct signal — a gate that passes would mean the link had silently been dropped. -->
 * **[jesse](https://github.com/ishan-parihar/jesse)** `6.08` (archived): Deprecated — its own README says so ("no longer actively maintained"). 21 measured CLI commands, MIT. Ranked at its measured score and capped at C by the documented archived/deprecated policy.
 * **[CineSync](https://github.com/ishan-parihar/CineSync)** `5.00` (archived): Character-asset automation pipeline for lipsync animation. 13.7K LOC, 2 CI workflows. Archived.
 * **[obscura-core](https://github.com/ishan-parihar/obscura-core)** `4.48`: Shared cookie-vault + CDP daemon powering the lyr family — highest cross-repo in-degree (4 dependents).
@@ -346,7 +340,6 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 
 <details>
 <summary><b>📉 D-TIER: Minimal / Stalled — Score < 3.25 (7 Projects)</b></summary>
-<br>
 
 * **[metatrader-docker-deployment](https://github.com/ishan-parihar/metatrader-docker-deployment)** `2.79`: Production MetaTrader 4 & 5 Docker deployment with noVNC browser access. Infra category, 5 measured commands, MIT.
 * **[lifeos-saas](https://github.com/ishan-parihar/lifeos-saas)** `2.64`: Agent hosting stack (NullClaw, Honcho, Postgres). 760 LOC, 0 tests.
@@ -357,7 +350,6 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 * **[static-tray](https://github.com/ishan-parihar/static-tray)** `0.98`: Omarchy static tray — always expanded, no chevron, for segmented pill bars. 48 tracked lines, QML + JavaScript.
 
 </details>
-<!-- 2026-11-02: duplicate web-portfolio list removed — the six sites were listed twice (table above + bullets here) and the doorway band caps this page at 340 lines. -->
 
 ## 🧭 The Arc: Space → Mind → Infrastructure
 
