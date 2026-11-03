@@ -204,9 +204,24 @@ def load_visibility(path: str):
     dropped, so a repo that vanished still fails closed rather than silently
     rendering as public.
     """
+    # Tracked, not /tmp.  MEASURED DEFECT, 2026-11-03: this loader read
+    # /tmp/visibility.txt, which this machine's cron clears.  On a regeneration
+    # after a clear the file was missing, `load_visibility` returned an empty dict,
+    # and every repo silently rendered as PUBLIC - all six software locks
+    # (`sourcehound`, `c-suite-agents`, `kali-mahabali`, `lifeos-bot`,
+    # `lifeos-ops`, `lifeos-saas`) dropped off the page with no warning.  The fix
+    # is two-sided: the measurement now lives in the repository where a cron
+    # cannot eat it, and a missing file is a hard error rather than a silent
+    # default to public.
     out = {}
     if not path or not os.path.exists(path):
-        return out
+        sys.stderr.write(
+            f"gen_catalog_block: visibility measurement {path!r} is missing. "
+            "Refusing to emit rows with no visibility: every private repo would "
+            "render as public. Regenerate it with:"
+            "  gh api repos/ishan-parihar/<name> ... > scripts/data/github-visibility.txt\n"
+        )
+        sys.exit(2)
     for line in open(path, encoding="utf-8"):
         parts = line.split()
         if len(parts) >= 2:
@@ -236,7 +251,15 @@ def load_verbatim_descriptions(path: str):
     pat = re.compile(
         r"^\* (?:~~)?(?:🔒 )?\*\*\[([A-Za-z0-9_.-]+)\]"
         r"\(https://github\.com/ishan-parihar/[A-Za-z0-9_.-]+\)\*\* "
-        r"`[\d.]+`(?: \((?:capped|archived|experimental|infra|tool|profile|spec)\))?"
+        # `deprecated` MUST be in this whitelist.  MEASURED DEFECT, 2026-11-03: the list
+        # was (capped|archived|experimental|infra|tool|profile|spec), so when the
+        # deprecated-category rows were re-tagged from `(archived)` to `(deprecated)`
+        # — a correctness fix, because `gh api` returns archived=false for them —
+        # this pattern stopped matching them. `icode`, `jesse`, `CineSync` and
+        # `workout-factory` therefore had no verbatim description, and the generator
+        # exited 2 refusing to emit a row that says nothing. Any tag the generator
+        # can emit must be parseable here, or regeneration cannot round-trip.
+        r"`[\d.]+`(?: \((?:capped|archived|deprecated|experimental|infra|tool|profile|spec)\))?"
         r"(?: <!--[^>]*-->)?: (.+)$",
         re.M,
     )
@@ -306,7 +329,9 @@ def main() -> int:
     sites = load_site_names(f"{HERE}/rank_score.py")
     verbatim = load_verbatim_descriptions(README)
     struck = load_struck(README)
-    vis = load_visibility("/tmp/visibility.txt")
+    # Inside the repository, not /tmp: this machine's cron clears /tmp, and a
+    # cleared file silently rendered every private repo as public (see the loader).
+    vis = load_visibility(f"{HERE}/data/github-visibility.txt")
 
     rows = [r for r in ranked if r[0] not in sites]
     by_tier = defaultdict(list)
