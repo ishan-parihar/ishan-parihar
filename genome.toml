@@ -21,9 +21,19 @@ feed = "docs/kb/feed.md"
 workflows = "docs/kb/workflows"
 
 [core]
-gate = "python3 scripts/lint_readmes.py --repo ishan-parihar --include-profile && python3 scripts/check_repo_links.py"
+gate = "python3 scripts/lint_readmes.py --repo ishan-parihar --include-profile && python3 scripts/check_repo_links.py && python3 scripts/check_anchors.py && python3 scripts/check_readme_render.py"
 # the portfolio's own README rubric, run locally: GitHub Actions is not
 # available for this portfolio, so the gate is the local check.
+#
+# `check_anchors.py` and `check_readme_render.py` were added 2026-11-03, both from a
+# defect the operator reported on the rendered page. check_anchors asserts every
+# in-page `](#anchor)` resolves to a heading on the page: the Value Proposition
+# section I rewrote linked `#-engineering-by-the-numbers` while the Contents entry
+# links `#engineering-by-the-numbers`, and only one of the two can be right.
+# check_readme_render renders the page through GitHub's own API rather than
+# trusting a local parser, and fails on any leaked markup, a private repo shown
+# without its lock, or the 400-line rubric cap. Both are chained with &&, so a
+# defect fails the gate instead of shipping.
 #
 # `check_repo_links.py` was added 2026-10-31 because the rubric graded this README
 # 12.00 / ALL CLEAN while four of its repo links named renamed repositories
