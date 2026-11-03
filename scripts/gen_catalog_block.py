@@ -36,12 +36,53 @@ HERE = __file__.rsplit("/", 1)[0]
 README = f"{HERE}/../README.md"
 
 TIER_HEADS = {
-    "S": "🚀 S-TIER: Flagship Systems — Score ≥ 8.0",
-    "A": "🧠 A-TIER: Production-Grade Engines — Score 6.5–7.99",
-    "B": "📡 B-TIER: Solid Utilities — Score 4.5–6.49",
-    "C": "🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped",
-    "D": "📉 D-TIER: Minimal / Stalled — Score < 3.25",
+    "S": "🚀 S-TIER: Flagship Systems",
+    "A": "🧠 A-TIER: Production-Grade Engines",
+    "B": "📡 B-TIER: Solid Utilities",
+    "C": "🧰 C-TIER: Operational & Capped",
+    "D": "📉 D-TIER: Minimal / Stalled",
 }
+
+# The score band each tier holds when no cap applies. Tier headers used to print
+# these as absolutes ("B-TIER: Solid Utilities — Score 4.5-6.49") and they became
+# false the moment a cap was introduced: a private repo is capped to B so
+# sourcehound at 9.43 and c-suite-agents at 8.36 sit under a header promising
+# 4.5-6.49, and an experimental repo capped to C puts holosim-infinite at 7.48
+# under "3.25-4.49 or policy-capped". Measured 2026-11-03, the operator reported
+# the section as misordered because of exactly this: the ordering inside each
+# tier is correct, but the header contradicts the rows beneath it.
+#
+# The header therefore no longer quotes a range it cannot keep. It states the
+# tier, the row count, and how many rows are there by cap rather than by score,
+# and each capped row carries its reason inline (see note_tag). A range is shown
+# only when it is true — i.e. when the tier holds no capped rows.
+TIER_BANDS = {
+    "S": "Score ≥ 8.0",
+    "A": "Score 6.5–7.99",
+    "B": "Score 4.5–6.49",
+    "C": "Score 3.25–4.49",
+    "D": "Score < 3.25",
+}
+
+# Tier order and the score-only band, mirrored from rank_score.py rather than
+# imported from it. rank_score is a script, not a module - importing it would run
+# its main() and print the whole ranking to stdout, which this generator captures.
+# Mirrored so the tier header can tell a genuine demotion (score says S, policy
+# put it in B) from a mere annotation (score and policy agree).
+_TIER_ORDER = {"S": 0, "A": 1, "B": 2, "C": 3, "D": 4}
+
+
+def _natural_tier(total):
+    """The tier a score earns with no cap applied. Mirrors rank_score.py."""
+    if total >= 8.0:
+        return "S"
+    if total >= 6.5:
+        return "A"
+    if total >= 4.5:
+        return "B"
+    if total >= 3.25:
+        return "C"
+    return "D"
 
 # Descriptions for the repos that were in no register before 2026-11-02. Each is
 # built from a measured column or a claim the repo's own README makes, and says
@@ -166,6 +207,7 @@ CATEGORY_TAG = {
     # boolean, `deprecated` is the operator's judgment, and only the second is what
     # this page actually knows.
     "deprecated": "deprecated",
+    "private": "private",
     "infra": "infra",
     "tool": "tool",
     "profile": "profile",
@@ -173,13 +215,31 @@ CATEGORY_TAG = {
 }
 
 
+# A note prefix that DEMOTES a repo below the tier its score earns. An `infra: no
+# agent surface` note does not move the row at all - it sits at the tier its score
+# says - so it is an annotation, not a cap. Only these two prefixes change a row's
+# tier: `private: link 404s` (capped to B) and `capped:` (deprecated/experimental,
+# capped to C). The header counts caps using exactly this set, so a new category
+# that demotes must be added here or the count goes stale.
+CAP_PREFIXES = ("private", "capped:")
+
+
 def load_ranked(order_path: str):
     """Parse `rank_score.py --all`'s ranked list into (name, score, tier, note)."""
     out = []
     for line in open(order_path, encoding="utf-8"):
-        m = re.match(r"\s*\d+\.\s+(\S+)\s+([\d.]+)\s+\[(\w)\](.*)$", line.rstrip("\n"))
+        m = re.match(r"\s*\d+\.\s+(\S+)\s+([\d.]+)\s+\[(\w)\]\s*(?:\[(.*?)\])?\s*$",
+                     line.rstrip("\n"))
         if m:
-            out.append((m.group(1), float(m.group(2)), m.group(3), m.group(4).strip()))
+            # MEASURED DEFECT, 2026-11-03: the old pattern was `\[(\w)\](.*)$`,
+            # which captured the note WITH its leading bracket - "[private: link
+            # 404s ...]".  Every startswith("private:") test then failed, so
+            # note_tag returned None and the tier header counted the three
+            # private repos as "3 policy" instead of "3 private" (and, before
+            # the demotion counter existed, the rows silently lost their tags
+            # too).  The note is now the bracket-free text between the brackets.
+            out.append((m.group(1), float(m.group(2)), m.group(3),
+                        (m.group(4) or "").strip()))
     return out
 
 
@@ -312,6 +372,13 @@ def note_tag(note: str):
         return "deprecated"
     if "capped: archived" in note:
         return "archived"
+    # Added 2026-11-03: the `private` category's note begins "private: link 404s",
+    # and `private` was not in CATEGORY_TAG, so note_tag returned None and the
+    # tier header counted the demotions as "3 policy" instead of "3 private".
+    # Six software repos are capped this way, and the reason a 9.43 sits in
+    # B-TIER is exactly this one, so naming it matters more than any other.
+    if note.startswith("private:"):
+        return "private"
     for key, tag in CATEGORY_TAG.items():
         if note.startswith(key + ":"):
             return tag
@@ -352,9 +419,37 @@ def main() -> int:
         label = f"{live} Project{'s' if live != 1 else ''}"
         if n_struck:
             label += f" + {n_struck} Struck"
+
+        # Report what this tier actually holds. If every member is here by score,
+        # quote the band - it is true. If any member is here by a cap, the band
+        # would be a lie, so say so instead and count them: a reader looking at
+        # sourcehound's 9.43 under "Solid Utilities" needs to be told why, and the
+        # reason is that a private repo is capped to B regardless of its code.
+        capped_rows = [r for r in members if r[3]]
+        if capped_rows:
+            # Count by the reason itself. Reading `note_tag(note)` first lost the
+            # distinction between a real cap ("private: link 404s", which
+            # DEMOTES a repo below its score) and a mere annotation ("infra: no
+            # agent surface", "spec: knowledge corpus", which does not move it at
+            # all) - both came out as "1 policy", which tells the reader nothing.
+            # A row's tier is compared against the tier its score alone would earn:
+            # if they differ, the note is why, and that is a cap.
+            demoted = defaultdict(int)
+            for _n, _s, _t, note in capped_rows:
+                natural = _natural_tier(_s)
+                if _TIER_ORDER[_t] > _TIER_ORDER[natural]:
+                    demoted[note_tag(note) or "policy"] += 1
+            if demoted:
+                caps = ", ".join(f"{v} {k}" for k, v in sorted(demoted.items()))
+                band = (f"{TIER_BANDS[tier]} where applicable — "
+                        f"{sum(demoted.values())} capped by policy ({caps})")
+            else:
+                band = TIER_BANDS[tier]
+        else:
+            band = TIER_BANDS[tier]
         out.append("")
         out.append("<details>")
-        out.append(f"<summary><b>{TIER_HEADS[tier]} ({label})</b></summary>")
+        out.append(f"<summary><b>{TIER_HEADS[tier]} — {band} ({label})</b></summary>")
         # A blank line MUST separate </summary> from the list, and no <br> may sit
         # between them. Both measured against GitHub's own renderer
         # (`gh api -X POST markdown`) rather than assumed, 2026-11-02:
