@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "measured_at": "2026-11-02T17:39:24Z",
+ "measured_at": "2026-11-03T00:41:01Z",
  "engine": "scripts/measure.py",
  "rule_source": "genome.toml [federation]",
  "catalog_rule_source": "fleet/roster.json catalog.live",
@@ -27,12 +27,12 @@
   "published": {
    "members": 74,
    "loc": {
-    "value": 3364937,
+    "value": 3370047,
     "repos_reporting": 74,
     "repos_null": []
    },
    "test_markers": {
-    "value": 31102,
+    "value": 31129,
     "repos_reporting": 59,
     "repos_null": [
      "AI-CAD",
@@ -139,12 +139,12 @@
   "federation": {
    "members": 64,
    "loc": {
-    "value": 3307818,
+    "value": 3312928,
     "repos_reporting": 64,
     "repos_null": []
    },
    "test_markers": {
-    "value": 30991,
+    "value": 31018,
     "repos_reporting": 55,
     "repos_null": [
      "andrometry",
@@ -308,7 +308,7 @@
      "path": "ishan-parihar",
      "membership": "federation",
      "language": "python",
-     "loc": 3479,
+     "loc": 3879,
      "tests": null,
      "crates": 0,
      "surface": "library",
@@ -330,7 +330,7 @@
      "path": "pioneer-qf",
      "membership": "federation",
      "language": "python",
-     "loc": 139557,
+     "loc": 140821,
      "tests": null,
      "crates": 0,
      "surface": "library",
@@ -341,11 +341,11 @@
      "path": "project-genome",
      "membership": "federation",
      "language": "python",
-     "loc": 11728,
+     "loc": 11994,
      "tests": 0,
      "crates": 0,
      "surface": "cli",
-     "gate": "uv build --wheel --sdist >/dev/null && python3 scripts/test_genome.py && python3 scripts/test_package.py && python3 scripts/test_package_modes.py && python3 scripts/build.py --check && python3 scripts/check_ps1.py"
+     "gate": "uv build --wheel --sdist >/dev/null && python3 scripts/test_genome.py && python3 scripts/test_package.py && python3 scripts/test_package_modes.py && python3 scripts/build.py --check && python3 scripts/check_ps1.py && python3 scripts/genome lint --code E306 E308 E309 --all"
     }
    ],
    "departments": []
@@ -420,8 +420,8 @@
      "path": "agentic-harness/operant",
      "membership": "federation",
      "language": "rust",
-     "loc": 502634,
-     "tests": 5502,
+     "loc": 503923,
+     "tests": 5522,
      "crates": 8,
      "surface": "cli",
      "gate": "./scripts/check.sh check --workspace && cargo test --workspace"
@@ -696,8 +696,8 @@
      "path": "agentic-utility/interaction-surfaces/switchpost",
      "membership": "federation",
      "language": "rust",
-     "loc": 160303,
-     "tests": 1033,
+     "loc": 160783,
+     "tests": 1040,
      "crates": 1,
      "surface": "hybrid",
      "gate": "cargo test --lib"
@@ -985,8 +985,8 @@
        "path": "agentic-utility/interaction-surfaces/switchpost",
        "membership": "federation",
        "language": "rust",
-       "loc": 160303,
-       "tests": 1033,
+       "loc": 160783,
+       "tests": 1040,
        "crates": 1,
        "surface": "hybrid",
        "gate": "cargo test --lib"
@@ -1494,7 +1494,7 @@
      "path": "webdev/technical-authority",
      "membership": "federation",
      "language": "typescript",
-     "loc": 47991,
+     "loc": 49402,
      "tests": 0,
      "crates": 0,
      "surface": "library",
@@ -1620,7 +1620,7 @@
   }
  ],
  "structure": {
-  "git_repos_in_tree": 123,
+  "git_repos_in_tree": 113,
   "published": 74,
   "classes": {
    "catalog": 10,
@@ -1628,12 +1628,11 @@
    "history": 4,
    "knowledge_base": 17,
    "retired": 2,
-   "staging": 10,
    "third_party": 15,
    "venture": 64
   },
-  "duplicate_copies": 10,
-  "duplicates_all_same_head": false,
+  "duplicate_copies": 0,
+  "duplicates_all_same_head": true,
   "uncovered_live": [],
   "repos": [
    {
@@ -1658,51 +1657,6 @@
     "published": true
    },
    {
-    "path": "_extra-catalog/amazon-lyr",
-    "name": "amazon-lyr",
-    "class": "staging",
-    "group": "_extra-catalog",
-    "published": false,
-    "duplicate_of": "agentic-utility/interaction-surfaces/amazon-lyr",
-    "same_head": true
-   },
-   {
-    "path": "_extra-catalog/android-webcam",
-    "name": "android-webcam",
-    "class": "staging",
-    "group": "_extra-catalog",
-    "published": false,
-    "duplicate_of": "omarchy-repos/android-webcam",
-    "same_head": true
-   },
-   {
-    "path": "_extra-catalog/artificial-route",
-    "name": "artificial-route",
-    "class": "staging",
-    "group": "_extra-catalog",
-    "published": false,
-    "duplicate_of": "agentic-utility/proxy/artificial-route",
-    "same_head": false
-   },
-   {
-    "path": "_extra-catalog/cloakctl",
-    "name": "cloakctl",
-    "class": "staging",
-    "group": "_extra-catalog",
-    "published": false,
-    "duplicate_of": "agentic-utility/internet/cloakctl",
-    "same_head": true
-   },
-   {
-    "path": "_extra-catalog/etmoney-lyr",
-    "name": "etmoney-lyr",
-    "class": "staging",
-    "group": "_extra-catalog",
-    "published": false,
-    "duplicate_of": "agentic-utility/interaction-surfaces/etmoney-lyr",
-    "same_head": true
-   },
-   {
     "path": "_extra-catalog/jesse",
     "name": "jesse",
     "class": "catalog",
@@ -1717,56 +1671,11 @@
     "published": true
    },
    {
-    "path": "_extra-catalog/memory-wire",
-    "name": "memory-wire",
-    "class": "staging",
-    "group": "_extra-catalog",
-    "published": false,
-    "duplicate_of": "agentic-utility/memory/memory-wire",
-    "same_head": true
-   },
-   {
-    "path": "_extra-catalog/metatrader-bridge",
-    "name": "metatrader-bridge",
-    "class": "staging",
-    "group": "_extra-catalog",
-    "published": false,
-    "duplicate_of": "qf-core/metatrader-bridge",
-    "same_head": true
-   },
-   {
-    "path": "_extra-catalog/metatrader-docker-deployment",
-    "name": "metatrader-docker-deployment",
-    "class": "staging",
-    "group": "_extra-catalog",
-    "published": false,
-    "duplicate_of": "qf-core/metatrader-docker-deployment",
-    "same_head": true
-   },
-   {
     "path": "_extra-catalog/n8n-compiler",
     "name": "n8n-compiler",
     "class": "catalog",
     "group": "_extra-catalog",
     "published": true
-   },
-   {
-    "path": "_extra-catalog/palimpsest",
-    "name": "palimpsest",
-    "class": "staging",
-    "group": "_extra-catalog",
-    "published": false,
-    "duplicate_of": "game-development/palimpsest",
-    "same_head": true
-   },
-   {
-    "path": "_extra-catalog/swiggy-lyr",
-    "name": "swiggy-lyr",
-    "class": "staging",
-    "group": "_extra-catalog",
-    "published": false,
-    "duplicate_of": "agentic-utility/interaction-surfaces/swiggy-lyr",
-    "same_head": true
    },
    {
     "path": "agentic-harness/external-repos/aft",
@@ -2618,15 +2527,15 @@
    "group": null,
    "department": null,
    "membership": "federation",
-   "head": "905ce3ccb89c02ed2661f3e755f8d215e0d1b827",
+   "head": "b500a001e445425c8e9e14ad830a31dce7086d1c",
    "dirty_paths": 2,
    "language": null,
    "language_marker": null,
    "frameworks": [],
-   "loc": 3479,
+   "loc": 3879,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .genome,.git,.next,.svelte-kit,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "python": 3479
+    "python": 3879
    },
    "dominant_language": "python",
    "test_markers": null,
@@ -2794,15 +2703,15 @@
    "group": null,
    "department": null,
    "membership": "federation",
-   "head": "048d9fc39839d0d88b3a1f4e62d467ddc0bca115",
-   "dirty_paths": 13,
+   "head": "b3028d5ee1d1da0d2edd20209dbbd632d5343778",
+   "dirty_paths": 4,
    "language": null,
    "language_marker": null,
    "frameworks": [],
-   "loc": 139557,
+   "loc": 140821,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .genome,.git,.next,.svelte-kit,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "python": 136207,
+    "python": 137471,
     "shell": 3350
    },
    "dominant_language": "python",
@@ -2882,15 +2791,15 @@
    "group": null,
    "department": null,
    "membership": "federation",
-   "head": "d5837d5b048650e1a332feb2bf5739a42af3dd19",
-   "dirty_paths": 0,
+   "head": "01bc009f47e8136c2cefecb6fd209657834d66b8",
+   "dirty_paths": 4,
    "language": "python",
    "language_marker": "pyproject.toml",
    "frameworks": [],
-   "loc": 11728,
+   "loc": 11994,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .genome,.git,.next,.svelte-kit,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "python": 11148,
+    "python": 11414,
     "shell": 580
    },
    "dominant_language": "python",
@@ -2909,7 +2818,7 @@
      "core",
      "records"
     ],
-    "gate": "uv build --wheel --sdist >/dev/null && python3 scripts/test_genome.py && python3 scripts/test_package.py && python3 scripts/test_package_modes.py && python3 scripts/build.py --check && python3 scripts/check_ps1.py",
+    "gate": "uv build --wheel --sdist >/dev/null && python3 scripts/test_genome.py && python3 scripts/test_package.py && python3 scripts/test_package_modes.py && python3 scripts/build.py --check && python3 scripts/check_ps1.py && python3 scripts/genome lint --code E306 E308 E309 --all",
     "roles": [
      "agents",
      "archive",
@@ -2933,9 +2842,9 @@
     "worklog": true
    },
    "docs": {
-    "md_files": 20,
+    "md_files": 21,
     "subdirs": {
-     "audit": 5,
+     "audit": 6,
      "plans": 5,
      ".": 3,
      "kb": 3,
@@ -2956,7 +2865,7 @@
     },
     "method": "find docs -name '*.md' | wc -l, plus the named role paths (attribute, working tree)"
    },
-   "gate_command": "uv build --wheel --sdist >/dev/null && python3 scripts/test_genome.py && python3 scripts/test_package.py && python3 scripts/test_package_modes.py && python3 scripts/build.py --check && python3 scripts/check_ps1.py",
+   "gate_command": "uv build --wheel --sdist >/dev/null && python3 scripts/test_genome.py && python3 scripts/test_package.py && python3 scripts/test_package_modes.py && python3 scripts/build.py --check && python3 scripts/check_ps1.py && python3 scripts/genome lint --code E306 E308 E309 --all",
    "last_recorded_runtime": null
   },
   "operant": {
@@ -2970,21 +2879,21 @@
    "group": "agentic-harness",
    "department": null,
    "membership": "federation",
-   "head": "fb1777e9b5510448e5680011f8992281af422ff2",
-   "dirty_paths": 8,
+   "head": "5f248aa064e7fc6513175ccd6142c7494218ec3f",
+   "dirty_paths": 7,
    "language": "rust",
    "language_marker": "Cargo.toml",
    "frameworks": [],
-   "loc": 502634,
+   "loc": 503923,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .genome,.git,.next,.svelte-kit,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "rust": 427587,
+    "rust": 428876,
     "typescript": 41434,
     "python": 28762,
     "shell": 4851
    },
    "dominant_language": "rust",
-   "test_markers": 5502,
+   "test_markers": 5522,
    "test_marker_method": "grep -rE '^\\s*#\\[(test|tokio::test)\\]' --include='*.rs' (attribute, working tree, tests/ INCLUDED, .rs only \u2014 a prose mention of #[test] in a comment or a .sh file is not a marker)",
    "mcp_tools": 0,
    "mcp_tool_method": "grep -r '#\\[tool(' --include='*.rs' (attribute, working tree)",
@@ -3025,10 +2934,10 @@
     "worklog": true
    },
    "docs": {
-    "md_files": 386,
+    "md_files": 389,
     "subdirs": {
-     "audit": 78,
-     "plans": 75,
+     "audit": 79,
+     "plans": 77,
      ".": 64,
      "archive": 48,
      "decisions": 43,
@@ -5116,8 +5025,8 @@
    "group": "webdev",
    "department": null,
    "membership": "federation",
-   "head": "ca18ba1170f583743be94413c05fc43e8d0bba8c",
-   "dirty_paths": 4,
+   "head": "1612bbaf443da5bcb536310b758fea1a3b4ff4ad",
+   "dirty_paths": 6,
    "language": "typescript",
    "language_marker": "package.json",
    "frameworks": [
@@ -5125,12 +5034,12 @@
     "vite",
     "wrangler/cloudflare"
    ],
-   "loc": 47991,
+   "loc": 49402,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .genome,.git,.next,.svelte-kit,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "typescript": 39122,
-    "svelte": 7806,
-    "python": 747,
+    "typescript": 39811,
+    "svelte": 8030,
+    "python": 1245,
     "sql": 316
    },
    "dominant_language": "typescript",
@@ -5176,10 +5085,10 @@
     "worklog": true
    },
    "docs": {
-    "md_files": 33,
+    "md_files": 35,
     "subdirs": {
      ".": 19,
-     "plans": 6,
+     "plans": 8,
      "kb": 4,
      "handoff": 2,
      "archive": 1,
@@ -6853,15 +6762,15 @@
    "group": "agentic-utility",
    "department": "interaction-surfaces",
    "membership": "federation",
-   "head": "2a628cbe66ce44ca5647f0f8dd064f2e015a7d00",
-   "dirty_paths": 0,
+   "head": "77b54a3791dc09249dbeefe88186de42251602ed",
+   "dirty_paths": 51,
    "language": "rust",
    "language_marker": "Cargo.toml",
    "frameworks": [],
-   "loc": 160303,
+   "loc": 160783,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .genome,.git,.next,.svelte-kit,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "rust": 123838,
+    "rust": 124318,
     "svelte": 26966,
     "typescript": 5569,
     "shell": 1776,
@@ -6869,7 +6778,7 @@
     "sql": 782
    },
    "dominant_language": "rust",
-   "test_markers": 1033,
+   "test_markers": 1040,
    "test_marker_method": "grep -rE '^\\s*#\\[(test|tokio::test)\\]' --include='*.rs' (attribute, working tree, tests/ INCLUDED, .rs only \u2014 a prose mention of #[test] in a comment or a .sh file is not a marker)",
    "mcp_tools": 389,
    "mcp_tool_method": "grep -r '#\\[tool(' --include='*.rs' (attribute, working tree)",

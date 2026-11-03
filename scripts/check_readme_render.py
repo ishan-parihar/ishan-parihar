@@ -102,12 +102,26 @@ def main() -> int:
 
     html = github_render(text)
     leaks = re.findall(r"\* \*\*\[", html)
-    if leaks:
-        problems.append(
-            f"{len(leaks)} catalog row(s) render as raw markdown - markup leaks and "
-            "no link renders. Cause: an HTML <br> between </summary> and the list "
-            "keeps GitHub in raw-text mode. Use one empty line instead."
-        )
+    # A SECOND leak shape, added 2026-11-02 after the operator reported the hire
+    # line rendering wrong the second time: a markdown link sitting inside a raw
+    # HTML block (`<p ...>` ... `</p>`) never renders, and GitHub emits its label
+    # and URL as literal text. Measured on this exact line: with the `<p>` wrapper
+    # the four header links leaked, without it they render. The detector therefore
+    # looks for ANY raw `[text](scheme:` in the rendered HTML, not just the
+    # catalog-row shape - the narrower pattern passed a page that was still
+    # leaking, which is how the first guard failed.
+    any_link = re.findall(r"\[[^\]\n]{1,120}\]\([a-z][a-z0-9+.-]*:", html)
+    for shape in (
+        ("catalog row", leaks),
+        ("inline markdown link inside HTML", any_link),
+    ):
+        label, matches = shape
+        if matches:
+            problems.append(
+                f"{len(matches)} {label}(s) render as raw markdown - markup leaks and "
+                "no link renders. Cause: an HTML block (<p ...> or <br>) around "
+                "markdown content. Remove the wrapper, or put the link outside it."
+            )
 
     vis = visibility(text)
     # Web portfolios are ranked in their own table with their own lock column.

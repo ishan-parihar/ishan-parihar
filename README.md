@@ -6,7 +6,7 @@ I build and operate production agentic infrastructure: MCP servers, agent runtim
 
 <p align="center"><b>Agentic AI Systems Engineer &amp; Operator</b> · Production Agentic Infrastructure · AI-Augmented Architecture · Multi-Agent Orchestration</p>
 
-🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar/) · 📍 Noida, India · ✈️ Remote: worldwide · [📧 Get in touchhref="mailto:[REDACTED:email]"
+🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar/) · 📍 Noida, India · ✈️ Remote: worldwide · 📧 Get in touch](mailto:contact@ishanparihar.com)
 
 <p align="center"><b>Every claim below carries a commit, and every number is re-measured.</b> Start with <a href="#hire-me--or-verify-the-code-yourself-first">Hire Me</a>, or read the <a href="#complete-project-catalog-56-ranked-projects--1-struck--6-web-sites">full catalog</a> and check the code yourself first.</p>
 
@@ -42,10 +42,10 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 | Metric | Value | Technical Context & Evidence |
 |--------|-------|------------------------------|
-| **MCP Servers** | **17** | 1,190 registered MCP tools across 17 MCP-exposing repos (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
-| **Rust Crates** | **94** | 94 `Cargo.toml` manifests across the 74 published repos (64 federation + 10 catalog) — vendored, generated and documentation trees excluded (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
-| **Lines of Code** | **3.36M** | ≈3.36M first-party source lines (Rust, TypeScript, Python, Go, Svelte, QML, shell) across the 74 published repos (64 federation + 10 catalog) (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
-| **Automated Tests** | **≈31,100 markers** | ≈31,100 test markers across 59 of 74 repos; 15 report none because their language has no marker rule here. Markers are NOT passing cases — gate results are recorded separately with their commit (`portfolio-measurements.json`, measured 2026-11-02, re-derived by `genome close`) |
+| **MCP Servers** | **17** | 1,190 registered MCP tools across 17 MCP-exposing repos (`portfolio-measurements.json`, measured 2026-11-03, re-derived by `genome close`) |
+| **Rust Crates** | **94** | 94 `Cargo.toml` manifests across the 74 published repos (64 federation + 10 catalog) — vendored, generated and documentation trees excluded (`portfolio-measurements.json`, measured 2026-11-03, re-derived by `genome close`) |
+| **Lines of Code** | **3.37M** | ≈3.37M first-party source lines (Rust, TypeScript, Python, Go, Svelte, QML, shell) across the 74 published repos (64 federation + 10 catalog) (`portfolio-measurements.json`, measured 2026-11-03, re-derived by `genome close`) |
+| **Automated Tests** | **≈31,100 markers** | ≈31,100 test markers across 59 of 74 repos; 15 report none because their language has no marker rule here. Markers are NOT passing cases — gate results are recorded separately with their commit (`portfolio-measurements.json`, measured 2026-11-03, re-derived by `genome close`) |
 | **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler — benchmark claim, not an engine attribute |
 | **Production Runtime** | **<10MB** | Stripped static musl Rust binaries with minimal idle RSS, zero dynamic dependencies — benchmark claim, not an engine attribute |
 
@@ -58,16 +58,26 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 I'm an **Agentic AI Systems Engineer & Operator** — I direct AI-augmented builds of the graph engines, compilers, and protocol layers that make autonomous AI agents functional, resilient, and cost-effective under real production loads. **Substrates are chosen per project (Rust, TypeScript, Python, Go, Kotlin) — never as identity.** Outcomes over protocols; operator, not coder. **Every flagship below points to the proof living in its own repository** — playable demos, runnable test suites, and measured benchmarks. Open the repo and verify it yourself.
 
-What that means in measured terms, each figure from [`portfolio-measurements.json`](portfolio-measurements.json) (measured 2026-11-02): **10 flagship systems**, each with a full write-up in [docs/FLAGSHIPS.md](docs/FLAGSHIPS.md) — **7,168 Rust tests passing** in [operant](https://github.com/ishan-parihar/operant) (the highest-test-count runtime in the portfolio), **944 tests** with byte-identical replay in [scorestrata](https://github.com/ishan-parihar/scorestrata), **626 tests / 0 failures** in [tdg-rust](https://github.com/ishan-parihar/tdg-rust), and **2,110 of 2,112 cases** passing in [mysterium](https://github.com/ishan-parihar/mysterium). Those four alone carry **10,848 passing test cases** across four languages. The portfolio totals **3.36M first-party LOC** and **≈31,100 test markers** across 74 published repos (see [📊 Engineering by the Numbers](#-engineering-by-the-numbers)).
+What that means in measured terms, ranked by the evidence a recruiter can actually open and re-run — the full order is computed by `scripts/rank_score.py` (rubric: 25% tests, 20% agent surface, 15% scale, 10% utility, re-derived 2026-11-02), not chosen by hand:
 
-The claim is not "I can build agents" — it is "I can build agent systems whose behaviour I can prove at a commit, and hand you the proof to re-run." Every number here names its measurement and its date, and each failing gate is published as failing (for example [c-suite-agents](https://github.com/ishan-parihar/c-suite-agents): 76 passing, 8 failing, 8 errors of 95 cases, `bun test` at HEAD 2026-10-28 — capped to B-tier and locked rather than presented as production-grade).
+| # | Project | Score | The measured proof behind the claim |
+|---|---|---|---|
+| 1 | **[operant](https://github.com/ishan-parihar/operant)** | `9.40` | 7,168 Rust tests passing at `ca33d4c` (2026-10-20 gate), 7 workspace crates, 12/12 sophistication families — the highest-test-count runtime in the portfolio |
+| 2 | **[switchpost](https://github.com/ishan-parihar/switchpost)** | `9.26` | 1,036 tests passing, 78K LOC across 25 platforms, 328 MCP tools in 42 modules, 5 releases |
+| 3 | **[mysterium](https://github.com/ishan-parihar/mysterium)** | `8.87` | 2,110 of 2,112 cases passing across 188 test files (`vitest run` at HEAD, 2026-10-28), 64-cell developmental matrix |
+| 4 | **[openscript](https://github.com/ishan-parihar/openscript)** | `8.70` | 109 MCP tools, 158 passing / 1 failing, agent-directed brief-to-render pipeline |
+| 5 | **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | `8.46` | 626 passed / 0 failed at `44e7f9b` (2026-10-20), zero warnings, 50 MCP tools, 10 releases |
+| 6 | **[holon](https://github.com/ishan-parihar/holon)** | `8.10` | 45K MIT-licensed agent OS — self-healing organization of persistent AI employees, 10 measured sophistication families |
 
+Those six carry **11,235 measured test cases** between them, each naming its own command and date in [docs/FLAGSHIPS.md](docs/FLAGSHIPS.md): 7,168 operant + 1,036 switchpost + 2,110 mysterium + 158 openscript + 626 tdg-rust + 837 holon. The portfolio totals **3.36M first-party LOC** and **≈31,100 test markers** across 74 published repos (see [📊 Engineering by the Numbers](#-engineering-by-the-numbers)).
+
+Above the table on raw score but deliberately NOT listed as flagship: **[sourcehound](https://github.com/ishan-parihar/sourcehound)** (`9.43`, private, re-publication planned) and **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** (`8.36`, private, gate red at 76/8/8 of 95) — a reader cannot re-run either gate today. Both stay in the [catalog](#complete-project-catalog-49-ranked-projects--1-struck--6-web-sites), locked, capped at B. The claim is not "I can build agents" — it is "I can build agent systems whose behaviour I can prove at a commit, and hand you the proof to re-run."
 
 ---
 
 ### 💼 Hire Me — or verify the code yourself first
 
-For founding / forward-deployed engagements, agentic-systems architecture, or fractional CTO work for AI-first teams — [📧 contact@ishanparihar.com](mailto:contact@ishanparihar.com). I ship production agentic infrastructure end-to-end via AI-augmented architecture; substrates chosen for the project, not the team. Or audit the code first: start from the portfolio's highest-test-count runtime ([Operant](https://github.com/ishan-parihar/operant), 7,168 Rust tests passing at `ca33d4c`, 2026-10-20 gate) or the compact fully-verified engine ([TDG Rust](https://github.com/ishan-parihar/tdg-rust), 626 tests).
+For founding / forward-deployed engagements, agentic-systems architecture, or fractional CTO work for AI-first teams — [📧 Get in touch](mailto:contact@ishanparihar.com). I ship production agentic infrastructure end-to-end via AI-augmented architecture; substrates chosen for the project, not the team. Or audit the code first: start from the portfolio's highest-test-count runtime ([Operant](https://github.com/ishan-parihar/operant), 7,168 Rust tests passing at `ca33d4c`, 2026-10-20 gate) or the compact fully-verified engine ([TDG Rust](https://github.com/ishan-parihar/tdg-rust), 626 tests).
 
 ---
 
@@ -75,11 +85,11 @@ For founding / forward-deployed engagements, agentic-systems architecture, or fr
 
 I treat AI system design as **spatial machinery** rather than linear text prompting, and I direct its construction via **AI-augmented architecture** — systems thinking first, substrates chosen per project, the agent runtime writing the implementation under operator supervision. Most agent frameworks today are fragile prompt wrappers. I deliver **load-bearing substrates**:
 
-* **Operator-led, AI-augmented builds**: I architect the system, set the test discipline, choose the substrate (Rust/TypeScript/Python/Go/Kotlin), and direct the build. The **38,911 test markers** across the 61 measured repos are the audit trail of that method — not the result of typing each line by hand. Markers are counted, not claimed as passing: every tier row below states its own measured pass/fail at its own HEAD and date.
-* **Graph-Native Orchestration**: I replace linear shell scripts and standard pipelines with property graphs. Every execution node has typed ports; the execution engine resolves dependencies, materializes parallel branches using a Tokio-backed level scheduler, and exposes the live execution DAG to LLM operators via MCP.
-* **Token-Efficient Serialization**: I designed and compiled the TOON (Token-Oriented Object Notation) standard. By eliminating structural syntax redundancy, TOON reduces context-window footprint by 40% to 60% compared to standard JSON, preserving deterministic validation.
-* **Minimal Memory footprint**: I specialize in compiling highly optimized, zero-dependency static musl Rust binaries. My intelligence gathering pipelines (IGS) curate 411 sources across 47 countries while running within a 7MB static file and under 5MB of idle RAM.
-* **Systems Diagnostics**: Drawing on my background in architectural design, spatial diagnostics, and cognitive modeling, I translate systemic risk, organizational constraints, and multi-agent network topologies into deterministic software constraints.
+* **Operator-led, AI-augmented builds**: I architect the system, set the test discipline, choose the substrate (Rust/TypeScript/Python/Go/Kotlin), and direct the build. The **≈31,100 test markers** across 74 published repos (`portfolio-measurements.json`, measured 2026-11-02) are the audit trail of that method — not the result of typing each line by hand. Markers are counted, not claimed as passing: every tier row below states its own measured pass/fail at its own HEAD and date.
+* **Graph-Native Orchestration**: I replace linear shell scripts and standard pipelines with property graphs. Every execution node has typed ports; the engine resolves dependencies, materializes parallel branches via a Tokio level scheduler, and exposes the live execution DAG to LLM operators over MCP.
+* **Token-Efficient Serialization**: I designed and compiled the TOON (Token-Oriented Object Notation) standard. Eliminating structural syntax redundancy cuts context-window footprint 40–60% versus JSON, with deterministic validation preserved.
+* **Minimal Memory footprint**: I compile zero-dependency static musl Rust binaries; the intelligence-gathering pipeline curates 411 sources across 47 countries inside a ~7MB static file at <5MB idle RAM.
+* **Systems Diagnostics**: Background in architectural design, spatial diagnostics, and cognitive modeling — I translate systemic risk, organizational constraints, and multi-agent topologies into deterministic software constraints.
 
 ---
 
@@ -95,14 +105,13 @@ proof live in [docs/FLAGSHIPS.md](docs/FLAGSHIPS.md).**
 | 🧠 **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | Teleological memory graph — every memory a `(Content, Embedding, Telos)` node | 626 tests / 0 failed at `44e7f9b` (`cargo test`, 2026-10-20), 50 MCP tools | the repo's "Testing" section: `cargo test` = 626 passing (449 lib + 68 MCP e2e + 44 plugin + integration + property suites) |
 | 🎬 **[openscript](https://github.com/ishan-parihar/openscript)** | Agent-directed video pipeline — brief → script → TTS → render | 109 MCP tools, 158 passing / 1 failing (`cargo test` at HEAD, 2026-10-28) | `docs/` renders produced end-to-end through MCP tool calls |
 | 🧠 **[mysterium](https://github.com/ishan-parihar/mysterium)** | Education-system replacement — 64-cell developmental matrix, 9-command CLI | 2,110 of 2,112 cases passing (`vitest run` at HEAD, 2026-10-28), 61K LOC | the 9-command CLI (`setup`, `status`, `new-game`, `diagnostic`, …) driven from the shell |
-| 📡 **[sourcehound](https://github.com/ishan-parihar/sourcehound)** | Intelligence ingestion across 411 sources in 47 countries | ~7MB static binary, ~5MB idle RSS, 9 custom parsers | the feeds it emits, natively in TOON |
+| 🔒 📡 **[sourcehound](https://github.com/ishan-parihar/sourcehound)** | Intelligence ingestion across 411 sources in 47 countries — **private today** (link 404s for visitors; capped at B-tier, re-publication planned) | ~7MB static binary, ~5MB idle RSS, 9 custom parsers | the feeds it emits, natively in TOON |
 | 🌐 **[switchpost](https://github.com/ishan-parihar/switchpost)** | Multi-platform content engine across 25 platforms | ~78K LOC, 328 MCP tools across 42 tool modules | the axum REST surface + `rmcp` MCP server on one binary |
 | 🧠 **[mindstrata](https://github.com/ishan-parihar/mindstrata)** | Deterministic emergent society simulation — every agent a complete mind | 82K LOC, 307 passing / 3 failing (`cargo test` at HEAD, 2026-10-28) | `cargo test` — history always emerges from locally bounded agents |
 | 📊 **[deckmill](https://github.com/ishan-parihar/deckmill)** | Browserless carousel factory — 38 of 46 slide types renderable | 192 tests green at `18036f4`, ~35K LOC | `docs/previews/` — 6 slides actually rendered by the embedded Blitz engine, no browser, no screenshots |
 | 📡 **[browsefleet](https://github.com/ishan-parihar/browsefleet)** | Stealth browser fleet for agents — leased CDP contexts | 22 REST endpoints, 86 tests, 4 languages | the repo's "Proof" section: live benchmark table — 380 ms first nav, Turnstile auto-pass, reCAPTCHA v3 0.9 |
 
 ---
-
 
 ### 🤖 [operant](https://github.com/ishan-parihar/operant)
 **Terminal-native ReAct agent runtime.** Rust. Tests: 7,168 passed, 0 failed, 24 ignored across 72 binaries at `ca33d4c` (2026-10-20, `cargo test --workspace`; the suite is active, so treat the figure as that day's gate, not a current count). MCP client + server, skills, messaging channels.
@@ -160,6 +169,8 @@ A structured cognitive curriculum engine: a 64-cell developmental matrix with a 
 ### 📡 [sourcehound](https://github.com/ishan-parihar/sourcehound)
 **Intelligence Gathering System — High-performance Rust engine.** ~7MB static binary, ~5MB RSS.
 
+> **🔒 Private today** — its link 404s for visitors and its gate cannot be re-run by a reader; capped at B until it is public again. Kept in the portfolio because re-publication is planned; the figures below are from its last public revision, not live claims.
+
 A lightweight news and data ingestion pipeline scraping 411 distinct sources across 47 countries. It filters, deduplicates, and enriches global national, tech, and financial news, generating optimized intelligence feeds for agent consumption.
 
 * **Serialization**: Outputs natively in TOON, saving 40% to 60% in downstream context window costs.
@@ -198,7 +209,7 @@ the score it earned rather than a description alone.
 | **[memory-wire](https://github.com/ishan-parihar/memory-wire)** | Rust | REST + MCP stdio | Agent memory in one static binary — retain/recall/reflect, bank isolation, FTS5 BM25 + RRF fusion, PII redaction |
 | **[cloakctl](https://github.com/ishan-parihar/cloakctl)** | Python | 25 Commands | One persistent stealth browser per profile over CLI verbs, plus a registry of reusable agent automations |
 | **[holon](https://github.com/ishan-parihar/holon)** | Python | 22 Commands | Harness-agnostic agentic OS that runs as an organization of persistent AI employees |
-| **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** | TypeScript | 35 Tools | Multi-agent orchestration daemon + LifeOS MCP server (LanceDB + Telegram) |
+| 🔒 **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** | TypeScript | 35 Tools | Multi-agent daemon + LifeOS MCP server — **private; its gate is red** (76/8/8 of 95, `bun test` at HEAD 2026-10-28) → link 404s, capped at B, not production-grade |
 | **[automaton](https://github.com/ishan-parihar/automaton)** | Rust | 38 Tools | Graph-native build, plan, and scheduled execution engine |
 | **[deckmill](https://github.com/ishan-parihar/deckmill)** | Rust | 20 Tools | Browserless carousel factory — 38 of 46 slide types renderable (verified 2026-10-27), embedded Blitz renderer |
 | **[browsefleet](https://github.com/ishan-parihar/browsefleet)** | Node/TS | REST + CDP | Stealth browser fleet: leased CDP contexts, sessions/screenshots/PDFs for agents |
@@ -283,7 +294,6 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 
 </details>
 
-
 <details>
 <summary><b>🧠 A-TIER: Production-Grade Engines — Score 6.5–7.99 (16 Projects)</b></summary>
 
@@ -306,7 +316,6 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 
 </details>
 
-
 <details>
 <summary><b>📡 B-TIER: Solid Utilities — Score 4.5–6.49 (15 Projects)</b></summary>
 
@@ -328,7 +337,6 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 
 </details>
 
-
 <details>
 <summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (9 Projects + 1 Struck)</b></summary>
 
@@ -344,7 +352,6 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 * **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** `3.83`: Live plugin bridging a persistent kernel into Hermes's stateless runtime. 3 MCP tools, 14 contract tests, v0.2.0.
 
 </details>
-
 
 <details>
 <summary><b>📉 D-TIER: Minimal / Stalled — Score < 3.25 (7 Projects)</b></summary>
@@ -372,7 +379,7 @@ The throughline across all of it is the same: **I build infrastructure for AI ag
 
 ## 📄 Documentation
 
-Every doc in `docs/` is listed with the question it answers in [docs/PAGE-INDEX.md](docs/PAGE-INDEX.md). The ranking engine that produced the tiers above is specified in [RANKING-RUBRIC.md](docs/kb/RANKING-RUBRIC.md), and the README baseline every repo here is held to is [TEMPLATE.md](docs/TEMPLATE.md).
+Every doc in `docs/` is listed with the question it answers in [docs/PAGE-INDEX.md](docs/PAGE-INDEX.md); the ranking engine that produced the tiers above is [RANKING-RUBRIC.md](docs/kb/RANKING-RUBRIC.md) and the baseline every repo here is held to is [TEMPLATE.md](docs/TEMPLATE.md).
 
 ---
 
@@ -383,7 +390,7 @@ Every doc in `docs/` is listed with the question it answers in [docs/PAGE-INDEX.
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=ishan-parihar&label=Profile%20Views&countColor=%2310b981)](https://github.com/ishan-parihar)
 
 **Available for remote contract, full-time, and part-time roles worldwide.**  
-**[📧 contact@ishanparihar.com](mailto:contact@ishanparihar.com) — let's build the infrastructure of tomorrow.**
+**[📧 Get in touch](mailto:contact@ishanparihar.com) — let's build the infrastructure of tomorrow.**
 
 </div>
 
@@ -395,5 +402,3 @@ Every sponsorship funds the open ecosystem behind this profile — new releases,
 
 [![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?style=flat-square&logo=github)](https://github.com/sponsors/ishan-parihar)
 [![Donate](https://img.shields.io/badge/Donate-Razorpay-3395FF?style=flat-square)](https://rzp.io/rzp/ishan-parihar)
-
-Your support funds new features, releases, and infrastructure for the whole ecosystem.

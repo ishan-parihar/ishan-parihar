@@ -58,7 +58,9 @@ def resolve_base() -> str:
         if parent == cur:
             return here
         cur = parent
-        if os.path.isdir(os.path.join(cur, "agentic-utility")) or os.path.isdir(os.path.join(cur, "_extra-catalog")):
+        if (os.path.isdir(os.path.join(cur, "agentic-utility"))
+                or os.path.isdir(os.path.join(cur, "catalog-repos"))
+                or os.path.isdir(os.path.join(cur, "_extra-catalog"))):
             return cur
 
 
