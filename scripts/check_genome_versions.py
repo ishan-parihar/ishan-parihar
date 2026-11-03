@@ -7,7 +7,13 @@ Two `genome` binaries exist on this machine and they answer differently about
 `genome.toml`:
 
   ~/.local/bin/genome   -> 2026.11.02-43   (first on PATH, so `genome` runs this)
-  ./scripts/genome     -> 2026.11.02-60   (vendored, executable, tracked 100755)
+  ./scripts/genome     -> 2026.11.02-65   (vendored, executable, tracked 100755)
+
+Version numbers move: I first read the vendored copy as -60 and that was already
+stale within the hour, a peer session upgrading all four vendored copies in the
+fleet to -65 (byte-identical, one md5 across holon, ishan-parihar,
+paperclip-zeroclaw-adapter and project-genome). This check therefore reports the
+versions it MEASURES rather than asserting them here.
 
 Run against this repo's config, `-43` raises `E017 genome.toml: unknown key [docs]`
 and `... [ops] dir_globs` and makes `genome close` RED; `-60` accepts both and
