@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "measured_at": "2026-11-03T00:41:01Z",
+ "measured_at": "2026-11-03T01:53:29Z",
  "engine": "scripts/measure.py",
  "rule_source": "genome.toml [federation]",
  "catalog_rule_source": "fleet/roster.json catalog.live",
@@ -27,12 +27,12 @@
   "published": {
    "members": 74,
    "loc": {
-    "value": 3370047,
+    "value": 3370992,
     "repos_reporting": 74,
     "repos_null": []
    },
    "test_markers": {
-    "value": 31129,
+    "value": 31134,
     "repos_reporting": 59,
     "repos_null": [
      "AI-CAD",
@@ -139,12 +139,12 @@
   "federation": {
    "members": 64,
    "loc": {
-    "value": 3312928,
+    "value": 3313873,
     "repos_reporting": 64,
     "repos_null": []
    },
    "test_markers": {
-    "value": 31018,
+    "value": 31023,
     "repos_reporting": 55,
     "repos_null": [
      "andrometry",
@@ -308,7 +308,7 @@
      "path": "ishan-parihar",
      "membership": "federation",
      "language": "python",
-     "loc": 3879,
+     "loc": 3881,
      "tests": null,
      "crates": 0,
      "surface": "library",
@@ -341,7 +341,7 @@
      "path": "project-genome",
      "membership": "federation",
      "language": "python",
-     "loc": 11994,
+     "loc": 12437,
      "tests": 0,
      "crates": 0,
      "surface": "cli",
@@ -349,57 +349,6 @@
     }
    ],
    "departments": []
-  },
-  {
-   "group": "_extra-catalog",
-   "members": [
-    {
-     "name": "AI-CAD",
-     "path": "_extra-catalog/AI-CAD",
-     "membership": "catalog",
-     "language": "python",
-     "loc": 19675,
-     "tests": null,
-     "crates": 0,
-     "surface": "library",
-     "gate": null
-    },
-    {
-     "name": "jesse",
-     "path": "_extra-catalog/jesse",
-     "membership": "catalog",
-     "language": "python",
-     "loc": 15472,
-     "tests": 74,
-     "crates": 0,
-     "surface": "library",
-     "gate": "pytest -q"
-    },
-    {
-     "name": "linux-telemetry",
-     "path": "_extra-catalog/linux-telemetry",
-     "membership": "catalog",
-     "language": "python",
-     "loc": 1396,
-     "tests": 6,
-     "crates": 0,
-     "surface": "cli",
-     "gate": "pytest -q"
-    },
-    {
-     "name": "n8n-compiler",
-     "path": "_extra-catalog/n8n-compiler",
-     "membership": "catalog",
-     "language": "python",
-     "loc": 2235,
-     "tests": 9,
-     "crates": 0,
-     "surface": "library",
-     "gate": "pytest -q"
-    }
-   ],
-   "departments": [],
-   "staging": true
   },
   {
    "group": "agentic-harness",
@@ -420,8 +369,8 @@
      "path": "agentic-harness/operant",
      "membership": "federation",
      "language": "rust",
-     "loc": 503923,
-     "tests": 5522,
+     "loc": 504408,
+     "tests": 5527,
      "crates": 8,
      "surface": "cli",
      "gate": "./scripts/check.sh check --workspace && cargo test --workspace"
@@ -1110,6 +1059,56 @@
    ]
   },
   {
+   "group": "catalog-repos",
+   "members": [
+    {
+     "name": "AI-CAD",
+     "path": "catalog-repos/AI-CAD",
+     "membership": "catalog",
+     "language": "python",
+     "loc": 19675,
+     "tests": null,
+     "crates": 0,
+     "surface": "library",
+     "gate": null
+    },
+    {
+     "name": "jesse",
+     "path": "catalog-repos/jesse",
+     "membership": "catalog",
+     "language": "python",
+     "loc": 15472,
+     "tests": 74,
+     "crates": 0,
+     "surface": "library",
+     "gate": "pytest -q"
+    },
+    {
+     "name": "linux-telemetry",
+     "path": "catalog-repos/linux-telemetry",
+     "membership": "catalog",
+     "language": "python",
+     "loc": 1396,
+     "tests": 6,
+     "crates": 0,
+     "surface": "cli",
+     "gate": "pytest -q"
+    },
+    {
+     "name": "n8n-compiler",
+     "path": "catalog-repos/n8n-compiler",
+     "membership": "catalog",
+     "language": "python",
+     "loc": 2235,
+     "tests": 9,
+     "crates": 0,
+     "surface": "library",
+     "gate": "pytest -q"
+    }
+   ],
+   "departments": []
+  },
+  {
    "group": "game-development",
    "members": [
     {
@@ -1494,7 +1493,7 @@
      "path": "webdev/technical-authority",
      "membership": "federation",
      "language": "typescript",
-     "loc": 49402,
+     "loc": 49417,
      "tests": 0,
      "crates": 0,
      "surface": "library",
@@ -1648,34 +1647,6 @@
     "class": "retired",
     "group": "EXPERIMENTAL",
     "published": false
-   },
-   {
-    "path": "_extra-catalog/AI-CAD",
-    "name": "AI-CAD",
-    "class": "catalog",
-    "group": "_extra-catalog",
-    "published": true
-   },
-   {
-    "path": "_extra-catalog/jesse",
-    "name": "jesse",
-    "class": "catalog",
-    "group": "_extra-catalog",
-    "published": true
-   },
-   {
-    "path": "_extra-catalog/linux-telemetry",
-    "name": "linux-telemetry",
-    "class": "catalog",
-    "group": "_extra-catalog",
-    "published": true
-   },
-   {
-    "path": "_extra-catalog/n8n-compiler",
-    "name": "n8n-compiler",
-    "class": "catalog",
-    "group": "_extra-catalog",
-    "published": true
    },
    {
     "path": "agentic-harness/external-repos/aft",
@@ -1997,6 +1968,34 @@
     "name": "artificial-route",
     "class": "venture",
     "group": "agentic-utility",
+    "published": true
+   },
+   {
+    "path": "catalog-repos/AI-CAD",
+    "name": "AI-CAD",
+    "class": "catalog",
+    "group": "catalog-repos",
+    "published": true
+   },
+   {
+    "path": "catalog-repos/jesse",
+    "name": "jesse",
+    "class": "catalog",
+    "group": "catalog-repos",
+    "published": true
+   },
+   {
+    "path": "catalog-repos/linux-telemetry",
+    "name": "linux-telemetry",
+    "class": "catalog",
+    "group": "catalog-repos",
+    "published": true
+   },
+   {
+    "path": "catalog-repos/n8n-compiler",
+    "name": "n8n-compiler",
+    "class": "catalog",
+    "group": "catalog-repos",
     "published": true
    },
    {
@@ -2528,14 +2527,14 @@
    "department": null,
    "membership": "federation",
    "head": "b500a001e445425c8e9e14ad830a31dce7086d1c",
-   "dirty_paths": 2,
+   "dirty_paths": 5,
    "language": null,
    "language_marker": null,
    "frameworks": [],
-   "loc": 3879,
+   "loc": 3881,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .genome,.git,.next,.svelte-kit,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "python": 3879
+    "python": 3881
    },
    "dominant_language": "python",
    "test_markers": null,
@@ -2703,8 +2702,8 @@
    "group": null,
    "department": null,
    "membership": "federation",
-   "head": "b3028d5ee1d1da0d2edd20209dbbd632d5343778",
-   "dirty_paths": 4,
+   "head": "1c93c3745d7ef9a2b38cb4f21767fce0d2a6a559",
+   "dirty_paths": 9,
    "language": null,
    "language_marker": null,
    "frameworks": [],
@@ -2792,14 +2791,14 @@
    "department": null,
    "membership": "federation",
    "head": "01bc009f47e8136c2cefecb6fd209657834d66b8",
-   "dirty_paths": 4,
+   "dirty_paths": 10,
    "language": "python",
    "language_marker": "pyproject.toml",
    "frameworks": [],
-   "loc": 11994,
+   "loc": 12437,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .genome,.git,.next,.svelte-kit,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "python": 11414,
+    "python": 11857,
     "shell": 580
    },
    "dominant_language": "python",
@@ -2816,6 +2815,7 @@
     "present": true,
     "modules": [
      "core",
+     "integrity",
      "records"
     ],
     "gate": "uv build --wheel --sdist >/dev/null && python3 scripts/test_genome.py && python3 scripts/test_package.py && python3 scripts/test_package_modes.py && python3 scripts/build.py --check && python3 scripts/check_ps1.py && python3 scripts/genome lint --code E306 E308 E309 --all",
@@ -2879,21 +2879,21 @@
    "group": "agentic-harness",
    "department": null,
    "membership": "federation",
-   "head": "5f248aa064e7fc6513175ccd6142c7494218ec3f",
-   "dirty_paths": 7,
+   "head": "2e24053126f73e25c62fccd2970703eb32a7aeb8",
+   "dirty_paths": 10,
    "language": "rust",
    "language_marker": "Cargo.toml",
    "frameworks": [],
-   "loc": 503923,
+   "loc": 504408,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .genome,.git,.next,.svelte-kit,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "rust": 428876,
+    "rust": 429154,
     "typescript": 41434,
     "python": 28762,
-    "shell": 4851
+    "shell": 5058
    },
    "dominant_language": "rust",
-   "test_markers": 5522,
+   "test_markers": 5527,
    "test_marker_method": "grep -rE '^\\s*#\\[(test|tokio::test)\\]' --include='*.rs' (attribute, working tree, tests/ INCLUDED, .rs only \u2014 a prose mention of #[test] in a comment or a .sh file is not a marker)",
    "mcp_tools": 0,
    "mcp_tool_method": "grep -r '#\\[tool(' --include='*.rs' (attribute, working tree)",
@@ -5025,7 +5025,7 @@
    "group": "webdev",
    "department": null,
    "membership": "federation",
-   "head": "1612bbaf443da5bcb536310b758fea1a3b4ff4ad",
+   "head": "c0982e772074f08e18017cd45341a27effca6447",
    "dirty_paths": 6,
    "language": "typescript",
    "language_marker": "package.json",
@@ -5034,12 +5034,12 @@
     "vite",
     "wrangler/cloudflare"
    ],
-   "loc": 49402,
+   "loc": 49417,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .genome,.git,.next,.svelte-kit,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 39811,
-    "svelte": 8030,
-    "python": 1245,
+    "svelte": 8044,
+    "python": 1246,
     "sql": 316
    },
    "dominant_language": "typescript",
@@ -5085,10 +5085,10 @@
     "worklog": true
    },
    "docs": {
-    "md_files": 35,
+    "md_files": 36,
     "subdirs": {
      ".": 19,
-     "plans": 8,
+     "plans": 9,
      "kb": 4,
      "handoff": 2,
      "archive": 1,
@@ -6763,7 +6763,7 @@
    "department": "interaction-surfaces",
    "membership": "federation",
    "head": "77b54a3791dc09249dbeefe88186de42251602ed",
-   "dirty_paths": 51,
+   "dirty_paths": 62,
    "language": "rust",
    "language_marker": "Cargo.toml",
    "frameworks": [],
@@ -8309,13 +8309,13 @@
   },
   "AI-CAD": {
    "name": "AI-CAD",
-   "id": "_extra-catalog/AI-CAD",
-   "path": "_extra-catalog/AI-CAD",
+   "id": "catalog-repos/AI-CAD",
+   "path": "catalog-repos/AI-CAD",
    "path_parts": [
-    "_extra-catalog",
+    "catalog-repos",
     "AI-CAD"
    ],
-   "group": "_extra-catalog",
+   "group": "catalog-repos",
    "department": null,
    "membership": "catalog",
    "head": "4a79926ef5e154403d1724c3796004b8b37e324d",
@@ -8374,13 +8374,13 @@
   },
   "jesse": {
    "name": "jesse",
-   "id": "_extra-catalog/jesse",
-   "path": "_extra-catalog/jesse",
+   "id": "catalog-repos/jesse",
+   "path": "catalog-repos/jesse",
    "path_parts": [
-    "_extra-catalog",
+    "catalog-repos",
     "jesse"
    ],
-   "group": "_extra-catalog",
+   "group": "catalog-repos",
    "department": null,
    "membership": "catalog",
    "head": "39d4765290c75038adaa59dcdfd7708fd03b4fa9",
@@ -8435,13 +8435,13 @@
   },
   "linux-telemetry": {
    "name": "linux-telemetry",
-   "id": "_extra-catalog/linux-telemetry",
-   "path": "_extra-catalog/linux-telemetry",
+   "id": "catalog-repos/linux-telemetry",
+   "path": "catalog-repos/linux-telemetry",
    "path_parts": [
-    "_extra-catalog",
+    "catalog-repos",
     "linux-telemetry"
    ],
-   "group": "_extra-catalog",
+   "group": "catalog-repos",
    "department": null,
    "membership": "catalog",
    "head": "e57681023cf1b2f89689d7f418d5165135f0a026",
@@ -8496,13 +8496,13 @@
   },
   "n8n-compiler": {
    "name": "n8n-compiler",
-   "id": "_extra-catalog/n8n-compiler",
-   "path": "_extra-catalog/n8n-compiler",
+   "id": "catalog-repos/n8n-compiler",
+   "path": "catalog-repos/n8n-compiler",
    "path_parts": [
-    "_extra-catalog",
+    "catalog-repos",
     "n8n-compiler"
    ],
-   "group": "_extra-catalog",
+   "group": "catalog-repos",
    "department": null,
    "membership": "catalog",
    "head": "bb45724a03818db2313c80910a5fb54a45515148",
