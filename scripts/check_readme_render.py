@@ -104,13 +104,19 @@ def main() -> int:
     leaks = re.findall(r"\* \*\*\[", html)
     # A SECOND leak shape, added 2026-11-02 after the operator reported the hire
     # line rendering wrong the second time: a markdown link sitting inside a raw
-    # HTML block (`<p ...>` ... `</p>`) never renders, and GitHub emits its label
-    # and URL as literal text. Measured on this exact line: with the `<p>` wrapper
-    # the four header links leaked, without it they render. The detector therefore
-    # looks for ANY raw `[text](scheme:` in the rendered HTML, not just the
-    # catalog-row shape - the narrower pattern passed a page that was still
-    # leaking, which is how the first guard failed.
-    any_link = re.findall(r"\[[^\]\n]{1,120}\]\([a-z][a-z0-9+.-]*:", html)
+    # HTML block (`<p ...>` ... `</p>`) never renders, and GitHub emits the label
+    # and URL as literal text. Measured shape of that leak, not assumed:
+    #
+    #   <p align="center">[x](https://a.com) [y](https://b.com)</p>
+    #   -> <p align="center">[x](<a href="https://a.com" ...>) [y](<a href=...
+    #
+    # i.e. the `[label]` survives but the URL is emitted as a NESTED anchor, so the
+    # detector must match `[label](` followed by an `<a href` — the first version
+    # required a scheme immediately after `](` and therefore matched neither this
+    # shape nor the raw `[label](url` shape, which is why the injected <p> defect
+    # went undetected while the guard reported "0 markup leaks".
+    any_link = re.findall(r"\[[^\]\n]{1,120}\]\((?:<a href=|<[a-z])[^\n]{0,160}", html)
+    any_link += re.findall(r"\[[^\]\n]{1,120}\]\([a-z][a-z0-9+.-]*:[^\n]{0,160}", html)
     for shape in (
         ("catalog row", leaks),
         ("inline markdown link inside HTML", any_link),

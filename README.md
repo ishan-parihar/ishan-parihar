@@ -367,21 +367,17 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 </details>
 ## 🧭 The Arc: Space → Mind → Infrastructure
 
-Three disciplines shaped this body of work — and each is visible in how the systems are built.
+Three disciplines shaped this body of work, and each is visible in how the systems are built — **infrastructure for AI agents to operate at production scale**: deterministic where it matters, verifiable everywhere, proven by the artifacts committed beside the code.
 
 - **Architecture** taught me to think in space and load-bearing structure. A program is a container with designed constraints, not a linear recipe — so every repo here is engineered like a building: for what it must carry under real load.
 - **Psychology** taught me to study minds. That's why the portfolio runs deep into cognitive systems — teleological memory graphs (`tdg-rust`), deterministic society simulations (`mindstrata`), developmental matrices (`mysterium`). Building for agents means building for cognition.
 - **Engineering** fuses both into infrastructure: compilers, runtimes, and protocol layers that let autonomous agents operate at production scale (`operant`, `automaton`, `sourcehound`, `switchpost`).
-
-The throughline across all of it is the same: **I build infrastructure for AI agents to operate at production scale** — deterministic where it matters, verifiable everywhere, and proven by the artifacts committed beside the code.
 
 ---
 
 ## 📄 Documentation
 
 Every doc in `docs/` is listed with the question it answers in [docs/PAGE-INDEX.md](docs/PAGE-INDEX.md); the ranking engine that produced the tiers above is [RANKING-RUBRIC.md](docs/kb/RANKING-RUBRIC.md) and the baseline every repo here is held to is [TEMPLATE.md](docs/TEMPLATE.md).
-
----
 
 <div align="center">
 
