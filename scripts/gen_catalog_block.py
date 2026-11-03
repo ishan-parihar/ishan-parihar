@@ -154,7 +154,18 @@ NEW_DESC = {
 
 CATEGORY_TAG = {
     "experimental": "experimental",
-    "deprecated": "archived",
+    # `deprecated` renders as `deprecated`, NOT `archived`.  MEASURED DEFECT,
+    # 2026-11-03: this dict mapped deprecated -> "archived", so the three
+    # deprecated rows (jesse, CineSync, workout-factory) were emitted reading
+    # `(archived)`.  `gh api repos/ishan-parihar/<name>` returns archived=false for
+    # all three — they are deprecated (the operator stopped work on them, or their
+    # own README says so), but they are NOT GitHub-archived repositories.  The page
+    # was asserting a repository state it had not measured, and a reader who
+    # clicked through would not see the "This repository has been archived" banner
+    # the tag implies.  The two are different claims: `archived` is a GitHub
+    # boolean, `deprecated` is the operator's judgment, and only the second is what
+    # this page actually knows.
+    "deprecated": "deprecated",
     "infra": "infra",
     "tool": "tool",
     "profile": "profile",
@@ -268,6 +279,14 @@ def load_struck(path: str):
 def note_tag(note: str):
     if "capped: experimental" in note:
         return "experimental"
+    # Reads the cap reason, which rank_score.py writes as "capped:
+    # archived/deprecated — ..." for BOTH the deprecated category and a
+    # genuinely-archived one, so the emitted tag follows what the note actually
+    # says rather than a single lumped word.  Measured 2026-11-03: the three
+    # deprecated repos are `archived=false` on GitHub, so they must not be
+    # labelled `(archived)`; a repo that GitHub really has archived still is.
+    if "capped: archived/deprecated" in note:
+        return "deprecated"
     if "capped: archived" in note:
         return "archived"
     for key, tag in CATEGORY_TAG.items():

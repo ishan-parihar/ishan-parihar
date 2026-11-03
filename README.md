@@ -58,7 +58,7 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 I'm an **Agentic AI Systems Engineer & Operator** — I direct AI-augmented builds of the graph engines, compilers, and protocol layers that make autonomous AI agents functional, resilient, and cost-effective under real production loads. **Substrates are chosen per project (Rust, TypeScript, Python, Go, Kotlin) — never as identity.** Outcomes over protocols; operator, not coder. **Every flagship below points to the proof living in its own repository** — playable demos, runnable test suites, and measured benchmarks. Open the repo and verify it yourself.
 
-What that means in measured terms, ranked by the evidence a recruiter can actually open and re-run — the full order is computed by `scripts/rank_score.py` (rubric: 25% tests, 20% agent surface, 15% scale, 10% utility, re-derived 2026-11-02), not chosen by hand:
+What that means in measured terms, ranked by the evidence a recruiter can actually open and re-run — the full order is computed by `scripts/rank_score.py` (rubric: 25% tests, 20% agent surface, 15% scale, 10% utility, re-derived 2026-11-02), not chosen by hand. All six are public and their gates re-run:
 
 | # | Project | Score | The measured proof behind the claim |
 |---|---|---|---|
@@ -69,9 +69,7 @@ What that means in measured terms, ranked by the evidence a recruiter can actual
 | 5 | **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | `8.46` | 626 passed / 0 failed at `44e7f9b` (2026-10-20), zero warnings, 50 MCP tools, 10 releases |
 | 6 | **[holon](https://github.com/ishan-parihar/holon)** | `8.10` | 45K MIT-licensed agent OS — self-healing organization of persistent AI employees, 10 measured sophistication families |
 
-Those six carry **11,235 measured test cases** between them, each naming its own command and date in [docs/FLAGSHIPS.md](docs/FLAGSHIPS.md): 7,168 operant + 1,036 switchpost + 2,110 mysterium + 158 openscript + 626 tdg-rust + 837 holon. The portfolio totals **3.36M first-party LOC** and **≈31,100 test markers** across 74 published repos (see [📊 Engineering by the Numbers](#-engineering-by-the-numbers)).
-
-Above the table on raw score but deliberately NOT listed as flagship: **[sourcehound](https://github.com/ishan-parihar/sourcehound)** (`9.43`, private, re-publication planned) and **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** (`8.36`, private, gate red at 76/8/8 of 95) — a reader cannot re-run either gate today. Both stay in the [catalog](#complete-project-catalog-49-ranked-projects--1-struck--6-web-sites), locked, capped at B. The claim is not "I can build agents" — it is "I can build agent systems whose behaviour I can prove at a commit, and hand you the proof to re-run."
+Those six carry **11,235 measured test cases** between them, each naming its own command and date in [docs/FLAGSHIPS.md](docs/FLAGSHIPS.md): 7,168 operant + 1,036 switchpost + 2,110 mysterium + 158 openscript + 626 tdg-rust + 837 holon. The portfolio totals **3.36M first-party LOC** and **≈31,100 test markers** across 74 published repos (see [📊 Engineering by the Numbers](#-engineering-by-the-numbers)). Above the table on raw score but deliberately NOT listed as flagship: **[sourcehound](https://github.com/ishan-parihar/sourcehound)** (`9.43`, private, re-publication planned) and **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** (`8.36`, private, gate red at 76/8/8 of 95) — a reader cannot re-run either gate today. Both stay in the [catalog](#complete-project-catalog-49-ranked-projects--1-struck--6-web-sites), locked, capped at B. The claim is not "I can build agents" — it is "I can build agent systems whose behaviour I can prove at a commit, and hand you the proof to re-run."
 
 ---
 
@@ -294,6 +292,7 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 
 </details>
 
+
 <details>
 <summary><b>🧠 A-TIER: Production-Grade Engines — Score 6.5–7.99 (16 Projects)</b></summary>
 
@@ -316,48 +315,51 @@ Real code, ranked in the catalog but kept in their own segment because none of i
 
 </details>
 
+
 <details>
 <summary><b>📡 B-TIER: Solid Utilities — Score 4.5–6.49 (15 Projects)</b></summary>
 
-* 🔒 **[sourcehound](https://github.com/ishan-parihar/sourcehound)** `9.43`: High-speed news ingestion pipeline — 11 sophistication families, 93 MCP tools, 15 releases, 411 sources in 47 countries.
-* 🔒 **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `8.36`: Multi-agent daemon + bundled LifeOS MCP server (35 tools, LanceDB/SQLite + Telegram). 76 passing, 8 failing, 8 errors of 95 cases (measured `bun test` at HEAD, 2026-10-28 — its own gate is red), 10 sophistication families.
-* 🔒 **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `7.88`: Modular intelligence framework — Codename Chimera. Interchangeable modules (reasoning, memory, tools, models) snapping into a central spine. 63K LOC (Rails engine), CI build, MIT license. Experimental.
+* **[sourcehound](https://github.com/ishan-parihar/sourcehound)** `9.43`: High-speed news ingestion pipeline — 11 sophistication families, 93 MCP tools, 15 releases, 411 sources in 47 countries.
+* **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** `8.36`: Multi-agent daemon + bundled LifeOS MCP server (35 tools, LanceDB/SQLite + Telegram). 76 passing, 8 failing, 8 errors of 95 cases (measured `bun test` at HEAD, 2026-10-28 — its own gate is red), 10 sophistication families.
+* **[kali-mahabali](https://github.com/ishan-parihar/kali-mahabali)** `7.88`: Modular intelligence framework — Codename Chimera. Interchangeable modules (reasoning, memory, tools, models) snapping into a central spine. 63K LOC (Rails engine), CI build, MIT license. Experimental.
 * **[swiggy-lyr](https://github.com/ishan-parihar/swiggy-lyr)** `6.02`: Unified Swiggy MCP — Food, Instamart and Dineout in one server with one OAuth token. MIT, 3 measured CLI commands.
 * **[discord-lyr](https://github.com/ishan-parihar/discord-lyr)** `6.02`: Local-first Discord data CLI (SQLite sync, search, analytics). 41 tests passing (measured `pytest` at HEAD, 2026-10-30), 10 releases, 2 CI workflows.
 * **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** `5.90`: Forced cognitive mode engine implementing 13 analysis frameworks. 5 test suites (compiled-JS asserts, measured `npm test` at HEAD, 2026-10-28 — not a per-case runner, so no case count exists), 13 MCP tools, 5 sophistication families.
 * **[android-webcam](https://github.com/ishan-parihar/android-webcam)** `5.80`: Android phone as webcam and microphone on the Linux desktop — 720p/1080p, front/back, torch, mic. Kotlin + QML + Python, MIT. Real desktop tooling (infra category).
-* 🔒 **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** `5.63`: LifeOS conversational interface — Telegram bot + agent CLI (simulate/direct/debug). 12K LOC, 33 tests, v0.1.0.
+* **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** `5.63`: LifeOS conversational interface — Telegram bot + agent CLI (simulate/direct/debug). 12K LOC, 33 tests, v0.1.0.
 * **[AI-CAD](https://github.com/ishan-parihar/AI-CAD)** `5.62`: AI-powered CAD platform — FastAPI floor-plan generation, ezdxf DXF export, real-time collaboration. TypeScript + Python + Shell, MIT, 23 measured endpoints.
 * **[ishan-parihar](https://github.com/ishan-parihar/ishan-parihar)** `5.40`: This profile repo — the README, its measurement scripts, and the register that measures every other row. Scored and shown for completeness, tagged `profile` so no reader mistakes configuration for a software project.
 * **[threads-lyr](https://github.com/ishan-parihar/threads-lyr)** `5.34`: Threads.net MCP server. 57 tests passing (measured `pytest` at HEAD, 2026-10-30).
-* 🔒 **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** `5.04`: Unified CLI + MCP server for Notion-based LifeOS. 31 tools, 8 sophistication families — zero automated tests across 18K Rust LOC.
+* **[lifeos-ops](https://github.com/ishan-parihar/lifeos-ops)** `5.04`: Unified CLI + MCP server for Notion-based LifeOS. 31 tools, 8 sophistication families — zero automated tests across 18K Rust LOC.
 * **[palimpsest](https://github.com/ishan-parihar/palimpsest)** `4.98`: A training system for one mind — the AI is the trainer, the digestion happens in the reader. TypeScript + Python, built on an upstream harness.
 * **[meme-lyr](https://github.com/ishan-parihar/meme-lyr)** `4.88`: TypeScript CLI meme generator. 25 tests, tag-only CI + release pipeline, v2.0.0.
 * **[project-genome](https://github.com/ishan-parihar/project-genome)** `4.54`: A project's knowledge genome — owned document roles, mutability classes, and a stdlib CLI (wake/ask/close) that checks them. 11 measured commands, MIT. The same tool that gates this portfolio's own documentation.
 
 </details>
 
+
 <details>
 <summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 or policy-capped (9 Projects + 1 Struck)</b></summary>
 
 * **[holosim-infinite](https://github.com/ishan-parihar/holosim-infinite)** `7.48` (experimental): Math simulator tracking emergent agent interactions — 489K LOC, **no measurable test count: the workspace does not compile at HEAD** (10 duplicate-definition errors in `holonic_realms`, `cargo build` on a clean export, 2026-10-28), 11 sophistication families. Experimental.
 * **[consciousness-fabricator](https://github.com/ishan-parihar/consciousness-fabricator)** `6.33` (experimental): Audio pipeline compiling dynamic background sounds. 144 passing, 13 failing (measured `pytest` at HEAD, 2026-10-28) + architecture docs. Experimental.
-* ~~**[icode](https://github.com/ishan-parihar/icode)** `6.21` (archived): Rust command runner parsing agent file edit logs — 11 sophistication families. Archived; its 2,095-test figure predates the archive and cannot be re-measured here.<!-- retired-link: measured 2026-11-02, `gh api repos/ishan-parihar/icode` returns HTTP 404 — the repository is GONE from GitHub, not merely archived, so the profile README is the artefact that still links it. The row is struck through rather than deleted under the no-deletion rule, and its tier contribution is removed from the counts above. `retired-link:` is the marker `check_repo_links.py` requires on the same line as a deliberately-kept dead link: a visible declaration in the document, not a hidden allowlist, so the gate still fails on any dead link that is NOT declared here — and a dropped link would stop being declared at all. -->~~
-* **[jesse](https://github.com/ishan-parihar/jesse)** `6.08` (archived): Deprecated — its own README says so ("no longer actively maintained"). 21 measured CLI commands, MIT. Ranked at its measured score and capped at C by the documented archived/deprecated policy.
-* **[CineSync](https://github.com/ishan-parihar/CineSync)** `5.00` (archived): Character-asset automation pipeline for lipsync animation. 13.7K LOC, 2 CI workflows. Archived.
+* ~~**[icode](https://github.com/ishan-parihar/icode)** `6.21` (deprecated): Rust command runner parsing agent file edit logs — 11 sophistication families. Archived; its 2,095-test figure predates the archive and cannot be re-measured here.<!-- retired-link: measured 2026-11-02, `gh api repos/ishan-parihar/icode` returns HTTP 404 — the repository is GONE from GitHub, not merely archived, so the profile README is the artefact that still links it. The row is struck through rather than deleted under the no-deletion rule, and its tier contribution is removed from the counts above. `retired-link:` is the marker `check_repo_links.py` requires on the same line as a deliberately-kept dead link: a visible declaration in the document, not a hidden allowlist, so the gate still fails on any dead link that is NOT declared here — and a dropped link would stop being declared at all. -->~~
+* **[jesse](https://github.com/ishan-parihar/jesse)** `6.08` (deprecated): Deprecated — its own README says so ("no longer actively maintained"). 21 measured CLI commands, MIT. Ranked at its measured score and capped at C by the documented archived/deprecated policy.
+* **[CineSync](https://github.com/ishan-parihar/CineSync)** `5.00` (deprecated): Character-asset automation pipeline for lipsync animation. 13.7K LOC, 2 CI workflows. Deprecated — not GitHub-archived (`gh api` returns `archived=false`, measured 2026-11-03): the work stopped, the repo is still open.
 * **[obscura-core](https://github.com/ishan-parihar/obscura-core)** `4.48`: Shared cookie-vault + CDP daemon powering the lyr family — highest cross-repo in-degree (4 dependents).
-* **[workout-factory](https://github.com/ishan-parihar/workout-factory)** `4.02`: Archived trainer voice/audio-cache factory.
+* **[workout-factory](https://github.com/ishan-parihar/workout-factory)** `4.02` (deprecated): Archived trainer voice/audio-cache factory. Deprecated — not GitHub-archived (`gh api` returns `archived=false`, measured 2026-11-03).
 * **[linux-telemetry](https://github.com/ishan-parihar/linux-telemetry)** `4.02`: Production-grade Linux usage telemetry — window activity, browser history, KDE app directories, process launches, desktop-file executions, minimal system impact. Python, MIT, 12 measured commands.
 * **[n8n-compiler](https://github.com/ishan-parihar/n8n-compiler)** `4.00`: Treat n8n workflows as code. 10 measured CLI commands, CI-gated. Infra category — real tooling, no agent surface.
 * **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** `3.83`: Live plugin bridging a persistent kernel into Hermes's stateless runtime. 3 MCP tools, 14 contract tests, v0.2.0.
 
 </details>
 
+
 <details>
 <summary><b>📉 D-TIER: Minimal / Stalled — Score < 3.25 (7 Projects)</b></summary>
 
 * **[metatrader-docker-deployment](https://github.com/ishan-parihar/metatrader-docker-deployment)** `2.79`: Production MetaTrader 4 & 5 Docker deployment with noVNC browser access. Infra category, 5 measured commands, MIT.
-* 🔒 **[lifeos-saas](https://github.com/ishan-parihar/lifeos-saas)** `2.64`: Agent hosting stack (NullClaw, Honcho, Postgres). 760 LOC, 0 tests.
+* **[lifeos-saas](https://github.com/ishan-parihar/lifeos-saas)** `2.64`: Agent hosting stack (NullClaw, Honcho, Postgres). 760 LOC, 0 tests.
 * **[pill-bar](https://github.com/ishan-parihar/pill-bar)** `2.05`: Omarchy segmented pill bar — pills only behind widget clusters, tray always expanded, no chevron. QML + JavaScript, MIT.
 * **[segmented-pill-bar](https://github.com/ishan-parihar/segmented-pill-bar)** `1.98`: Omarchy segmented pill bar — transparent window, pills behind clusters only. QML + JavaScript.
 * **[pill-suite](https://github.com/ishan-parihar/pill-suite)** `1.98`: Omarchy pill bar + static tray bundle. QML + JavaScript.
