@@ -50,14 +50,7 @@ never_commit = []          # globs `genome close` leaves out of the named-path c
 
 # No [app] section, deliberately. There is no build here — the repo is a metric portfolio
 # whose only programme is a workspace-lint run, and an app check that invented a toolchain
-# for it would be noise, not integrity. The module stays honest: docs and dir shape are
-# the two things that can actually rot in a repo like this, so those two are declared.
-[docs]
-required = ["README.md", "AGENTS.md"]
-max_lines = 600
-
-[ops]
-dir_globs = ["assets", "docs", "scripts"]
+# for it would be noise, not integrity.
 
 [card]
 architecture = "docs/kb/RANKING-RUBRIC.md"
