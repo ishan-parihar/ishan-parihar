@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "measured_at": "2026-11-06T12:55:55Z",
+ "measured_at": "2026-11-06T13:41:36Z",
  "engine": "scripts/measure.py",
  "rule_source": "genome.toml [federation]",
  "catalog_rule_source": "fleet/roster.json catalog.live",
@@ -27,12 +27,12 @@
   "published": {
    "members": 75,
    "loc": {
-    "value": 3455128,
+    "value": 3455893,
     "repos_reporting": 75,
     "repos_null": []
    },
    "test_markers": {
-    "value": 31424,
+    "value": 31431,
     "repos_reporting": 59,
     "repos_null": [
      "AI-CAD",
@@ -143,12 +143,12 @@
   "federation": {
    "members": 65,
    "loc": {
-    "value": 3398009,
+    "value": 3398774,
     "repos_reporting": 65,
     "repos_null": []
    },
    "test_markers": {
-    "value": 31313,
+    "value": 31320,
     "repos_reporting": 55,
     "repos_null": [
      "andrometry",
@@ -316,7 +316,7 @@
      "path": "ishan-parihar",
      "membership": "federation",
      "language": "python",
-     "loc": 4750,
+     "loc": 4774,
      "tests": null,
      "crates": 0,
      "surface": "library",
@@ -680,8 +680,8 @@
      "path": "agentic-utility/interaction-surfaces/switchpost",
      "membership": "federation",
      "language": "rust",
-     "loc": 161722,
-     "tests": 1048,
+     "loc": 162463,
+     "tests": 1055,
      "crates": 1,
      "surface": "hybrid",
      "gate": "cargo test --lib"
@@ -969,8 +969,8 @@
        "path": "agentic-utility/interaction-surfaces/switchpost",
        "membership": "federation",
        "language": "rust",
-       "loc": 161722,
-       "tests": 1048,
+       "loc": 162463,
+       "tests": 1055,
        "crates": 1,
        "surface": "hybrid",
        "gate": "cargo test --lib"
@@ -4860,14 +4860,14 @@
    "department": null,
    "membership": "federation",
    "head": "4c3fb43ea65cc23411df013b1094b887adca72ea",
-   "dirty_paths": 7,
+   "dirty_paths": 10,
    "language": null,
    "language_marker": null,
    "frameworks": [],
-   "loc": 4750,
+   "loc": 4774,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "python": 4750
+    "python": 4774
    },
    "dominant_language": "python",
    "test_markers": null,
@@ -9098,14 +9098,14 @@
    "department": "interaction-surfaces",
    "membership": "federation",
    "head": "210408448a1dd751b1dd7b92f1ec197d309ce616",
-   "dirty_paths": 51,
+   "dirty_paths": 58,
    "language": "rust",
    "language_marker": "Cargo.toml",
    "frameworks": [],
-   "loc": 161722,
+   "loc": 162463,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "rust": 125255,
+    "rust": 125996,
     "svelte": 26966,
     "typescript": 5571,
     "shell": 1776,
@@ -9113,7 +9113,7 @@
     "sql": 782
    },
    "dominant_language": "rust",
-   "test_markers": 1048,
+   "test_markers": 1055,
    "test_marker_method": "grep -rE '^\\s*#\\[(test|tokio::test)\\]' --include='*.rs' (attribute, working tree, tests/ INCLUDED, .rs only \u2014 a prose mention of #[test] in a comment or a .sh file is not a marker)",
    "mcp_tools": 389,
    "mcp_tool_method": "grep -r '#\\[tool(' --include='*.rs' (attribute, working tree)",
