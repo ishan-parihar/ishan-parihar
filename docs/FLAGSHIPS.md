@@ -1,15 +1,19 @@
 # Flagship Deep Dives — ishan-parihar Profile
 
-The eight flagship systems in full prose. The profile README carries the table
-that points here; this file owns the detail, because the README has a hard 400-line
-cap (its own S08 rubric rule) and "detail belongs in `docs/`, not the README".
+**Status: superseded 2026-11-02, reconciled 2026-11-06.** This file once held the
+flagship write-ups when the README exceeded its 400-line cap. The page now sits
+under its 400-line ceiling, so the dives live in `README.md` and this file is kept
+only as the archive of what was moved. **Read `README.md`**; the tiers and the deep
+dives both live there now.
 
-**Status: superseded 2026-11-02.** This file once held the flagship write-ups when
-the README exceeded its 400-line cap. The page now sits at exactly 400 lines — the one
-length that satisfies both its own rubric (ceiling 400) and the archetype scorer
-(curated-list floor 400) — so the dives are back in the README and this file is kept
-only as the archive of what was moved. Read `README.md`; the tiers and the deep dives
-both live there now.
+**Reconciled 2026-11-06.** The archived prose below describes the EIGHT flagship
+systems the page carried then, and its figures are the ones measured on 2026-10-20.
+The live page now carries **TEN** flagship dives, ordered by the score
+`scripts/rank_score.py` computes: sourcehound, operant, switchpost, mysterium,
+openscript, tdg-rust, linkedin-lyr, mindstrata, deckmill, scorestrata — with
+`browsefleet` dropped and `sourcehound` added. Their figures were re-measured on
+2026-11-06 and live in the README, not here. This file is an archive of a past
+state, not a second source for a current number.
 
 Each dive states the date and command that measured it, so a figure can be re-checked
 against the same source rather than trusted.

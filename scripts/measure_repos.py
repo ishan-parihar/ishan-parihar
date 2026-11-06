@@ -270,15 +270,38 @@ CONCUR_RE = re.compile(
     r"\bactix\b|\basync_trait\b|\bmpsc::|\bArc<Mutex>\b|modelcontextprotocol|\brmcp\b",
     re.IGNORECASE,
 )
-# MCP tool registration patterns — Python FastMCP decorators (@mcp.tool(...))
-# AND Rust rmcp attribute macros (#[tool(...)]). The Rust form was missing
-# (2026-08-13 fix): every rmcp-based repo (social-forge, igs-rust, tdg-rust,
-# slideforge-rust) measured 0 mcp hits and fell to the wrong surface. The
-# pattern is `tool` + `(` so #[tool_router(...)] (a macro, not a tool) does
-# not match.
+# MCP tool registration patterns — Python FastMCP decorators (@mcp.tool(...)),
+# Rust rmcp attribute macros (#[tool(...)]), AND the three forms those two
+# missed (measured 2026-11-06: the engine returned 0 for repos that clearly
+# expose a surface, and the page inherited hand-entered counts instead):
+#   mcp.tool()(fn)   — etmoney-lyr's register_fund_tools(mcp) family
+#   add_tool(...)    — automaton (Rust) and andrometry (Go)
+#   registerTool(...)— c-suite-agents (TypeScript)
+#   "name": "..."    — openscript declares its tools as JSON objects inside a
+#                      rust `json!([...])` array, with an inputSchema beside
+#                      each name. Counted only when the same object also
+#                      carries an inputSchema, so a bare "name" field in any
+#                      other JSON does not become a phantom tool.
+# The Rust form was itself missing (2026-08-13 fix): every rmcp-based repo
+# (social-forge, igs-rust, tdg-rust, slideforge-rust) measured 0 mcp hits and
+# fell to the wrong surface. The Rust pattern is `tool` + `(` so
+# #[tool_router(...)] (a macro, not a tool) does not match.
 MCP_TOOL_DEC = re.compile(
     r"@\s*(?:mcp|app|router|server)\.tool\s*\(|"
-    r"#\s*\[tool\s*\("
+    r"#\s*\[tool\s*\(|"
+    r"\.tool\s*\(\s*\)\s*\(|"
+    r"\badd_tool\s*\(|"
+    r"\bregisterTool\s*\(",
+    re.IGNORECASE,
+)
+# The JSON-object form: a tool named beside an inputSchema. A tool object
+# carries both, so the co-occurrence is the signal — not "name" alone.
+# The gap between them may contain braces (a description can show a JSON
+# example, and openscript's `system.config.set` does), so the gap is bounded
+# by length rather than by "no brace".
+MCP_TOOL_JSON_DEC = re.compile(
+    r"\"name\"\s*:\s*\"[^\"]+\".{0,4000}?\"inputSchema\"",
+    re.DOTALL,
 )
 # Class-aware surface detection (v6, 2026-08-12). A project is scored against
 # the surface it actually exposes — never zeroed for lacking MCP:
@@ -424,6 +447,7 @@ def measure(name, relpath, category):
             test_hits += len(pat.findall(content))
         concur += len(CONCUR_RE.findall(content))
         mcp_hits += len(MCP_TOOL_DEC.findall(content))
+        mcp_hits += len(MCP_TOOL_JSON_DEC.findall(content))
         cli_hits += len(CLI_CMD_RE.findall(content))
         rest_hits += len(REST_ROUTE_RE.findall(content))
         if f.endswith("Cargo.toml") or ext in (".rs", ".py"):

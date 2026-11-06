@@ -43,19 +43,28 @@ TIER_HEADS = {
     "D": "📉 D-TIER: Minimal / Stalled",
 }
 
-# The score band each tier holds when no cap applies. Tier headers used to print
-# these as absolutes ("B-TIER: Solid Utilities — Score 4.5-6.49") and they became
-# false the moment a cap was introduced: a private repo is capped to B so
-# sourcehound at 9.43 and c-suite-agents at 8.36 sit under a header promising
-# 4.5-6.49, and an experimental repo capped to C puts holosim-infinite at 7.48
-# under "3.25-4.49 or policy-capped". Measured 2026-11-03, the operator reported
-# the section as misordered because of exactly this: the ordering inside each
-# tier is correct, but the header contradicts the rows beneath it.
+# The score band each block holds. These are now TRUE rather than aspirational,
+# because a block's members are chosen by the band its members' own scores
+# fall in, not by the tier policy assigns them.
 #
-# The header therefore no longer quotes a range it cannot keep. It states the
-# tier, the row count, and how many rows are there by cap rather than by score,
-# and each capped row carries its reason inline (see note_tag). A range is shown
-# only when it is true — i.e. when the tier holds no capped rows.
+# MEASURED DEFECT, 2026-11-04. Grouping rows by POLICY tier (what `rank_score.py`'s
+# `tier()` returns) cannot produce a monotone catalog: a `private` repo is capped
+# to B and an `experimental` repo to C, so a 9.43 (sourcehound) lands in the
+# 4.5-6.49 block and a 7.48 (holosim-infinite) lands in the 3.25-4.49 block.
+# The page-wide score sequence therefore RISES twice (automaton 6.54 ->
+# sourcehound 9.43 at the A/B boundary, project-genome 4.54 ->
+# holosim-infinite 7.48 at the B/C boundary). The operator reported this twice as
+# "the order of projects is incorrect in the Complete Project Catalog"; the first
+# response reworded the tier HEADERS, which left the rows exactly as misordered.
+#
+# Grouping by SCORE BAND instead (the tier the score alone earns, with no cap
+# applied) yields 0 rises over all 57 ranked rows. It also keeps §7's cap policy
+# intact: a capped row still carries its inline tag and its count in the block
+# header, so a reader still sees that sourcehound is private and not
+# production-grade. What changed is where the row SITS: inside the block its
+# own score earned, rather than in a lower block its policy tier assigned.
+#
+# The band ranges below are the exact boundaries `_natural_tier` applies.
 TIER_BANDS = {
     "S": "Score ≥ 8.0",
     "A": "Score 6.5–7.99",
@@ -96,7 +105,7 @@ NEW_DESC = {
     ),
     "holon": (
         "Harness-agnostic agentic OS that runs as a self-healing, self-evolving organization "
-        "of persistent AI employees. 45K LOC, MIT, 10 measured sophistication families. "
+        "of persistent AI employees. 57K LOC, MIT, 10 measured sophistication families. "
         "Enters at S-tier (8.10) on the same rubric as every other engine here."
     ),
     "memory-wire": (
@@ -319,7 +328,14 @@ def load_verbatim_descriptions(path: str):
         # `workout-factory` therefore had no verbatim description, and the generator
         # exited 2 refusing to emit a row that says nothing. Any tag the generator
         # can emit must be parseable here, or regeneration cannot round-trip.
-        r"`[\d.]+`(?: \((?:capped|archived|deprecated|experimental|infra|tool|profile|spec)\))?"
+        #
+        # `private` joins that list for the same reason, measured 2026-11-04: the
+        # six private rows carry the `(private)` tag, so without it the three
+        # software private rows in the catalog (sourcehound, c-suite-agents,
+        # kali-mahabali) had no verbatim description and the generator refused to
+        # emit them at all — the catalog could not be regenerated with the private
+        # cap in place.
+        r"`[\d.]+`(?: \((?:capped|archived|deprecated|experimental|private|infra|tool|profile|spec)\))?"
         r"(?: <!--[^>]*-->)?: (.+)$",
         re.M,
     )
@@ -401,14 +417,22 @@ def main() -> int:
     vis = load_visibility(f"{HERE}/data/github-visibility.txt")
 
     rows = [r for r in ranked if r[0] not in sites]
-    by_tier = defaultdict(list)
+    # Bucketed by the band each row's OWN score earns, not by the tier policy
+    # assigns it. A policy-tier bucketing puts a capped repo (private -> B,
+    # experimental/deprecated -> C) into a block whose band its score cannot
+    # match, and the catalog's score sequence then rises twice across the page -
+    # the defect the operator has now reported twice. Score-band bucketing gives
+    # a globally monotone catalog (0 rises, measured over all 57 rows,
+    # 2026-11-04) while §7's caps still render: the row keeps its inline tag and
+    # the block header still names how many rows are capped and by what.
+    by_band = defaultdict(list)
     for name, score, tier, note in rows:
-        by_tier[tier].append((name, score, tier, note))
+        by_band[_natural_tier(score)].append((name, score, tier, note))
 
     out = []
     reused = new = 0
-    for tier in "SABCD":
-        members = sorted(by_tier[tier], key=lambda r: -r[1])
+    for band in "SABCD":
+        members = sorted(by_band[band], key=lambda r: -r[1])
         n = len(members)
         # A struck row is counted separately, because it is not an active member
         # of the tier: folding icode into "11 Projects" made the label read as
@@ -420,20 +444,24 @@ def main() -> int:
         if n_struck:
             label += f" + {n_struck} Struck"
 
-        # Report what this tier actually holds. If every member is here by score,
-        # quote the band - it is true. If any member is here by a cap, the band
-        # would be a lie, so say so instead and count them: a reader looking at
-        # sourcehound's 9.43 under "Solid Utilities" needs to be told why, and the
-        # reason is that a private repo is capped to B regardless of its code.
+        # The band is now a FACT about the block rather than a promise, because
+        # membership is by score. A row that policy would have moved lower still
+        # shows the tag that moved it, and the header names the count, so a
+        # reader of the S block can see that sourcehound's 9.43 is inside its own
+        # band while still reading that it is private and not production-grade.
+        # Measured 2026-11-04: 8 rows carry such a cap across the whole catalog
+        # (3 private, 2 experimental, 3 deprecated).
+        band_text = TIER_BANDS[band]
         capped_rows = [r for r in members if r[3]]
         if capped_rows:
             # Count by the reason itself. Reading `note_tag(note)` first lost the
             # distinction between a real cap ("private: link 404s", which
-            # DEMOTES a repo below its score) and a mere annotation ("infra: no
-            # agent surface", "spec: knowledge corpus", which does not move it at
-            # all) - both came out as "1 policy", which tells the reader nothing.
-            # A row's tier is compared against the tier its score alone would earn:
-            # if they differ, the note is why, and that is a cap.
+            # DEMOTES a repo below its score's tier) and a mere annotation
+            # ("infra: no agent surface", "spec: knowledge corpus", which does not
+            # move it at all) - both came out as "1 policy", which tells the
+            # reader nothing. A row's tier is compared against the tier its
+            # score alone would earn: if they differ, the note is why, and that
+            # is a cap.
             demoted = defaultdict(int)
             for _n, _s, _t, note in capped_rows:
                 natural = _natural_tier(_s)
@@ -441,15 +469,11 @@ def main() -> int:
                     demoted[note_tag(note) or "policy"] += 1
             if demoted:
                 caps = ", ".join(f"{v} {k}" for k, v in sorted(demoted.items()))
-                band = (f"{TIER_BANDS[tier]} where applicable — "
-                        f"{sum(demoted.values())} capped by policy ({caps})")
-            else:
-                band = TIER_BANDS[tier]
-        else:
-            band = TIER_BANDS[tier]
+                band_text = (f"{band_text} — {sum(demoted.values())} capped by "
+                             f"policy ({caps}), shown at the score they earned")
         out.append("")
         out.append("<details>")
-        out.append(f"<summary><b>{TIER_HEADS[tier]} — {band} ({label})</b></summary>")
+        out.append(f"<summary><b>{TIER_HEADS[band]} — {band_text} ({label})</b></summary>")
         # A blank line MUST separate </summary> from the list, and no <br> may sit
         # between them. Both measured against GitHub's own renderer
         # (`gh api -X POST markdown`) rather than assumed, 2026-11-02:

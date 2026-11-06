@@ -21,7 +21,7 @@ feed = "docs/kb/feed.md"
 workflows = "docs/kb/workflows"
 
 [core]
-gate = "python3 scripts/lint_readmes.py --repo ishan-parihar --include-profile && python3 scripts/check_repo_links.py && python3 scripts/check_anchors.py && python3 scripts/check_readme_render.py"
+gate = "python3 scripts/lint_readmes.py --repo ishan-parihar --include-profile && python3 scripts/check_repo_links.py && python3 scripts/check_anchors.py && python3 scripts/check_readme_render.py && python3 scripts/check_order.py"
 # the portfolio's own README rubric, run locally: GitHub Actions is not
 # available for this portfolio, so the gate is the local check.
 #
@@ -42,6 +42,20 @@ gate = "python3 scripts/lint_readmes.py --repo ishan-parihar --include-profile &
 # check compares the returned repo NAME against the name the document claims.
 # Chained with && so both must pass; the link check fails closed (exit 2) when
 # neither `gh` nor `curl` can resolve, so an unverifiable run is never a pass.
+#
+# `check_order.py` was added 2026-11-05 because the operator reported, TWICE, that
+# "the order of projects is incorrect in the Complete Project Catalog", and the
+# first response reworded the tier HEADERS while the rows stayed misordered. The
+# page presents six ordered project lists (the catalog's five score-band blocks,
+# the four ecosystem tables, the flagship table, and the Value Proposition table)
+# and every one of them had at least one row out of order at some point. The
+# check asserts each list's order against `rank_score.py` — the engine that
+# produces the numbers — rather than against a human reading the page, and it
+# also asserts the page's own self-descriptions (the heading count, the ToC and
+# hero anchors, the stated flagship count, the test composite's arithmetic, and
+# that the flagship table and its deep dives name the same set). A gate that
+# passed while the page read wrong is what let the first fix through; this one
+# exits 1 and names the defect instead.
 worklog_form = "file"      # or "numbered" (worklog = a directory of NNNN-date-slug.md + INDEX.md)
 archive_form = "flat"      # or "generations" (archive/<generation>/ + README manifest, no tombstones)
 living_plans = []          # plans that evolve (phase rows, a 'Resume here' section)
