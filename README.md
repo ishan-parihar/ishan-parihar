@@ -4,11 +4,11 @@ I build and operate production agentic infrastructure: MCP servers, agent runtim
   <img src="./assets/readme/hero.svg" width="100%" alt="Ishan Parihar — Systems &amp; Infrastructure Engineer. A constellation of Rust, TypeScript, Python and MCP nodes around a central hub.">
 </p>
 
-<p align="center"><b>Agentic AI Systems Engineer &amp; Operator</b> · Production Agentic Infrastructure · AI-Augmented Architecture · Multi-Agent Orchestration</p>
+<p align="left"><b>Agentic AI Systems Engineer &amp; Operator</b> · Production Agentic Infrastructure · AI-Augmented Architecture · Multi-Agent Orchestration</p>
 
-<p align="center"> 🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar/) · 📍 Noida, India · ✈️ Remote: worldwide · 📧 [Get in touch](mailto:contact@ishanparihar.com) </p>
+🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar/) · 📍 Noida, India · ✈️ Remote: worldwide · 📧 [Get in touch](mailto:contact@ishanparihar.com)
 
-<p align="center"><b>Every claim below carries a commit, and every number is re-measured.</b> Start with <a href="#hire-me--or-verify-the-code-yourself-first">Hire Me</a>, or read the <a href="#complete-project-catalog-56-ranked-projects--1-struck--6-web-sites">full catalog</a> and check the code yourself first.</p>
+<p align="left"><b>Every claim below carries a commit, and every number is re-measured.</b> Start with <a href="#hire-me--or-verify-the-code-yourself-first">Hire Me</a>, or read the <a href="#complete-project-catalog-56-ranked-projects--1-struck--6-web-sites">full catalog</a> and check the code yourself first.</p>
 
 ## Contents
 
