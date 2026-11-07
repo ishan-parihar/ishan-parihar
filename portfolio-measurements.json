@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "measured_at": "2026-11-06T23:01:35Z",
+ "measured_at": "2026-11-07T03:30:49Z",
  "engine": "scripts/measure.py",
  "rule_source": "genome.toml [federation]",
  "catalog_rule_source": "fleet/roster.json catalog.live",
@@ -27,12 +27,12 @@
   "published": {
    "members": 75,
    "loc": {
-    "value": 3420314,
+    "value": 3423170,
     "repos_reporting": 75,
     "repos_null": []
    },
    "test_markers": {
-    "value": 31480,
+    "value": 31526,
     "repos_reporting": 59,
     "repos_null": [
      "AI-CAD",
@@ -76,7 +76,7 @@
     ]
    },
    "cli_subcommands": {
-    "value": 1230,
+    "value": 1231,
     "repos_reporting": 38,
     "repos_null": [
      "AI-CAD",
@@ -143,12 +143,12 @@
   "federation": {
    "members": 65,
    "loc": {
-    "value": 3363195,
+    "value": 3366051,
     "repos_reporting": 65,
     "repos_null": []
    },
    "test_markers": {
-    "value": 31369,
+    "value": 31415,
     "repos_reporting": 55,
     "repos_null": [
      "andrometry",
@@ -180,7 +180,7 @@
     ]
    },
    "cli_subcommands": {
-    "value": 1219,
+    "value": 1220,
     "repos_reporting": 34,
     "repos_null": [
      "andrometry",
@@ -305,8 +305,8 @@
      "path": "holon",
      "membership": "federation",
      "language": "python",
-     "loc": 59799,
-     "tests": 954,
+     "loc": 62696,
+     "tests": 973,
      "crates": 0,
      "surface": "cli",
      "gate": "./scripts/gate.sh"
@@ -377,8 +377,8 @@
      "path": "agentic-harness/operant",
      "membership": "federation",
      "language": "rust",
-     "loc": 520326,
-     "tests": 5714,
+     "loc": 521504,
+     "tests": 5730,
      "crates": 9,
      "surface": "cli",
      "gate": "./scripts/check.sh check --workspace && cargo test --workspace"
@@ -460,8 +460,8 @@
      "path": "agentic-utility/proxy/artificial-route",
      "membership": "federation",
      "language": "rust",
-     "loc": 122669,
-     "tests": 2524,
+     "loc": 123408,
+     "tests": 2535,
      "crates": 17,
      "surface": "cli",
      "gate": "cargo test"
@@ -1083,8 +1083,8 @@
        "path": "agentic-utility/proxy/artificial-route",
        "membership": "federation",
        "language": "rust",
-       "loc": 122669,
-       "tests": 2524,
+       "loc": 123408,
+       "tests": 2535,
        "crates": 17,
        "surface": "cli",
        "gate": "cargo test"
@@ -1528,7 +1528,7 @@
      "path": "webdev/technical-authority",
      "membership": "federation",
      "language": "typescript",
-     "loc": 51186,
+     "loc": 49228,
      "tests": 0,
      "crates": 0,
      "surface": "library",
@@ -1654,7 +1654,7 @@
   }
  ],
  "structure": {
-  "git_repos_in_tree": 113,
+  "git_repos_in_tree": 114,
   "published": 75,
   "classes": {
    "catalog": 10,
@@ -1662,7 +1662,7 @@
    "history": 4,
    "knowledge_base": 17,
    "retired": 2,
-   "third_party": 15,
+   "third_party": 16,
    "venture": 64
   },
   "duplicate_copies": 0,
@@ -2004,6 +2004,13 @@
     "class": "venture",
     "group": "agentic-utility",
     "published": true
+   },
+   {
+    "path": "agentic-utility/proxy/external-repos/OmniRoute",
+    "name": "OmniRoute",
+    "class": "third_party",
+    "group": "agentic-utility",
+    "published": false
    },
    {
     "path": "catalog-repos/AI-CAD",
@@ -2474,20 +2481,20 @@
    "department": null,
    "membership": "federation",
    "head": "3dd3e3a2806367c648cb6d5614a595acdc81980c",
-   "dirty_paths": 43,
+   "dirty_paths": 51,
    "language": "python",
    "language_marker": "pyproject.toml",
    "frameworks": [],
-   "loc": 59799,
+   "loc": 62696,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "python": 50327,
-    "typescript": 8514,
+    "python": 53209,
+    "typescript": 8529,
     "sql": 725,
     "shell": 233
    },
    "dominant_language": "python",
-   "test_markers": 954,
+   "test_markers": 973,
    "test_marker_method": "grep -rE '^\\s*(async )?def test_\\w+' --include='*.py' (attribute, working tree)",
    "mcp_tools": 0,
    "mcp_tool_method": "grep -rE '@(mcp|server|fastmcp)\\.tool' --include='*.py' (attribute, working tree)",
@@ -2563,7 +2570,7 @@
    "group": null,
    "department": null,
    "membership": "federation",
-   "head": "18489f61912eccee0c39882ce21524f5270ad43c",
+   "head": "0a71ad776b56e4e02100576de2164a0caf600789",
    "dirty_paths": 1,
    "language": null,
    "language_marker": null,
@@ -2918,21 +2925,21 @@
    "group": "agentic-harness",
    "department": null,
    "membership": "federation",
-   "head": "cc54f3a7c36066479537e29b46b6be90d661ae55",
-   "dirty_paths": 20,
+   "head": "d3d4aef71286e5bccbfb65239e5384d2bbcc25bb",
+   "dirty_paths": 12,
    "language": "rust",
    "language_marker": "Cargo.toml",
    "frameworks": [],
-   "loc": 520326,
+   "loc": 521504,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "rust": 444555,
+    "rust": 445733,
     "typescript": 41434,
     "python": 28972,
     "shell": 5365
    },
    "dominant_language": "rust",
-   "test_markers": 5714,
+   "test_markers": 5730,
    "test_marker_method": "grep -rE '^\\s*#\\[(test|tokio::test)\\]' --include='*.rs' (attribute, working tree, tests/ INCLUDED, .rs only \u2014 a prose mention of #[test] in a comment or a .sh file is not a marker)",
    "mcp_tools": 0,
    "mcp_tool_method": "grep -r '#\\[tool(' --include='*.rs' (attribute, working tree)",
@@ -5073,10 +5080,10 @@
     "vite",
     "wrangler/cloudflare"
    ],
-   "loc": 51186,
+   "loc": 49228,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "typescript": 40486,
+    "typescript": 38528,
     "svelte": 8301,
     "python": 2083,
     "sql": 316
@@ -5124,13 +5131,14 @@
     "worklog": true
    },
    "docs": {
-    "md_files": 38,
+    "md_files": 39,
     "subdirs": {
      ".": 19,
      "plans": 10,
      "kb": 4,
      "archive": 2,
      "handoff": 2,
+     "audit": 1,
      "drafts": 1
     },
     "roles": {
@@ -7621,25 +7629,25 @@
    "group": "agentic-utility",
    "department": "proxy",
    "membership": "federation",
-   "head": "26c4f1732043bbbab7f02723710753833c1c0947",
-   "dirty_paths": 19,
+   "head": "8c9fa6c41708cdc6e16373bdf3f638d04cc7987f",
+   "dirty_paths": 5,
    "language": "rust",
    "language_marker": "Cargo.toml",
    "frameworks": [],
-   "loc": 122669,
+   "loc": 123408,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "rust": 118282,
+    "rust": 119021,
     "shell": 2512,
     "typescript": 1756,
     "python": 119
    },
    "dominant_language": "rust",
-   "test_markers": 2524,
+   "test_markers": 2535,
    "test_marker_method": "grep -rE '^\\s*#\\[(test|tokio::test)\\]' --include='*.rs' (attribute, working tree, tests/ INCLUDED, .rs only \u2014 a prose mention of #[test] in a comment or a .sh file is not a marker)",
    "mcp_tools": 0,
    "mcp_tool_method": "grep -r '#\\[tool(' --include='*.rs' (attribute, working tree)",
-   "cli_subcommands": 65,
+   "cli_subcommands": 66,
    "cli_subcommand_method": "count of enum variants across derive(Subcommand) blocks --include='*.rs' (attribute, working tree)",
    "crates": 17,
    "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",

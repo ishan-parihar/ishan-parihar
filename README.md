@@ -41,10 +41,10 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 | Metric | Value | Technical Context & Evidence |
 |--------|-------|------------------------------|
-| **MCP Servers** | **17** | 1,190 registered MCP tools across 17 MCP-exposing repos (`portfolio-measurements.json`, measured 2026-11-06, re-derived by `genome close`) |
-| **Rust Crates** | **95** | 95 `Cargo.toml` manifests across the 75 published repos (65 federation + 10 catalog) — vendored, generated and documentation trees excluded (`portfolio-measurements.json`, measured 2026-11-06, re-derived by `genome close`) |
-| **Lines of Code** | **3.42M** | ≈3.42M first-party source lines (Rust, TypeScript, Python, Go, Svelte, QML, shell) across the 75 published repos (65 federation + 10 catalog) (`portfolio-measurements.json`, measured 2026-11-06, re-derived by `genome close`) |
-| **Automated Tests** | **≈31,500 markers** | ≈31,500 test markers across 59 of 75 repos; 16 report none because their language has no marker rule here. Markers are NOT passing cases — gate results are recorded separately with their commit (`portfolio-measurements.json`, measured 2026-11-06, re-derived by `genome close`) |
+| **MCP Servers** | **17** | 1,190 registered MCP tools across 17 MCP-exposing repos (`portfolio-measurements.json`, measured 2026-11-07, re-derived by `genome close`) |
+| **Rust Crates** | **95** | 95 `Cargo.toml` manifests across the 75 published repos (65 federation + 10 catalog) — vendored, generated and documentation trees excluded (`portfolio-measurements.json`, measured 2026-11-07, re-derived by `genome close`) |
+| **Lines of Code** | **3.42M** | ≈3.42M first-party source lines (Rust, TypeScript, Python, Go, Svelte, QML, shell) across the 75 published repos (65 federation + 10 catalog) (`portfolio-measurements.json`, measured 2026-11-07, re-derived by `genome close`) |
+| **Automated Tests** | **≈31,500 markers** | ≈31,500 test markers across 59 of 75 repos; 16 report none because their language has no marker rule here. Markers are NOT passing cases — gate results are recorded separately with their commit (`portfolio-measurements.json`, measured 2026-11-07, re-derived by `genome close`) |
 | **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler — benchmark claim, not an engine attribute |
 | **Production Runtime** | **<10MB** | Stripped static musl Rust binaries with minimal idle RSS, zero dynamic dependencies — benchmark claim, not an engine attribute |
 
