@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "measured_at": "2026-11-07T03:30:49Z",
+ "measured_at": "2026-11-07T03:50:51Z",
  "engine": "scripts/measure.py",
  "rule_source": "genome.toml [federation]",
  "catalog_rule_source": "fleet/roster.json catalog.live",
@@ -27,7 +27,7 @@
   "published": {
    "members": 75,
    "loc": {
-    "value": 3423170,
+    "value": 3424020,
     "repos_reporting": 75,
     "repos_null": []
    },
@@ -143,7 +143,7 @@
   "federation": {
    "members": 65,
    "loc": {
-    "value": 3366051,
+    "value": 3366901,
     "repos_reporting": 65,
     "repos_null": []
    },
@@ -305,7 +305,7 @@
      "path": "holon",
      "membership": "federation",
      "language": "python",
-     "loc": 62696,
+     "loc": 63401,
      "tests": 973,
      "crates": 0,
      "surface": "cli",
@@ -1528,7 +1528,7 @@
      "path": "webdev/technical-authority",
      "membership": "federation",
      "language": "typescript",
-     "loc": 49228,
+     "loc": 49373,
      "tests": 0,
      "crates": 0,
      "surface": "library",
@@ -2485,10 +2485,10 @@
    "language": "python",
    "language_marker": "pyproject.toml",
    "frameworks": [],
-   "loc": 62696,
+   "loc": 63401,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "python": 53209,
+    "python": 53914,
     "typescript": 8529,
     "sql": 725,
     "shell": 233
@@ -2570,7 +2570,7 @@
    "group": null,
    "department": null,
    "membership": "federation",
-   "head": "0a71ad776b56e4e02100576de2164a0caf600789",
+   "head": "70e068c171c77cf88b51f2928d66fbc1144fb779",
    "dirty_paths": 1,
    "language": null,
    "language_marker": null,
@@ -5071,7 +5071,7 @@
    "group": "webdev",
    "department": null,
    "membership": "federation",
-   "head": "f10192a85ff2e0cc15598e4a98edbd910cb51066",
+   "head": "e90960547e6a44cd92c70cc8f71c94fffe74ba98",
    "dirty_paths": 0,
    "language": "typescript",
    "language_marker": "package.json",
@@ -5080,10 +5080,10 @@
     "vite",
     "wrangler/cloudflare"
    ],
-   "loc": 49228,
+   "loc": 49373,
    "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "typescript": 38528,
+    "typescript": 38673,
     "svelte": 8301,
     "python": 2083,
     "sql": 316
@@ -5131,14 +5131,13 @@
     "worklog": true
    },
    "docs": {
-    "md_files": 39,
+    "md_files": 40,
     "subdirs": {
-     ".": 19,
-     "plans": 10,
+     ".": 20,
+     "plans": 11,
      "kb": 4,
      "archive": 2,
      "handoff": 2,
-     "audit": 1,
      "drafts": 1
     },
     "roles": {
@@ -5150,7 +5149,7 @@
      "runbook": true,
      "records": true,
      "plans": true,
-     "audits": true,
+     "audits": false,
      "kb": true
     },
     "method": "find docs -name '*.md' | wc -l, plus the named role paths (attribute, working tree)"
