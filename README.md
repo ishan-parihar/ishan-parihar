@@ -368,7 +368,6 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[static-tray](https://github.com/ishan-parihar/static-tray)** `0.98` (tool): Omarchy static tray — always expanded, no chevron, for segmented pill bars. 48 tracked lines, QML + JavaScript.
 
 </details>
-
 ## 🧭 The Arc: Space → Mind → Infrastructure
 
 Three disciplines shaped this body of work, and each is visible in how the systems are built — **infrastructure for AI agents to operate at production scale**: deterministic where it matters, verifiable everywhere, proven by the artifacts committed beside the code.
