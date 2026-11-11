@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "measured_at": "2026-11-07T03:50:51Z",
+ "measured_at": "2026-11-11T17:45:08Z",
  "engine": "scripts/measure.py",
  "rule_source": "genome.toml [federation]",
  "catalog_rule_source": "fleet/roster.json catalog.live",
@@ -17,22 +17,22 @@
   "structure"
  ],
  "roster": {
-  "federation": 65,
+  "federation": 66,
   "catalog": 10,
-  "published": 75,
+  "published": 76,
   "name_collisions": [],
   "duplicate_paths_dropped": []
  },
  "aggregates": {
   "published": {
-   "members": 75,
+   "members": 76,
    "loc": {
-    "value": 3424020,
-    "repos_reporting": 75,
+    "value": 3331208,
+    "repos_reporting": 76,
     "repos_null": []
    },
    "test_markers": {
-    "value": 31526,
+    "value": 31964,
     "repos_reporting": 59,
     "repos_null": [
      "AI-CAD",
@@ -49,12 +49,13 @@
      "pill-suite",
      "pioneer-qf",
      "segmented-pill-bar",
+     "stage-diagnostics",
      "static-tray",
      "webdev-portfolio"
     ]
    },
    "mcp_tools": {
-    "value": 1190,
+    "value": 1379,
     "repos_reporting": 59,
     "repos_null": [
      "AI-CAD",
@@ -71,12 +72,13 @@
      "pill-suite",
      "pioneer-qf",
      "segmented-pill-bar",
+     "stage-diagnostics",
      "static-tray",
      "webdev-portfolio"
     ]
    },
    "cli_subcommands": {
-    "value": 1231,
+    "value": 1236,
     "repos_reporting": 38,
     "repos_null": [
      "AI-CAD",
@@ -110,6 +112,7 @@
      "project-influencer",
      "quant-signals",
      "segmented-pill-bar",
+     "stage-diagnostics",
      "static-tray",
      "technical-authority",
      "the-undercurrent",
@@ -120,13 +123,13 @@
    },
    "crates": {
     "value": 95,
-    "repos_reporting": 75,
+    "repos_reporting": 76,
     "repos_null": []
    },
    "languages": {
     "python": 33,
-    "typescript": 20,
-    "rust": 12,
+    "typescript": 19,
+    "rust": 13,
     "qml": 6,
     "go": 1,
     "shell": 1,
@@ -134,21 +137,21 @@
    },
    "surfaces": {
     "library": 45,
-    "cli": 13,
-    "mcp": 12,
+    "mcp": 14,
+    "cli": 11,
     "hybrid": 4,
-    "docs": 1
+    "docs": 2
    }
   },
   "federation": {
-   "members": 65,
+   "members": 66,
    "loc": {
-    "value": 3366901,
-    "repos_reporting": 65,
+    "value": 3274089,
+    "repos_reporting": 66,
     "repos_null": []
    },
    "test_markers": {
-    "value": 31415,
+    "value": 31853,
     "repos_reporting": 55,
     "repos_null": [
      "andrometry",
@@ -160,11 +163,12 @@
      "operant-testing",
      "palimpsest",
      "pioneer-qf",
+     "stage-diagnostics",
      "webdev-portfolio"
     ]
    },
    "mcp_tools": {
-    "value": 1190,
+    "value": 1379,
     "repos_reporting": 55,
     "repos_null": [
      "andrometry",
@@ -176,11 +180,12 @@
      "operant-testing",
      "palimpsest",
      "pioneer-qf",
+     "stage-diagnostics",
      "webdev-portfolio"
     ]
    },
    "cli_subcommands": {
-    "value": 1220,
+    "value": 1225,
     "repos_reporting": 34,
     "repos_null": [
      "andrometry",
@@ -209,6 +214,7 @@
      "pioneer-qf",
      "project-influencer",
      "quant-signals",
+     "stage-diagnostics",
      "technical-authority",
      "the-undercurrent",
      "the-undercurrent-web",
@@ -218,13 +224,13 @@
    },
    "crates": {
     "value": 95,
-    "repos_reporting": 65,
+    "repos_reporting": 66,
     "repos_null": []
    },
    "languages": {
     "python": 28,
-    "typescript": 20,
-    "rust": 12,
+    "typescript": 19,
+    "rust": 13,
     "go": 1,
     "qml": 1,
     "shell": 1,
@@ -232,10 +238,10 @@
    },
    "surfaces": {
     "library": 36,
-    "cli": 12,
-    "mcp": 12,
+    "mcp": 14,
+    "cli": 10,
     "hybrid": 4,
-    "docs": 1
+    "docs": 2
    }
   },
   "catalog": {
@@ -305,10 +311,10 @@
      "path": "holon",
      "membership": "federation",
      "language": "python",
-     "loc": 63401,
-     "tests": 973,
+     "loc": 74744,
+     "tests": 1033,
      "crates": 0,
-     "surface": "cli",
+     "surface": "mcp",
      "gate": "./scripts/gate.sh"
     },
     {
@@ -338,7 +344,7 @@
      "path": "pioneer-qf",
      "membership": "federation",
      "language": "python",
-     "loc": 143755,
+     "loc": 150186,
      "tests": null,
      "crates": 0,
      "surface": "library",
@@ -349,11 +355,22 @@
      "path": "project-genome",
      "membership": "federation",
      "language": "python",
-     "loc": 17624,
+     "loc": 18301,
      "tests": 0,
      "crates": 0,
      "surface": "cli",
      "gate": "uv build --wheel --sdist >/dev/null && python3 scripts/test_genome.py && python3 scripts/test_package.py && python3 scripts/test_package_modes.py && python3 scripts/check_docs_lint.py && python3 scripts/check_suite_counts.py && python3 scripts/build.py --check && python3 scripts/check_ps1.py && python3 scripts/genome lint --code E306 E308 E309 E651 E653 E654 E655 E656 E657 E658 --all"
+    },
+    {
+     "name": "stage-diagnostics",
+     "path": "stage-diagnostics",
+     "membership": "federation",
+     "language": "python",
+     "loc": 2476,
+     "tests": null,
+     "crates": 0,
+     "surface": "library",
+     "gate": null
     }
    ],
    "departments": []
@@ -377,8 +394,8 @@
      "path": "agentic-harness/operant",
      "membership": "federation",
      "language": "rust",
-     "loc": 521504,
-     "tests": 5730,
+     "loc": 537507,
+     "tests": 6009,
      "crates": 9,
      "surface": "cli",
      "gate": "./scripts/check.sh check --workspace && cargo test --workspace"
@@ -460,8 +477,8 @@
      "path": "agentic-utility/proxy/artificial-route",
      "membership": "federation",
      "language": "rust",
-     "loc": 123408,
-     "tests": 2535,
+     "loc": 130005,
+     "tests": 2624,
      "crates": 17,
      "surface": "cli",
      "gate": "cargo test"
@@ -613,11 +630,11 @@
      "name": "openscript",
      "path": "agentic-utility/content-creation/openscript",
      "membership": "federation",
-     "language": "python",
-     "loc": 167314,
+     "language": "rust",
+     "loc": 75892,
      "tests": 551,
      "crates": 10,
-     "surface": "cli",
+     "surface": "mcp",
      "gate": "cargo test"
     },
     {
@@ -658,8 +675,8 @@
      "path": "agentic-utility/internet/sourcehound",
      "membership": "federation",
      "language": "rust",
-     "loc": 119203,
-     "tests": 645,
+     "loc": 73360,
+     "tests": 655,
      "crates": 3,
      "surface": "hybrid",
      "gate": "cargo test"
@@ -680,7 +697,7 @@
      "path": "agentic-utility/interaction-surfaces/switchpost",
      "membership": "federation",
      "language": "rust",
-     "loc": 163010,
+     "loc": 163249,
      "tests": 1057,
      "crates": 1,
      "surface": "hybrid",
@@ -815,11 +832,11 @@
        "name": "openscript",
        "path": "agentic-utility/content-creation/openscript",
        "membership": "federation",
-       "language": "python",
-       "loc": 167314,
+       "language": "rust",
+       "loc": 75892,
        "tests": 551,
        "crates": 10,
-       "surface": "cli",
+       "surface": "mcp",
        "gate": "cargo test"
       },
       {
@@ -969,7 +986,7 @@
        "path": "agentic-utility/interaction-surfaces/switchpost",
        "membership": "federation",
        "language": "rust",
-       "loc": 163010,
+       "loc": 163249,
        "tests": 1057,
        "crates": 1,
        "surface": "hybrid",
@@ -1040,8 +1057,8 @@
        "path": "agentic-utility/internet/sourcehound",
        "membership": "federation",
        "language": "rust",
-       "loc": 119203,
-       "tests": 645,
+       "loc": 73360,
+       "tests": 655,
        "crates": 3,
        "surface": "hybrid",
        "gate": "cargo test"
@@ -1083,8 +1100,8 @@
        "path": "agentic-utility/proxy/artificial-route",
        "membership": "federation",
        "language": "rust",
-       "loc": 123408,
-       "tests": 2535,
+       "loc": 130005,
+       "tests": 2624,
        "crates": 17,
        "surface": "cli",
        "gate": "cargo test"
@@ -1528,7 +1545,7 @@
      "path": "webdev/technical-authority",
      "membership": "federation",
      "language": "typescript",
-     "loc": 49373,
+     "loc": 51165,
      "tests": 0,
      "crates": 0,
      "surface": "library",
@@ -1560,11 +1577,11 @@
      "name": "webdev-portfolio",
      "path": "webdev/webdev-portfolio",
      "membership": "federation",
-     "language": "typescript",
-     "loc": 1105,
+     "language": null,
+     "loc": 0,
      "tests": null,
      "crates": 0,
-     "surface": "library",
+     "surface": "docs",
      "gate": "cd my-portfolio && npm run build"
     }
    ],
@@ -1654,8 +1671,8 @@
   }
  ],
  "structure": {
-  "git_repos_in_tree": 114,
-  "published": 75,
+  "git_repos_in_tree": 116,
+  "published": 76,
   "classes": {
    "catalog": 10,
    "evaluation": 1,
@@ -1663,11 +1680,14 @@
    "knowledge_base": 17,
    "retired": 2,
    "third_party": 16,
-   "venture": 64
+   "unclassified": 1,
+   "venture": 65
   },
   "duplicate_copies": 0,
   "duplicates_all_same_head": true,
-  "uncovered_live": [],
+  "uncovered_live": [
+   "agentic-utility/plugins"
+  ],
   "repos": [
    {
     "path": "EXPERIMENTAL/kali-mahabali",
@@ -1997,6 +2017,13 @@
     "class": "venture",
     "group": "agentic-utility",
     "published": true
+   },
+   {
+    "path": "agentic-utility/plugins",
+    "name": "plugins",
+    "class": "unclassified",
+    "group": "agentic-utility",
+    "published": false
    },
    {
     "path": "agentic-utility/proxy/artificial-route",
@@ -2363,6 +2390,13 @@
     "published": true
    },
    {
+    "path": "stage-diagnostics",
+    "name": "stage-diagnostics",
+    "class": "venture",
+    "group": "(root)",
+    "published": true
+   },
+   {
     "path": "telemetry/andrometry",
     "name": "andrometry",
     "class": "venture",
@@ -2480,29 +2514,29 @@
    "group": null,
    "department": null,
    "membership": "federation",
-   "head": "3dd3e3a2806367c648cb6d5614a595acdc81980c",
-   "dirty_paths": 51,
+   "head": "ecd1de533dd92d0dd581b368f7a771a4fc35bbb8",
+   "dirty_paths": 0,
    "language": "python",
    "language_marker": "pyproject.toml",
    "frameworks": [],
-   "loc": 63401,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc": 74744,
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "python": 53914,
+    "python": 65257,
     "typescript": 8529,
     "sql": 725,
     "shell": 233
    },
    "dominant_language": "python",
-   "test_markers": 973,
+   "test_markers": 1033,
    "test_marker_method": "grep -rE '^\\s*(async )?def test_\\w+' --include='*.py' (attribute, working tree)",
-   "mcp_tools": 0,
-   "mcp_tool_method": "grep -rE '@(mcp|server|fastmcp)\\.tool' --include='*.py' (attribute, working tree)",
+   "mcp_tools": 59,
+   "mcp_tool_method": "grep -rE '@(mcp|server|fastmcp)\\.tool' --include='*.py' (attribute, working tree); plus registry-shape declaration(s) python-cli-registry-loop, python-def-tools (the server's own catalog, not an attribute)",
    "cli_subcommands": 9,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
-   "surface": "cli",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
+   "surface": "mcp",
    "genome": {
     "present": true,
     "modules": [
@@ -2533,21 +2567,22 @@
     "worklog": true
    },
    "docs": {
-    "md_files": 116,
+    "md_files": 127,
     "subdirs": {
-     "design": 88,
+     "design": 96,
      ".": 9,
      "archive": 9,
-     "architecture": 4,
+     "architecture": 5,
      "plans": 4,
+     "kb": 2,
      "decisions": 1,
-     "kb": 1
+     "playbooks": 1
     },
     "roles": {
      "agents": true,
      "readme": true,
      "state": false,
-     "worklog": false,
+     "worklog": true,
      "register": true,
      "runbook": false,
      "records": true,
@@ -2570,13 +2605,13 @@
    "group": null,
    "department": null,
    "membership": "federation",
-   "head": "70e068c171c77cf88b51f2928d66fbc1144fb779",
-   "dirty_paths": 1,
+   "head": "ddfe36c2d6a4ea541d2290c03d5a37d1b3e61904",
+   "dirty_paths": 3,
    "language": null,
    "language_marker": null,
    "frameworks": [],
    "loc": 4774,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 4774
    },
@@ -2588,7 +2623,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -2664,7 +2699,7 @@
    "language_marker": "package.json",
    "frameworks": [],
    "loc": 5306,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 2756,
     "typescript": 2507,
@@ -2678,7 +2713,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -2748,15 +2783,15 @@
    "group": null,
    "department": null,
    "membership": "federation",
-   "head": "36b24ff70a1f61a848274f51e29f4723fd20e14a",
-   "dirty_paths": 3,
+   "head": "5241a7f7cc4180c77122e0b616d74537599d39d5",
+   "dirty_paths": 6,
    "language": null,
    "language_marker": null,
    "frameworks": [],
-   "loc": 143755,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc": 150186,
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "python": 140405,
+    "python": 146836,
     "shell": 3350
    },
    "dominant_language": "python",
@@ -2767,7 +2802,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -2837,14 +2872,14 @@
    "department": null,
    "membership": "federation",
    "head": "a501148a8e4b0c7e00acfa64843620d9533b5733",
-   "dirty_paths": 0,
+   "dirty_paths": 9,
    "language": "python",
    "language_marker": "pyproject.toml",
    "frameworks": [],
-   "loc": 17624,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc": 18301,
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "python": 16933,
+    "python": 17610,
     "shell": 691
    },
    "dominant_language": "python",
@@ -2855,7 +2890,7 @@
    "cli_subcommands": 9,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "cli",
    "genome": {
     "present": true,
@@ -2914,6 +2949,93 @@
    "gate_command": "uv build --wheel --sdist >/dev/null && python3 scripts/test_genome.py && python3 scripts/test_package.py && python3 scripts/test_package_modes.py && python3 scripts/check_docs_lint.py && python3 scripts/check_suite_counts.py && python3 scripts/build.py --check && python3 scripts/check_ps1.py && python3 scripts/genome lint --code E306 E308 E309 E651 E653 E654 E655 E656 E657 E658 --all",
    "last_recorded_runtime": null
   },
+  "stage-diagnostics": {
+   "name": "stage-diagnostics",
+   "id": "stage-diagnostics",
+   "path": "stage-diagnostics",
+   "path_parts": [
+    "stage-diagnostics"
+   ],
+   "group": null,
+   "department": null,
+   "membership": "federation",
+   "head": "1ed1a03511f72de80174229a55861edad9fee855",
+   "dirty_paths": 0,
+   "language": null,
+   "language_marker": null,
+   "frameworks": [],
+   "loc": 2476,
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
+   "languages_breakdown": {
+    "python": 2476
+   },
+   "dominant_language": "python",
+   "test_markers": null,
+   "test_marker_method": null,
+   "mcp_tools": null,
+   "mcp_tool_method": null,
+   "cli_subcommands": null,
+   "cli_subcommand_method": null,
+   "crates": 0,
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
+   "surface": "library",
+   "genome": {
+    "present": true,
+    "modules": [
+     "core",
+     "integrity",
+     "records"
+    ],
+    "gate": "",
+    "roles": [
+     "agents",
+     "archive",
+     "asks",
+     "audits",
+     "decisions",
+     "docs",
+     "entry",
+     "ledger",
+     "plans",
+     "readme",
+     "records_index",
+     "register",
+     "regressions",
+     "runbook",
+     "state",
+     "worklog"
+    ],
+    "register": true,
+    "state": true,
+    "worklog": true
+   },
+   "docs": {
+    "md_files": 25,
+    "subdirs": {
+     "design": 11,
+     ".": 4,
+     "archive": 4,
+     "kb": 3,
+     "handoff": 2,
+     "playbooks": 1
+    },
+    "roles": {
+     "agents": true,
+     "readme": true,
+     "state": true,
+     "worklog": true,
+     "register": true,
+     "runbook": true,
+     "records": true,
+     "plans": true,
+     "audits": true,
+     "kb": true
+    },
+    "method": "find docs -name '*.md' | wc -l, plus the named role paths (attribute, working tree)"
+   },
+   "gate_command": "",
+   "last_recorded_runtime": null
+  },
   "operant": {
    "name": "operant",
    "id": "agentic-harness/operant",
@@ -2925,28 +3047,28 @@
    "group": "agentic-harness",
    "department": null,
    "membership": "federation",
-   "head": "d3d4aef71286e5bccbfb65239e5384d2bbcc25bb",
-   "dirty_paths": 12,
+   "head": "53d9712b1903c358e4d250635fa5da6a7051d03d",
+   "dirty_paths": 256,
    "language": "rust",
    "language_marker": "Cargo.toml",
    "frameworks": [],
-   "loc": 521504,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc": 537507,
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "rust": 445733,
+    "rust": 461549,
     "typescript": 41434,
     "python": 28972,
-    "shell": 5365
+    "shell": 5552
    },
    "dominant_language": "rust",
-   "test_markers": 5730,
+   "test_markers": 6009,
    "test_marker_method": "grep -rE '^\\s*#\\[(test|tokio::test)\\]' --include='*.rs' (attribute, working tree, tests/ INCLUDED, .rs only \u2014 a prose mention of #[test] in a comment or a .sh file is not a marker)",
    "mcp_tools": 0,
    "mcp_tool_method": "grep -r '#\\[tool(' --include='*.rs' (attribute, working tree)",
    "cli_subcommands": 336,
    "cli_subcommand_method": "count of enum variants across derive(Subcommand) blocks --include='*.rs' (attribute, working tree)",
    "crates": 9,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "cli",
    "genome": {
     "present": true,
@@ -3035,7 +3157,7 @@
    "language_marker": "Cargo.toml",
    "frameworks": [],
    "loc": 489297,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "rust": 489245,
     "shell": 52
@@ -3048,7 +3170,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "count of enum variants across derive(Subcommand) blocks --include='*.rs' (attribute, working tree)",
    "crates": 2,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -3128,7 +3250,7 @@
    "language_marker": "Cargo.toml",
    "frameworks": [],
    "loc": 155200,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "rust": 153206,
     "python": 1680,
@@ -3142,7 +3264,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "count of enum variants across derive(Subcommand) blocks --include='*.rs' (attribute, working tree)",
    "crates": 14,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -3234,7 +3356,7 @@
     "wrangler/cloudflare"
    ],
    "loc": 138726,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 115444,
     "svelte": 13905,
@@ -3249,7 +3371,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -3341,7 +3463,7 @@
    "language_marker": null,
    "frameworks": [],
    "loc": 7249,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 6788,
     "shell": 461
@@ -3354,7 +3476,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -3430,7 +3552,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 2938,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 2938
    },
@@ -3442,7 +3564,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -3517,7 +3639,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 7698,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 6550,
     "shell": 717,
@@ -3531,7 +3653,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -3606,7 +3728,7 @@
    "language_marker": null,
    "frameworks": [],
    "loc": 3047,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "qml": 2246,
     "shell": 801
@@ -3619,7 +3741,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -3694,7 +3816,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 50948,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 50102,
     "shell": 846
@@ -3707,7 +3829,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "mcp",
    "genome": {
     "present": true,
@@ -3787,7 +3909,7 @@
    "language_marker": null,
    "frameworks": [],
    "loc": 3546,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 2203,
     "shell": 1343
@@ -3800,7 +3922,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -3875,7 +3997,7 @@
    "language_marker": "package.json",
    "frameworks": [],
    "loc": 78372,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 76148,
     "sql": 1130,
@@ -3889,7 +4011,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "mcp",
    "genome": {
     "present": true,
@@ -3969,7 +4091,7 @@
     "vite"
    ],
    "loc": 10766,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 10766
    },
@@ -3981,7 +4103,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "mcp",
    "genome": {
     "present": true,
@@ -4058,7 +4180,7 @@
    "language_marker": "requirements.txt",
    "frameworks": [],
    "loc": 12100,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 11762,
     "shell": 338
@@ -4071,7 +4193,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -4148,7 +4270,7 @@
    "language_marker": "Cargo.toml",
    "frameworks": [],
    "loc": 18224,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "rust": 15282,
     "python": 2523,
@@ -4162,7 +4284,7 @@
    "cli_subcommands": 43,
    "cli_subcommand_method": "count of enum variants across derive(Subcommand) blocks --include='*.rs' (attribute, working tree)",
    "crates": 3,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "cli",
    "genome": {
     "present": true,
@@ -4237,7 +4359,7 @@
    "language_marker": null,
    "frameworks": [],
    "loc": 760,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "shell": 389,
     "python": 371
@@ -4250,7 +4372,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -4325,7 +4447,7 @@
    "language_marker": null,
    "frameworks": [],
    "loc": 140339,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 72734,
     "svelte": 67291,
@@ -4340,7 +4462,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 1,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -4416,7 +4538,7 @@
    "language_marker": null,
    "frameworks": [],
    "loc": 16674,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "go": 11678,
     "typescript": 4935,
@@ -4430,7 +4552,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -4510,7 +4632,7 @@
     "react"
    ],
    "loc": 16361,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 13525,
     "python": 2641,
@@ -4524,7 +4646,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -4607,7 +4729,7 @@
     "wrangler/cloudflare"
    ],
    "loc": 37277,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 34553,
     "svelte": 1526,
@@ -4622,7 +4744,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -4701,7 +4823,7 @@
     "wrangler/cloudflare"
    ],
    "loc": 103489,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 64576,
     "svelte": 37515,
@@ -4716,7 +4838,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -4795,7 +4917,7 @@
     "vite"
    ],
    "loc": 48156,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "svelte": 25170,
     "typescript": 22700,
@@ -4809,7 +4931,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -4891,7 +5013,7 @@
     "react"
    ],
    "loc": 72163,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 70900,
     "sql": 1131,
@@ -4905,7 +5027,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -4984,7 +5106,7 @@
     "wrangler/cloudflare"
    ],
    "loc": 35387,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 17685,
     "svelte": 13083,
@@ -5000,7 +5122,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -5071,8 +5193,8 @@
    "group": "webdev",
    "department": null,
    "membership": "federation",
-   "head": "e90960547e6a44cd92c70cc8f71c94fffe74ba98",
-   "dirty_paths": 0,
+   "head": "ae1c93e3beb99d8479d2af1b450da8e46b84a195",
+   "dirty_paths": 9,
    "language": "typescript",
    "language_marker": "package.json",
    "frameworks": [
@@ -5080,12 +5202,12 @@
     "vite",
     "wrangler/cloudflare"
    ],
-   "loc": 49373,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc": 51165,
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 38673,
     "svelte": 8301,
-    "python": 2083,
+    "python": 3875,
     "sql": 316
    },
    "dominant_language": "typescript",
@@ -5096,7 +5218,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -5131,10 +5253,10 @@
     "worklog": true
    },
    "docs": {
-    "md_files": 40,
+    "md_files": 43,
     "subdirs": {
-     ".": 20,
-     "plans": 11,
+     ".": 22,
+     "plans": 12,
      "kb": 4,
      "archive": 2,
      "handoff": 2,
@@ -5173,12 +5295,10 @@
    "language": null,
    "language_marker": null,
    "frameworks": [],
-   "loc": 1105,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
-   "languages_breakdown": {
-    "typescript": 1105
-   },
-   "dominant_language": "typescript",
+   "loc": 0,
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
+   "languages_breakdown": {},
+   "dominant_language": null,
    "test_markers": null,
    "test_marker_method": null,
    "mcp_tools": null,
@@ -5186,8 +5306,8 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
-   "surface": "library",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
+   "surface": "docs",
    "genome": {
     "present": true,
     "modules": [
@@ -5262,7 +5382,7 @@
    "language_marker": "Cargo.toml",
    "frameworks": [],
    "loc": 14035,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "rust": 13833,
     "shell": 202
@@ -5275,7 +5395,7 @@
    "cli_subcommands": 21,
    "cli_subcommand_method": "count of enum variants across derive(Subcommand) blocks --include='*.rs' (attribute, working tree)",
    "crates": 18,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "cli",
    "genome": {
     "present": true,
@@ -5351,7 +5471,7 @@
    "language_marker": "package.json",
    "frameworks": [],
    "loc": 24999,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 24999
    },
@@ -5363,7 +5483,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "mcp",
    "genome": {
     "present": true,
@@ -5441,7 +5561,7 @@
    "language_marker": "requirements.txt",
    "frameworks": [],
    "loc": 9238,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 9238
    },
@@ -5453,7 +5573,7 @@
    "cli_subcommands": 6,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "cli",
    "genome": {
     "present": true,
@@ -5529,7 +5649,7 @@
    "language_marker": "Cargo.toml",
    "frameworks": [],
    "loc": 35572,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "rust": 27383,
     "python": 7868,
@@ -5543,7 +5663,7 @@
    "cli_subcommands": 24,
    "cli_subcommand_method": "count of enum variants across derive(Subcommand) blocks --include='*.rs' (attribute, working tree)",
    "crates": 2,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "hybrid",
    "genome": {
     "present": true,
@@ -5631,7 +5751,7 @@
     "vite"
    ],
    "loc": 1172,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 977,
     "shell": 195
@@ -5644,7 +5764,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -5720,24 +5840,24 @@
    "language": "rust",
    "language_marker": "Cargo.toml",
    "frameworks": [],
-   "loc": 167314,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc": 75892,
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "python": 91220,
     "rust": 62624,
-    "typescript": 10201,
-    "shell": 3269
+    "python": 6685,
+    "typescript": 4039,
+    "shell": 2544
    },
-   "dominant_language": "python",
+   "dominant_language": "rust",
    "test_markers": 551,
    "test_marker_method": "grep -rE '^\\s*#\\[(test|tokio::test)\\]' --include='*.rs' (attribute, working tree, tests/ INCLUDED, .rs only \u2014 a prose mention of #[test] in a comment or a .sh file is not a marker)",
-   "mcp_tools": 0,
-   "mcp_tool_method": "grep -r '#\\[tool(' --include='*.rs' (attribute, working tree)",
+   "mcp_tools": 113,
+   "mcp_tool_method": "grep -r '#\\[tool(' --include='*.rs' (attribute, working tree); plus registry-shape declaration(s) rust-vec-json (the server's own catalog, not an attribute)",
    "cli_subcommands": 23,
    "cli_subcommand_method": "count of enum variants across derive(Subcommand) blocks --include='*.rs' (attribute, working tree)",
    "crates": 10,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
-   "surface": "cli",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
+   "surface": "mcp",
    "genome": {
     "present": true,
     "modules": [
@@ -5818,7 +5938,7 @@
    "language_marker": "package.json",
    "frameworks": [],
    "loc": 2902,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 2902
    },
@@ -5830,7 +5950,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -5907,7 +6027,7 @@
    "language_marker": "Cargo.toml",
    "frameworks": [],
    "loc": 72958,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "rust": 72188,
     "python": 770
@@ -5920,7 +6040,7 @@
    "cli_subcommands": 44,
    "cli_subcommand_method": "count of enum variants across derive(Subcommand) blocks --include='*.rs' (attribute, working tree)",
    "crates": 12,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "cli",
    "genome": {
     "present": true,
@@ -6005,7 +6125,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 14612,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 14404,
     "shell": 208
@@ -6018,7 +6138,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "mcp",
    "genome": {
     "present": true,
@@ -6098,7 +6218,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 5701,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 5448,
     "shell": 253
@@ -6111,7 +6231,7 @@
    "cli_subcommands": 15,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "hybrid",
    "genome": {
     "present": true,
@@ -6187,7 +6307,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 4746,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 4519,
     "shell": 227
@@ -6200,7 +6320,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -6277,7 +6397,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 4882,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 4607,
     "shell": 275
@@ -6290,7 +6410,7 @@
    "cli_subcommands": 13,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "cli",
    "genome": {
     "present": true,
@@ -6366,7 +6486,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 14921,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 14593,
     "shell": 328
@@ -6379,7 +6499,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "mcp",
    "genome": {
     "present": true,
@@ -6455,7 +6575,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 21608,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 21224,
     "shell": 384
@@ -6468,7 +6588,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "mcp",
    "genome": {
     "present": true,
@@ -6545,7 +6665,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 55263,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 54465,
     "shell": 798
@@ -6558,7 +6678,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "mcp",
    "genome": {
     "present": true,
@@ -6636,7 +6756,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 6095,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 5743,
     "shell": 352
@@ -6649,7 +6769,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "mcp",
    "genome": {
     "present": true,
@@ -6725,7 +6845,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 4865,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 4608,
     "shell": 257
@@ -6738,7 +6858,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -6809,14 +6929,14 @@
    "department": "interaction-surfaces",
    "membership": "federation",
    "head": "88e71a835cdd7bf040f8700c29cc369a17e9826c",
-   "dirty_paths": 45,
+   "dirty_paths": 51,
    "language": "rust",
    "language_marker": "Cargo.toml",
    "frameworks": [],
-   "loc": 163010,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc": 163249,
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "rust": 126215,
+    "rust": 126454,
     "svelte": 27254,
     "typescript": 5611,
     "shell": 1776,
@@ -6831,7 +6951,7 @@
    "cli_subcommands": 320,
    "cli_subcommand_method": "count of enum variants across derive(Subcommand) blocks --include='*.rs' (attribute, working tree)",
    "crates": 1,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "hybrid",
    "genome": {
     "present": true,
@@ -6907,7 +7027,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 9455,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 9106,
     "shell": 349
@@ -6920,7 +7040,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -6997,7 +7117,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 3353,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 3213,
     "shell": 140
@@ -7010,7 +7130,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "mcp",
    "genome": {
     "present": true,
@@ -7086,7 +7206,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 14353,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 14025,
     "shell": 328
@@ -7099,7 +7219,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -7177,7 +7297,7 @@
     "vite"
    ],
    "loc": 5132,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 4438,
     "shell": 606,
@@ -7191,7 +7311,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -7253,7 +7373,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 11688,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 11294,
     "shell": 394
@@ -7266,7 +7386,7 @@
    "cli_subcommands": 63,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "cli",
    "genome": {
     "present": true,
@@ -7337,26 +7457,26 @@
    "department": "internet",
    "membership": "federation",
    "head": "5a24ea3bb56d7adabdf06c09f876385149ed79c0",
-   "dirty_paths": 1,
+   "dirty_paths": 4,
    "language": "rust",
    "language_marker": "Cargo.toml",
    "frameworks": [],
-   "loc": 119203,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc": 73360,
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "rust": 68778,
-    "python": 48485,
-    "shell": 1940
+    "rust": 70175,
+    "python": 1860,
+    "shell": 1325
    },
    "dominant_language": "rust",
-   "test_markers": 645,
+   "test_markers": 655,
    "test_marker_method": "grep -rE '^\\s*#\\[(test|tokio::test)\\]' --include='*.rs' (attribute, working tree, tests/ INCLUDED, .rs only \u2014 a prose mention of #[test] in a comment or a .sh file is not a marker)",
    "mcp_tools": 156,
    "mcp_tool_method": "grep -r '#\\[tool(' --include='*.rs' (attribute, working tree)",
    "cli_subcommands": 191,
    "cli_subcommand_method": "count of enum variants across derive(Subcommand) blocks --include='*.rs' (attribute, working tree)",
    "crates": 3,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "hybrid",
    "genome": {
     "present": true,
@@ -7436,7 +7556,7 @@
    "language_marker": "Cargo.toml",
    "frameworks": [],
    "loc": 49972,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "rust": 45701,
     "python": 2381,
@@ -7446,12 +7566,12 @@
    "dominant_language": "rust",
    "test_markers": 640,
    "test_marker_method": "grep -rE '^\\s*#\\[(test|tokio::test)\\]' --include='*.rs' (attribute, working tree, tests/ INCLUDED, .rs only \u2014 a prose mention of #[test] in a comment or a .sh file is not a marker)",
-   "mcp_tools": 0,
-   "mcp_tool_method": "grep -r '#\\[tool(' --include='*.rs' (attribute, working tree)",
+   "mcp_tools": 4,
+   "mcp_tool_method": "grep -r '#\\[tool(' --include='*.rs' (attribute, working tree); plus registry-shape declaration(s) rust-tool-new (the server's own catalog, not an attribute)",
    "cli_subcommands": 19,
    "cli_subcommand_method": "count of enum variants across derive(Subcommand) blocks --include='*.rs' (attribute, working tree)",
    "crates": 1,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "cli",
    "genome": {
     "present": true,
@@ -7537,7 +7657,7 @@
    "language_marker": "Cargo.toml",
    "frameworks": [],
    "loc": 48063,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "rust": 47064,
     "shell": 521,
@@ -7551,7 +7671,7 @@
    "cli_subcommands": 18,
    "cli_subcommand_method": "count of enum variants across derive(Subcommand) blocks --include='*.rs' (attribute, working tree)",
    "crates": 2,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "mcp",
    "genome": {
     "present": true,
@@ -7628,28 +7748,28 @@
    "group": "agentic-utility",
    "department": "proxy",
    "membership": "federation",
-   "head": "8c9fa6c41708cdc6e16373bdf3f638d04cc7987f",
-   "dirty_paths": 5,
+   "head": "d21f98e032e1b2f005a1327841756d50cf1861b3",
+   "dirty_paths": 1,
    "language": "rust",
    "language_marker": "Cargo.toml",
    "frameworks": [],
-   "loc": 123408,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc": 130005,
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
-    "rust": 119021,
-    "shell": 2512,
+    "rust": 124774,
+    "shell": 3356,
     "typescript": 1756,
     "python": 119
    },
    "dominant_language": "rust",
-   "test_markers": 2535,
+   "test_markers": 2624,
    "test_marker_method": "grep -rE '^\\s*#\\[(test|tokio::test)\\]' --include='*.rs' (attribute, working tree, tests/ INCLUDED, .rs only \u2014 a prose mention of #[test] in a comment or a .sh file is not a marker)",
-   "mcp_tools": 0,
-   "mcp_tool_method": "grep -r '#\\[tool(' --include='*.rs' (attribute, working tree)",
-   "cli_subcommands": 66,
+   "mcp_tools": 13,
+   "mcp_tool_method": "grep -r '#\\[tool(' --include='*.rs' (attribute, working tree); plus registry-shape declaration(s) rust-chained-catalog (the server's own catalog, not an attribute)",
+   "cli_subcommands": 71,
    "cli_subcommand_method": "count of enum variants across derive(Subcommand) blocks --include='*.rs' (attribute, working tree)",
    "crates": 17,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "cli",
    "genome": {
     "present": true,
@@ -7684,10 +7804,10 @@
     "worklog": true
    },
    "docs": {
-    "md_files": 62,
+    "md_files": 63,
     "subdirs": {
      ".": 42,
-     "plans": 7,
+     "plans": 8,
      "audit": 5,
      "kb": 4,
      "handoff": 2,
@@ -7729,7 +7849,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 1028,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 834,
     "shell": 194
@@ -7742,7 +7862,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -7818,7 +7938,7 @@
    "language_marker": null,
    "frameworks": [],
    "loc": 0,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {},
    "dominant_language": null,
    "test_markers": null,
@@ -7828,7 +7948,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "docs",
    "genome": {
     "present": true,
@@ -7913,7 +8033,7 @@
     "vite"
    ],
    "loc": 14685,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 14269,
     "python": 416
@@ -7926,7 +8046,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "mcp",
    "genome": {
     "present": true,
@@ -8004,7 +8124,7 @@
     "vite"
    ],
    "loc": 805,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 805
    },
@@ -8016,7 +8136,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -8095,7 +8215,7 @@
     "vite"
    ],
    "loc": 7314,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 7314
    },
@@ -8107,7 +8227,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -8188,7 +8308,7 @@
     "wrangler/cloudflare"
    ],
    "loc": 36562,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 30941,
     "svelte": 5621
@@ -8201,7 +8321,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -8282,7 +8402,7 @@
     "vite"
    ],
    "loc": 41323,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 34553,
     "svelte": 5303,
@@ -8297,7 +8417,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -8376,7 +8496,7 @@
     "react"
    ],
    "loc": 1105,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "typescript": 1105
    },
@@ -8388,7 +8508,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": true,
@@ -8463,7 +8583,7 @@
    "language_marker": null,
    "frameworks": [],
    "loc": 19675,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 11220,
     "typescript": 7343,
@@ -8477,7 +8597,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": false,
@@ -8528,7 +8648,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 15472,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 14233,
     "shell": 1239
@@ -8541,7 +8661,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": false,
@@ -8589,7 +8709,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 1396,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 1301,
     "shell": 95
@@ -8602,7 +8722,7 @@
    "cli_subcommands": 11,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "cli",
    "genome": {
     "present": false,
@@ -8650,7 +8770,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 2235,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 2235
    },
@@ -8662,7 +8782,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": false,
@@ -8710,7 +8830,7 @@
    "language_marker": null,
    "frameworks": [],
    "loc": 359,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "qml": 330,
     "shell": 29
@@ -8723,7 +8843,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": false,
@@ -8771,7 +8891,7 @@
    "language_marker": null,
    "frameworks": [],
    "loc": 5390,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "qml": 4845,
     "typescript": 545
@@ -8784,7 +8904,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": false,
@@ -8832,7 +8952,7 @@
    "language_marker": null,
    "frameworks": [],
    "loc": 5166,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "qml": 4714,
     "typescript": 452
@@ -8845,7 +8965,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": false,
@@ -8893,7 +9013,7 @@
    "language_marker": null,
    "frameworks": [],
    "loc": 4286,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "qml": 3882,
     "typescript": 404
@@ -8906,7 +9026,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": false,
@@ -8954,7 +9074,7 @@
    "language_marker": null,
    "frameworks": [],
    "loc": 880,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "qml": 832,
     "typescript": 48
@@ -8967,7 +9087,7 @@
    "cli_subcommands": null,
    "cli_subcommand_method": null,
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": false,
@@ -9016,7 +9136,7 @@
    "language_marker": "pyproject.toml",
    "frameworks": [],
    "loc": 2260,
-   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | xargs wc -l (attribute, working tree)",
+   "loc_method": "find . -type f \\( -name '*.rs' -o -name '*.py' -o ... \\) not in .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | xargs wc -l (attribute, working tree)",
    "languages_breakdown": {
     "python": 2260
    },
@@ -9028,7 +9148,7 @@
    "cli_subcommands": 0,
    "cli_subcommand_method": "grep -rE 'add_parser\\(.\\w' --include='*.py' (attribute, working tree)",
    "crates": 0,
-   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,vendor | wc -l (attribute, working tree)",
+   "crate_method": "find . -name Cargo.toml not under .cache,.cargo,.genome,.git,.next,.svelte-kit,.tmp,.tmp-test,.tmpwork,.venv,__pycache__,assets,build,coverage,dist,docs,mcp-venv,node_modules,scratchpad,target,third_party,vendor | wc -l (attribute, working tree)",
    "surface": "library",
    "genome": {
     "present": false,

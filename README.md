@@ -29,7 +29,7 @@ I build and operate production agentic infrastructure: MCP servers, agent runtim
 
 [![Agentic AI](https://img.shields.io/badge/Agentic_AI_Engineer_%26_Operator-0F172A?style=for-the-badge&logo=anthropic&logoColor=white)](https://modelcontextprotocol.io/)
 
-[![MCP](https://img.shields.io/badge/MCP-1%2C190%20Tools-A855F7?style=for-the-badge&logo=github&logoColor=white)](https://modelcontextprotocol.io/)
+[![MCP](https://img.shields.io/badge/MCP-1%2C379%20Tools-A855F7?style=for-the-badge&logo=github&logoColor=white)](https://modelcontextprotocol.io/)
 <!-- 2026-11-02: Rust/TypeScript/Python badges removed — the doorway rubric's
 BADGE_CEILING is 7 and the page carried 8; those three duplicated the stack matrix. -->
 
@@ -41,10 +41,10 @@ I design and implement custom cognitive substrates, low-overhead tools, and high
 
 | Metric | Value | Technical Context & Evidence |
 |--------|-------|------------------------------|
-| **MCP Servers** | **17** | 1,190 registered MCP tools across 17 MCP-exposing repos (`portfolio-measurements.json`, measured 2026-11-07, re-derived by `genome close`) |
-| **Rust Crates** | **95** | 95 `Cargo.toml` manifests across the 75 published repos (65 federation + 10 catalog) — vendored, generated and documentation trees excluded (`portfolio-measurements.json`, measured 2026-11-07, re-derived by `genome close`) |
-| **Lines of Code** | **3.42M** | ≈3.42M first-party source lines (Rust, TypeScript, Python, Go, Svelte, QML, shell) across the 75 published repos (65 federation + 10 catalog) (`portfolio-measurements.json`, measured 2026-11-07, re-derived by `genome close`) |
-| **Automated Tests** | **≈31,500 markers** | ≈31,500 test markers across 59 of 75 repos; 16 report none because their language has no marker rule here. Markers are NOT passing cases — gate results are recorded separately with their commit (`portfolio-measurements.json`, measured 2026-11-07, re-derived by `genome close`) |
+| **MCP Servers** | **21** | 1,379 registered MCP tools across 21 MCP-exposing repos (`portfolio-measurements.json`, measured 2026-11-11, re-derived by `genome close`) |
+| **Rust Crates** | **95** | 95 `Cargo.toml` manifests across the 76 published repos (66 federation + 10 catalog) — vendored, generated and documentation trees excluded (`portfolio-measurements.json`, measured 2026-11-11, re-derived by `genome close`) |
+| **Lines of Code** | **3.33M** | ≈3.33M first-party source lines (Rust, TypeScript, Python, Go, Svelte, QML, shell) across the 76 published repos (66 federation + 10 catalog) (`portfolio-measurements.json`, measured 2026-11-11, re-derived by `genome close`) |
+| **Automated Tests** | **≈32,000 markers** | ≈32,000 test markers across 59 of 76 repos; 17 report none because their language has no marker rule here. Markers are NOT passing cases — gate results are recorded separately with their commit (`portfolio-measurements.json`, measured 2026-11-11, re-derived by `genome close`) |
 | **Context Reduction** | **40–60%** | Token savings verified via custom Token-Oriented Object Notation (TOON) compiler — benchmark claim, not an engine attribute |
 | **Production Runtime** | **<10MB** | Stripped static musl Rust binaries with minimal idle RSS, zero dynamic dependencies — benchmark claim, not an engine attribute |
 
