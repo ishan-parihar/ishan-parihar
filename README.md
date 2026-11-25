@@ -8,7 +8,7 @@ I build and operate production agentic infrastructure: MCP servers, agent runtim
 
 🌐 [ishanparihar.com](https://ishanparihar.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/ishan-parihar/) · 📍 Noida, India · ✈️ Remote: worldwide · 📧 [Get in touch](mailto:contact@ishanparihar.com)
 
-<p align="left"><b>Every claim below carries a commit, and every number is re-measured.</b> Start with <a href="#hire-me--or-verify-the-code-yourself-first">Hire Me</a>, or read the <a href="#complete-project-catalog-56-ranked-projects--1-struck--6-web-sites">full catalog</a> and check the code yourself first.</p>
+<p align="left"><b>Every claim below carries a commit, and every number is re-measured.</b> Start with <a href="#hire-me--or-verify-the-code-yourself-first">Hire Me</a>, or read the <a href="#complete-project-catalog-56-ranked-projects--2-struck--6-web-sites">full catalog</a> and check the code yourself first.</p>
 
 ## Contents
 
@@ -19,7 +19,7 @@ I build and operate production agentic infrastructure: MCP servers, agent runtim
 - [💎 Flagship Projects](#flagship-projects)
 - [🛠️ The Complete Ecosystem](#the-complete-ecosystem)
 - [🔬 Unified Tech Stack Matrix](#unified-tech-stack-matrix)
-- [📂 Complete Project Catalog (56 Ranked Projects + 1 Struck + 6 Web Sites)](#complete-project-catalog-56-ranked-projects--1-struck--6-web-sites)
+- [📂 Complete Project Catalog (56 Ranked Projects + 2 Struck + 6 Web Sites)](#complete-project-catalog-56-ranked-projects--2-struck--6-web-sites)
 - [🧭 The Arc: Space → Mind → Infrastructure](#the-arc-space--mind--infrastructure)
 - [📄 Documentation](#documentation)
 - [☕ Sponsor this work](#sponsor-this-work)
@@ -66,7 +66,7 @@ What that means in measured terms, ranked by the evidence a recruiter can actual
 | 5 | **[tdg-rust](https://github.com/ishan-parihar/tdg-rust)** | `8.46` | 626 passed / 0 failed at `44e7f9b` (2026-10-20), zero warnings, 50 MCP tools, 10 releases |
 | 6 | **[holon](https://github.com/ishan-parihar/holon)** | `8.10` | 57K-LOC, 56-command MIT-licensed agent OS — self-healing organization of persistent AI employees, 10 measured sophistication families |
 
-Those six carry **12,494 measured test cases** between them, each naming its own command and date in [docs/FLAGSHIPS.md](docs/FLAGSHIPS.md): 7,163 operant + 1,031 switchpost + 2,110 mysterium + 546 openscript + 626 tdg-rust + 1,018 holon (every figure is passed cases at the named commit; three of operant's 71 binaries, 19 of switchpost's 72 and one of openscript's 20 were red that day, and holon had one failure in 1,018). The portfolio totals **3.46M first-party LOC** and **≈31,400 test markers** across 75 published repos (see [📊 Engineering by the Numbers](#engineering-by-the-numbers)). Two private repos score above parts of this table — **[sourcehound](https://github.com/ishan-parihar/sourcehound)** (`9.43`) and **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** (`8.36`, gate red at 76/8/8 of 95) — and a reader cannot re-run either gate today, so both stay in the [catalog](#complete-project-catalog-56-ranked-projects--1-struck--6-web-sites), locked and capped at B. The claim is not "I can build agents" — it is "I can build agent systems whose behaviour I can prove at a commit, and hand you the proof to re-run."
+Those six carry **12,494 measured test cases** between them, each naming its own command and date in [docs/FLAGSHIPS.md](docs/FLAGSHIPS.md): 7,163 operant + 1,031 switchpost + 2,110 mysterium + 546 openscript + 626 tdg-rust + 1,018 holon (every figure is passed cases at the named commit; three of operant's 71 binaries, 19 of switchpost's 72 and one of openscript's 20 were red that day, and holon had one failure in 1,018). The portfolio totals **3.46M first-party LOC** and **≈31,400 test markers** across 75 published repos (see [📊 Engineering by the Numbers](#engineering-by-the-numbers)). Two private repos score above parts of this table — **[sourcehound](https://github.com/ishan-parihar/sourcehound)** (`9.43`) and **[c-suite-agents](https://github.com/ishan-parihar/c-suite-agents)** (`8.36`, gate red at 76/8/8 of 95) — and a reader cannot re-run either gate today, so both stay in the [catalog](#complete-project-catalog-56-ranked-projects--2-struck--6-web-sites), locked and capped at B. The claim is not "I can build agents" — it is "I can build agent systems whose behaviour I can prove at a commit, and hand you the proof to re-run."
 
 ---
 
@@ -202,9 +202,7 @@ A deterministic composition compiler that turns a human brief into a full-length
 
 ## 🛠️ The Complete Ecosystem
 
-The operational landscape of these systems, grouped by what they expose. Every row is ranked by the same rubric as the software catalog below, so a tool listed here carries
-
-the score it earned rather than a description alone.
+The operational landscape of these systems, grouped by what they expose. Every row is ranked by the same rubric as the software catalog below, so a tool listed here carries the score it earned rather than a description alone.
 
 ### Unified MCP & Agent Infrastructure
 
@@ -253,7 +251,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 
 | Tool | Stack | Surface | Description |
 |------|-------|---------|-------------|
-| **[android-webcam](https://github.com/ishan-parihar/android-webcam)** | Kotlin/QML | 1 Command | Android phone as webcam and microphone on the Linux desktop — 720p/1080p, front/back, torch |
+| ~~**[android-webcam](https://github.com/ishan-parihar/android-webcam)**~~ | Kotlin/QML | 1 Command | Android phone as webcam and microphone on the Linux desktop — 720p/1080p, front/back, torch (repository gone) |
 | **[AI-CAD](https://github.com/ishan-parihar/AI-CAD)** | TS/Python | 23 Endpoints | AI-powered CAD platform — FastAPI floor-plan generation, ezdxf DXF export, real-time collaboration |
 | **[palimpsest](https://github.com/ishan-parihar/palimpsest)** | TS/Python | Library | A training system for one mind — the AI is the trainer, the digestion happens in the reader |
 | **[project-genome](https://github.com/ishan-parihar/project-genome)** | Python | 11 Commands | A project's knowledge genome — owned document roles, mutability classes, and a stdlib CLI (`wake`/`ask`/`close`) — the tool that gates this portfolio's own documentation |
@@ -280,7 +278,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 - **Protocols**: Model Context Protocol (MCP), Agent eXperience Interface (AXI), TOON Serialization
 - **Infrastructure**: Docker, systemd services, PostgreSQL, SQLite, Supabase, LanceDB, n8n automation
 - **AI/ML Integration**: local LLMs (llama.cpp, Qwen), OpenAI, Anthropic, Gemini, Whisper, Whisper Hinglish
-## 📂 Complete Project Catalog (56 Ranked Projects + 1 Struck + 6 Web Sites)
+## 📂 Complete Project Catalog (56 Ranked Projects + 2 Struck + 6 Web Sites)
 
 <details>
 <summary><b>🚀 S-TIER: Flagship Systems — Score ≥ 8.0 — 2 capped by policy (2 private), shown at the score they earned (11 Projects)</b></summary>
@@ -332,7 +330,7 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 * **[swiggy-lyr](https://github.com/ishan-parihar/swiggy-lyr)** `6.02`: Unified Swiggy MCP — Food, Instamart and Dineout in one server with one OAuth token. MIT, 3 measured CLI commands.
 * **[discord-lyr](https://github.com/ishan-parihar/discord-lyr)** `6.02`: Local-first Discord data CLI (SQLite sync, search, analytics). 41 tests passing (measured `pytest` at HEAD, 2026-10-30), 16 CLI commands, 0 published releases, 2 CI workflows.
 * **[thinking-steroid](https://github.com/ishan-parihar/thinking-steroid)** `5.90`: Forced cognitive mode engine implementing 13 analysis frameworks. 5 test suites (compiled-JS asserts, measured `npm test` at HEAD, 2026-10-28 — not a per-case runner, so no case count exists), 13 MCP tools, 5 sophistication families.
-* **[android-webcam](https://github.com/ishan-parihar/android-webcam)** `5.80` (infra): Android phone as webcam and microphone on the Linux desktop — 720p/1080p, front/back, torch, mic. Kotlin + QML + Python, MIT. Real desktop tooling (infra category).
+* ~~**[android-webcam](https://github.com/ishan-parihar/android-webcam)** `5.80` (infra): Android phone as webcam and microphone on the Linux desktop — 720p/1080p, front/back, torch, mic. Kotlin + QML + Python, MIT. Real desktop tooling (infra category).<!-- retired-link: measured 2026-11-25, `gh api repos/ishan-parihar/android-webcam` returns HTTP 404 — the repository is GONE from GitHub, not merely archived, so the profile README is the artefact that still links it. The row is struck through rather than deleted under the no-deletion rule. `retired-link:` is the marker `check_repo_links.py` requires on the same line as a deliberately-kept dead link. -->~~
 * 🔒 **[lifeos-bot](https://github.com/ishan-parihar/lifeos-bot)** `5.63`: LifeOS conversational interface — Telegram bot + agent CLI (simulate/direct/debug). 12K LOC, 33 tests, v0.1.0.
 * **[AI-CAD](https://github.com/ishan-parihar/AI-CAD)** `5.62`: AI-powered CAD platform — FastAPI floor-plan generation, ezdxf DXF export, real-time collaboration. TypeScript + Python + Shell, MIT, 23 measured endpoints.
 * **[ishan-parihar](https://github.com/ishan-parihar/ishan-parihar)** `5.40` (profile): This profile repo — the README, its measurement scripts, and the register that measures every other row. Scored and shown for completeness, tagged `profile` so no reader mistakes configuration for a software project.
@@ -346,13 +344,14 @@ One shared AXI-compliant architecture: every tool speaks TOON/YAML output, struc
 </details>
 
 <details>
-<summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 (5 Projects)</b></summary>
+<summary><b>🧰 C-TIER: Operational & Capped — Score 3.25–4.49 (6 Projects)</b></summary>
 
 * **[obscura-core](https://github.com/ishan-parihar/obscura-core)** `4.48`: Shared cookie-vault + CDP daemon powering the lyr family — highest cross-repo in-degree (4 dependents).
 * **[workout-factory](https://github.com/ishan-parihar/workout-factory)** `4.02`: Trainer voice/audio-cache factory. Deprecated — not GitHub-archived (`gh api` returns `archived=false`, measured 2026-11-03).
 * **[linux-telemetry](https://github.com/ishan-parihar/linux-telemetry)** `4.02`: Production-grade Linux usage telemetry — window activity, browser history, KDE app directories, process launches, desktop-file executions, minimal system impact. Python, MIT, 12 measured commands.
 * **[n8n-compiler](https://github.com/ishan-parihar/n8n-compiler)** `4.00` (infra): Treat n8n workflows as code. 10 measured CLI commands, CI-gated. Infra category — real tooling, no agent surface.
 * **[hermes-prime-bridge](https://github.com/ishan-parihar/hermes-prime-bridge)** `3.83`: Live plugin bridging a persistent kernel into Hermes's stateless runtime. 3 MCP tools, 14 contract tests, v0.2.0.
+* **[self-improve-plugin](https://github.com/ishan-parihar/self-improve-plugin)** `3.77`: jcode `turn_end` hook that turns each completed turn into at most one ledger row — a transferable skill lesson or a project fact — via a router-scored curator dispatch. 756-line Bash plugin, 29 test cases covering all 13 diagnostic arms, quoting-safe JSONL writes, `flock`-guarded per-`(cue, kind)` dedup, and memory scoped to project facts only. Capped at C: a hook has no agent surface to score.
 
 </details>
 

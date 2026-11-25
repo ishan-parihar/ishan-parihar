@@ -113,6 +113,10 @@ DATA = [
     # --- engines added in the 2026-08-11 full-coverage pass ----------------------
     ("browsefleet", "engine", 5129, 94, 4, 5, 30, 3, 212, 4, 261, 28, 5, "rest", 0, 2, 284, 1, 1),
     ("hermes-prime-bridge", "engine", 1028, 14, 0, 2, 41, 1, 87, 2, 1, 1, 2, "engine", 0, 1, 165, 1, 1),
+    # 2026-11-25: jcode turn_end hook. Bash, so no CLI/MCP surface and no AXI
+    # signals; scored on what it has (loc, tests, docs, install) and capped at C
+    # by the missing agent surface, which is the honest read for a hook.
+    ("self-improve-plugin", "engine", 1666, 29, 0, 1, 30, 1, 1, 1, 1, 0, 2, "engine", 0, 1, 59, 1, 1),
     ("lifeos-bot", "private", 12100, 33, 0, 2, 30, 1, 144, 2, 397, 25, 3, "cli", 1, 1, 110, 1, 1),
     # --- experimental / archived (capped at C by policy) -------------------------
     ("consciousness-fabricator", "experimental", 9238, 158, 0, 1, 26, 0, 208, 1, 73, 6, 8, "cli", 1, 1, 263, 0, 1),

@@ -98,6 +98,13 @@ def _natural_tier(total):
 # which. Nothing here is invented: where a number appears, `measure_repos.py` or
 # the repo's own README produced it.
 NEW_DESC = {
+    "self-improve-plugin": (
+        "jcode `turn_end` hook that turns each completed turn into at most one ledger row — "
+        "a transferable skill lesson or a project fact — via a router-scored curator dispatch. "
+        "756-line Bash plugin, 29 test cases covering all 13 diagnostic arms, quoting-safe "
+        "JSONL writes, `flock`-guarded per-`(cue, kind)` dedup, and memory scoped to project "
+        "facts only. Capped at C: a hook has no agent surface to score."
+    ),
     "artificial-route": (
         "Minimal-RAM Rust LLM gateway — one OpenAI-compatible endpoint over 276 providers, "
         "19 routing strategies, auto/*, static musl binary. 26 releases, Apache-2.0. "
